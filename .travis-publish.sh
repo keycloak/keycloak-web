@@ -23,6 +23,8 @@ if [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; th
 
     cp -r ../target/web/* .
 
+    git status
+
     if ! git status | grep 'nothing to commit, working tree clean'; then
         git add --all
         git commit -m "Updated to $GIT_HASH"
