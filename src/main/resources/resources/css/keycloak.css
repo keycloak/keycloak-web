@@ -1,0 +1,711 @@
+/* Custom Base Font for Keycload Website */
+
+
+/**********************************************************************************************************
+ * FONTS
+ ***********************************************************************************************************/
+
+
+/* Gil Sans Light */
+@font-face {
+    font-family: 'GillSansMT-Light';
+    src: url('../fonts/GillSansMT-Light.eot');
+    /* IE9 Compat Modes */
+    src: url('../fonts/GillSansMT-Light.eot?#iefix') format('embedded-opentype'),
+        /* IE6-IE8 */
+    url('../fonts/GillSansMT-Light.woff') format('woff'),
+        /* Modern Browsers */
+    url('../fonts/GillSansMT-Light.ttf')  format('truetype'),
+        /* Safari, Android, iOS */
+    url('../fonts/GillSansMT-Light.svg#GillSansMT-Light') format('svg');
+    /* Legacy iOS */
+}
+
+
+/* Gil Sans "Bold" */
+@font-face {
+    font-family: 'GillSansMTPro-Medium';
+    src: url('../fonts/GillSansMTPro-Medium.eot');
+    /* IE9 Compat Modes */
+    src: url('../fonts/GillSansMTPro-Medium.eot?#iefix') format('embedded-opentype'),
+        /* IE6-IE8 */
+    url('../fonts/GillSansMTPro-Medium.woff') format('woff'),
+        /* Modern Browsers */
+    url('../fonts/GillSansMTPro-Medium.ttf')  format('truetype'),
+        /* Safari, Android, iOS */
+    url('../fonts/GillSansMTPro-Medium.svg#GillSansMTPro-Medium') format('svg');
+    /* Legacy iOS */
+}
+
+html,body {
+    height:100%;
+}
+
+body {
+    font-family:'Open Sans',helvetica, arial,sans-serif;
+    font-size:16px;
+    color:#444444;
+    background-color: #111;
+    line-height:1;
+    min-height:100%;
+}
+
+/* <h*> Reset */
+h1,h2,h3,h4,h5,h6 {
+
+}
+
+h1 {
+    margin-bottom: 0.5em;
+    font-size: 40px;
+}
+
+h2 {
+    margin: 2.0em 0 0.8em 0;
+    font-size: 28px;
+}
+
+h3 {
+    margin: 1.5em 0 0.5em 0;
+    font-size: 20px;
+}
+
+table.table-downloads-inner {
+    width: 100%;
+}
+
+.table-downloads-inner td {
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+    width: 50%;
+}
+
+.table-downloads-inner tr:first-child td {
+    padding-top: 0;
+}
+
+.table-downloads-inner tr:last-child td {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+span.space {
+    margin: 0 1em;
+}
+
+.page-section li {
+    margin: 10px 0;
+}
+
+.nav-tabs li {
+    margin-top: 0;
+    margin-bottom: -1px;
+}
+
+hr.divider {
+    border: none;
+    padding: 30px 0;
+    clear: both;
+}
+
+.about h2 {
+    margin: 20px 0;
+}
+
+.about img {
+    float: right;
+    margin-top: -60px;
+    margin-bottom: 20px;
+    margin-left: 40px;
+}
+
+.margin-top {
+    margin-top: 1em;
+}
+
+.cse .gsc-control-cse, .gsc-control-cse {
+    padding: 0 !important;
+}
+
+.cse form.gsc-search-box, form.gsc-search-box {
+    padding: 10px 0 !important;
+}
+
+.cse table.gsc-search-box td.gsc-input, table.gsc-search-box td.gsc-input {
+    padding-right: 0 !important;
+}
+
+.cse input.gsc-input, input.gsc-input {
+    padding: 6px 9px !important;
+    background: none !important;
+}
+
+.cse input.gsc-search-button, input.gsc-search-button {
+    border: none !important;
+    background-color: #0085cf !important;
+    height: 33px !important;
+    width: 100px !important;
+}
+
+.cse .gsc-webResult.gsc-result, .gsc-webResult.gsc-result, .gsc-imageResult-classic, .gsc-imageResult-column {
+    margin-bottom: 3em !important;
+}
+
+/**********************************************************************************************************
+ * HEADER
+ ***********************************************************************************************************/
+header.main-header {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    background-color: #ededed;
+}
+
+.main-header   div {
+}
+
+.keycloak-logo-div {
+
+}
+
+.keycloak-logo-div button {
+    border-color:#004670;
+    z-index: 500;
+    margin:0;
+    left:-1em;
+}
+
+.keycloak-logo-div button span {
+    background:#004670;
+}
+
+.keycloak-logo {
+    /*display:block;
+    background: url('../images/keycloak_logo_480x108.png') no-repeat;
+    background-size:cover;
+    background-position: center center;*/
+    padding-top: 10px;
+    width:100%;
+    height:auto;
+}
+
+a {
+    color:#004670;
+    outline:none;
+}
+
+a:hover {
+    color: #7da1dc;
+}
+
+a:hover,
+a:active,
+a:link,
+a:visited {
+    outline:none;
+    text-decoration:none;
+}
+
+/*** NAV ***/
+.nav a,
+.navbar-nav > li > a {
+    font-family: "GillSansMTPro-Medium", "Lucida Regular", sans-serif;
+    text-transform: uppercase;
+    color:#004670;
+    letter-spacing:1px;
+    padding:1.9em 0 .3em 0;
+    margin:0 .8em;
+    border-bottom-style:solid;
+    border-bottom-width:3px;
+    border-color:#ededed;
+}
+
+/*.navbar-nav > li > a:hover {
+    color: #7da1dc;
+}*/
+
+@keyframes border-change {
+    from {
+        color:#004670;
+        border-color:#ededed
+    }
+    to {
+        color: #7da1dc;
+        border-color:#7da1dc;
+    }
+}
+
+.navbar-nav  li  a:hover {
+    color: #7da1dc;
+    animation-name:border-change;
+    animation-duration:.5s;
+    border-bottom-style:solid;
+    border-bottom-width:3px;
+    border-color:#7da1dc;
+
+}
+
+/**********************************************************************************************************
+ * PAGES
+ ***********************************************************************************************************/
+.page-section {
+    background-color: white;
+    clear:both;
+    width:100%;
+    padding:1em 0 5em 0;
+}
+
+p {
+    line-height:1.5em;
+}
+
+/**********************************************************************************************************
+ * MARQUEE (May be a slideshow in later iterations)
+ ***********************************************************************************************************/
+.marquee-section {
+    background-color:white;
+    background: url(../images/banner.png) no-repeat;
+    background-size: cover;
+    background-position: 0 0;
+    clear:both;
+    width:100%;
+    padding:1em 0;
+}
+
+.marquee-slide-row {
+    padding:4em;
+}
+
+.marquee-slide-row h1 {
+    text-align: center;
+    font-size:3.5em;
+    line-height: 1;
+    color:white;
+    margin:0;
+    text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+}
+
+.marquee-slide-row h2 {
+    text-align: center;
+    font-size:2em;
+    line-height: 1;
+    color:white;
+    margin:0.5em 0 0 0;
+    text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+}
+
+/**********************************************************************************************************
+ * MAIN BANNER SECTION
+ ***********************************************************************************************************/
+
+.main-banner {
+    background-color: white;
+    clear:both;
+    width:100%;
+    padding:1em 0;
+}
+
+.main-banner .left-col p  {
+    font-size:1.5em;
+    padding:10px 0;
+}
+
+.announcement-col {
+    padding:0;
+}
+
+.announce-box {
+    /*background:#e0e0e0;*/
+    background: #efefef;
+    /*border-radius:          10px;
+    -moz-border-radius:     10px;
+    -webkit-border-radius:  10px;*/
+    padding:.75em 1.5em 1.5em 1.5em;
+
+}
+
+.announcement-col h3 {
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-top:0;
+    padding:.5em 0 0 0;
+
+    font-family: "GillSansMTPro-Medium","open sans",arial, helvetica, sans serif;
+}
+
+ul.announce-ul {
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+ul.announce-ul li {
+    padding:.5em 0;
+    font-size:1em;
+    line-height:1.5em;
+}
+
+ul.announce-ul li a {
+    display: block;
+    font-size:1.2em;
+    background-color: white;
+    padding:10px;
+}
+
+ul.announce-ul li a:hover {
+    color: #7da1dc;
+}
+
+span.news-asterisk {
+    display: block;
+    font-size:1em;
+    background: url('../images/asterisk_60x60.png');
+    background-size:cover;
+    float:left;
+    width:1.5em;
+    height:1.5em;
+    margin-top:-.25em;
+    margin-right:.5em;
+}
+/**********************************************************************************************************
+ * FEATURES SECTION
+ ***********************************************************************************************************/
+.features-section {
+    background:#e0e0e0;
+    box-shadow:     0 0 5px #676767;
+    -moz-box-shadow:0 0 5px #676767;
+    z-index:1000;
+    padding: 20px 0;
+}
+
+.features-area h2 {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color:#004670;
+    font-family: "GillSansMTPro-Medium","open sans",arial, helvetica, sans serif;
+}
+
+.features-area .row,
+.features-area .row-fluid {
+    padding:1em 0;
+}
+
+
+.features-area .item {
+    color:#00334c;
+    position: relative;
+}
+
+.features-area .item .symbol {
+    float:left;
+    width:20%;
+    height:100%;
+}
+
+.symbol .fa {
+    color: #008aaa;
+    margin-right: 20px;
+}
+
+
+span.fs {
+    display:block;
+    width:30px;
+    height:30px;
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+
+span.fs.keychain {
+    background-image:url('../images/temp_keychain_72x72.png');
+}
+
+span.fs.google-g {
+    background-image:url('../images/temp_google_72x72.png');
+}
+
+span.fs.check {
+    background-image:url('../images/temp_check_72x72.png');
+}
+
+span.fs.bullets {
+    background-image:url('../images/temp_bulletpoints_72x72.png');
+}
+
+span.fs.arrow {
+    background-image:url('../images/temp_horiz_arr_72x72.png');
+}
+
+span.fs.profile {
+    background-image:url('../images/temp_profile_72x72.png');
+}
+
+span.fs.oauth {
+    background-image:url('../images/temp_oauth_72x72.png');
+}
+
+span.fs.clipboard {
+    background-image:url('../images/temp_clipboard_72x72.png');
+}
+
+.features-area .item div.description {
+    width:80%;
+    padding:0;
+    margin:0;
+}
+
+.features-area .item div.description h4 {
+    font-size:.8em;
+    font-weight:bold;
+    margin-bottom:.2em;
+    padding-top:0;
+    margin-top:0;
+}
+
+.features-area .item div.description p  {
+    font-size:.7em;
+    margin-top:0;
+    padding-top:0;
+}
+
+
+/* ALTERNATIVE â€“ FEATURES SECTION BY WAY OF FLEX DISPLAY */
+.features-flex-container {
+
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) *Update - hurts any recent FF version */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display:flex;
+
+    justify-content:flex-start;
+    flex-flow: row wrap;
+    -webkit-flex-flow:row wrap;
+    flex-direction:row;
+    -webkit-flex-direction:row;
+    align-items: flex-start;
+    -webkit-align-items:flex-start;
+
+    -webkit-align-content:flex-start;
+    text-align: center;
+}
+
+.flex-item {
+    margin:10px 1% 10px 0;
+    flex:0 0 24%;
+    -moz-box-flex: 0 0 24%;
+    -webkit-box-flex:0 0 24%;
+    -webkit-flex: 0 0 24%;
+}
+
+.flex-item:last-child {
+    margin-right:0;
+}
+
+.flex-item ul {
+    padding:0;
+    margin:0;
+    list-style:none;
+    position: relative;
+}
+
+.flex-item ul li  {
+    padding:0;
+    margin:0;
+    float:left;
+}
+
+.flex-item ul li.symbol {
+    width:20%;
+    height:100%;
+    text-align: right;
+}
+
+.flex-item ul li.description {
+    width:75%;
+
+    text-align: left;
+}
+
+.flex-item ul li.description h4 {
+    font-size:.8em;
+    font-weight:bold;
+    margin-bottom:.2em;
+    padding-top:0;
+    margin-top:0;
+}
+
+.flex-item ul li.description p {
+    font-size:.7em;
+    margin-top:0;
+    padding-top:0;
+}
+
+
+
+/**********************************************************************************************************
+ * FOOTER
+ ***********************************************************************************************************/
+.footer {
+    background:#111;
+    color:#ededed;
+    clear:both;
+    width:100%;
+    padding:1em 0;
+}
+
+.footer-link-div {
+    float:left;
+    height:100%;
+    padding-right:2em;
+}
+
+.footer-link-div:last-child {
+    padding-right:0;
+}
+
+
+.footer-link-div h4 {
+    color:#d1d1d1;
+    font-size:1em;
+}
+
+.footer-link-div ul {
+    padding:0;
+    margin:0;
+    list-style: none;
+}
+
+
+.footer-link-div ul li {
+    padding:.3em 0;
+}
+
+.footer-link-div ul li a {
+    font-size:.7em;
+    color:#ededed;
+}
+
+
+/**********************************************************************************************************
+ * SIZING BREAKPOINTS
+ ***********************************************************************************************************/
+
+/* Large LG */
+@media (min-width: 1200px) {
+
+
+}
+
+/* Medium MD */
+@media(min-width:992px) and (max-width:1200px) {
+
+    .container {
+        width:96%;
+    }
+
+    /*** NAV ***/
+    .nav a,
+    .navbar-nav > li > a {
+        font-size:.9em;
+        padding:2em 0 .3em 0;
+        margin:0 .9em;
+    }
+}
+
+/* Small SM */
+@media(min-width:768px) and (max-width:992px) {
+    .container {
+        width:92%;
+    }
+
+    /*** NAV ***/
+    .nav a,
+    .navbar-nav > li > a {
+        font-size:.75em;
+        padding:1.8em 0 .3em 0;
+        margin:0 .5em;
+    }
+
+    .navbar-nav  li:first-child  a {
+        margin-left:0;
+    }
+    .navbar-nav  li:last-child  a {
+        margin-right:0;
+    }
+
+
+}
+
+@media(max-width:767px) {
+
+
+
+    .marquee-slide-row {
+        padding:0;
+    }
+
+    .marquee-slide-row h1 {
+        font-size:1.8em;
+        line-height: 2em;
+    }
+    .keycloak-logo-div,
+    .keycloak-logo-a {
+        text-align:center;
+    }
+    .keycloak-logo {
+        margin:0 auto;
+        width:40%;
+        height:auto;
+    }
+
+    .announce-box {
+        background: none;
+        border-radius:          0;
+        -moz-border-radius:     0;
+        -webkit-border-radius:  0;
+    }
+
+    ul.announce-ul li a {
+        background:#f5f5f5;
+    }
+
+
+    .features-area .row {
+        padding-top:0;
+        padding-bottom:0;
+    }
+
+    .features-area .row .item {
+        padding:.5em 0 0 0;
+        margin-top:.5em;
+        margin-bottom:.5em;
+        background:#f5f5f5;
+    }
+    .features-area .row .item .symbol span {
+        float:right;
+        margin-right:.3em;
+    }
+
+
+    /* Reduce Flex Item to 2 per row */
+    .flex-item {
+        margin:10px 1% 10px 0;
+        flex:               0 0 49%;
+        -moz-box-flex:      0 0 49%;
+        -webkit-box-flex:   0 0 49%;
+        -webkit-flex:       0 0 49%;
+    }
+}
+
+/* Phone (XS) */
+@media(min-width:480px) and (max-width:768px) {
+
+}
+
+@media(max-width:480px) {
+    .keycloak-logo {
+        width:60%;
+        height:auto;
+    }
+}

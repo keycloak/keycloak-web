@@ -1,0 +1,8 @@
+{
+  "maxNews": 3,
+  "urls": {
+    "blog" : "http://blog.keycloak.org",
+    "source" : "https://github.com/keycloak/keycloak",
+    "issues" : "https://issues.jboss.org/browse/KEYCLOAK"
+  }
+}
