@@ -15,7 +15,7 @@ if [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; th
     chmod 600 web_ssh_keys
     export GIT_SSH_COMMAND="ssh -i $PWD/web_ssh_keys"
 
-    git clone git@github.com:stianst/keycloak.github.io.git
+    git clone git@github.com:keycloak/keycloak.github.io.git
 
     cd keycloak.github.io
 
