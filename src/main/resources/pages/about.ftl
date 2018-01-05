@@ -19,7 +19,7 @@
 
         <p>
             Trying Keycloak is quick and easy. Take a look at the
-            <a href="https://keycloak.gitbooks.io/documentation/getting_started/index.html">Getting Started tutorial</a>
+            <a href="http://www.keycloak.org/docs/latest/getting_started/index.html">Getting Started tutorial</a>
             for details.
         </p>
 
