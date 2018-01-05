@@ -8,14 +8,14 @@ if [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; th
     GIT_HASH=`git rev-parse HEAD`
 
     # Build
-    #mvn clean install exec:java
+    mvn clean install exec:java
 
     # Update Website
     echo $SSH_KEY | base64 -d > web_ssh_keys
     chmod 600 web_ssh_keys
-    export GIT_SSH_COMMAND="ssh -v -i $PWD/web_ssh_keys"
+    export GIT_SSH_COMMAND="ssh -i $PWD/web_ssh_keys"
 
-    git clone git@github.com:stianst/keycloak.github.io.git
+    git clone git@github.com:keycloak/keycloak.github.io.git
 
     cd keycloak.github.io
 
@@ -23,9 +23,11 @@ if [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; th
 
     cp -r ../target/web/* .
 
-    git add --all
-    git commit -m "Updated to $GIT_HASH"
-    git -v push
+    if ! git status | grep 'nothing to commit, working tree clean'; then
+        git add --all
+        git commit -m "Updated to $GIT_HASH"
+        git push
+    fi
 
-    rm web_ssh_keys
+    rm ../web_ssh_keys
 fi
