@@ -8,7 +8,7 @@ if [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; th
     GIT_HASH=`git rev-parse HEAD`
 
     # Build
-    #mvn clean install exec:java
+    mvn clean install exec:java
 
     # Update Website
     echo $SSH_KEY | base64 -d > web_ssh_keys
