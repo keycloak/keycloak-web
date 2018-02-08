@@ -22,6 +22,14 @@
             <tbody>
             <tr>
                 <td>
+                    RH-SSO 7.2
+                </td>
+                <td>
+                    Derived from Keycloak 3.4.3
+                </td>
+            </tr>
+            <tr>
+                <td>
                     RH-SSO 7.1
                 </td>
                 <td>
