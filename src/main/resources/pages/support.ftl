@@ -22,26 +22,26 @@
             <tbody>
             <tr>
                 <td>
-                    RH-SSO 7.2
+                    RH-SSO 7.2.0.GA
                 </td>
                 <td>
-                    Derived from Keycloak 3.4.3
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    RH-SSO 7.1
-                </td>
-                <td>
-                    Derived from Keycloak 2.5.5
+                    Derived from Keycloak 3.4.3.Final
                 </td>
             </tr>
             <tr>
                 <td>
-                    RH-SSO 7.0
+                    RH-SSO 7.1.0.GA
                 </td>
                 <td>
-                    Derived from Keycloak 1.9.8
+                    Derived from Keycloak 2.5.5.Final
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    RH-SSO 7.0.0.GA
+                </td>
+                <td>
+                    Derived from Keycloak 1.9.8.Final
                 </td>
             </tr>
             </tbody>
