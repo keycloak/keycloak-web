@@ -44,7 +44,7 @@
 
         <p>
             If your users authenticate to workstations with Kerberos (LDAP or active directory) they can also be
-            automatically authenticated to Keycloak without having to provider their username and password again after
+            automatically authenticated to Keycloak without having to provide their username and password again after
             they log on to the workstation.
         </p>
 
