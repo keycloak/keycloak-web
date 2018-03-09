@@ -3,14 +3,14 @@
     <i class="fa fa-download" aria-hidden="true"></i>
     ZIP
 </a>
-(<a href="https://downloads.jboss.org/keycloak/${version.version}/${file}.zip.md5" target="_blank">md5</a>)
+(<a href="https://downloads.jboss.org/keycloak/${version.version}/${file}.zip.sha1" target="_blank">sha1</a>, <a href="https://downloads.jboss.org/keycloak/${version.version}/${file}.zip.md5" target="_blank">md5</a>)
 <#if tar>
 <span class="space"></span>
 <a onclick="dl('${category}', '${label}');" href="https://downloads.jboss.org/keycloak/${version.version}/${file}.tar.gz" target="_blank">
     <i class="fa fa-download" aria-hidden="true"></i>
     TAR.GZ
 </a>
-(<a href="https://downloads.jboss.org/keycloak/${version.version}/${file}.tar.gz.md5" target="_blank">md5</a>)
+(<a href="https://downloads.jboss.org/keycloak/${version.version}/${file}.tar.gz.sha1" target="_blank">sha1</a>, <a href="https://downloads.jboss.org/keycloak/${version.version}/${file}.tar.gz.md5" target="_blank">md5</a>)
 </#if>
 </#macro>
 
@@ -21,7 +21,7 @@
     <tr>
         <td style="width: 100px;">Server</td>
         <td>Standalone server distribution</td>
-        <td style="width: 280px;">
+        <td style="width: 370px;">
             <@download category="server" label="standalone" file="keycloak-${version.version}" tar=true />
         </td>
     </tr>
