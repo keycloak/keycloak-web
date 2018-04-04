@@ -244,11 +244,6 @@ a:visited {
 
 }
 
-.navbar-toggle {
-    margin-top: 10px !important;
-    margin-left: 20px !important;
-}
-
 /**********************************************************************************************************
  * PAGES
  ***********************************************************************************************************/
@@ -522,12 +517,14 @@ span.fs.clipboard {
 
 .flex-item ul li.symbol {
     width:20%;
+    margin-right: 8px;
     height:100%;
+
     text-align: right;
 }
 
 .flex-item ul li.description {
-    width:75%;
+    width:70%;
 
     text-align: left;
 }
@@ -644,7 +641,17 @@ span.fs.clipboard {
 
 @media(max-width:767px) {
 
+    .symbol .fa {
+        font-size: 1.5em;
+    }
 
+    .navbar-toggle {
+        margin-top: 15px !important;
+    }
+
+    .dropup {
+        display: none;
+    }
 
     .marquee-slide-row {
         padding:0;
