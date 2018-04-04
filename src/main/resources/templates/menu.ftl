@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3 col-sm-3 col-xs-12 keycloak-logo-div navbar-header">
-                <button type="button" class=" pull-left  navbar-toggle collapsed" data-toggle="collapse" data-target="#mainBtnTarget" aria-expanded="false">
+                <button type="button" class=" pull-right  navbar-toggle collapsed" data-toggle="collapse" data-target="#mainBtnTarget" aria-expanded="false">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
