@@ -7,6 +7,13 @@
     <div class="container">
         <h1>Community</h1>
 
+        <h2>Extensions</h2>
+
+        <p>
+            For a list of community maintained extensions Keycloak check out the <a href="extensions.html">Extensions</a>
+            page.
+        </p>
+
         <h2>Users</h2>
 
         <h3>Help</h3>
