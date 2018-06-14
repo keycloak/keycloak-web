@@ -10,8 +10,7 @@
         <h2>Extensions</h2>
 
         <p>
-            For a list of community maintained extensions Keycloak check out the <a href="extensions.html">Extensions</a>
-            page.
+            For a list of community maintained extensions check out the <a href="extensions.html">Extensions</a> page.
         </p>
 
         <h2>Users</h2>

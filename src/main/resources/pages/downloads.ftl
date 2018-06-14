@@ -10,8 +10,7 @@
         <p>${version.version} - <a href="${root}docs/latest/release_notes/index.html">Release notes</a></p>
 
         <p>
-            For a list of community maintained extensions Keycloak check out the <a href="extensions.html">Extensions</a>
-            page.
+            For a list of community maintained extensions check out the <a href="extensions.html">Extensions</a> page.
         </p>
 
         <#include "../templates/downloads-${version.downloadTemplate}.ftl">
