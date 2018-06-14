@@ -5,16 +5,23 @@
 
 <div class="page-section">
     <div class="container">
-        <h1>Downloads - ${version.version}</h1>
+        <h1>Downloads</h1>
+
+        <p>${version.version} - <a href="${root}docs/latest/release_notes/index.html">Release notes</a></p>
+
+        <p>
+            For a list of community maintained extensions Keycloak check out the <a href="extensions.html">Extensions</a>
+            page.
+        </p>
+
+        <#include "../templates/downloads-${version.downloadTemplate}.ftl">
 
         <p>
         <#if !version.final>
             This is a <b>release candidate</b>. The latest final release is <a href="archive/downloads-${versions[1].versionShort}.html">${versions[1].versionShort}</a>.
         </#if>
-            For older releases go <a href="downloads-archive.html">here</a>.
+            For previous releases go <a href="downloads-archive.html">here</a>.
         </p>
-
-        <#include "../templates/downloads-${version.downloadTemplate}.ftl">
     </div>
 </div>
 

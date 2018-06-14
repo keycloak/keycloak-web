@@ -5,7 +5,11 @@
 
 <div class="page-section">
     <div class="container">
-        <h1>Documentation - ${version.versionShorter}</h1>
+        <h1>Documentation</h1>
+
+        <p>${version.version} - <a href="${root}docs/latest/release_notes/index.html">Release notes</a></p>
+
+        <#include "../templates/documentation-${version.documentationTemplate}.ftl">
 
         <p>
         <#if !version.final>
@@ -13,8 +17,6 @@
         </#if>
             For older releases go <a href="documentation-archive.html">here</a>.
         </p>
-
-        <#include "../templates/documentation-${version.documentationTemplate}.ftl">
     </div>
 </div>
 

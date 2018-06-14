@@ -1,0 +1,8 @@
+{
+    "name": "Japanse documentation translation",
+    "description": "Complete Japanse translation of the original Keycloak documentation",
+    "maintainers": [
+        "???"
+    ],
+    "website": "http://keycloak-documentation.openstandia.jp/"
+}

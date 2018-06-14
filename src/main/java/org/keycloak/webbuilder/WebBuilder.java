@@ -23,11 +23,13 @@ public class WebBuilder {
     private final File pagesDir;
     private final File resourcesDir;
     private final File versionsDir;
+    private final File extensionsDir;
     private final File newsDir;
     private final File targetDir;
     private Map<String, Object> map;
     private List<Version> versions;
     private List<Version> versionsShorter;
+    private List<Extension> extensions;
     private List<News> news;
 
     public static void main(String[] args) throws Exception {
@@ -47,6 +49,7 @@ public class WebBuilder {
         pagesDir = new File(webSrcDir, "pages");
         resourcesDir = new File(webSrcDir, "resources");
         versionsDir = new File(webSrcDir, "versions");
+        extensionsDir = new File(webSrcDir, "extensions");
         newsDir = new File(webSrcDir, "news");
         targetDir = new File(rootDir, "target/web").getAbsoluteFile();
 
@@ -84,6 +87,16 @@ public class WebBuilder {
         }
         Collections.sort(versions);
         map.put("versions", versions);
+
+        File[] extensionFiles = extensionsDir.listFiles((dir, name) -> {
+            return name.endsWith(".json");
+        });
+        extensions = new LinkedList<>();
+        for (File extensionFile : extensionFiles) {
+            extensions.add(mapper.readValue(extensionFile, Extension.class));
+        }
+        Collections.sort(extensions);
+        map.put("extensions", extensions);
 
         versionsShorter = getVersionsShorter(versions);
         map.put("versionsShorter", versionsShorter);
