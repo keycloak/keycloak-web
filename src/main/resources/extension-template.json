@@ -9,11 +9,3 @@
     "documentation": "Documentation",
     "source": "Source code"
 }
-
-name="Japanse documentation translation"
-description="Complete Japanse translation of the original Keycloak documentation"
-maintainers=["missing"]
-website="http://keycloak-documentation.openstandia.jp/"
-download=""
-documentation=""
-source=""
