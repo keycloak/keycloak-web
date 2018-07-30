@@ -34,7 +34,7 @@
         ga('send', 'pageview');
 
     </script>
-    <script id="dpal" src=“https://www.redhat.com/dtm.js" type="text/javascript"></script>
+    <script id="dpal" src="//www.redhat.com/dtm.js" type="text/javascript"></script>
 </head>
 <body onload="prettyPrint()">
 <div id="wrap">
