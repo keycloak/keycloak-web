@@ -13,5 +13,11 @@
             </div>
         </div>
     </div>
+
+    <script type="text/javascript">
+        if (("undefined" !== typeof _satellite) && ("function" === typeof _satellite.pageBottom)) {
+            _satellite.pageBottom();
+        }
+    </script>
   </body>
 </html>
