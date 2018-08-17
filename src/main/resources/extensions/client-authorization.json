@@ -1,6 +1,6 @@
 {
     "name": "Client Authorization",
-    "description": "The purpose of this module is to add authorization capabilities to keycloak for a given client, whether the client itself has the capability to handle authorization or not. When installed, it allows the use of the Authorization client tab and a specific resource name (Keycloak Client Resource) to define the policies and permissions to grant access to the client. The effect is binary: either the client is allowed access to the client, and will recieve a token, or is not and will recieve an 'forbidden' message. Either way, the user is authenticated in keycloak and will have SSO access to the other clients for which they are authorized.",
+    "description": "The purpose of this module is to add authorization capabilities to keycloak for a given client, whether the client itself has the capability to handle authorization or not. When installed, it allows the use of a client's Authorization tab and a specific resource name (Keycloak Client Resource) to define the policies and permissions to grant access to the client. The effect is binary: either the client is allowed access to the client and will recieve a token, or is not and will recieve a 'forbidden' message. Either way, the user is authenticated in keycloak and will have SSO access to the other clients for which they are authorized.",
     "maintainers": [
         "cloudtrust","AlistairDoswald","yelhouti"
     ],
