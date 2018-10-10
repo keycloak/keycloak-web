@@ -11,6 +11,10 @@ public class Version implements  Comparable<Version> {
 
     private String downloadTemplate;
 
+    private String wildflyVersionAdapter;
+
+    private String wildflyVersionAdapterDeprecated;
+
     private boolean latest;
 
     public boolean isFinal() {
@@ -49,6 +53,22 @@ public class Version implements  Comparable<Version> {
 
     public void setDownloadTemplate(String downloadTemplate) {
         this.downloadTemplate = downloadTemplate;
+    }
+
+    public String getWildflyVersionAdapter() {
+        return wildflyVersionAdapter;
+    }
+
+    public void setWildflyVersionAdapter(String wildflyVersionAdapter) {
+        this.wildflyVersionAdapter = wildflyVersionAdapter;
+    }
+
+    public String getWildflyVersionAdapterDeprecated() {
+        return wildflyVersionAdapterDeprecated;
+    }
+
+    public void setWildflyVersionAdapterDeprecated(String wildflyVersionAdapterDeprecated) {
+        this.wildflyVersionAdapterDeprecated = wildflyVersionAdapterDeprecated;
     }
 
     public String getDocumentationVersion() {
