@@ -122,8 +122,8 @@
                         <table class="table-downloads-inner">
                             <tr>
                                 <td>
-                                   13<br />
-                                   11, 10, 9 <b>*DEPRECATED*</b>
+                                    ${version.wildflyVersionAdapter}<br />
+                                    ${version.wildflyVersionAdapterDeprecated} <b>*DEPRECATED*</b>
                                 </td>
                                 <td>
                                     <@download category="adapter" label="wildfly" file="adapters/keycloak-oidc/keycloak-wildfly-adapter-dist-${version.version}" tar=true />
@@ -234,8 +234,8 @@
                         <table class="table-downloads-inner">
                             <tr>
                                 <td>
-                                   13<br />
-                                   11, 10, 9 <b>*DEPRECATED*</b>
+                                    ${version.wildflyVersionAdapter}<br />
+                                    ${version.wildflyVersionAdapterDeprecated} <b>*DEPRECATED*</b>
                                 </td>
                                 <td>
                                     <@download category="adapter-saml" label="wildfly" file="adapters/saml/keycloak-saml-wildfly-adapter-dist-${version.version}" tar=true />
