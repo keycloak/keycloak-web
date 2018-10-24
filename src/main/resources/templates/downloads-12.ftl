@@ -29,7 +29,7 @@
     </tr>
     <tr>
         <td>Overlay <b>*DEPRECATED*</b></td>
-        <td>Server add-on for WildFly. Not recommended in production.</td>
+        <td>Server add-on for WildFly. Not recommended in production. <b>*DEPRECATED*</b></td>
         <td>
             <@download category="overlay" label="standalone" file="keycloak-overlay-${version.version}" />
         </td>
