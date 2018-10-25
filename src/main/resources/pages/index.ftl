@@ -7,6 +7,7 @@
             <div class="col-xs-12">
                 <h1>Open Source Identity and Access Management</h1>
                 <h2>For Modern Applications and Services</h2>
+                <div class="learn"><a class="btn btn-primary" href="https://github.com/keycloak/keycloak-demo">Learn Keycloak Basics</a></div>
             </div>
         </div>
     </div>
