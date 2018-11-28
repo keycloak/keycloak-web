@@ -44,19 +44,19 @@
 <tr>
     <td>Linux</td>
     <td style="width: 300px;">
-        <@download category="gatekeeper" label="linux" file="gatekeeper/keycloak-gatekeeper-linux-amd64.tar.gz" zip=false />
+        <@download category="gatekeeper" label="linux" file="gatekeeper/keycloak-gatekeeper-linux-amd64" zip=false />
     </td>
 </tr>
 <tr>
     <td>Windows</td>
     <td>
-        <@download category="gatekeeper" label="linux" file="gatekeeper/keycloak-gatekeeper-windows-amd64.tar.gz" zip=false />
+        <@download category="gatekeeper" label="linux" file="gatekeeper/keycloak-gatekeeper-windows-amd64" zip=false />
     </td>
 </tr>
 <tr>
     <td>Darwin</td>
     <td>
-        <@download category="gatekeeper" label="linux" file="gatekeeper/keycloak-gatekeeper-darwin-amd64.tar.gz" zip=false />
+        <@download category="gatekeeper" label="linux" file="gatekeeper/keycloak-gatekeeper-darwin-amd64" zip=false />
     </td>
 </tr>
 </tbody>
