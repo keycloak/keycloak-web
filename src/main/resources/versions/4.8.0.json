@@ -1,0 +1,7 @@
+{
+  "version": "4.8.0.Final",
+  "documentationTemplate": 6,
+  "downloadTemplate": 12,
+  "wildflyVersionAdapter": "14",
+  "wildflyVersionAdapterDeprecated": "13, 11, 10, 9"
+}
