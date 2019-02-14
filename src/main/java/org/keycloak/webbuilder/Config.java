@@ -5,9 +5,18 @@ package org.keycloak.webbuilder;
  */
 public class Config {
 
+    private int maxBlog;
     private int maxNews;
 
     private Urls urls;
+
+    public int getMaxBlog() {
+        return maxBlog;
+    }
+
+    public void setMaxBlog(int maxBlog) {
+        this.maxBlog = maxBlog;
+    }
 
     public int getMaxNews() {
         return maxNews;
