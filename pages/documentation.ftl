@@ -11,12 +11,12 @@
 
         <#include "../templates/documentation-${version.documentationTemplate}.ftl">
 
-        <p>
+
         <#if !version.final>
-            This is a <b>release candidate</b>. The latest final release is <a href="archive/documentation-${versions[1].versionShorter}.html">${versions[1].versionShorter}</a>.
+            <p>This is a <b>release candidate</b>. The latest final release is <a href="archive/documentation-${versions[1].versionShorter}.html">${versions[1].versionShorter}</a>.</p>
         </#if>
-            For older releases go <a href="documentation-archive.html">here</a>.
-        </p>
+
+        <h3>For older releases go <a href="documentation-archive.html">here</a>.</h3>
     </div>
 </div>
 

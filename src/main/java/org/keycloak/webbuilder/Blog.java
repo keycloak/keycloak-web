@@ -12,17 +12,23 @@ public class Blog {
 
     private final String title;
 
+    private final String author;
+
+    private final boolean release;
+
     private final boolean publish;
 
     private final String template;
 
     private final Map<String, Object> map = new HashMap<>();
 
-    public Blog(Date date, String name, String title, boolean publish, String template) {
+    public Blog(Date date, String name, String title, String author, boolean publish, boolean release, String template) {
         this.date = date;
         this.name = name;
         this.title = title;
+        this.author = author;
         this.publish = publish;
+        this.release = release;
         this.template = template;
     }
 
@@ -34,12 +40,20 @@ public class Blog {
         return title;
     }
 
+    public String getAuthor() {
+        return author;
+    }
+
     public String getFilename() {
         return title.toLowerCase().replace(" ", "-").replace(".", "").replace("?", "").replace("!", "") + ".html";
     }
 
     public boolean isPublish() {
         return publish;
+    }
+
+    public boolean isRelease() {
+        return release;
     }
 
     public String getTemplate() {

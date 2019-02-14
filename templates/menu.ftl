@@ -21,7 +21,7 @@
                     <li><a href="${root}security.html">Security</a></li>
                     <li><a href="${root}support.html">Support</a></li>
                     <li><a href="${root}search.html">Search</a></li>
-                    <li><a href="${config.urls.blog}" target="_blank">Blog <i class="fa fa-external-link" aria-hidden="true"></i></a></li>
+                    <li><a href="${root}blog.html">Blog</a></li>
                 </ul>
             </div>
         </div>

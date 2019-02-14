@@ -1,4 +1,6 @@
 <#assign title = "Blog">
+<#assign includeRelease = true>
+<#assign displayed = 0>
 
 <#include "../templates/header.ftl">
 <#include "../templates/menu.ftl">
@@ -6,18 +8,28 @@
 <div class="page-section">
     <div class="container">
         <#list blogs as blog>
-            <h1><a href="${root}${blog.path}/${blog.filename}">${blog.title}</a></h1>
-            <p class="blog-date">${blog.date?string["EEEE, MMMM dd YYYY"]}<#if blog.author??>, posted by ${blog.author}</#if></p>
+            <#if !blog.release || includeRelease>
+                <h1><a href="${root}${blog.path}/${blog.filename}">${blog.title}</a></h1>
 
-            <#include "../${blog.template}">
+                <p class="blog-date">${blog.date?string["EEEE, MMMM dd YYYY"]}<#if blog.author??>, posted by ${blog.author}</#if></p>
 
-            <hr/>
+                <div class="blog blog-container">
+                    <#include "../${blog.template}">
+                </div>
 
-            <#if blog?counter == config.maxBlog>
+                <#if blog.release>
+                    <#assign includeRelease = false>
+                </#if>
+
+                <#assign displayed = displayed + 1>
+            </#if>
+
+            <#if displayed == config.maxBlog>
                 <#break>
             </#if>
         </#list>
-        For older entries go <a href="blog-archive.html">here</a>.
+
+        <h3>For older entries go <a href="blog-archive.html">here</a>.</h3>
     </div>
 </div>
 <#include "../templates/footer.ftl">

@@ -15,12 +15,11 @@
 
         <#include "../templates/downloads-${version.downloadTemplate}.ftl">
 
-        <p>
         <#if !version.final>
-            This is a <b>release candidate</b>. The latest final release is <a href="archive/downloads-${versions[1].versionShort}.html">${versions[1].versionShort}</a>.
+            <p>This is a <b>release candidate</b>. The latest final release is <a href="archive/downloads-${versions[1].versionShort}.html">${versions[1].versionShort}</a>.</p>
         </#if>
-            For previous releases go <a href="downloads-archive.html">here</a>.
-        </p>
+
+        <h3>For previous releases go <a href="downloads-archive.html">here</a>.</h3>
     </div>
 </div>
 

@@ -160,6 +160,13 @@ hr.divider {
     padding-top: 10px;
 }
 
+div.blog-container {
+    border: 1px solid #eeeeee;
+    max-height: 400px;
+    padding: 20px;
+    overflow: auto;
+}
+
 p.blog-date {
     margin-bottom: 20px;
     margin-top: -10px;
@@ -167,8 +174,20 @@ p.blog-date {
 }
 
 div.blog img {
+    border: 1px solid #eeeeee;
+    -moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, .1);
+    -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, .1);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, .1);
     margin: 20px 0;
+    padding: 10px;
+}
 
+div.blog ul {
+    margin: 20px 0;
+}
+
+div.blog ul ul {
+    margin: 0;
 }
 
 /**********************************************************************************************************
