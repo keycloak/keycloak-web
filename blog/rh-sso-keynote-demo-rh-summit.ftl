@@ -12,6 +12,6 @@ publish = true
 
 <p>The frontend of the demo was the simple mobile game. RH-SSO was used at the very first stage to authenticate users to the mobile game. Each attendee had an opportunity to try it by yourself. In total, we had 1200 players of the game.</p>
 
-<img src="images/cross-dc-blog-architecture-rhsso.png"/>
+<img src="${blogImages}/cross-dc-blog-architecture-rhsso.png"/>
 
 <p>With this setup, every cloud is aware just about the users and sessions created on itself. This is fine with sticky session, but it won’t work for failover scenarios in case if one of the 3 clouds is broken/removed. There are also other issues with it - for example that admins and users see just sessions created on particular cloud. There are also potential security issues. For example when admin disables user on one cloud, user would still be enabled on other clouds as changes to user won’t be propagated to other clouds.</p>

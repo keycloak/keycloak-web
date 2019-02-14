@@ -35,10 +35,19 @@ public class Config {
     }
 
     public static class Urls {
+        private String home;
         private String docs;
         private String blog;
         private String source;
         private String issues;
+
+        public String getHome() {
+            return home;
+        }
+
+        public void setHome(String home) {
+            this.home = home;
+        }
 
         public String getDocs() {
             return docs;
