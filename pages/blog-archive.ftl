@@ -26,7 +26,7 @@
             </#if>
 
             <ul>
-                <li><a href="blog/${blog.filename}">${blog.title}</a></li>
+                <li><a href="${blog.path}/${blog.filename}">${blog.title}</a></li>
             </ul>
         </#list>
     </div>
