@@ -7,9 +7,6 @@ if [ "$VERSION" == "" ]; then
 fi
 
 VERSION_NAME=`echo $VERSION | sed 's/.Final//' | sed 's/.CR[[:digit:]]//'`
-NEWS_NAME=`date +%F`
+DATE=`date +%F`
 
-sed "s/VERSION/$VERSION/" src/main/resources/version-template.json > src/main/resources/versions/$VERSION_NAME.json
-sed "s/VERSION/$VERSION/" src/main/resources/news-template.json > src/main/resources/news/$NEWS_NAME.json
-
-
+cat version-template.json | sed "s/VERSION/$VERSION/" | sed "s/DATE/$DATE/" > versions/$VERSION_NAME.json

@@ -1,7 +1,0 @@
-{
-  "version": "4.4.0.Final",
-  "documentationTemplate": 6,
-  "downloadTemplate": 11,
-  "wildflyVersionAdapter": "13",
-  "wildflyVersionAdapterDeprecated": "11, 10, 9"
-}
