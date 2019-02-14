@@ -1,4 +1,5 @@
 {
+  "maxBlog": 5,
   "maxNews": 3,
   "urls": {
     "blog" : "http://blog.keycloak.org",

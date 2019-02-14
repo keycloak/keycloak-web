@@ -5,11 +5,9 @@ import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateExceptionHandler;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.Writer;
+import java.io.*;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -31,6 +29,7 @@ public class WebBuilder {
     private final File versionsDir;
     private final File extensionsDir;
     private final File newsDir;
+    private final File blogDir;
     private final File targetDir;
 
     private Map<String, Object> map;
@@ -38,6 +37,7 @@ public class WebBuilder {
     private List<Version> versionsShorter;
     private List<Extension> extensions;
     private List<News> news;
+    private List<Blog> blogs;
 
     public static void main(String[] args) throws Exception {
         WebBuilder builder = new WebBuilder(new File(System.getProperty("user.dir")));
@@ -65,6 +65,7 @@ public class WebBuilder {
         versionsDir = new File(webSrcDir, "versions");
         extensionsDir = new File(webSrcDir, "extensions");
         newsDir = new File(webSrcDir, "news");
+        blogDir = new File(webSrcDir, "blog");
         targetDir = new File(rootDir, "target/web").getAbsoluteFile();
 
         cfg = new Configuration(Configuration.VERSION_2_3_24);
@@ -119,6 +120,7 @@ public class WebBuilder {
         map.put("version", versions.get(0));
 
         loadNews(config);
+        loadBlog(config);
 
         System.out.println("Target directory:   " + targetDir.getAbsolutePath());
         System.out.println();
@@ -151,9 +153,43 @@ public class WebBuilder {
         map.put("news", news);
     }
 
+    private void loadBlog(Config config) throws Exception {
+        blogs = new LinkedList<>();
+
+        File[] blogFiles = blogDir.listFiles((dir, name) -> name.endsWith(".ftl"));
+        if (blogFiles != null) {
+            for (File f : blogFiles) {
+                BufferedReader br = new BufferedReader(new FileReader(f));
+                String l = br.readLine();
+                if (!l.trim().equals("<#--")) {
+                    throw new Exception("Invalid starting line " + l);
+                }
+                Properties p = new Properties();
+                for (l = br.readLine(); l != null && !l.trim().equals("-->"); l = br.readLine()) {
+                    String[] split = l.split("=");
+                    p.put(split[0].trim(), split[1].trim());
+                }
+
+                Blog blog = new Blog(dateIn.parse(p.getProperty("date")), p.getProperty("title"), Boolean.parseBoolean(p.getProperty("publish")), "blog/" + f.getName());
+                blogs.add(blog);
+            }
+        }
+
+        for (Version v : versions) {
+            Blog blog = new Blog(v.getDate(), "Keycloak " + v.getVersion() + " released", true, "templates/blog-release.ftl");
+            blog.getMap().put("version", v);
+            blogs.add(blog);
+        }
+
+
+        blogs.sort(Comparator.comparing(Blog::getDate).reversed());
+        map.put("blogs", blogs);
+    }
+
     public void copyAssets() throws Exception {
         System.out.println("Copying resources");
         FileUtils.copyDirectory(resourcesDir, new File(targetDir, "resources"));
+        FileUtils.copyDirectory(new File(blogDir, "images"), new File(new File(targetDir, "blog"), "images"));
     }
 
     public void createPages() throws Exception {
@@ -193,6 +229,22 @@ public class WebBuilder {
             versionMap.put("version", version);
 
             writeFile(versionMap, "templates/documentation-archive-version.ftl", archiveDir, "documentation-" + version.getVersionShorter() + ".html");
+        }
+
+        File blogDir = new File(targetDir, "blog");
+        if (!blogDir.isDirectory()) {
+            blogDir.mkdir();
+        }
+
+        for (Blog blog : blogs) {
+            if (blog.isPublish()) {
+                HashMap<String, Object> blogMap = new HashMap<>(map);
+                blogMap.putAll(blog.getMap());
+
+                blogMap.put("blog", blog);
+
+                writeFile(blogMap, "templates/blog-entry.ftl", blogDir, blog.getFilename());
+            }
         }
     }
 
