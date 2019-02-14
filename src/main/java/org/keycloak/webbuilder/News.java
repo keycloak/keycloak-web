@@ -1,21 +1,23 @@
 package org.keycloak.webbuilder;
 
+import java.util.Date;
+
 /**
  * @author <a href="mailto:sthorger@redhat.com">Stian Thorgersen</a>
  */
 public class News {
 
-    private String date;
+    private Date date;
 
     private String title;
 
     private String link;
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 

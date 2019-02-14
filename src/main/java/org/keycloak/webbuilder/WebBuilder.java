@@ -6,8 +6,12 @@ import freemarker.template.Template;
 import freemarker.template.TemplateExceptionHandler;
 import org.apache.commons.io.FileUtils;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -17,15 +21,18 @@ import java.util.*;
 public class WebBuilder {
 
     private static final DateFormat dateIn = new SimpleDateFormat("yyyy-MM-dd");
-    private static final DateFormat dateOut = new SimpleDateFormat("dd MMM");
+    private static final ObjectMapper mapper = new ObjectMapper();
 
     private final Configuration cfg;
+
+    private final File webSrcDir;
     private final File pagesDir;
     private final File resourcesDir;
     private final File versionsDir;
     private final File extensionsDir;
     private final File newsDir;
     private final File targetDir;
+
     private Map<String, Object> map;
     private List<Version> versions;
     private List<Version> versionsShorter;
@@ -36,15 +43,22 @@ public class WebBuilder {
         WebBuilder builder = new WebBuilder(new File(System.getProperty("user.dir")));
 
         builder.clean();
-        System.out.println("");
+        System.out.println();
+
         builder.copyAssets();
-        System.out.println("");
+        System.out.println();
+
         builder.createPages();
-        System.out.println("");
+        System.out.println();
+
+        System.out.println("Built:              " + new File(builder.targetDir, "index.html").toURI().toString());
+        System.out.println();
     }
 
     public WebBuilder(File rootDir) throws Exception {
-        File webSrcDir = new File(rootDir, "src/main/resources");
+        webSrcDir = rootDir;
+
+        System.out.println("Building from:      " + webSrcDir.getAbsolutePath());
 
         pagesDir = new File(webSrcDir, "pages");
         resourcesDir = new File(webSrcDir, "resources");
@@ -73,8 +87,7 @@ public class WebBuilder {
     private void loadConfig() throws Exception {
         map = new HashMap<>();
 
-        ObjectMapper mapper = new ObjectMapper();
-        Config config = mapper.readValue(getClass().getResourceAsStream("/config.json"), Config.class);
+        Config config = mapper.readValue(new File(webSrcDir,"/config.json"), Config.class);
         map.put("root", "");
         map.put("config", config);
 
@@ -105,23 +118,37 @@ public class WebBuilder {
 
         map.put("version", versions.get(0));
 
-        File[] newsFiles = newsDir.listFiles((dir, name) -> {
-            return name.endsWith(".json");
-        });
-        Arrays.sort(newsFiles, (o1, o2) -> o2.getName().compareTo(o1.getName()));
+        loadNews(config);
+
+        System.out.println("Target directory:   " + targetDir.getAbsolutePath());
+        System.out.println();
+    }
+
+    private void loadNews(Config config) throws IOException, ParseException {
         news = new LinkedList<>();
-        for (int i = 0; i < newsFiles.length && i < config.getMaxNews(); i++) {
-            News news = mapper.readValue(newsFiles[i], News.class);
 
-            Date date = dateIn.parse(newsFiles[i].getName());
-            news.setDate(dateOut.format(date));
-
-            this.news.add(news);
+        File[] newsFiles = newsDir.listFiles((dir, name) -> name.endsWith(".json"));
+        if (newsFiles != null) {
+            for (int i = 0; i < newsFiles.length && i < config.getMaxNews(); i++) {
+                News news = mapper.readValue(newsFiles[i], News.class);
+                news.setDate(dateIn.parse(newsFiles[i].getName()));
+                this.news.add(news);
+            }
         }
-        map.put("news", news);
 
-        System.out.println("Target directory: " + targetDir.getAbsolutePath());
-        System.out.println("");
+        for (Version v : versions) {
+            if (v.getDate() != null) {
+                News news = new News();
+                news.setDate(v.getDate());
+                news.setTitle("Keycloak " + v.getVersion() + " released");
+                news.setLink("downloads.html");
+                this.news.add(news);
+            }
+        }
+
+        news.sort(Comparator.comparing(News::getDate).reversed());
+        news = news.subList(0, config.getMaxNews());
+        map.put("news", news);
     }
 
     public void copyAssets() throws Exception {
@@ -133,7 +160,7 @@ public class WebBuilder {
         map.put("archive", false);
 
         System.out.println("Creating pages");
-        System.out.println("");
+        System.out.println();
 
         File[] pageFiles = pagesDir.listFiles((dir, name) -> {
             return name.endsWith(".ftl");

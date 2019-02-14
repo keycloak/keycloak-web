@@ -1,9 +1,13 @@
 package org.keycloak.webbuilder;
 
+import java.util.Date;
+
 /**
  * @author <a href="mailto:sthorger@redhat.com">Stian Thorgersen</a>
  */
 public class Version implements  Comparable<Version> {
+
+    private Date date;
 
     private String version;
 
@@ -29,6 +33,14 @@ public class Version implements  Comparable<Version> {
     public String getVersionShorter() {
         String[] split = version.split("\\.");
         return split[0] + "." + split[1];
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public String getVersion() {
