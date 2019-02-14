@@ -249,7 +249,7 @@ public class WebBuilder {
             }
         }
 
-        writeFile(map, "templates/feed.ftl", targetDir, "feed");
+        writeFile(map, "templates/rss.ftl", targetDir, "rss.xml");
     }
 
     private void writeFile(Map<String, Object> map, String template, File targetDir, String output) throws Exception {
