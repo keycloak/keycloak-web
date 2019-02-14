@@ -6,7 +6,7 @@
 <div class="page-section">
     <div class="container blog">
         <h1>${blog.title}</h1>
-        <p class="blog-date">${blog.date?string["EEEE, MMMM dd, YYYY"]}</p>
+        <p class="blog-date">${blog.date?string["EEEE, MMMM dd YYYY"]}<#if blog.author??>, posted by ${blog.author}</#if></p>
 
         <#include "../${blog.template}">
     </div>

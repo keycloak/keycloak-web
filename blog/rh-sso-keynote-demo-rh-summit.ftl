@@ -2,6 +2,7 @@
 title = Red Hat Single Sign-On in Keynote demo on Red Hat Summit!
 date = 2018-06-17
 publish = true
+author = Marek Posolda
 -->
 
 <p>Red Hat Summit is one of the most important events during the year. Many geeks, Red Hat employees and customers have great opportunity to meet, learn new things and attend lots of interesting presentations and trainings. During the summit this year, there were few breakout sessions, which were solely about Keycloak and Red Hat SSO. You can take a look at this blogpost for more details.</p>

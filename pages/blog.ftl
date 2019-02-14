@@ -6,8 +6,8 @@
 <div class="page-section">
     <div class="container">
         <#list blogs as blog>
-            <h1>${blog.title}</h1>
-            <p class="blog-date">${blog.date?string["EEEE, MMMM dd, YYYY"]}</p>
+            <h1><a href="${root}${blog.path}/${blog.filename}">${blog.title}</a></h1>
+            <p class="blog-date">${blog.date?string["EEEE, MMMM dd YYYY"]}<#if blog.author??>, posted by ${blog.author}</#if></p>
 
             <#include "../${blog.template}">
 

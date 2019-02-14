@@ -18,7 +18,10 @@ import java.util.*;
  */
 public class WebBuilder {
 
-    private static final DateFormat dateIn = new SimpleDateFormat("yyyy-MM-dd");
+    public static final DateFormat dateIn = new SimpleDateFormat("yyyy-MM-dd");
+    public static final DateFormat dateYear = new SimpleDateFormat("yyyy");
+    public static final DateFormat dateMonth = new SimpleDateFormat("MM");
+
     private static final ObjectMapper mapper = new ObjectMapper();
 
     private final Configuration cfg;
@@ -89,10 +92,15 @@ public class WebBuilder {
         map = new HashMap<>();
 
         Config config = mapper.readValue(new File(webSrcDir,"/config.json"), Config.class);
+        if (System.getProperty("publish") == null) {
+            config.getUrls().setHome(targetDir.toURI().toString());
+        }
+
+
         map.put("root", "");
         map.put("config", config);
         map.put("home", config.getUrls().getHome());
-        map.put("blogImages", config.getUrls().getHome() + "/blog/images");
+        map.put("blogImages", config.getUrls().getHome() + "/resources/images/blog");
 
         File[] versionFiles = versionsDir.listFiles((dir, name) -> {
             return name.endsWith(".json");
@@ -172,13 +180,13 @@ public class WebBuilder {
                     p.put(split[0].trim(), split[1].trim());
                 }
 
-                Blog blog = new Blog(dateIn.parse(p.getProperty("date")), p.getProperty("title"), Boolean.parseBoolean(p.getProperty("publish")), "blog/" + f.getName());
+                Blog blog = new Blog(dateIn.parse(p.getProperty("date")), f.getName().replace(".html", "") , p.getProperty("title"), Boolean.parseBoolean(p.getProperty("publish")), "blog/" + f.getName());
                 blogs.add(blog);
             }
         }
 
         for (Version v : versions) {
-            Blog blog = new Blog(v.getDate(), "Keycloak " + v.getVersion() + " released", true, "templates/blog-release.ftl");
+            Blog blog = new Blog(v.getDate(), "keycloak-" + v.getVersion().replace(".", "") + "-released", "Keycloak " + v.getVersion() + " released", true, "templates/blog-release.ftl");
             blog.getMap().put("version", v);
             blogs.add(blog);
         }
@@ -190,8 +198,11 @@ public class WebBuilder {
 
     public void copyAssets() throws Exception {
         System.out.println("Copying resources");
-        FileUtils.copyDirectory(resourcesDir, new File(targetDir, "resources"));
-        FileUtils.copyDirectory(new File(blogDir, "images"), new File(new File(targetDir, "blog"), "images"));
+
+        File targetResourcesDir = new File(targetDir, "resources");
+
+        FileUtils.copyDirectory(resourcesDir, targetResourcesDir);
+        FileUtils.copyDirectory(new File(blogDir, "images"), new File(new File(targetResourcesDir, "images"), "blog"));
     }
 
     public void createPages() throws Exception {
@@ -233,19 +244,17 @@ public class WebBuilder {
             writeFile(versionMap, "templates/documentation-archive-version.ftl", archiveDir, "documentation-" + version.getVersionShorter() + ".html");
         }
 
-        File blogDir = new File(targetDir, "blog");
-        if (!blogDir.isDirectory()) {
-            blogDir.mkdir();
-        }
-
         for (Blog blog : blogs) {
             if (blog.isPublish()) {
                 HashMap<String, Object> blogMap = new HashMap<>(map);
                 blogMap.putAll(blog.getMap());
-
+                blogMap.put("root", "../../");
                 blogMap.put("blog", blog);
 
-                writeFile(blogMap, "templates/blog-entry.ftl", blogDir, blog.getFilename());
+                File dir = new File(targetDir, blog.getPath());
+                dir.mkdirs();
+
+                writeFile(blogMap, "templates/blog-entry.ftl", dir, blog.getFilename());
             }
         }
 
