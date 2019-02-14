@@ -91,6 +91,8 @@ public class WebBuilder {
         Config config = mapper.readValue(new File(webSrcDir,"/config.json"), Config.class);
         map.put("root", "");
         map.put("config", config);
+        map.put("home", config.getUrls().getHome());
+        map.put("blogImages", config.getUrls().getHome() + "/blog/images");
 
         File[] versionFiles = versionsDir.listFiles((dir, name) -> {
             return name.endsWith(".json");
@@ -246,6 +248,8 @@ public class WebBuilder {
                 writeFile(blogMap, "templates/blog-entry.ftl", blogDir, blog.getFilename());
             }
         }
+
+        writeFile(map, "templates/feed.ftl", targetDir, "feed");
     }
 
     private void writeFile(Map<String, Object> map, String template, File targetDir, String output) throws Exception {
