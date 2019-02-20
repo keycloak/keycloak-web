@@ -3,6 +3,7 @@ title = Keycloak and Istio
 date = 2018-02-26
 publish = true
 author = Sébastien Blanc
+category = Istio
 -->
 
 <p>This short blog post is to share the first trials of combining Keycloak with Istio.</p>

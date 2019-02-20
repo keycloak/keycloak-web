@@ -180,13 +180,13 @@ public class WebBuilder {
                     p.put(split[0].trim(), split[1].trim());
                 }
 
-                Blog blog = new Blog(dateIn.parse(p.getProperty("date")), f.getName().replace(".html", "") , p.getProperty("title"), p.getProperty("author"), Boolean.parseBoolean(p.getProperty("publish")), false, "blog/" + f.getName());
+                Blog blog = new Blog(dateIn.parse(p.getProperty("date")), f.getName().replace(".html", "") , p.getProperty("title"), p.getProperty("author"), p.getProperty("category"), Boolean.parseBoolean(p.getProperty("publish")), false, "blog/" + f.getName());
                 blogs.add(blog);
             }
         }
 
         for (Version v : versions) {
-            Blog blog = new Blog(v.getDate(), "keycloak-" + v.getVersion().replace(".", "") + "-released", "Keycloak " + v.getVersion() + " released", null, true, true, "templates/blog-release.ftl");
+            Blog blog = new Blog(v.getDate(), "keycloak-" + v.getVersion().replace(".", "") + "-released", "Keycloak " + v.getVersion() + " released", null, "Keycloak Release", true, true, "templates/blog-release.ftl");
             blog.getMap().put("version", v);
             blogs.add(blog);
         }

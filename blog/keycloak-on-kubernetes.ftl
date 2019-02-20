@@ -3,6 +3,7 @@ title = Keycloak on Kubernetes
 date = 2018-06-27
 publish = true
 author = Stian Thorgersen
+category = Kubernetes
 -->
 
 <p>

@@ -3,6 +3,7 @@ title = How to Setup MS AD FS 3.0 as Brokered Identity Provider in Keycloak
 date = 2017-03-23
 publish = true
 author = Hynek Mlnařík
+category = Active Directory
 -->
 
 <div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">

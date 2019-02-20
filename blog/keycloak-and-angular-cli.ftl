@@ -3,6 +3,7 @@ title = Keycloak and Angular CLI
 date = 2018-02-09
 publish = true
 author = Stan Silvert
+category = AngularJS
 -->
 
 <p>So I made a <a href="https://blog.angular.io/schematics-an-introduction-dc1dfbc2a2b2" target="_blank">schematic</a></span> that installs and configures <a href="https://github.com/ssilvert/keycloak-schematic/wiki/Getting-Started" target="_blank">Keycloak in any Angular CLI application</a>.</p>

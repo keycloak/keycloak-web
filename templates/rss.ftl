@@ -8,6 +8,7 @@
   <link>https://www.keycloak.org/blog.html</link>
   <description>Keycloak Blog</description>
   <language>en-us</language>
+  <category>Keycloak/SSO/Identity and Access Management</category>
   <#list blogs as blog>
     <#assign description>
         <#include "../${blog.template}">
@@ -17,6 +18,8 @@
         <link>${home}/blog/${blog.filename}</link>
         <description><#outputformat 'HTML'>${description?esc}</#outputformat></description>
         <guid>${home}/blog/${blog.filename}</guid>
+        <pubDate>${blog.date?string["EEE, d MMM YYYY"]}</pubDate>
+        <#if blog.category??><category>${blog.category}</category></#if>
       </item>
   </#list>
 </channel>

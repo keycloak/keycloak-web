@@ -3,6 +3,7 @@ title = Keycloak on OpenShift
 date = 2018-05-31
 publish = true
 author = Stian Thorgersen
+category = OpenShift
 -->
 
 

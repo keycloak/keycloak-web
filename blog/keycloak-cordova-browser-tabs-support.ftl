@@ -3,6 +3,7 @@ title = Keycloak Cordova Browser Tabs support
 date = 2018-06-21
 publish = true
 author = Stian Thorgersen
+category = Cordova
 -->
 
 <p>

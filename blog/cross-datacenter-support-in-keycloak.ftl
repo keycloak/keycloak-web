@@ -3,6 +3,7 @@ title = Cross-Datacenter support in Keycloak
 date = 2017-09-06
 publish = true
 author = Marek Posolda
+category = Cross Datacenter/Replication/Infinispan
 -->
 
 <p>In Keycloak 3.3.0.CR1 we added basic setup for cross-datacenter (cross-site) replication. This blogpost covers some details about it. It consists of 2 parts:
