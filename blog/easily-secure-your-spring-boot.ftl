@@ -3,6 +3,7 @@ title = Easily secure your Spring Boot applications with Keycloak
 date = 2017-05-29
 publish = true
 author = Sébastien Blanc
+category = Spring Boot
 -->
 
 <h2>

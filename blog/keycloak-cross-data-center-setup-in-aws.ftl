@@ -3,6 +3,7 @@ title = Keycloak Cross Data Center Setup in AWS
 date = 2018-01-15
 publish = true
 author = Hynek Mlnařík
+category = Cross Datacenter/Replication/Infinispan
 -->
 
 <h2>

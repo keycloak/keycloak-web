@@ -14,6 +14,8 @@ public class Blog {
 
     private final String author;
 
+    private final String category;
+
     private final boolean release;
 
     private final boolean publish;
@@ -22,11 +24,12 @@ public class Blog {
 
     private final Map<String, Object> map = new HashMap<>();
 
-    public Blog(Date date, String name, String title, String author, boolean publish, boolean release, String template) {
+    public Blog(Date date, String name, String title, String author, String category, boolean publish, boolean release, String template) {
         this.date = date;
         this.name = name;
         this.title = title;
         this.author = author;
+        this.category = category;
         this.publish = publish;
         this.release = release;
         this.template = template;
@@ -42,6 +45,10 @@ public class Blog {
 
     public String getAuthor() {
         return author;
+    }
+
+    public String getCategory() {
+        return category;
     }
 
     public String getFilename() {

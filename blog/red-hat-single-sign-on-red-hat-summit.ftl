@@ -3,6 +3,7 @@ title = Red Hat Single Sign-On @ Red Hat Summit
 date = 2018-05-02
 publish = true
 author = Stian Thorgersen
+category = Red Hat Summit
 -->
 
 <p>At Red Hat Summit this year there are no less than 4 sessions about Red Hat Single Sign-On! If you are going to Summit make sure to join us.</p>
