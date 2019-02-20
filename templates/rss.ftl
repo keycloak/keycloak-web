@@ -1,3 +1,6 @@
+<#setting locale="en_US">
+<#setting time_zone="GMT">
+<#setting datetime_format="EEE, d MMM yyyy HH:mm:ss z">
 <?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 
@@ -17,7 +20,7 @@
         <link>${home}/blog/${blog.filename}</link>
         <description><#outputformat 'HTML'>${description?esc}</#outputformat></description>
         <guid>${home}/blog/${blog.filename}</guid>
-        <pubDate>${blog.date?string["EEE, d MMM YYYY"]}</pubDate>
+        <pubDate>${blog.date?datetime}</pubDate>
         <#if blog.category??><category>${blog.category}</category></#if>
       </item>
   </#list>
