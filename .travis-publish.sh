@@ -19,7 +19,7 @@ if [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; th
 
     cd keycloak.github.io
 
-    rm -rf *.html archive resources
+    rm -rf *.html archive resources schema
 
     cp -r ../target/web/* .
 

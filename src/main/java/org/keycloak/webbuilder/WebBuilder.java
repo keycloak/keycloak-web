@@ -29,6 +29,7 @@ public class WebBuilder {
     private final File webSrcDir;
     private final File pagesDir;
     private final File resourcesDir;
+    private final File staticDir;
     private final File versionsDir;
     private final File extensionsDir;
     private final File newsDir;
@@ -65,6 +66,7 @@ public class WebBuilder {
 
         pagesDir = new File(webSrcDir, "pages");
         resourcesDir = new File(webSrcDir, "resources");
+        staticDir = new File(webSrcDir, "static");
         versionsDir = new File(webSrcDir, "versions");
         extensionsDir = new File(webSrcDir, "extensions");
         newsDir = new File(webSrcDir, "news");
@@ -203,6 +205,8 @@ public class WebBuilder {
 
         FileUtils.copyDirectory(resourcesDir, targetResourcesDir);
         FileUtils.copyDirectory(new File(blogDir, "images"), new File(new File(targetResourcesDir, "images"), "blog"));
+
+        FileUtils.copyDirectory(staticDir, targetDir);
     }
 
     public void createPages() throws Exception {
