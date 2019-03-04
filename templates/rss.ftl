@@ -17,7 +17,7 @@
     </#assign>
       <item>
         <title>${blog.title}</title>
-        <link>${home}${blog.path}/${blog.filename}</link>
+        <link>${home}/${blog.path}/${blog.filename}</link>
         <description><#outputformat 'HTML'>${description?esc}</#outputformat></description>
         <guid>${home}/blog/${blog.filename}</guid>
         <pubDate>${blog.date?datetime}</pubDate>
