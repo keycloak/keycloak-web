@@ -22,6 +22,7 @@
         <guid>${home}/blog/${blog.filename}</guid>
         <pubDate>${blog.date?datetime}</pubDate>
         <#if blog.category??><category>${blog.category}</category></#if>
+        <#if blog.author??><author>${blog.author}</author></#if>
       </item>
   </#list>
 </channel>

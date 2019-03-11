@@ -26,6 +26,8 @@ public class WebBuilder {
 
     private final Configuration cfg;
 
+    private boolean publish = System.getProperties().containsKey("publish");
+
     private final File webSrcDir;
     private final File pagesDir;
     private final File resourcesDir;
@@ -94,7 +96,7 @@ public class WebBuilder {
         map = new HashMap<>();
 
         Config config = mapper.readValue(new File(webSrcDir,"/config.json"), Config.class);
-        if (System.getProperty("publish") == null) {
+        if (!publish) {
             config.getUrls().setHome(targetDir.toURI().toString());
         }
 
@@ -183,7 +185,9 @@ public class WebBuilder {
                 }
 
                 Blog blog = new Blog(dateIn.parse(p.getProperty("date")), f.getName().replace(".html", "") , p.getProperty("title"), p.getProperty("author"), p.getProperty("category"), Boolean.parseBoolean(p.getProperty("publish")), false, "blog/" + f.getName());
-                blogs.add(blog);
+                if (blog.isPublish() || !publish) {
+                    blogs.add(blog);
+                }
             }
         }
 
