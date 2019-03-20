@@ -3,6 +3,6 @@
   "version": "5.0.0",
   "documentationTemplate": 6,
   "downloadTemplate": 12,
-  "wildflyVersionAdapter": "14",
+  "wildflyVersionAdapter": "15, 14",
   "wildflyVersionAdapterDeprecated": "13, 11, 10, 9"
 }
