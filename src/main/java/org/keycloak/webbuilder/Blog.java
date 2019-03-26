@@ -52,7 +52,7 @@ public class Blog {
     }
 
     public String getFilename() {
-        return title.toLowerCase().replace(" ", "-").replace(".", "").replace("?", "").replace("!", "") + ".html";
+        return name + ".html";
     }
 
     public boolean isPublish() {

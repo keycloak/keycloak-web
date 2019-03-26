@@ -184,7 +184,7 @@ public class WebBuilder {
                     p.put(split[0].trim(), split[1].trim());
                 }
 
-                Blog blog = new Blog(dateIn.parse(p.getProperty("date")), f.getName().replace(".html", "") , p.getProperty("title"), p.getProperty("author"), p.getProperty("category"), Boolean.parseBoolean(p.getProperty("publish")), false, "blog/" + f.getName());
+                Blog blog = new Blog(dateIn.parse(p.getProperty("date")), f.getName().replace(".ftl", "") , p.getProperty("title"), p.getProperty("author"), p.getProperty("category"), Boolean.parseBoolean(p.getProperty("publish")), false, "blog/" + f.getName());
                 if (blog.isPublish() || !publish) {
                     blogs.add(blog);
                 }
@@ -253,17 +253,15 @@ public class WebBuilder {
         }
 
         for (Blog blog : blogs) {
-            if (blog.isPublish()) {
-                HashMap<String, Object> blogMap = new HashMap<>(map);
-                blogMap.putAll(blog.getMap());
-                blogMap.put("root", "../../");
-                blogMap.put("blog", blog);
+            HashMap<String, Object> blogMap = new HashMap<>(map);
+            blogMap.putAll(blog.getMap());
+            blogMap.put("root", "../../");
+            blogMap.put("blog", blog);
 
-                File dir = new File(targetDir, blog.getPath());
-                dir.mkdirs();
+            File dir = new File(targetDir, blog.getPath());
+            dir.mkdirs();
 
-                writeFile(blogMap, "templates/blog-entry.ftl", dir, blog.getFilename());
-            }
+            writeFile(blogMap, "templates/blog-entry.ftl", dir, blog.getFilename());
         }
 
         writeFile(map, "templates/rss.ftl", targetDir, "rss.xml");
