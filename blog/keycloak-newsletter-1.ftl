@@ -1,7 +1,7 @@
 <#--
 title = Keycloak Community Newsletter #1
-date = 2019-03-26
-publish = false
+date = 2019-04-01
+publish = true
 author = Sébastien Blanc
 -->
 
