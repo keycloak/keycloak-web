@@ -22,7 +22,7 @@ public class Version implements  Comparable<Version> {
     private boolean latest;
 
     public boolean isFinal() {
-        return version.endsWith(".Final");
+        return true;
     }
 
     public String getVersionShort() {
