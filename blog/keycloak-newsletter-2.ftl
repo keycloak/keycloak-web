@@ -1,5 +1,5 @@
 <#--
-title = Keycloak Community Newsletter #1
+title = Keycloak Community Newsletter #2
 date = 2019-05-02
 publish = false
 author = Sébastien Blanc
@@ -42,8 +42,16 @@ Keycloak 6.0.1 has been <a href="https://www.keycloak.org/2019/04/keycloak-601-r
 We have some exciting news to share : we started the process to integrate the <a href="https://www.cncf.io/">Cloud Native Computing Foundation</a>. This will boost our community adoption with the ultimate goal of becoming the de facto OAuth2/OpenID Connec solutin within the Open Source and Cloud Native ecosystem. But we will also be more involved in the differents Security SIGs and benefit from the CNCF CI infrastructure, i.e the <a href="github.com/cncf/cluster">CNCF Cluster</a>. 
 You can watch the presentation to the CNCF TOC (Technical Oversight Committee) <a href="https://www.youtube.com/watch?v=cBrmcH9VFYE&feature=youtu.be&t=1032">here</a> and the slides are also available <a href="https://docs.google.com/presentation/d/1bijEpuwaaa6jR1D5PAjyW731-j6Xc1TFHJuUh_FwwK8/edit?ts=5ca774e9#slide=id.g5628e016b1_15_112">here</a>.   
 <p>
-As mentioned in the previous newsletter, larger feature will now be discussed in the open on Github. It's community focused and we have currently an opne Pull Request to discuss the design for <a href="https://github.com/keycloak/keycloak-community/pull/5">Managing multi-factor authentication and Step-up authentication</a>.
-
+As mentioned in the previous newsletter, larger feature will now be discussed in the open on Github. It's community focused and we have currently 2 open Pull Requests :
+<ul>
+<li>
+ <a href="https://github.com/keycloak/keycloak-community/pull/5">Managing multi-factor authentication and Step-up authentication</a>
+</li>
+<li>
+ <a href="https://github.com/keycloak/keycloak-community/pull/6">Implementation of OAuth 2.0 Device Authorization Grant</a> 
+</li>
+</ul>
+</p>
 
 <h2>Conferences / Webinars</h2>
 <p>
