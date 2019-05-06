@@ -15,7 +15,7 @@ A lot of news to share in this second edition, so fasten your seatbelt and let's
 First of all, we would like to thank the whole community that has contributed to this edition by sharing their links, tips, etc ...
 </p>
 <p>
-More and more API Management/Gateway solutions can now be integrated with Keycloak. Recently, <a href="https://www.getambassador.io/">Ambassador</a>, a Open Source Kubernetes-Native API Gateway built on the Envoy Proxy, has published a <a href="https://www.getambassador.io/tutorials/github-sso/">quickstart</a> that shows the Keycloak's integration.   
+More and more API Management/Gateway solutions can now be integrated with Keycloak. Recently, <a href="https://www.getambassador.io/">Ambassador</a>, a Open Source Kubernetes-Native API Gateway built on the Envoy Proxy has added <a href="https://www.getambassador.io/reference/idp-support/keycloak/">support for Keycloak</a>, it has also published a <a href="https://www.getambassador.io/tutorials/github-sso/">quickstart</a> to show how Keycloak can be used to add Github as Identity provider.   
 </p>
 <p>
 Good news for Python users, Akhil Lawrence has created a <a href="https://github.com/akhilputhiry/keycloak-client/releases">Python Keycloak Adapter Client</a>. Be sure to check out the really nice <a href="https://keycloak-client.readthedocs.io/en/latest/">documentation</a> that comes with a lot of usage examples.  
@@ -39,7 +39,7 @@ Hayri Cicek has written a nice introductory <a href="https://kodnito.com/posts/m
 Keycloak 6.0.1 has been <a href="https://www.keycloak.org/2019/04/keycloak-601-released.html">released</a>. We know that some people were a bit confused by our new versioning schema, hopefully, this <a href="https://www.keycloak.org/2019/04/versioning.html">blog post</a> will clear it up. 
 </p>
 <p>
-We have some exciting news to share : we started the process to integrate the <a href="https://www.cncf.io/">Cloud Native Computing Foundation</a>. This will boost our community adoption with the ultimate goal of becoming the de facto OAuth2/OpenID Connec solutin within the Open Source and Cloud Native ecosystem. But we will also be more involved in the differents Security SIGs and benefit from the CNCF CI infrastructure, i.e the <a href="github.com/cncf/cluster">CNCF Cluster</a>. 
+We started the proposal process for Keycloak to be accepted into the Cloud Native Computing Foundation (CNCF). This will hopefully significantly boost our community adoption with our ultimate goal of becoming the de facto solution for OAuth2/OpenID Connect within Open Source and Cloud Native.
 You can watch the presentation to the CNCF TOC (Technical Oversight Committee) <a href="https://www.youtube.com/watch?v=cBrmcH9VFYE&feature=youtu.be&t=1032">here</a> and the slides are also available <a href="https://docs.google.com/presentation/d/1bijEpuwaaa6jR1D5PAjyW731-j6Xc1TFHJuUh_FwwK8/edit?ts=5ca774e9#slide=id.g5628e016b1_15_112">here</a>.   
 <p>
 As mentioned in the previous newsletter, larger feature will now be discussed in the open on Github. It's community focused and we have currently 2 open Pull Requests :
