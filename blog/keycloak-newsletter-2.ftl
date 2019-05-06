@@ -76,6 +76,7 @@ are awaiting contributions. Not all issues are properly reviewed, so we recommen
 For each newsletter, we will also highlight a few features for which we would especially like contributions. These features include:
 
 <ul>
-
+<li><a href="https://issues.jboss.org/browse/KEYCLOAK-953">Allow user to delete account</a> - In light of GDPR and the right to be forgotten a very useful feature is to allow users to delete their own accounts.</li>
+<li><a href="https://issues.jboss.org/browse/KEYCLOAK-2940">OpenID Connect Backchannel Logout</a> - Add support for OpenID Connect Back-Channel logout specification to Keycloak.<li>
 </ul>
 </p>
