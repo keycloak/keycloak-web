@@ -27,7 +27,7 @@ Like any other project, setting up clustering can be somehow complex. Liqiang ha
 The existing <a href="https://github.com/helm/charts/tree/master/stable/keycloak">Keycloak Helm Chart</a> has now been deprecated and is now replaced by the <a href="https://github.com/codecentric/helm-charts">one</a> managed by CodeCentric.
 </p>
 <p>
-Dmitry Telegin has created a really nice example on how you can dynamically brand your login them for Keycloak, check out the repository <a href="https://github.com/dteleguin/keycloak-dynamic-branding">here</a>.
+Dmitry Telegin has created a really nice example on how you can dynamically brand your login theme for Keycloak, check out the repository <a href="https://github.com/dteleguin/keycloak-dynamic-branding">here</a>.
 </p>
 <p>
 Hayri Cicek has written a nice introductory <a href="https://kodnito.com/posts/microprofile-jwt-with-keycloak/">article</a> on how to use Keycloak and MicroProfile. It even show the usage of the brand new Client Scope "microprofile-jwt" which has been added in Keycloak 6.0.0.
@@ -77,6 +77,6 @@ For each newsletter, we will also highlight a few features for which we would es
 
 <ul>
 <li><a href="https://issues.jboss.org/browse/KEYCLOAK-953">Allow user to delete account</a> - In light of GDPR and the right to be forgotten a very useful feature is to allow users to delete their own accounts.</li>
-<li><a href="https://issues.jboss.org/browse/KEYCLOAK-2940">OpenID Connect Backchannel Logout</a> - Add support for OpenID Connect Back-Channel logout specification to Keycloak.<li>
+<li><a href="https://issues.jboss.org/browse/KEYCLOAK-2940">OpenID Connect Backchannel Logout</a> - Add support for OpenID Connect Back-Channel logout specification to Keycloak.</li>
 </ul>
 </p>
