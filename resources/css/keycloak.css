@@ -1,4 +1,4 @@
-/* Custom Base Font for Keycload Website */
+ Custom Base Font for Keycload Website */
 
 
 /**********************************************************************************************************
@@ -336,12 +336,12 @@ p {
     text-align: center;
     line-height: 1;
     color:white;
-    margin:2.5em 0 0 0;
+    margin:3.5em 0 0 0;
     text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
 }
 
 .marquee-slide-row div.learn a {
-    font-size: 1em;
+    font-size: 1.5em;
 }
 
 /**********************************************************************************************************
@@ -705,13 +705,30 @@ span.fs.clipboard {
     }
 
     .marquee-slide-row {
-        padding:0;
+        padding:1em;
+    }
+
+    .marquee-slide-row div.learn {
+        margin: 2em 0 0 0;
+    }
+
+    .marquee-slide-row div.learn a {
+        font-size: 1.2em;
     }
 
     .marquee-slide-row h1 {
         font-size:1.8em;
-        line-height: 2em;
+        line-height: 1.2em;
     }
+
+    .main-banner .left-col p  {
+        font-size:1.2em;
+    }
+
+    .marquee-slide-row h2 {
+        font-size: 1.2em;
+    }
+
     .keycloak-logo-div,
     .keycloak-logo-a {
         text-align:center;
@@ -759,6 +776,8 @@ span.fs.clipboard {
         -webkit-box-flex:   0 0 49%;
         -webkit-flex:       0 0 49%;
     }
+
+
 }
 
 /* Phone (XS) */
