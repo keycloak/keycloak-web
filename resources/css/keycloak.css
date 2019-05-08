@@ -114,9 +114,13 @@ hr.divider {
 
 .about img {
     float: right;
-    margin-top: -60px;
+    margin-top: 0px;
     margin-bottom: 20px;
     margin-left: 40px;
+}
+
+.about img.border {
+    border: 1px solid #4a4a4a;
 }
 
 .margin-top {
@@ -777,7 +781,12 @@ span.fs.clipboard {
         -webkit-flex:       0 0 49%;
     }
 
-
+    .about img {
+        float: none;
+        margin-top: 0px;
+        margin-bottom: 20px;
+        margin-left: 0px;
+    }
 }
 
 /* Phone (XS) */

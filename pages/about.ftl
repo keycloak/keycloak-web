@@ -27,7 +27,7 @@
 
         <h2>Single-Sign On</h2>
 
-        <img src="resources/images/screen-login.png"/>
+        <img src="resources/images/screen-login.png" class="border"/>
 
         <p>
             Users authenticate with Keycloak rather than individual applications. This means that your applications
@@ -86,6 +86,9 @@
             library out there.
         </p>
 
+
+        <h3>Gatekeeper</h3>
+        
         <p>
             You can also opt to use a proxy to secure your applications which removes the need to modify your application at all.
         </p>
@@ -94,7 +97,7 @@
 
         <h2>Admin Console</h2>
 
-        <img src="resources/images/screen-admin.png"/>
+        <img src="resources/images/screen-admin.png" class="border"/>
 
         <p>
             Through the admin console administrators can centrally manage all aspects of the Keycloak server.
@@ -117,7 +120,7 @@
 
         <h2>Account Management Console</h2>
 
-        <img src="resources/images/screen-account.png"/>
+        <img src="resources/images/screen-account.png" class="border"/>
 
         <p>
             Through the account management console users can manage their own accounts. They can update the profile,
