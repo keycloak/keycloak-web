@@ -1,0 +1,11 @@
+{
+  "name": "Keycloak Metrics SPI",
+  "description": "Keycloak Metrics SPI adds a Metrics Endpoint to Keycloak. The metrics are returned in Prometheus format and include, among others, JVM performance, Login and response time metrics.",
+  "maintainers": [
+    "pb82", "aliok"
+  ],
+  "website": "https://github.com/aerogear/keycloak-metrics-spi",
+  "download": "https://github.com/aerogear/keycloak-metrics-spi/releases",
+  "documentation": "https://github.com/aerogear/keycloak-metrics-spi/blob/master/README.md",
+  "source": "https://github.com/aerogear/keycloak-metrics-spi"
+}
