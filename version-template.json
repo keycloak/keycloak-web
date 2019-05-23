@@ -2,7 +2,7 @@
   "date": "DATE",
   "version": "VERSION",
   "documentationTemplate": 6,
-  "downloadTemplate": 12,
+  "downloadTemplate": 13,
   "wildflyVersionAdapter": "16",
   "wildflyVersionAdapterDeprecated": "15, 14, 13, 11, 10, 9"
 }
