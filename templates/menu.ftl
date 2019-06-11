@@ -18,8 +18,8 @@
                     <li><a href="${root}documentation.html">Docs</a></li>
                     <li><a href="${root}downloads.html">Downloads</a></li>
                     <li><a href="${root}community.html">Community</a></li>
+                    <li><a href="${root}extensions.html">Extensions</a></li>
                     <li><a href="${root}security.html">Security</a></li>
-                    <li><a href="${root}support.html">Support</a></li>
                     <li><a href="${root}search.html">Search</a></li>
                     <li><a href="${root}blog.html">Blog</a></li>
                 </ul>
