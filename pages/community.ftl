@@ -13,7 +13,7 @@
 
         <p>
             For questions and if you're running into trouble, first <a href="search.html">search</a> our documentation
-            and forums. If you can't find an answer there join our
+            and mailing list. If you can't find an answer there join our
             <a href="https://lists.jboss.org/mailman/listinfo/keycloak-user" target="_blank">user mailing list</a>
             and send us an email. We'll typically answer within a few days (excluding weekends of course).
         </p>
@@ -34,7 +34,7 @@
         <ul>
             <li>Check if it's already resolved in the <a href="downloads.html">latest release</a></li>
             <li>Check if it's already reported in <a href="https://issues.jboss.org/browse/KEYCLOAK" target="_blank">JIRA</a></li>
-            <li><a href="search.html">Search</a> user forums</li>
+            <li><a href="search.html">Search</a> documentation and mailing lists</li>
             <li>If you're unsure if it's a bug ask on the <a href="https://lists.jboss.org/mailman/listinfo/keycloak-user" target="_blank">user mailing list</a></li>
             <li>For feature request you can discuss it on the <a href="https://lists.jboss.org/mailman/listinfo/keycloak-user" target="_blank">user mailing list</a></li>
         </ul>
