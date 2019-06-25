@@ -7,22 +7,7 @@
     <div class="container">
         <h1>Search</h1>
 
-        <p>Search the Keycloak website, documentation, blog and mailing lists.</p>
-
-        <div>
-            <script>
-                (function() {
-                    var cx = '003352037071895905641:hyz4b1vj6uu';
-                    var gcse = document.createElement('script');
-                    gcse.type = 'text/javascript';
-                    gcse.async = true;
-                    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-                    var s = document.getElementsByTagName('script')[0];
-                    s.parentNode.insertBefore(gcse, s);
-                })();
-            </script>
-            <gcse:search></gcse:search>
-        </div>
+        <p>Search the Keycloak website, documentation, blog and mailing lists <a href="https://cse.google.com/cse?cx=003352037071895905641:hyz4b1vj6uu">here</a>.</p>
     </div>
 </div>
 

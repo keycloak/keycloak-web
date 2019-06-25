@@ -101,7 +101,16 @@ public class WebBuilder {
         }
 
 
-        map.put("root", "");
+        if (publish) {
+            String r = config.getUrls().getHome();
+            if (!r.endsWith("/")) {
+                r += "/";
+            }
+            map.put("root", r);
+        } else {
+            map.put("root", targetDir.toURI().toString());
+        }
+
         map.put("config", config);
         map.put("home", config.getUrls().getHome());
         map.put("blogImages", config.getUrls().getHome() + "/resources/images/blog");
@@ -227,8 +236,6 @@ public class WebBuilder {
             writeFile(map, "pages/" + pageFile.getName(), targetDir, pageFile.getName().replace(".ftl", ".html"));
         }
 
-        map.put("root", "../");
-
         map.put("archive", true);
 
         File archiveDir = new File(targetDir, "archive");
@@ -255,7 +262,6 @@ public class WebBuilder {
         for (Blog blog : blogs) {
             HashMap<String, Object> blogMap = new HashMap<>(map);
             blogMap.putAll(blog.getMap());
-            blogMap.put("root", "../../");
             blogMap.put("blog", blog);
 
             File dir = new File(targetDir, blog.getPath());
