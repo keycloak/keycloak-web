@@ -8,7 +8,7 @@
     <meta name="author" content="Keycloak Team">
     <meta name="keywords" content="sso,idm,openid connect,saml,kerberos,ldap">
 
-    <meta http-equiv='Content-Security-Policy' content="default-src 'none'; style-src 'self'; img-src 'self'; font-src 'self'; script-src 'self' https://www.google-analytics.com; base-uri 'none'; form-action 'none'">
+    <meta http-equiv='Content-Security-Policy' content="default-src 'none'; style-src 'self'; img-src 'self'; font-src 'self'; script-src 'self' https://www.google-analytics.com; base-uri 'none'; form-action 'none'; frame-ancestors: 'none'">
 
     <link href="${root}resources/css/bootstrap.min.css" rel="stylesheet">
     <link href="${root}resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">
