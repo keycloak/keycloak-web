@@ -3,9 +3,9 @@
 <table class="table table-bordered table-striped">
     <tbody>
     <tr>
-        <td style="width: 100px;">Server</td>
+        <td>Server</td>
         <td>Standalone server distribution</td>
-        <td style="width: 140px;">
+        <td>
             <a onclick="dl('server', 'standalone');" href="https://downloads.jboss.org/keycloak/${version.version}/keycloak-${version.version}.zip" target="_blank">ZIP</a>
             <span class="space"></span>
             <a onclick="dl('server', 'standalone');" href="https://downloads.jboss.org/keycloak/${version.version}/keycloak-${version.version}.tar.gz" target="_blank">TAR.GZ</a>
@@ -23,7 +23,7 @@
     <tr>
         <td>Demo</td>
         <td>Includes WildFly with server overlay and examples. Not recommended in production.</td>
-        <td style="width: 140px;">
+        <td>
             <a onclick="dl('demo', 'demo');" href="https://downloads.jboss.org/keycloak/${version.version}/keycloak-demo-${version.version}.zip" target="_blank">ZIP</a> <span class="space"></span> <a href="https://downloads.jboss.org/keycloak/${version.version}/keycloak-demo-${version.version}.tar.gz" target="_blank">TAR.GZ</a>
         </td>
     </tr>

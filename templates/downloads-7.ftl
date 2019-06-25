@@ -19,9 +19,9 @@
 <table class="table table-bordered table-striped">
     <tbody>
     <tr>
-        <td style="width: 100px;">Server</td>
+        <td>Server</td>
         <td>Standalone server distribution</td>
-        <td style="width: 280px;">
+        <td>
             <@download category="server" label="standalone" file="keycloak-${version.version}" tar=true />
         </td>
     </tr>
@@ -50,7 +50,7 @@
 
     <tr>
         <td>Examples distribution</td>
-        <td style="width: 280px;">
+        <td>
             <@download category="examples" label="examples" file="keycloak-examples-${version.version}" tar=false />
         </td>
     </tr>

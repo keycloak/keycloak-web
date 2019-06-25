@@ -23,7 +23,7 @@
     <tr>
         <td>Server</td>
         <td>Standalone server distribution</td>
-        <td style="width: 300px;">
+        <td>
             <@download category="server" label="standalone" file="keycloak-${version.version}" />
         </td>
     </tr>
@@ -43,7 +43,7 @@
 <tbody>
 <tr>
     <td>Linux</td>
-    <td style="width: 300px;">
+    <td>
         <@download category="gatekeeper" label="linux" file="gatekeeper/keycloak-gatekeeper-linux-amd64" zip=false />
     </td>
 </tr>
@@ -69,7 +69,7 @@
 
     <tr>
         <td>Quickstarts distribution</td>
-        <td style="width: 300px;">
+        <td>
             <a onclick="dl('examples', 'quickstarts');" href="https://github.com/keycloak/keycloak-quickstarts" target="_blank">
                 <i class="fa fa-github" aria-hidden="true"></i>
                 GitHub
