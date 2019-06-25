@@ -81,21 +81,21 @@
 
         <h2>Thanks</h2>
 
-        <div style="float: left; width: 300px; padding: 10px 10px 10px 0;">
-            <img style="float: left; margin-right: 15px;" src="resources/images/github.png"></img>
-            <span style="float: left; width: 200px;">
+        <p>
+            <img src="resources/images/github.png" width="32px"></img>
+            <span>
                 Thanks to <a href="https://github.com/keycloak/keycloak/graphs/contributors">everyone</a> that has
             contributed to the project.</span>
-        </div>
+        </p>
 
-        <div style="float: left; width: 300px; padding: 10px 10px 10px 0;">
-            <img style="float: left; margin-right: 15px;" src="resources/images/jprofiler.png"></img>
-            <span style="float: left; width:200px;">
+        <p>
+            <img src="resources/images/jprofiler.png" width="32px"></img>
+            <span>
                 Thanks to <a href="https://www.ej-technologies.com/">ej-technologies</a> for providing free
                 <a href="https://www.ej-technologies.com/products/jprofiler/overview.html">JProfiler</a> licenses to
                 core team members.
             </span>
-        </div>
+        </p>
 
     </div>
 </div>

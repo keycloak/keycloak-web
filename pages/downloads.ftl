@@ -23,11 +23,6 @@
     </div>
 </div>
 
-<script>
-    var version = '${version.version}';
-    function dl(category, label) {
-        ga('send', 'event', category, category + '-' + label, category + '-' + label + '-' + version);
-    }
-</script>
+<script src="${root}resources/js/downloads.js" type="text/javascript"></script>
 
 <#include "../templates/footer.ftl">
