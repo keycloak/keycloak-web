@@ -108,7 +108,7 @@ public class WebBuilder {
             }
             map.put("root", r);
         } else {
-            map.put("root", targetDir.toURI().toString());
+            map.put("root", targetDir.toURI().toString() + "/");
         }
 
         map.put("config", config);
