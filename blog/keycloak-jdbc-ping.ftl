@@ -1,6 +1,6 @@
 <#--
 title = Keycloak and JDBC Ping
-date = 2019-07-15
+date = 2019-08-12
 publish = true
 author = Sebastian Łaskaiwec
 category = Cluster, JDBC_PING
