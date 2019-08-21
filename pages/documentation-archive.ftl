@@ -1,4 +1,4 @@
-<#assign title = "Documentation Archive">
+<#assign title = "Documentation Archive" noindex = true>
 
 <#include "../templates/header.ftl">
 <#include "../templates/menu.ftl">
