@@ -1,4 +1,4 @@
-<#assign title = "Documentation Archive - ${version.versionShort}">
+<#assign title = "Documentation Archive - ${version.versionShort}" noindex = true>
 
 <#include "../templates/header.ftl">
 <#include "../templates/menu.ftl">

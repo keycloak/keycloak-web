@@ -1,4 +1,4 @@
-<#assign title = "Downloads Archive - ${version.versionShort}">
+<#assign title = "Downloads Archive - ${version.versionShort}" noindex = true>
 
 <#include "../templates/header.ftl">
 <#include "../templates/menu.ftl">
