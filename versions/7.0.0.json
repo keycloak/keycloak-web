@@ -1,0 +1,8 @@
+{
+  "date": "2019-08-24",
+  "version": "7.0.0",
+  "documentationTemplate": 6,
+  "downloadTemplate": 13,
+  "wildflyVersionAdapter": "17",
+  "wildflyVersionAdapterDeprecated": "16, 15, 14, 13, 11, 10, 9"
+}
