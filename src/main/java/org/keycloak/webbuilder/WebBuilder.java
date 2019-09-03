@@ -142,8 +142,8 @@ public class WebBuilder {
 
         map.put("version", versions.get(0));
 
-        loadNews(config);
         loadBlog(config);
+        loadNews(config);
 
         System.out.println("Target directory:   " + targetDir.getAbsolutePath());
         System.out.println();
@@ -161,14 +161,22 @@ public class WebBuilder {
             }
         }
 
-        for (Version v : versions) {
-            if (v.getDate() != null) {
-                News news = new News();
-                news.setDate(v.getDate());
-                news.setTitle("Keycloak " + v.getVersion() + " released");
-                news.setLink("downloads.html");
-                this.news.add(news);
-            }
+//        for (Version v : versions) {
+//            if (v.getDate() != null) {
+//                News news = new News();
+//                news.setDate(v.getDate());
+//                news.setTitle("Keycloak " + v.getVersion() + " released");
+//                news.setLink("downloads.html");
+//                this.news.add(news);
+//            }
+//        }
+
+        for (Blog b : blogs) {
+            News news = new News();
+            news.setDate(b.getDate());
+            news.setTitle(b.getTitle());
+            news.setLink(b.getPath() + "/" + b.getFilename());
+            this.news.add(news);
         }
 
         news.sort(Comparator.comparing(News::getDate).reversed());
