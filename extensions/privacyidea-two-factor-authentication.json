@@ -1,0 +1,10 @@
+{
+    "name": "privacyIDEA two factor authentication",
+    "description": "This extenion adds 2nd factors to keycloak, that are authenticated against your central privacyIDEA system. The central privacyIDEA system can manage a lot of different token types for your users that are maybe already enrolled and used for other applications. Possible 2nd factors are HOTP, TOTP smartphone apps and hardware tokens, Email, SMS, Yubikeys, Nitrokeys, Push Token...",
+    "maintainers": [
+        "privacyidea"
+    ],
+    "website": "https://privacyidea.org",
+    "source": "https://github.com/privacyidea/keycloak-provider",
+    "download": "https://github.com/privacyidea/keycloak-provider/releases"
+}
