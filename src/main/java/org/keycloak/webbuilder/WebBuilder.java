@@ -54,6 +54,9 @@ public class WebBuilder {
         builder.copyAssets();
         System.out.println();
 
+        builder.createReleaseNotes();
+        System.out.println();
+
         builder.createPages();
         System.out.println();
 
@@ -228,6 +231,18 @@ public class WebBuilder {
         FileUtils.copyDirectory(new File(blogDir, "images"), new File(new File(targetResourcesDir, "images"), "blog"));
 
         FileUtils.copyDirectory(staticDir, targetDir);
+    }
+
+    public void createReleaseNotes() {
+        System.out.println("Creating release notes");
+
+        try {
+            ReleaseNotes releaseNotes = new ReleaseNotes();
+            releaseNotes.createReleaseNotes(webSrcDir, versions);
+            releaseNotes.close();
+        } catch (Exception e) {
+            System.err.println("\t- error: " + e.getMessage());
+        }
     }
 
     public void createPages() throws Exception {

@@ -21,6 +21,8 @@ public class Version implements  Comparable<Version> {
 
     private boolean latest;
 
+    private String releaseNotes;
+
     public boolean isFinal() {
         return true;
     }
@@ -89,6 +91,14 @@ public class Version implements  Comparable<Version> {
 
     public void setLatest(boolean latest) {
         this.latest = latest;
+    }
+
+    public String getReleaseNotes() {
+        return releaseNotes;
+    }
+
+    public void setReleaseNotes(String releaseNotes) {
+        this.releaseNotes = releaseNotes;
     }
 
     @Override

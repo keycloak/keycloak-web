@@ -20,7 +20,6 @@
                     <li><a href="${root}community.html">Community</a></li>
                     <li><a href="${root}extensions.html">Extensions</a></li>
                     <li><a href="${root}security.html">Security</a></li>
-                    <li><a href="https://cse.google.com/cse?cx=003352037071895905641:hyz4b1vj6uu" target="_blank">Search</a></li>
                     <li><a href="${root}blog.html">Blog</a></li>
                 </ul>
             </div>
