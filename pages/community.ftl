@@ -67,14 +67,14 @@
         <h2>Contributors</h2>
 
         <p>
-            If you'd like to contribute to the Keycloak project, please join our
-            <a href="https://lists.jboss.org/mailman/listinfo/keycloak-dev">developer mailing list</a>. This list is used to
+            If you'd like to contribute to the Keycloak project, please join the Keycloak
+            <a href="https://groups.google.com/forum/#!forum/keycloak-dev/join">developer mailing list</a>. This list is used to
             discuss new features and improvements to Keycloak.
         </p>
 
         <p>
             The first step in contributing is usually sending an email to the
-            <a href="https://lists.jboss.org/mailman/listinfo/keycloak-dev">developer mailing list</a> to let
+            <a href="https://groups.google.com/forum/#!forum/keycloak-dev">developer mailing list</a> to let
             others know what you're planning. For a simple bug fix this is obviously not necessary, but if you plan to add
             a new feature discussing it on the mailing list first may save you a lot of time.
         </p>
@@ -93,7 +93,7 @@
             <li><a href="https://issues.jboss.org/browse/KEYCLOAK">Issue Tracker</a></li>
             <li><a href="https://keycloak.discourse.group/">Forum</a> - for questions and help</li>
             <li><a href="https://lists.jboss.org/mailman/listinfo/keycloak-user">User Mailing List</a> - for questions and help</li>
-            <li><a href="https://lists.jboss.org/mailman/listinfo/keycloak-dev">Developer Mailing List</a> - for discussions around design and contributing to Keycloak</li>
+            <li><a href="https://groups.google.com/forum/#!forum/keycloak-dev">Developer Mailing List</a> - for discussions around design and contributing to Keycloak</li>
         </ul>
 
 
