@@ -24,10 +24,10 @@
             feel free to ask for help.
         </p>
 
-        <h3><a href="https://lists.jboss.org/mailman/listinfo/keycloak-user">Mailing list</a></h3>
+        <h3><a href="https://groups.google.com/forum/#!forum/keycloak-user">Mailing list</a></h3>
 
         <p>
-            We also have a mailing list where you can ask for help.
+            We also have a <a href="https://groups.google.com/forum/#!forum/keycloak-user">mailing list</a> where you can ask for help.
         </p>
 
 
@@ -92,7 +92,7 @@
             <li><a href="documentation.html">Documentation</a></li>
             <li><a href="https://issues.jboss.org/browse/KEYCLOAK">Issue Tracker</a></li>
             <li><a href="https://keycloak.discourse.group/">Forum</a> - for questions and help</li>
-            <li><a href="https://lists.jboss.org/mailman/listinfo/keycloak-user">User Mailing List</a> - for questions and help</li>
+            <li><a href="https://groups.google.com/forum/#!forum/keycloak-user">User Mailing List</a> - for questions and help</li>
             <li><a href="https://groups.google.com/forum/#!forum/keycloak-dev">Developer Mailing List</a> - for discussions around design and contributing to Keycloak</li>
         </ul>
 
