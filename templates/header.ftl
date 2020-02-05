@@ -10,7 +10,7 @@
 
     <#if noindex?? && noindex><meta name="robots" content="noindex"></#if>
 
-    <meta http-equiv='Content-Security-Policy' content="default-src 'none'; style-src 'self'; img-src 'self' https://www.google-analytics.com; font-src 'self'; script-src 'self' https://www.google-analytics.com; base-uri 'none'; form-action 'none';">
+    <meta http-equiv='Content-Security-Policy' content="default-src 'none'; style-src 'self'; img-src 'self' https://www.google-analytics.com https://*.googleusercontent.com; font-src 'self'; script-src 'self' https://www.google-analytics.com; base-uri 'none'; form-action 'none';">
 
     <link href="${root}resources/css/bootstrap.min.css" rel="stylesheet">
     <link href="${root}resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">
