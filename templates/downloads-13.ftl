@@ -104,19 +104,6 @@
         <div role="tabpanel" class="tab-pane active margin-top" id="oidc">
             <table class="table table-bordered table-striped">
                 <tr>
-                    <td>Keycloak Proxy <b>*DEPRECATED*</b></td>
-                    <td>
-                        <table class="table-downloads-inner">
-                            <tr>
-                                <td>&nbsp;</td>
-                                <td>
-                                    <@download category="proxy" label="proxy" file="keycloak-proxy-${version.version}" tar=false />
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-                <tr>
                     <td>WildFly</td>
                     <td>
                         <table class="table-downloads-inner">
