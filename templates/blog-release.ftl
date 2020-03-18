@@ -1,7 +1,7 @@
 <p>To download the release go to <a href="${home}/downloads.html">Keycloak downloads</a>.</p>
 
 <#if version.releaseNotes??>
-    <#include "${version.releaseNotes}">
+    <#include "../${version.releaseNotes}">
 </#if>
 
 <h2>All resolved issues</h2>

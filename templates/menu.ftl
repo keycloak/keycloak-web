@@ -8,19 +8,17 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="${root}index.html" title="Keycloak" class="keycloak-logo-a">
+                <a href="${links.home}" title="Keycloak" class="keycloak-logo-a">
                     <img class="keycloak-logo" src="${root}resources/images/keycloak_logo_480x108.png" border="0" alt="Keycloak"/>
                 </a>
             </div>
             <div id="mainBtnTarget" class="col-md-9 col-sm-9 col-xs-12 collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="${root}about.html">About</a></li>
-                    <li><a href="${root}documentation.html">Docs</a></li>
-                    <li><a href="${root}downloads.html">Downloads</a></li>
-                    <li><a href="${root}community.html">Community</a></li>
-                    <li><a href="${root}extensions.html">Extensions</a></li>
-                    <li><a href="${root}security.html">Security</a></li>
-                    <li><a href="${root}blog.html">Blog</a></li>
+                    <li><a href="${links.guides}">Get Started</a></li>
+                    <li><a href="${links.docs}">Docs</a></li>
+                    <li><a href="${links.downloads}">Downloads</a></li>
+                    <li><a href="${links.community}">Community</a></li>
+                    <li><a href="${links.blog}">Blog</a></li>
                 </ul>
             </div>
         </div>

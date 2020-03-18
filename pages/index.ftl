@@ -7,7 +7,7 @@
             <div class="col-xs-12">
                 <h1>Open Source Identity and Access Management</h1>
                 <h2>For Modern Applications and Services</h2>
-                <div class="learn"><a class="btn btn-primary" href="https://www.katacoda.com/keycloak">Learn Keycloak Basics</a></div>
+                <div class="learn"><a class="btn btn-primary" href="${root}getting-started.html">Get Started with Keycloak</a></div>
             </div>
         </div>
     </div>
@@ -25,7 +25,7 @@
                     You'll even get advanced features such as User Federation, Identity Brokering and Social Login.
                 </p>
                 <p>
-                    For more details go to <a href="about.html">about</a> and <a href="documentation.html">documentation</a>, and don't forget to try Keycloak. It's easy by design!
+                    For more details go to <a href="about.html">about</a> and <a href="documentation.html">documentation</a>, and don't forget to <a href="${root}getting-started.html">try Keycloak</a>. It's easy by design!
                 </p>
             </div>
 

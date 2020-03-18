@@ -12,15 +12,15 @@
 
     <meta http-equiv='Content-Security-Policy' content="default-src 'none'; style-src 'self'; img-src 'self' https://www.google-analytics.com; font-src 'self'; script-src 'self' https://www.google-analytics.com; base-uri 'none'; form-action 'none';">
 
-    <link href="${root}resources/css/bootstrap.min.css" rel="stylesheet">
-    <link href="${root}resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="${root}resources/css/keycloak.css" rel="stylesheet">
+    <link href="${links.getResource('css/bootstrap.min.css')}" rel="stylesheet">
+    <link href="${links.getResource('font-awesome/css/font-awesome.min.css')}" rel="stylesheet">
+    <link href="${links.getResource('css/keycloak.css')}" rel="stylesheet">
 
-    <link rel="shortcut icon" href="${root}resources/favicon.ico">
+    <link rel="shortcut icon" href="${links.getResource('favicon.ico')}">
 
-    <script src="${root}resources/js/ga.js" type="text/javascript"></script>
-    <script src="${root}resources/js/jquery-1.11.1.min.js" type="text/javascript"></script>
-    <script src="${root}resources/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="${links.getResource('js/ga.js')}" type="text/javascript"></script>
+    <script src="${links.getResource('js/jquery-1.11.1.min.js')}" type="text/javascript"></script>
+    <script src="${links.getResource('js/bootstrap.min.js')}" type="text/javascript"></script>
 </head>
 <body>
 <div id="wrap">

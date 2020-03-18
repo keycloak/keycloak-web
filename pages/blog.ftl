@@ -7,7 +7,7 @@
 
 <div class="page-section">
     <div class="container">
-        <a class="float-right" href="${root}rss.xml"><img src="resources/images/rss.png"/></a>
+        <a class="float-right" href="${links.rss}"><img src="resources/images/rss.png"/></a>
         <#list blogs as blog>
             <#if !blog.release || includeRelease>
                 <h1><a href="${root}${blog.path}/${blog.filename}">${blog.title}</a></h1>

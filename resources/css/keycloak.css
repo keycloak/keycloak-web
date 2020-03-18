@@ -198,6 +198,23 @@ div.blog ul ul {
     float: right;
 }
 
+.card {
+    background-color: #fff;
+    padding: 20px;
+    margin: 10px 0;
+    -webkit-box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.25);
+    box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.25);
+}
+
+h3.card-title {
+    margin-top: 0;
+}
+
+p.card-text {
+    margin-bottom: 0;
+}
+
 /**********************************************************************************************************
  * HEADER
  ***********************************************************************************************************/
@@ -294,6 +311,18 @@ a:visited {
 /**********************************************************************************************************
  * PAGES
  ***********************************************************************************************************/
+
+.cards-section {
+    background-image: url(../images/banner.png);
+    background-size: cover;
+    color: #fff;
+}
+
+code {
+    color: #444444;
+    background-color: #efefef;
+}
+
 .page-section {
     background-color: white;
     clear:both;
@@ -302,7 +331,11 @@ a:visited {
 }
 
 p {
-    line-height:1.5em;
+    line-height: 1.5em;
+}
+
+.page-section li {
+    line-height: 1.5em;
 }
 
 /**********************************************************************************************************

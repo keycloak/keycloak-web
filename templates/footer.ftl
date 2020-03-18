@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-sm-9 col-xs-12">
                     <a href="http://www.redhat.com/" target="_blank">
-                        <img alt="redhatlogo-white" src="${root}resources/images/redhatlogo-white.png" width="130">
+                        <img alt="redhatlogo-white" src="${links.getResource('images/redhatlogo-white.png')}" width="130">
                     </a>
                 </div>
             </div>
