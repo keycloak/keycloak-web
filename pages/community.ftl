@@ -30,6 +30,10 @@
             We also have a <a href="https://groups.google.com/forum/#!forum/keycloak-user">mailing list</a> where you can ask for help.
         </p>
 
+        <h2>Extensions</h2>
+
+        <p>You can find a number of community maintained extensions to Keycloak <a href="extensions.html">here</a>
+
 
         <h2>Bugs and feature requests</h2>
 

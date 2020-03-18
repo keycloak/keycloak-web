@@ -1,0 +1,16 @@
+:title: Keycloak on Docker
+:summary: Get started with Keycloak on Docker
+:priority: 60
+
+:authUrl: http://localhost:8080/auth
+:containerCommand: docker
+
+## Before you start
+
+Make sure you have Docker installed.
+
+include::../includes/getting-started/start-keycloak-container.adoc[]
+
+include::../includes/getting-started/realm-config.adoc[]
+
+include::../includes/getting-started/login-to-account.adoc[]

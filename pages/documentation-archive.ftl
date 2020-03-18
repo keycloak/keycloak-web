@@ -13,7 +13,7 @@
         </ol>
 
         <ul>
-        <#list versionsShorter as version>
+        <#list versionsMajorMinor as version>
             <li><a href="archive/documentation-${version.versionShorter}.html">${version.versionShorter}</a></li>
         </#list>
         </ul>

@@ -5,10 +5,20 @@ package org.keycloak.webbuilder;
  */
 public class Config {
 
+    private boolean publish;
+
     private int maxBlog;
     private int maxNews;
 
     private Urls urls;
+
+    public boolean isPublish() {
+        return publish;
+    }
+
+    public void setPublish(boolean publish) {
+        this.publish = publish;
+    }
 
     public int getMaxBlog() {
         return maxBlog;
@@ -36,8 +46,6 @@ public class Config {
 
     public static class Urls {
         private String home;
-        private String docs;
-        private String blog;
         private String source;
         private String issues;
 
@@ -47,22 +55,6 @@ public class Config {
 
         public void setHome(String home) {
             this.home = home;
-        }
-
-        public String getDocs() {
-            return docs;
-        }
-
-        public void setDocs(String docs) {
-            this.docs = docs;
-        }
-
-        public String getBlog() {
-            return blog;
-        }
-
-        public void setBlog(String blog) {
-            this.blog = blog;
         }
 
         public String getSource() {
