@@ -186,6 +186,10 @@ div.blog img {
     padding: 10px;
 }
 
+div.blog img {
+    max-width: 100%;
+}
+
 div.blog ul {
     margin: 20px 0;
 }
