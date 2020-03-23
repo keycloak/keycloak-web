@@ -1,11 +1,13 @@
 package org.keycloak.webbuilder;
 
 import org.keycloak.webbuilder.builders.AbstractBuilder;
+import org.keycloak.webbuilder.builders.BlogBuilder;
 import org.keycloak.webbuilder.builders.Cleaner;
 import org.keycloak.webbuilder.builders.DocumentationArchiveBuilder;
 import org.keycloak.webbuilder.builders.DownloadsArchiveBuilder;
 import org.keycloak.webbuilder.builders.GuideBuilder;
 import org.keycloak.webbuilder.builders.PageBuilder;
+import org.keycloak.webbuilder.builders.ReleaseNotesBuilder;
 import org.keycloak.webbuilder.builders.ResourcesBuilder;
 import org.keycloak.webbuilder.builders.RssFeedBuilder;
 
@@ -19,8 +21,8 @@ public class WebBuilder {
     private AbstractBuilder[] builders = new AbstractBuilder[] {
             new Cleaner(),
             new ResourcesBuilder(),
-//            new ReleaseNotesBuilder(),
-//            new BlogBuilder(),
+            new ReleaseNotesBuilder(),
+            new BlogBuilder(),
             new GuideBuilder(),
             new PageBuilder(),
             new DocumentationArchiveBuilder(),
