@@ -36,6 +36,10 @@ public class Links {
         return getLink("blog");
     }
 
+    public String getAbout() {
+        return getLink("about");
+    }
+
     public String getResource(String path) {
         return getRoot() + "resources/" + path;
     }
