@@ -2,8 +2,10 @@
 :summary: Get started with Keycloak on Docker
 :priority: 60
 
-:authUrl: http://localhost:8080/auth
 :containerCommand: docker
+
+:links-admin-console: http://localhost:8080/auth/admin[Keycloak Admin Console, window="_blank"]
+:links-account-console: http://localhost:8080/auth/realms/myrealm/account[Keycloak Account Console, window="_blank"]
 
 ## Before you start
 
