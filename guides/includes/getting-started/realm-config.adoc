@@ -1,6 +1,6 @@
 ## Login to the admin console
 
-Go to the link:{authUrl}/admin[Keycloak Admin Console, window="_blank"] and login with the username and password
+Go to the {links-admin-console} and login with the username and password
 you created earlier.
 
 ## Create a realm
@@ -11,7 +11,7 @@ your own applications.
 
 Let's create our first realm.
 
-. Open the link:{authUrl}/admin[Keycloak Admin Console, window="_blank"]
+. Open the {links-admin-console}
 . Hover the mouse over the dropdown in the top-left corner where it says `Master`, then click on `Add realm`
 . Fill in the form with the following values:
 ** Name: `myrealm`
@@ -25,7 +25,7 @@ Keycloak allows creating roles that can be associated with users to enable role-
 
 Let's create our first role.
 
-. Open the link:{authUrl}/admin[Keycloak Admin Console, window="_blank"]
+. Open the {links-admin-console}
 . Click `Roles` (left-hand menu)
 . Click `Add Role` (top-right corner of table)
 . Fill in the form with the following values:
@@ -38,7 +38,7 @@ image::{guideImages}/add-role.png[Add Role]
 
 Initially there are no users in a new realm, so let's create one:
 
-. Open the link:{authUrl}/admin[Keycloak Admin Console, window="_blank"]
+. Open the {links-admin-console}
 . Click `Users` (left-hand menu)
 * Click `Add user` (top-right corner of table)
 . Fill in the form with the following values:
