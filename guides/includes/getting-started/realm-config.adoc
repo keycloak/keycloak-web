@@ -19,21 +19,6 @@ Let's create our first realm.
 
 image::{guideImages}/add-realm.png[Add Realm]
 
-## Create a role
-
-Keycloak allows creating roles that can be associated with users to enable role-based access control.
-
-Let's create our first role.
-
-. Open the {links-admin-console}
-. Click `Roles` (left-hand menu)
-. Click `Add Role` (top-right corner of table)
-. Fill in the form with the following values:
-** Role Name: `myrole`
-. Click `Save`
-
-image::{guideImages}/add-role.png[Add Role]
-
 ## Create a user
 
 Initially there are no users in a new realm, so let's create one:
@@ -56,11 +41,3 @@ The user will need an initial password set to be able to login. To do this:
 . Click `ON` next to `Temporary` to prevent having to update password on first login
 
 image::{guideImages}/set-password.png[Set Password]
-
-Let's also assign the role we created to the user. To do this:
-
-. Click `Role Mappings`
-. Select `myrole` in `Available Roles`
-* Click `Add selected`
-
-image::{guideImages}/add-role-mapping.png[Add Role Mapping]
