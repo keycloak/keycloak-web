@@ -52,6 +52,10 @@ public class Links {
         return getLink(guide.getPath());
     }
 
+    public String get(Blogs.Blog blog) {
+        return getLink(blog.getPath() + "/" + blog.getName());
+    }
+
     private String getLink(String path) {
         return getRoot() + path + (config.isPublish() ? "" : ".html");
     }
