@@ -4,6 +4,7 @@ import org.keycloak.webbuilder.utils.AsciiDoctor;
 import org.keycloak.webbuilder.utils.FreeMarker;
 
 import java.io.File;
+import java.util.Calendar;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.HashMap;
@@ -12,6 +13,13 @@ import java.util.List;
 import java.util.Map;
 
 public class Blogs extends LinkedList<Blogs.Blog> {
+
+    private static Calendar OLD_BLOG;
+    static {
+        OLD_BLOG = Calendar.getInstance();
+        OLD_BLOG.setTime(new Date());
+        OLD_BLOG.add(Calendar.MONTH, -12);
+    }
 
     private FreeMarker freeMarker;
     private AsciiDoctor asciiDoctor;
@@ -153,6 +161,10 @@ public class Blogs extends LinkedList<Blogs.Blog> {
 
         public Map<String, Object> getMap() {
             return map;
+        }
+
+        public boolean isOld() {
+            return OLD_BLOG.getTime().after(date);
         }
     }
 
