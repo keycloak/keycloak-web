@@ -211,12 +211,17 @@ div.blog ul ul {
     box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.25);
 }
 
-h3.card-title {
-    margin-top: 0;
+h2.card-title {
+    margin: 0;
 }
 
 p.card-text {
-    margin-bottom: 0;
+    margin: 18px 0 0 0;
+}
+
+p.card-date {
+    margin: 2px 0 0 0;
+    font-size: 11px;
 }
 
 /**********************************************************************************************************

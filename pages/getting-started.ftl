@@ -14,8 +14,11 @@
                 <a href="${links.get(g)}">
                 <div class="card">
                     <div class="card-body">
-                        <h3 class="card-title">${g.title}</h5>
+                        <h2 class="card-title">${g.title}</h2>
+
+                        <#if g.summary??>
                         <p class="card-text">${g.summary}</p>
+                        </#if>
                     </div>
                 </div>
                 </a>

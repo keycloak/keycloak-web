@@ -40,6 +40,7 @@ public class Blogs extends LinkedList<Blogs.Blog> {
                         date,
                         f.getName().replace(".ftl", ""),
                         (String) attributes.get("title"),
+                        (String) attributes.get("summary"),
                         (String) attributes.get("author"),
                         (String) attributes.get("category"),
                         publish,
@@ -53,7 +54,7 @@ public class Blogs extends LinkedList<Blogs.Blog> {
         }
 
         for (Versions.Version v : versions) {
-            Blog blog = new Blog(BlogFormat.FREEMARKER, v.getDate(), "keycloak-" + v.getVersion().replace(".", "") + "-released", "Keycloak " + v.getVersion() + " released", null, "Keycloak Release", true, true, "templates/blog-release.ftl");
+            Blog blog = new Blog(BlogFormat.FREEMARKER, v.getDate(), "keycloak-" + v.getVersion().replace(".", "") + "-released", "Keycloak " + v.getVersion() + " released", null, null, "Keycloak Release", true, true, "templates/blog-release.ftl");
             blog.getMap().put("version", v);
             add(blog);
         }
@@ -71,6 +72,8 @@ public class Blogs extends LinkedList<Blogs.Blog> {
 
         private final String title;
 
+        private final String summary;
+
         private final String author;
 
         private final String category;
@@ -83,11 +86,12 @@ public class Blogs extends LinkedList<Blogs.Blog> {
 
         private final Map<String, Object> map = new HashMap<>();
 
-        public Blog(BlogFormat format, Date date, String name, String title, String author, String category, boolean publish, boolean release, String template) {
+        public Blog(BlogFormat format, Date date, String name, String title, String summary, String author, String category, boolean publish, boolean release, String template) {
             this.format = format;
             this.date = date;
             this.name = name;
             this.title = title;
+            this.summary = summary;
             this.author = author;
             this.category = category;
             this.publish = publish;
@@ -103,8 +107,16 @@ public class Blogs extends LinkedList<Blogs.Blog> {
             return date;
         }
 
+        public String getName() {
+            return name;
+        }
+
         public String getTitle() {
             return title;
+        }
+
+        public String getSummary() {
+            return summary;
         }
 
         public String getAuthor() {

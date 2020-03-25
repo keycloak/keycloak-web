@@ -5,32 +5,48 @@
 <#include "../templates/header.ftl">
 <#include "../templates/menu.ftl">
 
-<div class="page-section">
+<div class="page-section cards-section">
     <div class="container">
-        <a class="float-right" href="${links.rss}"><img src="resources/images/rss.png"/></a>
-        <#list blogs as blog>
-            <#if !blog.release || includeRelease>
-                <h1><a href="${root}${blog.path}/${blog.filename}">${blog.title}</a></h1>
+        <div class="row">
+            <#list blogs as blog>
+                <#if !blog.release || includeRelease>
+                    <div class="col-sm-12">
+                        <a href="${links.get(blog)}">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2 class="card-title">${blog.title}</h2>
+                                <p class="card-date">${blog.date?string["EEEE, MMMM dd YYYY"]}<#if blog.author??>, posted by ${blog.author}</#if></p>
 
-                <p class="blog-date">${blog.date?string["EEEE, MMMM dd YYYY"]}<#if blog.author??>, posted by ${blog.author}</#if></p>
+                                <#if blog.summary??>
+                                <p class="card-text">${blog.summary}</p>
+                                </#if>
+                            </div>
+                        </div>
+                        </a>
+                    </div>
 
-                <div class="blog blog-container">
-                    <#include "../${blog.template}">
-                </div>
+                    <#if blog.release>
+                        <#assign includeRelease = false>
+                    </#if>
 
-                <#if blog.release>
-                    <#assign includeRelease = false>
+                    <#assign displayed = displayed + 1>
                 </#if>
 
-                <#assign displayed = displayed + 1>
-            </#if>
+                <#if displayed == config.maxBlog>
+                    <#break>
+                </#if>
+            </#list>
+        </div>
 
-            <#if displayed == config.maxBlog>
-                <#break>
-            </#if>
-        </#list>
-
-        <h3>For older entries go <a href="blog-archive.html">here</a>.</h3>
+        <div class="row">
+        <div class="col-sm-6">
+        <h3>For older entries go <a href="blog-archive.html">here</a></h3>
+        </div>
+        <div class="col-sm-6">
+        <h3><a class="float-right" href="${links.rss}"><img src="resources/images/rss.png"/></a></h3>
+        </div>
+        </div>
     </div>
 </div>
+
 <#include "../templates/footer.ftl">

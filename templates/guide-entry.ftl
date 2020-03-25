@@ -6,7 +6,9 @@
 <div class="page-section">
     <div class="container blog">
         <h1>${guide.title}</h1>
+        <#if guide.summary??>
         <p>${guide.summary}</p>
+        </#if>
 
         <#include "../${guide.template}">
     </div>

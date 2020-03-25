@@ -3,6 +3,7 @@ title = Keycloak Cluster Setup
 date = 2019-05-10
 publish = true
 author = 张立强 liqiang@fit2cloud.com
+summary = If you'd like to setup Keycloak cluster, this blog may give you some reference.
 category = Cluster
 -->
 
