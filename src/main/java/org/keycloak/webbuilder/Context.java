@@ -64,7 +64,7 @@ public class Context {
     }
 
     public void close() {
-
+        asciiDoctor.close();
     }
 
     private Config loadConfig() {

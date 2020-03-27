@@ -1,6 +1,7 @@
 package org.keycloak.webbuilder;
 
 import org.keycloak.webbuilder.builders.AbstractBuilder;
+import org.keycloak.webbuilder.builders.AppBuilder;
 import org.keycloak.webbuilder.builders.BlogBuilder;
 import org.keycloak.webbuilder.builders.Cleaner;
 import org.keycloak.webbuilder.builders.DocumentationArchiveBuilder;
@@ -27,7 +28,8 @@ public class WebBuilder {
             new PageBuilder(),
             new DocumentationArchiveBuilder(),
             new DownloadsArchiveBuilder(),
-            new RssFeedBuilder()
+            new RssFeedBuilder(),
+            new AppBuilder()
     };
 
     public static void main(String[] args) throws Exception {
