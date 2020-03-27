@@ -327,6 +327,15 @@ a:visited {
     color: #fff;
 }
 
+.card-body {
+    color: #333;
+}
+
+.card-body form {
+    margin-top: 15px;
+    margin-right: 10px;
+}
+
 code {
     color: #444444;
     background-color: #efefef;
@@ -337,6 +346,22 @@ code {
     clear:both;
     width:100%;
     padding:1em 0 5em 0;
+}
+
+a.hide {
+    display: none;
+}
+
+a.show {
+    display: inline!important;
+}
+
+div.hide {
+    display: none;
+}
+
+div.show {
+    display: block;
 }
 
 p {
