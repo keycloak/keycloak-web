@@ -1,0 +1,86 @@
+:title: Keycloak on Openshift
+:summary: Get started with Keycloak on Openshift
+:priority: 100
+
+:links-admin-console: Keycloak Admin Console
+:links-account-console: Keycloak Account Console
+
+## Before you start
+
+Install https://code-ready.github.io/crc/[Red Hat Code Ready Containers] and follow the steps in the documentation to install a 
+local OpenShift cluster.
+
+Make sure the cluster is functional by executing the following command:
+
+[source,bash,subs="attributes+"]
+----
+crc status
+----
+
+If everything is OK you should see an output similar to this:
+
+[source,bash,subs="attributes+"]
+----
+CRC VM:          Running
+OpenShift:       Running
+...
+----
+
+Log in as the user `developer`:
+
+[source,bash,subs="attributes+"]
+----
+oc login -u developer -p developer
+----
+
+For this guide, we are going to create a new project called `keycloak`. For that, execute the following command:
+
+[source,bash,subs="attributes+"]
+----
+oc new-project keycloak
+----
+
+## Run Keycloak
+
+To spin up a Keycloak server in your project, execute the following command:
+
+[source,bash,subs="attributes+"]
+----
+oc process -f https://raw.githubusercontent.com/keycloak/keycloak-quickstarts/latest/openshift-examples/keycloak.yaml \
+    -p KEYCLOAK_USER=admin \
+    -p KEYCLOAK_PASSWORD=admin \
+    -p NAMESPACE=keycloak \
+| oc create -f -
+----
+
+Once the command above completes you should see a message similar to this:
+
+[source,bash,subs="attributes+"]
+----
+service/secure-keycloak created
+route.route.openshift.io/keycloak created
+deploymentconfig.apps.openshift.io/keycloak created.
+----
+
+Run the following to find out the URLs of Keycloak:
+
+[source,bash,subs="attributes+"]
+----
+KEYCLOAK_URL=https://$(oc get route keycloak --template='{{ .spec.host }}')/auth &&
+echo "" &&
+echo "Keycloak:                 $KEYCLOAK_URL" &&
+echo "Keycloak Admin Console:   $KEYCLOAK_URL/admin" &&
+echo "Keycloak Account Console: $KEYCLOAK_URL/realms/myrealm/account" &&
+echo ""
+----
+
+Remember these URLs as you will need them throughout this guide. The URL for the account console won't work
+right now as you will need to create the realm first.
+
+The https://github.com/keycloak/keycloak-quickstarts/blob/latest/kubernetes-examples/keycloak.yaml[`keycloak.yaml`] template is just an example on how you can use OpenShift Templates to create applications that
+spin up a Keycloak Server. In real world deployments you should consider using a production grade database (e.g.: PostgreSQL) and
+use secrets for configuring the admin user as well as the X.509 certificates and keys to secure communications to the server through HTTPS.
+
+include::../includes/getting-started/realm-config.adoc[]
+
+include::../includes/getting-started/login-to-account.adoc[]
