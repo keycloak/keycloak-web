@@ -1,0 +1,11 @@
+{
+  "name": "HiOrg-Server Identity Provider",
+  "description": "Keycloak extension to add HiOrg-Server as an identity provider",
+  "maintainers": [
+    "MartinBoehmer"
+  ],
+  "website": "https://gitlab.com/MartinBoehmer/keycloak-hiorgserver-idp",
+  "download": "https://gitlab.com/MartinBoehmer/keycloak-hiorgserver-idp/releases",
+  "documentation": "https://gitlab.com/MartinBoehmer/keycloak-hiorgserver-idp/blob/master/README.en.md",
+  "source": "https://gitlab.com/MartinBoehmer/keycloak-hiorgserver-idp"
+}
