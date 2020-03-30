@@ -94,3 +94,7 @@ right now as you will need to create the realm first.
 include::../includes/getting-started/realm-config.adoc[]
 
 include::../includes/getting-started/login-to-account.adoc[]
+
+include::../includes/getting-started/first-app.adoc[]
+
+include::../includes/getting-started/next.adoc[]

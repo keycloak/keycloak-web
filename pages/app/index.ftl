@@ -1,4 +1,4 @@
-<#assign title = "Downloads Archive" noindex=true nocsp=true>
+<#assign title = "Test Application" noindex=true nocsp=true>
 
 <#include "../../templates/header.ftl">
 <#include "../../templates/menu.ftl">

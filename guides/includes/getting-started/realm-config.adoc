@@ -28,8 +28,8 @@ Initially there are no users in a new realm, so let's create one:
 * Click `Add user` (top-right corner of table)
 . Fill in the form with the following values:
 ** Username: `myuser`
-** First Name: `Foo`
-** Last Name: `Bar`
+** First Name: Your first name
+** Last Name: Your last name
 . Click `Save`
 
 image::{guideImages}/add-user.png[Add User]
