@@ -2,6 +2,7 @@
 :summary: Get started with Keycloak on bare metal
 :priority: 10
 
+:links-local: true
 :links-admin-console: http://localhost:8080/auth/admin[Keycloak Admin Console, window="_blank"]
 :links-account-console: http://localhost:8080/auth/realms/myrealm/account[Keycloak Account Console, window="_blank"]
 
@@ -23,3 +24,7 @@ include::../includes/getting-started/create-admin-localhost.adoc[]
 include::../includes/getting-started/realm-config.adoc[]
 
 include::../includes/getting-started/login-to-account.adoc[]
+
+include::../includes/getting-started/first-app.adoc[]
+
+include::../includes/getting-started/next.adoc[]
