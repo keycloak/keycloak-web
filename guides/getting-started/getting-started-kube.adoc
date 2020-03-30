@@ -28,21 +28,11 @@ minikube addons enable ingress
 The Keycloak QuickStarts repository includes some example files to help deploy Keycloak to Kubernetes. First step is to retrieve
 these files by cloing the repository:
 
-[source,bash,subs="attributes+"]
-----
-git clone https://github.com/keycloak/keycloak-quickstarts.git
-----
-
-If you don't have Git installed you can download the files directly from here:
-
-* https://raw.githubusercontent.com/keycloak/keycloak-quickstarts/latest/kubernetes-examples/keycloak.yaml[keycloak.yaml]
-* https://raw.githubusercontent.com/keycloak/keycloak-quickstarts/latest/kubernetes-examples/keycloak-ingress.yaml[keycloak-ingress.yaml]
-
 Let's start with creating the Keycloak deployment and service:
 
 [source,bash,subs="attributes+"]
 ----
-kubectl create -f keycloak-quickstarts/kubernetes-examples/keycloak.yaml
+kubectl create -f https://raw.githubusercontent.com/keycloak/keycloak-quickstarts/latest/kubernetes-examples/keycloak.yaml
 ----
 
 This will start Keycloak on Kuberneters. It will also create an initial admin user with username `admin` and password
@@ -54,10 +44,13 @@ Start by creating an Ingress for Keycloak:
 
 [source,bash,subs="attributes+"]
 ----
-cat keycloak-quickstarts/kubernetes-examples/keycloak-ingress.yaml | \
+wget -q -O - https://raw.githubusercontent.com/keycloak/keycloak-quickstarts/latest/kubernetes-examples/keycloak-ingress.yaml | \
 sed "s/KEYCLOAK_HOST/keycloak.$(minikube ip).nip.io/" | \
 kubectl create -f -
 ----
+
+If you don't have `wget` and `sed` available, download the file and manually edit the file replacing `KEYCLOAK_HOST`
+with `keycloak.<minikube ip address>.nip.io`.
 
 Run the following to find out the URLs of Keycloak:
 
