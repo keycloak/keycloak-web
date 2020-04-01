@@ -39,7 +39,7 @@
     </tr>
     <tr>
         <td>
-            <a href="https://github.com/keycloak/keycloak-containers/blob/${version.version}/README.md" target="_blank">
+            <a href="https://github.com/keycloak/keycloak-containers/blob/${version.version}/server/README.md" target="_blank">
                 Server Container Image
             </a>
         </td>
