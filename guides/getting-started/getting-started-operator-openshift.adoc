@@ -1,0 +1,20 @@
+:title: Keycloak Operator on Openshift
+:summary: Get started with Keycloak Operator on Openshift
+:priority: 110
+
+## Before you start
+
+This quickstart requires a running OpenShift cluster. You may use Red Hat Code Ready Container (as described in link:getting-started-openshift.adoc[Keycloak Operator Openshift Getting Stated Guide]).
+
+include::../includes/getting-started/install-keycloak-operator-on-openshift.adoc[]
+
+include::../includes/getting-started/create-keycloak-installation-using-keycloak-operator.adoc[]
+
+include::../includes/getting-started/create-keycloak-realm-using-keycloak-operator.adoc[]
+
+include::../includes/getting-started/login-to-admin-console-with-keycloak-operator.adoc[]
+
+include::../includes/getting-started/create-keycloak-user-using-keycloak-operator.adoc[]
+
+include::../includes/getting-started/first-app-operator.adoc[]
+

@@ -1,0 +1,18 @@
+## Create Keycloak Cluster using Keycloak Operator
+
+Once Keycloak Operator is subscribed to a specific namespace, you can install a Keycloak installation by creating a `Keycloak` Custom Resource:
+
+[source,bash]
+----
+$ kubectl create -f https://raw.githubusercontent.com/keycloak/keycloak-quickstarts/latest/operator-examples/mykeycloak.yaml
+----
+
+The above example will create a single Keycloak instance (you may change this by modifying `instances` parameter).
+
+After a few minutes, Keycloak cluster should be up and running. Once the Keycloak instance is created, check if it's ready:
+
+[source,bash]
+----
+$ kubectl get keycloak/mykeycloak -o jsonpath='{.status.ready}'
+true
+----
