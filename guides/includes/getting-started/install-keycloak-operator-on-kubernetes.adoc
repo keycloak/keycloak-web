@@ -1,0 +1,17 @@
+## Install Keycloak Operator on Kubernetes
+
+The best way to install the Keycloak Operator in Kubernetes environment is to use Operator Lifecycle Manager (OLM). Before moving on, make sure you followed the https://operatorhub.io/how-to-install-an-operator[OLM installation guide] and all Operatorhub entries have been successfully pulled.
+
+Next, navigate to the OLM Web Console to navigate to the Keycloak Operator using menu on the left side and following `Operators` -> `OperatorHub`. Then, focus on the search input box and type "keycloak".
+
+image::{guideImages}/operator-install-on-Kubernetes-1.png[Install Operator On Kubernetes]
+
+Next, navigate to Keycloak Operator and click on it. Next, follow the instructions on the screen:
+
+image::{guideImages}/operator-install-on-Kubernetes-2.png[Install Operator On OpenShfit]
+
+Make sure you've chosen a proper namespace when selecting the Subscription in the next screen.
+
+If you followed all the instructions on the screen, you should see a similar screen with a description of an installed Keycloak Operator:
+
+image::{guideImages}/operator-install-on-OpenShift-3.png[Install Operator On OpenShfit]

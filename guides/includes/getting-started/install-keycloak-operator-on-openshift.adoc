@@ -1,0 +1,15 @@
+## Install Keycloak Operator on OpenShift
+
+Install the Keycloak Operator by using Operator Lifecycle Manager (OLM). Navigate `home` -> `Operators` -> `OperatorHub` in the menu on the left side of the OpenShift Console. Then, focus on the search input box and type "keycloak":
+
+image::{guideImages}/operator-install-on-OpenShift-1.png[Install Operator On OpenShfit]
+
+Next, navigate to Keycloak Operator and click on it. Next, follow the instructions on the screen:
+
+image::{guideImages}/operator-install-on-OpenShift-2.png[Install Operator On OpenShfit]
+
+Make sure you've chosen a proper namespace when selecting the Subscription in the next screen.
+
+If you followed all the instructions on the screen, you should see a similar screen with a description of an installed Keycloak Operator:
+
+image::{guideImages}/operator-install-on-OpenShift-3.png[Install Operator On OpenShfit]

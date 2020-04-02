@@ -1,0 +1,37 @@
+## Login to Keycloak Admin Console with Keycloak Operator
+
+Before logging into the Admin Console, you need to check what is the Admin Username and Password. The credentials are stored inside the following `Secret`:
+
+[source,bash]
+----
+$ kubectl get keycloak mykeycloak --output="jsonpath={.status.credentialSecret}"
+credential-mykeycloak
+----
+
+Next, you need to view the username and password:
+
+[source,bash]
+----
+$ kubectl get secret credential-mykeycloak -o go-template='{{range $k,$v := .data}}{{printf "%s: " $k}}{{if not $v}}{{$v}}{{else}}{{$v | base64decode}}{{end}}{{"\n"}}{{end}}'
+ADMIN_PASSWORD: CvsRKQOofhGrgg==
+ADMIN_USERNAME: admin
+----
+
+Run the following to find out the URLs of Keycloak:
+
+[source,bash,subs="attributes+"]
+----
+$ KEYCLOAK_URL=https://$(oc get route keycloak --template='{{ .spec.host }}')/auth &&
+echo "" &&
+echo "Keycloak:                 $KEYCLOAK_URL" &&
+echo "Keycloak Admin Console:   $KEYCLOAK_URL/admin" &&
+echo "Keycloak Account Console: $KEYCLOAK_URL/realms/myrealm/account" &&
+echo ""
+Keycloak:                 https://keycloak-default.apps.cluster-slaskawi-11a6.slaskawi-11a6.example.opentlc.com/auth
+Keycloak Admin Console:   https://keycloak-default.apps.cluster-slaskawi-11a6.slaskawi-11a6.example.opentlc.com/auth/admin
+Keycloak Account Console: https://keycloak-default.apps.cluster-slaskawi-11a6.slaskawi-11a6.example.opentlc.com/auth/realms/myrealm/account
+----
+
+Navigate to Keycloak URL using your browser and use Admin username and password obtained in previous steps:
+
+image::{guideImages}/admin-console-login-with-Operator.png[Admin console login with Keycloak Operator]

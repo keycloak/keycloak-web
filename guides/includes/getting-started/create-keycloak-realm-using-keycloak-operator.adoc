@@ -1,0 +1,18 @@
+## Create Keycloak Realm using Keycloak Operator
+
+Keycloak Operator uses `KeycloakRealm` Custom Resources to create and manage Realm resources. Create it by using the following command:
+
+[source,bash]
+----
+$ kubectl create -f https://raw.githubusercontent.com/keycloak/keycloak-quickstarts/latest/operator-examples/myrealm.yaml
+----
+
+The above command will create a new Realm in Keycloak installation matched by `instanceSelector`. The newly created Realm will be named "basic".
+
+Once the Realm is created, check if it's ready:
+
+[source,bash]
+----
+$ kubectl get keycloakrealms/myrealm -o jsonpath='{.status.ready}'
+true
+----

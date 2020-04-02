@@ -1,0 +1,19 @@
+:title: Keycloak Operator on Kubernetes
+:summary: Get started with Keycloak Operator on Kubernetes
+:priority: 110
+
+## Before you start
+
+This quickstart requires a running Kubernetes cluster. You may use https://kubernetes.io/docs/setup/learning-environment/minikube/[Minikube] or install the cluster manually.
+
+include::../includes/getting-started/install-keycloak-operator-on-kubernetes.adoc[]
+
+include::../includes/getting-started/create-keycloak-installation-using-keycloak-operator.adoc[]
+
+include::../includes/getting-started/create-keycloak-realm-using-keycloak-operator.adoc[]
+
+include::../includes/getting-started/login-to-admin-console-with-keycloak-operator.adoc[]
+
+include::../includes/getting-started/create-keycloak-user-using-keycloak-operator.adoc[]
+
+include::../includes/getting-started/first-app-operator.adoc[]
