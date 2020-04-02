@@ -54,6 +54,9 @@ public class Config {
         }
 
         public void setHome(String home) {
+            if (!home.endsWith("/")) {
+                home += "/";
+            }
             this.home = home;
         }
 

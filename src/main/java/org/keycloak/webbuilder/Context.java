@@ -39,6 +39,7 @@ public class Context {
         asciiDoctor = new AsciiDoctor(rootDir);
 
         webSrcDir = rootDir;
+
         pagesDir = new File(webSrcDir, "pages");
         resourcesDir = new File(webSrcDir, "resources");
         staticDir = new File(webSrcDir, "static");

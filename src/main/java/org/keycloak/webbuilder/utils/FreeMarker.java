@@ -64,11 +64,11 @@ public class FreeMarker {
     public void init(Context context) {
         globalAttributes = new HashMap<>();
 
-        if (context.config().isPublish()) {
-            globalAttributes.put("root", context.config().getUrls().getHome());
-        } else {
-            globalAttributes.put("root", context.getTargetDir().toURI().toString());
+        String root = context.config().isPublish() ? context.config().getUrls().getHome() : context.getTargetDir().toURI().toString();
+        if (!root.endsWith("/")) {
+            root += "/";
         }
+        globalAttributes.put("root", root);
 
         globalAttributes.put("config", context.config());
         globalAttributes.put("home", context.config().getUrls().getHome());
