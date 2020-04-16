@@ -1,0 +1,13 @@
+:title: New Keycloak Admin Console Design
+:date: 2020-04-16
+:publish: true
+:author: Firstname Lastname
+
+We are planning to completely re-vamp the Keycloak Admin Console, and have been lucky enough to get awesome help from
+UXD professionals.
+
+The designs are a work-in-progress, but some sections of the console are already ready. We would love to get feedback
+from users of Keycloak in order to make the new admin console as good as it can be.
+
+In order to make it as easy as possible for everyone to view the designs and provide feedback we have created a
+https://www.keycloak.org/keycloak-community/design/admin-console/[dedicate website].
