@@ -1,7 +1,7 @@
 :title: New Keycloak Admin Console Design
 :date: 2020-04-16
 :publish: true
-:author: Firstname Lastname
+:author: Stian Thorgersen
 
 We are planning to completely re-vamp the Keycloak Admin Console, and have been lucky enough to get awesome help from
 UXD professionals.
