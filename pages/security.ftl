@@ -35,7 +35,7 @@
         <h3>Resources</h3>
         <ul>
             <li><a href="https://issues.jboss.org/browse/KEYCLOAK" target="_blank">JIRA</a></li>
-            <li><a href="mailto:keycloak-security@lists.jboss.org">keycloak-security@lists.jboss.org</a></li>
+            <li><a href="mailto:keycloak-security@googlegroups.com">keycloak-security@googlegroups.com</a></li>
         </ul>
 </div>
 
