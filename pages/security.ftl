@@ -9,7 +9,7 @@
 
         <p>
             When reporting a security vulnerability please do not disclose the details publicly. This includes our
-            user mailing lists. Instead contact <a href="mailto:keycloak-security@lists.jboss.org">keycloak-security@lists.jboss.org</a> or create a JIRA issue and mark it as security sensitive. The Keycloak team will acknowledge your e-mail, and you will receive a response indicating the next steps in handling your report.
+            user mailing lists. Instead contact <a href="mailto:keycloak-security@googlegroups.com">keycloak-security@googlegroups.com</a> or create a JIRA issue and mark it as security sensitive. The Keycloak team will acknowledge your e-mail, and you will receive a response indicating the next steps in handling your report.
         </p>
 
         <p>
