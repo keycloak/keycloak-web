@@ -138,19 +138,22 @@ public class Versions extends LinkedList<Versions.Version> {
             String[] v1 = version.split("\\.");
             String[] v2 = o.getVersion().split("\\.");
 
-            if (!v2[0].equals(v1[0])) {
-                return v2[0].compareTo(v1[0]);
+            int r = stringNumberCompareTo(v2[0], v1[0]);
+            if (r != 0) {
+                return r;
             }
 
-            if (!v2[1].equals(v1[1])) {
-                return v2[1].compareTo(v1[1]);
+            r = stringNumberCompareTo(v2[1], v1[1]);
+            if (r != 0) {
+                return r;
             }
 
-            if (!v2[2].equals(v1[2])) {
-                return v2[2].compareTo(v1[2]);
-            }
+            r = stringNumberCompareTo(v2[2], v1[2]);
+            return r;
+        }
 
-            return v2[3].compareTo(v1[3]);
+        private int stringNumberCompareTo(String a, String b) {
+            return Integer.valueOf(a).compareTo(Integer.valueOf(b));
         }
     }
 }
