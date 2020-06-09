@@ -1,0 +1,11 @@
+{
+    "name": "IBM Security Verify Authenticator Extensions",
+    "description": "The IBM Security Verify authenticator extensions for Keycloak are first and second factor authenticators that extend Keycloak’s capabilities by supporting various authentication methods such as One-time-passcode, QR code, Push notifications, and FIDO2.",
+    "maintainers": [
+        "jason-choi1"
+    ],
+    "website": "https://github.com/IBM-Security/verify-keycloak-integration",
+    "download": "https://github.com/IBM-Security/verify-keycloak-integration/releases",
+    "documentation": "https://github.com/IBM-Security/verify-keycloak-integration/blob/master/README.md",
+    "source": "https://github.com/IBM-Security/verify-keycloak-integration"
+}
