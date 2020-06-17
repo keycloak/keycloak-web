@@ -1,9 +1,16 @@
 package org.keycloak.webbuilder.builders;
 
+import org.apache.commons.compress.archivers.ArchiveEntry;
+import org.apache.commons.compress.archivers.ArchiveInputStream;
+import org.apache.commons.compress.archivers.tar.TarArchiveInputStream;
+import org.apache.commons.compress.compressors.gzip.GzipCompressorInputStream;
+import org.apache.commons.io.IOUtils;
+
+import java.io.BufferedInputStream;
 import java.io.File;
-import java.io.InputStream;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
 import java.net.URL;
-import java.nio.file.Files;
 
 public class AppBuilder extends AbstractBuilder {
 
@@ -11,10 +18,16 @@ public class AppBuilder extends AbstractBuilder {
     protected void build() throws Exception {
         File f = new File(context.getTargetDir(), "app/keycloak.js");
         if (!f.isFile()) {
-            URL u = new URL("https://raw.githubusercontent.com/keycloak/keycloak/" + context.versions().getLatest().getVersion() + "/adapters/oidc/js/src/main/resources/keycloak.js");
-            InputStream is = u.openStream();
-            Files.copy(is, f.toPath());
-            is.close();
+            URL u = new URL("https://registry.npmjs.org/keycloak-js/-/keycloak-js-" + context.versions().getLatest().getVersion() + ".tgz");
+            try (ArchiveInputStream i = new TarArchiveInputStream(new GzipCompressorInputStream(new BufferedInputStream(u.openStream())))) {
+                for (ArchiveEntry e = i.getNextEntry(); e != null; e = i.getNextEntry()) {
+                    if (e.getName().equals("package/dist/keycloak.js")) {
+                        try (OutputStream o = new FileOutputStream(f)) {
+                            IOUtils.copy(i, o);
+                        }
+                    }
+                }
+            }
         }
     }
 
