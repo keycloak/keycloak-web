@@ -1,6 +1,6 @@
 :title: Keycloak Operator on Openshift
 :summary: Get started with Keycloak Operator on Openshift
-:priority: 110
+:priority: 160
 
 ## Before you start
 
