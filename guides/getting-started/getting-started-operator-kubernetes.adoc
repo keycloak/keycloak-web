@@ -1,6 +1,6 @@
 :title: Keycloak Operator on Kubernetes
 :summary: Get started with Keycloak Operator on Kubernetes
-:priority: 110
+:priority: 150
 
 ## Before you start
 
