@@ -1,6 +1,6 @@
 :title: Keycloak on Podman
 :summary: Get started with Keycloak on Podman
-:priority: 50
+:priority: 70
 
 :containerCommand: podman
 
