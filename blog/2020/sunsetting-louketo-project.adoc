@@ -1,0 +1,38 @@
+:title: Sunsetting Louketo Project
+:date: 2020-08-21
+:publish: true
+:author: Bruno Oliveira
+
+After careful consideration, we have decided to pull the plug on Louketo and start the EOL procedure. The plan is during the next 3 months to fix only critical bugs and security issues. Everyone interested in capabilities provided by Louketo Proxy should look at https://github.com/oauth2-proxy/oauth2-proxy[OAuth2 Proxy] project which is providing a similar set of capabilities and has a healthy and active community. 
+
+https://groups.google.com/g/keycloak-dev/c/oDyw94BWxM0/m/zc0J9R10BwAJ[A few months ago], the Keycloak team started Louketo — a joint effort to build a generic OAuth2 Proxy and possibly also begin an umbrella project for a set of OIDC related integration libraries. The initial set of goals has not worked out. Keycloak Gatekeeper and OAuth2 Proxy projects hoped to merge and join efforts but for various reasons, this has not worked out. 
+
+With Louketo and OAuth2 proxy providing similar features, OAuth Proxy being a more popular project with a bigger community we reached a conclusion there's no reason to put more effort into Louketo, when we can just contribute there.
+
+What does it mean in practice?
+
+== FAQ
+
+=== Will Louketo Proxy be no longer maintained? Will there be no new releases? 
+
+Critical bug fixes will be merged and micro releases provided for the next 3 months. It is up to community members to step up and take over maintaining and driving this project further if they wish to do so. Please comment on the https://github.com/louketo/louketo-proxy/issues/683[GitHub issue] or contact the Keycloak team on the https://groups.google.com/forum/#!forum/louketo[mailing list]. 
+
+=== Are there any alternatives I should use instead?
+
+OAuth2 Proxy is very close in a set of capabilities to Louketo Proxy and we highly suggest you investigate it as a replacement. 
+
+=== How do I migrate to OAuth2 Proxy? 
+
+We’ll provide high-level guidance on how to migrate. Although unfortunately there is no comprehensive guide nor magical script. Some corner cases, specific configurations, and capabilities may not be fully covered or addressed in exactly the same way. 
+
+=== Why are you abandoning Louketo Proxy as a project?
+
+Initial goals failed. Which were merging with OAuth2 Proxy and creating a wider set of OAuth2/OIDC integration libraries. Some individuals originally interested in collaboration took a step back. The end result is the Louketo project duplicating efforts and capabilities of other much more popular projects - OAuth2 Proxy. As we believe in OpenSource we just don’t want to follow NIH syndrome :) 
+
+=== I would like to keep maintaining Louketo - what should I do? 
+
+Please comment on the https://github.com/louketo/louketo-proxy/issues/683[GitHub issue] so others can join the discussion. We’ll take it from there :)  
+
+=== What happens if nobody will step up to maintain Louketo? 
+
+After 3 months Louketo repository will be archived and made read-only.
