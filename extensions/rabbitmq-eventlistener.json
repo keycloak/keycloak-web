@@ -1,0 +1,11 @@
+{
+  "name": "RabbitMQ event listener",
+  "description": "An event listener for Keycloak, using the RabbitMQ message broker",
+  "maintainers": [
+    "aznamier"
+  ],
+  "website": "https://github.com/aznamier/keycloak-event-listener-rabbitmq",
+  "download": "https://github.com/aznamier/keycloak-event-listener-rabbitmq",
+  "documentation": "https://github.com/aznamier/keycloak-event-listener-rabbitmq/blob/master/README.md",
+  "source": "https://github.com/aznamier/keycloak-event-listener-rabbitmq"
+}
