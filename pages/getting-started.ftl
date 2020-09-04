@@ -14,6 +14,12 @@
                 <a href="${links.get(g)}">
                 <div class="card">
                     <div class="card-body">
+                        <#if g.community>
+                        <p class="community-badge text-primary">
+                            <i class="fa fa-users text-primary"></i> Community
+                        </p>
+                        </#if>
+
                         <h2 class="card-title">${g.title}</h2>
 
                         <#if g.summary??>

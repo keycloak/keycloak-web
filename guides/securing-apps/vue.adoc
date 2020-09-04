@@ -1,5 +1,6 @@
-:title: Secure Vue.js app with Keycloak
-:summary: Get started with Keycloak integration with Vue.js app
+:title: Vue.js
+:summary: Secure a Vue.js single-page application with Keycloak
+:community: true
 :author: akoserwal
 
 :links-local: true
