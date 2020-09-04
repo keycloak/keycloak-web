@@ -1,24 +1,22 @@
 :title: New Account Console
-:date: 2020-08-27
-:publish: false
+:date: 2020-09-04
+:publish: true
 :author: Stan Silvert
-
-# New Account Console Released
 
 The Keycloak team is excited that our new Account Console is finally final!  The old account console is still available for those who need it, but the new version is the default from now on.
 
 This new console is written as a Single Page Application with link:https://reactjs.org/[React] and link:https://www.patternfly.org/v4/[PatternFly 4].
 
-In addition to the modern look and feel, we make it really easy for organizations to personalize the console with <<theming,custom themes>> and even <<subpages,custom pages>> that can have unlimited functionality.
+In addition to the modern look and feel, we make it really easy for organizations to personalize the console with custom themes and even custom pages that can have unlimited functionality.
 
-### Screen shots of New Account Management Console
-image:../images/new-account-console/welcome-screen.png[alt]
+== Screen shots of New Account Management Console
+image:${blogImages}/new-account-console/welcome-screen.png[alt]
 
-image:../images/new-account-console/main-screen.png[alt]
+image:${blogImages}/new-account-console/main-screen.png[alt]
 
-image:../images/new-account-console/device-activity.png[alt]
+image:${blogImages}/new-account-console/device-activity.png[alt]
 
-### [#theming]#Theming#
+== Theming
 PatternFly 4 makes it really easy to theme the new account console using its system of link:https://www.patternfly.org/v4/documentation/overview/global-css-variables[CSS variables].  All you have to do is tweak a few variables, add your own logo, and the console is perfectly skinned.
 
 [source, css]
@@ -31,21 +29,20 @@ body {
 }
 ----
 
+image:${blogImages}/new-account-console/keycloak-man-welcome-screen.png[alt]
 
-image:../images/new-account-console/keycloak-man-welcome-screen.png[alt]
-
-### [#subpages]#Create your own sub-pages#
+== Create your own sub-pages
 You may have noticed the "Keycloak Man" section above. The new console includes one of our most requested features.  That is the ability to add and remove sub-pages.  So we've made it very easy to develop and plug in your own React component and add it to the Account Console.
 
 It's even possible to build new pages with nothing but an editor.  No build step is required unless you want to use more advanced tools like JSX and Typescript.
 
-image:../images/new-account-console/who-is-keycloak-man.png[alt]
+image:${blogImages}/new-account-console/who-is-keycloak-man.png[alt]
 
-image:../images/new-account-console/keycloak-man-overview.png[alt]
+image:${blogImages}/new-account-console/keycloak-man-overview.png[alt]
 
-image:../images/new-account-console/keycloak-man-jsx.png[alt]
+image:${blogImages}/new-account-console/keycloak-man-jsx.png[alt]
 
 Of course, this "Keycloak Man" theme is available online as a Keycloak Quick Start so you can check out all the source.
 
-### The Home for New Keycloak Features
+== The Home for New Keycloak Features
 New Account Console is the home for user configuration of new Keycloak features like link:https://www.keycloak.org/2019/03/w3c-web-authentication-(webauthn).html[WebAuthn support].  So look for new features to start showing up in the New Account Console instead of the old one.
