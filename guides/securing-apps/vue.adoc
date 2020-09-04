@@ -156,5 +156,3 @@ npm run dev
 ----
 
 image::{guideImages}/vue-app.png[Vue App]
-
-include::../includes/getting-started/next.adoc[]
