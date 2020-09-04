@@ -17,7 +17,7 @@ $ kubectl get keycloakuser/myuser -o jsonpath='{.status.ready}'
 true
 ----
 
-User's password is stored in a `Secret` generated with the following pattern: `credential-<<realm>>-<<username>>-<<namespace>>`:
+User's password is stored in a `Secret` generated with the following pattern: `credential-<realm>-<username>-<namespace>`:
 
 [source,bash]
 ----

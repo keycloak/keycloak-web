@@ -23,7 +23,9 @@ public class Guides {
 
                 int priority = attributes.containsKey("priority") ? Integer.parseInt((String) attributes.get("priority")) : 1000;
 
-                Guide g = new Guide(d.getName(), f.getName(), (String) attributes.get("title"), (String) attributes.get("summary"), priority);
+                boolean community = "true".equals(attributes.get("community"));
+
+                Guide g = new Guide(d.getName(), f.getName(), (String) attributes.get("title"), (String) attributes.get("summary"), (String) attributes.get("author"), community, priority);
                 guides.add(g);
             }
         }
@@ -47,15 +49,19 @@ public class Guides {
 
         private GuideCategory category;
         private String name;
+        private String author;
+        private boolean community;
         private String template;
         private String title;
         private String summary;
         private String path;
         private int priority;
 
-        public Guide(String category, String template, String title, String summary, int priority) {
+        public Guide(String category, String template, String title, String summary, String author, boolean community, int priority) {
             this.category = GuideCategory.valueOf(category.toUpperCase().replaceAll("-", "_"));
             this.name = template.replace(".adoc", "");
+            this.author = author;
+            this.community = community;
             this.template = category + "/" + template;
             this.title = title;
             this.summary = summary;
@@ -65,6 +71,14 @@ public class Guides {
 
         public String getName() {
             return name;
+        }
+
+        public String getAuthor() {
+            return author;
+        }
+
+        public boolean isCommunity() {
+            return community;
         }
 
         public GuideCategory getCategory() {
@@ -98,8 +112,8 @@ public class Guides {
 
     public enum GuideCategory {
 
-        GETTING_STARTED("Getting Started with Keycloak");
-//        SECURING_APPS("Securing Applications");
+        GETTING_STARTED("Getting Started with Keycloak"),
+        SECURING_APPS("Securing Applications");
 
         private String label;
 
