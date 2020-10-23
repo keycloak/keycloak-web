@@ -1,11 +1,13 @@
-<#macro download category label file tar>
+<#macro download category label file tar=true zip=true>
+<#if zip>
 <a onclick="dl('${category}', '${label}');" href="https://downloads.jboss.org/keycloak/${version.version}/${file}.zip" target="_blank">
     <i class="fa fa-download" aria-hidden="true"></i>
     ZIP
 </a>
 (<a href="https://downloads.jboss.org/keycloak/${version.version}/${file}.zip.sha1" target="_blank">sha1</a>)
-<#if tar>
 <span class="space"></span>
+</#if>
+<#if tar>
 <a onclick="dl('${category}', '${label}');" href="https://downloads.jboss.org/keycloak/${version.version}/${file}.tar.gz" target="_blank">
     <i class="fa fa-download" aria-hidden="true"></i>
     TAR.GZ
@@ -19,29 +21,59 @@
 <table class="table table-bordered table-striped">
     <tbody>
     <tr>
-        <td>Server</td>
-        <td>Standalone server distribution</td>
-        <td>
-            <@download category="server" label="standalone" file="keycloak-${version.version}" tar=true />
+        <td>Keycloak</td>
+        <td>Distribution powered by WildFly</td>
+        <td style="width: 300px;">
+            <@download category="server" label="standalone" file="keycloak-${version.version}" />
         </td>
     </tr>
     <tr>
-        <td>Overlay</td>
-        <td>Server add-on for WildFly. Not recommended in production.</td>
-        <td>
-            <@download category="overlay" label="standalone" file="keycloak-overlay-${version.version}" tar=true />
+        <td>Keycloak.X Preview</td>
+        <td>Distribution powered by Quarkus (Preview)</td>
+        <td style="width: 300px;">
+            <@download category="server" label="standalone" file="keycloak.x-preview-${version.version}" />
         </td>
     </tr>
     <tr>
-        <td>Demo</td>
-        <td>Demo distribution <b>*DEPRECATED*</b></td>
+        <td>Container image</td>
+        <td>For Docker, Podman, Kubernetes and OpenShift</td>
         <td>
-            <@download category="demo" label="demo" file="keycloak-demo-${version.version}" tar=true />
+            <a href="https://quay.io/repository/keycloak/keycloak" target="_blank">
+                <i class="fa fa-link"></i>
+                Quay
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <td>Operator</td>
+        <td>For Kubernetes and OpenShift</td>
+        <td>
+            <a href="https://operatorhub.io/operator/keycloak-operator" target="_blank">
+                <i class="fa fa-link"></i>
+                OperatorHub
+            </a>
         </td>
     </tr>
     </tbody>
 </table>
 
+<h2>Gatekeeper</h2>
+
+<p>Keycloak Gatekeeper has moved to the Louketo Proxy project.</p>
+
+<table class="table table-bordered table-striped">
+    <tbody>
+    <tr>
+        <td>Louketo Proxy</td>
+        <td>
+            <a href="https://github.com/louketo/louketo-proxy/releases" target="_blank">
+                <i class="fa fa-link"></i>
+                GitHub Releases
+            </a>
+        </td>
+    </tr>
+    </tbody>
+</table>
 
 <h2>Examples</h2>
 
@@ -50,7 +82,7 @@
 
     <tr>
         <td>Quickstarts distribution</td>
-        <td>
+        <td style="width: 300px;">
             <a onclick="dl('examples', 'quickstarts');" href="https://github.com/keycloak/keycloak-quickstarts" target="_blank">
                 <i class="fa fa-github" aria-hidden="true"></i>
                 GitHub
@@ -85,32 +117,16 @@
         <div role="tabpanel" class="tab-pane active margin-top" id="oidc">
             <table class="table table-bordered table-striped">
                 <tr>
-                    <td>Keycloak Proxy <b>*DEPRECATED*</b></td>
-                    <td>
-                        <table class="table-downloads-inner">
-                            <tr>
-                                <td>&nbsp;</td>
-                                <td>
-                                    <@download category="proxy" label="proxy" file="keycloak-proxy-${version.version}" tar=false />
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-                <tr>
                     <td>WildFly</td>
                     <td>
                         <table class="table-downloads-inner">
                             <tr>
-                                <td>11, 10, 9</td>
+                                <td>
+                                    ${version.wildflyVersionAdapter}<br />
+                                    ${version.wildflyVersionAdapterDeprecated} <b>*DEPRECATED*</b>
+                                </td>
                                 <td>
                                     <@download category="adapter" label="wildfly" file="adapters/keycloak-oidc/keycloak-wildfly-adapter-dist-${version.version}" tar=true />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>8 <b>*DEPRECATED*</b></td>
-                                <td>
-                                    <@download category="adapter" label="wf8" file="adapters/keycloak-oidc/keycloak-wf8-adapter-dist-${version.version}" tar=true />
                                 </td>
                             </tr>
                         </table>
@@ -130,19 +146,6 @@
                                 <td>6</td>
                                 <td>
                                     <@download category="adapter" label="eap6" file="adapters/keycloak-oidc/keycloak-eap6-adapter-dist-${version.version}" tar=true />
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-                <tr>
-                    <td>JBoss AS</td>
-                    <td>
-                        <table class="table-downloads-inner">
-                            <tr>
-                                <td>7.1 <b>*DEPRECATED*</b></td>
-                                <td>
-                                    <@download category="adapter" label="as7" file="adapters/keycloak-oidc/keycloak-as7-adapter-dist-${version.version}" tar=true />
                                 </td>
                             </tr>
                         </table>
@@ -196,18 +199,6 @@
                                     <@download category="adapter" label="jetty9.2" file="adapters/keycloak-oidc/keycloak-jetty92-adapter-dist-${version.version}" tar=true />
                                 </td>
                             </tr>
-                            <tr>
-                                <td>9.1 <b>*DEPRECATED*</b></td>
-                                <td>
-                                    <@download category="adapter" label="jetty9.1" file="adapters/keycloak-oidc/keycloak-jetty91-adapter-dist-${version.version}" tar=true />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>8.1 <b>*DEPRECATED*</b></td>
-                                <td>
-                                    <@download category="adapter" label="jetty8.1" file="adapters/keycloak-oidc/keycloak-jetty81-adapter-dist-${version.version}" tar=true />
-                                </td>
-                            </tr>
                         </table>
                     </td>
                 </tr>
@@ -216,21 +207,15 @@
                     <td>
                         <table class="table-downloads-inner">
                             <tr>
-                                <td>8</td>
+                                <td>8, 9</td>
                                 <td>
-                                    <@download category="adapter" label="tomcat8" file="adapters/keycloak-oidc/keycloak-tomcat8-adapter-dist-${version.version}" tar=true />
+                                    <@download category="adapter" label="tomcat" file="adapters/keycloak-oidc/keycloak-tomcat-adapter-dist-${version.version}" tar=true />
                                 </td>
                             </tr>
                             <tr>
                                 <td>7</td>
                                 <td>
                                     <@download category="adapter" label="tomcat7" file="adapters/keycloak-oidc/keycloak-tomcat7-adapter-dist-${version.version}" tar=true />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>6 <b>*DEPRECATED*</b></td>
-                                <td>
-                                    <@download category="adapter" label="tomcat6" file="adapters/keycloak-oidc/keycloak-tomcat6-adapter-dist-${version.version}" tar=true />
                                 </td>
                             </tr>
                         </table>
@@ -248,7 +233,10 @@
                     <td>
                         <table class="table-downloads-inner">
                             <tr>
-                                <td>11, 10, 9</td>
+                                <td>
+                                    ${version.wildflyVersionAdapter}<br />
+                                    ${version.wildflyVersionAdapterDeprecated} <b>*DEPRECATED*</b>
+                                </td>
                                 <td>
                                     <@download category="adapter-saml" label="wildfly" file="adapters/saml/keycloak-saml-wildfly-adapter-dist-${version.version}" tar=true />
                                 </td>
@@ -276,19 +264,6 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>JBoss AS</td>
-                    <td>
-                        <table class="table-downloads-inner">
-                            <tr>
-                                <td>7.1 <b>*DEPRECATED*</b></td>
-                                <td>
-                                    <@download category="adapter-saml" label="as7" file="adapters/saml/keycloak-saml-as7-adapter-dist-${version.version}" tar=true />
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-                <tr>
                     <td>Jetty</td>
                     <td>
                         <table class="table-downloads-inner">
@@ -310,12 +285,6 @@
                                     <@download category="adapter-saml" label="jetty9.2" file="adapters/saml/keycloak-saml-jetty92-adapter-dist-${version.version}" tar=true />
                                 </td>
                             </tr>
-                            <tr>
-                                <td>8.1 <b>*DEPRECATED*</b></td>
-                                <td>
-                                    <@download category="adapter-saml" label="jetty8.1" file="adapters/saml/keycloak-saml-jetty81-adapter-dist-${version.version}" tar=true />
-                                </td>
-                            </tr>
                         </table>
                     </td>
                 </tr>
@@ -324,21 +293,15 @@
                     <td>
                         <table class="table-downloads-inner">
                             <tr>
-                                <td>8</td>
+                                <td>8, 9</td>
                                 <td>
-                                    <@download category="adapter-saml" label="tomcat8" file="adapters/saml/keycloak-saml-tomcat8-adapter-dist-${version.version}" tar=true />
+                                    <@download category="adapter-saml" label="tomcat" file="adapters/saml/keycloak-saml-tomcat-adapter-dist-${version.version}" tar=true />
                                 </td>
                             </tr>
                             <tr>
                                 <td>7</td>
                                 <td>
                                     <@download category="adapter-saml" label="tomcat7" file="adapters/saml/keycloak-saml-tomcat7-adapter-dist-${version.version}" tar=true />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>6 <b>*DEPRECATED*</b></td>
-                                <td>
-                                    <@download category="adapter-saml" label="tomcat6" file="adapters/saml/keycloak-saml-tomcat6-adapter-dist-${version.version}" tar=true />
                                 </td>
                             </tr>
                         </table>
