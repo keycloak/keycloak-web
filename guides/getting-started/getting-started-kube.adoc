@@ -35,7 +35,7 @@ Let's start with creating the Keycloak deployment and service:
 kubectl create -f https://raw.githubusercontent.com/keycloak/keycloak-quickstarts/latest/kubernetes-examples/keycloak.yaml
 ----
 
-This will start Keycloak on Kuberneters. It will also create an initial admin user with username `admin` and password
+This will start Keycloak on Kubernetes. It will also create an initial admin user with username `admin` and password
 `admin`.
 
 ### Access Keycloak with Ingress addon enabled
