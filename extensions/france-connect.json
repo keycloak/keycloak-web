@@ -1,9 +1,0 @@
-{
-    "name": "France Connect Identity Provider",
-    "description": "Extension to add support for the french administration Identity Provider France Connect",
-    "maintainers": [
-        "InseeFr"
-    ],
-    "website": "https://github.com/InseeFr/Keycloak-FranceConnect",
-    "download": "https://github.com/InseeFr/Keycloak-FranceConnect/releases"
-}

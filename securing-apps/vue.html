@@ -1,0 +1,456 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Keycloak - Guide - Vue.js</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Keycloak is an open source identity and access management solution">
+    <meta name="author" content="Keycloak Team">
+    <meta name="keywords" content="sso,idm,openid connect,saml,kerberos,ldap">
+
+    
+
+    <meta http-equiv='Content-Security-Policy' content="default-src 'none'; style-src 'self'; img-src 'self' https://www.google-analytics.com; font-src 'self'; script-src 'self' https://www.google-analytics.com; base-uri 'none'; form-action 'none';">
+
+    <link href="https://www.keycloak.org/resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://www.keycloak.org/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://www.keycloak.org/resources/css/keycloak.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="https://www.keycloak.org/resources/favicon.ico">
+
+    <script src="https://www.keycloak.org/resources/js/ga.js" type="text/javascript"></script>
+    <script src="https://www.keycloak.org/resources/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script src="https://www.keycloak.org/resources/js/bootstrap.min.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="wrap">
+<header class="main-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-3 col-xs-12 keycloak-logo-div navbar-header">
+                <button type="button" class=" pull-right  navbar-toggle collapsed" data-toggle="collapse" data-target="#mainBtnTarget" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="https://www.keycloak.org/" title="Keycloak" class="keycloak-logo-a">
+                    <img class="keycloak-logo" src="https://www.keycloak.org/resources/images/keycloak_logo_480x108.png" border="0" alt="Keycloak"/>
+                </a>
+            </div>
+            <div id="mainBtnTarget" class="col-md-9 col-sm-9 col-xs-12 collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="https://www.keycloak.org/getting-started">Get Started</a></li>
+                    <li><a href="https://www.keycloak.org/documentation">Docs</a></li>
+                    <li><a href="https://www.keycloak.org/downloads">Downloads</a></li>
+                    <li><a href="https://www.keycloak.org/community">Community</a></li>
+                    <li><a href="https://www.keycloak.org/blog">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="page-section">
+    <div class="container blog">
+        <p class="community-badge text-primary">
+            <i class="fa fa-users text-primary"></i> Contributed by <a href="https://github.com/akoserwal">akoserwal</a>
+        </p>
+
+        <h1>Vue.js</h1>
+        <p>Secure a Vue.js single-page application with Keycloak</p>
+
+<div class="sect1">
+<h2 id="_before_you_start">Before you start</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_install_vue_cli">Install Vue-Cli</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">npm install -g @vue/cli
+# OR
+yarn global add @vue/cli</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Addon init plugin</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">npm install -g @vue/cli-init
+# OR
+yarn global add @vue/cli-init</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Using runtime build for Content Security Policy (CSP) compliant</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<a href="https://vuejs.org/v2/guide/installation.html#CSP-environments">CSP-environments @ <strong>Vuejs</strong></a>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_code_repository">Code Repository</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">git clone https://github.com/keycloak/keycloak-quickstarts.git
+cd applications/app-vue/
+npm install</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_start_keycloak">Start Keycloak</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>From a terminal open the directory keycloak-11.0.2, then to start Keycloak run the following command.</p>
+</div>
+<div class="paragraph">
+<p>On Linux run:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">bin/standalone.sh</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>On Windows run:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">bin/standalone.bat</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_standard_auth_flow">Standard Auth Flow</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Sequence:
+Delegation of Authentication/Authorization i.e core principle behind OpenID-Connect</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://www.keycloak.org/resources/images/guides/vue-auth-flow.png" alt="Vue App Auth Sequence">
+</div>
+</div>
+<div class="paragraph">
+<p>Behind the scene, the client is sending a post request to the Keycloak API endpoint with credentials. After validation &amp; verification returns a promise object &amp; redirects to client applications. Access token can be retrieved from the return object. Which can be passed to backend resource for accessing it.</p>
+</div>
+</div>
+</div>
+<h1 id="_keycloak_setup_client_configuration" class="sect0">Keycloak Setup &amp; Client Configuration:</h1>
+<div class="paragraph">
+<p>Creating a realm: “keycloak-demo” as shown in the following steps:</p>
+</div>
+<div class="sect1">
+<h2 id="_login_to_the_admin_console">Login to the admin console</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Go to the <a href="http://localhost:8080/auth/admin" target="_blank" rel="noopener">Keycloak Admin Console</a> and login with the username and password
+you created earlier.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_create_a_realm">Create a realm</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A realm in Keycloak is the equivalent of a tenant. It allows creating isolated groups of applications and users. By default
+there is a single realm in Keycloak called <code>master</code>. This is dedicated to manage Keycloak and should not be used for
+your own applications.</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s create our first realm.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the <a href="http://localhost:8080/auth/admin" target="_blank" rel="noopener">Keycloak Admin Console</a></p>
+</li>
+<li>
+<p>Hover the mouse over the dropdown in the top-left corner where it says <code>Master</code>, then click on <code>Add realm</code></p>
+</li>
+<li>
+<p>Fill in the form with the following values:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Name: <code>myrealm</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click <code>Create</code></p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://www.keycloak.org/resources/images/guides/add-realm.png" alt="Add Realm">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_create_a_user">Create a user</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Initially there are no users in a new realm, so let&#8217;s create one:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the <a href="http://localhost:8080/auth/admin" target="_blank" rel="noopener">Keycloak Admin Console</a></p>
+</li>
+<li>
+<p>Click <code>Users</code> (left-hand menu)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Click <code>Add user</code> (top-right corner of table)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Fill in the form with the following values:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Username: <code>myuser</code></p>
+</li>
+<li>
+<p>First Name: Your first name</p>
+</li>
+<li>
+<p>Last Name: Your last name</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click <code>Save</code></p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://www.keycloak.org/resources/images/guides/add-user.png" alt="Add User">
+</div>
+</div>
+<div class="paragraph">
+<p>The user will need an initial password set to be able to login. To do this:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Click <code>Credentials</code> (top of the page)</p>
+</li>
+<li>
+<p>Fill in the <code>Set Password</code> form with a password</p>
+</li>
+<li>
+<p>Click <code>ON</code> next to <code>Temporary</code> to prevent having to update password on first login</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://www.keycloak.org/resources/images/guides/set-password.png" alt="Set Password">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_client_configuration">Client Configuration:</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Clients tab allows you to manage your allow application clients</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding a Client:
+It is simple to add a client, the same process works for any type of application.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Client ID: You can give any suitable name for your application</p>
+</li>
+<li>
+<p>Protocol: ‘OpenID-Connect/SAML’</p>
+</li>
+<li>
+<p>Root Url: Application Hostname</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://www.keycloak.org/resources/images/guides/vue-client-config.png" alt="Vue App Client Config">
+</div>
+</div>
+<div class="paragraph">
+<p>Configure these two fields are important:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Valid Redirect Url: After Authentication where should keycloak redirect? (dependent upon Web Origin config, otherwise you will see an error: Invalid request URI)</p>
+</li>
+<li>
+<p>Web Origin: * or + ( * for wildcard redirection and + for domain-specific(validate all sub-domains): eg: *.redhat.com)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<h1 id="_create_a_vue_app" class="sect0">Create a Vue App</h1>
+<div class="paragraph">
+<p>Let’s create a simple Vue application using Vue-CLI</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">vue init webpack-simple app-vue</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Adding official keycloak js adapter</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">npm i keycloak-js --save</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Adding logging library</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">npm i vuejs-logger --save</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>InitOptions</strong>: You can use a JSON file or an object with properties</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Keycloak host URL: <code><a href="https://127.0.0.1:8080/auth" class="bare">https://127.0.0.1:8080/auth</a></code></p>
+</li>
+<li>
+<p>Realm Name: <code>keycloak-demo</code></p>
+</li>
+<li>
+<p>Client ID: <code>app-vue</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Using the standard keycloak APIs init method call which returns a promise. On success,  Render Vue application within that success method to prevent exposing any Vue resource before authentication is completed.</p>
+</div>
+<div class="paragraph">
+<p><strong>Add this below snippet in your src/main.js</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-javascript" data-lang="javascript">let initOptions = {
+  url: 'http://127.0.0.1:8080/auth', realm: 'keycloak-demo', clientId: 'app-vue', onLoad: 'login-required'
+}
+
+let keycloak = Keycloak(initOptions);
+
+keycloak.init({ onLoad: initOptions.onLoad }).then((auth) =&gt; {
+  if (!auth) {
+    window.location.reload();
+  } else {
+    Vue.$log.info("Authenticated");
+
+    new Vue({
+      el: '#app',
+      render: h =&gt; h(App, { props: { keycloak: keycloak } })
+    })
+  }
+
+
+//Token Refresh
+  setInterval(() =&gt; {
+    keycloak.updateToken(70).then((refreshed) =&gt; {
+      if (refreshed) {
+        Vue.$log.info('Token refreshed' + refreshed);
+      } else {
+        Vue.$log.warn('Token not refreshed, valid for '
+          + Math.round(keycloak.tokenParsed.exp + keycloak.timeSkew - new Date().getTime() / 1000) + ' seconds');
+      }
+    }).catch(() =&gt; {
+      Vue.$log.error('Failed to refresh token');
+    });
+  }, 6000)
+
+}).catch(() =&gt; {
+  Vue.$log.error("Authenticated Failed");
+});</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+I am passing keycloak instance as prop to the App component. Which can be used to retrive token.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Run the Vue app:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash"># launch app:http://127.0.0.1:3000
+npm run dev</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://www.keycloak.org/resources/images/guides/vue-app.png" alt="Vue App">
+</div>
+</div>    </div>
+</div>
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-9 col-xs-12">
+                    <a href="http://www.redhat.com/" target="_blank">
+                        <img alt="redhatlogo-white" src="https://www.keycloak.org/resources/images/redhatlogo-white.png" width="130">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,398 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Keycloak - Guide - Keycloak on Kubernetes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Keycloak is an open source identity and access management solution">
+    <meta name="author" content="Keycloak Team">
+    <meta name="keywords" content="sso,idm,openid connect,saml,kerberos,ldap">
+
+    
+
+    <meta http-equiv='Content-Security-Policy' content="default-src 'none'; style-src 'self'; img-src 'self' https://www.google-analytics.com; font-src 'self'; script-src 'self' https://www.google-analytics.com; base-uri 'none'; form-action 'none';">
+
+    <link href="https://www.keycloak.org/resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://www.keycloak.org/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://www.keycloak.org/resources/css/keycloak.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="https://www.keycloak.org/resources/favicon.ico">
+
+    <script src="https://www.keycloak.org/resources/js/ga.js" type="text/javascript"></script>
+    <script src="https://www.keycloak.org/resources/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script src="https://www.keycloak.org/resources/js/bootstrap.min.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="wrap">
+<header class="main-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-3 col-xs-12 keycloak-logo-div navbar-header">
+                <button type="button" class=" pull-right  navbar-toggle collapsed" data-toggle="collapse" data-target="#mainBtnTarget" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="https://www.keycloak.org/" title="Keycloak" class="keycloak-logo-a">
+                    <img class="keycloak-logo" src="https://www.keycloak.org/resources/images/keycloak_logo_480x108.png" border="0" alt="Keycloak"/>
+                </a>
+            </div>
+            <div id="mainBtnTarget" class="col-md-9 col-sm-9 col-xs-12 collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="https://www.keycloak.org/getting-started">Get Started</a></li>
+                    <li><a href="https://www.keycloak.org/documentation">Docs</a></li>
+                    <li><a href="https://www.keycloak.org/downloads">Downloads</a></li>
+                    <li><a href="https://www.keycloak.org/community">Community</a></li>
+                    <li><a href="https://www.keycloak.org/blog">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="page-section">
+    <div class="container blog">
+
+        <h1>Keycloak on Kubernetes</h1>
+        <p>Get started with Keycloak on Kubernetes</p>
+
+<div class="sect1">
+<h2 id="_before_you_start">Before you start</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Make sure you have Minikube installed, ideally with the Ingress addon enabled.</p>
+</div>
+<div class="paragraph">
+<p>To check if you have the Ingress addon enabled run:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">minikube addons list</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If the Ingress addon is not enabled run the following to enable it:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">minikube addons enable ingress</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_run_keycloak">Run Keycloak</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Keycloak QuickStarts repository includes some example files to help deploy Keycloak to Kubernetes. First step is to retrieve
+these files by cloing the repository:</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s start with creating the Keycloak deployment and service:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">kubectl create -f https://raw.githubusercontent.com/keycloak/keycloak-quickstarts/latest/kubernetes-examples/keycloak.yaml</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This will start Keycloak on Kubernetes. It will also create an initial admin user with username <code>admin</code> and password
+<code>admin</code>.</p>
+</div>
+<div class="sect2">
+<h3 id="_access_keycloak_with_ingress_addon_enabled">Access Keycloak with Ingress addon enabled</h3>
+<div class="paragraph">
+<p>Start by creating an Ingress for Keycloak:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">wget -q -O - https://raw.githubusercontent.com/keycloak/keycloak-quickstarts/latest/kubernetes-examples/keycloak-ingress.yaml | \
+sed "s/KEYCLOAK_HOST/keycloak.$(minikube ip).nip.io/" | \
+kubectl create -f -</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you don&#8217;t have <code>wget</code> and <code>sed</code> available, download the file and manually edit the file replacing <code>KEYCLOAK_HOST</code>
+with <code>keycloak.&lt;minikube ip address&gt;.nip.io</code>.</p>
+</div>
+<div class="paragraph">
+<p>Run the following to find out the URLs of Keycloak:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">KEYCLOAK_URL=https://keycloak.$(minikube ip).nip.io/auth &amp;&amp;
+echo "" &amp;&amp;
+echo "Keycloak:                 $KEYCLOAK_URL" &amp;&amp;
+echo "Keycloak Admin Console:   $KEYCLOAK_URL/admin" &amp;&amp;
+echo "Keycloak Account Console: $KEYCLOAK_URL/realms/myrealm/account" &amp;&amp;
+echo ""</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Remember these URLs as you will need them throughout this guide. The URL for the account console won&#8217;t work
+right now as you will need to create the realm first.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_access_keycloak_without_ingress">Access Keycloak without Ingress</h3>
+<div class="paragraph">
+<p>If you don&#8217;t have the Ingress addon enabled you can access Keycloak from the following URL:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">KEYCLOAK_URL=http://$(minikube ip):$(kubectl get services/keycloak -o go-template='{{(index .spec.ports 0).nodePort}}')/auth &amp;&amp;
+echo "" &amp;&amp;
+echo "Keycloak:                 $KEYCLOAK_URL" &amp;&amp;
+echo "Keycloak Admin Console:   $KEYCLOAK_URL/admin" &amp;&amp;
+echo "Keycloak Account Console: $KEYCLOAK_URL/realms/myrealm/account" &amp;&amp;
+echo ""</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Remember these URLs as you will need them throughout this guide. The URL for the account console won&#8217;t work
+right now as you will need to create the realm first.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_login_to_the_admin_console">Login to the admin console</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Go to the Keycloak Admin Console and login with the username and password
+you created earlier.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_create_a_realm">Create a realm</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A realm in Keycloak is the equivalent of a tenant. It allows creating isolated groups of applications and users. By default
+there is a single realm in Keycloak called <code>master</code>. This is dedicated to manage Keycloak and should not be used for
+your own applications.</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s create our first realm.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the Keycloak Admin Console</p>
+</li>
+<li>
+<p>Hover the mouse over the dropdown in the top-left corner where it says <code>Master</code>, then click on <code>Add realm</code></p>
+</li>
+<li>
+<p>Fill in the form with the following values:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Name: <code>myrealm</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click <code>Create</code></p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://www.keycloak.org/resources/images/guides/add-realm.png" alt="Add Realm">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_create_a_user">Create a user</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Initially there are no users in a new realm, so let&#8217;s create one:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the Keycloak Admin Console</p>
+</li>
+<li>
+<p>Click <code>Users</code> (left-hand menu)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Click <code>Add user</code> (top-right corner of table)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Fill in the form with the following values:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Username: <code>myuser</code></p>
+</li>
+<li>
+<p>First Name: Your first name</p>
+</li>
+<li>
+<p>Last Name: Your last name</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click <code>Save</code></p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://www.keycloak.org/resources/images/guides/add-user.png" alt="Add User">
+</div>
+</div>
+<div class="paragraph">
+<p>The user will need an initial password set to be able to login. To do this:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Click <code>Credentials</code> (top of the page)</p>
+</li>
+<li>
+<p>Fill in the <code>Set Password</code> form with a password</p>
+</li>
+<li>
+<p>Click <code>ON</code> next to <code>Temporary</code> to prevent having to update password on first login</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://www.keycloak.org/resources/images/guides/set-password.png" alt="Set Password">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_login_to_account_console">Login to account console</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Let&#8217;s now try to login to the account console to verify the user is configured correctly.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the Keycloak Account Console</p>
+</li>
+<li>
+<p>Login with <code>myuser</code> and the password you created earlier</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>You should now be logged-in to the account console where users can manage their accounts.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://www.keycloak.org/resources/images/guides/account-console.png" alt="Keycloak Account Console">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_secure_your_first_app">Secure your first app</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Let&#8217;s try to secure our first application. First step is to register this application with your Keycloak instance:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the Keycloak Admin Console</p>
+</li>
+<li>
+<p>Click 'Clients'</p>
+</li>
+<li>
+<p>Fill in the form with the following values:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Client ID: <code>myclient</code></p>
+</li>
+<li>
+<p>Client Protocol: <code>openid-connect</code></p>
+</li>
+<li>
+<p>Root URL: <code><a href="https://www.keycloak.org/app/" class="bare">https://www.keycloak.org/app/</a></code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click <code>Save</code></p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://www.keycloak.org/resources/images/guides/add-client.png" alt="Add Client">
+</div>
+</div>
+<div class="paragraph">
+<p>To make it easy for you we have a SPA testing application available on the <a href="https://www.keycloak.org/app/">Keycloak website</a>.</p>
+</div>
+<div class="paragraph">
+<p>Open <a href="https://www.keycloak.org/app/" class="bare">https://www.keycloak.org/app/</a>. Change <code>Keycloak URL</code> to the URL of your Keycloak instance. Click <code>Save</code>.</p>
+</div>
+<div class="paragraph">
+<p>Now you can click <code>Sign in</code> to authenticate to this application using the Keycloak server you started earlier.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_next">Next</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Before you go and run Keycloak in production there are a few more things that you will want to do, including:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Switch to a production ready database such as PostgreSQL</p>
+</li>
+<li>
+<p>Configure SSL with your own certificates</p>
+</li>
+<li>
+<p>Switch the admin password to a more secure password</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For more information check out the <a href="https://www.keycloak.org/documentation">Keycloak Documentation</a>.</p>
+</div>
+</div>
+</div>    </div>
+</div>
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-9 col-xs-12">
+                    <a href="http://www.redhat.com/" target="_blank">
+                        <img alt="redhatlogo-white" src="https://www.keycloak.org/resources/images/redhatlogo-white.png" width="130">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

@@ -1,8 +1,0 @@
-{
-  "date": "2020-02-06",
-  "version": "8.0.2",
-  "documentationTemplate": 6,
-  "downloadTemplate": 13,
-  "wildflyVersionAdapter": "18",
-  "wildflyVersionAdapterDeprecated": "17, 16, 15, 14, 13, 11, 10, 9"
-}

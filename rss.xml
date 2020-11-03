@@ -1,0 +1,2606 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+
+<channel>
+  <title>Keycloak Blog</title>
+  <link>https://www.keycloak.org/blog.html</link>
+  <atom:link href="https://www.keycloak.org//rss.xml" rel="self" type="application/rss+xml" />
+  <description>Keycloak Blog</description>
+  <language>en-us</language>
+  <category>Keycloak/SSO/Identity and Access Management</category>
+      <item>
+        <title>New Account Console</title>
+        <link>https://www.keycloak.org//2020/09/new-account-console.adoc.html</link>
+        <description>&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The Keycloak team is excited that our new Account Console is finally final!  The old account console is still available for those who need it, but the new version is the default from now on.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;This new console is written as a Single Page Application with &lt;a href=&quot;https://reactjs.org/&quot;&gt;React&lt;/a&gt; and &lt;a href=&quot;https://www.patternfly.org/v4/&quot;&gt;PatternFly 4&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;In addition to the modern look and feel, we make it really easy for organizations to personalize the console with custom themes and even custom pages that can have unlimited functionality.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;_screen_shots_of_new_account_management_console&quot;&gt;Screen shots of New Account Management Console&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;img src=&quot;https://www.keycloak.org//resources/images/blog/new-account-console/welcome-screen.png&quot; alt=&quot;alt&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;img src=&quot;https://www.keycloak.org//resources/images/blog/new-account-console/main-screen.png&quot; alt=&quot;alt&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;img src=&quot;https://www.keycloak.org//resources/images/blog/new-account-console/device-activity.png&quot; alt=&quot;alt&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;_theming&quot;&gt;Theming&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;PatternFly 4 makes it really easy to theme the new account console using its system of &lt;a href=&quot;https://www.patternfly.org/v4/documentation/overview/global-css-variables&quot;&gt;CSS variables&lt;/a&gt;.  All you have to do is tweak a few variables, add your own logo, and the console is perfectly skinned.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;highlight&quot;&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;body {
+  --pf-global--FontFamily--sans-serif: Comic Sans MS;
+  --pf-global--FontFamily--heading--sans-serif: Comic Sans MS;
+  --pf-global--BackgroundColor--dark-100: #2B9AF3;
+  --pf-global--Color--100: #004080;
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;img src=&quot;https://www.keycloak.org//resources/images/blog/new-account-console/keycloak-man-welcome-screen.png&quot; alt=&quot;alt&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;_create_your_own_sub_pages&quot;&gt;Create your own sub-pages&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;You may have noticed the &quot;Keycloak Man&quot; section above. The new console includes one of our most requested features.  That is the ability to add and remove sub-pages.  So we&amp;#8217;ve made it very easy to develop and plug in your own React component and add it to the Account Console.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;It&amp;#8217;s even possible to build new pages with nothing but an editor.  No build step is required unless you want to use more advanced tools like JSX and Typescript.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;img src=&quot;https://www.keycloak.org//resources/images/blog/new-account-console/who-is-keycloak-man.png&quot; alt=&quot;alt&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;img src=&quot;https://www.keycloak.org//resources/images/blog/new-account-console/keycloak-man-overview.png&quot; alt=&quot;alt&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;span class=&quot;image&quot;&gt;&lt;img src=&quot;https://www.keycloak.org//resources/images/blog/new-account-console/keycloak-man-jsx.png&quot; alt=&quot;alt&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Of course, this &quot;Keycloak Man&quot; theme is available online as a Keycloak Quick Start so you can check out all the source.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;_the_home_for_new_keycloak_features&quot;&gt;The Home for New Keycloak Features&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;New Account Console is the home for user configuration of new Keycloak features like &lt;a href=&quot;https://www.keycloak.org/2019/03/w3c-web-authentication-(webauthn).html&quot;&gt;WebAuthn support&lt;/a&gt;.  So look for new features to start showing up in the New Account Console instead of the old one.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        <guid>https://www.keycloak.org//2020/09/new-account-console.adoc.html</guid>
+        <pubDate>Fri, 4 Sep 2020 00:00:00 GMT</pubDate>
+        
+        <author>Stan Silvert</author>
+      </item>
+      <item>
+        <title>Keycloak 11.0.2 released</title>
+        <link>https://www.keycloak.org//2020/08/keycloak-1102-released.html</link>
+        <description>&lt;p&gt;To download the release go to &lt;a href=&quot;https://www.keycloak.org//downloads.html&quot;&gt;Keycloak downloads&lt;/a&gt;.&lt;/p&gt;
+
+
+&lt;h2&gt;All resolved issues&lt;/h2&gt;
+&lt;p&gt;The full list of resolved issues are available in &lt;a href=&quot;https://issues.jboss.org/issues/?jql=project%20%3D%20keycloak%20and%20fixVersion%20%3D%2011.0.2&quot;&gt;JIRA&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;Upgrading&lt;/h2&gt;
+&lt;p&gt;Before you upgrade remember to backup your database and check the &lt;a href=&quot;https://www.keycloak.org//docs/latest/upgrading/index.html&quot;&gt;upgrade guide&lt;/a&gt; for anything that may have changed.&lt;/p&gt;
+</description>
+        <guid>https://www.keycloak.org//2020/08/keycloak-1102-released.html</guid>
+        <pubDate>Mon, 31 Aug 2020 00:00:00 GMT</pubDate>
+        <category>Keycloak Release</category>
+        
+      </item>
+      <item>
+        <title>Sunsetting Louketo Project</title>
+        <link>https://www.keycloak.org//2020/08/sunsetting-louketo-project.adoc.html</link>
+        <description>&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;After careful consideration, we have decided to pull the plug on Louketo and start the EOL procedure. The plan is during the next 3 months to fix only critical bugs and security issues. Everyone interested in capabilities provided by Louketo Proxy should look at &lt;a href=&quot;https://github.com/oauth2-proxy/oauth2-proxy&quot;&gt;OAuth2 Proxy&lt;/a&gt; project which is providing a similar set of capabilities and has a healthy and active community.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;https://groups.google.com/g/keycloak-dev/c/oDyw94BWxM0/m/zc0J9R10BwAJ&quot;&gt;A few months ago&lt;/a&gt;, the Keycloak team started Louketo — a joint effort to build a generic OAuth2 Proxy and possibly also begin an umbrella project for a set of OIDC related integration libraries. The initial set of goals has not worked out. Keycloak Gatekeeper and OAuth2 Proxy projects hoped to merge and join efforts but for various reasons, this has not worked out.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;With Louketo and OAuth2 proxy providing similar features, OAuth Proxy being a more popular project with a bigger community we reached a conclusion there&amp;#8217;s no reason to put more effort into Louketo, when we can just contribute there.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;What does it mean in practice?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;_faq&quot;&gt;FAQ&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_will_louketo_proxy_be_no_longer_maintained_will_there_be_no_new_releases&quot;&gt;Will Louketo Proxy be no longer maintained? Will there be no new releases?&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Critical bug fixes will be merged and micro releases provided for the next 3 months. It is up to community members to step up and take over maintaining and driving this project further if they wish to do so. Please comment on the &lt;a href=&quot;https://github.com/louketo/louketo-proxy/issues/683&quot;&gt;GitHub issue&lt;/a&gt; or contact the Keycloak team on the &lt;a href=&quot;https://groups.google.com/forum/#!forum/louketo&quot;&gt;mailing list&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_are_there_any_alternatives_i_should_use_instead&quot;&gt;Are there any alternatives I should use instead?&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;OAuth2 Proxy is very close in a set of capabilities to Louketo Proxy and we highly suggest you investigate it as a replacement.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_how_do_i_migrate_to_oauth2_proxy&quot;&gt;How do I migrate to OAuth2 Proxy?&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;We’ll provide high-level guidance on how to migrate. Although unfortunately there is no comprehensive guide nor magical script. Some corner cases, specific configurations, and capabilities may not be fully covered or addressed in exactly the same way.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_why_are_you_abandoning_louketo_proxy_as_a_project&quot;&gt;Why are you abandoning Louketo Proxy as a project?&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Initial goals failed. Which were merging with OAuth2 Proxy and creating a wider set of OAuth2/OIDC integration libraries. Some individuals originally interested in collaboration took a step back. The end result is the Louketo project duplicating efforts and capabilities of other much more popular projects - OAuth2 Proxy. As we believe in OpenSource we just don’t want to follow NIH syndrome :)&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_i_would_like_to_keep_maintaining_louketo_what_should_i_do&quot;&gt;I would like to keep maintaining Louketo - what should I do?&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Please comment on the &lt;a href=&quot;https://github.com/louketo/louketo-proxy/issues/683&quot;&gt;GitHub issue&lt;/a&gt; so others can join the discussion. We’ll take it from there :)&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_what_happens_if_nobody_will_step_up_to_maintain_louketo&quot;&gt;What happens if nobody will step up to maintain Louketo?&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;After 3 months Louketo repository will be archived and made read-only.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        <guid>https://www.keycloak.org//2020/08/sunsetting-louketo-project.adoc.html</guid>
+        <pubDate>Fri, 21 Aug 2020 00:00:00 GMT</pubDate>
+        
+        <author>Bruno Oliveira</author>
+      </item>
+      <item>
+        <title>Keycloak 11.0.1 released</title>
+        <link>https://www.keycloak.org//2020/08/keycloak-1101-released.html</link>
+        <description>&lt;p&gt;To download the release go to &lt;a href=&quot;https://www.keycloak.org//downloads.html&quot;&gt;Keycloak downloads&lt;/a&gt;.&lt;/p&gt;
+
+
+&lt;h2&gt;All resolved issues&lt;/h2&gt;
+&lt;p&gt;The full list of resolved issues are available in &lt;a href=&quot;https://issues.jboss.org/issues/?jql=project%20%3D%20keycloak%20and%20fixVersion%20%3D%2011.0.2&quot;&gt;JIRA&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;Upgrading&lt;/h2&gt;
+&lt;p&gt;Before you upgrade remember to backup your database and check the &lt;a href=&quot;https://www.keycloak.org//docs/latest/upgrading/index.html&quot;&gt;upgrade guide&lt;/a&gt; for anything that may have changed.&lt;/p&gt;
+</description>
+        <guid>https://www.keycloak.org//2020/08/keycloak-1101-released.html</guid>
+        <pubDate>Fri, 21 Aug 2020 00:00:00 GMT</pubDate>
+        <category>Keycloak Release</category>
+        
+      </item>
+      <item>
+        <title>Keycloak 11.0.0 released</title>
+        <link>https://www.keycloak.org//2020/07/keycloak-1100-released.html</link>
+        <description>&lt;p&gt;To download the release go to &lt;a href=&quot;https://www.keycloak.org//downloads.html&quot;&gt;Keycloak downloads&lt;/a&gt;.&lt;/p&gt;
+
+
+&lt;h2&gt;All resolved issues&lt;/h2&gt;
+&lt;p&gt;The full list of resolved issues are available in &lt;a href=&quot;https://issues.jboss.org/issues/?jql=project%20%3D%20keycloak%20and%20fixVersion%20%3D%2011.0.2&quot;&gt;JIRA&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;Upgrading&lt;/h2&gt;
+&lt;p&gt;Before you upgrade remember to backup your database and check the &lt;a href=&quot;https://www.keycloak.org//docs/latest/upgrading/index.html&quot;&gt;upgrade guide&lt;/a&gt; for anything that may have changed.&lt;/p&gt;
+</description>
+        <guid>https://www.keycloak.org//2020/07/keycloak-1100-released.html</guid>
+        <pubDate>Wed, 22 Jul 2020 00:00:00 GMT</pubDate>
+        <category>Keycloak Release</category>
+        
+      </item>
+      <item>
+        <title>Keycloak 10.0.2 released</title>
+        <link>https://www.keycloak.org//2020/06/keycloak-1002-released.html</link>
+        <description>&lt;p&gt;To download the release go to &lt;a href=&quot;https://www.keycloak.org//downloads.html&quot;&gt;Keycloak downloads&lt;/a&gt;.&lt;/p&gt;
+
+
+&lt;h2&gt;All resolved issues&lt;/h2&gt;
+&lt;p&gt;The full list of resolved issues are available in &lt;a href=&quot;https://issues.jboss.org/issues/?jql=project%20%3D%20keycloak%20and%20fixVersion%20%3D%2011.0.2&quot;&gt;JIRA&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;Upgrading&lt;/h2&gt;
+&lt;p&gt;Before you upgrade remember to backup your database and check the &lt;a href=&quot;https://www.keycloak.org//docs/latest/upgrading/index.html&quot;&gt;upgrade guide&lt;/a&gt; for anything that may have changed.&lt;/p&gt;
+</description>
+        <guid>https://www.keycloak.org//2020/06/keycloak-1002-released.html</guid>
+        <pubDate>Tue, 2 Jun 2020 00:00:00 GMT</pubDate>
+        <category>Keycloak Release</category>
+        
+      </item>
+      <item>
+        <title>Keycloak 10.0.1 released</title>
+        <link>https://www.keycloak.org//2020/05/keycloak-1001-released.html</link>
+        <description>&lt;p&gt;To download the release go to &lt;a href=&quot;https://www.keycloak.org//downloads.html&quot;&gt;Keycloak downloads&lt;/a&gt;.&lt;/p&gt;
+
+
+&lt;h2&gt;All resolved issues&lt;/h2&gt;
+&lt;p&gt;The full list of resolved issues are available in &lt;a href=&quot;https://issues.jboss.org/issues/?jql=project%20%3D%20keycloak%20and%20fixVersion%20%3D%2011.0.2&quot;&gt;JIRA&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;Upgrading&lt;/h2&gt;
+&lt;p&gt;Before you upgrade remember to backup your database and check the &lt;a href=&quot;https://www.keycloak.org//docs/latest/upgrading/index.html&quot;&gt;upgrade guide&lt;/a&gt; for anything that may have changed.&lt;/p&gt;
+</description>
+        <guid>https://www.keycloak.org//2020/05/keycloak-1001-released.html</guid>
+        <pubDate>Fri, 8 May 2020 00:00:00 GMT</pubDate>
+        <category>Keycloak Release</category>
+        
+      </item>
+      <item>
+        <title>Keycloak 10.0.0 released</title>
+        <link>https://www.keycloak.org//2020/04/keycloak-1000-released.html</link>
+        <description>&lt;p&gt;To download the release go to &lt;a href=&quot;https://www.keycloak.org//downloads.html&quot;&gt;Keycloak downloads&lt;/a&gt;.&lt;/p&gt;
+
+
+&lt;h2&gt;All resolved issues&lt;/h2&gt;
+&lt;p&gt;The full list of resolved issues are available in &lt;a href=&quot;https://issues.jboss.org/issues/?jql=project%20%3D%20keycloak%20and%20fixVersion%20%3D%2011.0.2&quot;&gt;JIRA&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;Upgrading&lt;/h2&gt;
+&lt;p&gt;Before you upgrade remember to backup your database and check the &lt;a href=&quot;https://www.keycloak.org//docs/latest/upgrading/index.html&quot;&gt;upgrade guide&lt;/a&gt; for anything that may have changed.&lt;/p&gt;
+</description>
+        <guid>https://www.keycloak.org//2020/04/keycloak-1000-released.html</guid>
+        <pubDate>Wed, 29 Apr 2020 00:00:00 GMT</pubDate>
+        <category>Keycloak Release</category>
+        
+      </item>
+      <item>
+        <title>New Keycloak Admin Console Design</title>
+        <link>https://www.keycloak.org//2020/04/new-admin-console-design.adoc.html</link>
+        <description>&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;We are planning to completely re-vamp the Keycloak Admin Console, and have been lucky enough to get awesome help from
+UXD professionals.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The designs are a work-in-progress, but some sections of the console are already ready. We would love to get feedback
+from users of Keycloak in order to make the new admin console as good as it can be.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;In order to make it as easy as possible for everyone to view the designs and provide feedback we have created a
+&lt;a href=&quot;https://www.keycloak.org/keycloak-community/design/admin-console/&quot;&gt;dedicate website&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;</description>
+        <guid>https://www.keycloak.org//2020/04/new-admin-console-design.adoc.html</guid>
+        <pubDate>Thu, 16 Apr 2020 00:00:00 GMT</pubDate>
+        
+        <author>Stian Thorgersen</author>
+      </item>
+      <item>
+        <title>Keycloak 9.0.3 released</title>
+        <link>https://www.keycloak.org//2020/04/keycloak-903-released.html</link>
+        <description>&lt;p&gt;To download the release go to &lt;a href=&quot;https://www.keycloak.org//downloads.html&quot;&gt;Keycloak downloads&lt;/a&gt;.&lt;/p&gt;
+
+
+&lt;h2&gt;All resolved issues&lt;/h2&gt;
+&lt;p&gt;The full list of resolved issues are available in &lt;a href=&quot;https://issues.jboss.org/issues/?jql=project%20%3D%20keycloak%20and%20fixVersion%20%3D%2011.0.2&quot;&gt;JIRA&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;Upgrading&lt;/h2&gt;
+&lt;p&gt;Before you upgrade remember to backup your database and check the &lt;a href=&quot;https://www.keycloak.org//docs/latest/upgrading/index.html&quot;&gt;upgrade guide&lt;/a&gt; for anything that may have changed.&lt;/p&gt;
+</description>
+        <guid>https://www.keycloak.org//2020/04/keycloak-903-released.html</guid>
+        <pubDate>Tue, 14 Apr 2020 00:00:00 GMT</pubDate>
+        <category>Keycloak Release</category>
+        
+      </item>
+      <item>
+        <title>Keycloak 9.0.2 released</title>
+        <link>https://www.keycloak.org//2020/03/keycloak-902-released.html</link>
+        <description>&lt;p&gt;To download the release go to &lt;a href=&quot;https://www.keycloak.org//downloads.html&quot;&gt;Keycloak downloads&lt;/a&gt;.&lt;/p&gt;
+
+
+&lt;h2&gt;All resolved issues&lt;/h2&gt;
+&lt;p&gt;The full list of resolved issues are available in &lt;a href=&quot;https://issues.jboss.org/issues/?jql=project%20%3D%20keycloak%20and%20fixVersion%20%3D%2011.0.2&quot;&gt;JIRA&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;Upgrading&lt;/h2&gt;
+&lt;p&gt;Before you upgrade remember to backup your database and check the &lt;a href=&quot;https://www.keycloak.org//docs/latest/upgrading/index.html&quot;&gt;upgrade guide&lt;/a&gt; for anything that may have changed.&lt;/p&gt;
+</description>
+        <guid>https://www.keycloak.org//2020/03/keycloak-902-released.html</guid>
+        <pubDate>Tue, 24 Mar 2020 00:00:00 GMT</pubDate>
+        <category>Keycloak Release</category>
+        
+      </item>
+      <item>
+        <title>Keycloak 9.0.0 released</title>
+        <link>https://www.keycloak.org//2020/02/keycloak-900-released.html</link>
+        <description>&lt;p&gt;To download the release go to &lt;a href=&quot;https://www.keycloak.org//downloads.html&quot;&gt;Keycloak downloads&lt;/a&gt;.&lt;/p&gt;
+
+
+&lt;h2&gt;All resolved issues&lt;/h2&gt;
+&lt;p&gt;The full list of resolved issues are available in &lt;a href=&quot;https://issues.jboss.org/issues/?jql=project%20%3D%20keycloak%20and%20fixVersion%20%3D%2011.0.2&quot;&gt;JIRA&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;Upgrading&lt;/h2&gt;
+&lt;p&gt;Before you upgrade remember to backup your database and check the &lt;a href=&quot;https://www.keycloak.org//docs/latest/upgrading/index.html&quot;&gt;upgrade guide&lt;/a&gt; for anything that may have changed.&lt;/p&gt;
+</description>
+        <guid>https://www.keycloak.org//2020/02/keycloak-900-released.html</guid>
+        <pubDate>Mon, 17 Feb 2020 00:00:00 GMT</pubDate>
+        <category>Keycloak Release</category>
+        
+      </item>
+      <item>
+        <title>Keycloak 8.0.2 released</title>
+        <link>https://www.keycloak.org//2020/02/keycloak-802-released.html</link>
+        <description>&lt;p&gt;To download the release go to &lt;a href=&quot;https://www.keycloak.org//downloads.html&quot;&gt;Keycloak downloads&lt;/a&gt;.&lt;/p&gt;
+
+
+&lt;h2&gt;All resolved issues&lt;/h2&gt;
+&lt;p&gt;The full list of resolved issues are available in &lt;a href=&quot;https://issues.jboss.org/issues/?jql=project%20%3D%20keycloak%20and%20fixVersion%20%3D%2011.0.2&quot;&gt;JIRA&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;Upgrading&lt;/h2&gt;
+&lt;p&gt;Before you upgrade remember to backup your database and check the &lt;a href=&quot;https://www.keycloak.org//docs/latest/upgrading/index.html&quot;&gt;upgrade guide&lt;/a&gt; for anything that may have changed.&lt;/p&gt;
+</description>
+        <guid>https://www.keycloak.org//2020/02/keycloak-802-released.html</guid>
+        <pubDate>Thu, 6 Feb 2020 00:00:00 GMT</pubDate>
+        <category>Keycloak Release</category>
+        
+      </item>
+      <item>
+        <title>Keycloak 8.0.1 released</title>
+        <link>https://www.keycloak.org//2019/12/keycloak-801-released.html</link>
+        <description>&lt;p&gt;To download the release go to &lt;a href=&quot;https://www.keycloak.org//downloads.html&quot;&gt;Keycloak downloads&lt;/a&gt;.&lt;/p&gt;
+
+
+&lt;h2&gt;All resolved issues&lt;/h2&gt;
+&lt;p&gt;The full list of resolved issues are available in &lt;a href=&quot;https://issues.jboss.org/issues/?jql=project%20%3D%20keycloak%20and%20fixVersion%20%3D%2011.0.2&quot;&gt;JIRA&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;Upgrading&lt;/h2&gt;
+&lt;p&gt;Before you upgrade remember to backup your database and check the &lt;a href=&quot;https://www.keycloak.org//docs/latest/upgrading/index.html&quot;&gt;upgrade guide&lt;/a&gt; for anything that may have changed.&lt;/p&gt;
+</description>
+        <guid>https://www.keycloak.org//2019/12/keycloak-801-released.html</guid>
+        <pubDate>Mon, 2 Dec 2019 00:00:00 GMT</pubDate>
+        <category>Keycloak Release</category>
+        
+      </item>
+      <item>
+        <title>Keycloak 8.0.0 released</title>
+        <link>https://www.keycloak.org//2019/11/keycloak-800-released.html</link>
+        <description>&lt;p&gt;To download the release go to &lt;a href=&quot;https://www.keycloak.org//downloads.html&quot;&gt;Keycloak downloads&lt;/a&gt;.&lt;/p&gt;
+
+
+&lt;h2&gt;All resolved issues&lt;/h2&gt;
+&lt;p&gt;The full list of resolved issues are available in &lt;a href=&quot;https://issues.jboss.org/issues/?jql=project%20%3D%20keycloak%20and%20fixVersion%20%3D%2011.0.2&quot;&gt;JIRA&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;Upgrading&lt;/h2&gt;
+&lt;p&gt;Before you upgrade remember to backup your database and check the &lt;a href=&quot;https://www.keycloak.org//docs/latest/upgrading/index.html&quot;&gt;upgrade guide&lt;/a&gt; for anything that may have changed.&lt;/p&gt;
+</description>
+        <guid>https://www.keycloak.org//2019/11/keycloak-800-released.html</guid>
+        <pubDate>Fri, 15 Nov 2019 00:00:00 GMT</pubDate>
+        <category>Keycloak Release</category>
+        
+      </item>
+      <item>
+        <title>Keycloak 7.0.1 released</title>
+        <link>https://www.keycloak.org//2019/10/keycloak-701-released.html</link>
+        <description>&lt;p&gt;To download the release go to &lt;a href=&quot;https://www.keycloak.org//downloads.html&quot;&gt;Keycloak downloads&lt;/a&gt;.&lt;/p&gt;
+
+
+&lt;h2&gt;All resolved issues&lt;/h2&gt;
+&lt;p&gt;The full list of resolved issues are available in &lt;a href=&quot;https://issues.jboss.org/issues/?jql=project%20%3D%20keycloak%20and%20fixVersion%20%3D%2011.0.2&quot;&gt;JIRA&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;Upgrading&lt;/h2&gt;
+&lt;p&gt;Before you upgrade remember to backup your database and check the &lt;a href=&quot;https://www.keycloak.org//docs/latest/upgrading/index.html&quot;&gt;upgrade guide&lt;/a&gt; for anything that may have changed.&lt;/p&gt;
+</description>
+        <guid>https://www.keycloak.org//2019/10/keycloak-701-released.html</guid>
+        <pubDate>Wed, 16 Oct 2019 00:00:00 GMT</pubDate>
+        <category>Keycloak Release</category>
+        
+      </item>
+      <item>
+        <title>Introducing Keycloak.X</title>
+        <link>https://www.keycloak.org//2019/10/keycloak-x.html</link>
+        <description>
+
+&lt;h2&gt;What are we trying to improve?&lt;/h2&gt;
+
+&lt;p&gt;The first stable release of Keycloak was way back in 2014. As always when building software there are things that could
+have been done better.&lt;/p&gt;
+
+&lt;p&gt;With Keycloak.X we are aiming to introduce some bigger changes to make Keycloak leaner, easier and more future-proof.&lt;/p&gt;
+
+&lt;p&gt;A few goals with Keycloak.X are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Make it easier to configure&lt;/li&gt;
+&lt;li&gt;Make it easier to scale, including multi-site support&lt;/li&gt;
+&lt;li&gt;Make it easier to extend&lt;/li&gt;
+&lt;li&gt;Reduce startup time and memory footprint&lt;/li&gt;
+&lt;li&gt;Support zero-downtime upgrades&lt;/li&gt;
+&lt;li&gt;Support continuous delivery&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This work will be broken into several parts:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;A new and improved storage layer&lt;/li&gt;
+&lt;li&gt;A new distribution powered by &lt;a href=&quot;https://quarkus.io&quot;&gt;Quarkus&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;A new approach to custom providers&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Distribution&lt;/h2&gt;
+
+&lt;p&gt;Building a new distribution powered by Quarkus will allow us to significantly reduce startup time and memory footprint.&lt;/p&gt;
+
+&lt;p&gt;We will be able to create a leaner distribution in terms of size and dependencies as well. Reducing dependencies will
+further reduce the number of CVEs in third-party libraries.&lt;/p&gt;
+
+&lt;p&gt;We are also planning to introduce a proper Keycloak configuration file, where we will document directly how to configure
+everything related to Keycloak. In the current WildFly based distribution the configuration file is very complex as
+it contains everything to configure the underlying application server, and more often than not it is required to refer
+to WildFly documentation to figure out how to configure things properly.&lt;/p&gt;
+
+&lt;h2&gt;Storage&lt;/h2&gt;
+
+&lt;p&gt;The current storage layer is complex, especially when deployed to multiple-sites. It has a number of scalability issues
+like the number of realms and clients. Sessions are only kept in-memory, which can be good for performance, but not
+so great for scaling when you consider a large portion of sessions are idle and unused most of the time.&lt;/p&gt;
+
+&lt;p&gt;Exactly what the new storage layer will look like is still to be decided, but we know for sure that we want to:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Reduce complexity with regards to configuring, SPIs and schema&lt;/li&gt;
+&lt;li&gt;Support zero downtime upgrades&lt;/li&gt;
+&lt;li&gt;Make sure we can scale to large number of realms and clients&lt;/li&gt;
+&lt;li&gt;Make sure we can scale to millions of sessions, including support for persisting and passivation&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Providers&lt;/h2&gt;
+
+&lt;p&gt;Providers today have some issues that we would like to address. Including:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Deprecation and versioned approach to SPIs - breaking changes to APIs are horrible in a continuous delivery world&lt;/li&gt;
+&lt;li&gt;Polyglot - not everyone is a JavaEE developer, let&#39;s embrace that and allow more options when it comes to extending Keycloak&lt;/li&gt;
+&lt;li&gt;Sand-boxing - allow safe customizations in a SaaS world&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Continuous Delivery&lt;/h2&gt;
+
+&lt;p&gt;We are aiming to make it easier to use Keycloak in a continuous delivery world. This should consider Keycloak upgrades,
+custom providers as well as configuration.&lt;/p&gt;
+
+&lt;p&gt;Keycloak upgrades should be seamless and there should not be any breaking changes, rather deprecation periods.&lt;/p&gt;
+
+&lt;p&gt;It should be possible to more easily manage and reproduce the config of Keycloak, including realm config, in different
+environments. A developer should be able to try some config changes in a dev environment, push to a test environment,
+before finally making the changes live in a production environment.&lt;/p&gt;
+
+&lt;h2&gt;Contributing&lt;/h2&gt;
+
+&lt;p&gt;We would love help from the community on Keycloak.X. You can contribute with code, with discussions or simply just trying
+it out and giving us feedback.&lt;/p&gt;
+
+&lt;h2&gt;Migration to Keycloak.X&lt;/h2&gt;
+
+&lt;p&gt;There will be a migration required to Keycloak.X. In fact there will be multiple migrations required as everything
+mentioned earlier will not be ready in one go.&lt;/p&gt;
+
+&lt;p&gt;It is an aim to make this migration as simple and painless as possible though.&lt;/p&gt;
+
+&lt;h2&gt;Timing&lt;/h2&gt;
+
+&lt;p&gt;We are staring with the Quarkus powered distribution. The aim is to have a fully functional stable distribution by the
+end of 2019, but we already have &lt;a href=&quot;https://github.com/keycloak/keycloak/tree/master/quarkus&quot;&gt;a prototype&lt;/a&gt; you can try out
+and contribute to.&lt;/p&gt;
+
+&lt;p&gt;In 2020 we are aiming to work on both the storage layer and providers. Hopefully, by the end of 2020 we will have most
+if not everything sorted out.&lt;/p&gt;
+
+&lt;p&gt;We will continue to support the current Keycloak version in parallel with Keycloak.X and will give everyone plenty of
+time to do the migration before we eventually will pull the plug on the old.&lt;/p&gt;</description>
+        <guid>https://www.keycloak.org//2019/10/keycloak-x.html</guid>
+        <pubDate>Fri, 11 Oct 2019 00:00:00 GMT</pubDate>
+        
+        <author>Stian Thorgersen</author>
+      </item>
+      <item>
+        <title>What's Coming To Keycloak</title>
+        <link>https://www.keycloak.org//2019/09/2019-roadmap.html</link>
+        <description>
+&lt;h3&gt;New Account Console and Account REST API&lt;/h3&gt;
+
+&lt;p&gt;The current account console is getting dated. It is also having issues around usability and being hard
+to extend. For this reason we had the UXD team at Red Hat develop
+&lt;a href=&quot;https://marvelapp.com/c90dfi0/screen/59941600&quot;&gt;wireframes&lt;/a&gt; for a new account console. The new console
+is being implemented with React.js providing a better user experience as well as making it easier to extend
+and customise.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.jboss.org/browse/KEYCLOAK-6197&quot;&gt;JIRA - Account Console&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.jboss.org/browse/KEYCLOAK-7428&quot;&gt;JIRA - Account REST API&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h3&gt;WebAuthn&lt;/h3&gt;
+
+&lt;p&gt;We are working towards adding WebAuthn support both for two factor authentication and passwordless experience.
+This task is not as simple as adding an authenticator for WebAuth, but will also require
+work on improving authentication flows and the account console.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/keycloak/keycloak-community/blob/master/design/multi-factor-admin-and-step-up.md&quot;&gt;Design proposal - Authentication flow improvements&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/keycloak/keycloak-community/blob/master/design/web-authn-authenticator.md&quot;&gt;Design proposal - WebAuthn Authenticator&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/keycloak/keycloak-community/blob/master/design/web-authn-two-factor.md&quot;&gt;Design proposal - WebAuthn Two factor&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.jboss.org/browse/KEYCLOAK-7159&quot;&gt;JIRA - Two factor&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.jboss.org/browse/KEYCLOAK-9365&quot;&gt;JIRA - Passwordless&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h3&gt;Operator&lt;/h3&gt;
+
+&lt;p&gt;Operators are becoming an important way to manage software running on Kubernetes and we are working on an operator for
+Keycloak. The aim is to have an operator published on &lt;a href=&quot;https://operatorhub.io/&quot;&gt;OperatorHub.io&lt;/a&gt; soon which
+provides basic install and seamless upgrade capabilities. This will be based on the awesome work done by the
+Red Hat Integreatly team.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.jboss.org/browse/KEYCLOAK-7300&quot;&gt;JIRA&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/integr8ly/keycloak-operator&quot;&gt;Integreatly Keycloak Operator&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h3&gt;Vault&lt;/h3&gt;
+
+&lt;p&gt;At the moment to keep credentials such as LDAP bind credentials more secure it is required to encrypt the whole
+database. This can be complex and can also have a performance overhead.&lt;/p&gt;
+
+&lt;p&gt;We are working towards enabling loading credentials, such as LDAP bind credential and SMTP password, from an external vault.
+We&#39;re providing a built-in integration with Kubernetes secrets as well as an SPI allowing integrating with any vault provider.&lt;/p&gt;
+
+&lt;p&gt;In the future we will also provide the option to encrypt other more dynamic credentials at rest in the database.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.jboss.org/browse/KEYCLOAK-3205&quot;&gt;JIRA - Vault&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.jboss.org/browse/KEYCLOAK-10774&quot;&gt;JIRA - Encryption at rest&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h3&gt;User Profile&lt;/h3&gt;
+
+&lt;p&gt;Currently there&#39;s no single place to define user profiles for a realm. To resolve this we are planning to introduce the Profile SPI,
+which will make it possible to define a user profile for a realm. It will be possible to define mandatory as well as
+optional attributes and also add validation to the attributes.&lt;/p&gt;
+
+&lt;p&gt;The built-in Profile SPI provider will make it possible to declaratively define the user profile for a realm and we
+also aim to have an editor in the admin console.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.jboss.org/browse/KEYCLOAK-2966&quot;&gt;JIRA&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h3&gt;Observerability&lt;/h3&gt;
+
+&lt;p&gt;Keycloak already comes with basic support for metrics and health endpoints provided by the underlying WildFly container.
+We plan to document how to enable this as well as extend with Keycloak specific metrics and health checks. If you would
+like to try this out today check the WildFly documentation.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.jboss.org/browse/KEYCLOAK-8288&quot;&gt;JIRA&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h3&gt;Continuous Delivery&lt;/h3&gt;
+
+&lt;p&gt;Over the last few months the team has invested a significant amount of time into automated testing and builds. This
+will pay of in the long run as we will need to spend less time on releases and will also make sure Keycloak is always
+release ready. In fact we&#39;re taking this as far as not allowing maintainers to manually merge PRs anymore, but rather
+have created a bot called the Merge Monster that will merge PRs automatically after they have been both manually reviewed
+and all tests have passed.&lt;/p&gt;
+
+
+&lt;h3&gt;Keycloak.X&lt;/h3&gt;
+
+&lt;p&gt;It&#39;s 5 years since the first Keycloak release so high time for some rearchitecting. More details coming soon!&lt;/p&gt;
+
+
+&lt;h3&gt;Kanban Planning Board&lt;/h3&gt;
+
+&lt;p&gt;For more insight and details into what we are working on and our backlog, check out our
+&lt;a href=&quot;https://issues.jboss.org/secure/RapidBoard.jspa?rapidView=4740&amp;quickFilter=17938&amp;quickFilter=17950&quot;&gt;
+Kanban Planning Board&lt;/a&gt;.</description>
+        <guid>https://www.keycloak.org//2019/09/2019-roadmap.html</guid>
+        <pubDate>Tue, 3 Sep 2019 00:00:00 GMT</pubDate>
+        
+        <author>Stian Thorgersen</author>
+      </item>
+      <item>
+        <title>Keycloak 7.0.0 released</title>
+        <link>https://www.keycloak.org//2019/08/keycloak-700-released.html</link>
+        <description>&lt;p&gt;To download the release go to &lt;a href=&quot;https://www.keycloak.org//downloads.html&quot;&gt;Keycloak downloads&lt;/a&gt;.&lt;/p&gt;
+
+
+&lt;h2&gt;All resolved issues&lt;/h2&gt;
+&lt;p&gt;The full list of resolved issues are available in &lt;a href=&quot;https://issues.jboss.org/issues/?jql=project%20%3D%20keycloak%20and%20fixVersion%20%3D%2011.0.2&quot;&gt;JIRA&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;Upgrading&lt;/h2&gt;
+&lt;p&gt;Before you upgrade remember to backup your database and check the &lt;a href=&quot;https://www.keycloak.org//docs/latest/upgrading/index.html&quot;&gt;upgrade guide&lt;/a&gt; for anything that may have changed.&lt;/p&gt;
+</description>
+        <guid>https://www.keycloak.org//2019/08/keycloak-700-released.html</guid>
+        <pubDate>Sat, 24 Aug 2019 00:00:00 GMT</pubDate>
+        <category>Keycloak Release</category>
+        
+      </item>
+      <item>
+        <title>Keycloak and JDBC Ping</title>
+        <link>https://www.keycloak.org//2019/08/keycloak-jdbc-ping.html</link>
+        <description>
+&lt;p&gt;
+A few months back, we had a great article about clustering using &lt;a href=&quot;http://jgroups.org/manual/#JDBC_PING&quot;&gt;JDBC_PING&lt;/a&gt; protocol. Since then, we introduced some improvements for the &lt;a href=&quot;https://quay.io/repository/keycloak/keycloak?tab=tags&quot;&gt;Keycloak container image&lt;/a&gt; that can simplify the setup. So, before diving into this blog post, I highly encourage you to visit the &lt;a href=&quot;https://www.keycloak.org/2019/05/keycloak-cluster-setup.html&quot;&gt;Keycloak Cluster Setup&lt;/a&gt; article.
+&lt;/p&gt;
+
+
+&lt;h2&gt;What has changed in our Container Image?&lt;/h2&gt;
+&lt;p&gt;
+Probably the most important change is configuring the JGroups discovery protocol by using variables (see the &lt;a href=&quot;https://github.com/jboss-dockerfiles/keycloak/pull/151&quot;&gt;Pull Request&lt;/a&gt;). Once the change got in, we could configure the JGroups discovery by setting two properties:
+&lt;ul&gt;
+&lt;li&gt;JGROUPS_DISCOVERY_PROTOCOL&lt;/li&gt;
+&lt;li&gt;JGROUPS_DISCOVERY_PROPERTIES&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/p&gt;
+
+&lt;h2&gt;Let&#39;s apply the changes, shall we...&lt;/h2&gt;
+&lt;p&gt;
+The JDBC_PING-based setup works fine in all scenarios, where we connect all Keyclaok instances to the same database. Since JDBC_PING can be configured to obtain a database connection using JNDI binding, it can easily connect to the Keycloak database. All we need to do is to add two parameters to our docker image:
+&lt;ul&gt;
+&lt;li&gt;JGROUPS_DISCOVERY_PROTOCOL=JDBC_PING&lt;/li&gt;
+&lt;li&gt;JGROUPS_DISCOVERY_PROPERTIES=datasource_jndi_name=java:jboss/datasources/KeycloakDS&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/p&gt;
+
+You may find an end-to-end scenario &lt;a href=&quot;https://github.com/jboss-dockerfiles/keycloak/pull/204&quot;&gt;here&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;h2&gt;Additional configuration&lt;/h2&gt;
+&lt;p&gt;
+In some scenarios, you may need additional configuration. All additional settings might be added to the JGROUPS_DISCOVERY_PROPERTIES. Here are some hints and common problems, that you may find:
+&lt;table&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Problem description&lt;/td&gt;
+&lt;td&gt;Possible solution&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;The initialization SQL needs to be adjusted&lt;/td&gt;
+&lt;td&gt;In this case, you might want to look at &lt;tt&gt;initialize_sql&lt;/tt&gt; JDBC_PING property&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;When Keycloak crashes, the database is not cleared&lt;/td&gt;
+&lt;td&gt;Turn &lt;tt&gt;remove_old_coords_on_view_change&lt;/tt&gt; property on&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;When Keycloak crashes, the database is not cleared&lt;/td&gt;
+&lt;td&gt;Also, when a cluster is not too large, you may turn the &lt;tt&gt;remove_all_data_on_view_change&lt;/tt&gt; property on&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Sometimes, Keycloak doesn&#39;t write its data into the database&lt;/td&gt;
+&lt;td&gt;You may lower the &lt;tt&gt;info_writer_sleep_time&lt;/tt&gt; and &lt;tt&gt;info_writer_max_writes_after_view&lt;/tt&gt; property values&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/p&gt;
+
+&lt;/br&gt;
+
+&lt;p&gt;
+Haven fun and don&#39;t forget to let us know what you think about this blog post using the &lt;a href=&quot;https://lists.jboss.org/mailman/listinfo/keycloak-user&quot;&gt;User Mailing List&lt;/a&gt;.
+&lt;/br&gt;
+Sebastian Łaskawiec and the Keycloak Team
+&lt;/p&gt;
+</description>
+        <guid>https://www.keycloak.org//2019/08/keycloak-jdbc-ping.html</guid>
+        <pubDate>Mon, 12 Aug 2019 00:00:00 GMT</pubDate>
+        <category>Cluster, JDBC_PING</category>
+        <author>Sebastian Łaskaiwec</author>
+      </item>
+      <item>
+        <title>Keycloak Cluster Setup</title>
+        <link>https://www.keycloak.org//2019/05/keycloak-cluster-setup.html</link>
+        <description>
+&lt;p xmlns=&quot;http://www.w3.org/1999/html&quot;&gt;This post shares some solutions to setup Keycloak cluster in various scenarios (e.g. cross-DC, docker cross-host, Kubernetes).&lt;/p&gt;
+
+&lt;p&gt;If you&#39;d like to setup Keycloak cluster, this blog may give you some reference.&lt;/p&gt;
+
+&lt;p&gt;Two cli script files are added to the &lt;a href=&quot;https://hub.docker.com/r/jboss/keycloak/&quot;&gt;Keycloak image&lt;/a&gt; as per the &lt;a href=&quot;https://github.com/jboss-dockerfiles/keycloak/blob/master/server/README.md#adding-custom-discovery-protocols&quot;&gt;guide&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The Dockerfile is below and these two files are the most important matter for this blog, you can find them from &lt;a href=&quot;https://raw.githubusercontent.com/fit2anything/keycloak-cluster-setup-and-configuration/master/src/TCPPING.cli&quot;&gt;TCPPING.cli&lt;/a&gt; and &lt;a href=&quot;https://raw.githubusercontent.com/fit2anything/keycloak-cluster-setup-and-configuration/master/src/JDBC_PING.cli&quot;&gt;JDBC_PING.cli&lt;/a&gt;.&lt;/p&gt;
+
+&lt;pre&gt;
+FROM jboss/keycloak:latest
+
+ADD cli/TCPPING.cli /opt/jboss/tools/cli/jgroups/discovery/
+ADD cli/JDBC_PING.cli /opt/jboss/tools/cli/jgroups/discovery/
+&lt;/pre&gt;
+
+&lt;p&gt;First of all we should know that for a Keycloak cluster, all keycloak instances should use same database and this is very simple, another thing is about cache(generally there are two kinds of cache in Keycloaks, the 1st is persistent data cache read from database aim to improve performance like realm/client/user, the 2nd is the non-persistent data cache like sessions/clientSessions, the 2nd is very important for a cluster) which is a little bit complex to configure, we have to make sure the consistent of cache in a cluster view.&lt;/p&gt;
+
+&lt;p&gt;Totally here are 3 solutions for clustering, and all of the solutions are base on the discovery protocols of &lt;a href=&quot;http://jgroups.org/&quot;&gt;JGroups&lt;/a&gt; (Keycloak use &lt;a href=&quot;http://infinispan.org/&quot;&gt;Infinispan&lt;/a&gt; cache and Infinispan use JGroups to discover nodes).&lt;/p&gt;
+
+&lt;h3&gt;1. PING&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;http://jgroups.org/manual/#PING&quot;&gt;PING&lt;/a&gt; is the default enabled clustering solution of Keycloak using UDP protocol, and you don&#39;t need to do any configuration for this.&lt;/p&gt;
+&lt;p&gt;But PING is only available when multicast network is enabled and port 55200 should be exposed, e.g. bare metals, VMs, docker containers in the same host.&lt;/p&gt;
+&lt;img src=&quot;https://www.keycloak.org//resources/images/blog/cluster-setup/ping-deployment.jpg&quot;/&gt;
+&lt;p&gt;We tested this by two Keycloak containers in same host.&lt;/p&gt;
+&lt;p&gt;The logs show that the two Keycloak instances discovered each other and clustered.&lt;/p&gt;
+&lt;img src=&quot;https://www.keycloak.org//resources/images/blog/cluster-setup/ping-log.png&quot;/&gt;
+
+&lt;h3&gt;2. TCPPING&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;http://jgroups.org/manual/#TCPPING_Prot&quot;&gt;TCPPING&lt;/a&gt; use TCP protocol with 7600 port. This can be used when multicast is not available, e.g. deployments cross DC, containers cross host.&lt;/p&gt;
+&lt;img src=&quot;https://www.keycloak.org//resources/images/blog/cluster-setup/tcp-ping-deployment.jpg&quot;/&gt;
+&lt;p&gt;We tested this by two Keycloak containers cross host.&lt;/p&gt;
+&lt;p&gt;And in this solution we need to set three below environment variables for containers.
+&lt;pre&gt;
+#IP address of this host, please make sure this IP can be accessed by the other Keycloak instances
+JGROUPS_DISCOVERY_EXTERNAL_IP=172.21.48.39
+#protocol
+JGROUPS_DISCOVERY_PROTOCOL=TCPPING
+#IP and Port of all host
+JGROUPS_DISCOVERY_PROPERTIES=initial_hosts=&quot;172.21.48.4[7600],172.21.48.39[7600]&quot;
+&lt;/pre&gt;
+&lt;/p&gt;
+&lt;p&gt;The logs show that the two Keycloak instances discovered each other and clustered.&lt;/p&gt;
+&lt;img src=&quot;https://www.keycloak.org//resources/images/blog/cluster-setup/tcp-ping-log.png&quot;/&gt;
+
+&lt;h3&gt;3. JDBC_PING&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;http://jgroups.org/manual/#_jdbc_ping&quot;&gt;JDBC_PING&lt;/a&gt; use TCP protocol with 7600 port which is similar as TCPPING, but the difference between them is, TCPPING requires you configure the IP and port of all instances,  for JDBC_PING you just need to configure the IP and port of current instance, this is because in JDBC_PING solution each instance insert its own information into database and the instances discover peers by the ping data read from database.&lt;/p&gt;
+&lt;p&gt;We tested this by two Keycloak containers cross host.&lt;/p&gt;
+&lt;p&gt;And in this solution we need to set two below environment variables for containers.
+&lt;pre&gt;
+#IP address of this host, please make sure this IP can be accessed by the other Keycloak instances
+JGROUPS_DISCOVERY_EXTERNAL_IP=172.21.48.39
+#protocol
+JGROUPS_DISCOVERY_PROTOCOL=JDBC_PING
+&lt;/pre&gt;
+&lt;/p&gt;
+&lt;p&gt;The ping data of all instances haven been saved in database after instances started.&lt;/p&gt;
+&lt;img src=&quot;https://www.keycloak.org//resources/images/blog/cluster-setup/jdbc-ping-data.png&quot;/&gt;
+&lt;p&gt;The logs show that the two Keycloak instances discovered each other and clustered.&lt;/p&gt;
+&lt;img src=&quot;https://www.keycloak.org//resources/images/blog/cluster-setup/jdbc-ping-log.png&quot;/&gt;
+
+&lt;h3&gt;One more thing&lt;/h3&gt;
+&lt;p&gt;The above solutions are available for most scenarios, but they are still not enough for some others, e.g.Kubernetes.&lt;/p&gt;
+&lt;p&gt;The typical deployment on Kubernetes is one Deployment/ReplicateSet/StatefulSet contains multi Keycloak Pods, the Pods are really dynamic as they can scale up and down or failover to another node, which requires the cluster to discover and remove these dynamic members.&lt;/p&gt;
+&lt;p&gt;On Kubernetes we can use &lt;a href=&quot;https://github.com/jboss-dockerfiles/keycloak/blob/master/server/README.md#openshift-example-with-dnsdns_ping&quot;&gt;DNS_PING&lt;/a&gt; or &lt;a href=&quot;http://jgroups.org/manual/#_kube_ping&quot;&gt;KUBE_PING&lt;/a&gt; which work quite well in  &lt;a href=&quot;https://github.com/helm/charts/blob/master/stable/keycloak/templates/statefulset.yaml#L92&quot;&gt;practice&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;Besides DNS_PING and KUBE_PING, JDBC_PING is another option for Kubernetes. &lt;/p&gt;
+&lt;p&gt;On Kubernetes multicast is available only for the containers in the same node and a pod has no static ip which can be used to configure TCPPING or JDBC_PING. But in the JDBC_PING.cli mentioned above we have handled this, if you don&#39;t set the JGROUPS_DISCOVERY_EXTERNAL_IP env, the pod ip will be used, that means on Kubernetes you can simply set JGROUPS_DISCOVERY_PROTOCOL=JDBC_PING then your keycloak cluster is ok.&lt;/p&gt;
+
+&lt;h3&gt;Discussion&lt;/h3&gt;
+&lt;p&gt;Suggestions and comments can be discussed via &lt;a href=&quot;https://lists.jboss.org/mailman/listinfo/keycloak-user&quot;&gt;Keycloak User Mail List&lt;/a&gt; or &lt;a href=&quot;https://github.com/fit2anything/keycloak-cluster-setup-and-configuration&quot;&gt;this GitHub Repository&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <guid>https://www.keycloak.org//2019/05/keycloak-cluster-setup.html</guid>
+        <pubDate>Fri, 10 May 2019 00:00:00 GMT</pubDate>
+        <category>Cluster</category>
+        <author>张立强 liqiang@fit2cloud.com</author>
+      </item>
+      <item>
+        <title>Keycloak Community Newsletter #2</title>
+        <link>https://www.keycloak.org//2019/05/keycloak-newsletter-2.html</link>
+        <description>
+
+&lt;p&gt;
+We have a lot of news to share in this second edition, so fasten your seatbelt and let&#39;s go!
+&lt;/p&gt;
+
+
+&lt;h2&gt;News from the community&lt;/h2&gt;
+&lt;p&gt;
+First of all, we would like to thank the whole community, which has contributed to this edition by sharing their links, tips, and so on.
+&lt;/p&gt;
+&lt;p&gt;
+  An increasing number of API Management/Gateway solutions can now be integrated with Keycloak. Recently, &lt;a href=&quot;https://www.getambassador.io/&quot;&gt;Ambassador&lt;/a&gt;, an Open Source Kubernetes-Native API Gateway built on the Envoy Proxy, has added &lt;a href=&quot;https://www.getambassador.io/reference/idp-support/keycloak/&quot;&gt;support for Keycloak&lt;/a&gt;; it has also published a &lt;a href=&quot;https://www.getambassador.io/tutorials/github-sso/&quot;&gt;quickstart&lt;/a&gt; to show how Keycloak can be used to add Github as Identity provider.   
+&lt;/p&gt;
+&lt;p&gt;
+We have some good news for Python users. Akhil Lawrence has created a &lt;a href=&quot;https://github.com/akhilputhiry/keycloak-client/releases&quot;&gt;Python Keycloak Adapter Client&lt;/a&gt;. Be sure to check out the really nice &lt;a href=&quot;https://keycloak-client.readthedocs.io/en/latest/&quot;&gt;documentation&lt;/a&gt; that comes with many usage examples.  
+&lt;/p&gt;
+&lt;p&gt;
+Like any other project, setting up clustering can be somehow complex. Liqiang has shared with us his &lt;a href=&quot;https://github.com/fit2anything/keycloak-cluster-setup-and-configuration&quot;&gt;setup and configuration tips&lt;/a&gt;. Thanks again for sharing your knowledge with the community!
+&lt;/p&gt;
+&lt;P&gt;
+The existing &lt;a href=&quot;https://github.com/helm/charts/tree/master/stable/keycloak&quot;&gt;Keycloak Helm Chart&lt;/a&gt; has now been deprecated and is now replaced by the &lt;a href=&quot;https://github.com/codecentric/helm-charts&quot;&gt;one&lt;/a&gt; managed by CodeCentric.
+&lt;/p&gt;
+&lt;p&gt;
+Dmitry Telegin has created a really nice example on how you can dynamically brand your login theme for Keycloak. Check out the repository &lt;a href=&quot;https://github.com/dteleguin/keycloak-dynamic-branding&quot;&gt;here&lt;/a&gt;.
+&lt;/p&gt;
+&lt;p&gt;
+Hayri Cicek has written a nice introductory &lt;a href=&quot;https://kodnito.com/posts/microprofile-jwt-with-keycloak/&quot;&gt;article&lt;/a&gt; on how to use Keycloak and MicroProfile. It even shows the usage of the brand new Client Scope &quot;microprofile-jwt,&quot; which has been added in Keycloak 6.0.0.
+&lt;/p&gt;
+
+
+&lt;h2&gt;News from the project&lt;/h2&gt;
+&lt;p&gt;
+Keycloak 6.0.1 has been &lt;a href=&quot;https://www.keycloak.org/2019/04/keycloak-601-released.html&quot;&gt;released&lt;/a&gt;. We know that some people were a bit confused by our new versioning schema. We hope that this &lt;a href=&quot;https://www.keycloak.org/2019/04/versioning.html&quot;&gt;blog post&lt;/a&gt; will clear it up. 
+&lt;/p&gt;
+&lt;p&gt;
+We started the proposal process for Keycloak to be accepted into the Cloud Native Computing Foundation (CNCF). We hope that this effort will significantly boost our community adoption with our ultimate goal of becoming the de facto solution for OAuth2/OpenID Connect within Open Source and Cloud Native.
+You can watch the presentation to the CNCF TOC (Technical Oversight Committee) &lt;a href=&quot;https://www.youtube.com/watch?v=cBrmcH9VFYE&amp;feature=youtu.be&amp;t=1032&quot;&gt;here&lt;/a&gt; and the slides are also available &lt;a href=&quot;https://docs.google.com/presentation/d/1bijEpuwaaa6jR1D5PAjyW731-j6Xc1TFHJuUh_FwwK8/edit?ts=5ca774e9#slide=id.g5628e016b1_15_112&quot;&gt;here&lt;/a&gt;.   
+&lt;p&gt;
+As mentioned in the previous newsletter, we will now discuss larger features openly on Github. It&#39;s community-focused and we have currently two open Pull Requests:
+&lt;ul&gt;
+&lt;li&gt;
+ &lt;a href=&quot;https://github.com/keycloak/keycloak-community/pull/5&quot;&gt;Managing multi-factor authentication and Step-up authentication&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;
+ &lt;a href=&quot;https://github.com/keycloak/keycloak-community/pull/6&quot;&gt;Implementation of OAuth 2.0 Device Authorization Grant&lt;/a&gt; 
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/p&gt;
+
+&lt;h2&gt;Conferences / Webinars&lt;/h2&gt;
+&lt;p&gt;
+W-Jax has just posted a YouTube talk in German &lt;a href=&quot;https://t.co/GrBvLr6q5N?amp=1&quot;&gt;Secure Spring Applications with Keycloak&lt;/a&gt; delivered by Thomas Darimont.
+&lt;p&gt;
+&lt;p&gt;
+In May, Sébastien Blanc will deliver a full-day workshop about Keycloak during &lt;a href=&quot;https://voxxeddays.com/minsk/&quot;&gt;VoxxedDays Minsk&lt;/a&gt;
+&lt;/p&gt;
+
+
+&lt;h2&gt;Contributing to Keycloak&lt;/h2&gt;
+
+&lt;p&gt;We always welcome contributions to Keycloak. If you would like to contribute and have a great idea, tell us about it
+on the developer mailing list. If you are unsure about what to work on, let us know and we can help!&lt;/p&gt;
+
+&lt;p&gt;As a first time contributor, you may have a simpler idea to start, such as contributing a bug fix. This type of contribution will allow you to get to know the code base, the test suite, and the mechanics of creating a pull request. You can find a list of &lt;a href=&quot;https://issues.jboss.org/issues/?jql=project%20%3D%20Keycloak%20AND%20issuetype%20%3D%20bug%20AND%20fixVersion%20%3D%20%22Awaiting%20Volunteers%22%20&quot;&gt;open bugs here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;We also have a list of &lt;a href=&quot;https://issues.jboss.org/issues/?jql=project%20%3D%20Keycloak%20AND%20fixVersion%20%3D%20%22Awaiting%20Volunteers%22%20&quot;&gt;open issues&lt;/a&gt; that
+are awaiting contributions. Not all issues are properly reviewed, so we recommend that you start by sending an email to the developer mailing list before you begin.&lt;/p&gt;
+
+&lt;p&gt;
+For each newsletter, we will also highlight a few features for which we would especially like contributions. These features include:
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.jboss.org/browse/KEYCLOAK-953&quot;&gt;Allow user to delete account&lt;/a&gt; - In light of GDPR and the right to be forgotten a very useful feature is to allow users to delete their own accounts.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.jboss.org/browse/KEYCLOAK-2940&quot;&gt;OpenID Connect Backchannel Logout&lt;/a&gt; - Add support for OpenID Connect Back-Channel logout specification to Keycloak.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/p&gt;
+</description>
+        <guid>https://www.keycloak.org//2019/05/keycloak-newsletter-2.html</guid>
+        <pubDate>Mon, 6 May 2019 00:00:00 GMT</pubDate>
+        
+        <author>Sébastien Blanc</author>
+      </item>
+      <item>
+        <title>Keycloak Releases and Versioning</title>
+        <link>https://www.keycloak.org//2019/04/versioning.html</link>
+        <description>
+&lt;p&gt;
+We are aiming to achieve a continuous delivery model with Keycloak. By that we mean it should be seamless to upgrade
+between Keycloak releases and to keep up to date with the latest release.
+&lt;/p&gt;
+
+&lt;p&gt;
+This requires no breaking changes, but rather deprecating old APIs allowing time to migrate to new APIs.
+&lt;/p&gt;
+
+&lt;p&gt;
+Traditional semantic versioning does not fit very well with this model. By following the mantra of continuous delivery
+we would forever be stuck on a major version and only update the minor version, and you could argue whether or not it
+would be correct to update the major version when an API that has been deprecated for a long period of time is removed.
+&lt;/p&gt;
+
+&lt;p&gt;
+With this in mind, we have made some slight changes to our release cadence and versioning schema.
+&lt;/p&gt;
+
+&lt;p&gt;
+For now, we will have a new feature release roughly 4 times each year. Each release will bump the major version number.
+That doesn&#39;t mean there are breaking changes, but until we perfect our continuous delivery model there may be some, so
+always refer to the migration guide prior to upgrading!
+&lt;/p&gt;
+
+&lt;p&gt;
+We have also decided to drop the Final suffix from releases. That is simply because it is not needed as we have not done
+any beta or release candidates for a long time. In the spirit of continuous delivery, we will have individual features
+marked as preview rather than whole releases.
+&lt;/p&gt;
+
+&lt;p&gt;
+As a final note, with the reduced release cadence we are planning to do more micro releases. This will be focused on
+critical bugs and security vulnerabilities. However, we may accept contributions to less critical bugs given the fix
+is well tested and has low risk of regressions.
+&lt;/p&gt;
+</description>
+        <guid>https://www.keycloak.org//2019/04/versioning.html</guid>
+        <pubDate>Wed, 24 Apr 2019 00:00:00 GMT</pubDate>
+        
+        <author>Stian Thorgersen</author>
+      </item>
+      <item>
+        <title>Keycloak 6.0.1 released</title>
+        <link>https://www.keycloak.org//2019/04/keycloak-601-released.html</link>
+        <description>&lt;p&gt;To download the release go to &lt;a href=&quot;https://www.keycloak.org//downloads.html&quot;&gt;Keycloak downloads&lt;/a&gt;.&lt;/p&gt;
+
+
+&lt;h2&gt;All resolved issues&lt;/h2&gt;
+&lt;p&gt;The full list of resolved issues are available in &lt;a href=&quot;https://issues.jboss.org/issues/?jql=project%20%3D%20keycloak%20and%20fixVersion%20%3D%2011.0.2&quot;&gt;JIRA&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;Upgrading&lt;/h2&gt;
+&lt;p&gt;Before you upgrade remember to backup your database and check the &lt;a href=&quot;https://www.keycloak.org//docs/latest/upgrading/index.html&quot;&gt;upgrade guide&lt;/a&gt; for anything that may have changed.&lt;/p&gt;
+</description>
+        <guid>https://www.keycloak.org//2019/04/keycloak-601-released.html</guid>
+        <pubDate>Wed, 24 Apr 2019 00:00:00 GMT</pubDate>
+        <category>Keycloak Release</category>
+        
+      </item>
+      <item>
+        <title>Keycloak 6.0.0 released</title>
+        <link>https://www.keycloak.org//2019/04/keycloak-600-released.html</link>
+        <description>&lt;p&gt;To download the release go to &lt;a href=&quot;https://www.keycloak.org//downloads.html&quot;&gt;Keycloak downloads&lt;/a&gt;.&lt;/p&gt;
+
+
+&lt;h2&gt;All resolved issues&lt;/h2&gt;
+&lt;p&gt;The full list of resolved issues are available in &lt;a href=&quot;https://issues.jboss.org/issues/?jql=project%20%3D%20keycloak%20and%20fixVersion%20%3D%2011.0.2&quot;&gt;JIRA&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;Upgrading&lt;/h2&gt;
+&lt;p&gt;Before you upgrade remember to backup your database and check the &lt;a href=&quot;https://www.keycloak.org//docs/latest/upgrading/index.html&quot;&gt;upgrade guide&lt;/a&gt; for anything that may have changed.&lt;/p&gt;
+</description>
+        <guid>https://www.keycloak.org//2019/04/keycloak-600-released.html</guid>
+        <pubDate>Wed, 17 Apr 2019 00:00:00 GMT</pubDate>
+        <category>Keycloak Release</category>
+        
+      </item>
+      <item>
+        <title>Keycloak Community Newsletter #1</title>
+        <link>https://www.keycloak.org//2019/04/keycloak-newsletter-1.html</link>
+        <description>
+&lt;p&gt;
+This is the very first &quot;Keycloak Community Newsletter.&quot; The goal of this newsletter is to share news about the Keycloak project.
+&lt;/p&gt;
+
+
+&lt;h2&gt;News from the community&lt;/h2&gt;
+&lt;p&gt;
+Since the beginning of the year, the community has been really active. Each week several blog posts about Keycloak are published. Here is a short selection.
+&lt;/p&gt;
+&lt;p&gt;
+Let&#39;s start with Philip Riecks who explains in &lt;a href=&quot;https://rieckpil.de/howto-microprofile-jwt-authentication-with-keycloak-and-react/&quot;&gt;this article&lt;/a&gt; how you can use Microprofile JWT Authentication with Keycloak and React.
+&lt;/p&gt;
+&lt;p&gt;
+Ramandeep Singh has been &lt;a href=&quot;https://medium.com/@ramandeep.singh.1983/enterprise-web-app-authentication-using-keycloak-and-node-js-c10b0e26b80d&quot;&gt;blogging&lt;/a&gt; about Keycloak and NodeJS.
+&lt;/p&gt;
+&lt;p&gt;
+Joshua Alfred Erney explains in this &lt;a href=&quot;https://www.jerney.io/secure-apis-kong-keycloak-1/&quot;&gt;blog series&lt;/a&gt; how to integrate Keycloak and &lt;a href=&quot;https://konghq.com/&quot;&gt;Kong&lt;/a&gt;, a popular API management platform.
+&lt;/p&gt;
+&lt;P&gt;
+With Mohamed Aboullaite&#39;s blog post, you will learn how to &lt;a href=&quot;https://aboullaite.me/secure-kibana-keycloak/&quot;&gt;secure your Kibana dashboards using Keycloak&lt;/a&gt;.
+&lt;/p&gt;
+&lt;p&gt;
+Finally in &lt;a href=https://beyondthekube.com/identity-management-for-on-prem-clusters/?utm_sq=g0u3m590zf&quot;&gt;this three-part article&lt;/a&gt;, the process of installing Keycloak on Kubernetes will become very clear.
+&lt;/p&gt;
+
+
+&lt;h2&gt;News from the project&lt;/h2&gt;
+&lt;p&gt;
+Keycloak 5.0.0 has been &lt;a href=&quot;https://www.keycloak.org/2019/03/keycloak-500-released.html&quot;&gt;released&lt;/a&gt; and 6.0.0 is around the corner.
+&lt;/p&gt;
+&lt;p&gt;
+From now on, new larger Keycloak&#39;s features will be openly discussed. For each new feature, a design document will be created and pushed to our Github repository as a simple MarkDown file. This strategy makes it easy for everyone to comment as well as contribute to the designs by opening Github issues and providing pull requests.
+We have already three documents open for discussion:
+&lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/keycloak/keycloak-community/blob/master/design/web-authn-two-factor.md&quot;&gt;W3C Web Authentication - Two-Factor&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/keycloak/keycloak-community/blob/master/design/application-initiated-actions.md&quot;&gt;Application-Initiated Actions&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/keycloak/keycloak-community/blob/master/design/observerability.md&quot;&gt;Observerability&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h2&gt;News from the Identity Management World&lt;/h2&gt;
+&lt;p&gt;
+The big announcement, two weeks ago, was that &lt;a href=&quot;https://www.yubico.com/webauthn/&quot;&gt;WebAuthn&lt;a/&gt; became an official W3C Standard. This event is a milestone in the world of authentication and Identity Management. The goal of WebAuthn, according to &lt;a href=&quot;https://en.wikipedia.org/wiki/WebAuthn&quot;&gt;Wikipedia&lt;/a&gt; is to: &lt;i&gt; standardize an interface for public-key authentication of users to web-based applications and services.&lt;/i&gt;
+The Keycloak community is naturally really interested in this new standard. A design document is &lt;a href=&quot;https://github.com/keycloak/keycloak-community/blob/master/design/web-authn-two-factor.md&quot;&gt;available&lt;/a&gt; and the community has even started to work on a &lt;a href=&quot;https://github.com/webauthn4j/keycloak-webauthn-authenticator&quot;&gt;prototype&lt;/a&gt;.
+&lt;/p&gt;
+
+
+&lt;h2&gt;Conferences / Webinars&lt;/h2&gt;
+&lt;p&gt;
+In March, the Javaland conference was held in Germany. The conference had two talks about Keycloak. Sébastien blanc gave a talk about &lt;a href=&quot;https://docs.google.com/presentation/d/e/2PACX-1vSp6t8vo1LsWBVDmFmFVC43qtwSQK3_UrVfFIQcTpaEmGJohHbwsKj9UYUEZdogRMXWMMJJSskWRHyZ/pub?start=false&amp;loop=false&amp;delayms=3000&quot;&gt;Securing your Microservices with Keycloak&lt;/a&gt;. A Github repository contains the &lt;a href=&quot;https://github.com/sebastienblanc/quarkus-quickstart&quot;&gt;demo&lt;/a&gt;. Thomas Darimont also gave an &lt;a href=&quot;https://www.javaland.eu/formes/pubfiles/11145218/2019-nn-thomas_darimont-sichere_spring-anwendungen_mit_keycloak-praesentation.pdf&quot;&gt;introductory talk&lt;/a&gt; in German about Keycloak.
+&lt;p&gt;
+&lt;p&gt;
+In April, at Devoxx France, Guillaume Gillon will talk in French about how to combine &lt;a href=&quot;https://cfp.devoxx.fr/2019/talk/BIP-1027/L&#39;open-source_a_la_rescousse_de_mes_APIS:_comment_les_securiser_grace_a_Gravitee.io_et_Keycloak&quot;&gt;Keycloak and Gravitee.io&lt;/a&gt;.
+&lt;/p&gt;
+
+
+&lt;h2&gt;Contributing to Keycloak&lt;/h2&gt;
+
+&lt;p&gt;We always welcome contributions to Keycloak. If you would like to contribute and have a great idea, tell us about it
+on the developer mailing list. If you are unsure about what to work on, let us know and we can help!&lt;/p&gt;
+
+&lt;p&gt;As a first time contributor, you may have a simpler idea to start, such as contributing a bug fix. This type of contribution will allow you to get to know the code base, the test suite, and the mechanics of creating a pull request. You can find a list of &lt;a href=&quot;https://issues.jboss.org/issues/?jql=project%20%3D%20Keycloak%20AND%20issuetype%20%3D%20bug%20AND%20fixVersion%20%3D%20%22Awaiting%20Volunteers%22%20&quot;&gt;open bugs here&lt;/a&gt;&lt;/p&gt;.
+
+&lt;p&gt;We also have a list of &lt;a href=&quot;https://issues.jboss.org/issues/?jql=project%20%3D%20Keycloak%20AND%20fixVersion%20%3D%20%22Awaiting%20Volunteers%22%20&quot;&gt;open issues&lt;/a&gt; that
+are awaiting contributions. Not all issues are properly reviewed, so we recommend that you start by sending an email to the developer mailing list before you begin.&lt;/p&gt;
+
+&lt;p&gt;
+For each newsletter, we will also highlight a few features for which we would especially like contributions. These features include:
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.jboss.org/browse/KEYCLOAK-4593&quot;&gt;Support for large number of realms&lt;/a&gt; - Keycloak is not designed to handle large amount of realms. When over 50 realms exist, you start to experience issues.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.jboss.org/browse/KEYCLOAK-6073&quot;&gt;Support different URLs for front and back channel requests in adapters&lt;/a&gt; - When adapters are located alongside Keycloak, it&#39;s not always recommended to use the public URL of Keycloak; this issue concerns allowing adapters to use one URL for back-channel requests and a different URL for redirects.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.jboss.org/browse/KEYCLOAK-2939&quot;&gt;OpenID Connect Front-Channel Logout&lt;/a&gt; - Add support for OpenID Connect Front-Channel logout specification to Keycloak.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.jboss.org/browse/KEYCLOAK-2537&quot;&gt;SCIM 2&lt;/a&gt; - Add support for the SCIM 2 specification to Keycloak, which provides a standards-based interface for user management.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/p&gt;
+</description>
+        <guid>https://www.keycloak.org//2019/04/keycloak-newsletter-1.html</guid>
+        <pubDate>Mon, 1 Apr 2019 00:00:00 GMT</pubDate>
+        
+        <author>Sébastien Blanc</author>
+      </item>
+      <item>
+        <title>W3C Web Authentication (WebAuthn)</title>
+        <link>https://www.keycloak.org//2019/03/web-authn.html</link>
+        <description>
+&lt;p&gt;
+W3C Web Authentication (WebAuthn) was recently made an official web standard. This is a great step towards making a safer and
+simpler authentication experience for users.
+&lt;/p&gt;
+
+&lt;p&gt;
+Where traditional authentication, such as password and OTP, rely on having shared secrets between the user and the
+web application, this is not the case with WebAuthn. WebAuthn uses public key-based credentials resulting in the web
+application not having access to the users secrets anymore. The keys are also unique per web application which eliminates
+the risk of phishing attacks.
+&lt;/p&gt;
+
+&lt;p&gt;
+WebAuthn provides a standard protocol for web applications to authenticate via a number of devices through a relatively
+simple challenge/response. All major browser vendors now have support for WebAuthn and FIDO2, where FIDO2 is the specification
+that enables the browser to communicate with different hardware devices.
+&lt;/p&gt;
+
+&lt;p&gt;
+WebAuthn can be used both as a two factor mechanism as well as enable passwordless authentication. There are already
+an healthy amount of devices that can be used together with WebAuthn. There are a number of security keys like
+&lt;a href=&quot;https://www.yubico.com/&quot;&gt;YubiKey&lt;/a&gt;, &lt;a href=&quot;https://thinc.ensurity.com/&quot;&gt;ThinC&lt;/a&gt; and
+&lt;a href=&quot;https://cloud.google.com/titan-security-key/&quot;&gt;Titan&lt;/a&gt;. A lot of new laptops also come with built-in
+fingerprint scanners, and it Android also recently made it possible to use the fingerprint scanners on Android 7+ devices with WebAuthn.
+&lt;/p&gt;
+
+&lt;p&gt;
+We are of course planning on bringing WebAuthn support to Keycloak in the near future. The team behind &lt;a href=&quot;https://github.com/webauthn4j/webauthn4j&quot;&gt;webauthn4j&lt;/a&gt;
+has been hard at work greating a quality Java library for WebAuthn and will hopefully soon have an extension to
+Keycloak ready.
+&lt;/p&gt;
+
+&lt;p&gt;
+We will first focus on two-factor authentication with WebAuth and as part of this we will bring a number of improvements
+to Keycloak around two-factor authentication. For more details check the
+&lt;a href=&quot;https://github.com/keycloak/keycloak-community/blob/master/design/web-authn-two-factor.md&quot;&gt;design document&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;p&gt;
+Later, we will also bring the passwordless experience to Keycloak. This will also introduce Keycloak to the identity
+first login flows. By asking for the users identity first Keycloak can provide smarter decisions on how to authenticate
+a user based on the users preferences. For example requesting the user to press the button on their security key instead
+of asking for a password.
+&lt;/p&gt;
+
+&lt;p&gt;
+Resources:
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.w3.org/TR/webauthn/&quot;&gt;W3C Specification&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://fidoalliance.org/w3c-and-fido-alliance-finalize-web-standard-for-secure-passwordless-logins/&quot;&gt;W3C and FIDO Alliance Finalize Web Standard for Secure, Passwordless Logins&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.wired.com/story/android-passwordless-login-fido2/&quot;&gt;Android is helping kill passwords on a billion devices&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/p&gt;
+</description>
+        <guid>https://www.keycloak.org//2019/03/web-authn.html</guid>
+        <pubDate>Wed, 6 Mar 2019 00:00:00 GMT</pubDate>
+        
+        <author>Stian Thorgersen</author>
+      </item>
+      <item>
+        <title>Keycloak 5.0.0 released</title>
+        <link>https://www.keycloak.org//2019/03/keycloak-500-released.html</link>
+        <description>&lt;p&gt;To download the release go to &lt;a href=&quot;https://www.keycloak.org//downloads.html&quot;&gt;Keycloak downloads&lt;/a&gt;.&lt;/p&gt;
+
+
+&lt;h2&gt;All resolved issues&lt;/h2&gt;
+&lt;p&gt;The full list of resolved issues are available in &lt;a href=&quot;https://issues.jboss.org/issues/?jql=project%20%3D%20keycloak%20and%20fixVersion%20%3D%2011.0.2&quot;&gt;JIRA&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;Upgrading&lt;/h2&gt;
+&lt;p&gt;Before you upgrade remember to backup your database and check the &lt;a href=&quot;https://www.keycloak.org//docs/latest/upgrading/index.html&quot;&gt;upgrade guide&lt;/a&gt; for anything that may have changed.&lt;/p&gt;
+</description>
+        <guid>https://www.keycloak.org//2019/03/keycloak-500-released.html</guid>
+        <pubDate>Wed, 6 Mar 2019 00:00:00 GMT</pubDate>
+        <category>Keycloak Release</category>
+        
+      </item>
+      <item>
+        <title>Keycloak 4.8.3.Final released</title>
+        <link>https://www.keycloak.org//2019/01/keycloak-483Final-released.html</link>
+        <description>&lt;p&gt;To download the release go to &lt;a href=&quot;https://www.keycloak.org//downloads.html&quot;&gt;Keycloak downloads&lt;/a&gt;.&lt;/p&gt;
+
+
+&lt;h2&gt;All resolved issues&lt;/h2&gt;
+&lt;p&gt;The full list of resolved issues are available in &lt;a href=&quot;https://issues.jboss.org/issues/?jql=project%20%3D%20keycloak%20and%20fixVersion%20%3D%2011.0.2&quot;&gt;JIRA&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;Upgrading&lt;/h2&gt;
+&lt;p&gt;Before you upgrade remember to backup your database and check the &lt;a href=&quot;https://www.keycloak.org//docs/latest/upgrading/index.html&quot;&gt;upgrade guide&lt;/a&gt; for anything that may have changed.&lt;/p&gt;
+</description>
+        <guid>https://www.keycloak.org//2019/01/keycloak-483Final-released.html</guid>
+        <pubDate>Tue, 15 Jan 2019 00:00:00 GMT</pubDate>
+        <category>Keycloak Release</category>
+        
+      </item>
+      <item>
+        <title>Keycloak on Kubernetes</title>
+        <link>https://www.keycloak.org//2018/06/keycloak-on-kubernetes.html</link>
+        <description>
+&lt;p&gt;
+If you&#39;d like to get started with using Keycloak on Kubernetes check out &lt;a href=&quot;https://youtu.be/A_BYZ7hHWXE&quot;&gt;this screencast&lt;/a&gt;.
+If you&#39;d rather try it out yourself check out &lt;a href=&quot;https://github.com/stianst/demo-kubernetes&quot;&gt;this GitHub repository&lt;/a&gt; that contains the instructions as well as all the bits you&#39;ll need to reproduce what is shown in the screencast.
+&lt;/p&gt;</description>
+        <guid>https://www.keycloak.org//2018/06/keycloak-on-kubernetes.html</guid>
+        <pubDate>Wed, 27 Jun 2018 00:00:00 GMT</pubDate>
+        <category>Kubernetes</category>
+        <author>Stian Thorgersen</author>
+      </item>
+      <item>
+        <title>Keycloak Cordova Browser Tabs support</title>
+        <link>https://www.keycloak.org//2018/06/keycloak-cordova-browser-tabs-support.html</link>
+        <description>
+&lt;p&gt;
+Thanks to &lt;a href=&quot;https://github.com/gtudan&quot;&gt;gtudan&lt;/a&gt; we finally have support for browser tabs for Cordova in our JavaScript adapter. This enables using a system browser tab to do the login flows to Keycloak, which brings better security and also single sign-on and single sign-out to mobile applications secured with Keycloak.
+&lt;/p&gt;
+
+&lt;p&gt;
+This will be included in Keycloak 4.1.0.Final which will be released soon. In the meantime check this &lt;a href=&quot;https://youtu.be/HKulxXDYJSs&quot;&gt;screen-cast&lt;/a&gt; to see this in action!
+&lt;/p&gt;</description>
+        <guid>https://www.keycloak.org//2018/06/keycloak-cordova-browser-tabs-support.html</guid>
+        <pubDate>Thu, 21 Jun 2018 00:00:00 GMT</pubDate>
+        <category>Cordova</category>
+        <author>Stian Thorgersen</author>
+      </item>
+      <item>
+        <title>Red Hat Single Sign-On in Keynote demo on Red Hat Summit!</title>
+        <link>https://www.keycloak.org//2018/06/red-hat-single-sign-on-in-keynote-demo.html</link>
+        <description>
+&lt;p&gt;Red Hat Summit is one of the most important events during the year. Many geeks, Red Hat employees and customers have great opportunity to meet, learn new things and attend lots of interesting presentations and trainings. During the summit this year, there were few breakout sessions, which were solely about Keycloak and Red Hat SSO. You can take a look at &lt;a href=&quot;http://blog.keycloak.org/2018/05/red-hat-single-sign-on-red-hat-summit.html&quot;&gt;this blogpost&lt;/a&gt; for more details.
+
+&lt;p&gt;One of the most important parts of Red Hat Summit are Keynote demos, which show the main bullet points and strategies going forward. Typically they also contain the demos of the most interesting technologies, which Red Hat uses.
+
+&lt;p&gt;On the Thursday morning keynote, there was &lt;a href=&quot;https://www.youtube.com/watch?v=hu2BmE1Wk_Q&amp;feature=youtu.be&amp;t=385&quot;&gt;this demo&lt;/a&gt; to show the Hybrid Cloud with 3 clouds (Azure, Amazon, Private) in action! There were many technologies and interesting projects involved. Among others, let&#39;s name &lt;a href=&quot;https://www.redhat.com/en/technologies/jboss-middleware/data-grid&quot;&gt;Red Hat JBoss Data Grid (JDG)&lt;/a&gt;, &lt;a href=&quot;https://openwhisk.apache.org/&quot;&gt;OpenWhisk&lt;/a&gt; or &lt;a href=&quot;https://www.gluster.org/&quot;&gt;Gluster FS&lt;/a&gt;. The &lt;a href=&quot;https://access.redhat.com/products/red-hat-single-sign-on&quot;&gt;RH-SSO&lt;/a&gt; (Red Hat product based on Keycloak project) had a honor to be used as well.
+
+&lt;h2&gt;Red Hat SSO setup details&lt;/h2&gt;
+
+&lt;p&gt;The frontend of the demo was the simple mobile game. RH-SSO was used at the very first stage to authenticate users to the mobile game. Each attendee had an opportunity to try it by yourself. In total, we had 1200 players of the game.
+
+&lt;p&gt;There was loadbalancer up-front and every user was automatically forwarded to one of the 3 clouds. The mobile application used &lt;a href=&quot;https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.2/html/securing_applications_and_services_guide/openid_connect_3#javascript_adapter&quot;&gt;RH-SSO Javascript adapter&lt;/a&gt; (keycloak.js) to communicate with RH-SSO.
+
+&lt;p&gt;With Javascript application, whole OpenID Connect login flow happens within browser and hence can rely on sticky session. So since Javascript adapter is used, you may think that we can do just &quot;easy&quot; setup and let the RH-SSO instances across all 3 clouds to be independent of each other and have each of them to use separate RDBMS and infinispan caches. See the image below  for what such a setup would look like:
+
+&lt;img src=&quot;https://www.keycloak.org//resources/images/blog/cross-dc-blog-architecture-rhsso.png&quot; /&gt;
+
+&lt;p&gt;With this setup, every cloud is aware just about the users and sessions created on itself. This is fine with sticky session, but it won’t work for failover scenarios in case if one of the 3 clouds is broken/removed. There are also other issues with it - for example that admins and users see just sessions created on particular cloud. There are also potential security issues. For example when admin disables user on one cloud, user would still be enabled on other clouds as changes to user won’t be propagated to other clouds.
+
+&lt;p&gt;So we rather want to show more proper setup aware of the replication. Also because one part of the demo was showing failover in action. One of the 3 clouds (Amazon) was killed and users, who were previously logged in Amazon, were redirected to one of the remaining 2 clouds. The point was that the end user won&#39;t be able to recognize any change. Hence users previously logged in Amazon must be still able to refresh their tokens in Azure or Private cloud. This in turn meant that the data (both users, user sessions and caches) need to be aware of all 3 clouds.
+
+&lt;p&gt;In Keycloak 3.X, we added support for &lt;a href=&quot;https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.2/html/server_installation_and_configuration_guide/operating-mode#crossdc-mode&quot;&gt;Cross-datacenter (Cross-site) setup&lt;/a&gt; with usage of external JDG servers to replicate data among datacenters (tech preview in RH-SSO 7.2). The demo was using exactly this setup. Each site had JDG server and all 3 sites communicate with each other through those JDG servers. This is standard JDG Cross-DC setup. See the picture below for what the demo looked like:
+
+&lt;img src=&quot;https://www.keycloak.org//resources/images/blog/cross-dc-blog-actual-setup-architecture-rhsso.png&quot; /&gt;
+
+&lt;p&gt;The JDG servers were not used during the demo just for the purpose of the RH-SSO, but also for the purpose of other parts of the demo. The details are described in the &lt;a href=&quot;https://developers.redhat.com/blog/2018/06/19/red-hat-data-grid-on-three-clouds/&quot;&gt;JDG setup blog by  Sebastian Łaskawiec&lt;/a&gt;. The JDG servers were setup with ASYNC backups, which was more effective and was completely fine for the purpose of the demo due the fact that mobile application was using keycloak.js adapter. See &lt;a href=&quot;https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.2/html/server_installation_and_configuration_guide/operating-mode#backups&quot;&gt;RH-SSO docs&lt;/a&gt; for more details.
+
+&lt;h2&gt;Red Hat SSO customizations&lt;/h2&gt;
+
+&lt;p&gt;The RH-SSO was using standard &lt;a href=&quot;https://access.redhat.com/documentation/en-us/red_hat_jboss_middleware_for_openshift/3/html/red_hat_single_sign-on_for_openshift/&quot;&gt;RH-SSO openshift image&lt;/a&gt; . For Cross-DC setup, we needed to do configuration changes as described in the &lt;a href=&quot;https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.2/html/server_installation_and_configuration_guide/operating-mode#crossdc-mode&quot;&gt;RHSSO documentation&lt;/a&gt; . Also few other customizations were done.
+
+&lt;h3&gt;JDG User Storage&lt;/h3&gt;
+
+&lt;p&gt;RH-SSO Cross-DC setup currently requires both replicated RDBMS and replicated JDG server. When preparing to demo, we figured that using the clustered RDBMS in OpenShift replicated across all 3 clouds, is not very straightforward thing to setup.
+
+&lt;p&gt;Fortunately RH-SSO is highly customizable platform and among other things, it provides supported &lt;a href=&quot;https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.2/html/server_administration_guide/user-storage-federation&quot;&gt;User Storage SPI&lt;/a&gt; , which allows customers to plug their own storage for RH-SSO users. So instead of setup of replicated RDBMS, we created custom JDG User Storage. So users of the example realm were saved inside JDG instead of the RDBMS Database.
+
+&lt;p&gt;Lessons learned is, that we want to make the Keycloak/RH-SSO Cross-DC setup simpler for administrators. Hence we&#39;re considering removing the need for replicated RDBMS entirely and instead store all realms and users metadata within JDG. So just replicated JDG would be a requirement for Cross-DC setup.
+
+&lt;h3&gt;Other customizations&lt;/h3&gt;
+
+&lt;p&gt;For the purpose of the demo, we did custom login theme. We also did Email-Only authenticator, which allows to register user just by providing their email address. This is obviously not very secure, but it&#39;s pretty neat for the example purpose. Keynote users were also able to login with &lt;a href=&quot;https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.2/html/server_administration_guide/identity_broker#google&quot;&gt;Google Identity Provider&lt;/a&gt;  or &lt;a href=&quot;https://developers.redhat.com/&quot;&gt;Red Hat Developers OpenID Connect Identity Provider&lt;/a&gt;, which was useful for users, who already had an account in those services.
+
+&lt;img src=&quot;https://www.keycloak.org//resources/images/blog/login-screen.png&quot; /&gt;
+
+&lt;p&gt;If you want to try all these things in action, you can try to checkout our &lt;a href=&quot;https://github.com/rhdemo/rh-sso&quot;&gt;Demo Project on Github&lt;/a&gt; and deploy it to your own openshift cluster! If you have 3 clouds, even better! You can try the full setup including JDG to try exactly the setup we used during keynote demo.
+
+
+
+
+
+
+
+
+</description>
+        <guid>https://www.keycloak.org//2018/06/red-hat-single-sign-on-in-keynote-demo.html</guid>
+        <pubDate>Sun, 17 Jun 2018 00:00:00 GMT</pubDate>
+        <category>Red Hat Summit</category>
+        <author>Marek Posolda</author>
+      </item>
+      <item>
+        <title>Keycloak on OpenShift</title>
+        <link>https://www.keycloak.org//2018/05/keycloak-on-openshift.html</link>
+        <description>
+
+&lt;p&gt;
+In this post you&#39;ll see how to deploy Keycloak on OpenShift. You&#39;ll also learn how to deploy a Node.js based REST service and an HTML5 application to OpenShift and secure these with Keycloak.
+&lt;/p&gt;
+
+&lt;p&gt;
+There is also a screencast showing this example at &lt;a href=&quot;https://youtu.be/9zUWqbK3BqI&quot;&gt;https://youtu.be/9zUWqbK3BqI&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;p&gt;
+If you don&#39;t already have OpenShift available a good place to start is by using &lt;a href=&quot;https://github.com/minishift/minishift&quot;&gt;MiniShift&lt;/a&gt;.
+
+&lt;h2&gt;Deploying Keycloak&lt;/h2&gt;
+
+&lt;p&gt;
+First of all create a new project in OpenShift with oc by running:
+&lt;pre&gt;
+oc new-project keycloak
+&lt;/pre&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+The next thing to do is to import the Keycloak template into OpenShift, by running:
+&lt;pre&gt;
+oc replace --force -f &quot;https://raw.githubusercontent.com/jboss-dockerfiles/keycloak&quot;\
+&quot;/master/openshift-examples/keycloak-https.json&quot;
+&lt;/pre&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+Now open the OpenShift console and open the keycloak project.
+&lt;/p&gt;
+
+&lt;p&gt;
+Click on Add to Project and Browse Catalog. In the catalog you should find Keycloak. Click on it.
+&lt;/p&gt;
+
+&lt;p&gt;
+Click next on the information. Under configuration set a username and password that you can remember in the Keycloak Administrator Username and Keycloak Administrator Password fields. Then click on create. Click on Continue to project overview.
+&lt;/p&gt;
+
+&lt;p&gt;
+Wait for the deployment to complete then click on the link to the application. Your browser will complain about the certificate as it is a self-signed certificate. Ignore this and proceed. Click on Administration Console, then login with the username and password you entered previously. Keep this tab open as you will need it later.
+&lt;/p&gt;
+
+&lt;p&gt;
+You have now deployed Keycloak onto OpenShift.
+&lt;/p&gt;
+
+&lt;h2&gt;Configure Clients in Keycloak&lt;/h2&gt;
+
+&lt;p&gt;
+We need to create clients for the service and the application we will secure.
+&lt;/p&gt;
+
+&lt;p&gt;
+Open the tab with the Keycloak admin console. Click on Clients and Create. For Client ID enter service and click Save. Under Access Type select bearer-only and click on Save.
+&lt;/p&gt;
+
+&lt;p&gt;
+Click on Clients then Create again. For Client ID enter app and click Save. For Valid Redirect URIs and Web Origins enter *. In production environment it is very important that you enter the correct URL for your application, but since this is a demonstration we will simply allow all URLs for simplicity. You can easily update these to the correct URLs for the application after it has been deployed.
+&lt;/p&gt;
+
+&lt;p&gt;
+Keep the Keycloak admin console tab open as again you will need it later.
+&lt;/p&gt;
+
+&lt;h2&gt;Deploy the Service&lt;/h2&gt;
+
+&lt;p&gt;
+Go back to the tab with the OpenShift console and click on Add to Project and Browse Catalog again. This time click on Node.js. Click next on Information, then click on advanced options under Configuration.
+&lt;/p&gt;
+
+&lt;p&gt;
+Make the following changes:
+&lt;ul&gt;
+&lt;li&gt;Name: service&lt;/li&gt;
+&lt;li&gt;Git Repository URL: https://github.com/stianst/misc.git&lt;/li&gt;
+&lt;li&gt;Context Dir: openshift/service
+&lt;li&gt;Secure route: enable
+&lt;li&gt;TLS Termination: Edge
+&lt;li&gt;Insecure Traffic: Redirect
+&lt;li&gt;
+Deployment Config
+&lt;ul&gt;&lt;li&gt;KEYCLOAK_URL=https://secure-keycloak-keycloak.192.168.42.52.nip.io/auth&lt;/li&gt;&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+Replace the value for KEYCLOAK_URL with the URL for Keycloak. You can find this by going back to the tab with the Keycloak admin console (copy the URL up to and including &quot;/auth&quot;).
+&lt;/p&gt;
+
+&lt;p&gt;
+Click on Create then Continue to the project overview. Wait for the build and deployment to complete then click on the link to the application. You should see &quot;Not found!&quot;. Add &quot;/service/public&quot; to the url and you should see &quot;message: public&quot; in JSON.
+&lt;/p&gt;
+
+&lt;p&gt;
+You have now deployed and secured the service. Keep this tab open as well as you need it later.
+&lt;/p&gt;
+
+&lt;h2&gt;Deploy the Application&lt;/h2&gt;
+
+&lt;p&gt;
+Go back to the tab with the OpenShift console and click on Add to Project and Browse Catalog again. This time click on PHP. Click next on Information, then click on advanced options under Configuration.
+&lt;/p&gt;
+
+&lt;p&gt;
+Make the following changes:
+&lt;ul&gt;
+&lt;li&gt;Name: app&lt;/li&gt;
+&lt;li&gt;Git Repository URL: https://github.com/stianst/misc.git&lt;/li&gt;
+&lt;li&gt;Context Dir: openshift/app
+&lt;li&gt;Secure route: enable
+&lt;li&gt;TLS Termination: Edge
+&lt;li&gt;Insecure Traffic: Redirect
+&lt;li&gt;
+Deployment Config
+&lt;ul&gt;&lt;li&gt;KEYCLOAK_URL=https://secure-keycloak-keycloak.192.168.42.52.nip.io/auth&lt;/li&gt;&lt;/ul&gt;
+&lt;ul&gt;&lt;li&gt;SERVICE_URL=https://service-keycloak.192.168.42.240.nip.io/service&lt;/li&gt;&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+Replace the value for KEYCLOAK_URL with the URL for Keycloak. You can find this by going back to the tab with the Keycloak admin console (copy the URL up to and including &quot;/auth&quot;). Also, replace the value for SERVICE_URL with the URL for the Service. You can find this by going back to the tab with the service (copy the URL up to and including &quot;/service&quot;).
+&lt;/p&gt;
+
+&lt;p&gt;
+Click on Create then Continue to the project overview. Wait for the build and deployment to complete then click on the link to the application. You should already be logged-in. You can now invoke the service by clicking on Invoke Public to invoke the unsecured endpoint or Invoke Admin to invoke the endpoint secured with the admin role. If you click on Invoke Secured it will fail as the admin user you are logged in with does not have the user role. To be able to invoke this endpoint as well go back to the Keycloak admin console. Create a realm role named user. Then go to users find your admin user and under role mappings add the user role to the user.
+&lt;/p&gt;
+
+&lt;p&gt;
+You have now deployed and secured the application as well as seen how the application can securely invoke the service you deployed previously.
+&lt;/p&gt;</description>
+        <guid>https://www.keycloak.org//2018/05/keycloak-on-openshift.html</guid>
+        <pubDate>Thu, 31 May 2018 00:00:00 GMT</pubDate>
+        <category>OpenShift</category>
+        <author>Stian Thorgersen</author>
+      </item>
+      <item>
+        <title>Red Hat Single Sign-On @ Red Hat Summit</title>
+        <link>https://www.keycloak.org//2018/05/red-hat-single-sign-on-red-hat-summit.html</link>
+        <description>
+&lt;p&gt;At Red Hat Summit this year there are no less than 4 sessions about Red Hat Single Sign-On! If you are going to Summit make sure to join us.&lt;/p&gt;
+
+&lt;h3&gt;OpenShift + single sign-on = Happy security teams and happy users&lt;/h3&gt;
+
+&lt;p&gt;Dustin Minnich, Joshua Cain, Jared Blashka, Brian Atkisson. Tuesday 4 PM.&lt;/p&gt;
+
+&lt;p&gt;One username and password to rule them all.&lt;/p&gt;
+
+&lt;p&gt;In this lab, we&#39;ll discuss and demonstrate single sign-on technologies and how to implement them using Red Hat products. We&#39;ll take you through bringing up an OpenShift cluster in a development environment, installing Red Hat single sign-on on top of it, and then integrating that with a variety of example applications.&lt;/p&gt;
+
+&lt;h3&gt;Securing service mesh, microservices, and modern applications with JSON Web Token (JWT)&lt;/h3&gt;
+
+&lt;p&gt;Stian Thorgersen, Sébastien Blanc. Wednesday 10:30 AM.&lt;/p&gt;
+
+&lt;p&gt;Sharing identity and authorization information between applications and services should be done with an open industry standard to ensure interoperability in heterogeneous environments. Javascript Object Signing and Encryption (JOSE) is a framework for securely sharing such information between heterogeneous applications and services.&lt;/p&gt;
+
+&lt;p&gt;In this session, we’ll cover the specifications of the JOSE framework, focusing especially on JSON Web Token (JWT). We’ll discuss practical applications of the JOSE framework, including relevant specifications, such as OpenID Connect. After this session, you’ll have an understanding of the specifications and how to easily adopt them using Red Hat single sign-on or another OpenID Connect provider.&lt;/p&gt;
+
+
+&lt;h3&gt;Red Hat single sign-on: Present and future&lt;/h3&gt;
+
+&lt;p&gt;Boleslaw Dawidowicz, John Doyle. Wednesday 3:30 PM.&lt;/p&gt;
+
+&lt;p&gt;Red Hat single sign-on (SSO) provides web SSO with modern, token-based protocols, such as OAuth and OpenID Connect. This session will highlight the features of the latest release and show the future direction of the technology within the Red Hat portfolio.&lt;/p&gt;
+
+
+&lt;h3&gt;Securing apps and services with Red Hat single sign-on&lt;/h3&gt;
+
+&lt;p&gt;Sébastien Blanc, Stian Thorgersen. Thursday 1:00 PM.&lt;/p&gt;
+
+&lt;p&gt;If you have a number of applications and services, the applications may be HTML5, server-side, or mobile, while the services may be monolithic or microservices, deployed on-premise or to the cloud. You may have started looking at using a service mesh. Now, you need to easily secure all these applications and services.&lt;/p&gt;
+
+&lt;p&gt;Securing applications and services is no longer just about assigning a username and password. You need to manage identities. You need two-factor authentication. You need to integrate with legacy and external authentication systems. Your list of other requirements may be long. But you don’t want to develop all of this yourself—nor should you.&lt;/p&gt;
+
+&lt;p&gt;In this session, we’ll demonstrate how to easily secure all your applications and services—regardless of how they&#39;re implemented and hosted—with Red Hat single sign-on. After this session, you&#39;ll know how to secure your HTML5 application or service, deployed to a service mesh and everything in between. Once your applications and services are secured with Red Hat single sign-on, you&#39;ll know how to easily adopt single sign-on, two-factor authentication, social login, and other security capabilities.&lt;/p&gt;
+</description>
+        <guid>https://www.keycloak.org//2018/05/red-hat-single-sign-on-red-hat-summit.html</guid>
+        <pubDate>Wed, 2 May 2018 00:00:00 GMT</pubDate>
+        <category>Red Hat Summit</category>
+        <author>Stian Thorgersen</author>
+      </item>
+      <item>
+        <title>Keycloak Questionnaire</title>
+        <link>https://www.keycloak.org//2018/04/keycloak-questionnaire.html</link>
+        <description>
+&lt;p&gt;Are you using Keycloak? If so we would greatly appreciate it if you can take some time and answer some questions at &lt;a href=&quot;https://goo.gl/forms/TRSmCCU6eX25prhH2&quot;&gt;https://goo.gl/forms/TRSmCCU6eX25prhH2&lt;/a&gt;.&lt;/p&gt;</description>
+        <guid>https://www.keycloak.org//2018/04/keycloak-questionnaire.html</guid>
+        <pubDate>Thu, 19 Apr 2018 00:00:00 GMT</pubDate>
+        
+        <author>Stian Thorgersen</author>
+      </item>
+      <item>
+        <title>Keycloak and Istio</title>
+        <link>https://www.keycloak.org//2018/02/keycloak-and-istio.html</link>
+        <description>
+&lt;p&gt;This short blog post is to share the first trials of combining Keycloak with Istio.&lt;/p&gt;
+
+&lt;h3&gt;What is Istio?&lt;/h3&gt;
+
+&lt;p&gt;Istio is an platform that provides a common way to manage your service mesh. You may wonder what a service mesh is, well, it&#39;s an infrastructure layer dedicated to connect, secure and make reliable your different services.&lt;/p&gt;
+
+&lt;p&gt;Istio, in the end, will be replacing all of our circuit-breakers, intelligent load balancing or metrics librairies, but also the way how two services will communicate in a secure way. And this is of course the interesting part for Keycloak.&lt;/p&gt;
+
+&lt;p&gt;As you know Keycloak uses adapters for each of the application or service that it secures. These adapters make sure to perform the redirect if needed, to retrieve the public keys, to verify the JWT signature etc ...&lt;/p&gt;
+
+&lt;p&gt;There are a lot of different adapters depending on the type of application or technology that is used : there are Java EE adapters, JavaScript adapters and we even have a NodeJS adapter.&lt;/p&gt;
+
+&lt;h3&gt;The end of the adapters?&lt;/h3&gt;
+&lt;p&gt;Following the Istio philosophy, these adapters would not be needed in the end because the Istio infrastructure will take care of the tasks the adapters were doing (signature verification etc ...). We are not yet there for now but in this post we will see what can already be done with Istio and how much it already can replace the role of the Adapters.&lt;/p&gt;
+
+&lt;h3&gt;The Envoy Sidecar&lt;/h3&gt;
+
+&lt;p&gt;We won&#39;t dive into the details on how Istio works but there is one main concept to understand around which Istio is articulated : the Envoy Sidecar. Envoy is a high performance proxy deployed alongside with each deployed service and this is the reason we call it a &quot;sidecar&quot;.&lt;/p&gt;
+
+&lt;p&gt;Envoy captures all incoming and outgoing traffic of its &quot;companion&quot; service, it can then apply some basic operations and also collect data and send it to a central point of decision, called the &quot;mixer&quot; in Istio. The conifugration of Envoy itself happens through the &quot;pilot&quot; an other Istio component.&lt;/p&gt;
+
+&lt;img src=&quot;https://www.keycloak.org//resources/images/blog/istio-architecture.png&quot;/&gt;&lt;div&gt;
+
+&lt;h3&gt;Envoy Filters&lt;/h3&gt;
+
+&lt;p&gt;To make it easier to add new functionnality to the Envoy Proxy, there is the concept of filters that you can stack up. Again, these filters can be congifured by the Pilot and they can gather information for the Mixer:&lt;/p&gt;
+
+&lt;img src=&quot;https://www.keycloak.org//resources/images/blog/envoydetails.png&quot; /&gt;
+
+&lt;h3&gt;The JWT-Auth Filter&lt;/h3&gt;
+
+&lt;p&gt;The Istio team has been developping a filter that interest us : the jwt-auth filter. As the name suggests, this filter is capable of performing checks on a JWT token that the Envoy Proxy will extract from the HTTP Request&#39;s headers.&lt;/p&gt;
+
+&lt;p&gt;The details about this filters can be found &lt;a href=&quot;https://github.com/istio/proxy/tree/master/src/envoy/http/jwt_auth&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3&gt;The Keycloak-Istio Demo&lt;/h3&gt;
+
+&lt;p&gt;Now that you have the big picture in mind let&#39;s take a look at the demo that has been developed by Kamesh Sampath (@kamesh_sampath) From the Red Hat Developer Experience Team to show how Keycloak and Istio can be combined:&lt;/p&gt;
+
+&lt;img src=&quot;https://www.keycloak.org//resources/images/blog/bigpicure1.png&quot;/&gt;
+
+&lt;p&gt;The demo will be running inside a Minishift instance, Minishift is a tool that helps to run OpenShift locally. Minishift has really nice support for Istio, as it takes only a few commands to install the Istio layer inside a Minishift instance.&lt;/p&gt;
+
+&lt;p&gt;So inside our Minishift instance we will have:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;A Keycloak Pod : a pod containing a Keycloak Server.&lt;/li&gt;
+&lt;li&gt;A Web App Pod (Cars Web): this pod contains the Web App that will perform the authentification through the Keycloak login in order to obtain a JWT token&lt;/li&gt;
+&lt;li&gt;Then we have the Istio related components :&lt;/li&gt;
+    &lt;ul&gt;
+    &lt;li&gt;The Pilot to configure the Envoy proxies&lt;/li&gt;
+    &lt;li&gt;The Mixer to handle the attributes returned by Envoy&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;li&gt;The API Service (Cars API) : this pod will have two containers :&lt;/li&gt;
+    &lt;ul&gt;
+    &lt;li&gt;The API service itself, in this case a simple Spring Boot Application&lt;/li&gt;
+    &lt;li&gt;The Envoy Side-Car container&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The demo repository provides the Istio script to delpoy the Envoy Sidecar alongside the Spring Boot Api Service.&lt;/p&gt;
+
+&lt;p&gt;Thi is how the Cars API Pod looks like after it is deployed:&lt;/p&gt;
+
+&lt;img src=&quot;https://www.keycloak.org//resources/images/blog/carsapipod.png&quot; /&gt;
+
+&lt;p&gt;Now, the Envoy Sidecar needs to be configured:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;We indicate what needs to be configured, the kind of policy and implicitly the correct filter (in our case the jwt-auth filter) will be configured.&lt;/li&gt;
+&lt;li&gt;It needs to know where to retrieve Keycloak&#39;s Public key in order to verify the JWT signature.&lt;/li&gt;
+&lt;li&gt;The issuer : who has generated the token ? In this case it&#39;s also the Keycloak Server.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;img src=&quot;https://www.keycloak.org//resources/images/blog/pilotscript.png&quot; /&gt;
+
+&lt;p&gt;Now each incoming request to the API Service will be checked by the Envoy Sidecar to see if the JWT token contained in the header is valid or not. If it&#39;s valid the request be authorized otherwise an error message will be returned.&lt;/p&gt;
+
+&lt;p&gt;The full instructions of the demo (including setting up Minishift with Istio) can be found &lt;a href=&quot;https://github.com/kameshsampath/istio-keycloak-demo&quot;&gt;here&lt;/a&gt;and again thanks to the awesome Kamesh for the work he delivered for this demo.&lt;/p&gt;</description>
+        <guid>https://www.keycloak.org//2018/02/keycloak-and-istio.html</guid>
+        <pubDate>Mon, 26 Feb 2018 00:00:00 GMT</pubDate>
+        <category>Istio</category>
+        <author>Sébastien Blanc</author>
+      </item>
+      <item>
+        <title>Keycloak and Angular CLI</title>
+        <link>https://www.keycloak.org//2018/02/keycloak-and-angular-cli.html</link>
+        <description>
+&lt;p&gt;So I made a &lt;a href=&quot;https://blog.angular.io/schematics-an-introduction-dc1dfbc2a2b2&quot; target=&quot;_blank&quot;&gt;schematic&lt;/a&gt;&lt;/span&gt; that installs and configures &lt;a href=&quot;https://github.com/ssilvert/keycloak-schematic/wiki/Getting-Started&quot; target=&quot;_blank&quot;&gt;Keycloak in any Angular CLI application&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;If you want to try it out, do this from the command line:&lt;/p&gt;
+
+&lt;pre&gt;
+npm install -g @ssilvert/keycloak-schematic
+ng new myApp&lt;/span&gt;
+cd myApp
+ng generate keycloak --collection @ssilvert/keycloak-schematic --clientId=myApp
+&lt;/pre&gt;
+
+&lt;p&gt;Now Keycloak is integrated into your app.&amp;nbsp; Of course, you can do this with any existing Angular CLI application.&amp;nbsp; It doesn&#39;t have to be a new one.&lt;/p&gt;
+
+&lt;p&gt;Then, go to the Keycloak Admin console (master realm) and go to Clients --&amp;gt; Add Client --&amp;gt; Select File.&lt;/p&gt;
+
+&lt;p&gt;Select the client-import.json file that the &quot;ng generate keycloak&quot; command created in /myApp.&lt;/p&gt;
+
+&lt;p&gt;Assuming your Keycloak server is running on localhost:8080, you are ready to go.&amp;nbsp; Start your application:&lt;/p&gt;
+&lt;pre&gt;ng serve&lt;/pre&gt;
+
+&lt;p&gt;Go to your browser to start the app and see this:&lt;/p&gt;
+
+&lt;img src=&quot;https://www.keycloak.org//resources/images/blog/login.png&quot;/&gt;
+
+&lt;p&gt;Oh joy! myApp is protected with Keycloak!&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&quot;https://github.com/ssilvert/keycloak-schematic&quot; target=&quot;_blank&quot;&gt;keycloak-schematic&lt;/a&gt; installs a KeycloakService and a KeycloakGuard.&amp;nbsp; So you can easily:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Add login/logout buttons&lt;/li&gt;
+&lt;li&gt;Access user self service (account management)&lt;/li&gt;
+&lt;li&gt;Guard protected routes instead of the whole app&lt;/li&gt;
+&lt;li&gt;Work with roles&lt;/li&gt;
+&lt;li&gt;Lots more&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/ssilvert/keycloak-schematic/wiki/Getting-Started&quot; target=&quot;_blank&quot;&gt;Click here&lt;/a&gt; for a comprehensive getting started guide, full documentation, and sample code.&lt;/p&gt;
+
+&lt;p&gt;Note that this stuff is early alpha right now.&amp;nbsp; And it will move from&amp;nbsp;@ssilvert to @keycloak before long.&amp;nbsp; In the mean time, I&#39;d love to get feedback.&amp;nbsp; There is a lot to do to make Keycloak/Angular integration even better, but I think the &lt;a href=&quot;https://github.com/ssilvert/keycloak-schematic&quot; target=&quot;_blank&quot;&gt;keycloak-schematic&lt;/a&gt; is a big step forward.&lt;/p&gt;
+
+&lt;p&gt;So long, and thanks for all the fish.&lt;/p&gt;</description>
+        <guid>https://www.keycloak.org//2018/02/keycloak-and-angular-cli.html</guid>
+        <pubDate>Fri, 9 Feb 2018 00:00:00 GMT</pubDate>
+        <category>AngularJS</category>
+        <author>Stan Silvert</author>
+      </item>
+      <item>
+        <title>Keycloak Cross Data Center Setup in AWS</title>
+        <link>https://www.keycloak.org//2018/01/keycloak-cross-data-center-setup-in-aws.html</link>
+        <description>
+&lt;h2&gt;
+Sample Keycloak Cross Data Center Setup in AWS Environment&lt;/h2&gt;
+&lt;div&gt;
+With Keycloak 3.3.0, the support for large-scale deployment across multiple data centers (also called cross site, X-site, cross data-center, cross-DC) has become available. The natural question arose about how this support can be utilized in cloud environment. This blog post follows up on previous blog post &lt;a href=&quot;http://blog.keycloak.org/2017/09/cross-datacenter-support-in-keycloak.html&quot; target=&quot;_blank&quot;&gt;on setting up cross-DC locally&lt;/a&gt;, and enhances it with an example of how to setup this type of deployment in Amazon Web Services (AWS).&lt;br /&gt;
+It is strongly recommended to use version 3.4.3.Final at minimum as there were several important fixes done around cross-DC support since the first cross-DC-capable version.&lt;/div&gt;
+&lt;h3&gt;
+Architecture&lt;/h3&gt;
+&lt;div&gt;
+The general architecture of a cross-DC deployment is described in detail &lt;a href=&quot;http://www.keycloak.org/docs/latest/server_installation/index.html#crossdc-mode&quot;&gt;in Keycloak documentation&lt;/a&gt; and briefly shown in the following diagram. There are several data centers (&lt;i&gt;site1&lt;/i&gt; and &lt;i&gt;site2&lt;/i&gt; in the picture that can be found in full scale &lt;a href=&quot;http://www.keycloak.org/docs/latest/server_installation/index.html#crossdc-mode&quot; target=&quot;_blank&quot;&gt;in the documentation&lt;/a&gt;). The sites have a replicated database, set up ideally in multimaster synchronous replication mode. Each site has a cluster of Keycloak nodes and a cluster of Infinispan nodes. The clusters of Keycloak nodes are hidden behind a load balancer in private subnet; Infinispan nodes form a cluster within corresponding data center, and in addition&amp;nbsp;utilize&amp;nbsp;RELAY protocol to backup each other across data centers.&lt;/div&gt;
+&lt;div&gt;
+&lt;br /&gt;&lt;/div&gt;
+&lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: center;&quot;&gt;
+&lt;a href=&quot;http://www.keycloak.org/docs/latest/server_installation/keycloak-images/cross-dc-architecture.png&quot; imageanchor=&quot;1&quot; style=&quot;margin-left: 1em; margin-right: 1em;&quot;&gt;&lt;img border=&quot;0&quot; src=&quot;http://www.keycloak.org/docs/latest/server_installation/keycloak-images/cross-dc-architecture.png&quot; data-original-height=&quot;520&quot; data-original-width=&quot;800&quot; height=&quot;260&quot; width=&quot;400&quot; /&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;h3&gt;
+Example&lt;/h3&gt;
+&lt;div&gt;
+This post is based on three CloudFormation templates that gradually build two data centers with Keycloak instances, each data center in a separate AWS availability zone sharing the same virtual private cloud (VPC). Note that the templates are intended &lt;i&gt;for trying/testing purposes only&lt;/i&gt;, not for production. The templates are described below:&lt;/div&gt;
+&lt;div&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;i&gt;&lt;a href=&quot;https://s3-eu-west-1.amazonaws.com/keycloak-aws/01-create-keycloak-vpc.yaml&quot; target=&quot;_blank&quot;&gt;VPC stack&lt;/a&gt;.&lt;/i&gt;&amp;nbsp;This stack creates a new VPC with four subnets: two of them in one availability zone, another two in another availability zone. One of the subnet in each availability zone is private, intended for Keycloak instances; the other subnet in each availability zone is intended for load balancer and Infinispan (so that these can communicate over the internet).&lt;br /&gt;&lt;br /&gt;The only parameter in this stack is the number &lt;i&gt;B&lt;/i&gt; in VPC IP address range 10.&lt;i&gt;B&lt;/i&gt;.0.0/16.&lt;br /&gt;&lt;br /&gt;Click the button below to launch this stack:&lt;br /&gt;&lt;a href=&quot;https://console.aws.amazon.com/cloudformation/home?region=eu-west-1#/stacks/new?stackName=kc-vpc&amp;amp;templateURL=https://s3-eu-west-1.amazonaws.com/keycloak-aws/01-create-keycloak-vpc.yaml&quot; target=&quot;_blank&quot;&gt;&lt;img border=&quot;0&quot; data-original-height=&quot;27&quot; data-original-width=&quot;144&quot; src=&quot;https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;i&gt;&lt;a href=&quot;https://s3-eu-west-1.amazonaws.com/keycloak-aws/02-create-keycloak-ami.yaml&quot; target=&quot;_blank&quot;&gt;Database and AMI stack&lt;/a&gt;.&lt;/i&gt;&amp;nbsp;This stack creates an RDS Aurora MySQL-compatible database instance, builds Keycloak from source, creates S3 buckets necessary for dynamic node discovery via S3_PING protocol, and produces AMI image that contains both Keycloak and Infinispan preconfigured to form appropriate clusters. It relies on &lt;a href=&quot;https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-custom-resources-lambda.html&quot; target=&quot;_blank&quot;&gt;AWS Lambda-backed custom resources&lt;/a&gt;, so in order to create them, it is required that this template creates a role for these Lambdas. To launch this template, it is hence required that the user grants the &lt;a href=&quot;https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-capabilities&quot; target=&quot;_blank&quot;&gt;CAPABILITY_IAM capability&lt;/a&gt;.&lt;br /&gt;&lt;br /&gt;Both Keycloak and Infinispan server are prepared just the same way as &lt;a href=&quot;https://github.com/keycloak/keycloak/blob/master/testsuite/integration-arquillian/HOW-TO-RUN.md#cross-dc-tests&quot; target=&quot;_blank&quot;&gt;for running cross-DC tests&lt;/a&gt;, and then are placed into&amp;nbsp;&lt;span style=&quot;font-family: &amp;quot;courier new&amp;quot; , &amp;quot;courier&amp;quot; , monospace;&quot;&gt;/opt/tests&lt;/span&gt; path&amp;nbsp;and the relevant part of their configuration is updated to suit AWS deployment.&lt;br /&gt;&lt;br /&gt;This template has several parameters, most of them are self-describing:&lt;br /&gt;-&amp;nbsp;&lt;i&gt;VPC stack name:&lt;/i&gt;&amp;nbsp;Name of the stack created in the previous step&lt;br /&gt;-&amp;nbsp;&lt;i&gt;Instance type for building image&lt;/i&gt;&lt;br /&gt;-&amp;nbsp;&lt;i&gt;Database instance type:&lt;/i&gt; Type of the database as available in RDS&lt;br /&gt;-&amp;nbsp;&lt;i&gt;Install diagnostic tools:&lt;/i&gt; Flag signalling whether the diagnostic tools should be installed&lt;br /&gt;-&amp;nbsp;&lt;i&gt;URL to Maven repository for build: &lt;/i&gt;To speed up build, instead of downloading each Maven artifact, URL with a .zip file containing the whole $HOME/.m2 directory can be provided that would be unpacked prior to the actual build and provide the artifacts, thus speeding the build up.&lt;br /&gt;-&amp;nbsp;&lt;i&gt;Keycloak Git repository&lt;/i&gt; and&amp;nbsp;&lt;i&gt;Git tag/branch/commit&lt;/i&gt;: Git repository and tag from which the build should start.&lt;br /&gt;&lt;br /&gt;Click the button below to launch this stack:&lt;br /&gt;&lt;a href=&quot;https://console.aws.amazon.com/cloudformation/home?region=eu-west-1#/stacks/new?stackName=kc-ami&amp;amp;templateURL=https://s3-eu-west-1.amazonaws.com/keycloak-aws/02-create-keycloak-ami.yaml&quot; target=&quot;_blank&quot;&gt;&lt;img border=&quot;0&quot; data-original-height=&quot;27&quot; data-original-width=&quot;144&quot; src=&quot;https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;i&gt;&lt;a href=&quot;https://s3-eu-west-1.amazonaws.com/keycloak-aws/03-create-infinispan-keycloak-clusters.yaml&quot; target=&quot;_blank&quot;&gt;Keycloak deployment stack&lt;/a&gt;&lt;/i&gt;. This stack creates instantiates one Infinispan node in public subnet per data center, given number of Keycloak servers in private subnet joined in the cluster in each data center, and an AWS Application load balancer to spread the load between the actual Keycloak servers. If not restoring database from backup, it also creates an initial user &lt;i&gt;admin&lt;/i&gt; with password &lt;i&gt;admin&lt;/i&gt; in master realm, and also configures master realm to permit insecure http access to the admin console (remember, it is only a test instance, don&#39;t do this in production!).&lt;br /&gt;&lt;br /&gt;This template has several parameters, most of them are self-describing:&lt;br /&gt;- &lt;i&gt;AMI stack name:&lt;/i&gt; Name of the stack created in the previous step&lt;br /&gt;-&amp;nbsp;&lt;i&gt;Keycloak instances per data centre&lt;/i&gt;: Number of Keycloak nodes per data center&lt;br /&gt;-&amp;nbsp;&lt;i&gt;Instance type for Keycloak servers&lt;/i&gt;&lt;br /&gt;-&amp;nbsp;&lt;i&gt;Instance type for Infinispan servers&lt;/i&gt;&lt;br /&gt;-&amp;nbsp;&lt;i&gt;SSH key name: &lt;/i&gt;Name of EC2 ssh key used for instance initialization&lt;br /&gt;-&amp;nbsp;&lt;i&gt;Load balancer scheme:&lt;/i&gt;&amp;nbsp;This settings determines whether the load balancer would be assigned a public or private IP only. See &lt;a href=&quot;https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-internet-facing-load-balancers.html#elb-create-internet-facing-load-balancer&quot; target=&quot;_blank&quot;&gt;AWS documentation&lt;/a&gt; for further information.&lt;br /&gt;-&amp;nbsp;&lt;i&gt;Database backup URL:&lt;/i&gt; In case you have a dump of&amp;nbsp;Keycloak&amp;nbsp;MySQL/MariaDB database, you can initialize the database with it by providing URL to that dump. The dump might be optionally gzipped, .gz suffix of that dump is then mandatory.&lt;br /&gt;&lt;br /&gt;Click the button below to launch this stack:&lt;br /&gt;&lt;a href=&quot;https://console.aws.amazon.com/cloudformation/home?region=eu-west-1#/stacks/new?stackName=kc&amp;amp;templateURL=https://s3-eu-west-1.amazonaws.com/keycloak-aws/03-create-infinispan-keycloak-clusters.yaml&quot; target=&quot;_blank&quot;&gt;&lt;img border=&quot;0&quot; data-original-height=&quot;27&quot; data-original-width=&quot;144&quot; src=&quot;https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div&gt;
+Once you launch the last stack, Keycloak will be available at the load balancer address that will be shown in &lt;i&gt;Outputs&lt;/i&gt;&amp;nbsp;tab of the third stack under&amp;nbsp;&lt;i&gt;LoadBalancerUrl&lt;/i&gt; key.&lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;br /&gt;&lt;/div&gt;
+&lt;h3&gt;
+Connecting to nodes&lt;/h3&gt;
+&lt;div&gt;
+Since Infinispan nodes are assigned public IPs and the security group is set to permit SSH traffic, you can use standard way to access Infinispan nodes.&lt;/div&gt;
+&lt;div&gt;
+&lt;br /&gt;&lt;/div&gt;
+&lt;div&gt;
+Accessing Keycloak nodes is only a bit more complicated since these are spawned in private subnets and can only be accessed via Infinispan nodes. You can either copy the private key to the intermediate Infinispan node and use it from there, or (easier) use SSH agent forwarding as follows:&lt;/div&gt;
+&lt;div&gt;
+&lt;ol&gt;
+&lt;li&gt;On your &lt;i&gt;local&lt;/i&gt; host, add your AWS ssh key to agent:&lt;br /&gt;&lt;span style=&quot;font-family: &amp;quot;courier new&amp;quot; , &amp;quot;courier&amp;quot; , monospace;&quot;&gt;ssh-add /path/to/my/aws_ssh_key&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;Now ssh to the Infinispan host with ssh adding the ForwardAgent option:&lt;br /&gt;&lt;span style=&quot;font-family: &amp;quot;courier new&amp;quot; , &amp;quot;courier&amp;quot; , monospace;&quot;&gt;ssh -oForwardAgent=yes \&lt;/span&gt;&lt;div&gt;
+&lt;span style=&quot;font-family: &amp;quot;courier new&amp;quot; , &amp;quot;courier&amp;quot; , monospace;&quot;&gt;&amp;nbsp; ec2-user@$&lt;i&gt;{InfinispanServerDcX.PublicDnsName}&lt;/i&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;From the Infinispan host, you can now ssh to the Keycloak node:&lt;br /&gt;&lt;span style=&quot;font-family: &amp;quot;courier new&amp;quot; , &amp;quot;courier&amp;quot; , monospace;&quot;&gt;ssh ec2-user@$&lt;i&gt;{KeycloakServerDcX.PrivateDnsName}&lt;/i&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;br /&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;/div&gt;
+&lt;h3&gt;
+Connecting to Infinispan JConsole&lt;/h3&gt;
+&lt;div&gt;
+As you would find out from the &lt;a href=&quot;http://www.keycloak.org/docs/latest/server_installation/index.html#crossdc-mode&quot; target=&quot;_blank&quot;&gt;cross-DC guide&lt;/a&gt;, many of the DC-wide operations require running JConsole and invoking operations on Infinispan JMX MBeans. For example, to take a DC offline, one has to first disable backups from the other DCs into the DC about to be shut down, and that is performed by invoking &lt;span style=&quot;font-family: &amp;quot;courier new&amp;quot; , &amp;quot;courier&amp;quot; , monospace;&quot;&gt;takeSiteOffline&lt;/span&gt; operation on CacheManager&#39;s &lt;span style=&quot;font-family: &amp;quot;courier new&amp;quot; , &amp;quot;courier&amp;quot; , monospace;&quot;&gt;GlobalXSiteAdminOperations&lt;/span&gt; MBean.&lt;/div&gt;
+&lt;div&gt;
+&lt;br /&gt;&lt;/div&gt;
+&lt;div&gt;
+To connect, it is easiest to have a tunnel created to the Infinispan node via SSH command. To simplify the situation a bit, the ssh command for connecting to Infinispan server and creating the tunnel is shown in the&amp;nbsp;&lt;i&gt;Outputs&lt;/i&gt;&amp;nbsp;tab of the third stack under&amp;nbsp;&lt;i&gt;SshToInfinispanDcX&lt;/i&gt; key, and it takes the following form:&lt;/div&gt;
+&lt;div&gt;
+&lt;br /&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;span style=&quot;font-family: &amp;quot;courier new&amp;quot; , &amp;quot;courier&amp;quot; , monospace;&quot;&gt;ssh -L 19990:127.0.0.1:9990 \&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;span style=&quot;font-family: &amp;quot;courier new&amp;quot; , &amp;quot;courier&amp;quot; , monospace;&quot;&gt;&amp;nbsp;-oStrictHostKeyChecking=no \&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;span style=&quot;font-family: &amp;quot;courier new&amp;quot; , &amp;quot;courier&amp;quot; , monospace;&quot;&gt;&amp;nbsp;-oUserKnownHostsFile=/dev/null \&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;span style=&quot;font-family: &amp;quot;courier new&amp;quot; , &amp;quot;courier&amp;quot; , monospace;&quot;&gt;&amp;nbsp;-oForwardAgent=yes \&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;span style=&quot;font-family: &amp;quot;courier new&amp;quot; , &amp;quot;courier&amp;quot; , monospace;&quot;&gt;&amp;nbsp; ec2-user@$&lt;i&gt;{InfinispanServerDcX.PublicDnsName}&lt;/i&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;br /&gt;&lt;/div&gt;
+&lt;div&gt;
+In the command above, the host key checking is effectively disabled as this is only a test run, do not do this in production!&lt;br /&gt;
+Now it is necessary to add an Infinispan management user so that it is possible to fill in JConsole credentials:&lt;/div&gt;
+&lt;div&gt;
+&lt;br /&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;span style=&quot;font-family: &amp;quot;courier new&amp;quot; , &amp;quot;courier&amp;quot; , monospace;&quot;&gt;/opt/tests/cache-server-infinispan/bin/add-user.sh -u admin -p pwd&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;br /&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;div&gt;
+The last thing is to run actual JConsole. Since JConsole does not have support for the service:jmx:remote+http protocol used by both Infinispan and Keycloak, it is necessary to modify JConsole classpath. Fortunately, this work has been already done in WildFly so we can use a script already prepared there. On your&amp;nbsp;&lt;i&gt;local&lt;/i&gt;&amp;nbsp;host, extract either WildFly 10+ or Infinispan to path&amp;nbsp;&lt;i&gt;WF_ROOT&lt;/i&gt;,&amp;nbsp;and run the following command:&lt;/div&gt;
+&lt;br /&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;span style=&quot;font-family: &amp;quot;courier new&amp;quot; , &amp;quot;courier&amp;quot; , monospace;&quot;&gt;&lt;i&gt;WF_ROOT&lt;/i&gt;/bin/jconsole.sh&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;br /&gt;&lt;/div&gt;
+&lt;div&gt;
+In the New Connection window, specify &lt;i&gt;Remote Process&lt;/i&gt; properties as follows (note that we&#39;re using port 19990 on localhost forwarded securely by ssh to actual management port above, this requires the ssh command above to be running for the whole time JConsole is used):&lt;/div&gt;
+&lt;div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;i&gt;Remote Process:&lt;/i&gt;&amp;nbsp;service:jmx:remote+http://localhost:19990&lt;/li&gt;
+&lt;li&gt;&lt;i&gt;Username: &lt;/i&gt;admin&lt;/li&gt;
+&lt;li&gt;&lt;i&gt;Password:&lt;/i&gt; pwd&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: center;&quot;&gt;
+&lt;/div&gt;
+&lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: center;&quot;&gt;
+&lt;a href=&quot;https://4.bp.blogspot.com/-MRbv-y5tI3A/WlynVwPhuAI/AAAAAAAABBA/IWkGvjbZsdgBqcj306W697Nf-POdG2WIQCLcBGAs/s1600/jconsole-connect.png&quot; imageanchor=&quot;1&quot; style=&quot;margin-left: 1em; margin-right: 1em;&quot;&gt;&lt;img border=&quot;0&quot; data-original-height=&quot;389&quot; data-original-width=&quot;446&quot; height=&quot;279&quot; src=&quot;https://4.bp.blogspot.com/-MRbv-y5tI3A/WlynVwPhuAI/AAAAAAAABBA/IWkGvjbZsdgBqcj306W697Nf-POdG2WIQCLcBGAs/s320/jconsole-connect.png&quot; width=&quot;320&quot; /&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: center;&quot;&gt;
+&lt;br /&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;br /&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;br /&gt;&lt;/div&gt;
+&lt;div&gt;
+Now you can connect to the running instance, navigate to any bean you need and perform operations as needed. The backup site names are configured by the &lt;i&gt;AMI stack&lt;/i&gt;&amp;nbsp;to values&amp;nbsp;&lt;i&gt;dc-1 &lt;/i&gt;and &lt;i&gt;dc-2&lt;/i&gt;.&lt;br /&gt;
+&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: center;&quot;&gt;
+&lt;a href=&quot;https://2.bp.blogspot.com/-yfYaHRip9Hc/WliFAwcG5KI/AAAAAAAABAs/JoTEsu3MPhgPPWMIiHtAqixlTcVlMJb2wCLcBGAs/s1600/jconsole-call.png&quot; imageanchor=&quot;1&quot; style=&quot;margin-left: 1em; margin-right: 1em;&quot;&gt;&lt;img border=&quot;0&quot; data-original-height=&quot;623&quot; data-original-width=&quot;795&quot; height=&quot;250&quot; src=&quot;https://2.bp.blogspot.com/-yfYaHRip9Hc/WliFAwcG5KI/AAAAAAAABAs/JoTEsu3MPhgPPWMIiHtAqixlTcVlMJb2wCLcBGAs/s320/jconsole-call.png&quot; width=&quot;320&quot; /&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;br /&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;br /&gt;
+&lt;div style=&quot;-webkit-text-stroke-width: 0px; color: black; font-family: &amp;quot;Times New Roman&amp;quot;; font-size: medium; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-decoration-color: initial; text-decoration-style: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;&quot;&gt;
+&lt;/div&gt;
+&lt;br /&gt;
+&lt;div style=&quot;-webkit-text-stroke-width: 0px; color: black; font-family: &amp;quot;Times New Roman&amp;quot;; font-size: medium; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-decoration-color: initial; text-decoration-style: initial; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;&quot;&gt;
+&lt;div&gt;
+&lt;div style=&quot;margin: 0px;&quot;&gt;
+For further details, please inspect the configuration files in&amp;nbsp;&lt;span style=&quot;font-family: &amp;quot;courier new&amp;quot; , &amp;quot;courier&amp;quot; , monospace;&quot;&gt;/opt/tests/auth-server-wildfly/standalone/&lt;/span&gt;&lt;span style=&quot;font-family: &amp;quot;courier new&amp;quot; , &amp;quot;courier&amp;quot; , monospace;&quot;&gt;configuration/&lt;/span&gt;&lt;span style=&quot;font-family: &amp;quot;courier new&amp;quot; , &amp;quot;courier&amp;quot; , monospace;&quot;&gt;standalone-ha-&lt;i&gt;DC&lt;/i&gt;.xml&lt;/span&gt;&amp;nbsp;and&amp;nbsp;&lt;span style=&quot;font-family: &amp;quot;courier new&amp;quot; , &amp;quot;courier&amp;quot; , monospace;&quot;&gt;/opt/tests/cache-server-infinispan/standalone/configuration/clustered-&lt;/span&gt;&lt;i style=&quot;font-family: &amp;quot;Courier New&amp;quot;, Courier, monospace;&quot;&gt;DC&lt;/i&gt;&lt;span style=&quot;font-family: &amp;quot;courier new&amp;quot; , &amp;quot;courier&amp;quot; , monospace;&quot;&gt;.xml&lt;/span&gt;.&lt;/div&gt;
+&lt;div style=&quot;margin: 0px;&quot;&gt;
+&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;
+Disclaimer&lt;/h3&gt;
+&lt;div&gt;
+This blog has been written at the time Keycloak 3.4.3.Final has been released. There may be incompatible changes in the future but you should still be able to run the templates with this version.&lt;/div&gt;
+&lt;div&gt;
+&lt;br /&gt;&lt;/div&gt;
+&lt;h3&gt;
+Troubleshooting AWS specifics&lt;/h3&gt;
+&lt;div&gt;
+&lt;ul&gt;
+&lt;li&gt;Node discovery in both Keycloak and Infinispan cluster in AWS is handled by S3_PING protocol. This protocol however can operate only in regions that support Version 2 signatures due to &lt;a href=&quot;https://issues.jboss.org/browse/JGRP-1914&quot;&gt;this JGroups bug&lt;/a&gt;. See &lt;a href=&quot;https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region&quot;&gt;Amazon documentation on S3 endpoints&lt;/a&gt; for regions that support Version 2 signatures. Note that it might be possible to use new&amp;nbsp;&lt;a href=&quot;https://github.com/jgroups-extras/native-s3-ping&quot;&gt;NATIVE_S3_PING&lt;/a&gt; protocol but this one has not yet been incorporated into Keycloak due to &lt;a href=&quot;https://issues.jboss.org/browse/WFLY-8770&quot;&gt;this WildFly issue&lt;/a&gt;. As a workaround, you might be able to use other discovery protocol, e.g. JDBC_PING.&lt;/li&gt;
+&lt;li&gt;The recommended database products for cross-DC deployments are only those&amp;nbsp;&lt;a href=&quot;http://www.keycloak.org/docs/latest/server_installation/index.html#database&quot;&gt;listed in the documentation&lt;/a&gt;&amp;nbsp;(currently Oracle Database 12c RAC and Galera cluster for MariaDB). It is possible to use ones available from &lt;a href=&quot;https://aws.amazon.com/rds/&quot;&gt;Amazon RDS service&lt;/a&gt;. The templates from this blog are only ready for MySQL/MariaDB databases.&lt;/li&gt;
+&lt;li&gt;It is possible to use &lt;a href=&quot;https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html&quot;&gt;Amazon ALB&lt;/a&gt; for load balancing when the&amp;nbsp;&lt;a href=&quot;https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html&quot;&gt;related target group&lt;/a&gt;&amp;nbsp;is set to support &lt;i&gt;Load balancer stickiness&lt;/i&gt;. ALB uses proprietary load balancer cookie and ignores routes set in Keycloak cookies, hence adding the route to cookie &lt;a href=&quot;http://www.keycloak.org/docs/latest/server_installation/index.html#disable-adding-the-route&quot;&gt;should be disabled in Keycloak configuration&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;br /&gt;&lt;/div&gt;
+</description>
+        <guid>https://www.keycloak.org//2018/01/keycloak-cross-data-center-setup-in-aws.html</guid>
+        <pubDate>Mon, 15 Jan 2018 00:00:00 GMT</pubDate>
+        <category>Cross Datacenter/Replication/Infinispan</category>
+        <author>Hynek Mlnařík</author>
+      </item>
+      <item>
+        <title>Keycloak, Apache and OpenID Connect</title>
+        <link>https://www.keycloak.org//2018/01/keycloak-apache-and-openid-connect.html</link>
+        <description>
+&lt;p&gt;
+&lt;a href=&quot;https://github.com/zmartzone/mod_auth_openidc&quot;&gt;mod_auth_openidc&lt;/a&gt; makes it easy to secure your applications running in Apache or when Apache is used as a reverse proxy. It can be used both for enabling SSO to web applications as well as to secure RESTful services. For more details check out &lt;a href=&quot;http://www.keycloak.org/docs/latest/securing_apps/index.html#_mod_auth_openidc&quot;&gt;our documentation&lt;/a&gt; as well as &lt;a href=&quot;https://github.com/zmartzone/mod_auth_openidc/wiki/Keycloak&quot;&gt;the guides from mod_auth_openidc&lt;/a&gt;.
+&lt;/p&gt;</description>
+        <guid>https://www.keycloak.org//2018/01/keycloak-apache-and-openid-connect.html</guid>
+        <pubDate>Thu, 4 Jan 2018 00:00:00 GMT</pubDate>
+        
+        <author>Stian Thorgersen</author>
+      </item>
+      <item>
+        <title>X.509 and Smartcard Authentication with Keycloak</title>
+        <link>https://www.keycloak.org//2017/10/x509-and-smartcard-authentication-with.html</link>
+        <description>
+&lt;p&gt;
+If you want to do X.509 and Smartcard authentication with Keycloak check out &lt;a href=&quot;https://sjhiggs.github.io/fuse/sso/x509/smartcard/2017/03/29/fuse-hawtio-keycloak.html&quot;&gt;this blog post&lt;/a&gt; from Stephen Higgs. It walks you through how to setup X.509 authentication with Keycloak and a Yubikey Neo device.
+&lt;/p&gt;</description>
+        <guid>https://www.keycloak.org//2017/10/x509-and-smartcard-authentication-with.html</guid>
+        <pubDate>Wed, 4 Oct 2017 00:00:00 GMT</pubDate>
+        
+        <author>Stian Thorgersen</author>
+      </item>
+      <item>
+        <title>Cross-Datacenter support in Keycloak</title>
+        <link>https://www.keycloak.org//2017/09/cross-datacenter-support-in-keycloak.html</link>
+        <description>
+&lt;p&gt;In Keycloak 3.3.0.CR1 we added basic setup for cross-datacenter (cross-site) replication. This blogpost covers some details about it. It consists of 2 parts:
+
+&lt;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Some technical details and challenges, which we needed to address&lt;/li&gt;
+&lt;li&gt;Example setup&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you&#39;re not interested in too much details, but rather want to try things, feel free to go directly to the example. Or viceversa :-)
+
+&lt;p&gt;
+Here is the picture with the basic example architecture
+
+&lt;a href=&quot;https://4.bp.blogspot.com/-TuP-tUCytyY/Wa-1b33MTxI/AAAAAAAAIjA/FSSSzfDP1uMqlhkyUqayb4NJwH-O7EFZQCLcBGAs/s1600/Cross-site%2Bdiagram.jpg&quot; imageanchor=&quot;1&quot;&gt;&lt;img border=&quot;0&quot; data-original-height=&quot;720&quot; data-original-width=&quot;960&quot; src=&quot;https://4.bp.blogspot.com/-TuP-tUCytyY/Wa-1b33MTxI/AAAAAAAAIjA/FSSSzfDP1uMqlhkyUqayb4NJwH-O7EFZQCLcBGAs/s1600/Cross-site%2Bdiagram.jpg&quot; /&gt;&lt;/a&gt;
+
+&lt;p&gt;
+&lt;h2&gt;
+Technical details&lt;/h2&gt;
+In typical scenario, end user&#39;s browser sends HTTP request to the frontend loadbalancer server. This is usually HTTPD or Wildfly with mod_cluster, NGinx, HA Proxy or other kind of software or hardware loadbalancer. Loadbalancer then forwards HTTP requests to the underlying Keycloak instances, which can be spread among multiple datacenters (sites). Loadbalancers typically offer support for &lt;i&gt;sticky sessions&lt;/i&gt;, which means that loadbalancer is able to forward HTTP requests from one user always to the same Keycloak instance in same datacenter.
+
+&lt;p&gt;
+There are also HTTP requests, which are sent from client applications to the loadbalancer. Those HTTP requests are &lt;i&gt;backchannel requests&lt;/i&gt;. They are not seen by end user&#39;s browser and can&#39;t be part of sticky session between user and loadbalancer and hence loadbalancer can forward the particular HTTP request to any Keycloak instance in any datacenter. This is challenging as some OpenID Connect or SAML flows require multiple HTTP requests from both user and application. Because we can&#39;t reliably rely on sticky sessions, it means that some data need to be replicated between datacenters, so they are seen by subsequent HTTP requests during particular flow.
+
+&lt;p&gt;
+&lt;h4&gt;
+Authentication sessions&lt;/h4&gt;
+In Keycloak 3.2.0 we did some refactoring and introduced authentication sessions. There is separate infinispan cache &lt;i&gt;authenticationSessions&lt;/i&gt; used to save data during authentication of particular user. This cache usually involves just browser and Keycloak server, not the application. Hence we usually can rely on sticky sessions and &lt;i&gt;authenticationSessions&lt;/i&gt; cache content usually doesn&#39;t need to be replicated among datacenters.
+
+&lt;p&gt;
+&lt;h4&gt;
+Action tokens&lt;/h4&gt;
+In 3.2.0 we introduced also action tokens, which are used typically for scenarios when user needs to confirm some actions asynchronously by email. For example during &lt;i&gt;forget password&lt;/i&gt; flow. The &lt;i&gt;actionTokens&lt;/i&gt; infinispan cache is used to track metadata about action tokens (eg. which action token was already used, so it can&#39;t be reused second time) and it usually needs to be replicated between datacenters.
+
+&lt;p&gt;
+&lt;h4&gt;
+Database&lt;/h4&gt;
+Keycloak uses RDBMS to persist some metadata about realms, clients, users etc. In cross-datacenter setup, we assume that either both datacenters talk to same database or every datacenter has it&#39;s own database, but both databases are synchronously replicated. In other words, when Keycloak server in site 1 persists any data and transaction is commited, those data are immediatelly visible by subsequent DB transactions on site 2.
+
+&lt;p&gt;
+Details of DB setup are out-of-scope of Keycloak, however note that many RDBMS vendors like PostgreSQL or MariaDB offers replicated databases and synchronous replication. Databases are not shown in the example picture above just to make it a bit simpler.
+
+&lt;p&gt;
+&lt;h4&gt;
+Caching and invalidation of persistent data&lt;/h4&gt;
+Keycloak uses infinispan for cache persistent data to avoid many unecessary requests to the database. Caching is great for save performance, however there is one additional challenge, that when some Keycloak server updates any data, all other Keycloak servers in all datacenters need to be aware of it, so they invalidate particular data from their caches. Keycloak uses local infinispan caches called &lt;i&gt;realms&lt;/i&gt;, &lt;i&gt;users&lt;/i&gt; and &lt;i&gt;authorization&lt;/i&gt; to cache persistent data.
+
+&lt;p&gt;
+We use separate cache &lt;i&gt;work&lt;/i&gt;, which is replicated among all datacenters. The &lt;i&gt;work&lt;/i&gt; cache itself doesn&#39;t cache any real data. It is defacto used just for sending invalidation messages between cluster nodes and datacenters. In other words, when some data is updated (eg. user &quot;john&quot; is updated), the particular Keycloak node sends the invalidation message to all other cluster nodes in same datacenter and also to all other datacenters. Every node then invalidates particular data from their local cache once it receives the invalidation message.
+
+&lt;p&gt;
+&lt;h4&gt;
+User sessions&lt;/h4&gt;
+There are infinispan caches &lt;i&gt;sessions&lt;/i&gt; and &lt;i&gt;offlineSessions&lt;/i&gt;, which usually need to be replicated between datacenters. Those caches are used to save data about &lt;i&gt;user sessions&lt;/i&gt;, which are valid for the whole life of one user&#39;s browser session. The caches need to deal with the HTTP requests from the end user and from the application. As described above, sticky session can&#39;t be reliably used, but we still want to ensure that subsequent HTTP requests can see the latest data. Hence the data are replicated.
+
+&lt;p&gt;
+&lt;h4&gt;
+Brute force protection&lt;/h4&gt;
+Finally &lt;i&gt;loginFailures&lt;/i&gt; cache is used to track data about failed logins (eg. how many times user &lt;i&gt;john&lt;/i&gt; filled the bad password on username/password screen etc). It is up to the admin if he wants this cache to be replicated between datacenters. To have accurate count of login failures, the replication is needed. On the other hand, avoid replicating this data can save some performance. So if performance is more important then accurate counts of login failures, the replication can be avoided.
+
+&lt;p&gt;
+&lt;h4&gt;
+Communication details&lt;/h4&gt;
+Under the covers, there are multiple separate infinispan clusters here. Every Keycloak node is in the cluster with the other Keycloak nodes in same datacenter, but not with the Keycloak nodes in different datacenters. Keycloak node doesn&#39;t communicate directly with the Keycloak nodes from different datacenters. Keycloak nodes use external JDG (or infinispan server) for communication between datacenters. This is done through the &lt;a href=&quot;http://infinispan.org/docs/8.2.x/user_guide/user_guide.html#using_hot_rod_server&quot;&gt;Infinispan HotRod protocol&lt;/a&gt;.
+
+&lt;p&gt;
+The infinispan caches on Keycloak side needs to be configured with the &lt;a href=&quot;http://infinispan.org/docs/8.2.x/user_guide/user_guide.html#remote_store&quot;&gt;remoteStore&lt;/a&gt;, to ensure that data are saved to the &lt;i&gt;remote cache&lt;/i&gt;, which uses HotRod protocol under the covers. There is separate infinispan cluster between JDG servers, so the data saved on JDG1 on site 1 are replicated to JDG2 on site 2.
+
+&lt;p&gt;
+Finally the receiver JDG server then notifies Keycloak servers in it&#39;s cluster through the &lt;i&gt;Client Listeners&lt;/i&gt;, which is feature of HotRod protocol. Keycloak nodes on site 2 then update their infinispan caches and particular userSession is visible on Keycloak nodes on &lt;i&gt;site 2&lt;/i&gt; too.
+
+&lt;p&gt;
+&lt;h2&gt;
+Example setup&lt;/h2&gt;
+This is the example setup simulating 2 datacenters &lt;i&gt;site 1&lt;/i&gt; and &lt;i&gt;site 2&lt;/i&gt; . Each datacenter (site) consists of 1 infinispan server and 2 Keycloak servers.
+So 2 infinispan servers and 4 Keycloak servers are totally in the testing setup.
+
+&lt;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Site1 consists of infinispan server &lt;i&gt;jdg1&lt;/i&gt; and 2 Keycloak servers &lt;i&gt;node11&lt;/i&gt; and &lt;i&gt;node12&lt;/i&gt; .&lt;/li&gt;
+&lt;li&gt;Site2 consists of infinispan server &lt;i&gt;jdg2&lt;/i&gt; and 2 Keycloak servers &lt;i&gt;node21&lt;/i&gt; and &lt;i&gt;node22&lt;/i&gt; .&lt;/li&gt;
+&lt;li&gt;Infinispan servers &lt;i&gt;jdg1&lt;/i&gt; and &lt;i&gt;jdg2&lt;/i&gt; forms cluster with each other and they are used as a channel for communication between 2 datacenters. Again, in production, there is also clustered DB used for replication between datacenters (each site has it&#39;s own DB), but that&#39;s not the case in the example, which would just use single DB.&lt;/li&gt;
+&lt;li&gt;Keycloak servers &lt;i&gt;node11&lt;/i&gt; and &lt;i&gt;node12&lt;/i&gt; forms cluster with each other, but they don&#39;t communicate with any server in &lt;i&gt;site2&lt;/i&gt; . They communicate with infinispan server &lt;i&gt;jdg1&lt;/i&gt; through the HotRod protocol (Remote cache).&lt;/li&gt;
+&lt;li&gt;Same applies for &lt;i&gt;node21&lt;/i&gt; and &lt;i&gt;node22&lt;/i&gt; . They have cluster with each other and communicate just with &lt;i&gt;jdg2&lt;/i&gt; server through the HotRod protocol.&lt;/li&gt;
+&lt;/ul&gt;
+Example setup assumes all 6 servers are bootstrapped on localhost, but each on different ports. It also assumes that all 4 Keycloak servers talk to same database, which can be either locally set MySQL, PostgreSQL, MariaDB or any other. In production, there will be rather separate synchronously replicated databases between datacenters.
+
+&lt;p&gt;
+&lt;h3&gt;
+Infinispan Server setup&lt;/h3&gt;
+1) Download Infinispan 8.2.6 server and unzip to some folder
+
+&lt;p&gt;
+2) Add this into &lt;i&gt;JDG1_HOME/standalone/configuration/clustered.xml&lt;/i&gt; into cache-container named &lt;i&gt;clustered&lt;/i&gt; :
+
+&lt;p&gt;
+&lt;pre&gt;&amp;lt;cache-container name=&quot;clustered&quot; default-cache=&quot;default&quot; statistics=&quot;true&quot;&amp;gt;
+        ...
+        &amp;lt;replicated-cache-configuration name=&quot;sessions-cfg&quot; mode=&quot;ASYNC&quot; start=&quot;EAGER&quot; batching=&quot;false&quot;&amp;gt;
+            &amp;lt;transaction mode=&quot;NON_XA&quot; locking=&quot;PESSIMISTIC&quot;/&amp;gt;
+        &amp;lt;/replicated-cache-configuration&amp;gt;
+
+        &amp;lt;replicated-cache name=&quot;work&quot; configuration=&quot;sessions-cfg&quot; /&amp;gt;
+        &amp;lt;replicated-cache name=&quot;sessions&quot; configuration=&quot;sessions-cfg&quot; /&amp;gt;
+        &amp;lt;replicated-cache name=&quot;offlineSessions&quot; configuration=&quot;sessions-cfg&quot; /&amp;gt;
+        &amp;lt;replicated-cache name=&quot;actionTokens&quot; configuration=&quot;sessions-cfg&quot; /&amp;gt;
+        &amp;lt;replicated-cache name=&quot;loginFailures&quot; configuration=&quot;sessions-cfg&quot; /&amp;gt;
+
+&amp;lt;/cache-container&amp;gt;
+&lt;/pre&gt;
+3) Copy the server into the second location referred later as &lt;i&gt;JDG2_HOME&lt;/i&gt;
+
+&lt;p&gt;
+4) Start server &lt;i&gt;jdg1&lt;/i&gt;:
+
+&lt;p&gt;
+&lt;pre&gt;cd JDG1_HOME/bin
+./standalone.sh -c clustered.xml -Djava.net.preferIPv4Stack=true \
+-Djboss.socket.binding.port-offset=1010 -Djboss.default.multicast.address=234.56.78.99 \
+-Djboss.node.name=jdg1
+&lt;/pre&gt;
+5) Start server &lt;i&gt;jdg2&lt;/i&gt;:
+
+&lt;p&gt;
+&lt;pre&gt;cd JDG2_HOME/bin
+./standalone.sh -c clustered.xml -Djava.net.preferIPv4Stack=true \
+-Djboss.socket.binding.port-offset=2010 -Djboss.default.multicast.address=234.56.78.99 \
+-Djboss.node.name=jdg2
+&lt;/pre&gt;
+6) There should be message in the log that nodes are in cluster with each other:
+
+&lt;p&gt;
+&lt;pre&gt;Received new cluster view for channel clustered: [jdg1|1] (2) [jdg1, jdg2]
+&lt;/pre&gt;
+
+&lt;h3&gt;Keycloak servers setup&lt;/h3&gt;
+&lt;p&gt;
+1) Download Keycloak 3.3.0.CR1 and unzip to some location referred later as &lt;i&gt;NODE11&lt;/i&gt;
+
+&lt;p&gt;2) Configure shared database for KeycloakDS datasource. Recommended to use MySQL, MariaDB or PostgreSQL. See Keycloak docs for more details
+
+&lt;p&gt;3) Edit &lt;i&gt;NODE11/standalone/configuration/standalone-ha.xml&lt;/i&gt; :
+
+&lt;p&gt;3.1) Add attribute &lt;i&gt;site&lt;/i&gt; to the JGroups UDP protocol:
+
+&lt;p&gt;
+&lt;pre&gt;
+&amp;lt;stack name=&quot;udp&quot;&gt;
+    &amp;lt;transport site=&quot;&amp;amp;{jboss.site.name}&quot; socket-binding=&quot;jgroups-udp&quot; type=&quot;UDP&quot;&gt;
+&lt;/pre&gt;
+
+3.2) Add output-socket-binding for &lt;i&gt;remote-cache&lt;/i&gt; into &lt;i&gt;socket-binding-group&lt;/i&gt; element:
+
+&lt;p&gt;
+&lt;pre&gt;
+&amp;lt;socket-binding-group ... &amp;gt;
+    ...
+    &amp;lt;outbound-socket-binding name=&quot;remote-cache&quot;&amp;gt;
+        &amp;lt;remote-destination host=&quot;localhost&quot; port=&quot;&amp;amp;{remote.cache.port}&quot;&amp;gt;
+        &amp;lt;/remote-destination&amp;gt;
+    &amp;lt;/outbound-socket-binding&amp;gt;
+
+&amp;lt;/socket-binding-group&amp;gt;
+&lt;/pre&gt;
+
+3.3) Add this &lt;i&gt;module&lt;/i&gt; attribute into &lt;i&gt;cache-container&lt;/i&gt; element of name &lt;i&gt;keycloak&lt;/i&gt; :
+
+&lt;pre&gt;
+ &amp;lt;cache-container jndi-name=&quot;infinispan/Keycloak&quot; module=&quot;org.keycloak.keycloak-model-infinispan&quot; name=&quot;keycloak&quot;&amp;gt;
+&lt;/pre&gt;
+
+3.4) Add the &lt;i&gt;remote-store&lt;/i&gt; into &lt;i&gt;work&lt;/i&gt; cache:
+
+&lt;p&gt;
+&lt;pre&gt;
+&amp;lt;replicated-cache mode=&quot;SYNC&quot; name=&quot;work&quot;&amp;gt;
+    &amp;lt;remote-store cache=&quot;work&quot; fetch-state=&quot;false&quot; passivation=&quot;false&quot; preload=&quot;false&quot;
+          purge=&quot;false&quot; remote-servers=&quot;remote-cache&quot; shared=&quot;true&quot;&amp;gt;
+        &amp;lt;property name=&quot;rawValues&quot;&amp;gt;true&amp;lt;/property&amp;gt;
+        &amp;lt;property name=&quot;marshaller&quot;&amp;gt;org.keycloak.cluster.infinispan.KeycloakHotRodMarshallerFactory&amp;lt;/property&amp;gt;
+    &amp;lt;/remote-store&amp;gt;
+&amp;lt;/replicated-cache&amp;gt;
+&lt;/pre&gt;
+
+3.5) Add the &lt;i&gt;store&lt;/i&gt; like this into &lt;i&gt;sessions&lt;/i&gt; cache:
+
+&lt;p&gt;
+&lt;pre&gt;
+&amp;lt;distributed-cache mode=&quot;SYNC&quot; name=&quot;sessions&quot; owners=&quot;1&quot;&amp;gt;
+    &amp;lt;store class=&quot;org.keycloak.models.sessions.infinispan.remotestore.KeycloakRemoteStoreConfigurationBuilder&quot;
+      fetch-state=&quot;false&quot; passivation=&quot;false&quot; preload=&quot;false&quot; purge=&quot;false&quot; shared=&quot;true&quot;&amp;gt;
+        &amp;lt;property name=&quot;remoteCacheName&quot;&amp;gt;sessions&amp;lt;/property&amp;gt;
+        &amp;lt;property name=&quot;useConfigTemplateFromCache&quot;&amp;gt;work&amp;lt;/property&amp;gt;
+    &amp;lt;/store&amp;gt;
+&amp;lt;/distributed-cache&amp;gt;
+&lt;/pre&gt;
+
+3.6) Same for &lt;i&gt;offlineSessions&lt;/i&gt; and &lt;i&gt;loginFailures&lt;/i&gt; caches:
+
+&lt;p&gt;
+&lt;pre&gt;
+&amp;lt;distributed-cache mode=&quot;SYNC&quot; name=&quot;offlineSessions&quot; owners=&quot;1&quot;&amp;gt;
+    &amp;lt;store class=&quot;org.keycloak.models.sessions.infinispan.remotestore.KeycloakRemoteStoreConfigurationBuilder&quot;
+      fetch-state=&quot;false&quot; passivation=&quot;false&quot; preload=&quot;false&quot; purge=&quot;false&quot; shared=&quot;true&quot;&amp;gt;
+        &amp;lt;property name=&quot;remoteCacheName&quot;&amp;gt;offlineSessions&amp;lt;/property&amp;gt;
+        &amp;lt;property name=&quot;useConfigTemplateFromCache&quot;&amp;gt;work&amp;lt;/property&amp;gt;
+    &amp;lt;/store&amp;gt;
+&amp;lt;/distributed-cache&amp;gt;
+
+
+&amp;lt;distributed-cache mode=&quot;SYNC&quot; name=&quot;loginFailures&quot; owners=&quot;1&quot;&amp;gt;
+    &amp;lt;store class=&quot;org.keycloak.models.sessions.infinispan.remotestore.KeycloakRemoteStoreConfigurationBuilder&quot;
+      fetch-state=&quot;false&quot; passivation=&quot;false&quot; preload=&quot;false&quot; purge=&quot;false&quot; shared=&quot;true&quot;&amp;gt;
+        &amp;lt;property name=&quot;remoteCacheName&quot;&amp;gt;loginFailures&amp;lt;/property&amp;gt;
+        &amp;lt;property name=&quot;useConfigTemplateFromCache&quot;&amp;gt;work&amp;lt;/property&amp;gt;
+    &amp;lt;/store&amp;gt;
+&amp;lt;/distributed-cache&amp;gt;
+
+&lt;/pre&gt;
+
+&lt;p&gt;
+3.7) The configuration of distributed cache &lt;i&gt;authenticationSessions&lt;/i&gt; and other caches is left unchanged.
+
+&lt;p&gt;
+3.8) Optionally enable DEBUG logging into &lt;i&gt;logging&lt;/i&gt; subsystem:
+&lt;p&gt;
+&lt;pre&gt;
+&amp;lt;logger category=&quot;org.keycloak.cluster.infinispan&quot;&amp;gt;
+    &amp;lt;level name=&quot;DEBUG&quot;&amp;gt;
+&amp;lt;/level&amp;gt;&amp;lt;/logger&amp;gt;
+&amp;lt;logger category=&quot;org.keycloak.connections.infinispan&quot;&amp;gt;
+    &amp;lt;level name=&quot;DEBUG&quot;&amp;gt;
+&amp;lt;/level&amp;gt;&amp;lt;/logger&amp;gt;
+&amp;lt;logger category=&quot;org.keycloak.models.cache.infinispan&quot;&amp;gt;
+    &amp;lt;level name=&quot;DEBUG&quot;&amp;gt;
+&amp;lt;/level&amp;gt;&amp;lt;/logger&amp;gt;
+&amp;lt;logger category=&quot;org.keycloak.models.sessions.infinispan&quot;&amp;gt;
+    &amp;lt;level name=&quot;DEBUG&quot;&amp;gt;
+&amp;lt;/level&amp;gt;&amp;lt;/logger&amp;gt;
+&lt;/pre&gt;
+
+&lt;p&gt;
+4) Copy the &lt;i&gt;NODE11&lt;/i&gt; to 3 other directories referred later as &lt;i&gt;NODE12&lt;/i&gt;, &lt;i&gt;NODE21&lt;/i&gt; and &lt;i&gt;NODE22&lt;/i&gt;.
+
+&lt;p&gt;
+5) Start &lt;i&gt;NODE11&lt;/i&gt; :
+
+&lt;p&gt;
+&lt;pre&gt;
+cd NODE11/bin
+./standalone.sh -c standalone-ha.xml -Djboss.node.name=node11 -Djboss.site.name=site1 \
+-Djboss.default.multicast.address=234.56.78.100 -Dremote.cache.port=12232 -Djava.net.preferIPv4Stack=true \
+-Djboss.socket.binding.port-offset=3000
+&lt;/pre&gt;
+
+&lt;p&gt;
+6) Start &lt;i&gt;NODE12&lt;/i&gt; :
+
+&lt;pre&gt;
+cd NODE12/bin
+./standalone.sh -c standalone-ha.xml -Djboss.node.name=node12 -Djboss.site.name=site1 \
+-Djboss.default.multicast.address=234.56.78.100 -Dremote.cache.port=12232 -Djava.net.preferIPv4Stack=true \
+-Djboss.socket.binding.port-offset=4000
+&lt;/pre&gt;
+
+&lt;p&gt;
+The cluster nodes should be connected. This should be in the log of both NODE11 and NODE12:
+
+&lt;pre&gt;
+Received new cluster view for channel hibernate: [node11|1] (2) [node11, node12]
+&lt;/pre&gt;
+
+7) Start &lt;i&gt;NODE21&lt;/i&gt; :
+
+&lt;p&gt;
+&lt;pre&gt;
+cd NODE21/bin
+./standalone.sh -c standalone-ha.xml -Djboss.node.name=node21 -Djboss.site.name=site2 \
+-Djboss.default.multicast.address=234.56.78.101 -Dremote.cache.port=13232 -Djava.net.preferIPv4Stack=true \
+-Djboss.socket.binding.port-offset=5000
+&lt;/pre&gt;
+
+&lt;p&gt;
+It shouldn&#39;t be connected to the cluster with &lt;i&gt;NODE11&lt;/i&gt; and &lt;i&gt;NODE12&lt;/i&gt;, but to separate one:
+
+&lt;p&gt;
+&lt;pre&gt;
+Received new cluster view for channel hibernate: [node21|0] (1) [node21]
+&lt;/pre&gt;
+
+8) Start &lt;i&gt;NODE22&lt;/i&gt; :
+
+&lt;p&gt;
+&lt;pre&gt;
+cd NODE22/bin
+./standalone.sh -c standalone-ha.xml -Djboss.node.name=node22 -Djboss.site.name=site2 \
+-Djboss.default.multicast.address=234.56.78.101 -Dremote.cache.port=13232 -Djava.net.preferIPv4Stack=true \
+-Djboss.socket.binding.port-offset=6000
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+It should be in cluster with &lt;i&gt;NODE21&lt;/i&gt; :
+
+&lt;pre&gt;
+Received new cluster view for channel server: [node21|1] (2) [node21, node22]
+&lt;/pre&gt;
+
+&lt;p&gt;
+9) Test:
+
+&lt;p&gt;
+9.1) Go to &lt;a href=&quot;http://localhost:11080/auth/&quot;&gt;http://localhost:11080/auth/&lt;/a&gt; and create initial admin user
+
+&lt;p&gt;
+9.2) Go to &lt;a href=&quot;http://localhost:11080/auth/admin&quot;&gt;http://localhost:11080/auth/admin&lt;/a&gt; and login as admin to admin console
+
+&lt;p&gt;
+9.3) Open 2nd browser and go to any of nodes &lt;a href=&quot;http://localhost:12080/auth/admin&quot;&gt;http://localhost:12080/auth/admin&lt;/a&gt; or &lt;a href=&quot;http://localhost:13080/auth/admin&quot;&gt;http://localhost:13080/auth/admin&lt;/a&gt; or &lt;a href=&quot;http://localhost:14080/auth/admin&quot;&gt;http://localhost:14080/auth/admin&lt;/a&gt; . After login, you should be able to see
+the same sessions in tab &lt;i&gt;Sessions&lt;/i&gt; of particular user, client or realm on all 4 servers
+
+&lt;p&gt;
+9.4) After doing any change (eg. update some user), the update should be immediatelly visible on any of 4 nodes as caches should be properly invalidated everywhere.
+
+&lt;p&gt;
+9.5) Check server.logs if needed. After login or logout, the message like this should be on all the nodes &lt;i&gt;NODEXY/standalone/log/server.log&lt;/i&gt; :
+
+&lt;pre&gt;
+2017-08-25 17:35:17,737 DEBUG [org.keycloak.models.sessions.infinispan.remotestore.RemoteCacheSessionListener]
+(Client-Listener-sessions-30012a77422542f5) Received event from remote store.
+Event &#39;CLIENT_CACHE_ENTRY_REMOVED&#39;, key &#39;193489e7-e2bc-4069-afe8-f1dfa73084ea&#39;, skip &#39;false&#39;
+&lt;/pre&gt;
+
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;
+This is just a starting point and the instructions are subject to change. We plan various improvements especially around performance. If you
+have any feedback regarding cross-dc scenario, please let us know on keycloak-user mailing list referred from &lt;a href=&quot;http://www.keycloak.org/community.html&quot;&gt;Keycloak home page&lt;/a&gt; .</description>
+        <guid>https://www.keycloak.org//2017/09/cross-datacenter-support-in-keycloak.html</guid>
+        <pubDate>Wed, 6 Sep 2017 00:00:00 GMT</pubDate>
+        <category>Cross Datacenter/Replication/Infinispan</category>
+        <author>Marek Posolda</author>
+      </item>
+      <item>
+        <title>Easily secure your Spring Boot applications with Keycloak</title>
+        <link>https://www.keycloak.org//2017/05/easily-secure-your-spring-boot.html</link>
+        <description>
+&lt;h2&gt;
+What is Keycloak?&lt;/h2&gt;
+Although security is a crucial aspect of any application, its implementation can be difficult. Worse, it is often neglected, poorly implemented and intrusive in the code. But lately, security servers have appeared which allow for outsourcing and delegating all the authentication and authorization aspects. Of these servers, one of the most promising is Keycloak, open-source, flexible, and agnostic of any technology, it is easily deployable/adaptable in its own infrastructure.
+
+Moreover, Keycloak is more than just an authentication server, it also provides a complete Identity Management system, user federation for third parties like LDAP and a lot more ... Check it out on &lt;a href=&quot;http://www.keycloak.org/&quot;&gt;here&lt;/a&gt;.
+
+The project can also be found on &lt;a href=&quot;https://github.com/sebastienblanc/spring-boot-keycloak-tutorial&quot;&gt;Github&lt;/a&gt;
+
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;!--more--&gt;&lt;h2&gt;
+Spring Boot and Keycloak&lt;/h2&gt;
+Keycloak provides adapters for an application that needs to interact with a Keycloak instance. There are adapters for WildFly/EAP, NodeJS, Javascript and of course for Spring Boot.
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;h2&gt;
+Setting up a Keycloak server&lt;/h2&gt;
+&lt;div&gt;
+&lt;br /&gt;&lt;/div&gt;
+You have different options to set up a Keycloak server but the easiest one is probably to grab a standalone distribution, unzip it and voila! Open a terminal and go to your unzipped Keycloak server and from the bin directory simply run:
+&lt;br /&gt;
+&lt;pre&gt;./standalone.sh(bat)
+&lt;/pre&gt;
+Then open a browser and go to &lt;em&gt;http://localhost:8080/auth.&lt;/em&gt;
+
+Since it&#39;s the first time that the server runs you will have to create an admin user, so let&#39;s create an admin user with admin as username and admin for the password:&lt;br /&gt;
+&lt;br /&gt;
+&amp;nbsp;
+
+&lt;img alt=&quot;&quot; class=&quot;aligncenter wp-image-435383 size-large&quot; height=&quot;351&quot; src=&quot;https://developers.redhat.com/blog/wp-content/uploads/2017/05/kc1-1024x562.png&quot; style=&quot;border: 1px solid grey;&quot; width=&quot;640&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;
+Now you can log in into your administration console and start configuring Keycloak.
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;h3&gt;
+Creating a new Realm&lt;/h3&gt;
+&lt;div&gt;
+&lt;br /&gt;&lt;/div&gt;
+Keycloak defines the concept of a realm in which you will define your clients, which in Keycloak terminology means an application that will be secured by Keycloak, it can be a Web App, a Java EE backend, a Spring Boot etc.
+
+So let&#39;s create a new realm by simply clicking the &quot;Add realm&quot; button:&lt;br /&gt;
+&lt;br /&gt;
+&amp;nbsp;
+
+&lt;img alt=&quot;&quot; class=&quot;aligncenter wp-image-435384 size-large&quot; height=&quot;351&quot; src=&quot;https://developers.redhat.com/blog/wp-content/uploads/2017/05/kc2-1024x562.png&quot; style=&quot;border: 1px solid grey;&quot; width=&quot;640&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;
+Let&#39;s call it &quot;SpringBoot&quot;.
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;h3&gt;
+Creating the client, the role, and the user&lt;/h3&gt;
+&lt;div&gt;
+&lt;br /&gt;&lt;/div&gt;
+Now we need to define a client, which will be our Spring Boot app. Go to the &quot;Clients&quot; section and click the &quot;create&quot; button. We will call our client &quot;product-app&quot;:&lt;br /&gt;
+&lt;br /&gt;
+&amp;nbsp;
+
+&lt;img alt=&quot;&quot; class=&quot;aligncenter wp-image-435385 size-large&quot; height=&quot;351&quot; src=&quot;https://developers.redhat.com/blog/wp-content/uploads/2017/05/kc3-1024x562.png&quot; style=&quot;border: 1px solid grey;&quot; width=&quot;640&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;
+On the next screen, we can keep the defaults settings but just need to enter a valid redirect URL that Keycloak will use once the user is authenticated. Put as value: &quot;http://localhost:8081/*&quot;&lt;br /&gt;
+&lt;br /&gt;
+&amp;nbsp;
+
+&lt;img alt=&quot;&quot; class=&quot;aligncenter wp-image-435387 size-large&quot; height=&quot;351&quot; src=&quot;https://developers.redhat.com/blog/wp-content/uploads/2017/05/kc4-1024x562.png&quot; style=&quot;border: 1px solid grey;&quot; width=&quot;640&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;
+Don&#39;t forget to Save!
+
+Now, we will define a role that will be assigned to our users, let&#39;s create a simple role called &quot;user&quot;:&lt;br /&gt;
+&lt;br /&gt;
+&amp;nbsp;
+
+&lt;img alt=&quot;&quot; class=&quot;aligncenter wp-image-435388 size-large&quot; height=&quot;351&quot; src=&quot;https://developers.redhat.com/blog/wp-content/uploads/2017/05/kc5-1024x562.png&quot; style=&quot;border: 1px solid grey;&quot; width=&quot;640&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;
+And at last but not least let&#39;s create a user, only the username property is needed, let&#39;s call him &quot;testuser&quot;:&lt;br /&gt;
+&lt;br /&gt;
+&amp;nbsp;
+
+&lt;img alt=&quot;&quot; class=&quot;aligncenter wp-image-435389 size-large&quot; height=&quot;351&quot; src=&quot;https://developers.redhat.com/blog/wp-content/uploads/2017/05/kc6-1024x562.png&quot; style=&quot;border: 1px solid grey;&quot; width=&quot;640&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;
+And finally, we need to set his credentials, so go to the credentials tab of your user and choose a password, I will be using &quot;password&quot; for the rest of this article, make sure to turn off the &quot;Temporary&quot; flag unless you want the user to have to change his password the first time he authenticates.
+
+Now proceed to the &quot;Role Mappings&quot; tab and assign the role &quot;user&quot;:&lt;br /&gt;
+&lt;br /&gt;
+&amp;nbsp;
+
+&lt;img alt=&quot;&quot; class=&quot;aligncenter wp-image-435390 size-large&quot; height=&quot;351&quot; src=&quot;https://developers.redhat.com/blog/wp-content/uploads/2017/05/kc8-1024x562.png&quot; style=&quot;border: 1px solid grey;&quot; width=&quot;640&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;
+We are done for now with the Keycloak server configuration and we can start building our Spring Boot App!
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;h2&gt;
+Creating a simple app&lt;/h2&gt;
+&lt;div&gt;
+&lt;br /&gt;&lt;/div&gt;
+Let&#39;s create a simple Spring Boot application, you might want to use the &lt;a href=&quot;https://start.spring.io/&quot;&gt;Spring Initializr&lt;/a&gt; and choose the following options:
+&lt;br /&gt;
+&lt;ul&gt;
+&lt;li&gt;Web&lt;/li&gt;
+&lt;li&gt;Freemarker&lt;/li&gt;
+&lt;li&gt;Keycloak&lt;/li&gt;
+&lt;/ul&gt;
+Name your app &quot;product-app&quot; and download the generated project:&lt;br /&gt;
+&lt;br /&gt;
+&amp;nbsp;
+
+&lt;img alt=&quot;&quot; class=&quot;aligncenter wp-image-435391 size-large&quot; height=&quot;351&quot; src=&quot;https://developers.redhat.com/blog/wp-content/uploads/2017/05/sb1-1024x562.png&quot; style=&quot;border: 1px solid grey;&quot; width=&quot;640&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;
+Import the application in your favorite IDE, I will be using IntelliJ.
+
+Our app will be simple and will contain only 2 pages:
+&lt;br /&gt;
+&lt;ul&gt;
+&lt;li&gt;An index.html which will be the landing page containing just a link to the product page.&lt;/li&gt;
+&lt;li&gt;Products.ftl which will be our product page template and will be only accessible for authenticated user.&lt;/li&gt;
+&lt;/ul&gt;
+Let&#39;s start by creating in simple index.html file in &quot;/src/resources/static&quot;:
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;pre&gt;&amp;lt;html&amp;gt;
+&amp;lt;head&amp;gt;
+    &amp;lt;title&amp;gt;My awesome landing page&amp;lt;/title&amp;gt;
+&amp;lt;/head&amp;gt;
+ &amp;lt;body&amp;gt;
+   &amp;lt;h2&amp;gt;Landing page&amp;lt;/h2&amp;gt;
+   &amp;lt;a href=&quot;/products&quot;&amp;gt;My products&amp;lt;/a&amp;gt;
+ &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/pre&gt;
+&lt;pre&gt;
+&lt;/pre&gt;
+&lt;pre&gt;
+&lt;/pre&gt;
+&lt;pre&gt;&lt;/pre&gt;
+Now we need a controller:
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;pre&gt;@Controller
+class ProductController {
+
+   @Autowired ProductService productService;
+
+   @GetMapping(path = &quot;/products&quot;)
+   public String getProducts(Model model){
+      model.addAttribute(&quot;products&quot;, productService.getProducts());
+      return &quot;products&quot;;
+   }
+
+   @GetMapping(path = &quot;/logout&quot;)
+   public String logout(HttpServletRequest request) throws ServletException {
+      request.logout();
+      return &quot;/&quot;;
+   }
+}&lt;/pre&gt;
+&lt;pre&gt;&lt;/pre&gt;
+As you can see, it&#39;s simple; we define a mapping for the product page and one for the logout action. You will also notice that we are calling a &quot;ProductService&quot; that will return a list of strings that will put in our Spring MVC Model object, so let&#39;s create that service:
+&lt;br /&gt;
+&lt;pre&gt;@Component
+class ProductService {
+   public List&amp;lt;String&amp;gt; getProducts() {
+      return Arrays.asList(&quot;iPad&quot;,&quot;iPod&quot;,&quot;iPhone&quot;);
+   }
+}&lt;/pre&gt;
+&lt;pre&gt;&lt;/pre&gt;
+We also need to create the product.ftl template, create this file in &quot;src/resources/templates&quot;:
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;pre&gt;&amp;lt;#import &quot;/spring.ftl&quot; as spring&amp;gt;
+&amp;lt;html&amp;gt;
+&amp;lt;h2&amp;gt;My products&amp;lt;/h2&amp;gt;
+&amp;lt;ul&amp;gt;
+&amp;lt;#list products as product&amp;gt;
+    &amp;lt;li&amp;gt;$amp{product}&amp;lt;/li&amp;gt;
+&amp;lt;/#list&amp;gt;
+&amp;lt;/ul&amp;gt;
+&amp;lt;p&amp;gt;
+    &amp;lt;a href=&quot;/logout&quot;&amp;gt;Logout&amp;lt;/a&amp;gt;
+&amp;lt;/p&amp;gt;
+&amp;lt;/html&amp;gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;/pre&gt;
+Here we simply iterate through the list of products that are in our Spring MVC Model object and we add a link to log out from our application.
+
+All that is the left is adding some keycloak properties in our application.properties.
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;h3&gt;
+Defining Keycloak&#39;s configuration&lt;/h3&gt;
+&lt;div&gt;
+&lt;br /&gt;&lt;/div&gt;
+Some properties are mandatory:
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;pre&gt;keycloak.auth-server-url=http://localhost:8080/auth
+keycloak.realm=springboot
+keycloak.public-client=true
+keycloak.resource=product-app&lt;/pre&gt;
+&lt;pre&gt;&lt;/pre&gt;
+Then we need to define some Security constraints as you will do with a Java EE app in your web.xml:
+&lt;br /&gt;
+&lt;pre&gt;keycloak.security-constraints[0].authRoles[0]=user
+keycloak.security-constraints[0].securityCollections[0].patterns[0]=/products/*&lt;/pre&gt;
+Here, we simply define that every request to /products/* should be done with an authenticated user and that this user should have the role &quot;user&quot;.
+
+One last property is to make sure our application will be running on port 8081:
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;pre&gt;server.port=8081&lt;/pre&gt;
+&lt;pre&gt;&lt;/pre&gt;
+We are all set and we can run our app!
+
+You have several options to run your Spring Boot application, with Maven you can simply do:
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;pre&gt;mvn clean spring-boot:run&lt;/pre&gt;
+&lt;pre&gt;&lt;/pre&gt;
+Now browse to &quot;http://localhost:8080&quot; and you should see the landing page, click the &quot;products&quot; links and you will be redirected to the Keycloak login page:&lt;br /&gt;
+&lt;br /&gt;
+&amp;nbsp;
+
+&lt;img alt=&quot;&quot; class=&quot;aligncenter wp-image-435401 size-large&quot; height=&quot;329&quot; src=&quot;https://developers.redhat.com/blog/wp-content/uploads/2017/05/login-1024x526.png&quot; style=&quot;border: 1px solid grey;&quot; width=&quot;640&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;
+Login with our user &quot;testuser/password&quot; and should be redirected back to your product page:&lt;br /&gt;
+&lt;br /&gt;
+&amp;nbsp;
+
+&lt;img alt=&quot;&quot; class=&quot;aligncenter wp-image-435402 size-large&quot; height=&quot;351&quot; src=&quot;https://developers.redhat.com/blog/wp-content/uploads/2017/05/product-1024x562.png&quot; style=&quot;border: 1px solid grey;&quot; width=&quot;640&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;
+Congratulations! You have secured your first Spring Boot app with Keycloak. Now Log out and go back to the Keycloak administration console and discover how you can &quot;tune&quot; your login page. For instance, you can activate the &quot;Remember Me&quot;, the &quot;User Registration&quot;, hit the save button and go back to your login screen, you will see that these features have been added.
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;h2&gt;
+Introducing Spring Security support&lt;/h2&gt;
+&lt;div&gt;
+&lt;br /&gt;&lt;/div&gt;
+If you&#39;re a Spring user and have been playing around security, there is a big chance that you have been using Spring Security. Well, I have some good news: we also have a Keycloak Spring Security Adapter and it&#39;s already included in our Spring Boot Keycloak Starter.
+
+Let&#39;s see how we can leverage Spring Security together with Keycloak.
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;h3&gt;
+Adding Spring Security Starter&lt;/h3&gt;
+&lt;div&gt;
+&lt;br /&gt;&lt;/div&gt;
+First, we need the Spring Security libraries, the easiest way to do that is to add the spring-boot-starter-security artifact in your pom.xml:
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;pre&gt;&amp;lt;dependency&amp;gt;
+   &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;
+   &amp;lt;artifactId&amp;gt;spring-boot-starter-security&amp;lt;/artifactId&amp;gt;
+&amp;lt;/dependency&amp;gt;
+&lt;/pre&gt;
+&lt;h3&gt;
+Creating a SecurityConfig class&lt;/h3&gt;
+&lt;div&gt;
+&lt;br /&gt;&lt;/div&gt;
+Like any other project that is secured with Spring Security, a configuration class extending WebSecurityConfigurerAdapter is needed. Keycloak provides its own subclass that you can again subclass:
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;pre&gt;@Configuration
+@EnableWebSecurity
+@ComponentScan(basePackageClasses = KeycloakSecurityComponents.class)
+ class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter
+{
+   /**
+    * Registers the KeycloakAuthenticationProvider with the authentication manager.
+    */
+   @Autowired
+   public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+      KeycloakAuthenticationProvider keycloakAuthenticationProvider = keycloakAuthenticationProvider();
+      keycloakAuthenticationProvider.setGrantedAuthoritiesMapper(new SimpleAuthorityMapper());
+      auth.authenticationProvider(keycloakAuthenticationProvider);
+   }
+
+   @Bean
+   public KeycloakConfigResolver KeycloakConfigResolver() {
+      return new KeycloakSpringBootConfigResolver();
+   }
+
+   /**
+    * Defines the session authentication strategy.
+    */
+   @Bean
+   @Override
+   protected SessionAuthenticationStrategy sessionAuthenticationStrategy() {
+      return new RegisterSessionAuthenticationStrategy(new SessionRegistryImpl());
+   }
+
+   @Override
+   protected void configure(HttpSecurity http) throws Exception
+   {
+      super.configure(http);
+      http
+            .authorizeRequests()
+            .antMatchers(&quot;/products*&quot;).hasRole(&quot;user&quot;)
+            .anyRequest().permitAll();
+   }
+}
+&lt;/pre&gt;
+&lt;pre&gt;&lt;/pre&gt;
+Let&#39;s have a closer look at the most important methods:
+&lt;br /&gt;
+&lt;ul&gt;
+&lt;li&gt;configureGlobal: Here we change the Granted Authority Mapper, by default in Spring Security, roles are prefixed with &lt;strong&gt;ROLE_,&lt;/strong&gt; we could change that in our Realm configuration but it could be confusing for other applications that do not know this convention, so here we assign a SimpleAuthorityMapper that will make sure no prefix is added.&lt;/li&gt;
+&lt;li&gt;keycloakConfigResolver: By default, the Keycloak Spring Security Adapter will look up for a file named keycloak.json present on your classpath. But here we want to leverage the Spring Boot properties file support.&lt;/li&gt;
+&lt;li&gt;configure: Here is where we define our security constraints, pretty simple to understand we secure the path &quot;/products&quot; with role &quot;user&quot;&lt;/li&gt;
+&lt;/ul&gt;
+Now we can remove the security constraints that we had defined previously in our application.properties file and let&#39;s add another property to map the Principal name with our Keycloak username:
+&lt;br /&gt;
+&lt;pre&gt;keycloak.principal-attribute=preferred_username
+&lt;/pre&gt;
+Now we can even inject the principal in our controller method and put the username in the Spring MVC model:
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;pre&gt;@GetMapping(path = &quot;/products&quot;)
+public String getProducts(Principal principal, Model model){
+   model.addAttribute(&quot;principal&quot;,principal);
+   model.addAttribute(&quot;products&quot;, productService.getProducts());
+   return &quot;products&quot;;
+}&lt;/pre&gt;
+&lt;pre&gt;&lt;/pre&gt;
+Finally, we update the product.ftl template to print out the username:
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;pre&gt;&amp;lt;#import &quot;/spring.ftl&quot; as spring&amp;gt;
+&amp;lt;html&amp;gt;
+&amp;lt;h2&amp;gt;Hello $amp{principal.getName()}&amp;lt;/h2&amp;gt;
+&amp;lt;ul&amp;gt;
+&amp;lt;#list products as product&amp;gt;
+    &amp;lt;li&amp;gt;$amp{product}&amp;lt;/li&amp;gt;
+&amp;lt;/#list&amp;gt;
+&amp;lt;/ul&amp;gt;
+&amp;lt;p&amp;gt;
+    &amp;lt;a href=&quot;/logout&quot;&amp;gt;Logout&amp;lt;/a&amp;gt;
+&amp;lt;/p&amp;gt;
+&amp;lt;/html&amp;gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;/pre&gt;
+Restart your app, authenticate again, it should still work and you should also able to see your username printed on the product page:&lt;br /&gt;
+&amp;nbsp; &amp;nbsp;&lt;img alt=&quot;&quot; class=&quot;size-large wp-image-435410 aligncenter&quot; src=&quot;https://developers.redhat.com/blog/wp-content/uploads/2017/05/springsec-1024x562.png&quot; style=&quot;border: 1px solid grey;&quot; /&gt;&lt;br /&gt;
+&lt;h2&gt;
+Conclusion&lt;/h2&gt;
+&lt;div&gt;
+&lt;br /&gt;&lt;/div&gt;
+We saw in this article how to deploy and configure a Keycloak Server and then secure a Spring Boot app, first by using Java EE security constraints and then by integrating Spring Security. In the next article, we will decompose this monolith application, which will give us the opportunity to:
+&lt;br /&gt;
+&lt;ul&gt;
+&lt;li&gt;See how to secure a microservice.&lt;/li&gt;
+&lt;li&gt;How microservices can securely &quot;talk&quot; to each other.&lt;/li&gt;
+&lt;li&gt;How a Pure Web App build with AngularJS can be secured with Keycloak and call secured microservices.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;
+Screencast&lt;/h2&gt;
+This article is also available in &quot;screencast&quot; format :
+&lt;br /&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=UUWyu1kG6YI&quot;&gt;https://www.youtube.com/watch?v=UUWyu1kG6YI&lt;/a&gt; (Part 1)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=Yc5Qe5C3Xn4&quot;&gt;https://www.youtube.com/watch?v=Yc5Qe5C3Xn4&lt;/a&gt; (Part 2)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;
+Resources&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/sebastienblanc/spring-boot-keycloak-tutorial&quot;&gt;Github Project&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.keycloak.org/&quot;&gt;Keycloak website&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://keycloak.gitbooks.io/documentation/securing_apps/topics/oidc/java/spring-boot-adapter.html&quot;&gt;Spring Boot Keycloak Adapter Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://keycloak.gitbooks.io/documentation/securing_apps/topics/oidc/java/spring-security-adapter.html&quot;&gt;Spring Security Keycloak Adapter Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://start.spring.i/&quot;&gt;Spring Initializr Site&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&amp;nbsp;
+
+&lt;br /&gt;
+&lt;hr /&gt;
+</description>
+        <guid>https://www.keycloak.org//2017/05/easily-secure-your-spring-boot.html</guid>
+        <pubDate>Mon, 29 May 2017 00:00:00 GMT</pubDate>
+        <category>Spring Boot</category>
+        <author>Sébastien Blanc</author>
+      </item>
+      <item>
+        <title>Criticial vulnerability fixed in Keycloak Node.js adapters</title>
+        <link>https://www.keycloak.org//2017/05/criticial-vulnerability-fixed-in.html</link>
+        <description>
+&lt;p&gt;
+A criticial vulnerability was discovered in Keycloak Node.js adapters. We highly recommend everyone upgrades to version 3.1.0 of the adapter immediately. This adapter will work with Keycloak 2 and upwards.
+&lt;/p&gt;
+
+&lt;p&gt;
+For more details see &lt;a href=&quot;https://access.redhat.com/security/cve/cve-2017-7474&quot;&gt;CVE-2017-7474&lt;/a&gt;.
+&lt;/p&gt;</description>
+        <guid>https://www.keycloak.org//2017/05/criticial-vulnerability-fixed-in.html</guid>
+        <pubDate>Thu, 11 May 2017 00:00:00 GMT</pubDate>
+        
+        <author>Stian Thorgersen</author>
+      </item>
+      <item>
+        <title>How to Setup MS AD FS 3.0 as Brokered Identity Provider in Keycloak</title>
+        <link>https://www.keycloak.org//2017/03/how-to-setup-ms-ad-fs-30-as-brokered.html</link>
+        <description>
+&lt;p&gt;&lt;span&gt;This document guides you through initial setup of Microsoft Active Directory Federation Services 3.0 as a brokered identity provider Keycloak.&lt;/span&gt;&lt;/p&gt;
+&lt;h2&gt;Prerequisites&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Two server hosts:&lt;/li&gt;
+&lt;ul&gt;
+&lt;li&gt;Microsoft Windows Server 2012 with Active Directory Federation Services (AD FS) installed. The AD domain will be named &lt;/span&gt;&lt;span style=&quot;font-weight: 700&quot;&gt;DOMAIN.NAME &lt;/span&gt;&lt;span&gt;in this post.&lt;/li&gt;
+&lt;li&gt;Keycloak server. This can be generally placed anywhere but here it is expected to be running on separate host&lt;/li&gt;
+&lt;/ul&gt;
+&lt;li&gt;DNS setup:&lt;/li&gt;
+&lt;ul&gt;
+&lt;li&gt;The Windows host name will be &lt;/span&gt;&lt;span style=&quot;font-weight: 700&quot;&gt;fs.domain.name&lt;/span&gt;&lt;span&gt; in this post&lt;/li&gt;
+&lt;li&gt;The Keycloak host name will be &lt;/span&gt;&lt;span style=&quot;font-weight: 700&quot;&gt;kc.domain.name&lt;/span&gt;&lt;span&gt; in this post&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/ul&gt;
+&lt;h2&gt;
+&lt;span style=&quot;font-size: 16pt; white-space: pre-wrap;&quot;&gt;Setup Keycloak Server&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span&gt;Keycloak server has configured for SSL/TLS transport - this is mandatory for AD FS to communicate with it. This comprises two steps:&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Setup keycloak for incoming HTTPS&lt;/span&gt;&lt;span style=&quot;font-weight: 700&quot;&gt; &lt;/span&gt;&lt;span&gt;connections - steps are provided &lt;/span&gt;&lt;a href=&quot;https://www.keycloak.org/docs/latest/server_installation/index.html#enabling-ssl-https-for-the-keycloak-server&quot; style=&quot;text-decoration: none;&quot;&gt;&lt;span style=&quot;color: #1155cc; font-weight: 400; text-decoration: underline; vertical-align: baseline; white-space: pre-wrap;&quot;&gt;in Server Installation guide&lt;/span&gt;&lt;/a&gt;&lt;span&gt;.&lt;/li&gt;
+&lt;li&gt;Export AD FS certificate into a Java truststore to enable outgoing HTTPS connections:&lt;/li&gt;
+&lt;ul&gt;
+&lt;li&gt;In the AD FS management console, go to &lt;/span&gt;&lt;span style=&quot;font-size: 11pt; font-style: italic&quot;&gt;Service → Certificates&lt;/span&gt;&lt;span&gt; node in the tree and export the &lt;/span&gt;&lt;span style=&quot;font-size: 11pt; font-style: italic&quot;&gt;Service communications &lt;/span&gt;&lt;span&gt;certificate.&lt;/li&gt;
+&lt;li&gt;Import the certificate into a Java truststore (JKS format) using Java keytool utility.&lt;/li&gt;
+&lt;li&gt;Setup the truststore in Keycloak as described &lt;/span&gt;&lt;a href=&quot;https://www.keycloak.org/docs/latest/server_installation/index.html#_truststore&quot; style=&quot;text-decoration: none;&quot;&gt;&lt;span style=&quot;color: #1155cc; font-weight: 400; text-decoration: underline; vertical-align: baseline; white-space: pre-wrap;&quot;&gt;in Server Installation guide&lt;/span&gt;&lt;/a&gt;&lt;span&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/ul&gt;
+&lt;h2&gt;
+&lt;span style=&quot;font-size: 16pt; white-space: pre-wrap;&quot;&gt;Setup Identity Provider in Keycloak&lt;/span&gt;&lt;/h2&gt;
+&lt;h3 style=&quot;margin-bottom: 4pt; margin-top: 16pt;&quot;&gt;
+&lt;span style=&quot;color: #434343; font-size: 14pt; white-space: pre-wrap;&quot;&gt;Setup Basic Properties of Brokered Identity Provider&lt;/span&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;span&gt;In the Identity Providers, create a new SAML v2.0 identity provider. In this post, the identity provider will be known under alias &lt;/span&gt;&lt;span style=&quot;font-weight: 700&quot;&gt;adfs-idp-alias&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Now scroll to the bottom and enter the AD FS descriptor URL into &lt;/span&gt;&lt;span style=&quot;font-size: 11pt; font-style: italic&quot;&gt;Import from URL&lt;/span&gt;&lt;span&gt; field. For AD FS 3.0, this URL is &lt;/span&gt;&lt;span style=&quot;font-weight: 700&quot;&gt;https://fs.domain.name/FederationMetadata/2007-06/FederationMetadata.xml&lt;/span&gt;&lt;span&gt;. Once you click “Import”, check the settings. Usually, you would at least enable &lt;/span&gt;&lt;span style=&quot;font-size: 11pt; font-style: italic&quot;&gt;Validate signature&lt;/span&gt;&lt;span&gt; option. &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;If the authentication requests sent to the AD FS instance are expected to be signed, which is also usually the case, you have to enable &lt;/span&gt;&lt;span style=&quot;font-size: 11pt; font-style: italic&quot;&gt;Want AuthnRequests Signed&lt;/span&gt;&lt;span&gt; option. Importantly, then the &lt;/span&gt;&lt;span style=&quot;font-size: 11pt; font-style: italic&quot;&gt;SAML Signature Key Name&lt;/span&gt;&lt;span&gt; field that shows after enabling the &lt;/span&gt;&lt;span style=&quot;font-size: 11pt; font-style: italic&quot;&gt;Want AuthnRequests Signed&lt;/span&gt;&lt;span&gt; option has to be set to CERT_SUBJECT as AD FS expects the signing key name hint to be the subject of the signing certificate.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;The AD FS will be set up in the next step to respond with name ID in Windows Domain Qualified Name format, hence set the &lt;/span&gt;&lt;span style=&quot;font-size: 11pt; font-style: italic&quot;&gt;NameID Policy Format&lt;/span&gt;&lt;span&gt; field accordingly.&lt;/span&gt;&lt;/p&gt;
+&lt;b id=&quot;docs-internal-guid-d7a78233-f66d-5bde-d887-549caec7811b&quot; style=&quot;font-weight: normal;&quot;&gt;&lt;br /&gt;&lt;/b&gt;
+&lt;br /&gt;
+&lt;div style=&quot;margin-bottom: 0pt; margin-top: 0pt; text-align: center;&quot;&gt;
+&lt;span&gt;&lt;img height=&quot;640&quot; src=&quot;https://www.keycloak.org//resources/images/blog/adfs/0-adfs.png&quot; width=&quot;617&quot; /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;h3 style=&quot;margin-bottom: 4pt; margin-top: 16pt;&quot;&gt;
+&lt;span style=&quot;color: #434343; font-size: 14pt; white-space: pre-wrap;&quot;&gt;Setup Mappers&lt;/span&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;span&gt;In the steps setting AD FS below, AD FS will be set up to send email and group information in SAML assertion. To transform these details from SAML document issued by AD FS to Keycloak user store, we’ll need to set up two corresponding mappers in the Mappers tab of Identity Provider:&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Mapper named &lt;/span&gt;&lt;span style=&quot;font-size: 11pt; font-style: italic&quot;&gt;Group: managers&lt;/span&gt;&lt;span&gt; will be of type &lt;/span&gt;&lt;span style=&quot;font-size: 11pt; font-style: italic&quot;&gt;SAML Attribute to Role&lt;/span&gt;&lt;span&gt;, and will map attribute named &lt;/span&gt;&lt;span style=&quot;font-size: 11pt; font-style: italic&quot;&gt;http://schemas.xmlsoap.org/claims/Group&lt;/span&gt;&lt;span&gt;, if that has attribute value &lt;/span&gt;&lt;span style=&quot;font-size: 11pt; font-style: italic&quot;&gt;managers,&lt;/span&gt;&lt;span&gt; to role &lt;/span&gt;&lt;span style=&quot;font-size: 11pt; font-style: italic&quot;&gt;manager&lt;/span&gt;&lt;span&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;span&gt;&lt;span class=&quot;Apple-tab-span&quot; style=&quot;white-space: pre;&quot;&gt; &lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;div style=&quot;margin-bottom: 0pt; margin-top: 0pt; text-align: center;&quot;&gt;
+&lt;span&gt;&lt;span class=&quot;Apple-tab-span&quot; style=&quot;white-space: pre;&quot;&gt; &lt;/span&gt;&lt;/span&gt;&lt;span&gt;&lt;img height=&quot;266&quot; src=&quot;https://www.keycloak.org//resources/images/blog/adfs/1-adfs.png&quot; width=&quot;400&quot; /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;
+&lt;ul&gt;
+&lt;li&gt;Mapper named &lt;/span&gt;&lt;span style=&quot;font-size: 11pt; font-style: italic&quot;&gt;Attribute: email&lt;/span&gt;&lt;span&gt; will be of type &lt;/span&gt;&lt;span style=&quot;font-size: 11pt; font-style: italic&quot;&gt;Attribute Importer&lt;/span&gt;&lt;span&gt;, and will map attribute named &lt;/span&gt;&lt;span style=&quot;font-size: 11pt; font-style: italic&quot;&gt;http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress&lt;/span&gt;&lt;span&gt; into user attribute named &lt;/span&gt;&lt;span style=&quot;font-size: 11pt; font-style: italic&quot;&gt;email&lt;/span&gt;&lt;span&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div style=&quot;margin-bottom: 0pt; margin-top: 0pt; text-align: center;&quot;&gt;
+&lt;span&gt;&lt;img height=&quot;200&quot; src=&quot;https://www.keycloak.org//resources/images/blog/adfs/2-adfs.png&quot; width=&quot;400&quot; /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;h3 style=&quot;margin-bottom: 4pt; margin-top: 16pt;&quot;&gt;
+&lt;span style=&quot;color: #434343; font-size: 14pt; white-space: pre-wrap;&quot;&gt;Obtain information for the AD FS configuration&lt;/span&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;span&gt;Now we determine SAML service provider descriptor URI that will be used in AD FS setup from the &lt;/span&gt;&lt;span style=&quot;font-size: 11pt; font-style: italic&quot;&gt;Redirect URI&lt;/span&gt;&lt;span&gt; field in the identity provider detail by adding “/descriptor” to the URI in this field. The URI will be similar to &lt;/span&gt;&lt;span style=&quot;font-weight: 700&quot;&gt;https://kc.domain.name:8443/auth/realms/master/broker/adfs-idp-alias/endpoint/descriptor&lt;/span&gt;&lt;span&gt;. You can check whether you got the URI right by entering the URI into the browser - you should receive a SAML service provider XML descriptor.&lt;/span&gt;&lt;/p&gt;
+&lt;h2&gt;
+&lt;span style=&quot;font-size: 16pt; white-space: pre-wrap;&quot;&gt;Setup Relying Party Trust in AD FS&lt;/span&gt;&lt;/h2&gt;
+&lt;h4 style=&quot;margin-bottom: 4pt; margin-top: 14pt;&quot;&gt;
+&lt;span style=&quot;color: #666666; font-size: 12pt; white-space: pre-wrap;&quot;&gt;Setup Relying Party&lt;/span&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;span&gt;In AD FS Management console, right-click Tr&lt;/span&gt;&lt;span style=&quot;font-size: 11pt; font-style: italic&quot;&gt;ust relationships → Relying Party Trusts&lt;/span&gt;&lt;span&gt; and select &lt;/span&gt;&lt;span style=&quot;font-size: 11pt; font-style: italic&quot;&gt;Add Relying Party Trust&lt;/span&gt;&lt;span&gt; from the menu:&lt;/span&gt;&lt;/p&gt;
+&lt;br /&gt;
+&lt;div style=&quot;margin-bottom: 0pt; margin-top: 0pt; text-align: center;&quot;&gt;
+&lt;span&gt;&lt;img src=&quot;https://www.keycloak.org//resources/images/blog/adfs/3-adfs.png&quot; /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;
+&lt;p&gt;&lt;span&gt;At the beginning of the wizard, enter the SAML descriptor URL obtained in the previous step into the &lt;/span&gt;&lt;span style=&quot;font-size: 11pt; font-style: italic&quot;&gt;Federation metadata address &lt;/span&gt;&lt;span&gt;field, and let AD FS import the settings. Proceed with the wizard, and adjust the settings where appropriate. Here we use only the default settings. Note that you will need to edit the claim rules so when asked to do so at the last page of the wizard, you can leave the checkbox checked on.&lt;/span&gt;&lt;/p&gt;
+&lt;h4 style=&quot;margin-bottom: 4pt; margin-top: 14pt;&quot;&gt;
+&lt;span style=&quot;color: #666666; font-size: 12pt; white-space: pre-wrap;&quot;&gt;Setup Claim Mapping&lt;/span&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;span&gt;Now the SAML protocol would proceed correctly, AD FS would be able to correctly authenticate the users according to requests from Keycloak, but the requested name ID format is not yet recognized and SAML response would not contain any additional information like e-mail. It is hence necessary to map claims from AD user details into SAML document.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;We will set up three rules: one for mapping user ID, second for mapping standard user attributes, and third for a user group. All start by clicking the &lt;/span&gt;&lt;span style=&quot;font-size: 11pt; font-style: italic&quot;&gt;Add Rule&lt;/span&gt;&lt;span&gt; button in the &lt;/span&gt;&lt;span style=&quot;font-size: 11pt; font-style: italic&quot;&gt;Edit Claim Rules for kc.domain.name&lt;/span&gt;&lt;span&gt; window:&lt;/span&gt;&lt;/p&gt;
+&lt;br /&gt;
+&lt;div style=&quot;margin-bottom: 0pt; margin-top: 0pt; text-align: center;&quot;&gt;
+&lt;span&gt;&lt;img height=&quot;400&quot; src=&quot;https://www.keycloak.org//resources/images/blog/adfs/4-adfs.png&quot; width=&quot;365&quot; /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;
+&lt;p&gt;&lt;span&gt;The first rule will map user ID in Windows Qualified Domain name to the SAML response. In the &lt;/span&gt;&lt;span style=&quot;font-size: 11pt; font-style: italic&quot;&gt;Add Transform Claim Rule&lt;/span&gt;&lt;span&gt; window, select &lt;/span&gt;&lt;span style=&quot;font-size: 11pt; font-style: italic&quot;&gt;Transform an incoming claim &lt;/span&gt;&lt;span&gt;rule type:&lt;/span&gt;&lt;/p&gt;
+&lt;br /&gt;
+&lt;div style=&quot;margin-bottom: 0pt; margin-top: 0pt; text-align: center;&quot;&gt;
+&lt;span&gt;&lt;img height=&quot;515&quot; src=&quot;https://www.keycloak.org//resources/images/blog/adfs/5-adfs.png&quot; width=&quot;640&quot; /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;
+&lt;p&gt;&lt;span&gt;The example above targets windows account name ID format. Other name ID formats are supported but out of scope of this post. See e.g. &lt;a href=&quot;https://blogs.msdn.microsoft.com/card/2010/02/17/name-identifiers-in-saml-assertions/&quot;&gt;this blog&lt;/a&gt; on how to setup name IDs for persistent and transient formats.&lt;/span&gt;&lt;/p&gt;
+&lt;br /&gt;
+&lt;p&gt;&lt;span&gt;The second rule will map user e-mail to the SAML response. In the &lt;/span&gt;&lt;span style=&quot;font-size: 11pt; font-style: italic&quot;&gt;Add Transform Claim Rule&lt;/span&gt;&lt;span&gt; window, select &lt;/span&gt;&lt;span style=&quot;font-size: 11pt; font-style: italic&quot;&gt;Send LDAP attributes as Claims &lt;/span&gt;&lt;span&gt;rule type. You can add other attributes as needed:&lt;/span&gt;&lt;/p&gt;
+&lt;br /&gt;
+&lt;div style=&quot;margin-bottom: 0pt; margin-top: 0pt; text-align: center;&quot;&gt;
+&lt;span&gt;&lt;img src=&quot;https://www.keycloak.org//resources/images/blog/adfs/6-adfs.png&quot; /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;
+&lt;p&gt;&lt;span&gt;The third rule would send a group name if the user is member of a named group. Start again in the &lt;/span&gt;&lt;span style=&quot;font-size: 11pt; font-style: italic&quot;&gt;Add Transform Claim Rule&lt;/span&gt;&lt;span&gt; window, and select &lt;/span&gt;&lt;span style=&quot;font-size: 11pt; font-style: italic&quot;&gt;Send Group Membership as a Claim &lt;/span&gt;&lt;span&gt;rule type. Then enter the requested values in the field:&lt;/span&gt;&lt;/p&gt;
+&lt;br /&gt;
+&lt;div style=&quot;margin-bottom: 0pt; margin-top: 0pt; text-align: center;&quot;&gt;
+&lt;span&gt;&lt;img height=&quot;515&quot; src=&quot;https://www.keycloak.org//resources/images/blog/adfs/7-adfs.png&quot; width=&quot;640&quot; /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;
+&lt;p&gt;&lt;span&gt;This setup would send an attribute named &lt;/span&gt;&lt;span style=&quot;font-size: 11pt; font-style: italic&quot;&gt;Group &lt;/span&gt;&lt;span&gt;in the SAML assertion with value &lt;/span&gt;&lt;span style=&quot;font-size: 11pt; font-style: italic&quot;&gt;managers&lt;/span&gt;&lt;span&gt; if the authenticated user is member of the &lt;/span&gt;&lt;span style=&quot;font-size: 11pt; font-style: italic&quot;&gt;DOMAIN\Managers&lt;/span&gt;&lt;span&gt; group.&lt;/span&gt;&lt;/p&gt;
+&lt;h2&gt;
+&lt;span style=&quot;font-size: 16pt; white-space: pre-wrap;&quot;&gt;Troubleshooting&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span&gt;As a first-hand tool, you should check SAML messages sent back and forth between Keycloak and AD FS in your browser. The SAML decoders are available as browser extensions (e.g. SAML Tracer for Firefox, SAML Chrome Panel for Chrome). From the captured communication, you might see error status codes as well as the actual attribute names and values in SAML assertion necessary for setting up mappers. For example, if name ID format is not recognized, AD FS would return a SAML response containing &lt;/span&gt;&lt;span style=&quot;font-size: 11pt; font-weight: 400&quot;&gt;&lt;i&gt;urn:oasis:names:tc:SAML:2.0:status:InvalidNameIDPolicy&lt;/i&gt;&lt;/span&gt;&lt;span&gt; status code.&lt;/span&gt;&lt;/p&gt;
+&lt;br /&gt;
+&lt;p&gt;&lt;span&gt;As a second resort, check the logs. For AD FS, the logs are available in the &lt;/span&gt;&lt;span style=&quot;font-size: 11pt; font-weight: 400&quot;&gt;&lt;i&gt;Event viewer&lt;/i&gt;&lt;/span&gt;&lt;span&gt; under &lt;/span&gt;&lt;span style=&quot;font-size: 11pt; font-style: italic&quot;&gt;Applications and Services Logs → AD FS → Admin&lt;/span&gt;&lt;span&gt;. In Keycloak, you can enable tracing of the SAML processing by connecting to the running Keycloak instance via jboss-cli.sh and entering the following commands:&lt;/span&gt;&lt;/p&gt;
+&lt;br /&gt;
+&lt;div&gt;
+&lt;span style=&quot;color: black; font-family: &amp;quot;courier new&amp;quot;; font-size: 11pt; white-space: pre-wrap;&quot;&gt;&lt;span class=&quot;Apple-tab-span&quot; style=&quot;white-space: pre;&quot;&gt; &lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;color: black; font-family: &amp;quot;courier new&amp;quot;; font-size: 11pt; white-space: pre-wrap;&quot;&gt;/subsystem=logging/logger=org.keycloak.saml:add(level=DEBUG)&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;span style=&quot;color: black; font-family: &amp;quot;courier new&amp;quot;; font-size: 11pt; white-space: pre-wrap;&quot;&gt;&lt;span class=&quot;Apple-tab-span&quot; style=&quot;white-space: pre;&quot;&gt; &lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;color: black; font-family: &amp;quot;courier new&amp;quot;; font-size: 11pt; white-space: pre-wrap;&quot;&gt;/subsystem=logging/logger=org.keycloak.broker.saml:add(level=DEBUG)&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;
+&lt;p&gt;&lt;span&gt;Then you will be able to find the SAML messages and broker-related SAML processing messages in the Keycloak server log.&lt;/span&gt;&lt;/p&gt;
+&lt;h3 style=&quot;margin-bottom: 4pt; margin-top: 16pt;&quot;&gt;
+&lt;span style=&quot;color: #434343; font-size: 14pt; white-space: pre-wrap;&quot;&gt;Common issues&lt;/span&gt;&lt;/h3&gt;
+&lt;div&gt;
+&lt;span style=&quot;font-weight: 700&quot;&gt;Q:&lt;/span&gt;&lt;span&gt; I cannot log out! When I click logout in my app, it seems I’m logged out from Keycloak but when I return to the app, AD FS login form never displays and I’m redirected back authenticated as the same user as previously!&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;span style=&quot;font-weight: 700&quot;&gt;A:&lt;/span&gt;&lt;span&gt; Don’t panic. This is not a Keycloak issue, rather AD FS settings of authentication policy. Try &lt;/span&gt;&lt;a href=&quot;https://blogs.msdn.microsoft.com/josrod/2014/10/15/enabled-forms-based-authentication-in-adfs-3-0/&quot; style=&quot;text-decoration: none;&quot;&gt;&lt;span style=&quot;color: #1155cc; font-weight: 400; text-decoration: underline; vertical-align: baseline; white-space: pre-wrap;&quot;&gt;disabling Windows Authentication&lt;/span&gt;&lt;/a&gt;&lt;span&gt; before reporting an issue.&lt;/span&gt;&lt;br /&gt;
+&lt;span style=&quot;font-size: 11pt; font-style: normal&quot;&gt;&lt;br /&gt;&lt;/span&gt;
+&lt;span style=&quot;font-family: &amp;quot;arial&amp;quot;;&quot;&gt;&lt;span style=&quot;font-size: 14.6667px; white-space: pre-wrap;&quot;&gt;&lt;b&gt;Q:&lt;/b&gt; While using AD FS in Windows 2016, the following error appeared in Keycloak log after importing the descriptor from URL: R&lt;i&gt;ESTEASY002010: Failed to execute: javax.ws.rs.NotFoundException: RESTEASY003210: Could not find resource for full path: https://kc.domain.name/auth/realms/master/broker/adfs-idp-alias/endpoint/descriptor/FederationMetadata/2007-06/FederationMetadata.xml&lt;/i&gt;. Does it cause any harm?&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+&lt;span style=&quot;font-family: &amp;quot;arial&amp;quot;;&quot;&gt;&lt;span style=&quot;font-size: 14.6667px; white-space: pre-wrap;&quot;&gt;&lt;b&gt;A:&lt;/b&gt; It is harmless. It seems that Windows 2016 version first checks for AD FS-like descriptor URL by adding &lt;i&gt;FederationMetadata/2007-06/FederationMetadata.xml&lt;/i&gt; to the entered URL. Such resource does not exist in Keycloak, so it reports error. AD FS however seems to import using the entered URL when this happens. Please see also the &lt;a href=&quot;http://lists.jboss.org/pipermail/keycloak-user/2017-March/010138.html&quot;&gt;original email discussion&lt;/a&gt; on this issue.&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;h2&gt;
+&lt;span style=&quot;font-size: 16pt; white-space: pre-wrap;&quot;&gt;Conclusion&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span&gt;If you get stuck, do not hesitate to write a question to &lt;/span&gt;&lt;a href=&quot;https://keycloak.discourse.group/&quot;&gt;&lt;b&gt;Keycloak user forum&lt;/b&gt;&lt;/a&gt;&lt;span&gt; mailing list.&lt;/span&gt;&lt;/p&gt;
+&lt;br /&gt;
+&lt;p&gt;&lt;span&gt;As there is always room for improvement, if you find any issue or have any suggestion on this text, feel free to leave a comment!&lt;/span&gt;&lt;/p&gt;
+&lt;br /&gt;
+</description>
+        <guid>https://www.keycloak.org//2017/03/how-to-setup-ms-ad-fs-30-as-brokered.html</guid>
+        <pubDate>Thu, 23 Mar 2017 00:00:00 GMT</pubDate>
+        <category>Active Directory</category>
+        <author>Hynek Mlnařík</author>
+      </item>
+</channel>
+
+</rss>

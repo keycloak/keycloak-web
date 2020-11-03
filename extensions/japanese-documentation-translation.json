@@ -1,9 +1,0 @@
-{
-    "name": "Japanese documentation translation",
-    "description": "Complete Japanese translation of the original Keycloak documentation.",
-    "maintainers": [
-        "openstandia", "wadahiro", "k-tamura"
-    ],
-    "website": "https://keycloak-documentation.openstandia.jp",
-    "source": "https://github.com/openstandia/keycloak-documentation-i18n"
-}

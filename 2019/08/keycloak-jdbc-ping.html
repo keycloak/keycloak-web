@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Keycloak - Blog - Keycloak and JDBC Ping</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Keycloak is an open source identity and access management solution">
+    <meta name="author" content="Keycloak Team">
+    <meta name="keywords" content="sso,idm,openid connect,saml,kerberos,ldap">
+
+    
+
+    <meta http-equiv='Content-Security-Policy' content="default-src 'none'; style-src 'self'; img-src 'self' https://www.google-analytics.com; font-src 'self'; script-src 'self' https://www.google-analytics.com; base-uri 'none'; form-action 'none';">
+
+    <link href="https://www.keycloak.org/resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://www.keycloak.org/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://www.keycloak.org/resources/css/keycloak.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="https://www.keycloak.org/resources/favicon.ico">
+
+    <script src="https://www.keycloak.org/resources/js/ga.js" type="text/javascript"></script>
+    <script src="https://www.keycloak.org/resources/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script src="https://www.keycloak.org/resources/js/bootstrap.min.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="wrap">
+<header class="main-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-3 col-xs-12 keycloak-logo-div navbar-header">
+                <button type="button" class=" pull-right  navbar-toggle collapsed" data-toggle="collapse" data-target="#mainBtnTarget" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="https://www.keycloak.org/" title="Keycloak" class="keycloak-logo-a">
+                    <img class="keycloak-logo" src="https://www.keycloak.org/resources/images/keycloak_logo_480x108.png" border="0" alt="Keycloak"/>
+                </a>
+            </div>
+            <div id="mainBtnTarget" class="col-md-9 col-sm-9 col-xs-12 collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="https://www.keycloak.org/getting-started">Get Started</a></li>
+                    <li><a href="https://www.keycloak.org/documentation">Docs</a></li>
+                    <li><a href="https://www.keycloak.org/downloads">Downloads</a></li>
+                    <li><a href="https://www.keycloak.org/community">Community</a></li>
+                    <li><a href="https://www.keycloak.org/blog">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="page-section">
+    <div class="container blog">
+        <h1>Keycloak and JDBC Ping</h1>
+        <p class="blog-date">Monday, August 12 2019, posted by Sebastian Łaskaiwec</p>
+
+        <div class="alert alert-warning" role="alert">
+        This post is more than one year old. The contents within the blog is likely to be out of date.
+        </div>
+
+
+<p>
+A few months back, we had a great article about clustering using <a href="http://jgroups.org/manual/#JDBC_PING">JDBC_PING</a> protocol. Since then, we introduced some improvements for the <a href="https://quay.io/repository/keycloak/keycloak?tab=tags">Keycloak container image</a> that can simplify the setup. So, before diving into this blog post, I highly encourage you to visit the <a href="https://www.keycloak.org/2019/05/keycloak-cluster-setup.html">Keycloak Cluster Setup</a> article.
+</p>
+
+
+<h2>What has changed in our Container Image?</h2>
+<p>
+Probably the most important change is configuring the JGroups discovery protocol by using variables (see the <a href="https://github.com/jboss-dockerfiles/keycloak/pull/151">Pull Request</a>). Once the change got in, we could configure the JGroups discovery by setting two properties:
+<ul>
+<li>JGROUPS_DISCOVERY_PROTOCOL</li>
+<li>JGROUPS_DISCOVERY_PROPERTIES</li>
+</ul>
+</p>
+
+<h2>Let's apply the changes, shall we...</h2>
+<p>
+The JDBC_PING-based setup works fine in all scenarios, where we connect all Keyclaok instances to the same database. Since JDBC_PING can be configured to obtain a database connection using JNDI binding, it can easily connect to the Keycloak database. All we need to do is to add two parameters to our docker image:
+<ul>
+<li>JGROUPS_DISCOVERY_PROTOCOL=JDBC_PING</li>
+<li>JGROUPS_DISCOVERY_PROPERTIES=datasource_jndi_name=java:jboss/datasources/KeycloakDS</li>
+</ul>
+</p>
+
+You may find an end-to-end scenario <a href="https://github.com/jboss-dockerfiles/keycloak/pull/204">here</a>.
+</p>
+
+<h2>Additional configuration</h2>
+<p>
+In some scenarios, you may need additional configuration. All additional settings might be added to the JGROUPS_DISCOVERY_PROPERTIES. Here are some hints and common problems, that you may find:
+<table>
+<tbody>
+<tr>
+<td>Problem description</td>
+<td>Possible solution</td>
+</tr>
+<tr>
+<td>The initialization SQL needs to be adjusted</td>
+<td>In this case, you might want to look at <tt>initialize_sql</tt> JDBC_PING property</td>
+</tr>
+<tr>
+<td>When Keycloak crashes, the database is not cleared</td>
+<td>Turn <tt>remove_old_coords_on_view_change</tt> property on</td>
+</tr>
+<tr>
+<td>When Keycloak crashes, the database is not cleared</td>
+<td>Also, when a cluster is not too large, you may turn the <tt>remove_all_data_on_view_change</tt> property on</td>
+</tr>
+<tr>
+<td>Sometimes, Keycloak doesn't write its data into the database</td>
+<td>You may lower the <tt>info_writer_sleep_time</tt> and <tt>info_writer_max_writes_after_view</tt> property values</td>
+</tr>
+</tbody>
+</table>
+</p>
+
+</br>
+
+<p>
+Haven fun and don't forget to let us know what you think about this blog post using the <a href="https://lists.jboss.org/mailman/listinfo/keycloak-user">User Mailing List</a>.
+</br>
+Sebastian Łaskawiec and the Keycloak Team
+</p>
+    </div>
+</div>
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-9 col-xs-12">
+                    <a href="http://www.redhat.com/" target="_blank">
+                        <img alt="redhatlogo-white" src="https://www.keycloak.org/resources/images/redhatlogo-white.png" width="130">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

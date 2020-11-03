@@ -1,9 +1,0 @@
-{
-    "name": "Full export endpoint",
-    "description": "Provides an endpoint allowing the full export of a realm, without having to restart keycloak. Secrets are exported in clear.",
-    "maintainers": [
-        "cloudtrust","yelhouti"
-    ],
-    "website": "https://github.com/cloudtrust/keycloak-export",
-    "download": "https://github.com/cloudtrust/keycloak-export/releases"
-}

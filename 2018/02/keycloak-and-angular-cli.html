@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Keycloak - Blog - Keycloak and Angular CLI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Keycloak is an open source identity and access management solution">
+    <meta name="author" content="Keycloak Team">
+    <meta name="keywords" content="sso,idm,openid connect,saml,kerberos,ldap">
+
+    
+
+    <meta http-equiv='Content-Security-Policy' content="default-src 'none'; style-src 'self'; img-src 'self' https://www.google-analytics.com; font-src 'self'; script-src 'self' https://www.google-analytics.com; base-uri 'none'; form-action 'none';">
+
+    <link href="https://www.keycloak.org/resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://www.keycloak.org/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://www.keycloak.org/resources/css/keycloak.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="https://www.keycloak.org/resources/favicon.ico">
+
+    <script src="https://www.keycloak.org/resources/js/ga.js" type="text/javascript"></script>
+    <script src="https://www.keycloak.org/resources/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script src="https://www.keycloak.org/resources/js/bootstrap.min.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="wrap">
+<header class="main-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-3 col-xs-12 keycloak-logo-div navbar-header">
+                <button type="button" class=" pull-right  navbar-toggle collapsed" data-toggle="collapse" data-target="#mainBtnTarget" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="https://www.keycloak.org/" title="Keycloak" class="keycloak-logo-a">
+                    <img class="keycloak-logo" src="https://www.keycloak.org/resources/images/keycloak_logo_480x108.png" border="0" alt="Keycloak"/>
+                </a>
+            </div>
+            <div id="mainBtnTarget" class="col-md-9 col-sm-9 col-xs-12 collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="https://www.keycloak.org/getting-started">Get Started</a></li>
+                    <li><a href="https://www.keycloak.org/documentation">Docs</a></li>
+                    <li><a href="https://www.keycloak.org/downloads">Downloads</a></li>
+                    <li><a href="https://www.keycloak.org/community">Community</a></li>
+                    <li><a href="https://www.keycloak.org/blog">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="page-section">
+    <div class="container blog">
+        <h1>Keycloak and Angular CLI</h1>
+        <p class="blog-date">Friday, February 09 2018, posted by Stan Silvert</p>
+
+        <div class="alert alert-warning" role="alert">
+        This post is more than one year old. The contents within the blog is likely to be out of date.
+        </div>
+
+
+<p>So I made a <a href="https://blog.angular.io/schematics-an-introduction-dc1dfbc2a2b2" target="_blank">schematic</a></span> that installs and configures <a href="https://github.com/ssilvert/keycloak-schematic/wiki/Getting-Started" target="_blank">Keycloak in any Angular CLI application</a>.</p>
+
+<p>If you want to try it out, do this from the command line:</p>
+
+<pre>
+npm install -g @ssilvert/keycloak-schematic
+ng new myApp</span>
+cd myApp
+ng generate keycloak --collection @ssilvert/keycloak-schematic --clientId=myApp
+</pre>
+
+<p>Now Keycloak is integrated into your app.&nbsp; Of course, you can do this with any existing Angular CLI application.&nbsp; It doesn't have to be a new one.</p>
+
+<p>Then, go to the Keycloak Admin console (master realm) and go to Clients --&gt; Add Client --&gt; Select File.</p>
+
+<p>Select the client-import.json file that the "ng generate keycloak" command created in /myApp.</p>
+
+<p>Assuming your Keycloak server is running on localhost:8080, you are ready to go.&nbsp; Start your application:</p>
+<pre>ng serve</pre>
+
+<p>Go to your browser to start the app and see this:</p>
+
+<img src="https://www.keycloak.org//resources/images/blog/login.png"/>
+
+<p>Oh joy! myApp is protected with Keycloak!</p>
+
+<p>The <a href="https://github.com/ssilvert/keycloak-schematic" target="_blank">keycloak-schematic</a> installs a KeycloakService and a KeycloakGuard.&nbsp; So you can easily:</p>
+
+<ul>
+<li>Add login/logout buttons</li>
+<li>Access user self service (account management)</li>
+<li>Guard protected routes instead of the whole app</li>
+<li>Work with roles</li>
+<li>Lots more</li>
+</ul>
+
+<p><a href="https://github.com/ssilvert/keycloak-schematic/wiki/Getting-Started" target="_blank">Click here</a> for a comprehensive getting started guide, full documentation, and sample code.</p>
+
+<p>Note that this stuff is early alpha right now.&nbsp; And it will move from&nbsp;@ssilvert to @keycloak before long.&nbsp; In the mean time, I'd love to get feedback.&nbsp; There is a lot to do to make Keycloak/Angular integration even better, but I think the <a href="https://github.com/ssilvert/keycloak-schematic" target="_blank">keycloak-schematic</a> is a big step forward.</p>
+
+<p>So long, and thanks for all the fish.</p>    </div>
+</div>
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-9 col-xs-12">
+                    <a href="http://www.redhat.com/" target="_blank">
+                        <img alt="redhatlogo-white" src="https://www.keycloak.org/resources/images/redhatlogo-white.png" width="130">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

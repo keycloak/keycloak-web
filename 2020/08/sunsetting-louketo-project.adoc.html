@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Keycloak - Blog - Sunsetting Louketo Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Keycloak is an open source identity and access management solution">
+    <meta name="author" content="Keycloak Team">
+    <meta name="keywords" content="sso,idm,openid connect,saml,kerberos,ldap">
+
+    
+
+    <meta http-equiv='Content-Security-Policy' content="default-src 'none'; style-src 'self'; img-src 'self' https://www.google-analytics.com; font-src 'self'; script-src 'self' https://www.google-analytics.com; base-uri 'none'; form-action 'none';">
+
+    <link href="https://www.keycloak.org/resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://www.keycloak.org/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://www.keycloak.org/resources/css/keycloak.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="https://www.keycloak.org/resources/favicon.ico">
+
+    <script src="https://www.keycloak.org/resources/js/ga.js" type="text/javascript"></script>
+    <script src="https://www.keycloak.org/resources/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script src="https://www.keycloak.org/resources/js/bootstrap.min.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="wrap">
+<header class="main-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-3 col-xs-12 keycloak-logo-div navbar-header">
+                <button type="button" class=" pull-right  navbar-toggle collapsed" data-toggle="collapse" data-target="#mainBtnTarget" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="https://www.keycloak.org/" title="Keycloak" class="keycloak-logo-a">
+                    <img class="keycloak-logo" src="https://www.keycloak.org/resources/images/keycloak_logo_480x108.png" border="0" alt="Keycloak"/>
+                </a>
+            </div>
+            <div id="mainBtnTarget" class="col-md-9 col-sm-9 col-xs-12 collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="https://www.keycloak.org/getting-started">Get Started</a></li>
+                    <li><a href="https://www.keycloak.org/documentation">Docs</a></li>
+                    <li><a href="https://www.keycloak.org/downloads">Downloads</a></li>
+                    <li><a href="https://www.keycloak.org/community">Community</a></li>
+                    <li><a href="https://www.keycloak.org/blog">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="page-section">
+    <div class="container blog">
+        <h1>Sunsetting Louketo Project</h1>
+        <p class="blog-date">Friday, August 21 2020, posted by Bruno Oliveira</p>
+
+
+<div class="paragraph">
+<p>After careful consideration, we have decided to pull the plug on Louketo and start the EOL procedure. The plan is during the next 3 months to fix only critical bugs and security issues. Everyone interested in capabilities provided by Louketo Proxy should look at <a href="https://github.com/oauth2-proxy/oauth2-proxy">OAuth2 Proxy</a> project which is providing a similar set of capabilities and has a healthy and active community.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://groups.google.com/g/keycloak-dev/c/oDyw94BWxM0/m/zc0J9R10BwAJ">A few months ago</a>, the Keycloak team started Louketo — a joint effort to build a generic OAuth2 Proxy and possibly also begin an umbrella project for a set of OIDC related integration libraries. The initial set of goals has not worked out. Keycloak Gatekeeper and OAuth2 Proxy projects hoped to merge and join efforts but for various reasons, this has not worked out.</p>
+</div>
+<div class="paragraph">
+<p>With Louketo and OAuth2 proxy providing similar features, OAuth Proxy being a more popular project with a bigger community we reached a conclusion there&#8217;s no reason to put more effort into Louketo, when we can just contribute there.</p>
+</div>
+<div class="paragraph">
+<p>What does it mean in practice?</p>
+</div>
+<div class="sect1">
+<h2 id="_faq">FAQ</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_will_louketo_proxy_be_no_longer_maintained_will_there_be_no_new_releases">Will Louketo Proxy be no longer maintained? Will there be no new releases?</h3>
+<div class="paragraph">
+<p>Critical bug fixes will be merged and micro releases provided for the next 3 months. It is up to community members to step up and take over maintaining and driving this project further if they wish to do so. Please comment on the <a href="https://github.com/louketo/louketo-proxy/issues/683">GitHub issue</a> or contact the Keycloak team on the <a href="https://groups.google.com/forum/#!forum/louketo">mailing list</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_are_there_any_alternatives_i_should_use_instead">Are there any alternatives I should use instead?</h3>
+<div class="paragraph">
+<p>OAuth2 Proxy is very close in a set of capabilities to Louketo Proxy and we highly suggest you investigate it as a replacement.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_how_do_i_migrate_to_oauth2_proxy">How do I migrate to OAuth2 Proxy?</h3>
+<div class="paragraph">
+<p>We’ll provide high-level guidance on how to migrate. Although unfortunately there is no comprehensive guide nor magical script. Some corner cases, specific configurations, and capabilities may not be fully covered or addressed in exactly the same way.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_why_are_you_abandoning_louketo_proxy_as_a_project">Why are you abandoning Louketo Proxy as a project?</h3>
+<div class="paragraph">
+<p>Initial goals failed. Which were merging with OAuth2 Proxy and creating a wider set of OAuth2/OIDC integration libraries. Some individuals originally interested in collaboration took a step back. The end result is the Louketo project duplicating efforts and capabilities of other much more popular projects - OAuth2 Proxy. As we believe in OpenSource we just don’t want to follow NIH syndrome :)</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_i_would_like_to_keep_maintaining_louketo_what_should_i_do">I would like to keep maintaining Louketo - what should I do?</h3>
+<div class="paragraph">
+<p>Please comment on the <a href="https://github.com/louketo/louketo-proxy/issues/683">GitHub issue</a> so others can join the discussion. We’ll take it from there :)</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_what_happens_if_nobody_will_step_up_to_maintain_louketo">What happens if nobody will step up to maintain Louketo?</h3>
+<div class="paragraph">
+<p>After 3 months Louketo repository will be archived and made read-only.</p>
+</div>
+</div>
+</div>
+</div>    </div>
+</div>
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-9 col-xs-12">
+                    <a href="http://www.redhat.com/" target="_blank">
+                        <img alt="redhatlogo-white" src="https://www.keycloak.org/resources/images/redhatlogo-white.png" width="130">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

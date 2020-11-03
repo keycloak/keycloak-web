@@ -1,9 +1,0 @@
-{
-    "name": "WS-Federation protocol",
-    "description": "Implementation of the WS-Federation passive requestor model according to the official specification (v1.2, see http://docs.oasis-open.org/wsfed/federation/v1.2/os/ws-federation-1.2-spec-os.html). This extension adds a new keycloak admin theme, a new client type and a new identity provider type to the admin console. Supports SAML 1.1 and SAML 2.0 tokens.",
-    "maintainers": [
-        "cloudtrust","AlistairDoswald","brat000012001","dbarentine"
-    ],
-    "website": "https://github.com/cloudtrust/keycloak-wsfed",
-    "download": "https://github.com/cloudtrust/keycloak-wsfed/releases"
-}

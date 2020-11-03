@@ -1,0 +1,287 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Keycloak - Extensions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Keycloak is an open source identity and access management solution">
+    <meta name="author" content="Keycloak Team">
+    <meta name="keywords" content="sso,idm,openid connect,saml,kerberos,ldap">
+
+    
+
+    <meta http-equiv='Content-Security-Policy' content="default-src 'none'; style-src 'self'; img-src 'self' https://www.google-analytics.com; font-src 'self'; script-src 'self' https://www.google-analytics.com; base-uri 'none'; form-action 'none';">
+
+    <link href="https://www.keycloak.org/resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://www.keycloak.org/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://www.keycloak.org/resources/css/keycloak.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="https://www.keycloak.org/resources/favicon.ico">
+
+    <script src="https://www.keycloak.org/resources/js/ga.js" type="text/javascript"></script>
+    <script src="https://www.keycloak.org/resources/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script src="https://www.keycloak.org/resources/js/bootstrap.min.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="wrap">
+<header class="main-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-3 col-xs-12 keycloak-logo-div navbar-header">
+                <button type="button" class=" pull-right  navbar-toggle collapsed" data-toggle="collapse" data-target="#mainBtnTarget" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="https://www.keycloak.org/" title="Keycloak" class="keycloak-logo-a">
+                    <img class="keycloak-logo" src="https://www.keycloak.org/resources/images/keycloak_logo_480x108.png" border="0" alt="Keycloak"/>
+                </a>
+            </div>
+            <div id="mainBtnTarget" class="col-md-9 col-sm-9 col-xs-12 collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="https://www.keycloak.org/getting-started">Get Started</a></li>
+                    <li><a href="https://www.keycloak.org/documentation">Docs</a></li>
+                    <li><a href="https://www.keycloak.org/downloads">Downloads</a></li>
+                    <li><a href="https://www.keycloak.org/community">Community</a></li>
+                    <li><a href="https://www.keycloak.org/blog">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="page-section">
+    <div class="container">
+        <h1>Extensions</h1>
+
+            <h2>CAS Login Procotol</h2>
+
+            <p>Implements the CAS SSO protocol according to official specification by adding a new client type to the Keycloak admin console. Supports CAS V1/V2/V3 with JSON or XML responses and attribute mapping. Full server implementation, no external components required.</p>
+
+            <table class="table-extensions">
+                <tr><th>Maintainers</th><td><a href="https://github.com/Doccrazy">Doccrazy</a></td>
+                <tr><th>Website</th><td><a href="https://github.com/Doccrazy/keycloak-protocol-cas">https://github.com/Doccrazy/keycloak-protocol-cas</a></td>
+                <tr><th>Download</th><td><a href="https://github.com/Doccrazy/keycloak-protocol-cas/releases">https://github.com/Doccrazy/keycloak-protocol-cas/releases</a></td>
+                
+                
+            </table>
+            <h2>Client Authorization</h2>
+
+            <p>The purpose of this module is to add authorization capabilities to keycloak for a given client, whether the client itself has the capability to handle authorization or not. When installed, it allows the use of a client's Authorization tab and a specific resource name (Keycloak Client Resource) to define the policies and permissions to grant access to the client. The effect is binary: either the client is allowed access to the client and will recieve a token, or is not and will recieve a 'forbidden' message. Either way, the user is authenticated in keycloak and will have SSO access to the other clients for which they are authorized.</p>
+
+            <table class="table-extensions">
+                <tr><th>Maintainers</th><td><a href="https://github.com/cloudtrust">cloudtrust</a>, <a href="https://github.com/AlistairDoswald">AlistairDoswald</a>, <a href="https://github.com/yelhouti">yelhouti</a></td>
+                <tr><th>Website</th><td><a href="https://github.com/cloudtrust/keycloak-authorization">https://github.com/cloudtrust/keycloak-authorization</a></td>
+                <tr><th>Download</th><td><a href="https://github.com/cloudtrust/keycloak-authorization/releases">https://github.com/cloudtrust/keycloak-authorization/releases</a></td>
+                
+                
+            </table>
+            <h2>Discord Identity Provider</h2>
+
+            <p>Keycloak extension to add discord as an identity provider.</p>
+
+            <table class="table-extensions">
+                <tr><th>Maintainers</th><td><a href="https://github.com/wadahiro">wadahiro</a></td>
+                <tr><th>Website</th><td><a href="https://github.com/wadahiro/keycloak-discord">https://github.com/wadahiro/keycloak-discord</a></td>
+                <tr><th>Download</th><td><a href="https://github.com/wadahiro/keycloak-discord/releases">https://github.com/wadahiro/keycloak-discord/releases</a></td>
+                <tr><th>Documentation</th><td><a href="https://github.com/wadahiro/keycloak-discord/blob/master/README.md">https://github.com/wadahiro/keycloak-discord/blob/master/README.md</a></td>
+                <tr><th>Source</th><td><a href="https://github.com/wadahiro/keycloak-discord">https://github.com/wadahiro/keycloak-discord</a></td>
+            </table>
+            <h2>France Connect Identity Provider</h2>
+
+            <p>Extension to add support for the french administration Identity Provider France Connect</p>
+
+            <table class="table-extensions">
+                <tr><th>Maintainers</th><td><a href="https://github.com/InseeFr">InseeFr</a></td>
+                <tr><th>Website</th><td><a href="https://github.com/InseeFr/Keycloak-FranceConnect">https://github.com/InseeFr/Keycloak-FranceConnect</a></td>
+                <tr><th>Download</th><td><a href="https://github.com/InseeFr/Keycloak-FranceConnect/releases">https://github.com/InseeFr/Keycloak-FranceConnect/releases</a></td>
+                
+                
+            </table>
+            <h2>Full export endpoint</h2>
+
+            <p>Provides an endpoint allowing the full export of a realm, without having to restart keycloak. Secrets are exported in clear.</p>
+
+            <table class="table-extensions">
+                <tr><th>Maintainers</th><td><a href="https://github.com/cloudtrust">cloudtrust</a>, <a href="https://github.com/yelhouti">yelhouti</a></td>
+                <tr><th>Website</th><td><a href="https://github.com/cloudtrust/keycloak-export">https://github.com/cloudtrust/keycloak-export</a></td>
+                <tr><th>Download</th><td><a href="https://github.com/cloudtrust/keycloak-export/releases">https://github.com/cloudtrust/keycloak-export/releases</a></td>
+                
+                
+            </table>
+            <h2>Github SSH key mapper</h2>
+
+            <p>An attribute mapper for the Github Identity Provider. The mapper can fetch the user's SSH keys from github's REST API</p>
+
+            <table class="table-extensions">
+                <tr><th>Maintainers</th><td><a href="https://github.com/mhuin">mhuin</a></td>
+                <tr><th>Website</th><td><a href="https://github.com/mhuin/keycloak-github-ssh-key-attribute-mapper">https://github.com/mhuin/keycloak-github-ssh-key-attribute-mapper</a></td>
+                <tr><th>Download</th><td><a href="https://github.com/mhuin/keycloak-github-ssh-key-attribute-mapper">https://github.com/mhuin/keycloak-github-ssh-key-attribute-mapper</a></td>
+                <tr><th>Documentation</th><td><a href="https://github.com/mhuin/keycloak-github-ssh-key-attribute-mapper/blob/master/README.md">https://github.com/mhuin/keycloak-github-ssh-key-attribute-mapper/blob/master/README.md</a></td>
+                <tr><th>Source</th><td><a href="https://github.com/mhuin/keycloak-github-ssh-key-attribute-mapper">https://github.com/mhuin/keycloak-github-ssh-key-attribute-mapper</a></td>
+            </table>
+            <h2>HiOrg-Server Identity Provider</h2>
+
+            <p>Keycloak extension to add HiOrg-Server as an identity provider</p>
+
+            <table class="table-extensions">
+                <tr><th>Maintainers</th><td><a href="https://github.com/MartinBoehmer">MartinBoehmer</a></td>
+                <tr><th>Website</th><td><a href="https://gitlab.com/MartinBoehmer/keycloak-hiorgserver-idp">https://gitlab.com/MartinBoehmer/keycloak-hiorgserver-idp</a></td>
+                <tr><th>Download</th><td><a href="https://gitlab.com/MartinBoehmer/keycloak-hiorgserver-idp/releases">https://gitlab.com/MartinBoehmer/keycloak-hiorgserver-idp/releases</a></td>
+                <tr><th>Documentation</th><td><a href="https://gitlab.com/MartinBoehmer/keycloak-hiorgserver-idp/blob/master/README.en.md">https://gitlab.com/MartinBoehmer/keycloak-hiorgserver-idp/blob/master/README.en.md</a></td>
+                <tr><th>Source</th><td><a href="https://gitlab.com/MartinBoehmer/keycloak-hiorgserver-idp">https://gitlab.com/MartinBoehmer/keycloak-hiorgserver-idp</a></td>
+            </table>
+            <h2>IBM Security Verify Authenticator Extensions</h2>
+
+            <p>The IBM Security Verify authenticator extensions for Keycloak are first and second factor authenticators that extend Keycloak’s capabilities by supporting various authentication methods such as One-time-passcode, QR code, Push notifications, and FIDO2.</p>
+
+            <table class="table-extensions">
+                <tr><th>Maintainers</th><td><a href="https://github.com/jason-choi1">jason-choi1</a></td>
+                <tr><th>Website</th><td><a href="https://github.com/IBM-Security/verify-keycloak-integration">https://github.com/IBM-Security/verify-keycloak-integration</a></td>
+                <tr><th>Download</th><td><a href="https://github.com/IBM-Security/verify-keycloak-integration/releases">https://github.com/IBM-Security/verify-keycloak-integration/releases</a></td>
+                <tr><th>Documentation</th><td><a href="https://github.com/IBM-Security/verify-keycloak-integration/blob/master/README.md">https://github.com/IBM-Security/verify-keycloak-integration/blob/master/README.md</a></td>
+                <tr><th>Source</th><td><a href="https://github.com/IBM-Security/verify-keycloak-integration">https://github.com/IBM-Security/verify-keycloak-integration</a></td>
+            </table>
+            <h2>JSON Remote Claim Mapper</h2>
+
+            <p>This module adds a new mapper type to retrieve JSON data from a remote HTTP endpoint (e.g. from a REST API) and add it as a claim into tokens or user info.</p>
+
+            <table class="table-extensions">
+                <tr><th>Maintainers</th><td><a href="https://github.com/groupe-sii">groupe-sii</a>, <a href="https://github.com/niroussel">niroussel</a></td>
+                <tr><th>Website</th><td><a href="https://github.com/groupe-sii/keycloak-json-remote-claim">https://github.com/groupe-sii/keycloak-json-remote-claim</a></td>
+                <tr><th>Download</th><td><a href="https://github.com/groupe-sii/keycloak-json-remote-claim">https://github.com/groupe-sii/keycloak-json-remote-claim</a></td>
+                <tr><th>Documentation</th><td><a href="https://github.com/groupe-sii/keycloak-json-remote-claim/blob/master/README.md">https://github.com/groupe-sii/keycloak-json-remote-claim/blob/master/README.md</a></td>
+                <tr><th>Source</th><td><a href="https://github.com/groupe-sii/keycloak-json-remote-claim">https://github.com/groupe-sii/keycloak-json-remote-claim</a></td>
+            </table>
+            <h2>Japanese documentation translation</h2>
+
+            <p>Complete Japanese translation of the original Keycloak documentation.</p>
+
+            <table class="table-extensions">
+                <tr><th>Maintainers</th><td><a href="https://github.com/openstandia">openstandia</a>, <a href="https://github.com/wadahiro">wadahiro</a>, <a href="https://github.com/k-tamura">k-tamura</a></td>
+                <tr><th>Website</th><td><a href="https://keycloak-documentation.openstandia.jp">https://keycloak-documentation.openstandia.jp</a></td>
+                
+                
+                <tr><th>Source</th><td><a href="https://github.com/openstandia/keycloak-documentation-i18n">https://github.com/openstandia/keycloak-documentation-i18n</a></td>
+            </table>
+            <h2>Keycloak Connect GraphQL</h2>
+
+            <p>keycloak-connect-graphql is a comprehensive solution for adding keycloak authentication and authorization to Express.js based GraphQL servers. It is used alongside the keycloak-connect middleware to provide useful auth capabilities at the GraphQL level. Features include Authentication and Role Based Access Control (RBAC) on individual Queries, Mutations and fields, Auth and RBAC on Subscriptions, Declarative @auth and @hasRole directives that can be applied directly in the GraphQL Schema, access to Keycloak token/user information in GraphQL resolver context.</p>
+
+            <table class="table-extensions">
+                <tr><th>Maintainers</th><td><a href="https://github.com/darahayes">darahayes</a>, <a href="https://github.com/wtrocki">wtrocki</a>, <a href="https://github.com/craicoverflow">craicoverflow</a></td>
+                <tr><th>Website</th><td><a href="https://www.npmjs.com/package/keycloak-connect-graphql">https://www.npmjs.com/package/keycloak-connect-graphql</a></td>
+                <tr><th>Download</th><td><a href="https://www.npmjs.com/package/keycloak-connect-graphql">https://www.npmjs.com/package/keycloak-connect-graphql</a></td>
+                <tr><th>Documentation</th><td><a href="https://github.com/aerogear/keycloak-connect-graphql/blob/master/README.md">https://github.com/aerogear/keycloak-connect-graphql/blob/master/README.md</a></td>
+                <tr><th>Source</th><td><a href="https://github.com/aerogear/keycloak-connect-graphql">https://github.com/aerogear/keycloak-connect-graphql</a></td>
+            </table>
+            <h2>Keycloak Metrics SPI</h2>
+
+            <p>Keycloak Metrics SPI adds a Metrics Endpoint to Keycloak. The metrics are returned in Prometheus format and include, among others, JVM performance, Login and response time metrics.</p>
+
+            <table class="table-extensions">
+                <tr><th>Maintainers</th><td><a href="https://github.com/pb82">pb82</a>, <a href="https://github.com/aliok">aliok</a></td>
+                <tr><th>Website</th><td><a href="https://github.com/aerogear/keycloak-metrics-spi">https://github.com/aerogear/keycloak-metrics-spi</a></td>
+                <tr><th>Download</th><td><a href="https://github.com/aerogear/keycloak-metrics-spi/releases">https://github.com/aerogear/keycloak-metrics-spi/releases</a></td>
+                <tr><th>Documentation</th><td><a href="https://github.com/aerogear/keycloak-metrics-spi/blob/master/README.md">https://github.com/aerogear/keycloak-metrics-spi/blob/master/README.md</a></td>
+                <tr><th>Source</th><td><a href="https://github.com/aerogear/keycloak-metrics-spi">https://github.com/aerogear/keycloak-metrics-spi</a></td>
+            </table>
+            <h2>Keycloak PassportJS Auth Strategy</h2>
+
+            <p>Keycloak PassportJS connector that enables the use of multiple realms in the same application (multi-tenancy), integrating with oAuth2/Open ID Connect 'clients' in keycloak, and getting users' data+roles from keycloak automatically via the JSON API. It is aims to be a feature-complete drop-in solution for NodeJS projects using PassportJS for authenitcation and authorization.</p>
+
+            <table class="table-extensions">
+                <tr><th>Maintainers</th><td><a href="https://github.com/exlinc">exlinc</a>, <a href="https://github.com/svarlamov">svarlamov</a></td>
+                <tr><th>Website</th><td><a href="https://github.com/exlinc/keycloak-passport">https://github.com/exlinc/keycloak-passport</a></td>
+                <tr><th>Download</th><td><a href="https://www.npmjs.com/package/@exlinc/keycloak-passport">https://www.npmjs.com/package/@exlinc/keycloak-passport</a></td>
+                <tr><th>Documentation</th><td><a href="https://github.com/exlinc/keycloak-passport/blob/master/README.md">https://github.com/exlinc/keycloak-passport/blob/master/README.md</a></td>
+                <tr><th>Source</th><td><a href="https://github.com/exlinc/keycloak-passport">https://github.com/exlinc/keycloak-passport</a></td>
+            </table>
+            <h2>Keycloak Python Client</h2>
+
+            <p>Python client for keycloak server. Using this client python apps can integrate the authorization and authentication facility from the keycloak server</p>
+
+            <table class="table-extensions">
+                <tr><th>Maintainers</th><td><a href="https://github.com/akhilputhiry">akhilputhiry</a></td>
+                <tr><th>Website</th><td><a href="https://github.com/akhilputhiry/keycloak-client">https://github.com/akhilputhiry/keycloak-client</a></td>
+                <tr><th>Download</th><td><a href="https://pypi.org/project/keycloak/#files">https://pypi.org/project/keycloak/#files</a></td>
+                <tr><th>Documentation</th><td><a href="https://keycloak-client.readthedocs.io">https://keycloak-client.readthedocs.io</a></td>
+                <tr><th>Source</th><td><a href="https://github.com/akhilputhiry/keycloak-client">https://github.com/akhilputhiry/keycloak-client</a></td>
+            </table>
+            <h2>MQTT event listener</h2>
+
+            <p>An event listener for Keycloak, using the MQTT protocol.</p>
+
+            <table class="table-extensions">
+                <tr><th>Maintainers</th><td><a href="https://github.com/mhuin">mhuin</a></td>
+                <tr><th>Website</th><td><a href="https://github.com/mhuin/keycloak-event-listener-mqtt">https://github.com/mhuin/keycloak-event-listener-mqtt</a></td>
+                <tr><th>Download</th><td><a href="https://github.com/mhuin/keycloak-event-listener-mqtt">https://github.com/mhuin/keycloak-event-listener-mqtt</a></td>
+                <tr><th>Documentation</th><td><a href="https://github.com/mhuin/keycloak-event-listener-mqtt/blob/master/README.md">https://github.com/mhuin/keycloak-event-listener-mqtt/blob/master/README.md</a></td>
+                <tr><th>Source</th><td><a href="https://github.com/mhuin/keycloak-event-listener-mqtt">https://github.com/mhuin/keycloak-event-listener-mqtt</a></td>
+            </table>
+            <h2>RabbitMQ event listener</h2>
+
+            <p>An event listener for Keycloak, using the RabbitMQ message broker</p>
+
+            <table class="table-extensions">
+                <tr><th>Maintainers</th><td><a href="https://github.com/aznamier">aznamier</a></td>
+                <tr><th>Website</th><td><a href="https://github.com/aznamier/keycloak-event-listener-rabbitmq">https://github.com/aznamier/keycloak-event-listener-rabbitmq</a></td>
+                <tr><th>Download</th><td><a href="https://github.com/aznamier/keycloak-event-listener-rabbitmq">https://github.com/aznamier/keycloak-event-listener-rabbitmq</a></td>
+                <tr><th>Documentation</th><td><a href="https://github.com/aznamier/keycloak-event-listener-rabbitmq/blob/master/README.md">https://github.com/aznamier/keycloak-event-listener-rabbitmq/blob/master/README.md</a></td>
+                <tr><th>Source</th><td><a href="https://github.com/aznamier/keycloak-event-listener-rabbitmq">https://github.com/aznamier/keycloak-event-listener-rabbitmq</a></td>
+            </table>
+            <h2>WS-Federation protocol</h2>
+
+            <p>Implementation of the WS-Federation passive requestor model according to the official specification (v1.2, see http://docs.oasis-open.org/wsfed/federation/v1.2/os/ws-federation-1.2-spec-os.html). This extension adds a new keycloak admin theme, a new client type and a new identity provider type to the admin console. Supports SAML 1.1 and SAML 2.0 tokens.</p>
+
+            <table class="table-extensions">
+                <tr><th>Maintainers</th><td><a href="https://github.com/cloudtrust">cloudtrust</a>, <a href="https://github.com/AlistairDoswald">AlistairDoswald</a>, <a href="https://github.com/brat000012001">brat000012001</a>, <a href="https://github.com/dbarentine">dbarentine</a></td>
+                <tr><th>Website</th><td><a href="https://github.com/cloudtrust/keycloak-wsfed">https://github.com/cloudtrust/keycloak-wsfed</a></td>
+                <tr><th>Download</th><td><a href="https://github.com/cloudtrust/keycloak-wsfed/releases">https://github.com/cloudtrust/keycloak-wsfed/releases</a></td>
+                
+                
+            </table>
+            <h2>keycloak-config-cli - Configuration as Code for Keycloak realms</h2>
+
+            <p>keycloak-config-cli is a Keycloak utility to ensure the desired configuration state for a realm based on a JSON file. The format of the JSON file based on the export realm format. Store and handle the configuration files inside git just like normal code. A Keycloak restart isn't required to apply the configuration.</p>
+
+            <table class="table-extensions">
+                <tr><th>Maintainers</th><td><a href="https://github.com/adorsys">adorsys</a>, <a href="https://github.com/jkroepke">jkroepke</a></td>
+                <tr><th>Website</th><td><a href="https://github.com/adorsys/keycloak-config-cli/">https://github.com/adorsys/keycloak-config-cli/</a></td>
+                <tr><th>Download</th><td><a href="https://github.com/adorsys/keycloak-config-cli/releases">https://github.com/adorsys/keycloak-config-cli/releases</a></td>
+                <tr><th>Documentation</th><td><a href="https://github.com/adorsys/keycloak-config-cli/blob/master/DOCUMENTATION.md">https://github.com/adorsys/keycloak-config-cli/blob/master/DOCUMENTATION.md</a></td>
+                <tr><th>Source</th><td><a href="https://github.com/adorsys/keycloak-config-cli.git">https://github.com/adorsys/keycloak-config-cli.git</a></td>
+            </table>
+            <h2>privacyIDEA two factor authentication</h2>
+
+            <p>This extenion adds 2nd factors to keycloak, that are authenticated against your central privacyIDEA system. privacyIDEA is a two factor management system that can manage a lot of different token types for your users.  Possible 2nd factors are e.g. HOTP, TOTP smartphone apps and hardware tokens, Email, SMS, Yubikeys, Nitrokeys, Push Token... privacyIDEA is completely Open Source licensed under the AGPLv3.</p>
+
+            <table class="table-extensions">
+                <tr><th>Maintainers</th><td><a href="https://github.com/privacyidea">privacyidea</a></td>
+                <tr><th>Website</th><td><a href="https://privacyidea.org">https://privacyidea.org</a></td>
+                <tr><th>Download</th><td><a href="https://github.com/privacyidea/keycloak-provider/releases">https://github.com/privacyidea/keycloak-provider/releases</a></td>
+                <tr><th>Documentation</th><td><a href="https://community.privacyidea.org/t/how-to-use-keycloak-with-privacyidea/1132">https://community.privacyidea.org/t/how-to-use-keycloak-with-privacyidea/1132</a></td>
+                <tr><th>Source</th><td><a href="https://github.com/privacyidea/keycloak-provider">https://github.com/privacyidea/keycloak-provider</a></td>
+            </table>
+    </div>
+</div>
+
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-9 col-xs-12">
+                    <a href="http://www.redhat.com/" target="_blank">
+                        <img alt="redhatlogo-white" src="https://www.keycloak.org/resources/images/redhatlogo-white.png" width="130">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
