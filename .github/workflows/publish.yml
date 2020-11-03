@@ -31,3 +31,4 @@ jobs:
         BRANCH: master
         FOLDER: target/web
         CLEAN: true
+        CLEAN_EXCLUDE: '["docs", "docs-api"]'
