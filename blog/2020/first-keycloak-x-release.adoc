@@ -1,0 +1,356 @@
+:title: Introducing Keycloak.X Distribution
+:date: 2020-11-10
+:publish: true
+:author: Keycloak Team
+
+The world is changing fast and IT has been an important part of the engine. As companies start moving their infrastructure to the cloud, security becomes a key factor to make this journey a success.
+
+We are proud to announce that Keycloak is now running on top of Quarkus, a Kubernetes and Cloud native Stack using the best of breed Java libraries and standards, to give to our users a cloud-friendly distribution with a strong focus on usability, scalability, and optimized for running in the hybrid cloud.
+
+Also known as Keycloak.X, this new distribution format provides:
+
+* Reduced startup time
+* Lower memory footprint
+* Container-First Approach
+* Better Developer Experience
+* Focus on Usability
+
+== Why Quarkus ?
+
+Keycloak is basically a Java application, currently running on top of the Wildfly (JEE) Application Server. So far, that is how we have been releasing the Keycloak Server for general use.
+
+While Wildfly is probably the most optimized, easy-to-use, and best performing JEE Application Server, the requirements we have now for running in a more cloud-native fashion push us forward, where Quarkus, being a Java and Container-First stack, provides the more natural path for bringing to Keycloak all the capabilities that make Quarkus the perfect fit for running in the hybrid cloud with a focus on platforms like Kubernetes and Openshift.
+
+For more information on Quarkus, check their web site at https://quarkus.io/.
+
+=== Focus on Usabillity
+
+On Quarkus, Keycloak is a regular Java application with a much simpler stack if compared to the Wildfly distribution.
+
+With the new distribution users should expect a better experience when configuring and starting the server as well as when performing other common operations.
+
+The introduction of a rich Command-Line Interface makes it a lot easier to install and use Keycloak.
+
+=== Smaller
+
+The distribution is simpler with only a few directories, and the total size of the distribution is almost half the size of the current WildFly based distribution.
+
+By leveraging Quarkus, Keycloak has significantly reduced server startup time, memory footprint (low RSS), as well as better runtime performance through Vert.x.
+
+All these aspects are important when deploying in the hybrid cloud where resource usage should be optimized to provide the optimal runtime environment as well as reduced costs.
+
+=== Container-First and Cloud-Native Distribution
+
+In conjunction with the Keycloak Operator, deploying Keycloak to the hybrid cloud should be easier.
+
+The same goes for spinning up a simple container.
+
+=== Developer Experience
+
+Quarkus provides a rich ecosystem for developers with an impressive number of integrations to different libraries.
+
+Flexibility is probably one of the main characteristics of Keycloak and with Quarkus we expect to provide a much better experience for developers.
+
+== Installation
+
+Download and extract the *Keycloak.X* distribution zip or tar.gz file from https://www.keycloak.org/downloads[https://www.keycloak.org/downloads].
+
+=== Directory Structure
+
+The `bin` directory is where all binaries are located, basically the new Keycloak CLI and a few other utilities.
+
+The `conf` directory, as the name suggests, is where configuration files are located. You may be using the `keycloak.properties` file within this directory to configure the server or not. More on that you’ll see later when we talk about configuration in more detail.
+
+The `providers` directory is where you should deploy your JAR files with your custom providers or themes jar.
+
+== Command-Line Interface
+
+One of the main requirements we have is to improve user experience when using the server for the very first time as well as in the long run when the server is running in production.
+
+Common operations that people usually perform on the server are easier to perform and configuration should be simpler by providing good defaults and requiring the minimal set of options to have a running server.
+
+The Keycloak CLI is a tool that you should now use to start and change configuration of the server. As any other CLI, it is self-descriptive with good documentation around its usage.
+
+By running:
+
+[source,bash]
+----
+kc.sh --help
+----
+
+You are now able to look at the different actions you can perform, such as starting the server or exporting a realm, as well as go through the different configuration options you can set for each supported command.
+
+We’re always looking for improvements in the CLI. Please, feel free to contact us with any suggestion you think that might help.
+
+== Starting the Server
+
+As previously mentioned, the default configuration imposes some conditions on how the server can be started.
+
+One of the main conditions to successfully start the server is to configure HTTPS.
+
+However, for development purposes Keycloak can be started in development mode.
+
+For now, this mode is basically a configuration profile that allows you to run the server without HTTPS using local caches.
+
+[source,bash]
+----
+kc.sh start-dev
+----
+
+After executing the command above, the server should be available at http://localhost:8080/.
+
+In the future, this mode will also lax on some configuration policies for realms that otherwise would not be allowed when running in production. For instance, using wildcards as valid redirect URIs for your clients.
+
+== Configuring the Server
+
+Considering how critical an IAM solution is and the impact of misconfiguration on the overall security of the deployment, Keycloak is now distributed with the minimal configuration possible with a secure by default policy in mind.
+
+The idea is to provide the bare minimum configuration options to run the server while imposing some key constraints on how the configuration should be set before running in production.
+
+This is one of the main areas we are improving, and constantly trying to improve, where boilerplate configuration should be avoided through a small set of configuration options or with good defaults.
+
+The different configuration options can now be set using a properties file, environment variables or as arguments through the Keycloak CLI.
+
+You can easily check the available configuration options by running the `help` command.
+
+For more details about the configuration, check the https://github.com/keycloak/keycloak-community/blob/master/design/keycloak.x/configuration.md[Configuration Design] document.
+
+=== Configuration Categories
+
+Configuration options are organized in two categories:
+
+* Those that can be set at *runtime* when starting the server
+* Those that can only be set when *configuring* the server through the `config` command
+
+As an example, if you want to change the HTTP port to `8180`, you may use:
+
+[source,bash]
+----
+kc.sh --http-port=8180
+----
+
+However, for changing the database, you would need to first run the `config` command before starting the server:
+
+[source,bash]
+----
+kc.sh config --db=postgres --db-username=******* --db-password=*******
+Kc.sh # then start the server
+----
+
+Basically, any configuration option you can set when configuring the server can also be set when starting the server, but the other way around is not true, and the database configuration is an example of that.
+
+Check the `help` option to check which properties can be set for each available command.
+
+=== HTTPS
+
+In the real world, you would configure a valid key pair and certificate, but you can use the command below to generate a self-signed certificate to understand how to
+setup HTTPS.
+
+Just make sure to execute the following command at the root directory of the distribution:
+
+[source,bash]
+----
+keytool -genkeypair -storepass password -storetype PKCS12 -keyalg RSA -keysize 2048 -dname "CN=server" -alias server -ext "SAN:c=DNS:localhost,IP:127.0.0.1" -keystore conf/server.keystore
+----
+
+The command above should create a `server.keystore` file inside the `conf` directory. By default, Keycloak will load the keys and certificates from this keystore if none was set.
+
+After that, you can run the server as follows:
+
+
+[source,bash]
+----
+kc.sh
+----
+
+=== Database
+
+Database configuration is much simpler. You are able to change the database with only a few simple command-line arguments:
+
+[source,bash]
+----
+kc.sh config --db=postgres && kc.sh --db-username=**** --db-password=****
+----
+
+For each database we provide good defaults for JDBC URL, driver, database name, and dialect. So you don’t need to provide these options if you are happy with the defaults.
+
+In the example above, the server connects to a PostgreSQL service running on localhost where the database name is `keycloak`.
+
+Of course, when running in production you usually need to customize the JDBC URL and other parameters , so you can start the server as follows:
+
+
+[source,bash]
+----
+kc.sh --db-url=jdbc:postgresql://<host>/<database> \
+      --db-username=****** \
+      --db-password=******
+----
+
+Or still rely on the default JDBC URL and set both host and database as follows:
+
+
+[source,bash]
+----
+kc.sh -Dkc.db.url.host=<host> \
+      -Dkc.db.url.database=<database>
+      --db-username=******
+      --db-password=******
+----
+
+=== Clustering
+
+For the time being we are still using Infinispan and JGroups for clustering and HA deployments.
+
+However, the configuration is now using Infinispan’s native configuration as opposed to using an abstraction as in the Wildfly Infinispan Subsystem. That should give much more flexibility in terms of configuration, support, as well as documentation.
+
+The configuration is also simplified and you should get good defaults for the different platforms where the server is being deployed.
+
+By default, clustering is enabled and you are ready to build a Keycloak cluster using the default configuration.
+
+The default configuration is located in the `conf` directory, the file name is `cluster-default.xml`.
+
+In the same directory, you also have a `cluster-local.xml` file which configures all caches as local, no clustering. To use this configuration you run the following command:
+
+
+[source,bash]
+----
+kc.sh --cluster=local
+----
+
+You can define your own cache configuration by just creating a file in the `conf` directory with the `cluster-` prefix, just like `cluster-local.xml` and `cluster-default` files that we ship with the distribution.
+
+We also provide some good defaults for specific platforms such as Kubernetes and EC2. For instance, to run a cluster in Kubernetes you could run the following command:
+
+[source,bash]
+----
+kc.sh -Djgroups.dns.query=<jgroups-ping-service>.<namespace>.<cluster-domain-suffix> --cluster-stack=kubernetes
+----
+
+The default configuration for these platforms is based on the defaults provided by Infinispan.
+
+In the example above, the default configuration for Kubernetes is going to be based on UDP for node communication and DNS_PING for node discovery. Any parameter you can use to customize the default configuration can be obtained from Infinispan documentation.
+
+=== Custom Providers and Themes
+
+The JAR files for custom providers and themes should be placed in the `providers` directory.
+
+However, in order to benefit from optimizations when installing custom providers, you should first run the `config` command
+before starting the server:
+
+[source,bash]
+----
+kc.sh config
+kc.sh # then start the server
+----
+
+Basically, SPI implementations are resolved when configuring the server hence saving startup time and memory during startup. Once
+you run the `config` command to install your custom providers, they would be statically linked into the server.
+
+== Running in a Container
+
+To run Keycloak using Docker, you can use the following command:
+
+[source,bash]
+----
+docker run --name keycloak -p 8080:8080  \
+    -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=change_me \
+    quay.io/keycloak/keycloak-x \
+    start-dev
+----
+
+As expected, the container will run in development mode.
+
+You can run the server in the same manner as when using the Keycloak.X distribution by passing any command-line argument.
+
+To configure the container with any additional configuration that you want to persist into the server image, you can use the `--auto-config` option as follows:
+
+[source,bash]
+----
+docker run --name keycloak -p 8080:8080 \
+    -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=change_me \
+    quay.io/keycloak/keycloak-x \
+    --auto-config \
+    --db=postgres -Dkc.db.url.host=$DB_HOST --db-username=keycloak --db-password=change_me --http-enabled=true
+----
+
+The command above should be enough to run a server using a PostgreSQL database listening on a given `DB_HOST`. Once the container is created, subsequent restarts will never go through the configuration phase again but just start the server with the configuration previously defined.
+
+The recommendation, however,  is to always create your own image based on this image. By doing that, you are able to perform more customizations, such as deploying custom providers or themes, as well as improve the startup time by eliminating the configuration step.
+
+For more details and examples, see https://github.com/keycloak/keycloak-containers/tree/master/server-x[https://github.com/keycloak/keycloak-containers/tree/master/server-x].
+
+== Benchmarking
+
+Here are a few numbers for a very simple comparison between Keycloak running on Quarkus and Wildfly.
+
+Both distributions are running using OpenJDK 11, a PostgreSQL Database, and numbers are the average of 10 consecutive runs for each distribution.
+
+The test scenario involves running the server for the very first time as well as when the database is already initialized.
+
+|===
+^|*Distribution* 2+^|*Startup Time*(s) 2+^|*Memory Footprint*(RSS/MB)
+|
+^|*First*
+^|*Second+*
+^|*First*
+^|*Second+*
+^|Wildfly
+^|12.1
+^|8.1
+^|646
+^|512
+^|*Quarkus*
+^|*7.6*
+^|*3.1*
+^|*428*
+^|*320*
+|
+|===
+
+The numbers should speak by themselves and people should expect these numbers improving on each Keycloak.X release.
+
+However, it is not only about cutting down MBs but how to optimize memory usage. By running both servers using a 64MB heap, you should notice that when running on Wildfly you have a lot of garbage collection that eventually may cause the server to fail to start. While with Keycloak.X using the same heap size you are able to have a running server. Of course, using this heap size is not realistic depending on your use case but it gives a good idea on what you should expect from now on.
+
+Regarding performance, in this first release our main focus was startup time and memory consumption. Runtime performance is a WIP and the results are promising due to the fact that Keycloak.X runs on top of Vert.X.
+
+In general, we are still just on the beginning of the journey.  Once Keycloak has the native distribution on Quarkus, we can expect even faster startup times, smaller memory consumption and overaly better performance with less resources.
+
+== Roadmap
+
+This is only the beginning of our journey to provide a more cloud friendly experience for those using Keycloak.
+
+Keycloak.X is a preview distribution and we are constantly improving it with the help of our community until it becomes our main distribution. We appreciate any feedback during this journey.
+
+There are a lot of important work being done that complements Keycloak.X distribution such as:
+
+* Zero-Downtime Upgrade
+* Native Image Support
+* Improve Developer Experience
+* More documentation
+
+We would like to ask for your support and feedback to keep improving your experience on using Keycloak.
+
+== Thanks to the Community
+
+This was a result of a combined effort by the community and as such we would like to highlight and thank for all contributions we had.
+
+A special thanks to:
+
+* Quarkus Team
+** Stuart Douglas
+** Sanne Grinovero
+** Guillaume Smet
+
+* Backbase
+** Dmitry Telegin (https://github.com/dteleguin)
+** Matthew Conners (https://github.com/bb-matthewc)
+
+And everybody that helped with the https://github.com/keycloak/keycloak-community/blob/master/design/keycloak.x/configuration.md[Configuration Design Document].
+
+== References
+
+* https://github.com/keycloak/keycloak-community/blob/master/design/keycloak.x/configuration.md[Configuration Design]
+* https://github.com/keycloak/keycloak-containers/tree/master/server-x[Container]
+* https://www.keycloak.org/[Keycloak Site]
+* https://quarkus.io/[Quarkus Site]
+* https://quarkus.io/guides/performance-measure[Quarkus Measuring Performance]
