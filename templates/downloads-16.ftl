@@ -171,7 +171,26 @@
                             <tr>
                                 <td></td>
                                 <td>
+                                    <a href="https://www.npmjs.com/package/keycloak-js/v/${version.version}" target="_blank">
+                                        <i class="fa fa-link"></i> NPM
+                                    </a>
+                                    <span class="space"></span>
                                     <@download category="adapter" label="js" file="adapters/keycloak-oidc/keycloak-js-adapter-dist-${version.version}" tar=true />
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Node.js</td>
+                    <td>
+                        <table class="table-downloads-inner">
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <a href="https://www.npmjs.com/package/keycloak-connect/v/${version.version}" target="_blank">
+                                        <i class="fa fa-link"></i> NPM
+                                    </a>
                                 </td>
                             </tr>
                         </table>
