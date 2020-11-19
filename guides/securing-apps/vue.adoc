@@ -38,15 +38,6 @@ npm install
 
 include::../includes/getting-started/start-keycloak-localhost.adoc[]
 
-## Standard Auth Flow
-
-Sequence:
-Delegation of Authentication/Authorization i.e core principle behind OpenID-Connect
-
-image::{guideImages}/vue-auth-flow.png[Vue App Auth Sequence]
-
-Behind the scene, the client is sending a post request to the Keycloak API endpoint with credentials. After validation & verification returns a promise object & redirects to client applications. Access token can be retrieved from the return object. Which can be passed to backend resource for accessing it.
-
 # Keycloak Setup & Client Configuration:
 
 Creating a realm: “keycloak-demo” as shown in the following steps:
