@@ -86,13 +86,6 @@
             library out there.
         </p>
 
-
-        <h3>Gatekeeper</h3>
-        
-        <p>
-            You can also opt to use a proxy to secure your applications which removes the need to modify your application at all.
-        </p>
-
         <hr class="divider"/>
 
         <h2>Admin Console</h2>

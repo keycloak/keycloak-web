@@ -50,24 +50,6 @@
     </tbody>
 </table>
 
-<h2>Gatekeeper</h2>
-
-<p>Keycloak Gatekeeper has moved to the Louketo Proxy project.</p>
-
-<table class="table table-bordered table-striped">
-    <tbody>
-    <tr>
-        <td>Louketo Proxy</td>
-        <td>
-            <a href="https://github.com/louketo/louketo-proxy/releases" target="_blank">
-                <i class="fa fa-link"></i>
-                GitHub Releases
-            </a>
-        </td>
-    </tr>
-    </tbody>
-</table>
-
 <h2>Examples</h2>
 
 <table class="table table-bordered table-striped">
