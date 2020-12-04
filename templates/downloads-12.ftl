@@ -37,31 +37,6 @@
     </tbody>
 </table>
 
-<h2>Gatekeeper</h2>
-
-<table class="table table-bordered table-striped">
-<tbody>
-<tr>
-    <td>Linux</td>
-    <td>
-        <@download category="gatekeeper" label="linux" file="gatekeeper/keycloak-gatekeeper-linux-amd64" zip=false />
-    </td>
-</tr>
-<tr>
-    <td>Windows</td>
-    <td>
-        <@download category="gatekeeper" label="linux" file="gatekeeper/keycloak-gatekeeper-windows-amd64" zip=false />
-    </td>
-</tr>
-<tr>
-    <td>Darwin</td>
-    <td>
-        <@download category="gatekeeper" label="linux" file="gatekeeper/keycloak-gatekeeper-darwin-amd64" zip=false />
-    </td>
-</tr>
-</tbody>
-</table>
-
 <h2>Examples</h2>
 
 <table class="table table-bordered table-striped">
