@@ -108,7 +108,7 @@
                                     ${version.wildflyVersionAdapterDeprecated} <b>*DEPRECATED*</b>
                                 </td>
                                 <td>
-                                    <@download category="adapter" label="wildfly" file="keycloak-oidc/keycloak-wildfly-adapter-dist-${version.version}" tar=true />
+                                    <@download category="adapter" label="wildfly" file="keycloak-wildfly-adapter-dist-${version.version}" tar=true />
                                 </td>
                             </tr>
                         </table>
@@ -121,13 +121,13 @@
                             <tr>
                                 <td>7</td>
                                 <td>
-                                    <@download category="adapter" label="eap7" file="keycloak-oidc/keycloak-wildfly-adapter-dist-${version.version}" tar=true />
+                                    <@download category="adapter" label="eap7" file="keycloak-wildfly-adapter-dist-${version.version}" tar=true />
                                 </td>
                             </tr>
                             <tr>
                                 <td>6</td>
                                 <td>
-                                    <@download category="adapter" label="eap6" file="keycloak-oidc/keycloak-eap6-adapter-dist-${version.version}" tar=true />
+                                    <@download category="adapter" label="eap6" file="keycloak-eap6-adapter-dist-${version.version}" tar=true />
                                 </td>
                             </tr>
                         </table>
@@ -140,7 +140,7 @@
                             <tr>
                                 <td>6.2, 6.3</td>
                                 <td>
-                                    <@download category="adapter" label="fuse" file="keycloak-oidc/keycloak-fuse-adapter-dist-${version.version}" tar=true />
+                                    <@download category="adapter" label="fuse" file="keycloak-fuse-adapter-dist-${version.version}" tar=true />
                                 </td>
                             </tr>
                         </table>
@@ -157,7 +157,7 @@
                                         <i class="fa fa-link"></i> NPM
                                     </a>
                                     <span class="space"></span>
-                                    <@download category="adapter" label="js" file="keycloak-oidc/keycloak-js-adapter-dist-${version.version}" tar=true />
+                                    <@download category="adapter" label="js" file="keycloak-js-adapter-dist-${version.version}" tar=true />
                                 </td>
                             </tr>
                         </table>
@@ -185,19 +185,19 @@
                             <tr>
                                 <td>9.4</td>
                                 <td>
-                                    <@download category="adapter" label="jetty9.4" file="keycloak-oidc/keycloak-jetty94-adapter-dist-${version.version}" tar=true />
+                                    <@download category="adapter" label="jetty9.4" file="keycloak-jetty94-adapter-dist-${version.version}" tar=true />
                                 </td>
                             </tr>
                             <tr>
                                 <td>9.3</td>
                                 <td>
-                                    <@download category="adapter" label="jetty9.3" file="keycloak-oidc/keycloak-jetty93-adapter-dist-${version.version}" tar=true />
+                                    <@download category="adapter" label="jetty9.3" file="keycloak-jetty93-adapter-dist-${version.version}" tar=true />
                                 </td>
                             </tr>
                             <tr>
                                 <td>9.2</td>
                                 <td>
-                                    <@download category="adapter" label="jetty9.2" file="keycloak-oidc/keycloak-jetty92-adapter-dist-${version.version}" tar=true />
+                                    <@download category="adapter" label="jetty9.2" file="keycloak-jetty92-adapter-dist-${version.version}" tar=true />
                                 </td>
                             </tr>
                         </table>
@@ -210,13 +210,13 @@
                             <tr>
                                 <td>8, 9</td>
                                 <td>
-                                    <@download category="adapter" label="tomcat" file="keycloak-oidc/keycloak-tomcat-adapter-dist-${version.version}" tar=true />
+                                    <@download category="adapter" label="tomcat" file="keycloak-tomcat-adapter-dist-${version.version}" tar=true />
                                 </td>
                             </tr>
                             <tr>
                                 <td>7</td>
                                 <td>
-                                    <@download category="adapter" label="tomcat7" file="keycloak-oidc/keycloak-tomcat7-adapter-dist-${version.version}" tar=true />
+                                    <@download category="adapter" label="tomcat7" file="keycloak-tomcat7-adapter-dist-${version.version}" tar=true />
                                 </td>
                             </tr>
                         </table>
