@@ -1,5 +1,5 @@
 :title: Introducing Keycloak.X Distribution
-:date: 2020-11-10
+:date: 2020-12-16
 :publish: true
 :author: Keycloak Team
 
