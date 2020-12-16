@@ -1,18 +1,18 @@
 <#macro download category label file tar=true zip=true>
-<#if zip>
-<a onclick="dl('${category}', '${label}');" href="https://downloads.jboss.org/keycloak/${version.version}/${file}.zip" target="_blank">
+<#if zip> 
+<a onclick="dl('${category}', '${label}');" href="https://github.com/keycloak/keycloak/releases/download/${version.version}/${file}.zip" target="_blank">
     <i class="fa fa-download" aria-hidden="true"></i>
     ZIP
 </a>
-(<a href="https://downloads.jboss.org/keycloak/${version.version}/${file}.zip.sha1" target="_blank">sha1</a>)
+(<a href="https://github.com/keycloak/keycloak/releases/download/${version.version}/${file}.zip.sha1" target="_blank">sha1</a>)
 <span class="space"></span>
 </#if>
 <#if tar>
-<a onclick="dl('${category}', '${label}');" href="https://downloads.jboss.org/keycloak/${version.version}/${file}.tar.gz" target="_blank">
+<a onclick="dl('${category}', '${label}');" href="https://github.com/keycloak/keycloak/releases/download/${version.version}/${file}.tar.gz" target="_blank">
     <i class="fa fa-download" aria-hidden="true"></i>
     TAR.GZ
 </a>
-(<a href="https://downloads.jboss.org/keycloak/${version.version}/${file}.tar.gz.sha1" target="_blank">sha1</a>)
+(<a href="https://github.com/keycloak/keycloak/releases/download/${version.version}/${file}.tar.gz.sha1" target="_blank">sha1</a>)
 </#if>
 </#macro>
 
@@ -51,24 +51,6 @@
             <a href="https://operatorhub.io/operator/keycloak-operator" target="_blank">
                 <i class="fa fa-link"></i>
                 OperatorHub
-            </a>
-        </td>
-    </tr>
-    </tbody>
-</table>
-
-<h2>Gatekeeper</h2>
-
-<p>Keycloak Gatekeeper has moved to the Louketo Proxy project.</p>
-
-<table class="table table-bordered table-striped">
-    <tbody>
-    <tr>
-        <td>Louketo Proxy</td>
-        <td>
-            <a href="https://github.com/louketo/louketo-proxy/releases" target="_blank">
-                <i class="fa fa-link"></i>
-                GitHub Releases
             </a>
         </td>
     </tr>
@@ -126,7 +108,7 @@
                                     ${version.wildflyVersionAdapterDeprecated} <b>*DEPRECATED*</b>
                                 </td>
                                 <td>
-                                    <@download category="adapter" label="wildfly" file="adapters/keycloak-oidc/keycloak-wildfly-adapter-dist-${version.version}" tar=true />
+                                    <@download category="adapter" label="wildfly" file="keycloak-oidc/keycloak-wildfly-adapter-dist-${version.version}" tar=true />
                                 </td>
                             </tr>
                         </table>
@@ -139,13 +121,13 @@
                             <tr>
                                 <td>7</td>
                                 <td>
-                                    <@download category="adapter" label="eap7" file="adapters/keycloak-oidc/keycloak-wildfly-adapter-dist-${version.version}" tar=true />
+                                    <@download category="adapter" label="eap7" file="keycloak-oidc/keycloak-wildfly-adapter-dist-${version.version}" tar=true />
                                 </td>
                             </tr>
                             <tr>
                                 <td>6</td>
                                 <td>
-                                    <@download category="adapter" label="eap6" file="adapters/keycloak-oidc/keycloak-eap6-adapter-dist-${version.version}" tar=true />
+                                    <@download category="adapter" label="eap6" file="keycloak-oidc/keycloak-eap6-adapter-dist-${version.version}" tar=true />
                                 </td>
                             </tr>
                         </table>
@@ -158,7 +140,7 @@
                             <tr>
                                 <td>6.2, 6.3</td>
                                 <td>
-                                    <@download category="adapter" label="fuse" file="adapters/keycloak-oidc/keycloak-fuse-adapter-dist-${version.version}" tar=true />
+                                    <@download category="adapter" label="fuse" file="keycloak-oidc/keycloak-fuse-adapter-dist-${version.version}" tar=true />
                                 </td>
                             </tr>
                         </table>
@@ -175,7 +157,7 @@
                                         <i class="fa fa-link"></i> NPM
                                     </a>
                                     <span class="space"></span>
-                                    <@download category="adapter" label="js" file="adapters/keycloak-oidc/keycloak-js-adapter-dist-${version.version}" tar=true />
+                                    <@download category="adapter" label="js" file="keycloak-oidc/keycloak-js-adapter-dist-${version.version}" tar=true />
                                 </td>
                             </tr>
                         </table>
@@ -203,19 +185,19 @@
                             <tr>
                                 <td>9.4</td>
                                 <td>
-                                    <@download category="adapter" label="jetty9.4" file="adapters/keycloak-oidc/keycloak-jetty94-adapter-dist-${version.version}" tar=true />
+                                    <@download category="adapter" label="jetty9.4" file="keycloak-oidc/keycloak-jetty94-adapter-dist-${version.version}" tar=true />
                                 </td>
                             </tr>
                             <tr>
                                 <td>9.3</td>
                                 <td>
-                                    <@download category="adapter" label="jetty9.3" file="adapters/keycloak-oidc/keycloak-jetty93-adapter-dist-${version.version}" tar=true />
+                                    <@download category="adapter" label="jetty9.3" file="keycloak-oidc/keycloak-jetty93-adapter-dist-${version.version}" tar=true />
                                 </td>
                             </tr>
                             <tr>
                                 <td>9.2</td>
                                 <td>
-                                    <@download category="adapter" label="jetty9.2" file="adapters/keycloak-oidc/keycloak-jetty92-adapter-dist-${version.version}" tar=true />
+                                    <@download category="adapter" label="jetty9.2" file="keycloak-oidc/keycloak-jetty92-adapter-dist-${version.version}" tar=true />
                                 </td>
                             </tr>
                         </table>
@@ -228,13 +210,13 @@
                             <tr>
                                 <td>8, 9</td>
                                 <td>
-                                    <@download category="adapter" label="tomcat" file="adapters/keycloak-oidc/keycloak-tomcat-adapter-dist-${version.version}" tar=true />
+                                    <@download category="adapter" label="tomcat" file="keycloak-oidc/keycloak-tomcat-adapter-dist-${version.version}" tar=true />
                                 </td>
                             </tr>
                             <tr>
                                 <td>7</td>
                                 <td>
-                                    <@download category="adapter" label="tomcat7" file="adapters/keycloak-oidc/keycloak-tomcat7-adapter-dist-${version.version}" tar=true />
+                                    <@download category="adapter" label="tomcat7" file="keycloak-oidc/keycloak-tomcat7-adapter-dist-${version.version}" tar=true />
                                 </td>
                             </tr>
                         </table>
@@ -257,7 +239,7 @@
                                     ${version.wildflyVersionAdapterDeprecated} <b>*DEPRECATED*</b>
                                 </td>
                                 <td>
-                                    <@download category="adapter-saml" label="wildfly" file="adapters/saml/keycloak-saml-wildfly-adapter-dist-${version.version}" tar=true />
+                                    <@download category="adapter-saml" label="wildfly" file="keycloak-saml-wildfly-adapter-dist-${version.version}" tar=true />
                                 </td>
                             </tr>
                         </table>
@@ -270,13 +252,13 @@
                             <tr>
                                 <td>7</td>
                                 <td>
-                                    <@download category="adapter-saml" label="eap7" file="adapters/saml/keycloak-saml-wildfly-adapter-dist-${version.version}" tar=true />
+                                    <@download category="adapter-saml" label="eap7" file="keycloak-saml-wildfly-adapter-dist-${version.version}" tar=true />
                                 </td>
                             </tr>
                             <tr>
                                 <td>6</td>
                                 <td>
-                                    <@download category="adapter-saml" label="eap6" file="adapters/saml/keycloak-saml-eap6-adapter-dist-${version.version}" tar=true />
+                                    <@download category="adapter-saml" label="eap6" file="keycloak-saml-eap6-adapter-dist-${version.version}" tar=true />
                                 </td>
                             </tr>
                         </table>
@@ -289,19 +271,19 @@
                             <tr>
                                 <td>9.4</td>
                                 <td>
-                                    <@download category="adapter-saml" label="jetty9.4" file="adapters/saml/keycloak-saml-jetty94-adapter-dist-${version.version}" tar=true />
+                                    <@download category="adapter-saml" label="jetty9.4" file="keycloak-saml-jetty94-adapter-dist-${version.version}" tar=true />
                                 </td>
                             </tr>
                             <tr>
                                 <td>9.3</td>
                                 <td>
-                                    <@download category="adapter-saml" label="jetty9.3" file="adapters/saml/keycloak-saml-jetty93-adapter-dist-${version.version}" tar=true />
+                                    <@download category="adapter-saml" label="jetty9.3" file="keycloak-saml-jetty93-adapter-dist-${version.version}" tar=true />
                                 </td>
                             </tr>
                             <tr>
                                 <td>9.2</td>
                                 <td>
-                                    <@download category="adapter-saml" label="jetty9.2" file="adapters/saml/keycloak-saml-jetty92-adapter-dist-${version.version}" tar=true />
+                                    <@download category="adapter-saml" label="jetty9.2" file="keycloak-saml-jetty92-adapter-dist-${version.version}" tar=true />
                                 </td>
                             </tr>
                         </table>
@@ -314,13 +296,13 @@
                             <tr>
                                 <td>8, 9</td>
                                 <td>
-                                    <@download category="adapter-saml" label="tomcat" file="adapters/saml/keycloak-saml-tomcat-adapter-dist-${version.version}" tar=true />
+                                    <@download category="adapter-saml" label="tomcat" file="keycloak-saml-tomcat-adapter-dist-${version.version}" tar=true />
                                 </td>
                             </tr>
                             <tr>
                                 <td>7</td>
                                 <td>
-                                    <@download category="adapter-saml" label="tomcat7" file="adapters/saml/keycloak-saml-tomcat7-adapter-dist-${version.version}" tar=true />
+                                    <@download category="adapter-saml" label="tomcat7" file="keycloak-saml-tomcat7-adapter-dist-${version.version}" tar=true />
                                 </td>
                             </tr>
                         </table>
