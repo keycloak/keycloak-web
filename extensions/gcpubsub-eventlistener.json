@@ -2,7 +2,7 @@
     "name": "Google Cloud Pub/Sub event listener",
     "description": "An event listener for Keycloak, using the Google Cloud Pub/Sub service",
     "maintainers": [
-      "aznamier"
+      "acesso-io"
     ],
     "website": "https://github.com/acesso-io/keycloak-event-listener-gcpubsub",
     "download": "https://github.com/acesso-io/keycloak-event-listener-gcpubsub",
