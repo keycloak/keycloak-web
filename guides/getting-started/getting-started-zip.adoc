@@ -12,7 +12,7 @@ Make sure you have https://openjdk.java.net/[OpenJDK 1.8] or newer installed.
 
 ## Download Keycloak
 
-First step is to download and extract https://downloads.jboss.org/keycloak/{version}/keycloak-{version}.zip[keycloak-{version}.zip]
+First step is to download and extract https://github.com/keycloak/keycloak/releases/download/{version}/keycloak-{version}.zip[keycloak-{version}.zip]
 from the Keycloak website.
 
 After extracting you should have a directory named keycloak-{version}.
