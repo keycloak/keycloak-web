@@ -1,0 +1,13 @@
+:title: Book on Keycloak
+:date: 2021-06-18
+:publish: true
+:author: Stian Thorgersen
+
+The first ever book dedicated to Keycloak was recently launched, and is https://packt.live/2QtHFzw[available on Amazon] now.
+
+image::${blogImages}/kcbook.jpg[Book cover]
+
+The book introduces you to Keycloak, giving a good fundamental of everything you need to know to get started with Keycloak. From installing, securing applications, and deploying to production.
+
+If you are new to Keycloak, or even if you have been using Keycloak for a while, you should consider getting yourself a copy.
+
