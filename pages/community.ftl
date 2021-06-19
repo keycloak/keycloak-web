@@ -37,7 +37,7 @@
 
         <h2>Bugs and feature requests</h2>
 
-        <h3>Reporting security vulneratiblities</h3>
+        <h3>Reporting security vulnerabilities</h3>
 
         <p>
             If you've found a security vulnerability, please look at the <a href="security.html">instructions on how to properly report it</a>.
