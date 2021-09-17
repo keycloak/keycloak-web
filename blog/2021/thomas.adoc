@@ -1,0 +1,14 @@
+:title: New Keycloak maintainer: Thomas Darimont
+:date: 2021-09-17
+:publish: true
+:author: Stian Thorgersen
+
+We are extremely pleased to welcome https://github.com/thomasdarimont[Thomas Darimont] as an official maintainer of Keycloak.
+
+Thomas has contributed to Keycloak since 2015, and is well known and respected by the current maintainers, as well as the Keycloak community. He has enriched the community through practical examples, valuable discussions on mailing lists, and presenting at conferences. In addition, he has also helped with design discussions, contributed bug fixes, as well as new features.
+
+Thomas will start by helping us with our Keycloak.X effort, with first focusing on an excellent observability story for a true cloud native experience. In addition he will help review and sponsor community contributions, engage with the community, and join in discussions around new features and capabilities.
+
+We're seeing more and more people getting involved in the Keycloak community, and a lot of continued commitment and contributions from large organizations to Keycloak. Thomas works for [codecentric AG](https://www.codecentric.de) in Germany, which sees the real value of Keycloak allowing him to invest a significant portion of his time to the Keycloak project.
+
+The Keycloak team is very exited about having Thomas join us as a maintainer, and we are looking forward to working more closely with Thomas going forward.
