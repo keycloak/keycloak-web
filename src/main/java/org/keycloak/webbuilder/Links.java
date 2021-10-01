@@ -49,7 +49,11 @@ public class Links {
     }
 
     public String get(Guides.Guide guide) {
-        return getLink(guide.getPath());
+        if (guide.isExternal()) {
+            return guide.getExternalLink();
+        } else {
+            return getLink(guide.getPath());
+        }
     }
 
     public String get(Blogs.Blog blog) {

@@ -25,12 +25,18 @@ public class Guides {
 
                 boolean community = "true".equals(attributes.get("community"));
 
-                Guide g = new Guide(d.getName(), f.getName(), (String) attributes.get("title"), (String) attributes.get("summary"), (String) attributes.get("author"), community, priority);
+                Guide g = new Guide(d.getName(), f.getName(), (String) attributes.get("title"), (String) attributes.get("summary"), (String) attributes.get("author"), community, priority, (String) attributes.get("external-link"));
                 guides.add(g);
             }
         }
 
-        Collections.sort(guides, Comparator.comparing(Guide::getPriority));
+        Collections.sort(guides, (o1, o2) -> {
+            if (o1.getPriority() == o2.getPriority()) {
+                return o1.getName().compareTo(o2.getName());
+            } else {
+                return Integer.compare(o1.getPriority(), o2.getPriority());
+            }
+        });
     }
 
     public List<Guide> getGuides(GuideCategory c) {
@@ -55,9 +61,10 @@ public class Guides {
         private String title;
         private String summary;
         private String path;
-        private int priority;
+        private int priority = -1;
+        private String externalLink;
 
-        public Guide(String category, String template, String title, String summary, String author, boolean community, int priority) {
+        public Guide(String category, String template, String title, String summary, String author, boolean community, int priority, String externalLink) {
             this.category = GuideCategory.valueOf(category.toUpperCase().replaceAll("-", "_"));
             this.name = template.replace(".adoc", "");
             this.author = author;
@@ -67,6 +74,7 @@ public class Guides {
             this.summary = summary;
             this.path = category + "/" + name;
             this.priority = priority;
+            this.externalLink = externalLink;
         }
 
         public String getName() {
@@ -107,6 +115,14 @@ public class Guides {
 
         public int getPriority() {
             return priority;
+        }
+
+        public String getExternalLink() {
+            return externalLink;
+        }
+
+        public boolean isExternal() {
+            return externalLink != null;
         }
     }
 

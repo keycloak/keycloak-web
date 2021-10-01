@@ -19,6 +19,11 @@
                             <i class="fa fa-users text-primary"></i> Community
                         </p>
                         </#if>
+                        <#if g.external>
+                            <p class="community-badge text-primary">
+                                <i class="fa fa-link text-primary"></i> External
+                            </p>
+                        </#if>
 
                         <h2 class="card-title">${g.title}</h2>
 
