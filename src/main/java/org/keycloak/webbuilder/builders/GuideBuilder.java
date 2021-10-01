@@ -1,6 +1,5 @@
 package org.keycloak.webbuilder.builders;
 
-import org.keycloak.webbuilder.Blogs;
 import org.keycloak.webbuilder.Guides;
 
 import java.io.File;
@@ -12,6 +11,9 @@ public class GuideBuilder extends AbstractBuilder {
     @Override
     protected void build() throws Exception {
         for (Guides.Guide guide : context.guides().getGuides()) {
+            if (guide.isExternal()) {
+                continue;
+            }
             Map<String, Object> attributes = new HashMap<>();
             attributes.put("guide", guide);
             attributes.put("guideImages", context.getLinks().getRoot() + "resources/images/guides");
