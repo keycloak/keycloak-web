@@ -1,0 +1,9 @@
+{
+    "name": "Restrict Client Auth",
+    "description": "The purpose of this authenticator is to add capabilities to restrict user authentication on clients. The authenticator supports role-based or policy-based access decisions and can be enabled on a per-client basis.",
+    "maintainers": [
+        "sventorben"
+    ],
+    "website": "https://github.com/sventorben/keycloak-restrict-client-auth",
+    "download": "https://github.com/sventorben/keycloak-restrict-client-auth/releases"
+}
