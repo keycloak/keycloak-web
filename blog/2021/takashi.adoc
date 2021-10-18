@@ -1,0 +1,14 @@
+:title: New Keycloak maintainer: Takashi Norimatsu
+:date: 2021-10-18
+:publish: true
+:author: Stian Thorgersen
+
+We are extremely pleased to welcome https://github.com/tnorimat[Takashi Norimatsu] as an official maintainer of Keycloak.
+
+Takashi has contributed to Keycloak since 2017, with a focus on security features of OAuth 2.0 and OpenID Connect, such as PKCE, strong signature algorithms, and Certificate Bound Access Tokens. More recently, he has been leading development related to Financial-grade API (FAPI) in the FAPI special interest group. In addition he has been helping other developers in the area of API authorization, including giving presentations at multiple conferences.
+
+Takashi will continue leading development of OAuth 2.0 and OpenID Connect security related features, with an initial focus on features needed to provide higher level of API security for enterprise scenarios.
+
+Takashi works for Hitachi, Ltd. in Japan, which sees the real value of Keycloak especially in the API management area, allowing him to invest a significant portion of his time to the Keycloak project.
+
+The Keycloak team is very exited about having Takashi join us as a maintainer, and we are looking forward to working more closely with Takashi going forward.
