@@ -17,9 +17,9 @@
     </#assign>
       <item>
         <title>${blog.title}</title>
-        <link>${home}/${blog.path}/${blog.filename}</link>
+        <link>${links.get(blog)}</link>
         <description><#outputformat 'HTML'>${description?esc}</#outputformat></description>
-        <guid>${home}/${blog.path}/${blog.filename}</guid>
+        <guid>${links.get(blog)}</guid>
         <pubDate>${blog.date?datetime}</pubDate>
         <#if blog.category??><category>${blog.category}</category></#if>
         <#if blog.author??><author>${blog.author}</author></#if>

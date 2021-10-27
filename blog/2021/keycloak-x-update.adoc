@@ -1,0 +1,75 @@
+:title: Keycloak.X Update
+:date: 2021-10-28
+:publish: true
+:author: Stian Thorgersen
+
+It's been quite some time since we announced the plans around Keycloak.X, two years in fact. Due to other priorities we've been a bit distracted, but now it's finally full speed ahead.
+
+Keycloak.X will be lighter, faster, easier, more scalable, more cloud native, and a bunch of other things. Expect greatness coming your way!
+
+As part of Keycloak.X we're not only making code changes, but there will also be a cultural shift where the team behind Keycloak will focus a lot more on user experience and the delivery of a manageable solution over simply pieces of code.
+
+There will be some disruptive changes coming, but we will strive to make the transition as easy as possible for everyone. For breaking changes such as moving from WildFly to Quarkus we plan to provide 6 months to do the migration.
+
+If that is not enough there is https://access.redhat.com/products/red-hat-single-sign-on[Red Hat Single Sign-On], which is a supported build of Keycloak by Red Hat. https://access.redhat.com/products/red-hat-single-sign-on[Red Hat Single Sign-On] 7, which is based on current Keycloak architecture, has support until https://access.redhat.com/support/policy/updates/jboss_notes#p_sso[June 2024] (currently says 2023, but will soon be extended to 2024).
+
+We will follow-up to this blog post with more details in the future, but for now let's look at some of the highlights coming to Keycloak.X.
+
+== Highlights
+
+=== Experiences
+As mentioned previously a lot more attention will be put on your experience with Keycloak. With this in mind we have identified a few experiences that we believe cover a wide range of different use-cases:
+
+* *App developer* Developers that are integrating Keycloak with applications and services
+* *Customizer* Developers that are extending Keycloak or integrating with other systems
+* *Bridge* Using Keycloak as a bridge between applications and other identity solutions
+* *Regular* A typical small to medium-sized deployment of Keycloak
+* *Super-sized* Elastic and highly available deployment of Keycloak for very large use-cases
+* *SaaS* A extension to *super-sized* where Keycloak enables identities for SaaS, CIAM, and B2C scenarios
+
+=== Quarkus
+We're switching to Quarkus as the platform to build Keycloak. Compared to WildFly this gives faster startup-time and lower memory footprint. It also provides a much simpler approach to configuring Keycloak, with command-line arguments and environment variables instead of complicated XML files. Another great aspect of Quarkus is that it gives us a lot more control over what external libraries are included in the distribution, including faster upgrades of dependencies, which should significantly improve on situation around CVEs.
+
+=== Storage re-architecture
+We're doing a significant re-architecture of the storage layer as part of Keycloak.X to address a number of shortcomings that where discovered in the current architecture. Zero downtime upgrade, scalability, and availability will be key topics of this new architecture, as well as making it a lot easier to support additional storage types in the long run.
+
+=== Operator and Containers
+With the current approach to configuration in Keycloak creating a good experience around a container is problematic as the container has to convert from environment variables to complicated XML configuration files. With the work we're doing around Quarkus configuring Keycloak with environment variables becomes a native thing, making it a lot simpler to provide a great container experience.
+
+Similarly, the Operator can also be made simpler as it will be easier to configure Keycloak, as well as having better opinionated configuration from the base distribution, which trickles through from the Zip distribution, to the container, and finally to the Operator. To align the codebase more we're also re-writing the Operator from scratch using the Java SDK and Quarkus.
+
+=== Observability
+Metrics, tracing, logging, and health-checks are all important aspect of a cloud native application. These are all important capabilities to manage and debug Keycloak in production, especially when running on Kubernetes or OpenShift.
+
+=== GitOps friendly configuration
+In a GitOps or CI/CD environment it can be problematic to manage the runtime configuration within Keycloak. As all configuration such as realms and clients live in the database and can only be managed through REST APIs it is hard to reliably manage as part of a GitOps process.
+
+Along with the storage re-architecture comes a very powerful capability that can federate configuration from multiple sources, and we plan to take advantage of this with a file-based store, where Keycloak can read more static/immutable configuration from the file-system (YAML of course), and combine this with dynamic/mutable configuration from the DB.
+
+Further, this enables checking in your static configuration in a Git repository, and deploy it to your development, stage and production environments as needed.
+
+=== External integrations
+Keycloak has a large number of extension points today, called SPIs. With Java (and in some cases JavaScript) it is possible to customize Keycloak with custom providers for these SPIs. Although, highly powerful and flexible, this is not ideal in a modern Kuberetes centric architecture. As the extensions are co-located with Keycloak it is harder to deploy, upgrade, and scale extensions. Extensions can also not be written in any language or framework making it more costly for non-Java developers to extend Keycloak.
+
+With this in mind we are planning more focus on the ability to extend and integrate with Keycloak through remote extensions, and are looking at REST, gRPC, Knative, Kafka, etc. as vehicles to achieve this. In addition we would also like to get to a point where we can have a "headless" Keycloak allowing a frontend to be built in any way you want, which would bring a great addition to the current themes approach to customising the UI.
+
+=== Decomposing
+Last, but not least. We are also planning on ability to decompose Keycloak as well as bring better isolation on Keycloak's code base and capabilities. We're not planning to go full micro-service architecture here, but rather a sensible compromise allowing everything to run as a single process, with the ability to separate some parts of Keycloak into external services.
+
+== Roadmap
+As you can imagine all of what we have planned in Keycloak.X is a large amount of work, and won't happen overnight. We're focusing first on the breaking changes such as moving to Quarkus and re-architecture of the storage layer.
+
+Everything is not planned fully at this point, but we do have some idea of when we believe the various components of Keycloak.X will be delivered.
+
+* *ASAP*: Keycloak 16 will be the last preview of the Quarkus distribution, so we welcome everyone to try it out, and provide us with https://github.com/keycloak/keycloak/discussions/8654[feedback].
+
+* *December 2021*: In Keycloak 17 we will make the Quarkus distribution fully supported, and deprecate the WildFly distribution.
+
+* *March 2022*: In Keycloak 18 we are aiming to include the new Operator, and preview the new store. We're also planning on removing WildFly support from the code-base at this point.
+
+* *June 2022*: First release with only the Quarkus distribution. We're also hoping to make the new store a fully supported option at this point.
+
+_The dates above are subject to change!_
+
+== Feedback
+We would love your feedback on our plans around Keycloak.X, so please join us on https://github.com/keycloak/keycloak/discussions/categories/feedback[GitHub Discussions] to discuss the future of Keycloak!
