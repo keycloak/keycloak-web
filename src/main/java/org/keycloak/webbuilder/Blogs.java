@@ -4,15 +4,11 @@ import org.keycloak.webbuilder.utils.AsciiDoctor;
 import org.keycloak.webbuilder.utils.FreeMarker;
 
 import java.io.File;
-import java.util.Calendar;
-import java.util.Comparator;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Blogs extends LinkedList<Blogs.Blog> {
+
+    private static final Date REMOVE_ADOC_FROM_TITLE_FIX_DATE = new GregorianCalendar(2021, Calendar.OCTOBER, 25).getTime();
 
     private static Calendar OLD_BLOG;
     static {
@@ -43,10 +39,17 @@ public class Blogs extends LinkedList<Blogs.Blog> {
                 Date date = attributes.containsKey("date") ? Constants.DATE_IN.parse(attributes.get("date").toString()) : null;
                 boolean publish = attributes.containsKey("publish") ? Boolean.parseBoolean((String) attributes.get("publish")) : false;
 
+                String name = f.getName().replace(".ftl", "");
+
+                // Remove '.adoc' from blog links only after fix date not to break external links to blog posts
+                if (date.after(REMOVE_ADOC_FROM_TITLE_FIX_DATE)) {
+                    name = name.replace(".adoc", "");
+                }
+
                 Blog blog = new Blog(
                         format,
                         date,
-                        f.getName().replace(".ftl", ""),
+                        name,
                         (String) attributes.get("title"),
                         (String) attributes.get("summary"),
                         (String) attributes.get("author"),
