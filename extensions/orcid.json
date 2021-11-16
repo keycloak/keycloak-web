@@ -1,0 +1,11 @@
+{
+    "name": "ORCID Social Identity Provider",
+    "description": "Enables <a href=\"https://orcid.org/\">ORCID</a> as an Identity Provider.",
+    "maintainers": [
+        "cgeorgilakis", "laskasn"
+    ],
+    "website": "https://github.com/eosc-kc/keycloak-orcid",
+    "download": "https://github.com/eosc-kc/keycloak-orcid/releases",
+    "documentation": "https://github.com/eosc-kc/keycloak-orcid#readme",
+    "source": "https://github.com/eosc-kc/keycloak-orcid"
+}
