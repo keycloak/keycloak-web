@@ -118,12 +118,6 @@
                                     <@download category="adapter" label="eap7" file="keycloak-oidc-wildfly-adapter-${version.version}" tar=true />
                                 </td>
                             </tr>
-                            <tr>
-                                <td>6</td>
-                                <td>
-                                    <@download category="adapter" label="eap6" file="keycloak-oidc-eap6-adapter-${version.version}" tar=true />
-                                </td>
-                            </tr>
                         </table>
                     </td>
                 </tr>
@@ -247,12 +241,6 @@
                                 <td>7</td>
                                 <td>
                                     <@download category="adapter-saml" label="eap7" file="keycloak-saml-wildfly-adapter-${version.version}" tar=true />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-                                <td>
-                                    <@download category="adapter-saml" label="eap6" file="keycloak-saml-eap6-adapter-${version.version}" tar=true />
                                 </td>
                             </tr>
                         </table>
