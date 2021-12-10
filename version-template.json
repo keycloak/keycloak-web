@@ -4,5 +4,5 @@
   "documentationTemplate": 8,
   "downloadTemplate": 18,
   "wildflyVersionAdapter": "23",
-  "wildflyVersionAdapterDeprecated": "22 and older"
+  "wildflyVersionAdapterDeprecated": "<=22"
 }
