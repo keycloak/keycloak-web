@@ -69,7 +69,14 @@ right now as you will need to create the realm first.
 
 ### Access Keycloak without Ingress
 
-If you don't have the Ingress addon enabled you can access Keycloak from the following URL:
+If you don't have the Ingress addon enabled, first run in a separate shell:
+
+[source,bash,subs="attributes+"]
+----
+minikube tunnel
+----
+
+and you can now access Keycloak from the following URL:
 
 [source,bash,subs="attributes+"]
 ----
