@@ -28,8 +28,8 @@
         </td>
     </tr>
     <tr>
-        <td>Keycloak.X Preview</td>
-        <td>Distribution powered by Quarkus (Preview)</td>
+        <td>Keycloak.X <b>(preview)</b></td>
+        <td>Preview distribution powered by Quarkus</td>
         <td style="width: 300px;">
             <@download category="server" label="standalone" file="keycloak.x-preview-${version.version}" />
         </td>
@@ -93,14 +93,11 @@
         <div role="tabpanel" class="tab-pane active margin-top" id="oidc">
             <table class="table table-bordered table-striped">
                 <tr>
-                    <td>WildFly</td>
+                    <td>WildFly <b>(deprecated)</b></td>
                     <td>
                         <table class="table-downloads-inner">
                             <tr>
-                                <td>
-                                    ${version.wildflyVersionAdapter}<br />
-                                    ${version.wildflyVersionAdapterDeprecated} <b>*DEPRECATED*</b>
-                                </td>
+                                <td>&lt;= 23</td>
                                 <td>
                                     <@download category="adapter" label="wildfly" file="keycloak-oidc-wildfly-adapter-${version.version}" tar=true />
                                 </td>
@@ -109,19 +106,13 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>JBoss EAP</td>
+                    <td>JBoss EAP <b>(deprecated)</b></td>
                     <td>
                         <table class="table-downloads-inner">
                             <tr>
                                 <td>7</td>
                                 <td>
                                     <@download category="adapter" label="eap7" file="keycloak-oidc-wildfly-adapter-${version.version}" tar=true />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-                                <td>
-                                    <@download category="adapter" label="eap6" file="keycloak-oidc-eap6-adapter-${version.version}" tar=true />
                                 </td>
                             </tr>
                         </table>
@@ -230,7 +221,7 @@
                             <tr>
                                 <td>
                                     ${version.wildflyVersionAdapter}<br />
-                                    ${version.wildflyVersionAdapterDeprecated} <b>*DEPRECATED*</b>
+                                    ${version.wildflyVersionAdapterDeprecated} <b>(deprecated)</b>
                                 </td>
                                 <td>
                                     <@download category="adapter-saml" label="wildfly" file="keycloak-saml-wildfly-adapter-${version.version}" tar=true />
@@ -247,12 +238,6 @@
                                 <td>7</td>
                                 <td>
                                     <@download category="adapter-saml" label="eap7" file="keycloak-saml-wildfly-adapter-${version.version}" tar=true />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-                                <td>
-                                    <@download category="adapter-saml" label="eap6" file="keycloak-saml-eap6-adapter-${version.version}" tar=true />
                                 </td>
                             </tr>
                         </table>
