@@ -3,53 +3,56 @@
 :publish: true
 :author: Xinxin Zhu & Yilin Zeng
 
-image::${blogImages}/apisix/keycloak-apisix-integration.png[keycloak-apisix-integration]
-
 This article shows you how to use OpenID-Connect protocol and Keycloak for identity authentication in Apache APISIX through detailed steps.
 
 https://www.keycloak.org/[Keycloak] is an open source identity and access management solution for modern applications and services. Keycloak supports Single-Sign On, which enables services to interface with Keycloak through protocols such as OpenID Connect, OAuth 2.0, etc. Keycloak also supports integrations with different authentication services, such as Github, Google and Facebook.
 
 In addition, Keycloak also supports user federation, and can import users through LDAP and Kerberos. For more information about Keycloak, please refer to the https://www.keycloak.org/about[official documentation].
 
+https://apisix.apache.org/[Apache APISIX] is a dynamic, real-time, high-performance API gateway, providing rich traffic management. The project offers load balancing, dynamic upstream, canary release, circuit breaking, authentication, observability, and many useful plugins. In addition, the gateway supports dynamic plugin changes along with hot update. The OpenID Connect plugin for Apache APISIX allows users to replace traditional authentication mode with centralized identity authentication mode via OpenID Connect.
+
 == How to use
 
-=== Environment preparation
-Make sure that Apache APISIX is started in your environment before proceeding with the following steps.
+=== Install Apache APISIX
 
-==== Start Keycloak
-Here we use `docker-compose` to start Keycloak with PostgreSQL.
-....
-version: '3.7'
+==== Install dependencies
+The Apache APISIX runtime environment requires dependencies on NGINX and etcd.
 
-services:
-  postgres:
-      image: postgres:12.2
-      container_name: postgres
-      environment:
-        POSTGRES_DB: keycloak
-        POSTGRES_USER: keycloak
-        POSTGRES_PASSWORD: password
+Before installing Apache APISIX, please install dependencies according to the operating system you are using. We provide the dependencies installation instructions for CentOS7, Fedora 31 and 32, Ubuntu 16.04 and 18.04, Debian 9 and 10, and macOS. Please refer to https://apisix.apache.org/docs/apisix/install-dependencies/[Install Dependencies] for more details.
 
-  keycloak:
-      image: jboss/keycloak:9.0.2
-      container_name: keycloak
-      environment:
-        DB_VENDOR: POSTGRES
-        DB_ADDR: postgres
-        DB_DATABASE: keycloak
-        DB_USER: keycloak
-        DB_PASSWORD: password
-        KEYCLOAK_USER: admin
-        KEYCLOAK_PASSWORD: password
-        PROXY_ADDRESS_FORWARDING: "true"
-      ports:
-        - 8080:8080
-      depends_on:
-        - postgres
-....
+==== Installation via RPM Package (CentOS 7)
+This installation method is suitable for CentOS 7; please run the following command to install Apache APISIX.
 
 ....
-docker-compose up
+sudo yum install -y https://github.com/apache/apisix/releases/download/2.7/apisix-2.7-0.x86_64.rpm
+....
+
+==== Installation via Docker
+Please refer to https://hub.docker.com/r/apache/apisix[Installing Apache APISIX with Docker].
+
+==== Installation via Helm Chart
+Please refer to https://github.com/apache/apisix-helm-chart[Installing Apache APISIX with Helm Chart].
+
+==== Initializing Dependencies
+
+Run the following command to initialize the NGINX configuration file and etcd.
+
+....
+make init
+....
+
+=== Start Apache APISIX
+
+Run the following command to start Apache APISIX.
+....
+apisix start
+....
+
+=== Start Keycloak
+Here we use `docker` to start Keycloak.
+
+....
+docker run -p 8080:8080 -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=password -e DB_VENDOR=h2  -d jboss/keycloak:9.0.2
 ....
 
 After execution, you need to verify that Keycloak and postgres have started successfully.
@@ -58,29 +61,28 @@ After execution, you need to verify that Keycloak and postgres have started succ
 docker-compose ps
 ....
 
-==== Configure Keycloak
+=== Configure Keycloak
 After Keycloak is started, use your browser to access "http://127.0.0.1:8080/auth/admin/" and type the `admin/password` account password to log in to the administrator console.
 
-===== Create a realm
+==== Create a realm
 First, you need to create a realm named `apisix_test_realm`. In Keycloak, a realm is a workspace dedicated to managing projects, and the resources of different realms are isolated from each other.
 
 The realm in Keycloak is divided into two categories: one is the `master realm`, which is created when Keycloak is first started and used to manage the admin account and create other realm. the second is the `other realm`, which is created by the admin in the master realm and can be used to create, manage and use users and applications in this realm. The second category is the other realm, created by admin in the master realm, where users and applications can be created, managed and used. For more details, please refer to the https://www.keycloak.org/docs/latest/getting_started/index.html#realms-and-users[realm and users section in Keycloak].
 
-image::${blogImages}/apisix/create-realm.png[Create realm]
+image::${blogImages}/apisix/create-realm.png[alt=Create realm,width=640,height=250]
 
-image::${blogImages}/apisix/edit-realm-title.png[Edit realm title]
+image::${blogImages}/apisix/edit-realm-title.png[alt=Edit realm title,width=640,height=250]
 
-
-===== Create a Client
+==== Create a Client
 The next step is to create the `OpenID Connect Client`. In Keycloak, Client means a client that is allowed to initiate authentication to Keycloak.
 
 In this example scenario, `Apache APISIX` is equivalent to a client that is responsible for initiating authentication requests to Keycloak, so we create a Client with the name `apisix`. More details about the Client can be found in https://www.keycloak.org/docs/latest/server_admin/#_oidc_clients[Keycloak OIDC Clients].
 
-image::${blogImages}/apisix/create-openid-client.png[Create OpenID Client]
+image::${blogImages}/apisix/create-openid-client.png[alt=Create OpenID Client,width=640,height=150]
 
-image::${blogImages}/apisix/create-client-title.png[Create Client title]
+image::${blogImages}/apisix/create-client-title.png[alt=Create Client title,width=640,height=225]
 
-===== Configure the client
+==== Configure the client
 After the Client is created, you need to configure the Apache APISIX access type for the Client.
 
 In Keycloak, there are three types of Access Type:
@@ -93,41 +95,41 @@ For more details about Client settings, please refer to https://www.keycloak.org
 
 Since we are using Apache APISIX as the Client on the server side, we can choose either "confidential" Access Type or "Bearer-only" Access Type. For the demonstration below, we are using "confidential" Access Type as an example.
 
+image::${blogImages}/apisix/set-client-type.png[alt=Set Client type,width=640,height=350]
 
-image::${blogImages}/apisix/set-client-type.png[Set Client type]
-
-===== Create Users
+==== Create Users
 Keycloak supports interfacing with other third-party user systems, such as Google and Facebook, or importing or manually creating users using LDAP . Here we will use "manually creating users" to demonstrate.
 
-image::${blogImages}/apisix/create-user.png[Create user]
+image::${blogImages}/apisix/create-user.png[alt=Create user,width=640,height=180]
 
-image::${blogImages}/apisix/add-user-info.png[Add user info]
+alt=Set Client type,width=640,height=350
+
+image::${blogImages}/apisix/add-user-info.png[alt=Add user info,width=640,height=395]
 
 Then set the user's password in the Credentials page.
 
-image::${blogImages}/apisix/set-user-password.png[Set user password]
+image::${blogImages}/apisix/set-user-password.png[alt=Set user password,width=640,height=450]
 
 ==== Create Routes
 After Keycloak is configured, you need to create a route and open the `Openid-Connect` plugin . For details on the configuration of this plugin, please refer to the https://apisix.apache.org/docs/apisix/plugins/openid-connect[Apache APISIX OpenID-Connect plugin].
 
-===== Get client_id and client_secret
-![Get Client infos](https://static.apiseven.com/202108/1639101454807-ff8c8b77-bdac-4ac6-966e-a2f5e2418b7a.png)
+==== Get client_id and client_secret
 
-image::${blogImages}/apisix/get-client-info.png[Get client information]
+image::${blogImages}/apisix/get-client-info.png[alt=Get client information,width=640,height=160]
 
 In the above configuration.
 
 * `client_id` is the name used when creating the Client before, i.e. `apisix`
 * `client_secret` should be obtained from Clients-apisix-Credentials, for example: `d5c42c50-3e71-4bbbe-aa9e-31083ab29da4`.
 
-===== Get the discovery configuration
+==== Get the discovery configuration
 
-image::${blogImages}/apisix/get-configuration.png[Get configuration]
+image::${blogImages}/apisix/get-configuration.png[alt=Get configuration,width=640,height=280]
 
 Go to Realm Settings-General-Endpoints, select the `OpenID Endpoint Configuration` link and copy the address that the link points to, for example:`http://127.0.0.1:8080/auth/realms/apisix_test_realm/.well-known/openid-configuration`.
 
 
-===== Create a route and enable the plug-in
+==== Create a route and enable the plug-in
 Use the following command to access the Apache APISIX Admin interface to create a route, set the upstream to `httpbin.org`, and enable the plug-in OpenID Connect for authentication.
 
 Note: If you select `bearer-only` as the Access Type when creating a Client, you need to set `bearer_only` to true when configuring the route, so that access to Apache APISIX will not jump to the Keycloak login screen.
@@ -156,24 +158,24 @@ curl  -XPOST 127.0.0.1:9080/apisix/admin/routes -H "X-Api-Key: edd1c9f034335f136
 }'
 ....
 
-=== Access Testing
+== Access Testing
 Once the above configuration is complete, we are ready to perform the relevant access tests in Apache APISIX.
 
-==== Access Apache APISIX
+=== Access Apache APISIX
 Use your browser to access `http://127.0.0.1:9080/image/png`.
 
 Since the OpenID-Connect plugin is enabled and `bearer-only` is set to `false`, when you access this path for the first time, Apache APISIX will redirect to the login screen configured in `apisix_test_realm` in Keycloak and make a user login request.
 
-image::${blogImages}/apisix/login-page.png[Login Page]
+image::${blogImages}/apisix/login-page.png[alt=Login page,width=640,height=420]
 
 Enter the User peter created during the Keycloak configuration to complete user login.
 
-==== Successful access
-After a successful login, the browser will again redirect the link to http://127.0.0.1:9080/image/png and will successfully access the image content. The content is identical to that of the upstream http://httpbin.org/image/png.
+=== Successful access
+After a successful login, the browser will again redirect the link to `http://127.0.0.1:9080/image/png` and will successfully access the image content. The content is identical to that of the upstream `http://httpbin.org/image/png`.
 
-image::${blogImages}/apisix/access-successfully.png[Access successfully]
+image::${blogImages}/apisix/access-successfully.png[alt=Access successfully,width=640,height=455]
 
-==== Logout
+=== Logout
 After the test, use your browser to access `http:/127.0.0.1:9080/logout` to logout your account.
 
 Note: The logout path can be specified by `logout_path` in the OpenID-Connect plug-in configuration, the default is `logout`.
@@ -181,4 +183,4 @@ Note: The logout path can be specified by `logout_path` in the OpenID-Connect pl
 == Summary
 This article shows the procedure of using OpenID-Connect protocol and Keycloak for authentication in Apache APISIX. By integrating with Keycloak, Apache APISIX can be configured to authenticate and authenticate users and application services, which greatly reduces the development work involved.
 
-For more information about the implementation of authentication in Apache APISIX with Okta, see https://apisix.apache.org/zh/blog/2021/08/16/Using-the-Apache-APISIX-OpenID-Connect-Plugin-for-Centralized-Authentication/[this article].
+For more information about the implementation of authentication in Apache APISIX, see https://apisix.apache.org/blog[Apache APISIX Blog].
