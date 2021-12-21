@@ -51,11 +51,11 @@
 
         <ul>
             <li>Check if it is still an issue in the <a href="downloads.html">latest release</a></li>
-            <li>Check if it has already been reported in the <a href="https://issues.jboss.org/browse/KEYCLOAK">Issue Tracker</a></li>
+            <li>Check if it has already been reported in the <a href="https://github.com/keycloak/keycloak/issues">GitHub Issues</a></li>
         </ul>
 
         <p>
-            If it hasn't already been fixed or reported create an issue in our <a href="https://issues.jboss.org/browse/KEYCLOAK">Issue Tracker</a>.
+            If it hasn't already been fixed or reported create an issue in <a href="https://github.com/keycloak/keycloak/issues">GitHub Issues</a>.
         </p>
 
         <h3>Requesting features and enhancements</h3>
@@ -65,7 +65,7 @@
         </p>
 
         <p>
-            Otherwise, open a feature request in our <a href="https://issues.jboss.org/browse/KEYCLOAK">Issue Tracker</a>.
+            Otherwise, open a feature request in <a href="https://github.com/keycloak/keycloak/issues">GitHub Issues</a>.
         </p>
 
         <h2>Contributors</h2>
@@ -94,7 +94,7 @@
         <ul>
             <li><a href="https://github.com/keycloak/keycloak">Source Code</a></li>
             <li><a href="documentation.html">Documentation</a></li>
-            <li><a href="https://issues.jboss.org/browse/KEYCLOAK">Issue Tracker</a></li>
+            <li><a href="https://github.com/keycloak/keycloak/issues">GitHub Issues</a></li>
             <li><a href="https://keycloak.discourse.group/">Forum</a> - for questions and help</li>
             <li><a href="https://groups.google.com/forum/#!forum/keycloak-user">User Mailing List</a> - for questions and help</li>
             <li><a href="https://groups.google.com/forum/#!forum/keycloak-dev">Developer Mailing List</a> - for discussions around design and contributing to Keycloak</li>
