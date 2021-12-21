@@ -1,5 +1,5 @@
 :title: How to Integrate Keycloak for Authentication with Apache APISIX
-:date: 2021-12-13
+:date: 2021-12-21
 :publish: true
 :author: Xinxin Zhu & Yilin Zeng
 
