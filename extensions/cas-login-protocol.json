@@ -2,8 +2,8 @@
     "name": "CAS Login Procotol",
     "description": "Implements the CAS SSO protocol according to official specification by adding a new client type to the Keycloak admin console. Supports CAS V1/V2/V3 with JSON or XML responses and attribute mapping. Full server implementation, no external components required.",
     "maintainers": [
-        "Doccrazy"
+        "jacekkow"
     ],
-    "website": "https://github.com/Doccrazy/keycloak-protocol-cas",
-    "download": "https://github.com/Doccrazy/keycloak-protocol-cas/releases"
+    "website": "https://github.com/jacekkow/keycloak-protocol-cas",
+    "download": "https://github.com/jacekkow/keycloak-protocol-cas/releases"
 }
