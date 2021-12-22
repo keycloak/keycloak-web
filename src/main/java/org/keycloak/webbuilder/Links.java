@@ -13,7 +13,7 @@ public class Links {
     }
 
     public String getHome() {
-        return getRoot() + (config.isPublish() ? "" : "index.html");
+        return getRoot() + (config.isPublish() ? "/" : "/index.html");
     }
 
     public String getDocs() {
@@ -41,11 +41,11 @@ public class Links {
     }
 
     public String getResource(String path) {
-        return getRoot() + "resources/" + path;
+        return getRoot() + "/resources/" + path;
     }
 
     public String getRss() {
-        return getRoot() + "rss.xml";
+        return getRoot() + "/rss.xml";
     }
 
     public String get(Guides.Guide guide) {
@@ -61,6 +61,9 @@ public class Links {
     }
 
     private String getLink(String path) {
+        if (!path.startsWith("/")) {
+            path = "/" + path;
+        }
         return getRoot() + path + (config.isPublish() ? "" : ".html");
     }
 
