@@ -2,8 +2,7 @@
   "maxBlog": 7,
   "maxNews": 3,
   "urls": {
-    "home": "https://www.keycloak.org/",
-    "source" : "https://github.com/keycloak/keycloak",
-    "issues" : "https://issues.jboss.org/browse/KEYCLOAK"
+    "home": "https://www.keycloak.org",
+    "source" : "https://github.com/keycloak/keycloak"
   }
 }

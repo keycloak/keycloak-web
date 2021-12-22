@@ -47,15 +47,14 @@ public class Config {
     public static class Urls {
         private String home;
         private String source;
-        private String issues;
 
         public String getHome() {
             return home;
         }
 
         public void setHome(String home) {
-            if (!home.endsWith("/")) {
-                home += "/";
+            if (home.endsWith("/")) {
+                home = home.substring(0, home.length() - 1);
             }
             this.home = home;
         }
@@ -66,14 +65,6 @@ public class Config {
 
         public void setSource(String source) {
             this.source = source;
-        }
-
-        public String getIssues() {
-            return issues;
-        }
-
-        public void setIssues(String issues) {
-            this.issues = issues;
         }
     }
 
