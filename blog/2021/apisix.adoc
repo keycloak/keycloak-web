@@ -55,10 +55,10 @@ Here we use `docker` to start Keycloak.
 docker run -p 8080:8080 -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=password -e DB_VENDOR=h2  -d jboss/keycloak:9.0.2
 ....
 
-After execution, you need to verify that Keycloak and postgres have started successfully.
+After execution, you need to verify that Keycloak have started successfully.
 
 ....
-docker-compose ps
+docker ps
 ....
 
 === Configure Keycloak
@@ -93,7 +93,7 @@ In Keycloak, there are three types of Access Type:
 
 For more details about Client settings, please refer to https://www.keycloak.org/docs/latest/server_admin/#advanced-settings[Keycloak OIDC Clients Advanced Settings].
 
-Since we are using Apache APISIX as the Client on the server side, we can choose either "confidential" Access Type or "Bearer-only" Access Type. For the demonstration below, we are using "confidential" Access Type as an example.
+Since we are using Apache APISIX as the Client on the server side, we can choose either "Confidential" Access Type or "Bearer-only" Access Type. For the demonstration below, we are using "Confidential" Access Type as an example.
 
 image::${blogImages}/apisix/set-client-type.png[alt=Set Client type,width=640,height=350]
 
@@ -101,8 +101,6 @@ image::${blogImages}/apisix/set-client-type.png[alt=Set Client type,width=640,he
 Keycloak supports interfacing with other third-party user systems, such as Google and Facebook, or importing or manually creating users using LDAP . Here we will use "manually creating users" to demonstrate.
 
 image::${blogImages}/apisix/create-user.png[alt=Create user,width=640,height=180]
-
-alt=Set Client type,width=640,height=350
 
 image::${blogImages}/apisix/add-user-info.png[alt=Add user info,width=640,height=395]
 
