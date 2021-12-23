@@ -24,6 +24,6 @@ bin/jboss-cli.sh --connect
 
 This will block both valid and invalid attempts at creating new users, including requests from the Keycloak admin console.
 
-Alternatively, the path `/auth/admin/realms/.*/users` or `/auth/admin` and method `POST` can be blocked with a firewall.
+Alternatively, the path `/auth/admin/realms/.*/users` and method `POST`, or `/auth/admin` completely, can be blocked with a firewall.
 
 For more information about the flaw please view https://access.redhat.com/security/cve/CVE-2021-4133[CVE-2021-4133] and https://github.com/keycloak/keycloak/security/advisories/GHSA-83x4-9cwr-5487[GHSA-83x4-9cwr-5487].
