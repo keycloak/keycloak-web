@@ -1,0 +1,29 @@
+:title: Important security vulnerability discovered
+:date: 2021-12-23
+:publish: true
+:author: Stian Thorgersen
+
+A flaw (https://access.redhat.com/security/cve/CVE-2021-4133[CVE-2021-4133]) was found in Keycloak version from 12.0.0 and before 15.1.1 which allows an attacker with any existing user account to create new default user accounts via the administrative REST API even when new user registration is disabled.
+
+In most situations the newly created user is the equivalent of a self-registered user, and does not have the ability to receive any additional roles or groups. However, there are some vectors that are harder to reproduce, but may result in additional privileges.
+
+We highly recommend everyone upgrade to Keycloak 15.1.1 or 16.1.0 as soon as possible. Keycloak 16.0.0 also includes the fix, but if you are not already running this version we recommend going straight to 16.1.0.
+
+If you are unable to upgrade we recommend mitigate the issue by blocking access to the user creation REST endpoint in the interim.
+
+This can be achieved with the following CLI commands:
+
+[source,bash]
+----
+bin/jboss-cli.sh --connect
+/subsystem=undertow/configuration=filter/expression-filter=keycloakPathOverrideUsersCreateEndpoint:add( \
+  expression="(regex('^/auth/admin/realms/(.*)/users$') and method(POST))-> response-code(400)" \
+)
+/subsystem=undertow/server=default-server/host=default-host/filter-ref=keycloakPathOverrideUsersCreateEndpoint:add()
+----
+
+This will block both valid and invalid attempts at creating new users, including requests from the Keycloak admin console.
+
+Alternatively, the path `/auth/admin/realms/.*/users` or `/auth/admin` and method `POST` can be blocked with a firewall.
+
+For more information about the flaw please view https://access.redhat.com/security/cve/CVE-2021-4133[CVE-2021-4133] and https://github.com/keycloak/keycloak/security/advisories/GHSA-83x4-9cwr-5487[GHSA-83x4-9cwr-5487].
