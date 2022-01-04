@@ -1,6 +1,7 @@
 {
   "date": "2021-08-20",
   "version": "15.0.2",
+  "blogTemplate": 1,
   "documentationTemplate": 7,
   "downloadTemplate": 17,
   "wildflyVersionAdapter": "23",
