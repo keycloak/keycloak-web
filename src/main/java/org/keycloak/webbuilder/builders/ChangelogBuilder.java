@@ -1,17 +1,18 @@
 package org.keycloak.webbuilder.builders;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.keycloak.webbuilder.Versions;
 import org.keycloak.webbuilder.misc.ChangeLogEntry;
 import org.kohsuke.github.GHIssue;
 import org.kohsuke.github.GitHub;
 import org.kohsuke.github.GitHubBuilder;
-import org.kohsuke.github.HttpConnector;
-import org.kohsuke.github.extras.HttpClientGitHubConnector;
 import org.kohsuke.github.extras.ImpatientHttpConnector;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
@@ -37,39 +38,52 @@ public class ChangelogBuilder extends AbstractBuilder {
                 .withOAuthToken(token).build();
 
         for (Versions.Version v : context.versions()) {
-            if (Integer.parseInt(v.getBlogTemplate()) >= 2) {
-                List<GHIssue> ghIssues = gh.searchIssues().q("user:keycloak milestone:" + v.getVersion() + " is:closed is:issue").isClosed().list().toList();
+            String fileName = "changelog-" + v.getVersion().replace(".", "_") + ".json";
+            File changeLogFile = new File(context.getTmpDir(), fileName);
 
-                List<ChangeLogEntry> changes = new LinkedList<>();
+            if (changeLogFile.exists()) {
+                Versions.ChangeLog changeLog = new Versions.ChangeLog(Arrays.asList(context.json().read(changeLogFile, ChangeLogEntry[].class)));
+                v.setChanges(changeLog);
+                printStep("exists", v.getVersion());
+            } else {
+                if (Integer.parseInt(v.getBlogTemplate()) >= 2) {
+                    List<GHIssue> ghIssues = gh.searchIssues().q("user:keycloak milestone:" + v.getVersion() + " is:closed is:issue").isClosed().list().toList();
 
-                for(GHIssue issue : ghIssues) {
-                    ChangeLogEntry change = new ChangeLogEntry();
-                    change.setNumber(issue.getNumber());
-                    change.setRepository(issue.getRepository().getName());
-                    change.setTitle(issue.getTitle());
-                    change.setUrl(issue.getHtmlUrl().toString());
+                    List<ChangeLogEntry> changes = new LinkedList<>();
 
-                    issue.getLabels().stream()
-                            .map(l -> l.getName())
-                            .filter(s -> s.startsWith("kind/"))
-                            .map(s -> s.substring(5))
-                            .findFirst().ifPresent(s -> change.setKind(s));
+                    for (GHIssue issue : ghIssues) {
+                        ChangeLogEntry change = new ChangeLogEntry();
+                        change.setNumber(issue.getNumber());
+                        change.setRepository(issue.getRepository().getName());
+                        change.setTitle(issue.getTitle());
+                        change.setUrl(issue.getHtmlUrl().toString());
 
-                    issue.getLabels().stream()
-                            .map(l -> l.getName())
-                            .filter(s -> s.startsWith("area/"))
-                            .map(s -> s.substring(5))
-                            .findFirst().ifPresent(s -> change.setArea(s));
+                        issue.getLabels().stream()
+                                .map(l -> l.getName())
+                                .filter(s -> s.startsWith("kind/"))
+                                .map(s -> s.substring(5))
+                                .findFirst().ifPresent(s -> change.setKind(s));
 
-                    if (change.getKind() != null) {
-                        changes.add(change);
+                        issue.getLabels().stream()
+                                .map(l -> l.getName())
+                                .filter(s -> s.startsWith("area/"))
+                                .map(s -> s.substring(5))
+                                .findFirst().ifPresent(s -> change.setArea(s));
+
+                        if (change.getKind() != null) {
+                            changes.add(change);
+                        }
                     }
+
+                    changes.sort(Comparator.comparingInt(ChangeLogEntry::getNumber));
+
+                    Versions.ChangeLog changeLog = new Versions.ChangeLog(changes);
+                    v.setChanges(changeLog);
+
+                    new ObjectMapper().writerWithDefaultPrettyPrinter().writeValue(changeLogFile, changes);
+
+                    printStep("loaded", v.getVersion());
                 }
-
-                changes.sort(Comparator.comparingInt(ChangeLogEntry::getNumber));
-                v.setChanges(new Versions.ChangeLog(changes));
-
-                printStep("loaded", v.getVersion());
             }
         }
 

@@ -2,6 +2,7 @@ package org.keycloak.webbuilder.builders;
 
 import org.keycloak.webbuilder.Versions;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
@@ -35,11 +36,14 @@ public class MigrationNotesBuilder extends AbstractBuilder {
 
                 String fileName = "migration-notes-" + v.getVersion().replace(".", "_");
 
-                context.asciiDoctor().writeFile(attributes, url, context.getTmpDir(), fileName);
+                if (new File(context.getTmpDir(), fileName).isFile()) {
+                    printStep("exists", v.getVersion());
+                } else {
+                    context.asciiDoctor().writeFile(attributes, url, context.getTmpDir(), fileName);
+                    printStep("created", v.getVersion());
+                }
 
                 v.setMigrationNotes("target/tmp/" + fileName);
-
-                printStep("created", v.getVersion());
             } catch (FileNotFoundException e) {
                 printStep("missing",  v.getVersion());
             } catch (Exception e) {
