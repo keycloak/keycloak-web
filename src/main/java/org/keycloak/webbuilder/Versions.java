@@ -1,14 +1,17 @@
 package org.keycloak.webbuilder;
 
+import org.keycloak.webbuilder.misc.ChangeLogEntry;
 import org.keycloak.webbuilder.utils.JsonParser;
 
 import java.io.File;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Versions extends LinkedList<Versions.Version> {
 
@@ -23,6 +26,10 @@ public class Versions extends LinkedList<Versions.Version> {
 
     public Version getLatest() {
         return get(0);
+    }
+
+    public Version getPrevious() {
+        return getMajorMinor().get(1);
     }
 
     public List<Version> getMajorMinor() {
@@ -47,6 +54,8 @@ public class Versions extends LinkedList<Versions.Version> {
 
         private String downloadTemplate;
 
+        private String blogTemplate;
+
         private String wildflyVersionAdapter;
 
         private String wildflyVersionAdapterDeprecated;
@@ -54,6 +63,10 @@ public class Versions extends LinkedList<Versions.Version> {
         private boolean latest;
 
         private String releaseNotes;
+
+        private String migrationNotes;
+
+        private ChangeLog changes;
 
         public boolean isFinal() {
             return true;
@@ -83,6 +96,14 @@ public class Versions extends LinkedList<Versions.Version> {
 
         public void setVersion(String version) {
             this.version = version;
+        }
+
+        public String getBlogTemplate() {
+            return blogTemplate;
+        }
+
+        public void setBlogTemplate(String blogTemplate) {
+            this.blogTemplate = blogTemplate;
         }
 
         public String getDocumentationTemplate() {
@@ -133,6 +154,22 @@ public class Versions extends LinkedList<Versions.Version> {
             this.releaseNotes = releaseNotes;
         }
 
+        public String getMigrationNotes() {
+            return migrationNotes;
+        }
+
+        public void setMigrationNotes(String migrationNotes) {
+            this.migrationNotes = migrationNotes;
+        }
+
+        public ChangeLog getChanges() {
+            return changes;
+        }
+
+        public void setChanges(ChangeLog changes) {
+            this.changes = changes;
+        }
+
         @Override
         public int compareTo(Version o) {
             String[] v1 = version.split("\\.");
@@ -156,4 +193,34 @@ public class Versions extends LinkedList<Versions.Version> {
             return Integer.valueOf(a).compareTo(Integer.valueOf(b));
         }
     }
+
+    public static class ChangeLog {
+
+        private List<ChangeLogEntry> entries;
+
+        public ChangeLog(List<ChangeLogEntry> entries) {
+            this.entries = entries;
+        }
+
+        public List<ChangeLogEntry> getAll() {
+            return entries;
+        }
+
+        public List<ChangeLogEntry> getBugs() {
+            return entries.stream().filter(e -> e.getKind().equals("bug")).collect(Collectors.toList());
+        }
+
+        public List<ChangeLogEntry> getFeatures() {
+            return entries.stream().filter(e -> e.getKind().equals("feature")).collect(Collectors.toList());
+        }
+
+        public List<ChangeLogEntry> getEnhancements() {
+            return entries.stream().filter(e -> e.getKind().equals("enhancement")).collect(Collectors.toList());
+        }
+
+        public List<ChangeLogEntry> getDeprecations() {
+            return entries.stream().filter(e -> e.getKind().equals("deprecation")).collect(Collectors.toList());
+        }
+    }
+
 }

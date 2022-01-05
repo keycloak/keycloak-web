@@ -8,14 +8,14 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ReleaseNotesBuilder extends AbstractBuilder {
+public class MigrationNotesBuilder extends AbstractBuilder {
 
     private static final String BASE_URL = "https://raw.githubusercontent.com/keycloak/keycloak-documentation/master/";
     private static final String DOCUMENT_ATTRIBUTES_URL = BASE_URL + "topics/templates/document-attributes-community.adoc";
 
     @Override
     protected String getTitle() {
-        return "Release Notes";
+        return "Migration Notes";
     }
 
     public void build() throws IOException {
@@ -31,13 +31,13 @@ public class ReleaseNotesBuilder extends AbstractBuilder {
 
         for (Versions.Version v : context.versions()) {
             try {
-                URL url = new URL(BASE_URL + "release_notes/topics/" + v.getVersion().replace(".", "_") + ".adoc");
+                URL url = new URL(BASE_URL + "upgrading/topics/keycloak/changes-" + v.getVersion().replace(".", "_") + ".adoc");
 
-                String fileName = "release-notes-" + v.getVersion().replace(".", "_") + ".html";
+                String fileName = "migration-notes-" + v.getVersion().replace(".", "_");
 
                 context.asciiDoctor().writeFile(attributes, url, context.getTmpDir(), fileName);
 
-                v.setReleaseNotes("target/tmp/" + fileName);
+                v.setMigrationNotes("target/tmp/" + fileName);
 
                 printStep("created", v.getVersion());
             } catch (FileNotFoundException e) {

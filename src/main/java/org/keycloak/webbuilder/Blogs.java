@@ -65,7 +65,7 @@ public class Blogs extends LinkedList<Blogs.Blog> {
         }
 
         for (Versions.Version v : versions) {
-            Blog blog = new Blog(BlogFormat.FREEMARKER, v.getDate(), "keycloak-" + v.getVersion().replace(".", "") + "-released", "Keycloak " + v.getVersion() + " released", null, null, "Keycloak Release", true, true, "templates/blog-release.ftl");
+            Blog blog = new Blog(BlogFormat.FREEMARKER, v.getDate(), "keycloak-" + v.getVersion().replace(".", "") + "-released", "Keycloak " + v.getVersion() + " released", null, null, "Keycloak Release", true, true, "templates/blog-release-" + v.getBlogTemplate() + ".ftl");
             blog.getMap().put("version", v);
             add(blog);
         }
