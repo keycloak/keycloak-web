@@ -1,34 +1,35 @@
-<#assign title = "Blog Archive">
-<#assign currentYear = "">
-<#assign currentMonth = "">
+<#import "/templates/template.ftl" as tmpl>
 
-<#include "../templates/header.ftl">
-<#include "../templates/menu.ftl">
+<@tmpl.page current="blog" title="Blog archive">
 
-<div class="page-section">
-    <div class="container">
-        <h1>Blog Archive</h1>
+<div class="container mt-5 kc-article">
+    <h1>Blog Archive</h1>
 
-        <ol class="breadcrumb">
-            <li><a href="blog.html">Blog</a></li>
-            <li class="active">Archive</li>
-        </ol>
+    <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="blog.html">Blog</a></li>
+        <li class="breadcrumb-item active">Archive</li>
+    </ol>
+    </nav>
 
-        <#list blogs as blog>
-            <#if currentYear != blog.date?string["YYYY"]>
-                <#assign currentYear = blog.date?string["YYYY"]>
-                <h2>${currentYear}</h2>
-            </#if>
+    <#assign currentYear = "">
+    <#assign currentMonth = "">
 
-            <#if currentMonth != blog.date?string["MMMM"]>
-                <#assign currentMonth = blog.date?string["MMMM"]>
-                <h3>${currentMonth}</h3>
-            </#if>
+    <#list blogs as blog>
+        <#if currentYear != blog.date?string["YYYY"]>
+            <#assign currentYear = blog.date?string["YYYY"]>
+            <h2>${currentYear}</h2>
+        </#if>
 
-            <ul>
-                <li><a href="${blog.path}/${blog.filename}">${blog.title}</a></li>
-            </ul>
-        </#list>
-    </div>
+        <#if currentMonth != blog.date?string["MMMM"]>
+            <#assign currentMonth = blog.date?string["MMMM"]>
+            <h3>${currentMonth}</h3>
+        </#if>
+
+        <ul>
+            <li><a href="${blog.path}/${blog.filename}">${blog.title}</a></li>
+        </ul>
+    </#list>
 </div>
-<#include "../templates/footer.ftl">
+
+</@tmpl.page>

@@ -1,60 +1,57 @@
-<#assign title = "Test Application" noindex=true nocsp=true>
+<#import "/templates/template.ftl" as tmpl>
 
-<#include "../../templates/header.ftl">
-<#include "../../templates/menu.ftl">
+<@tmpl.page current="test-app" title="Test application">
 
 <script src="keycloak.js" type="text/javascript"></script>
 <script src="app.js" type="text/javascript"></script>
 
-<div class="page-section cards-section">
+<div class="jumbotron jumbotron-fluid kc-bg-triangles py-5 kc-app">
     <div class="container">
-        <div class="row">
-            <div class="card">
-                <div id="card-config" class="card-body">
-                    <div id="config-view" class="hide">
-                        <a id="login" class="btn btn-primary hide">Sign in</a>
-                        <a id="logout" class="btn btn-primary hide">Sign out</a>
-                        <a href="" class="btn btn-default">Clear config</a>
-                    </div>
-                    <div id="config-edit" class="hide">
-                        <form class="form-horizontal" id="config-form">
-                          <div class="form-group">
-                            <label for="url" class="col-sm-2 control-label">Keycloak URL</label>
-                            <div class="col-sm-10">
-                              <input type="text" class="form-control" id="url" value="http://localhost:8080/auth">
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label for="realm" class="col-sm-2 control-label">Realm</label>
-                            <div class="col-sm-3">
-                              <input type="text" class="form-control" id="realm" value="myrealm">
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label for="client" class="col-sm-2 control-label">Client</label>
-                            <div class="col-sm-3">
-                              <input type="text" class="form-control" id="client" value="myclient">
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
-                              <button class="btn btn-primary">Save</button>
-                            </div>
-                          </div>
-                        </form>
-                    </div>
+    <div class="row">
+        <div class="card">
+            <div id="card-config" class="card-body">
+                <div id="config-view" class="hide my-3">
+                    <a id="login" class="btn btn-primary hide">Sign in</a>
+                    <a id="logout" class="btn btn-primary hide">Sign out</a>
+                    <a href="#" class="btn btn-secondary show">Clear config</a>
                 </div>
-            </div>
-        </div>
-
-        <div id="display-user" class="row hide">
-            <div class="card">
-                <div class="card-body">
-                    Hello, <span id="user-details"></span>
+                <div id="config-edit" class="hide">
+                    <form id="config-form">
+                      <div class="mb-3">
+                        <label for="url" class="form-label">Keycloak URL</label>
+                        <div>
+                          <input type="text" class="form-control" id="url" value="http://localhost:8080/auth">
+                        </div>
+                      </div>
+                      <div class="mb-3">
+                        <label for="realm" class="form-label">Realm</label>
+                        <div>
+                          <input type="text" class="form-control" id="realm" value="myrealm">
+                        </div>
+                      </div>
+                      <div class="mb-3">
+                        <label for="client" class="form-label">Client</label>
+                        <div>
+                          <input type="text" class="form-control" id="client" value="myclient">
+                        </div>
+                      </div>
+                      <div>
+                          <button class="btn btn-primary">Save</button>
+                      </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+
+    <div id="display-user" class="row hide">
+        <div class="card mt-3">
+            <div class="card-body">
+                Hello, <span></span>
+            </div>
+        </div>
+    </div>
+    </div>
 </div>
 
-<#include "../../templates/footer.ftl">
+</@tmpl.page>

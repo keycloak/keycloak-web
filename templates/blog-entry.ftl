@@ -1,20 +1,18 @@
-<#assign title = "Blog - ${blog.title}">
+<#import "/templates/template.ftl" as tmpl>
 
-<#include "../templates/header.ftl">
-<#include "../templates/menu.ftl">
+<@tmpl.page current="search" title="Search">
 
-<div class="page-section">
-    <div class="container blog">
-        <h1>${blog.title}</h1>
-        <p class="blog-date">${blog.date?string["EEEE, MMMM dd YYYY"]}<#if blog.author??>, posted by ${blog.author}</#if></p>
+<div class="container mt-5 kc-article">
+    <h1>${blog.title}</h1>
+    <p class="blog-date text-muted">${blog.date?string["MMMM dd YYYY"]}<#if blog.author??> by ${blog.author}</#if></p>
 
-        <#if blog.old>
-        <div class="alert alert-warning" role="alert">
-        This post is more than one year old. The contents within the blog is likely to be out of date.
-        </div>
-        </#if>
-
-        <#include "../${blog.template}">
+    <#if blog.old>
+    <div class="alert alert-warning" role="alert">
+    This post is more than one year old. The contents within the blog is likely to be out of date.
     </div>
+    </#if>
+
+    <#include "../${blog.template}">
 </div>
-<#include "../templates/footer.ftl">
+
+</@tmpl.page>

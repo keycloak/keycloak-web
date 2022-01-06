@@ -1,4 +1,4 @@
-:title: Keycloak on OpenJDK
+:title: OpenJDK
 :summary: Get started with Keycloak on bare metal
 :priority: 10
 

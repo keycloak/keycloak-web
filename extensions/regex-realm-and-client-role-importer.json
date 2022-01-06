@@ -1,9 +1,5 @@
 {
-    "name": "Regex Realm and Client Role Importer",
-    "description": "This extension provides a broker mapper that maps a multivalued OIDC claim (e.g.: groups) or SAML attribute (e.g.: groupMembership) into one or more realm and/or client role assignments based on regular expressions.",
-    "maintainers": [
-        "LucaFilipozzi"
-    ],
-    "website": "https://github.com/LucaFilipozzi/keycloak-regex-mapper",
-    "download": "https://github.com/LucaFilipozzi/keycloak-regex-mapper/releases"
+    "name": "Regex role importer",
+    "description": "This extension provides a broker mapper that maps a multivalued OIDC claim or SAML attribute to roles based on regular expressions.",
+    "website": "https://github.com/LucaFilipozzi/keycloak-regex-mapper"
 }

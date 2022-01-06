@@ -1,11 +1,5 @@
 {
     "name": "privacyIDEA two factor authentication",
-    "description": "This extenion adds 2nd factors to keycloak, that are authenticated against your central privacyIDEA system. privacyIDEA is a two factor management system that can manage a lot of different token types for your users.  Possible 2nd factors are e.g. HOTP, TOTP smartphone apps and hardware tokens, Email, SMS, Yubikeys, Nitrokeys, Push Token... privacyIDEA is completely Open Source licensed under the AGPLv3.",
-    "maintainers": [
-        "privacyidea"
-    ],
-    "website": "https://privacyidea.org",
-    "source": "https://github.com/privacyidea/keycloak-provider",
-    "download": "https://github.com/privacyidea/keycloak-provider/releases",
-    "documentation": "https://community.privacyidea.org/t/how-to-use-keycloak-with-privacyidea/1132"
+    "description": "Adds 2nd factors to keycloak, that are authenticated against your central privacyIDEA system.",
+    "website": "https://github.com/privacyidea/keycloak-provider"
 }

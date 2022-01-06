@@ -16,7 +16,7 @@ public class GuideBuilder extends AbstractBuilder {
             }
             Map<String, Object> attributes = new HashMap<>();
             attributes.put("guide", guide);
-            attributes.put("guideImages", context.getLinks().getRoot() + "resources/images/guides");
+            attributes.put("guideImages", context.getLinks().getRoot() + "/resources/images/guides");
 
             File dir = new File(context.getTargetDir(), "guides");
             dir.mkdirs();

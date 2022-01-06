@@ -1,4 +1,4 @@
-<h2>Guides</h2>
+<h2 class="mt-4">Guides</h2>
 
 <#if archive>
     <#assign docRoot = "${root}docs/${version.versionShorter}">
@@ -100,7 +100,7 @@
     </tbody>
 </table>
 
-<h2>API Documentation</h2>
+<h2 class="mt-4">API Documentation</h2>
 
 <table class="table table-bordered table-striped">
     <tbody>

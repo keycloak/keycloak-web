@@ -1,4 +1,5 @@
 :title: Important security vulnerability discovered
+:summary: A flaw was found in Keycloak version from 12.0.0 and before 15.1.1 which allows an attacker with any existing user account to create new default user accounts via the administrative REST API even when new user registration is disabled.
 :date: 2021-12-23
 :publish: true
 :author: Stian Thorgersen

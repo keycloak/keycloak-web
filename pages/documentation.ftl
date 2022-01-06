@@ -1,23 +1,13 @@
-<#assign title = "Documentation">
+<#import "/templates/template.ftl" as tmpl>
 
-<#include "../templates/header.ftl">
-<#include "../templates/menu.ftl">
+<@tmpl.page current="docs" title="Documentation">
 
-<div class="page-section">
-    <div class="container">
-        <h1>Documentation</h1>
+<div class="container mt-5">
+    <h1>Documentation <span class="badge bg-primary">${version.version}</span></h1>
 
-        <p>${version.version} - <a href="${root}docs/latest/release_notes/index.html">Release notes</a></p>
+    <#include "../templates/documentation-${version.documentationTemplate}.ftl">
 
-        <#include "../templates/documentation-${version.documentationTemplate}.ftl">
-
-
-        <#if !version.final>
-            <p>This is a <b>release candidate</b>. The latest final release is <a href="archive/documentation-${versions[1].versionShorter}.html">${versions[1].versionShorter}</a>.</p>
-        </#if>
-
-        <h3>For older releases go <a href="documentation-archive.html">here</a>.</h3>
-    </div>
+    <h4 class="mt-4">For previous releases go <a href="documentation-archive.html">here</a>.</h4>
 </div>
 
-<#include "../templates/footer.ftl">
+</@tmpl.page>

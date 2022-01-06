@@ -1,4 +1,4 @@
-:title: Keycloak on Kubernetes
+:title: Kubernetes
 :summary: Get started with Keycloak on Kubernetes
 :priority: 100
 

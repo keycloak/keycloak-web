@@ -1,23 +1,22 @@
-<#assign title = "Documentation Archive" noindex = true>
+<#import "/templates/template.ftl" as tmpl>
 
-<#include "../templates/header.ftl">
-<#include "../templates/menu.ftl">
+<@tmpl.page current="docs" title="Documentation archive">
 
-<div class="page-section">
-    <div class="container">
-        <h1>Documentation Archive</h1>
+<div class="container mt-5 kc-article">
+    <h1>Documentation archive</h1>
 
-        <ol class="breadcrumb">
-            <li><a href="documentation.html">Documentation</a></li>
-            <li class="active">Archive</li>
-        </ol>
+    <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="documentation.html">Documentation</a></li>
+        <li class="breadcrumb-item active">Archive</li>
+    </ol>
+    </nav>
 
-        <ul>
-        <#list versionsMajorMinor as version>
-            <li><a href="archive/documentation-${version.versionShorter}.html">${version.versionShorter}</a></li>
-        </#list>
-        </ul>
-    </div>
+    <ul>
+    <#list versionsMajorMinor as version>
+        <li><a href="archive/documentation-${version.versionShorter}.html">${version.versionShorter}</a></li>
+    </#list>
+    </ul>
 </div>
 
-<#include "../templates/footer.ftl">
+</@tmpl.page>

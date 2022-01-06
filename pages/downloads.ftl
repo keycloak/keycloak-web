@@ -1,28 +1,23 @@
-<#assign title = "Downloads">
+<#import "/templates/template.ftl" as tmpl>
 
-<#include "../templates/header.ftl">
-<#include "../templates/menu.ftl">
+<@tmpl.page current="downloads" title="downloads">
 
-<div class="page-section">
-    <div class="container">
-        <h1>Downloads</h1>
+<div class="container mt-5">
+    <h1>Downloads <span class="badge bg-primary">${version.version}</span></h1>
 
-        <p>${version.version} - <a href="${root}docs/latest/release_notes/index.html">Release notes</a></p>
+    <p>
+        For a list of community maintained extensions check out the <a href="extensions.html">Extensions</a> page.
+    </p>
 
-        <p>
-            For a list of community maintained extensions check out the <a href="extensions.html">Extensions</a> page.
-        </p>
+    <#include "../templates/downloads-${version.downloadTemplate}.ftl">
 
-        <#include "../templates/downloads-${version.downloadTemplate}.ftl">
+    <#if !version.final>
+        <p>This is a <b>release candidate</b>. The latest final release is <a href="archive/downloads-${versions[1].versionShort}.html">${versions[1].versionShort}</a>.</p>
+    </#if>
 
-        <#if !version.final>
-            <p>This is a <b>release candidate</b>. The latest final release is <a href="archive/downloads-${versions[1].versionShort}.html">${versions[1].versionShort}</a>.</p>
-        </#if>
-
-        <h3>For previous releases go <a href="downloads-archive.html">here</a>.</h3>
-    </div>
+    <h4 class="mt-4">For previous releases go <a href="downloads-archive.html">here</a>.</h4>
 </div>
 
 <script src="${root}resources/js/downloads.js" type="text/javascript"></script>
 
-<#include "../templates/footer.ftl">
+</@tmpl.page>

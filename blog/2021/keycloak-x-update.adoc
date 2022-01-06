@@ -1,5 +1,6 @@
 :title: Keycloak.X Update
 :date: 2021-10-28
+:summary: It's been quite some time since we announced the plans around Keycloak.X, two years in fact. Due to other priorities we've been a bit distracted, but now it's finally full speed ahead.
 :publish: true
 :author: Stian Thorgersen
 

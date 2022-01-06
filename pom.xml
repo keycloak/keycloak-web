@@ -10,61 +10,133 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <version.java>11</version.java>
+
+        <version.github-api>1.300</version.github-api>
+        <version.freemarker>2.3.31</version.freemarker>
+        <version.asciidoctorj>2.5.2</version.asciidoctorj>
+        <version.jackson>2.13.1</version.jackson>
+        <version.commons-io>2.11.0</version.commons-io>
+        <version.commons-compress>1.21</version.commons-compress>
+
+        <version.frontend-maven-plugin>1.12.1</version.frontend-maven-plugin>
+        <version.node>v16.13.1</version.node>
+        <version.npm>8.1.2</version.npm>
+        <version.maven-resources-plugin>3.2.0</version.maven-resources-plugin>
+        <version.maven-compiler-plugin>3.8.1</version.maven-compiler-plugin>
+        <version.maven-jar-plugin>3.1.2</version.maven-jar-plugin>
+        <version.exec-maven-plugin>3.0.0</version.exec-maven-plugin>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.kohsuke</groupId>
             <artifactId>github-api</artifactId>
-            <version>1.300</version>
+            <version>${version.github-api}</version>
         </dependency>
         <dependency>
             <groupId>org.freemarker</groupId>
             <artifactId>freemarker</artifactId>
-            <version>2.3.29</version>
+            <version>${version.freemarker}</version>
         </dependency>
         <dependency>
             <groupId>org.asciidoctor</groupId>
             <artifactId>asciidoctorj</artifactId>
-            <version>2.1.0</version>
+            <version>${version.asciidoctorj}</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
-            <version>2.10.0</version>
+            <version>${version.jackson}</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>2.10.0</version>
+            <version>${version.jackson}</version>
         </dependency>
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
-            <version>2.7</version>
+            <version>${version.commons-io}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-compress</artifactId>
-            <version>1.21</version>
+            <version>${version.commons-compress}</version>
         </dependency>
     </dependencies>
 
     <build>
         <plugins>
             <plugin>
+                <groupId>com.github.eirslett</groupId>
+                <artifactId>frontend-maven-plugin</artifactId>
+                <version>${version.frontend-maven-plugin}</version>
+                <executions>
+                    <execution>
+                        <id>install node and npm</id>
+                        <goals>
+                            <goal>install-node-and-npm</goal>
+                        </goals>
+                        <configuration>
+                            <nodeVersion>${version.node}</nodeVersion>
+                            <npmVersion>${version.npm}</npmVersion>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>npm install</id>
+                        <goals>
+                            <goal>npm</goal>
+                        </goals>
+                        <phase>generate-resources</phase>
+                        <configuration>
+                            <arguments>install</arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>${version.maven-resources-plugin}</version>
+                <executions>
+                    <execution>
+                        <id>copy-node-modules</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${basedir}/target/web/resources</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${basedir}/node_modules</directory>
+                                    <includes>
+                                        <include>bootstrap/dist/css/bootstrap.min.css</include>
+                                        <include>bootstrap/dist/js/bootstrap.min.js</include>
+                                        <include>@fortawesome/fontawesome-free/css/fontawesome.min.css</include>
+                                        <include>@fortawesome/fontawesome-free/css/solid.min.css</include>
+                                        <include>@fortawesome/fontawesome-free/webfonts/*</include>
+                                    </includes>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.5.1</version>
+                <version>${version.maven-compiler-plugin}</version>
                 <configuration>
-                    <source>11</source>
-                    <target>11</target>
+                    <source>${version.java}</source>
+                    <target>${version.java}</target>
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>3.0.1</version>
+                <version>${version.maven-jar-plugin}</version>
                 <configuration>
                     <archive>
                         <manifest>
@@ -77,9 +149,11 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
-                <version>1.6.0</version>
+                <version>${version.exec-maven-plugin}</version>
                 <executions>
                     <execution>
+                        <id>build-web</id>
+                        <phase>package</phase>
                         <goals>
                             <goal>java</goal>
                         </goals>

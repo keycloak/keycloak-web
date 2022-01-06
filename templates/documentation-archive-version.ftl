@@ -1,19 +1,18 @@
-<#assign title = "Documentation Archive - ${version.versionShort}" noindex = true>
+<#import "/templates/template.ftl" as tmpl>
 
-<#include "../templates/header.ftl">
-<#include "../templates/menu.ftl">
+<@tmpl.page current="docs" title="Documentation ${version.versionShorter}" noindex=true>
 
-<div class="page-section">
-    <div class="container">
-        <h1>Documentation - ${version.versionShorter}</h1>
+<div class="container mt-5">
+    <h1>Documentation <span class="badge bg-primary">${version.versionShorter}</span></h1>
 
-        <ol class="breadcrumb">
-            <li><a href="${root}documentation.html">Documentation</a></li>
-            <li><a href="${root}documentation-archive.html">Archive</a></li>
-            <li class="active">${version.versionShorter}</li>
-        </ol>
+    <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="../documentation.html">Documentation</a></li>
+        <li class="breadcrumb-item"><a href="../documentation-archive.html">Archive</a></li>
+        <li class="breadcrumb-item active">${version.versionShorter}</li>
+    </ol>
+    </nav>
 
-        <#include "documentation-${version.documentationTemplate}.ftl">
-    </div>
+    <#include "documentation-${version.documentationTemplate}.ftl">
 </div>
-<#include "../templates/footer.ftl">
+</@tmpl.page>
