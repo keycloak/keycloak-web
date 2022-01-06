@@ -1,11 +1,5 @@
 {
-    "name": "Keycloak Python Client",
-    "description": "Python client for keycloak server. Using this client python apps can integrate the authorization and authentication facility from the keycloak server",
-    "maintainers": [
-        "akhilputhiry"
-    ],
-    "website": "https://github.com/akhilputhiry/keycloak-client",
-    "download": "https://pypi.org/project/keycloak/#files",
-    "documentation": "https://keycloak-client.readthedocs.io",
-    "source": "https://github.com/akhilputhiry/keycloak-client"
+    "name": "Python Client",
+    "description": "Client library for python applications.",
+    "website": "https://github.com/akhilputhiry/keycloak-client"
 }

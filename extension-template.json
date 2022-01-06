@@ -1,11 +1,5 @@
 {
     "name": "Name",
-    "description": "Description",
-    "maintainers": [
-        "github-nick1", "github-nick2"
-    ],
-    "website": "Extension website",
-    "download": "Direct download or download page",
-    "documentation": "Documentation",
-    "source": "Source code"
+    "description": "Brief description",
+    "website": "Extension website"
 }

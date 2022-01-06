@@ -1,26 +1,24 @@
-<#assign title = "Extensions">
+<#import "/templates/template.ftl" as tmpl>
 
-<#include "../templates/header.ftl">
-<#include "../templates/menu.ftl">
+<@tmpl.page current="extensions" title="Extensions">
 
-<div class="page-section">
+<div class="jumbotron jumbotron-fluid kc-bg-triangles py-5">
     <div class="container">
-        <h1>Extensions</h1>
+        <h1 class="text-white">Extensions</h1>
 
+        <div class="row">
         <#list extensions as extension>
-            <h2>${extension.name}</h2>
-
-            <p>${extension.description}</p>
-
-            <table class="table-extensions">
-                <#if extension.maintainers?has_content><tr><th>Maintainers</th><td><#list extension.maintainers as maintainer><a href="https://github.com/${maintainer}">${maintainer}</a><#sep>, </#sep></#list></td></#if>
-                <#if extension.website?has_content><tr><th>Website</th><td><a href="${extension.website}">${extension.website}</a></td></#if>
-                <#if extension.download?has_content><tr><th>Download</th><td><a href="${extension.download}">${extension.download}</a></td></#if>
-                <#if extension.documentation?has_content><tr><th>Documentation</th><td><a href="${extension.documentation}">${extension.documentation}</a></td></#if>
-                <#if extension.source?has_content><tr><th>Source</th><td><a href="${extension.source}">${extension.source}</a></td></#if>
-            </table>
+        <div class="col-sm-4">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <h5><a href="${extension.website}">${extension.name}</a></h5>
+                    <span>${extension.description}</span>
+                </div>
+            </div>
+        </div>
         </#list>
+        </div>
     </div>
 </div>
 
-<#include "../templates/footer.ftl">
+</@tmpl.page>

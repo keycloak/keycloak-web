@@ -1,9 +1,5 @@
 {
-    "name": "Testcontainers Keycloak",
-    "description": "A Testcontainers implementation for Keycloak IAM & SSO. This provides a Testcontainers instance you can use in your integration tests, without being dependent on other infrastructure (besides Docker) or shared Keycloak deployments, being randomly changed by your co-workers.",
-    "maintainers": [
-        "dasniko"
-    ],
-    "website": "https://github.com/dasniko/testcontainers-keycloak",
-    "download": "https://search.maven.org/artifact/com.github.dasniko/testcontainers-keycloak"
+    "name": "Testcontainers",
+    "description": "A Testcontainers implementation for Keycloak.",
+    "website": "https://github.com/dasniko/testcontainers-keycloak"
 }

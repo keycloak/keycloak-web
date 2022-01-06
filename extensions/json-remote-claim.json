@@ -1,11 +1,5 @@
 {
   "name": "JSON Remote Claim Mapper",
-  "description": "This module adds a new mapper type to retrieve JSON data from a remote HTTP endpoint (e.g. from a REST API) and add it as a claim into tokens or user info.",
-  "maintainers": [
-      "groupe-sii", "niroussel"
-  ],
-  "website": "https://github.com/groupe-sii/keycloak-json-remote-claim",
-  "download": "https://github.com/groupe-sii/keycloak-json-remote-claim",
-  "documentation": "https://github.com/groupe-sii/keycloak-json-remote-claim/blob/master/README.md",
-  "source": "https://github.com/groupe-sii/keycloak-json-remote-claim"
+  "description": "Protocol mapper to retrieve JSON data from a remote HTTP endpoint.",
+  "website": "https://github.com/groupe-sii/keycloak-json-remote-claim"
 }

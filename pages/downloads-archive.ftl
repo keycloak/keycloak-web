@@ -1,22 +1,22 @@
-<#assign title = "Downloads Archive" noindex = true>
+<#import "/templates/template.ftl" as tmpl>
 
-<#include "../templates/header.ftl">
-<#include "../templates/menu.ftl">
+<@tmpl.page current="downloads" title="Downloads archive">
 
-<div class="page-section">
-    <div class="container">
-        <h1>Downloads Archive</h1>
+<div class="container mt-5 kc-article">
+    <h1>Downloads archive</h1>
 
-        <ol class="breadcrumb">
-            <li><a href="downloads.html">Downloads</a></li>
-            <li class="active">Archive</li>
-        </ol>
+    <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="downloads.html">Downloads</a></li>
+        <li class="breadcrumb-item active">Archive</li>
+    </ol>
+    </nav>
 
-        <ul>
-        <#list versions as version>
-            <li><a href="archive/downloads-${version.versionShort}.html">${version.versionShort}</a></li>
-        </#list>
-        </ul>
-    </div>
+    <ul>
+    <#list versions as version>
+        <li><a href="archive/downloads-${version.versionShort}.html">${version.versionShort}</a></li>
+    </#list>
+    </ul>
 </div>
-<#include "../templates/footer.ftl">
+
+</@tmpl.page>

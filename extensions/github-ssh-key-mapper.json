@@ -1,11 +1,5 @@
 {
-  "name": "Github SSH key mapper",
-  "description": "An attribute mapper for the Github Identity Provider. The mapper can fetch the user's SSH keys from github's REST API",
-  "maintainers": [
-    "mhuin"
-  ],
-  "website": "https://github.com/mhuin/keycloak-github-ssh-key-attribute-mapper",
-  "download": "https://github.com/mhuin/keycloak-github-ssh-key-attribute-mapper",
-  "documentation": "https://github.com/mhuin/keycloak-github-ssh-key-attribute-mapper/blob/master/README.md",
-  "source": "https://github.com/mhuin/keycloak-github-ssh-key-attribute-mapper"
+  "name": "GitHub SSH key mapper",
+  "description": "An attribute mapper for the Github Identity Provider. The mapper can fetch the user's SSH keys from github's REST API.",
+  "website": "https://github.com/mhuin/keycloak-github-ssh-key-attribute-mapper"
 }

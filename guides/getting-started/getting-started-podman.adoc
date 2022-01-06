@@ -1,4 +1,4 @@
-:title: Keycloak on Podman
+:title: Podman
 :summary: Get started with Keycloak on Podman
 :priority: 70
 

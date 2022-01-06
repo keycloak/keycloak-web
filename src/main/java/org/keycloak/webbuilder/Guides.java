@@ -128,8 +128,8 @@ public class Guides {
 
     public enum GuideCategory {
 
-        GETTING_STARTED("Getting Started with Keycloak"),
-        SECURING_APPS("Securing Applications");
+        GETTING_STARTED("Getting started"),
+        SECURING_APPS("Securing applications");
 
         private String label;
 

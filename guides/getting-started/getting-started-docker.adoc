@@ -1,4 +1,4 @@
-:title: Keycloak on Docker
+:title: Docker
 :summary: Get started with Keycloak on Docker
 :priority: 60
 

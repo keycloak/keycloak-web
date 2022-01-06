@@ -1,44 +1,32 @@
-<#include "../templates/header.ftl">
-<#include "../templates/menu.ftl">
+<#import "/templates/template.ftl" as tmpl>
 
+<@tmpl.page current="get-started" title="Getting started">
 
-<div class="page-section cards-section">
+<div class="jumbotron jumbotron-fluid kc-bg-triangles py-5">
+    <#list guides.categories as c>
     <div class="container">
-
-        <#list guides.categories as c>
-        <h2>${c.label}</h2>
+        <h1 class="text-white">${c.label}</h1>
 
         <div class="row">
             <#list guides.getGuides(c) as g>
-            <div class="col-sm-6">
-                <a href="${links.get(g)}">
-                <div class="card">
+            <div class="col-sm-4">
+                <div class="card mb-4 shadow-sm">
                     <div class="card-body">
-                        <#if g.community>
-                        <p class="community-badge text-primary">
-                            <i class="fa fa-users text-primary"></i> Community
-                        </p>
-                        </#if>
-                        <#if g.external>
-                            <p class="community-badge text-primary">
-                                <i class="fa fa-link text-primary"></i> External
-                            </p>
-                        </#if>
-
-                        <h2 class="card-title">${g.title}</h2>
-
-                        <#if g.summary??>
-                        <p class="card-text">${g.summary}</p>
-                        </#if>
+                            <h5>
+                                <a href="${links.get(g)}">${g.title}</a>
+                                <#if g.community><span class="badge badge-primary"><i class="fa fa-users text-light"></i> Community</span></#if>
+                                <#if g.external><span class="badge badge-primary"><i class="fa fa-link text-light"></i> External</span></#if>
+                            </h5>
+                            <#if g.summary??>
+                            <span>${g.summary}</span>
+                            </#if>
                     </div>
                 </div>
-                </a>
             </div>
             </#list>
         </div>
-        </#list>
-
     </div>
+    </#list>
 </div>
 
-<#include "../templates/footer.ftl">
+</@tmpl.page>

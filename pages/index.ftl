@@ -1,166 +1,186 @@
-<#include "../templates/header.ftl">
-<#include "../templates/menu.ftl">
+<#import "/templates/template.ftl" as tmpl>
 
-<div class="marquee-section">
-    <div class="container-fluid">
-        <div class="row marquee-slide-row">
-            <div class="col-xs-12">
-                <h1>Open Source Identity and Access Management</h1>
-                <h2>For Modern Applications and Services</h2>
-                <div class="learn"><a class="btn btn-primary" href="${links.guides}">Get Started with Keycloak</a></div>
+<@tmpl.page current="home" title="">
+
+<div class="jumbotron jumbotron-fluid kc-bg-triangles">
+  <div class="container text-white pt-4 pb-4">
+    <div class="row">
+        <div class="col">
+            <h1 class="fs-xlarge">Open Source Identity and<br/>Access Management</h1>
+            <p class="fs-4">
+                Add authentication to applications and secure services with minimum effort. No need to deal with storing
+                users or authenticating users.
+            </p>
+            <p class="fs-4">
+                Keycloak provides user federation, strong authentication, user management, fine-grained authorization, and more.
+            </p>
+            <div class="mt-5">
+                <a class="btn btn-primary btn-lg" href="${links.guides}">Get Started</a>
+                <a class="btn btn-light btn-lg" href="${links.downloads}">Download</a>
             </div>
+            <div class="mt-1">
+                Latest release ${version.version}
+            </div>
+        </div>
+        <div class="col col-4">
+            <img class="img-fluid" src="file:/home/st/dev/keycloak-web/target/web/resources/images/keycloak_icon_512px.svg" alt="Keycloak"/>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="jumbotron jumbotron-fluid bg-dark text-white">
+<div class="container bg-dark p-3">
+    <div class="row">
+        <div class="col-1 fw-bold">News</div>
+        <#list news as n>
+        <div class="col">
+            <span class="badge bg-secondary">${n.date?string["dd MMM"]}</span> <a href="${n.link}">${n.title}</a>
+        </div>
+        </#list>
+    </div>
+</div>
+</div>
+
+<div class="container mt-5">
+    <div class="row mt-5">
+        <div class="col">
+            <h2>Single-Sign On</h2>
+            <p>
+                Users authenticate with Keycloak rather than individual applications. This means that your applications
+                don't have to deal with login forms, authenticating users, and storing users. Once logged-in to
+                Keycloak, users don't have to login again to access a different application.
+            </p>
+            <p>
+                This also applied to logout. Keycloak provides single-sign out, which means users only have to logout once to be
+                logged-out of all applications that use Keycloak.
+            </p>
+        </div>
+        <div class="col">
+            <img src="resources/images/screen-login.png" class="border"/>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col">
+            <h2>Identity Brokering and Social Login</h2>
+            <p>
+                Enabling login with social networks is easy to add through the admin console. It's just a matter of selecting the
+                social network you want to add. No code or changes to your application is required.
+            </p>
+            <p>
+                Keycloak can also authenticate users with existing OpenID Connect or SAML 2.0 Identity Providers. Again, this is
+                just a matter of configuring the Identity Provider through the admin console.
+            </p>
+        </div>
+        <div class="col">
+             <img src="resources/images/dia-identity-brokering.png"/>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col">
+            <h2>User Federation</h2>
+            <p>
+                Keycloak has built-in support to connect to existing LDAP or Active Directory servers. You can also implement your own
+                provider if you have users in other stores, such as a relational database.
+            </p>
+        </div>
+        <div class="col">
+             <img src="resources/images/dia-user-fed.png"/>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col">
+            <h2>Admin Console</h2>
+            <p>
+                Through the admin console administrators can centrally manage all aspects of the Keycloak server.
+            </p>
+            <p>
+                They can enable and disable various features.  They can configure identity brokering and user federation.
+            </p>
+            <p>
+                They can create and manage applications and services, and define fine-grained authorization
+                policies.
+            </p>
+            <p>
+                They can also manage users, including permissions and sessions.
+            </p>
+        </div>
+        <div class="col">
+             <img src="resources/images/screen-admin.png" class="border"/>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col">
+            <h2>Account Management Console</h2>
+            <p>
+                Through the account management console users can manage their own accounts. They can update the profile,
+                change passwords, and setup two-factor authentication.
+            </p>
+            <p>
+                Users can also manage sessions as well as view history for the account.
+            </p>
+            <p>
+                If you've enabled social login or identity brokering users can also link their accounts with additional
+                providers to allow them to authenticate to the same account with different identity providers.
+            </p>
+        </div>
+        <div class="col">
+             <img src="resources/images/screen-account.png"/>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col">
+            <h2>Standard Protocols</h2>
+            <p>
+                Keycloak is based on standard protocols and provides support for OpenID Connect, OAuth 2.0, and SAML.
+            </p>
+        </div>
+        <div class="col">
+             <img src="resources/images/dia-protocols.png"/>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col">
+            <h2>Authorization Services</h2>
+            <p>
+                If role based authorization doesn't cover your needs, Keycloak provides fine-grained authorization services as well.
+                This allows you to manage permissions for all your services from the Keycloak admin console and gives you the
+                power to define exactly the policies you need.
+            </p>
         </div>
     </div>
 </div>
 
-<div class="main-banner">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-7 col-xs-12 left-col">
-                <p>
-                    Add authentication to applications and secure services with minimum fuss. No need to deal with storing
-                    users or authenticating users. It's all available out of the box.
-                </p>
-                <p>
-                    You'll even get advanced features such as User Federation, Identity Brokering and Social Login.
-                </p>
-                <p>
-                    For more details go to <a href="${links.about}">about</a> and <a href="${links.docs}">documentation</a>, and don't forget to <a href="${links.guides}">try Keycloak</a>. It's easy by design!
-                </p>
-            </div>
+<#macro featuresEntry icon title text>
+<div class="col d-flex align-items-start">
+    <div class="row m-3">
+        <span class="fw-bold"><i class="fa ${icon} pe-2" aria-hidden="true"></i> ${title}</span>
+        <span>${text}</span>
+    </div>
+</div>
+</#macro>
 
-            <div class="col-sm-4 col-sm-offset-1 col-xs-12 announcement-col">
-                <div class="announce-box">
-                    <h3>News</h3>
-                    <ul class="announce-ul">
-                        <#list news as n>
-                        <li>
-                            <b>${n.date?string["dd MMM"]}</b> <a href="${n.link}">${n.title}</a>
-                        </li>
-                        </#list>
-                    </ul>
-                </div>
-
-
-            </div>
-
-        </div>
+<div class="container bg-light mt-5 py-4">
+    <div class="row row-cols-1 row-cols-lg-4">
+        <@featuresEntry icon="fa-key" title="Single-Sign On" text="Login once to multiple applications"/>
+        <@featuresEntry icon="fa-exchange-alt" title="Standard Protocols" text="OpenID Connect, OAuth 2.0 and SAML 2.0"/>
+        <@featuresEntry icon="fa-cog" title="Centralized Management" text="For admins and users"/>
+        <@featuresEntry icon="fa-shield-alt" title="Adapters" text="Secure applications and services easily"/>
+        <@featuresEntry icon="fa-users" title="LDAP and Active Directory" text="Connect to existing user directories"/>
+        <@featuresEntry icon="fa-cloud" title="Social Login" text="Easily enable social login"/>
+        <@featuresEntry icon="fa-cloud" title="Identity Brokering" text="OpenID Connect or SAML 2.0 IdPs"/>
+        <@featuresEntry icon="fa-bolt" title="High Performance" text="Lightweight, fast and scalable"/>
+        <@featuresEntry icon="fa-server" title="Clustering" text="For scalability and availability"/>
+        <@featuresEntry icon="fa-eye" title="Themes" text="Customize look and feel"/>
+        <@featuresEntry icon="fa-edit" title="Extensible" text="Customize through code"/>
+        <@featuresEntry icon="fa-lock" title="Password Policies" text="Customize password policies"/>
     </div>
 </div>
 
-<div class="features-section">
-    <div class="container features-area">
-        <div class="features-flex-container">
-
-            <div class="flex-item">
-                <ul>
-                    <li class="symbol"><i class="fa fa-2x fa-key" aria-hidden="true"></i></li>
-                    <li class="description"><h4>Single-Sign On</h4>
-                        <p>Login once to multiple applications</p>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="flex-item">
-                <ul>
-                    <li class="symbol"><i class="fa fa-2x fa-exchange" aria-hidden="true"></i></li>
-                    <li class="description"><h4>Standard Protocols</h4>
-                        <p>OpenID Connect, OAuth 2.0<br/> and SAML 2.0</p>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="flex-item">
-                <ul>
-                    <li class="symbol"><i class="fa fa-2x fa-cog" aria-hidden="true"></i></li>
-                    <li class="description"><h4>Centralized Management</h4>
-                        <p>For admins and users</p>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="flex-item">
-                <ul>
-                    <li class="symbol"><i class="fa fa-2x fa-shield" aria-hidden="true"></i></li>
-                    <li class="description"><h4>Adapters</h4>
-                        <p>Secure applications and services easily</p>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="flex-item">
-                <ul>
-                    <li class="symbol"><i class="fa fa-2x fa-users" aria-hidden="true"></i></li>
-                    <li class="description"><h4>LDAP and Active Directory</h4>
-                        <p>Connect to existing user directories</p>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="flex-item">
-                <ul>
-                    <li class="symbol"><i class="fa fa-2x fa-cloud" aria-hidden="true"></i></li>
-                    <li class="description"><h4>Social Login</h4>
-                        <p>Easily enable social login</p>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="flex-item">
-                <ul>
-                    <li class="symbol"><i class="fa fa-2x fa-cloud" aria-hidden="true"></i></li>
-                    <li class="description"><h4>Identity Brokering</h4>
-                        <p>OpenID Connect or SAML 2.0 IdPs</p>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="flex-item">
-                <ul>
-                    <li class="symbol"><i class="fa fa-2x fa-bolt" aria-hidden="true"></i></li>
-                    <li class="description"><h4>High Performance</h4>
-                        <p>Lightweight, fast and scalable</p>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="flex-item">
-                <ul>
-                    <li class="symbol"><i class="fa fa-2x fa-server" aria-hidden="true"></i></li>
-                    <li class="description"><h4>Clustering</h4>
-                        <p>For scalability and availability</p>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="flex-item">
-                <ul>
-                    <li class="symbol"><i class="fa fa-2x fa-eye" aria-hidden="true"></i></li>
-                    <li class="description"><h4>Themes</h4>
-                        <p>Customize look and feel</p>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="flex-item">
-                <ul>
-                    <li class="symbol"><i class="fa fa-2x fa-edit" aria-hidden="true"></i></li>
-                    <li class="description"><h4>Extensible</h4>
-                        <p>Customize through code</p>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="flex-item">
-                <ul>
-                    <li class="symbol"><i class="fa fa-2x fa-lock" aria-hidden="true"></i></li>
-                    <li class="description"><h4>Password Policies</h4>
-                        <p>Customize password policies</p>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-
-<#include "../templates/footer.ftl">
+</@tmpl.page>

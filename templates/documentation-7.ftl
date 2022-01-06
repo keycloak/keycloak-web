@@ -1,4 +1,4 @@
-<h2>Guides</h2>
+<h2 class="mt-4">Guides</h2>
 
 <#if archive>
     <#assign docRoot = "${root}docs/${version.versionShorter}">
@@ -19,7 +19,7 @@
     </tr>
     <tr>
         <td>
-            <a href="${docRoot}/getting_started/index.html" target="_blank">
+            <a href="${links.guides}">
                 Getting Started
             </a>
         </td>
@@ -100,7 +100,7 @@
     </tbody>
 </table>
 
-<h2>API Documentation</h2>
+<h2 class="mt-4">API Documentation</h2>
 
 <table class="table table-bordered table-striped">
     <tbody>
