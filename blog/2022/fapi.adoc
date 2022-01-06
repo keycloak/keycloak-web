@@ -1,0 +1,29 @@
+:title: Keycloak certified as FAPI and Brazil Open Banking provider
+:date: 2022-01-06
+:publish: true
+:author: Marek Posolda
+
+We are glad to announce that Keycloak 15.0.2 was officially certified as https://openid.net/certification/#FAPI_OPs[FAPI OpenID Provider]! https://www.keycloak.org/docs/latest/securing_apps/#_fapi-support[FAPI] is a shortcut
+for `Financial-grade API` and the FAPI compliance means that Keycloak is now officially able to be used in the highly confidential financial based deployments.
+
+Firstly, Keycloak is now certified as `FAPI 1 Advanced Final (Generic)` provider. For this generic profile, Keycloak is compliant with all the matrix combinations. This means that Keycloak clients
+are allowed to use https://datatracker.ietf.org/doc/html/rfc9126[PAR], https://openid.net/specs/openid-financial-api-jarm.html[JARM], and
+client authentication based on https://datatracker.ietf.org/doc/html/rfc8705[Mutual-TLS] or https://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication[JSON Web Token signed by Private Key].
+
+Keycloak is also certified as Brazil Open Banking provider. For this profile, Keycloak is also compliant with all the matrix combinations. We just did not obtain certification for the DCR,
+which requires more complicated setup including registration with official Brazil institutions. However some Brazil banks, which are customers of Keycloak based
+product https://access.redhat.com/products/red-hat-single-sign-on[RH-SSO 7.5], were able to obtain DCR certification. So technically, the certification with DCR for any
+institution using Keycloak or RH-SSO is completely fine.
+
+You can see the https://openid.net/certification/#FAPI_OPs[Official OpenID Page] with the details about the certification. For more details
+about FAPI support, you can check the https://www.keycloak.org/docs/latest/securing_apps/#_fapi-support[Keycloak documentation] with the details to setup your own Keycloak
+deployment to be FAPI compliant.
+
+Keycloak 15.0.2 is also compliant with https://openid.net/specs/openid-financial-api-ciba-ID1.html[FAPI CIBA] and we are working to officially obtain the certification for this.
+Moreover, We plan to re-certify Keycloak 15.0.2 with https://openid.net/specs/openid-connect-core-1_0.html[OpenID Connect Core], which Keycloak certified back in 2016.
+
+The FAPI certification was possible just due the awesome work of the https://github.com/keycloak/kc-sig-fapi/blob/main/README.md[FAPI Working Group].
+https://github.com/keycloak/kc-sig-fapi/blob/main/members.adoc[Members of this group] contributed many features related to FAPI, like Client Policies, CIBA, PAR, JARM and others.
+I hope that year 2022 will be at least as successful as 2021 and there will be even more contributions related to the FAPI as there are more standards being made and more
+certifications to be obtained. If you are interested in contributing to the Keycloak FAPI support, you are welcome to join FAPI Working Group. It is community working group and
+it is opened for anyone to join.
