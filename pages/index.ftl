@@ -56,8 +56,8 @@
                 logged-out of all applications that use Keycloak.
             </p>
         </div>
-        <div class="col">
-            <img src="resources/images/screen-login.png" class="border"/>
+        <div class="col-5 text-end">
+            <img class="img-fluid border" src="resources/images/screen-login.png"/>
         </div>
     </div>
 
@@ -73,8 +73,8 @@
                 just a matter of configuring the Identity Provider through the admin console.
             </p>
         </div>
-        <div class="col">
-             <img src="resources/images/dia-identity-brokering.png"/>
+        <div class="col-5 text-end">
+             <img class="img-fluid" src="resources/images/dia-identity-brokering.png"/>
         </div>
     </div>
 
@@ -86,8 +86,8 @@
                 provider if you have users in other stores, such as a relational database.
             </p>
         </div>
-        <div class="col">
-             <img src="resources/images/dia-user-fed.png"/>
+        <div class="col-5 text-end">
+             <img class="img-fluid" src="resources/images/dia-user-fed.png"/>
         </div>
     </div>
 
@@ -108,8 +108,8 @@
                 They can also manage users, including permissions and sessions.
             </p>
         </div>
-        <div class="col">
-             <img src="resources/images/screen-admin.png" class="border"/>
+        <div class="col-5 text-end">
+             <img class="img-fluid border" src="resources/images/screen-admin.png"/>
         </div>
     </div>
 
@@ -128,8 +128,8 @@
                 providers to allow them to authenticate to the same account with different identity providers.
             </p>
         </div>
-        <div class="col">
-             <img src="resources/images/screen-account.png"/>
+        <div class="col-5 text-end">
+             <img class="img-fluid border" src="resources/images/screen-account.png"/>
         </div>
     </div>
 
@@ -140,8 +140,8 @@
                 Keycloak is based on standard protocols and provides support for OpenID Connect, OAuth 2.0, and SAML.
             </p>
         </div>
-        <div class="col">
-             <img src="resources/images/dia-protocols.png"/>
+        <div class="col-5 text-end">
+             <img class="img-fluid" src="resources/images/dia-protocols.png"/>
         </div>
     </div>
 
