@@ -179,18 +179,6 @@
                                     <@download category="adapter" label="jetty9.4" file="keycloak-oidc-jetty94-adapter-${version.version}" tar=true />
                                 </td>
                             </tr>
-                            <tr>
-                                <td>9.3</td>
-                                <td>
-                                    <@download category="adapter" label="jetty9.3" file="keycloak-oidc-jetty93-adapter-${version.version}" tar=true />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>9.2</td>
-                                <td>
-                                    <@download category="adapter" label="jetty9.2" file="keycloak-oidc-jetty92-adapter-${version.version}" tar=true />
-                                </td>
-                            </tr>
                         </table>
                     </td>
                 </tr>
@@ -202,12 +190,6 @@
                                 <td>8, 9</td>
                                 <td>
                                     <@download category="adapter" label="tomcat" file="keycloak-oidc-tomcat-adapter-${version.version}" tar=true />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
-                                <td>
-                                    <@download category="adapter" label="tomcat7" file="keycloak-oidc-tomcat7-adapter-${version.version}" tar=true />
                                 </td>
                             </tr>
                         </table>
@@ -258,18 +240,6 @@
                                     <@download category="adapter-saml" label="jetty9.4" file="keycloak-saml-jetty94-adapter-${version.version}" tar=true />
                                 </td>
                             </tr>
-                            <tr>
-                                <td>9.3</td>
-                                <td>
-                                    <@download category="adapter-saml" label="jetty9.3" file="keycloak-saml-jetty93-adapter-${version.version}" tar=true />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>9.2</td>
-                                <td>
-                                    <@download category="adapter-saml" label="jetty9.2" file="keycloak-saml-jetty92-adapter-${version.version}" tar=true />
-                                </td>
-                            </tr>
                         </table>
                     </td>
                 </tr>
@@ -281,12 +251,6 @@
                                 <td>8, 9</td>
                                 <td>
                                     <@download category="adapter-saml" label="tomcat" file="keycloak-saml-tomcat-adapter-${version.version}" tar=true />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
-                                <td>
-                                    <@download category="adapter-saml" label="tomcat7" file="keycloak-saml-tomcat7-adapter-${version.version}" tar=true />
                                 </td>
                             </tr>
                         </table>
