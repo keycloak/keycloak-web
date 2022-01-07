@@ -27,8 +27,8 @@
 
 <header class="navbar navbar-expand-md bg-light">
 <nav class="container-xxl flex-wrap flex-md-no-wrap navbar-light">
-    <a class="navbar-brand me-5" href="file:/home/st/dev/keycloak-web/target/web/index.html">
-        <img class="img-fluid" src="file:/home/st/dev/keycloak-web/target/web/resources/images/keycloak_logo_200px.svg" width="240" alt="Keycloak"/>
+    <a class="navbar-brand me-5" href="${links.home}">
+        <img class="img-fluid" src="${links.getResource('images/keycloak_logo_200px.svg')}" width="240" alt="Keycloak"/>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
