@@ -23,7 +23,7 @@
             </div>
         </div>
         <div class="col col-4">
-            <img class="img-fluid" src="file:/home/st/dev/keycloak-web/target/web/resources/images/keycloak_icon_512px.svg" alt="Keycloak"/>
+            <img class="img-fluid" src="${links.getResource('images/keycloak_icon_512px.svg')}" alt="Keycloak"/>
         </div>
     </div>
   </div>
