@@ -8,8 +8,8 @@
         <div class="col">
             <h1 class="fs-xlarge">Open Source Identity and<br/>Access Management</h1>
             <p class="fs-4">
-                Add authentication to applications and secure services with minimum effort. No need to deal with storing
-                users or authenticating users.
+                Add authentication to applications and secure services with minimum effort.<br/>
+                No need to deal with storing users or authenticating users.
             </p>
             <p class="fs-4">
                 Keycloak provides user federation, strong authentication, user management, fine-grained authorization, and more.
