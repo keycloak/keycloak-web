@@ -24,15 +24,15 @@ public class WebBuilder {
     private AbstractBuilder[] builders = new AbstractBuilder[] {
 //            new Cleaner(),
             new ResourcesBuilder(),
-//            new ReleaseNotesBuilder(),
-//            new MigrationNotesBuilder(),
-//            new ChangelogBuilder(),
-//            new BlogBuilder(),
-//            new GuideBuilder(),
+            new ReleaseNotesBuilder(),
+            new MigrationNotesBuilder(),
+            new ChangelogBuilder(),
+            new BlogBuilder(),
+            new GuideBuilder(),
             new PageBuilder(),
-//            new DocumentationArchiveBuilder(),
-//            new DownloadsArchiveBuilder(),
-//            new RssFeedBuilder(),
+            new DocumentationArchiveBuilder(),
+            new DownloadsArchiveBuilder(),
+            new RssFeedBuilder(),
             new AppBuilder()
     };
 
