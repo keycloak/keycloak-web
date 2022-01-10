@@ -12,14 +12,16 @@
             <div class="col-sm-4">
                 <div class="card mb-4 shadow-sm">
                     <div class="card-body">
+                            <a href="${links.get(g)}" class="stretched-link link-dark">
                             <h5>
-                                <a href="${links.get(g)}">${g.title}</a>
+                                ${g.title}
                                 <#if g.community><span class="badge bg-primary"><i class="fa fa-users"></i> Community</span></#if>
                                 <#if g.external><span class="badge bg-primary"><i class="fa fa-link"></i> External</span></#if>
                             </h5>
                             <#if g.summary??>
                             <span>${g.summary}</span>
                             </#if>
+                            </a>
                     </div>
                 </div>
             </div>

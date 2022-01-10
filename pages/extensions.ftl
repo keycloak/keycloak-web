@@ -11,8 +11,10 @@
         <div class="col-sm-4">
             <div class="card mb-4 shadow-sm">
                 <div class="card-body">
-                    <h5><a href="${extension.website}">${extension.name}</a></h5>
+                    <a href="${extension.website}" class="stretched-link link-dark">
+                    <h5>${extension.name}</h5>
                     <span>${extension.description}</span>
+                    </a>
                 </div>
             </div>
         </div>
