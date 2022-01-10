@@ -68,7 +68,7 @@ a:hover {
     margin-top: 1rem;
     margin-bottom: 1rem;
     border: 1px solid #d0d0d0;
-
+    max-width: 100%;
 }
 
 .kc-article code {

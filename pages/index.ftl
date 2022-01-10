@@ -6,7 +6,7 @@
   <div class="container text-white pt-4 pb-4">
     <div class="row">
         <div class="col">
-            <h1 class="fs-xlarge">Open Source Identity and<br/>Access Management</h1>
+            <h1 class="fs-xlarge">Open Source Identity and Access Management</h1>
             <p class="fs-4">
                 Add authentication to applications and secure services with minimum effort.<br/>
                 No need to deal with storing users or authenticating users.
@@ -22,7 +22,7 @@
                 Latest release ${version.version}
             </div>
         </div>
-        <div class="col col-4">
+        <div class="col col-4 d-none d-lg-block">
             <img class="img-fluid" src="${links.getResource('images/keycloak_icon_512px.svg')}" alt="Keycloak"/>
         </div>
     </div>
@@ -32,7 +32,7 @@
 <div class="jumbotron jumbotron-fluid bg-dark text-white">
 <div class="container bg-dark p-3">
     <div class="row">
-        <div class="col-1 fw-bold">News</div>
+        <div class="col-1 col-xs-12 fw-bold">News</div>
         <#list news as n>
         <div class="col">
             <span class="badge bg-secondary">${n.date?string["dd MMM"]}</span> <a href="${n.link}">${n.title}</a>
@@ -56,7 +56,7 @@
                 logged-out of all applications that use Keycloak.
             </p>
         </div>
-        <div class="col-5 text-end">
+        <div class="col-5 text-end d-none d-md-block">
             <img class="img-fluid border" src="resources/images/screen-login.png"/>
         </div>
     </div>
@@ -73,7 +73,7 @@
                 just a matter of configuring the Identity Provider through the admin console.
             </p>
         </div>
-        <div class="col-5 text-end">
+        <div class="col-5 text-end d-none d-md-block">
              <img class="img-fluid" src="resources/images/dia-identity-brokering.png"/>
         </div>
     </div>
@@ -86,7 +86,7 @@
                 provider if you have users in other stores, such as a relational database.
             </p>
         </div>
-        <div class="col-5 text-end">
+        <div class="col-5 text-end d-none d-md-block">
              <img class="img-fluid" src="resources/images/dia-user-fed.png"/>
         </div>
     </div>
@@ -108,7 +108,7 @@
                 They can also manage users, including permissions and sessions.
             </p>
         </div>
-        <div class="col-5 text-end">
+        <div class="col-5 text-end d-none d-md-block">
              <img class="img-fluid border" src="resources/images/screen-admin.png"/>
         </div>
     </div>
@@ -128,7 +128,7 @@
                 providers to allow them to authenticate to the same account with different identity providers.
             </p>
         </div>
-        <div class="col-5 text-end">
+        <div class="col-5 text-end d-none d-md-block">
              <img class="img-fluid border" src="resources/images/screen-account.png"/>
         </div>
     </div>
@@ -140,7 +140,7 @@
                 Keycloak is based on standard protocols and provides support for OpenID Connect, OAuth 2.0, and SAML.
             </p>
         </div>
-        <div class="col-5 text-end">
+        <div class="col-5 text-end d-none d-md-block">
              <img class="img-fluid" src="resources/images/dia-protocols.png"/>
         </div>
     </div>
