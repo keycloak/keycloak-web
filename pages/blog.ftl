@@ -10,7 +10,8 @@
         <div class="col-sm-6">
             <div class="card mb-4 shadow-sm">
                 <div class="card-body">
-                    <h4><a href="${links.get(blog)}">${blog.title}</a></h4>
+                    <a href="${links.get(blog)}" class="stretched-link link-dark">
+                    <h4>${blog.title}</h4>
                     <span class="fs-xsmall text-muted">
                         ${blog.date?string["dd MMMM yyyy"]}
                         <#if blog.author??>by ${blog.author}</#if>
@@ -19,6 +20,7 @@
                     <#if blog.summary??>
                     <div class="mt-3">${blog.summary}</div>
                     </#if>
+                    </a>
                 </div>
             </div>
         </div>
