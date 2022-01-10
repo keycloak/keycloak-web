@@ -31,7 +31,7 @@
         <img class="img-fluid" src="${links.getResource('images/keycloak_logo_200px.svg')}" width="240" alt="Keycloak"/>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+      <span class="fa fa-bars fa-lg px-1 py-2"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav flex-row flex-wrap bd-navbar-nav pt-2 py-md-0">
