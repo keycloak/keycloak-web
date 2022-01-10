@@ -14,8 +14,8 @@
                     <div class="card-body">
                             <h5>
                                 <a href="${links.get(g)}">${g.title}</a>
-                                <#if g.community><span class="badge badge-primary"><i class="fa fa-users text-light"></i> Community</span></#if>
-                                <#if g.external><span class="badge badge-primary"><i class="fa fa-link text-light"></i> External</span></#if>
+                                <#if g.community><span class="badge bg-primary"><i class="fa fa-users"></i> Community</span></#if>
+                                <#if g.external><span class="badge bg-primary"><i class="fa fa-link"></i> External</span></#if>
                             </h5>
                             <#if g.summary??>
                             <span>${g.summary}</span>
