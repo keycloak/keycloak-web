@@ -13,6 +13,7 @@
     </ol>
     </nav>
 
+    <#assign quickstartsTag=true/>
     <#include "downloads-${version.downloadTemplate}.ftl">
 </div>
 </@tmpl.page>

@@ -33,7 +33,7 @@
             <h4>For older entries go <a href="blog-archive.html">here</a></h4>
             </div>
             <div class="col">
-            <a class="float-end" href="${links.rss}"><img src="resources/images/rss.png"/></a>
+            <h4><a class="float-end" href="${links.rss}"><i class="fas fa-rss text-dark"></i></a></h4>
             </div>
         </div>
     </div>

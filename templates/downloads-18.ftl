@@ -61,7 +61,6 @@
 </table>
 
 <h2 class="mt-4">Quickstarts</h2>
-
 <table class="table table-bordered table-striped">
     <tbody>
 
@@ -69,8 +68,14 @@
         <td>Quickstarts distribution</td>
         <td>
             <span class="me-4">
-            <a onclick="dl('examples', 'quickstarts');" href="https://github.com/keycloak/keycloak-quickstarts" target="_blank">
-                <i class="fa fa-github" aria-hidden="true"></i>
+            <#if quickstartsTag??>
+                <#assign quickstartsLink="https://github.com/keycloak/keycloak-quickstarts/tree/${version.version}"/>
+            <#else>
+                <#assign quickstartsLink="https://github.com/keycloak/keycloak-quickstarts"/>
+            </#if>
+
+            <a onclick="dl('examples', 'quickstarts');" href="${quickstartsLink}" target="_blank">
+                <i class="fab fa-github" aria-hidden="true"></i>
                 GitHub
             </a>
             </span>
