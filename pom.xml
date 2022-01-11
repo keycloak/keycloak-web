@@ -116,6 +116,8 @@
                                         <include>bootstrap/dist/js/bootstrap.min.js</include>
                                         <include>@fortawesome/fontawesome-free/css/fontawesome.min.css</include>
                                         <include>@fortawesome/fontawesome-free/css/solid.min.css</include>
+                                        <include>@fortawesome/fontawesome-free/css/brands.min.css</include>
+                                        <include>@fortawesome/fontawesome-free/css/all.min.css</include>
                                         <include>@fortawesome/fontawesome-free/webfonts/*</include>
                                     </includes>
                                 </resource>
