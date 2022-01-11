@@ -45,7 +45,7 @@ public class AutoBuilder {
 //        BlogBuilder blogs = new BlogBuilder();
 //        blogs.init(context);
 
-        register(context.getPagesDir(), false, pages);
+        register(context.getPagesDir(), true, pages);
         register(context.getResourcesDir(), true, resources);
         register(new File(context.getWebSrcDir(), "templates"), true, pages);
 //        register(context.getBlogDir(), true, blogs, pages);

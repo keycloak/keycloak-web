@@ -1,4 +1,4 @@
-<#macro page current title noindex=false>
+<#macro page current title noindex=false nocsp=false>
 <!doctype html>
 <html lang="en">
 <head>
