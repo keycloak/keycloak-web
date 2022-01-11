@@ -1,5 +1,5 @@
 {
-  "maxBlog": 7,
+  "maxBlog": 8,
   "maxNews": 3,
   "urls": {
     "home": "https://www.keycloak.org",

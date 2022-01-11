@@ -128,13 +128,20 @@ public class Guides {
 
     public enum GuideCategory {
 
-        GETTING_STARTED("Getting started"),
-        SECURING_APPS("Securing applications");
+        GETTING_STARTED("getting-started", "Getting started"),
+        SECURING_APPS("applications", "Securing applications");
 
         private String label;
 
-        GuideCategory(String label) {
+        private String id;
+
+        GuideCategory(String id, String label) {
+            this.id = id;
             this.label = label;
+        }
+
+        public String getId() {
+            return id;
         }
 
         public String getLabel() {

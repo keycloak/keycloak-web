@@ -2,25 +2,23 @@
 
 <@tmpl.page current="blog" title="Blog">
 
-<div class="jumbotron jumbotron-fluid kc-bg-triangles py-5">
+<div class="jumbotron jumbotron-fluid kc-bg-triangles pt-4 pb-2">
     <div class="container">
         <div class="row">
         <#assign displayed = 0>
         <#list blogs as blog>
         <div class="col-sm-6">
-            <div class="card mb-4 shadow-sm">
+            <div class="card shadow-sm mb-4">
                 <div class="card-body">
-                    <a href="${links.get(blog)}" class="stretched-link link-dark">
-                    <h4>${blog.title}</h4>
-                    <span class="fs-xsmall text-muted">
+                    <h4 class="card-title">${blog.title}</h4>
+                    <span class="card-subtitle fs-xsmall text-muted">
                         ${blog.date?string["dd MMMM yyyy"]}
                         <#if blog.author??>by ${blog.author}</#if>
                     </span>
-
                     <#if blog.summary??>
-                    <div class="mt-3">${blog.summary}</div>
+                    <div class="card-text">${blog.summary}</div>
                     </#if>
-                    </a>
+                    <a href="${links.get(blog)}" class="stretched-link link-dark"></a>
                 </div>
             </div>
         </div>
