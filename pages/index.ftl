@@ -57,11 +57,11 @@
             </p>
         </div>
         <div class="col-5 text-end d-none d-md-block">
-            <img class="img-fluid border" src="resources/images/screen-login.png"/>
+            <img class="img-fluid" src="resources/images/screen-login.png"/>
         </div>
     </div>
 
-    <div class="row mt-5">
+    <div class="row mt-5 border-top pt-5">
         <div class="col">
             <h2>Identity Brokering and Social Login</h2>
             <p>
@@ -78,7 +78,7 @@
         </div>
     </div>
 
-    <div class="row mt-5">
+    <div class="row mt-5 border-top pt-5">
         <div class="col">
             <h2>User Federation</h2>
             <p>
@@ -91,7 +91,7 @@
         </div>
     </div>
 
-    <div class="row mt-5">
+    <div class="row mt-5 border-top pt-5">
         <div class="col">
             <h2>Admin Console</h2>
             <p>
@@ -113,7 +113,7 @@
         </div>
     </div>
 
-    <div class="row mt-5">
+    <div class="row mt-5 border-top pt-5">
         <div class="col">
             <h2>Account Management Console</h2>
             <p>
@@ -133,7 +133,7 @@
         </div>
     </div>
 
-    <div class="row mt-5">
+    <div class="row mt-5 border-top pt-5">
         <div class="col">
             <h2>Standard Protocols</h2>
             <p>
@@ -145,7 +145,7 @@
         </div>
     </div>
 
-    <div class="row mt-5">
+    <div class="row mt-5 border-top pt-5">
         <div class="col">
             <h2>Authorization Services</h2>
             <p>

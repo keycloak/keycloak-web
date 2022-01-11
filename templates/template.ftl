@@ -25,7 +25,7 @@
 </head>
 <body>
 
-<header class="navbar navbar-expand-md bg-light">
+<header class="navbar navbar-expand-md bg-light shadow-sm">
 <nav class="container-xxl flex-wrap flex-md-no-wrap navbar-light">
     <a class="navbar-brand me-5" href="${links.home}">
         <img class="img-fluid" src="${links.getResource('images/keycloak_logo_200px.svg')}" width="240" alt="Keycloak"/>
@@ -58,7 +58,7 @@
 <#nested>
 
 <div class="container">
-    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center pt-2 mt-3 mb-3">
         <div class="col-md-4 d-flex align-items-center">
             <span class="text-muted me-3">Sponsored by</span>
             <a href="http://www.redhat.com/" target="_blank" class="">

@@ -21,7 +21,7 @@ jobs:
     - name: Build with Maven
       env:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      run: mvn package exec:java -Dpublish
+      run: mvn package -Dpublish
     - name: Install SSH Client 🔑
       uses: webfactory/ssh-agent@v0.4.1
       with:
