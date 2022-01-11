@@ -1,6 +1,6 @@
 <#import "/templates/template.ftl" as tmpl>
 
-<@tmpl.page current="test-app" title="Test application">
+<@tmpl.page current="test-app" title="Test application" noindex=true nocsp=true>
 
 <script src="keycloak.js" type="text/javascript"></script>
 <script src="app.js" type="text/javascript"></script>
