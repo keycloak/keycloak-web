@@ -8,7 +8,7 @@ import java.io.File;
 
 public class Context {
 
-    private final Links links;
+    private Links links;
 
     private final File webSrcDir;
     private final File pagesDir;
@@ -22,12 +22,12 @@ public class Context {
     private final File targetDir;
     private final File tmpDir;
 
-    private final Config config;
-    private final Versions versions;
-    private final Extensions extensions;
-    private final Blogs blogs;
-    private final Guides guides;
-    private final News news;
+    private Config config;
+    private Versions versions;
+    private Extensions extensions;
+    private Blogs blogs;
+    private Guides guides;
+    private News news;
 
     private FreeMarker freeMarker;
     private AsciiDoctor asciiDoctor;
@@ -51,6 +51,10 @@ public class Context {
         targetDir = new File(rootDir, "target/web").getAbsoluteFile();
         tmpDir = new File(rootDir, "target/tmp").getAbsoluteFile();
 
+        init();
+    }
+
+    public void init() throws Exception {
         config = loadConfig();
         links = new Links(config);
 

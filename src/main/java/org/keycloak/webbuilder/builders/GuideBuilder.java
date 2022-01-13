@@ -23,13 +23,9 @@ public class GuideBuilder extends AbstractBuilder {
 
             context.getTmpDir().mkdirs();
 
-            String template = guide.getTemplate();
+            context.asciiDoctor().writeFile(attributes, guide.getSource(), context.getTmpDir(), guide.getTemplate());
 
-            String guideInclude = "guide-" + guide.getName() + ".ftl";
-            context.asciiDoctor().writeFile(attributes, new File(context.getGuidesDir(), guide.getTemplate()), context.getTmpDir(), guideInclude);
-            guide.setTemplate("target/tmp/" + guideInclude);
-
-            File target = new File(context.getTargetDir(), template).getParentFile();
+            File target = new File(context.getTargetDir(), guide.getCategory().getId());
             target.mkdirs();
 
             context.freeMarker().writeFile(attributes, "templates/guide-entry.ftl", target, guide.getName() + ".html");

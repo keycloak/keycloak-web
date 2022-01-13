@@ -14,7 +14,7 @@
     <p>${guide.summary}</p>
     </#if>
 
-    <#include "../${guide.template}">
+    <#include "../target/tmp/${guide.template}">
 </div>
 
 </@tmpl.page>
