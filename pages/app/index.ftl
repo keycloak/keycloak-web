@@ -47,7 +47,7 @@
     <div id="display-user" class="row hide">
         <div class="card mt-3">
             <div class="card-body">
-                Hello, <span></span>
+                Hello, <span id="user-details"></span>
             </div>
         </div>
     </div>
