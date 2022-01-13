@@ -2,6 +2,7 @@ package org.keycloak.webbuilder;
 
 import org.keycloak.webbuilder.builders.AbstractBuilder;
 import org.keycloak.webbuilder.builders.BlogBuilder;
+import org.keycloak.webbuilder.builders.GuideBuilder;
 import org.keycloak.webbuilder.builders.PageBuilder;
 import org.keycloak.webbuilder.builders.ResourcesBuilder;
 
@@ -36,17 +37,34 @@ public class AutoBuilder {
         watcher = FileSystems.getDefault().newWatchService();
         builders = new HashMap<>();
 
+        AbstractBuilder updateContext = new AbstractBuilder() {
+            @Override
+            protected void build() throws Exception {
+                context.init();
+            }
+
+            @Override
+            protected String getTitle() {
+                return "Update context";
+            }
+        };
+        updateContext.init(context);
+
         PageBuilder pages = new PageBuilder();
         pages.init(context);
 
         ResourcesBuilder resources = new ResourcesBuilder();
         resources.init(context);
-//
+
+        GuideBuilder guides = new GuideBuilder();
+        guides.init(context);
+
 //        BlogBuilder blogs = new BlogBuilder();
 //        blogs.init(context);
 
         register(context.getPagesDir(), true, pages);
         register(context.getResourcesDir(), true, resources);
+        register(context.getGuidesDir(), true, updateContext, guides, pages);
         register(new File(context.getWebSrcDir(), "templates"), true, pages);
 //        register(context.getBlogDir(), true, blogs, pages);
     }

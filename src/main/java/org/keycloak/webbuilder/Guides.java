@@ -17,7 +17,12 @@ public class Guides {
     private List<Guide> guides = new LinkedList<>();
 
     public Guides(File guidesDir, AsciiDoctor asciiDoctor) throws IOException {
-        for (File d : guidesDir.listFiles((file) -> file.isDirectory() && !file.getName().equals("includes") && !file.getName().equals("images"))) {
+        for (File d : guidesDir.listFiles((file) -> file.isDirectory())) {
+            GuideCategory category = getCategory(d);
+            if (category == null) {
+                break;
+            }
+
             for (File f: d.listFiles((dir, name) -> name.endsWith(".adoc"))) {
                 Map<String, Object> attributes = asciiDoctor.parseAttributes(f);
 
@@ -25,8 +30,11 @@ public class Guides {
 
                 boolean community = "true".equals(attributes.get("community"));
 
-                Guide g = new Guide(d.getName(), f.getName(), (String) attributes.get("title"), (String) attributes.get("summary"), (String) attributes.get("author"), community, priority, (String) attributes.get("external-link"));
-                guides.add(g);
+                try {
+                    Guide g = new Guide(category, f, (String) attributes.get("title"), (String) attributes.get("summary"), (String) attributes.get("author"), community, priority, (String) attributes.get("external-link"));
+                    guides.add(g);
+                } catch (IllegalArgumentException e) {
+                }
             }
         }
 
@@ -37,6 +45,16 @@ public class Guides {
                 return Integer.compare(o1.getPriority(), o2.getPriority());
             }
         });
+    }
+
+    private GuideCategory getCategory(File d) {
+        String name = d.getName().toUpperCase().replaceAll("-", "_");
+        for (GuideCategory c : GuideCategory.values()) {
+            if (c.name().equals(name)) {
+                return c;
+            }
+        }
+        return null;
     }
 
     public List<Guide> getGuides(GuideCategory c) {
@@ -57,6 +75,7 @@ public class Guides {
         private String name;
         private String author;
         private boolean community;
+        private File source;
         private String template;
         private String title;
         private String summary;
@@ -64,15 +83,16 @@ public class Guides {
         private int priority = -1;
         private String externalLink;
 
-        public Guide(String category, String template, String title, String summary, String author, boolean community, int priority, String externalLink) {
-            this.category = GuideCategory.valueOf(category.toUpperCase().replaceAll("-", "_"));
-            this.name = template.replace(".adoc", "");
+        public Guide(GuideCategory category, File source, String title, String summary, String author, boolean community, int priority, String externalLink) {
+            this.category = category;
+            this.name = source.getName().replace(".adoc", "");
             this.author = author;
             this.community = community;
-            this.template = category + "/" + template;
+            this.source = source;
+            this.template = "guide-" + name + ".html";
             this.title = title;
             this.summary = summary;
-            this.path = category + "/" + name;
+            this.path = category.getId() + "/" + name;
             this.priority = priority;
             this.externalLink = externalLink;
         }
@@ -93,12 +113,12 @@ public class Guides {
             return category;
         }
 
-        public String getTemplate() {
-            return template;
+        public File getSource() {
+            return source;
         }
 
-        public void setTemplate(String template) {
-            this.template = template;
+        public String getTemplate() {
+            return template;
         }
 
         public String getTitle() {
@@ -129,7 +149,7 @@ public class Guides {
     public enum GuideCategory {
 
         GETTING_STARTED("getting-started", "Getting started"),
-        SECURING_APPS("applications", "Securing applications");
+        SECURING_APPS("securing-apps", "Securing applications");
 
         private String label;
 
