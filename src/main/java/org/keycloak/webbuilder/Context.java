@@ -61,7 +61,7 @@ public class Context {
         versions = new Versions(versionsDir, jsonParser);
         extensions = new Extensions(extensionsDir, jsonParser);
         blogs = new Blogs(blogDir, versions, config, freeMarker, asciiDoctor);
-        guides = new Guides(guidesDir, asciiDoctor);
+        guides = new Guides(tmpDir, guidesDir, asciiDoctor);
         news = new News(newsDir, blogs, jsonParser, config);
 
         freeMarker.init(this);

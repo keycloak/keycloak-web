@@ -6,37 +6,36 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Comparator;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class Guides {
 
     private List<Guide> guides = new LinkedList<>();
 
-    public Guides(File guidesDir, AsciiDoctor asciiDoctor) throws IOException {
+    public Guides(File tmpDir, File guidesDir, AsciiDoctor asciiDoctor) throws IOException {
         for (File d : guidesDir.listFiles((file) -> file.isDirectory())) {
             GuideCategory category = getCategory(d);
             if (category == null) {
-                break;
+                continue;
             }
 
-            for (File f: d.listFiles((dir, name) -> name.endsWith(".adoc"))) {
-                Map<String, Object> attributes = asciiDoctor.parseAttributes(f);
-
-                int priority = attributes.containsKey("priority") ? Integer.parseInt((String) attributes.get("priority")) : 1000;
-
-                boolean community = "true".equals(attributes.get("community"));
-
-                try {
-                    Guide g = new Guide(category, f, (String) attributes.get("title"), (String) attributes.get("summary"), (String) attributes.get("author"), community, priority, (String) attributes.get("external-link"));
-                    guides.add(g);
-                } catch (IllegalArgumentException e) {
-                }
-            }
+            loadGuides(asciiDoctor, d, category);
         }
+
+        Arrays.stream(tmpDir.getParentFile().listFiles((f, s) -> s.startsWith("keycloak-guides"))).findFirst().ifPresent(f -> {
+            File d = new File(f, "generated-guides/server");
+            GuideCategory category = GuideCategory.SERVER;
+            try {
+                loadGuides(asciiDoctor, d, category);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
 
         Collections.sort(guides, (o1, o2) -> {
             if (o1.getPriority() == o2.getPriority()) {
@@ -45,6 +44,22 @@ public class Guides {
                 return Integer.compare(o1.getPriority(), o2.getPriority());
             }
         });
+    }
+
+    private void loadGuides(AsciiDoctor asciiDoctor, File d, GuideCategory category) throws IOException {
+        for (File f: d.listFiles((dir, name) -> name.endsWith(".adoc") && !name.equals("index.adoc"))) {
+            Map<String, Object> attributes = asciiDoctor.parseAttributes(f);
+
+            int priority = attributes.containsKey("guide-priority") ? Integer.parseInt((String) attributes.get("guide-priority")) : 1000;
+
+            boolean community = "true".equals(attributes.get("community"));
+
+            try {
+                Guide g = new Guide(category, f, (String) attributes.get("guide-title"), (String) attributes.get("guide-summary"), (String) attributes.get("guide-tags"), (String) attributes.get("author"), community, priority, (String) attributes.get("external-link"));
+                guides.add(g);
+            } catch (IllegalArgumentException e) {
+            }
+        }
     }
 
     private GuideCategory getCategory(File d) {
@@ -80,10 +95,11 @@ public class Guides {
         private String title;
         private String summary;
         private String path;
+        private List<String> tags;
         private int priority = -1;
         private String externalLink;
 
-        public Guide(GuideCategory category, File source, String title, String summary, String author, boolean community, int priority, String externalLink) {
+        public Guide(GuideCategory category, File source, String title, String summary, String tags, String author, boolean community, int priority, String externalLink) {
             this.category = category;
             this.name = source.getName().replace(".adoc", "");
             this.author = author;
@@ -92,6 +108,9 @@ public class Guides {
             this.template = "guide-" + name + ".html";
             this.title = title;
             this.summary = summary;
+            if (tags != null) {
+                this.tags = Arrays.stream(tags.split(",")).map(s -> s.toLowerCase().trim()).sorted().collect(Collectors.toList());
+            }
             this.path = category.getId() + "/" + name;
             this.priority = priority;
             this.externalLink = externalLink;
@@ -129,6 +148,10 @@ public class Guides {
             return summary;
         }
 
+        public List<String> getTags() {
+            return tags;
+        }
+
         public String getPath() {
             return path;
         }
@@ -149,6 +172,7 @@ public class Guides {
     public enum GuideCategory {
 
         GETTING_STARTED("getting-started", "Getting started"),
+        SERVER("server", "Server"),
         SECURING_APPS("securing-apps", "Securing applications");
 
         private String label;

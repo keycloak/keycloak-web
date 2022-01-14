@@ -46,8 +46,8 @@ public class AsciiDoctor {
 
         Map<String, Object> options = OptionsBuilder.options()
                 .baseDir(baseDir)
-                .docType("article")
-                .headerFooter(false)
+                .docType("embedded")
+                .backend("html5")
                 .attributes(a)
                 .safe(SafeMode.UNSAFE)
                 .asMap();

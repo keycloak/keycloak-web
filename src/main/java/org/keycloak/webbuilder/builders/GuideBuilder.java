@@ -10,28 +10,50 @@ public class GuideBuilder extends AbstractBuilder {
 
     @Override
     protected void build() throws Exception {
+        Map<String, Object> attributes = new HashMap<>();
+        setCommonAttributes(attributes);
+
         for (Guides.Guide guide : context.guides().getGuides()) {
-            if (guide.isExternal()) {
-                continue;
-            }
-            Map<String, Object> attributes = new HashMap<>();
-            attributes.put("guide", guide);
-            attributes.put("guideImages", context.getLinks().getRoot() + "/resources/images/guides");
-
-            File dir = new File(context.getTargetDir(), "guides");
-            dir.mkdirs();
-
-            context.getTmpDir().mkdirs();
-
-            context.asciiDoctor().writeFile(attributes, guide.getSource(), context.getTmpDir(), guide.getTemplate());
-
-            File target = new File(context.getTargetDir(), guide.getCategory().getId());
-            target.mkdirs();
-
-            context.freeMarker().writeFile(attributes, "templates/guide-entry.ftl", target, guide.getName() + ".html");
-            printStep("created", guide.getTemplate());
+            buildGuide(attributes, guide);
         }
+    }
 
+    private void buildGuide(Map<String, Object> attributes, Guides.Guide guide) throws Exception {
+        if (guide.isExternal()) {
+            return;
+        }
+        attributes.put("guide", guide);
+
+        File dir = new File(context.getTargetDir(), "guides");
+        dir.mkdirs();
+
+        context.getTmpDir().mkdirs();
+
+        context.asciiDoctor().writeFile(attributes, guide.getSource(), context.getTmpDir(), guide.getTemplate());
+
+        File target = new File(context.getTargetDir(), guide.getCategory().getId());
+        target.mkdirs();
+
+        context.freeMarker().writeFile(attributes, "templates/guide-entry.ftl", target, guide.getName() + ".html");
+        printStep("created", guide.getTemplate());
+    }
+
+    private void setCommonAttributes(Map<String, Object> attributes) {
+        attributes.put("guideImages", context.getLinks().getRoot() + "/resources/images/guides");
+        attributes.put("leveloffset", "0");
+        attributes.put("fragment", "yes");
+        attributes.put("notitle", "yes");
+        attributes.put("icons", "font");
+
+        setGuideLinkAttributes(attributes);
+    }
+
+    private void setGuideLinkAttributes(Map<String, Object> attributes) {
+        for (Guides.Guide guide : context.guides().getGuides()) {
+            String linkKeyPrefix = "links_" + guide.getCategory().getId() + "_" + guide.getName();
+            attributes.put(linkKeyPrefix + "_name", guide.getTitle());
+            attributes.put(linkKeyPrefix + "_url", context.getLinks().get(guide));
+        }
     }
 
     @Override

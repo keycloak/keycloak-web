@@ -1,5 +1,5 @@
-:title: Vue.js
-:summary: Secure a Vue.js single-page application with Keycloak
+:guide-title: Vue.js
+:guide-summary: Secure a Vue.js single-page application with Keycloak
 :community: true
 :author: akoserwal
 

@@ -1,6 +1,6 @@
-:title: Openshift
-:summary: Get started with Keycloak on Openshift
-:priority: 110
+:guide-title: Openshift
+:guide-summary: Get started with Keycloak on Openshift
+:guide-priority: 110
 
 :links-admin-console: Keycloak Admin Console
 :links-account-console: Keycloak Account Console

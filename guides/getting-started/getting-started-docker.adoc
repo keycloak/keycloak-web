@@ -1,6 +1,6 @@
-:title: Docker
-:summary: Get started with Keycloak on Docker
-:priority: 60
+:guide-title: Docker
+:guide-summary: Get started with Keycloak on Docker
+:guide-priority: 60
 
 :containerCommand: docker
 
