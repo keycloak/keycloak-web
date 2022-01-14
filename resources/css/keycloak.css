@@ -1,3 +1,5 @@
+/* Common */
+
 :root {
     --bs-primary-rgb: 66, 139, 202;
 }
@@ -52,6 +54,8 @@ a:hover {
     color: #428bca;
 }
 
+/* Articles */
+
 .kc-article h2 {
     margin-top: 2.5rem;
 }
@@ -87,6 +91,130 @@ a:hover {
 .kc-article pre code {
     padding: 0;
 }
+
+/* AsciiDoc generated pages */
+
+.kc-asciidoc li p {
+    margin-bottom: 0.5rem;
+}
+
+/* Guide - Options */
+
+table.options {
+    width: 100%;
+    margin-top: -3rem;
+}
+
+table.options table {
+    width: 100%;
+}
+
+table.options p {
+    margin: 0;
+}
+
+table.options tr {
+}
+
+table.options th {
+    padding: 1.0rem 0.5rem;
+}
+
+table.options td {
+    vertical-align: top;
+    padding: 0.5rem;
+    border: 1px solid #dee2e6;
+}
+
+table.options table td {
+    border: none;
+}
+
+table.options table td {
+    padding: 0;
+}
+
+table.options tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+table.options table tr {
+    border-bottom: none;
+}
+
+table.options table tr:nth-child(even) {
+    background: none;
+}
+
+.options-key {
+display: inline-block;
+    font-weight: bold;
+}
+
+.options-expander {
+    padding-right: 0.3rem;
+    font-size: .7rem;
+}
+
+.options-description {
+    color: #6c757d;
+    margin-bottom: 0.8rem;
+    display: block;
+}
+
+.options-description-extended {
+    color: #6c757d;
+    margin-bottom: 0.8rem;
+    display: block;
+}
+
+.options-type {
+    font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+    font-size: 0.8rem;
+}
+
+.options-default {
+    font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+    font-size: 0.8rem;
+}
+
+.options-build {
+    text-align: center;
+    width: 100%;
+    display: block;
+}
+
+.options-description-example {
+    display: block;
+}
+
+.options-collapsed .options-extended {
+    display: none;
+}
+.options-collapsed .options-description {
+    margin-bottom: 0;
+}
+
+.options-collapsed .options-show {
+    display: block;
+}
+
+/* tocbot */
+
+ol.toc-list {
+    padding-left: 0.5rem;
+}
+
+li.toc-list-item {
+    list-style: none;
+    padding-top: 0.5rem;
+}
+
+ol.toc-list .is-collapsed {
+    display: none;
+}
+
+/* Test application */
 
 .kc-app {
     padding: 400px;

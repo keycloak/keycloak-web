@@ -21,7 +21,7 @@ public class Links {
     }
 
     public String getGuides() {
-        return getLink("getting-started");
+        return getLink("guides");
     }
 
     public String getDownloads() {
@@ -53,6 +53,19 @@ public class Links {
             return guide.getExternalLink();
         } else {
             return getLink(guide.getPath());
+        }
+    }
+
+    public String getGuideEdit(Guides.Guide guide) {
+        switch (guide.getCategory()) {
+            case SERVER:
+                return "https://github.com/keycloak/keycloak/tree/main/docs/guides/src/main/server/" + guide.getName() + ".adoc";
+            case SECURING_APPS:
+                return "https://github.com/keycloak/keycloak-web/tree/main/guides/securing-apps/" + guide.getName() + ".adoc";
+            case GETTING_STARTED:
+                return "https://github.com/keycloak/keycloak-web/tree/main/guides/getting-started/" + guide.getName() + ".adoc";
+            default:
+                return null;
         }
     }
 

@@ -1,6 +1,6 @@
-:title: OpenJDK
-:summary: Get started with Keycloak on bare metal
-:priority: 10
+:guide-title: OpenJDK
+:guide-summary: Get started with Keycloak on bare metal
+:guide-priority: 10
 
 :links-local: true
 :links-admin-console: http://localhost:8080/auth/admin[Keycloak Admin Console, window="_blank"]

@@ -42,7 +42,7 @@ public class WebBuilder {
 
     private File rootDir;
 
-    private WebBuilder(File rootDir) {
+    public WebBuilder(File rootDir) {
         this.rootDir = rootDir;
     }
 

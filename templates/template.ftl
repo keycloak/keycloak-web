@@ -21,6 +21,7 @@
 
     <script src="${links.getResource('js/ga.js')}" type="text/javascript"></script>
     <script src="${links.getResource('bootstrap/dist/js/bootstrap.min.js')}" type="text/javascript"></script>
+    <script src="${links.getResource('tocbot/dist/tocbot.min.js')}" type="text/javascript"></script>
 </head>
 <body>
 
@@ -35,7 +36,7 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav flex-row flex-wrap bd-navbar-nav pt-2 py-md-0">
         <li class="nav-item col-6 col-md-auto">
-          <a class="nav-link <#if current = 'get-started'>active</#if>" href="${links.guides}">Get Started</a>
+          <a class="nav-link <#if current = 'guides'>active</#if>" href="${links.guides}">Guides</a>
         </li>
         <li class="nav-item col-6 col-md-auto">
           <a class="nav-link <#if current = 'docs'>active</#if>" href="${links.docs}">Docs</a>

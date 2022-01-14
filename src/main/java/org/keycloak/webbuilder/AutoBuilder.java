@@ -33,6 +33,9 @@ public class AutoBuilder {
     private final Map<WatchKey, AbstractBuilder[]> builders;
 
     public AutoBuilder(File rootDir) throws Exception {
+        // Do a full build when starting
+        new WebBuilder(new File(System.getProperty("user.dir"))).build();
+
         context = new Context(rootDir);
         watcher = FileSystems.getDefault().newWatchService();
         builders = new HashMap<>();
@@ -65,7 +68,7 @@ public class AutoBuilder {
         register(context.getPagesDir(), true, pages);
         register(context.getResourcesDir(), true, resources);
         register(context.getGuidesDir(), true, updateContext, guides, pages);
-        register(new File(context.getWebSrcDir(), "templates"), true, pages);
+        register(new File(context.getWebSrcDir(), "templates"), true, guides, pages);
 //        register(context.getBlogDir(), true, blogs, pages);
     }
 
