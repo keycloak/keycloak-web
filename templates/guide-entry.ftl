@@ -20,6 +20,33 @@
                 </#if>
             </div>
 
+            <#if guide.name == 'all-config'>
+                <div class="mb-4">
+                    <form>
+                        <div class="row">
+                            <div class="col">
+                                <input id="options-search" class="form-control" type="text" placeholder="Search" aria-label="Search">
+                            </div>
+                            <div class="col">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="options-filter" value="all" id="options-filter-all" checked>
+                                    <label class="form-check-label" for="options-filter-all">All</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="options-filter" value="build" id="options-filter-build">
+                                    <label class="form-check-label" for="options-filter-build">Build options</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="options-filter" value="runtime" id="options-filter-runtime">
+                                    <label class="form-check-label" for="options-filter-runtime">Runtime configuration</label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </#if>
+
+
             <div class="kc-asciidoc" id="guide-body">
                 <#include "../target/tmp/${guide.template}">
             </div>

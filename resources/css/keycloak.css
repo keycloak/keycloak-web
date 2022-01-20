@@ -182,6 +182,7 @@ display: inline-block;
     text-align: center;
     width: 100%;
     display: block;
+    color: #6c757d;
 }
 
 .options-description-example {
@@ -191,12 +192,13 @@ display: inline-block;
 .options-collapsed .options-extended {
     display: none;
 }
+
 .options-collapsed .options-description {
     margin-bottom: 0;
 }
 
-.options-collapsed .options-show {
-    display: block;
+.options-hide {
+    display: none;
 }
 
 /* tocbot */
