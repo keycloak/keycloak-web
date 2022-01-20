@@ -1,16 +1,35 @@
-window.onload = init;
-
-function init() {
+window.onload = function() {
     document.getElementById('guide-search').addEventListener("input", search);
+
+    var params = new URLSearchParams(window.location.search);
+    var q = params.get('q');
+    if (q) {
+        document.getElementById('guide-search').value = q;
+        search();
+    }
 }
 
-function search(e) {
-    var search = e.path[0].value.toLowerCase();
-
+function search() {
+    var search = document.getElementById('guide-search').value;
     var cards = document.getElementsByClassName("card");
     var show = true;
 
     searchCards(search, cards);
+    updateUrlQuery(search);
+}
+
+function updateUrlQuery(search) {
+    var query = '';
+    if (search) {
+        query = '?q=' + search;
+    }
+
+    var url = window.location.toString();
+    if (url.indexOf('?') != -1) {
+        url = url.substring(0, url.indexOf('?'));
+    }
+
+    history.replaceState(null, null, url + query);
 }
 
 function searchCards(search, cards) {
