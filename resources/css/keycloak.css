@@ -147,7 +147,7 @@ table.options table tr:nth-child(even) {
 }
 
 .options-key {
-display: inline-block;
+    display: inline-block;
     font-weight: bold;
 }
 
@@ -199,6 +199,31 @@ display: inline-block;
 
 .options-hide {
     display: none;
+}
+
+
+/* Guide - Features */
+
+table.features {
+    width: 100%;
+}
+
+table.features p {
+    margin: 0;
+}
+
+table.features td {
+    vertical-align: top;
+    padding: 0.5rem;
+    border: 1px solid #dee2e6;
+}
+
+table.features tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+table.features .features-name {
+    font-weight: bold;
 }
 
 /* tocbot */
