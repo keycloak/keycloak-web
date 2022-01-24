@@ -56,11 +56,22 @@ a:hover {
 
 /* Articles */
 
+.kc-article h1 {
+    font-size: 3rem;
+}
+
 .kc-article h2 {
+    font-size: 2.0rem;
     margin-top: 2.5rem;
 }
 
 .kc-article h3 {
+    font-size: 1.5rem;
+    margin-top: 2.0rem;
+}
+
+.kc-article h4 {
+    font-size: 1.2rem;
     margin-top: 2.0rem;
 }
 
@@ -102,7 +113,12 @@ a:hover {
 
 table.options {
     width: 100%;
-    margin-top: -3rem;
+}
+
+@media only screen and (min-width: 769px) {
+    table.options {
+        margin-top: -3rem;
+    }
 }
 
 table.options table {
