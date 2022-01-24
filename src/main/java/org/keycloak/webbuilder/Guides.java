@@ -15,6 +15,7 @@ import java.util.stream.Collectors;
 
 public class Guides {
 
+    private List<GuideCategory> categories = new LinkedList<>();
     private List<Guide> guides = new LinkedList<>();
 
     public Guides(File tmpDir, File guidesDir, AsciiDoctor asciiDoctor) throws IOException {
@@ -44,6 +45,12 @@ public class Guides {
                 return Integer.compare(o1.getPriority(), o2.getPriority());
             }
         });
+
+        for (GuideCategory c : GuideCategory.values()) {
+            if (getGuides(c).size() > 0) {
+                categories.add(c);
+            }
+        }
     }
 
     private void loadGuides(AsciiDoctor asciiDoctor, File d, GuideCategory category) throws IOException {
@@ -81,7 +88,7 @@ public class Guides {
     }
 
     public List<GuideCategory> getCategories() {
-        return Arrays.asList(GuideCategory.values());
+        return categories;
     }
 
     public class Guide {

@@ -52,7 +52,7 @@
             </div>
         </div>
 
-        <div class="col-2 bg-light">
+        <div class="col-md-3 mt-4 col-xl-2 col-sm-12 bg-light">
             <div class="sticky-top px-2 py-3">
                 <#if guide.community>
                    <p class="community-badge text-primary">

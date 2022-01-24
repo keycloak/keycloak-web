@@ -110,10 +110,12 @@ function updateUrlQuery(search, filter) {
 }
 
 function addSearchEventListeners() {
-    document.getElementById('options-search').addEventListener("input", search);
-    document.getElementById('options-filter-all').addEventListener("click", search);
-    document.getElementById('options-filter-build').addEventListener("click", search);
-    document.getElementById('options-filter-config').addEventListener("click", search);
+    if (document.getElementById('options-search')) {
+        document.getElementById('options-search').addEventListener("input", search);
+        document.getElementById('options-filter-all').addEventListener("click", search);
+        document.getElementById('options-filter-build').addEventListener("click", search);
+        document.getElementById('options-filter-config').addEventListener("click", search);
+    }
 }
 
 function search() {

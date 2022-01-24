@@ -75,7 +75,10 @@ public class Context {
     private Config loadConfig() {
         Config config = jsonParser.read(new File(getWebSrcDir(),"/config.json"), Config.class);
         config.setPublish(System.getProperties().containsKey("publish"));
-        if (!config.isPublish()) {
+
+        if (System.getenv().containsKey("KC_URL")) {
+            config.getUrls().setHome(System.getenv("KC_URL"));
+        } else if (!config.isPublish()) {
             config.getUrls().setHome(getTargetDir().toURI().toString());
         }
         return config;

@@ -13,5 +13,10 @@ To include server guides from `https://github.com/keycloak/keycloak/tree/main/do
 There's also an auto-builder utility that watches the filesystem and continiously rebuilds the website. This can be very useful when working on the website, especially making stylesheet changes, etc. This can be ran from your IDE by running `AutoBuilder`, or from the command-line with:
 
     mvn -Pauto-run exec:java
+
+To serve the website locally with a web browser specify the base URL with `KC_URL`:
+
+    export KC_URL=http://localhost:8000
+    mvn install
     
 Finally, when building the website to be published you need to include `-Dpublish`. This should usually not be done manually though as there is a GitHub Action that takes care of building and publishing to `https://github.com/keycloak/keycloak.github.io`.
