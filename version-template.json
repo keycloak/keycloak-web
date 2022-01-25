@@ -1,8 +1,7 @@
 {
   "date": "DATE",
   "version": "VERSION",
+  "blogTemplate": 2,  
   "documentationTemplate": 8,
-  "downloadTemplate": 18,
-  "wildflyVersionAdapter": "23",
-  "wildflyVersionAdapterDeprecated": "&lt;= 22"
+  "downloadTemplate": 18
 }
