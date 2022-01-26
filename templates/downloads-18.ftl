@@ -133,7 +133,7 @@
                     <td>
                         <table class="kc-table-downloads-inner">
                             <tr>
-                                <td>6.2, 6.3</td>
+                                <td>6.3, 7.x</td>
                                 <td>
                                     <@download category="adapter" label="fuse" file="keycloak-oidc-fuse-adapter-${version.version}" tar=true />
                                 </td>
