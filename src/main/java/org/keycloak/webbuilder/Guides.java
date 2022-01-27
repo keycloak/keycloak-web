@@ -10,6 +10,7 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -51,6 +52,11 @@ public class Guides {
                 categories.add(c);
             }
         }
+    }
+
+    public Guide getGuide(String category, String name) {
+        Optional<Guide> o = guides.stream().filter(g -> g.getCategory().getId().equals(category) && g.getName().equals(name)).findFirst();
+        return o.isPresent() ? o.get() : null;
     }
 
     private void loadGuides(AsciiDoctor asciiDoctor, File d, GuideCategory category) throws IOException {
