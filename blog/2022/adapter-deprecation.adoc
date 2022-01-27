@@ -66,4 +66,6 @@ The adapters supported by Red Hat Single Sign-On includes:
 * JBoss EAP
 * Node.js
 * Java Servlet Filter
+* JBoss Fuse
+* Spring Boot
 
