@@ -48,7 +48,7 @@
 
 
             <div class="kc-asciidoc" id="guide-body">
-                <#include "../target/tmp/${guide.template}">
+                <#include "../target/tmp/${guide.template}" parse=false>
             </div>
         </div>
 
