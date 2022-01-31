@@ -6,12 +6,12 @@ On Linux run:
 
 [source,bash,subs="attributes+"]
 ----
-bin/standalone.sh
+bin/kc.sh start-dev
 ----
 
 On Windows run:
 
 [source,bash,subs="attributes+"]
 ----
-bin/standalone.bat
+bin/kc.bat start-dev
 ----
