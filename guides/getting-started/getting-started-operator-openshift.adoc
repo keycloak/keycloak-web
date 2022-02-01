@@ -1,6 +1,5 @@
 :guide-title: OpenShift Operator
 :guide-summary: Get started with Keycloak Operator on Openshift
-:guide-priority: 160
 
 ## Before you start
 
