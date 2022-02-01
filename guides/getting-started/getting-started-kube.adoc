@@ -1,6 +1,5 @@
 :guide-title: Kubernetes
 :guide-summary: Get started with Keycloak on Kubernetes
-:guide-priority: 100
 
 :links-admin-console: Keycloak Admin Console
 :links-account-console: Keycloak Account Console

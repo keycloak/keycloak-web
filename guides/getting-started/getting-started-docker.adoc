@@ -1,6 +1,5 @@
 :guide-title: Docker
 :guide-summary: Get started with Keycloak on Docker
-:guide-priority: 60
 
 :containerCommand: docker
 

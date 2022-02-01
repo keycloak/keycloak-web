@@ -1,6 +1,5 @@
 :guide-title: Kubernetes Operator
 :guide-summary: Get started with Keycloak Operator on Kubernetes
-:guide-priority: 150
 
 ## Before you start
 

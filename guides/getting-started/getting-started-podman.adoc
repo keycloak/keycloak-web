@@ -1,6 +1,5 @@
 :guide-title: Podman
 :guide-summary: Get started with Keycloak on Podman
-:guide-priority: 70
 
 :containerCommand: podman
 
