@@ -1,6 +1,6 @@
 :title: Deprecation of Keycloak adapters
 :date: 2022-02-04
-:publish: false
+:publish: true
 :author: Stian Thorgersen
 
 Way back in 2013 when we started work on the Keycloak project there was a lack of client libraries that would help developers secure their applications with Keycloak. Fast forward to today and this situation has changed drastically with wide-spread availability of OAuth 2.0 and OpenID Connect libraries.
