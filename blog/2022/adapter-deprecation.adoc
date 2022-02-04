@@ -1,0 +1,71 @@
+:title: Deprecation of Keycloak adapters
+:date: 2022-02-04
+:publish: true
+:author: Stian Thorgersen
+
+Way back in 2013 when we started work on the Keycloak project there was a lack of client libraries that would help developers secure their applications with Keycloak. Fast forward to today and this situation has changed drastically with wide-spread availability of OAuth 2.0 and OpenID Connect libraries.
+
+In addition, Keycloak adapters has not received the love and attention they require, and are now significantly lagging behind the server on what features they supported. While Keycloak can be used to secure any application no matter the programming language and frameworks, we've only had adapters for a limited set of Java developers.
+
+Rather than continue to spreading ourselves thin we are going to deprecate the adapters, and focus more on the Keycloak server. In addition we are aiming to provide help and guidance on how to secure various applications with getting started guides, and advocating what we believe are better alternative options to Keycloak adapters.
+
+What is being deprecated:
+
+* OpenID Connect Java adapters
+* OpenID Connect Node.js adapters
+* SAML Tomcat and Jetty adapters
+
+What is not being deprecated:
+
+* OpenID Connect client-side JavaScript adapter
+* SAML WildFly and servlet filter
+
+## Alternatives
+
+### WildFly
+
+WildFly 25 introduced native support for OpenID Connect with all the features from the Keycloak adapter and more. Migration to the WildFly native OpenID Connect is very easy as the WildFly team has taken great care to make this as simple as a move as possible.
+
+Check out this https://wildfly-security.github.io/wildfly-elytron/blog/securing-wildfly-apps-openid-connect/[great blog post] from Farah Juma for more details.
+
+### Spring
+
+Spring Security has for a long time provided great support for OAuth 2.0 and OpenID Connect. We appreciate that migrating from the Keycloak adapters to Spring Security is not trivial, but in the exchange you get more features, a better maintained library, and better integration with Spring.
+
+Check out this https://www.baeldung.com/spring-security-openid-connect[great blog post] from Ger Roza for more details.
+
+### Node.js
+
+We are still looking around for the best candidate for Node.js applications, but it looks like https://www.npmjs.com/package/openid-client[openid-client] is a good alternative, that is a lot more feature rich than the Keycloak adapter.
+
+## Timeline
+
+* February 2022: Adapters deprecated
+* September 2022: No more major/minor releases of adapters
+* December 2022: No more micro releases of adapters
+
+
+## Discussions
+
+If you have questions, concerns, or suggestions, please join us to discuss this topic through https://github.com/keycloak/keycloak/discussions/categories/adapter-deprecation[GitHub Discussions].
+
+## Community
+
+If anyone from the community would like to step-up and continue to maintain the deprecated Keycloak adapters get in touch with us through the https://groups.google.com/forum/#!forum/keycloak-dev[developer mailing list].
+
+We would also love suggestions and help in finding the best alternatives for everyone, as well as providing getting started guides, migration guides, etc. To help us in this regard please join the discussions on https://github.com/keycloak/keycloak/discussions/categories/adapter-deprecation[GitHub Discussions].
+
+## Extended support
+
+If you are not able to migrate away from Keycloak adapters by the end of 2022 an alternative option to consider is getting support from Red Hat.
+
+Red Hat offers supported adapters through Red Hat Single Sign-On 7.x, which is currently in support until 30 June 2024.
+
+The adapters supported by Red Hat Single Sign-On includes:
+
+* JBoss EAP
+* Node.js
+* Java Servlet Filter
+* JBoss Fuse
+* Spring Boot
+
