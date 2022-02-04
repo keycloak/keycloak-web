@@ -109,6 +109,25 @@ a:hover {
     margin-bottom: 0.5rem;
 }
 
+.kc-asciidoc table {
+    margin-bottom: 1.0rem;
+}
+
+.kc-asciidoc th {
+    padding: 1.0rem 0.5rem 1.rem 0;
+}
+
+.kc-asciidoc td {
+    vertical-align: top;
+    padding: 0.5rem;
+    border: 1px solid #dee2e6;
+}
+
+.kc-asciidoc div.title {
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
 /* Guide - Options */
 
 table.options {
