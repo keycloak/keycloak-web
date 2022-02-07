@@ -4,7 +4,7 @@ From a terminal start Keycloak with the following command:
 
 [source,bash,subs="attributes+"]
 ----
-{containerCommand} run -p 8080:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:{version} start-dev
+{containerCommand} run -p 8080:8080 -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin quay.io/keycloak/keycloak:{version}
 ----
 
 This will start Keycloak exposed on the local port 8080. It will also create an initial admin user with username `admin`
