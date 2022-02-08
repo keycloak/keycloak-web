@@ -62,6 +62,8 @@ public class Links {
                 return "https://github.com/keycloak/keycloak/tree/main/docs/guides/src/main/server/" + guide.getName() + ".adoc";
             case SECURING_APPS:
                 return "https://github.com/keycloak/keycloak-web/tree/main/guides/securing-apps/" + guide.getName() + ".adoc";
+            case MIGRATION:
+                return "https://github.com/keycloak/keycloak-web/tree/main/guides/migration/" + guide.getName() + ".adoc";
             case GETTING_STARTED:
                 return "https://github.com/keycloak/keycloak-web/tree/main/guides/getting-started/" + guide.getName() + ".adoc";
             default:
