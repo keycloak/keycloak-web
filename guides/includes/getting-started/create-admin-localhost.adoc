@@ -3,4 +3,4 @@
 Keycloak does not come with a default admin user, which means before you can start using Keycloak you need to create
 an admin user.
 
-To do this open http://localhost:8080/[, window="_blank"], then fill in the form with your preferred username and password.
+To do this open http://localhost:8080/auth[, window="_blank"], then fill in the form with your preferred username and password.
