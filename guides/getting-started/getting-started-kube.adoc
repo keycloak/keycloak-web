@@ -56,7 +56,7 @@ Run the following to find out the URLs of Keycloak:
 
 [source,bash,subs="attributes+"]
 ----
-KEYCLOAK_URL=https://keycloak.$(minikube ip).nip.io/auth &&
+KEYCLOAK_URL=https://keycloak.$(minikube ip).nip.io &&
 echo "" &&
 echo "Keycloak:                 $KEYCLOAK_URL" &&
 echo "Keycloak Admin Console:   $KEYCLOAK_URL/admin" &&
@@ -80,7 +80,7 @@ and you can now access Keycloak from the following URL:
 
 [source,bash,subs="attributes+"]
 ----
-KEYCLOAK_URL=http://$(minikube ip):$(kubectl get services/keycloak -o go-template='{{(index .spec.ports 0).nodePort}}')/auth &&
+KEYCLOAK_URL=http://$(minikube ip):$(kubectl get services/keycloak -o go-template='{{(index .spec.ports 0).nodePort}}') &&
 echo "" &&
 echo "Keycloak:                 $KEYCLOAK_URL" &&
 echo "Keycloak Admin Console:   $KEYCLOAK_URL/admin" &&

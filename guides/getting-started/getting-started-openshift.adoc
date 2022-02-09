@@ -86,7 +86,7 @@ Once the server is provisioned, run the following command to find out the URLs o
 
 [source,bash,subs="attributes+"]
 ----
-KEYCLOAK_URL=https://$(oc get route keycloak --template='{{ .spec.host }}')/auth &&
+KEYCLOAK_URL=https://$(oc get route keycloak --template='{{ .spec.host }}') &&
 echo "" &&
 echo "Keycloak:                 $KEYCLOAK_URL" &&
 echo "Keycloak Admin Console:   $KEYCLOAK_URL/admin" &&
