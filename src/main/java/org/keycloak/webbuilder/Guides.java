@@ -211,6 +211,7 @@ public class Guides {
 
     public enum GuideCategory {
 
+        MIGRATION("migration", "Migration"),
         GETTING_STARTED("getting-started", "Getting started"),
         SERVER("server", "Server"),
         SECURING_APPS("securing-apps", "Securing applications");
