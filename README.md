@@ -19,4 +19,4 @@ To serve the website locally with a web browser specify the base URL with `KC_UR
     export KC_URL=http://localhost:8000
     mvn install
     
-Finally, when building the website to be published you need to include `-Dpublish`. This should usually not be done manually though as there is a GitHub Action that takes care of building and publishing to `https://github.com/keycloak/keycloak.github.io`.
+Finally, when building the website to be published you need to include `-Dpublish`. This should usually not be done manually though as there is a GitHub Action that takes care of building and publishing to `https://github.com/keycloak/keycloak.github.io`..
