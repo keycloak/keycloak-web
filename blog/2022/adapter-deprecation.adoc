@@ -34,6 +34,12 @@ Spring Security has for a long time provided great support for OAuth 2.0 and Ope
 
 Check out this https://www.baeldung.com/spring-security-openid-connect[great blog post] from Ger Roza for more details.
 
+## Quarkus
+
+Although not a direct replacement for existing Keycloak adapters it is worth highlighting that Quarkus has very extensive built-in support for OpenID Connect and Keycloak, with a lot of additional benefit on top.
+
+Check out https://quarkus.io/guides/#security[Quarkus security guides] for more details.
+
 ### Node.js
 
 We are still looking around for the best candidate for Node.js applications, but it looks like https://www.npmjs.com/package/openid-client[openid-client] is a good alternative, that is a lot more feature rich than the Keycloak adapter.
