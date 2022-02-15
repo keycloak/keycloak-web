@@ -20,7 +20,7 @@
                       <div class="mb-3">
                         <label for="url" class="form-label">Keycloak URL</label>
                         <div>
-                          <input type="text" class="form-control" id="url" value="http://localhost:8080/auth">
+                          <input type="text" class="form-control" id="url" value="http://localhost:8080">
                         </div>
                       </div>
                       <div class="mb-3">
