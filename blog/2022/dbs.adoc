@@ -1,0 +1,43 @@
+:title: Supported databases for the new Keycloak store
+:date: 2022-02-24
+:publish: true
+:author: Stian Thorgersen
+
+Maintaining a broad selection of relational database support is expensive, and also more importantly limits how well the databases can be supported.
+
+With that in mind we are looking at supporting databases at different levels; first class, second class, and community.
+
+Please fill in https://forms.gle/VivuUzRwTvjk6zqz8[this survey] as we'd like to gather as much feedback as we can.
+
+## First class databases
+
+The aim of first class databases is to offer better levels of tuning and testing, better defaults, and better documentation. We will also be considering testing with different versions and variants of the selected first class databases, such as cloud services.
+
+First class databases will be the solutions we are looking towards when scaling and tuning database to accommodate large scale deployments with high-availability, including multi-region deployments.
+
+As first class databases we aim to support one traditional relational database, and a cloud native database. With this in mind we have selected PostgreSQL and CockroachDB as the best candidates.
+
+PostgreSQL is a high quality fully open source database, with many supported offerings such as:
+
+* Azure Database for PostgreSQL
+* Amazon RDS for PostgreSQL
+* BigAnimal
+* Cloud SQL for PostgreSQL
+* Cruncy Bridge
+* Cruncy PostgreSQL for Kubernetes
+* EnterpriseDB
+
+CockroachDB is an cloud native open source database, with PostgreSQL compatibility. By cloud native it means that it can scale horizontally, including spanning multiple-regions. There are some competitive solutions, but not as mature, and with less streamlined PostgreSQL compatibility. There are obviously also NoSQL and other non-relational database that could in theory be a good fit for Keycloak, but would be a lot of additional effort to support.
+
+It is also worth mentioning that we are still looking towards Infinispan as our cache layer, but are also aiming to support running Keycloak without Infinspan for smaller deployments with PostgreSQL and larger deployments with CockroachDB.
+
+## Second class databases
+
+The aim for second class databases are to offer mostly the same support as we offer for any database in Keycloak today. We will only test one version, there will be no database vendor specific documentation, or any additional tuning on our end.
+
+We do hope that the majority of the Keycloak community are able to migrate to first class databases, and that this will in the end be a better solution for everyone. As such we are not currently planning on offering any second class databases long term, and rather phase out support for MySQL, MariaDB, SQL Server, and Oracle over time.
+
+## Community supported databases
+
+If there is interest from the community to support additional databases, including non-relational database, we would like to discuss and figure out how this could look like. Including making it easy to install community maintained databases, as well as continuously testing of the integration.
+
