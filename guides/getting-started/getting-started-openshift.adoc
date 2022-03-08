@@ -46,8 +46,8 @@ To spin up a Keycloak server in your project, execute the following command:
 [source,bash,subs="attributes+"]
 ----
 oc process -f https://raw.githubusercontent.com/keycloak/keycloak-quickstarts/latest/openshift-examples/keycloak.yaml \
-    -p KEYCLOAK_USER=admin \
-    -p KEYCLOAK_PASSWORD=admin \
+    -p KEYCLOAK_ADMIN=admin \
+    -p KEYCLOAK_ADMIN_PASSWORD=admin \
     -p NAMESPACE=keycloak \
 | oc create -f -
 ----
@@ -56,14 +56,13 @@ Once the command above completes you should see a message similar to this:
 
 [source,bash,subs="attributes+"]
 ----
-service/secure-keycloak created
+service/keycloak created
 route.route.openshift.io/keycloak created
 deploymentconfig.apps.openshift.io/keycloak created.
 ----
 
 At this point, OpenShift is going to provision a Keycloak pod and related resources. As part of the process, OpenShift will
-try to pull the Keycloak server image and this might take some time depending on your network connections in case the image is not
-available yet.
+try to pull the Keycloak server image. This might take some time depending on your network connection.
 
 To make sure Keycloak is provisioned, execute the following command:
 
@@ -72,7 +71,7 @@ To make sure Keycloak is provisioned, execute the following command:
 oc get pods
 ----
 
-After a while you should see a message similar to this when the pod is ready:
+After a while you will see a message similar to this when the pod is ready:
 
 [source,bash,subs="attributes+"]
 ----
