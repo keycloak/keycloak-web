@@ -26,7 +26,7 @@ If you are unable to configure something that you need to tweak in the new distr
 
 Until a new release is available it is possible to configure the new distribution by directly applying Quarkus level configuration through the `conf/quarkus.properties` file. We recommend you use this sparingly as you will be applying configuration untested and unsupported by the Keycloak team.
 
-## Quarkus is not an application server
+== Quarkus is not an application server
 
 Unlike WildFly, Quarkus is not an application server. While an application server can dynamically deploy applications, and alter what is loaded into memory at runtime, this is not possible on Quarkus.
 
@@ -40,16 +40,25 @@ We recommend that you do this build step as a part of installing Keycloak, throu
 
 However, there is also an auto build mode that makes Keycloak behave more or less the same as the WildFly distribution in this regard. This comes with a startup time penalty, but is still able to optimise the runtime better than the WildFly distribution could.
 
-## Default context path changed
+== Setup of initial users
 
-By default the new Quarkus distribution removes `/auth` from the context-path. To re-introduce the `/auth` use the `http-relative-path`[https://www.keycloak.org/server/all-config?q=http-relative-path&f=build] build option. For example:
+The Keycloak Wildfly distribution contained scripts named `add-user-keycloak.sh` to add initial users to Keycloak.
+These are no longer included in the Quarkus distribution.
+
+To add the initial admin user, set the environment variables `KEYCLOAK_ADMIN` and `KEYCLOAK_ADMIN_PASSWORD` for the username and password of the user.
+Keycloak uses them at the first startup to create an initial user with administration rights.
+Once the first user with administrative rights exists, use the command line tool `kcadm.sh` (Linux) or `kcadm.bat` (Windows) to create additional users.
+
+== Default context path changed
+
+By default, the new Quarkus distribution removes `/auth` from the context-path. To re-introduce the `/auth` use the https://www.keycloak.org/server/all-config?q=http-relative-path&f=build[`http-relative-path`] build option. For example:
 
 [code,bash]
 ----
 bin/kc.[sh|bat] start-dev --http-relative-path /auth
 ----
 
-## Migrating custom providers
+== Migrating custom providers
 
 Similarly to the WildFly distribution custom providers are deployed to Keycloak by copying them to a deployment directory. In the new distribution you should copy your providers to the `providers` directory instead of `standalone/deployments`, which no longer exists. Additional dependencies are also copied to the `providers` directory.
 
