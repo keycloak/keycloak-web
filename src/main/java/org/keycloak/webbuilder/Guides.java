@@ -31,10 +31,9 @@ public class Guides {
         }
 
         Arrays.stream(tmpDir.getParentFile().listFiles((f, s) -> s.startsWith("keycloak-guides"))).findFirst().ifPresent(f -> {
-            File d = new File(f, "generated-guides/server");
-            GuideCategory category = GuideCategory.SERVER;
             try {
-                loadGuides(asciiDoctor, d, category);
+                loadGuides(asciiDoctor, new File(f, "generated-guides/server"), GuideCategory.SERVER);
+                loadGuides(asciiDoctor, new File(f, "generated-guides/operator"), GuideCategory.OPERATOR);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -214,6 +213,7 @@ public class Guides {
         MIGRATION("migration", "Migration"),
         GETTING_STARTED("getting-started", "Getting started"),
         SERVER("server", "Server"),
+        OPERATOR("operator", "Operator"),
         SECURING_APPS("securing-apps", "Securing applications");
 
         private String label;
