@@ -6,7 +6,7 @@
 
     <groupId>org.keycloak.web</groupId>
     <artifactId>KeycloakWebBuilder</artifactId>
-    <version>17.0.0</version>
+    <version>17.0.1</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
