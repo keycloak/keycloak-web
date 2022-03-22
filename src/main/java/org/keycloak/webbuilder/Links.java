@@ -57,17 +57,10 @@ public class Links {
     }
 
     public String getGuideEdit(Guides.Guide guide) {
-        switch (guide.getCategory()) {
-            case SERVER:
-                return "https://github.com/keycloak/keycloak/tree/main/docs/guides/src/main/server/" + guide.getName() + ".adoc";
-            case SECURING_APPS:
-                return "https://github.com/keycloak/keycloak-web/tree/main/guides/securing-apps/" + guide.getName() + ".adoc";
-            case MIGRATION:
-                return "https://github.com/keycloak/keycloak-web/tree/main/guides/migration/" + guide.getName() + ".adoc";
-            case GETTING_STARTED:
-                return "https://github.com/keycloak/keycloak-web/tree/main/guides/getting-started/" + guide.getName() + ".adoc";
-            default:
-                return null;
+        if (!guide.getCategory().getDynamic()) {
+            return "https://github.com/keycloak/keycloak-web/tree/main/guides/" + guide.getCategory().getId() + "/" + guide.getName() + ".adoc";
+        } else {
+            return "https://github.com/keycloak/keycloak/tree/main/docs/guides/src/main/" + guide.getCategory().getId() + "/" + guide.getName() + ".adoc";
         }
     }
 

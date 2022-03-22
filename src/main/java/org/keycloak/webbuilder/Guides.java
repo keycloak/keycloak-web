@@ -6,11 +6,14 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -31,10 +34,19 @@ public class Guides {
         }
 
         Arrays.stream(tmpDir.getParentFile().listFiles((f, s) -> s.startsWith("keycloak-guides"))).findFirst().ifPresent(f -> {
-            File d = new File(f, "generated-guides/server");
-            GuideCategory category = GuideCategory.SERVER;
             try {
-                loadGuides(asciiDoctor, d, category);
+                int orderOffset = 50;
+                for (File guide: Arrays.stream(new File(f, "generated-guides")
+                        .listFiles(d -> d.isDirectory()))
+                        .sorted((c1, c2) -> Integer.compare(c2.listFiles().length, c1.listFiles().length)) // Ordered by number of entries
+                        .collect(Collectors.toList())) {
+                    String id = guide.getName();
+                    String label = guide.getName().substring(0, 1).toUpperCase() + guide.getName().substring(1);
+                    GuideCategory guideCategory = new GuideCategory(id, label, orderOffset, true);
+                    orderOffset = orderOffset + 10;
+                    GUIDE_CATEGORIES.add(guideCategory);
+                    loadGuides(asciiDoctor, guide, guideCategory);
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -48,7 +60,8 @@ public class Guides {
             }
         });
 
-        for (GuideCategory c : GuideCategory.values()) {
+        Collections.sort(GUIDE_CATEGORIES, Comparator.comparingInt(c -> c.getOrder()));
+        for (GuideCategory c : GUIDE_CATEGORIES) {
             if (getGuides(c).size() > 0) {
                 categories.add(c);
             }
@@ -104,9 +117,9 @@ public class Guides {
     }
 
     private GuideCategory getCategory(File d) {
-        String name = d.getName().toUpperCase().replaceAll("-", "_");
-        for (GuideCategory c : GuideCategory.values()) {
-            if (c.name().equals(name)) {
+        String name = d.getName().toLowerCase(Locale.ROOT);
+        for (GuideCategory c : GUIDE_CATEGORIES) {
+            if (c.getId().equals(name)) {
                 return c;
             }
         }
@@ -209,20 +222,33 @@ public class Guides {
         }
     }
 
-    public enum GuideCategory {
+    private final static List<GuideCategory> GUIDE_CATEGORIES = new ArrayList<>();
 
-        MIGRATION("migration", "Migration"),
-        GETTING_STARTED("getting-started", "Getting started"),
-        SERVER("server", "Server"),
-        SECURING_APPS("securing-apps", "Securing applications");
+    static {
+        GUIDE_CATEGORIES.add(new GuideCategory("migration", "Migration", 10));
+        GUIDE_CATEGORIES.add(new GuideCategory("getting-started", "Getting started", 20));
+        GUIDE_CATEGORIES.add(new GuideCategory("securing-apps", "Securing applications", 1000));
+    }
 
-        private String label;
+    public static class GuideCategory {
 
-        private String id;
+        private final String label;
+        private final String id;
+        private final int order;
+        private final boolean dynamic;
 
-        GuideCategory(String id, String label) {
+        GuideCategory(String id, String label, int order) {
             this.id = id;
             this.label = label;
+            this.order = order;
+            this.dynamic = false;
+        }
+
+        GuideCategory(String id, String label, int order, boolean dynamic) {
+            this.id = id;
+            this.label = label;
+            this.order = order;
+            this.dynamic = dynamic;
         }
 
         public String getId() {
@@ -231,6 +257,14 @@ public class Guides {
 
         public String getLabel() {
             return label;
+        }
+
+        public int getOrder() {
+            return order;
+        }
+
+        public boolean getDynamic() {
+            return dynamic;
         }
     }
 
