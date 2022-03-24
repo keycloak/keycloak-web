@@ -72,7 +72,7 @@ _Subject to change: this is a provisional plan, which may change throughout the 
 
 === End of life
 
-* Remaining deprecated OpenID Connect adapters will be removed, including:
+* Remaining deprecated OpenID Connect adapters will be removed (https://www.keycloak.org/2022/02/adapter-deprecation[adapter deprecation blog post]), including:
 ** Java (Jetty, Tomcat, Servlet Filter, Spring, Servlet Filter, etc.)
 ** Node.js
 * Remaining deprecated SAML adapters will be removed, including:
