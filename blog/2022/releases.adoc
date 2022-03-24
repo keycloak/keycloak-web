@@ -36,7 +36,7 @@ _Subject to change: this is a provisional plan, which may change throughout the 
 
 * Old Account Console will be removed, but the new Account Console will remain of course
 * Text-based login flows and authenticators will be removed
-* Some OpenID Connect adapters will be removed, including:
+* Some OpenID Connect adapters will be removed (https://www.keycloak.org/2022/02/adapter-deprecation[adapter deprecation blog post]), including:
 ** JBoss AS 7 and EAP 6
 ** Fuse 6 and 7
 ** Jetty 9.2 and 9.3
