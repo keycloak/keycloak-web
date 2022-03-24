@@ -1,0 +1,81 @@
+:title: Keycloak release plans for 2023
+:date: 2022-03-24
+:publish: true
+:author: Stian Thorgersen
+
+December last year was a bit on the crazy side with 3 feature releases of Keycloak (15.1, 16.0, and 16.1). This was down to balancing WildFly upgrades with introduction of the Quarkus dist preview.
+
+This year we are planning to bring more predictability to Keycloak releases and are aiming for a quarterly release, with more frequent patch releases in-between.
+
+One thing worth highlighting is we have decided to extend the support of the WildFly distribution until September to give everyone more time to migrate.
+
+_Subject to change: this is a provisional plan, which may change throughout the year._
+
+== Keycloak 18 - March/April
+
+=== Highlights
+
+* Enhancements and polishing for the Quarkus distribution
+* Preview of the new Kubernetes Operator for the Quarkus distribution
+* Preview of the new Admin Console
+* Upgrade to Quarkus 2.8.0
+* Upgrade to WildFly 26.1.0
+
+=== End of life
+
+* Ability to upload custom JavaScript providers through REST APIs will be removed
+
+== Keycloak 19 - June/July
+
+=== Highlights
+
+* Preview of the new Store
+* New Admin Console is graduated to the default console, while the old Admin Console is deprecated
+
+=== End of life
+
+* Old Account Console will be removed, but the new Account Console will remain of course
+* Text-based login flows and authenticators will be removed
+* Some OpenID Connect adapters will be removed (https://www.keycloak.org/2022/02/adapter-deprecation[adapter deprecation blog post]), including:
+** JBoss AS 7 and EAP 6
+** Fuse 6 and 7
+** Jetty 9.2 and 9.3
+** WildFly legacy
+** WildFly Galleon feature pack
+* Some SAML adapters will be removed, including:
+** JBoss AS 7 and EAP 6
+** Jetty 9.2 and 9.3
+** WildFly legacy
+
+== Keycloak 20 - September/October
+
+=== Highlights
+
+* New store is graduated to the new default store for PostgreSQL and CockroachDB. We will come back with more details on what happens with the old store and support for other database vendors, but rest assured we will give everyone plenty of heads up, and at the minimum the old store will be supported at least until the middle of 2023.
+
+=== End of life
+
+* WildFly distribution will be removed
+* Legacy Kubernetes Operator will be removed
+
+== Keycloak 21 - December/January
+
+=== Highlights
+
+* With the new Quarkus distribution, new Operator, and new Store we are aiming to shift our focus onto production deployments of Keycloak. Keycloak 21 is the release where we're aiming all this effort to really come together to make it as easy as possible to install and manage Keycloak at any scale.
+
+=== End of life
+
+* Old Admin Console will be removed
+
+== Keycloak 22 - March/April 2023
+
+=== End of life
+
+* Remaining deprecated OpenID Connect adapters will be removed (https://www.keycloak.org/2022/02/adapter-deprecation[adapter deprecation blog post]), including:
+** Java (Jetty, Tomcat, Servlet Filter, Spring, Servlet Filter, etc.)
+** Node.js
+* Remaining deprecated SAML adapters will be removed, including:
+** Jetty
+** Tomcat
+
