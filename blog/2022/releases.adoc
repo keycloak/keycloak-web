@@ -3,7 +3,7 @@
 :publish: true
 :author: Stian Thorgersen
 
-December last year was a little bit on the crazy side with 3 feature releases of Keycloak (15.1, 16.0, and 16.1). This was down to balancing WildFly upgrades with introduction of the Quarkus dist preview.
+December last year was a bit on the crazy side with 3 feature releases of Keycloak (15.1, 16.0, and 16.1). This was down to balancing WildFly upgrades with introduction of the Quarkus dist preview.
 
 This year we are planning to bring more predictability to Keycloak releases and are aiming for a quarterly release, with more frequent patch releases in-between.
 
