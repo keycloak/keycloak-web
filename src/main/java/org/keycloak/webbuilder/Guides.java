@@ -60,6 +60,10 @@ public class Guides {
     }
 
     private void loadGuides(AsciiDoctor asciiDoctor, File d, GuideCategory category) throws IOException {
+        if (!d.isDirectory()) {
+            return;
+        }
+
         Map<String, Integer> guidePriorities = loadPinnedGuides(new File(d, "pinned-guides"));
 
         for (File f: d.listFiles((dir, name) -> name.endsWith(".adoc") && !name.equals("index.adoc"))) {
