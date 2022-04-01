@@ -16,7 +16,7 @@
         <version.github-api>1.300</version.github-api>
         <version.freemarker>2.3.31</version.freemarker>
         <version.asciidoctorj>2.5.2</version.asciidoctorj>
-        <version.jackson>2.13.1</version.jackson>
+        <version.jackson>2.13.2.1</version.jackson>
         <version.commons-io>2.11.0</version.commons-io>
         <version.commons-compress>1.21</version.commons-compress>
 
