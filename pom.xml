@@ -176,6 +176,9 @@
     <profiles>
         <profile>
             <id>server-guides</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
             <dependencies>
                 <dependency>
                     <groupId>org.keycloak</groupId>
