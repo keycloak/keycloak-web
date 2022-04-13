@@ -84,7 +84,7 @@ For the old operator is:
 apiVersion: keycloak.org/v1alpha1
 ----
 
-For the new operator is:
+For the new operator, the apiVersion is:
 [source,yaml]
 ----
 apiVersion: k8s.keycloak.org/v2alpha1
