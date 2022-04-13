@@ -97,5 +97,5 @@ When using `kubectl` commands, and the 2 CRDs are installed in the cluster, make
 $ kubectl get keycloaks.k8s.keycloak.org
 ----
 
-The new operator doesn't support Client, User and Realm CRDs but it provides a CRD to perform a https://www.keycloak.org/operator/realm-import.html[Realm import].
+The new operator doesn't support Client, User and Realm CRDs directly. Instead, it provides one CRD to perform a https://www.keycloak.org/operator/realm-import.html[Realm import].
 Using this new CR you can import Users, Clients and more through the wrapping Realm.
