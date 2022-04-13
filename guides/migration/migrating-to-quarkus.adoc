@@ -76,7 +76,7 @@ To use the Quarkus distribution on Kubernetes and OpenShift you need to use the 
 
 There is no "direct" migration path, to install Keycloak using the new Operator you need to create a new Custom Resource (CR) to end up with a new Keycloak Deployment based on the Quarkus distribution.
 
-The old and new operator can co-exists even in the same namespace since they are using a different API Group and Version in the CRDs.
+The old and new operator can co-exist even in the same namespace since they are using a different API Group and Version in the CRDs.
 
 For the old operator is:
 [source,yaml]
