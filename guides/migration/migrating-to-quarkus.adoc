@@ -90,7 +90,7 @@ For the new operator, the apiVersion is:
 apiVersion: k8s.keycloak.org/v2alpha1
 ----
 
-When using `kubectl` commands, and the 2 CRDs are installed in the cluster, make sure to use fully qualified names including the API Group e.g.:
+When using `kubectl` commands, and the 2 CRDs are installed in the cluster, make sure to use fully qualified names including the API Group, e.g.:
 
 [source,bash]
 ----
