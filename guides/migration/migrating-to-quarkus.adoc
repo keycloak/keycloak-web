@@ -9,6 +9,7 @@ The new distribution introduces a number of breaking changes, including:
 * Quarkus is not an application server, but rather a framework to build applications
 * `/auth` removed from the default context path
 * Custom providers are packaged and deployed differently
+* A new operator and CRDs for Kubernetes and OpenShift
 
 Before undertaking the migration we highly recommend reading through the new https://www.keycloak.org/guides#server[Server Guides] to understand how to install and configure the new distribution.
 
@@ -68,3 +69,33 @@ While the WildFly distribution automatically discovered custom providers, even s
 
 Depending on what APIs your providers use you may also need to make some changes to the providers. If you only leveraged classes from Keycloak SPIs you shouldn't need to, but if you used other APIs from WildFly you may need to make some changes. In addition, JavaEE APIs like session/stateless beans are no longer supported.
 
+
+== Migrating using the Operator
+
+To use the Quarkus distribution on Kubernetes and OpenShift you need to use the new Operator, the https://github.com/keycloak/keycloak-operator[old Operator] does not support the new distribution.
+
+There is no "direct" migration path, to install Keycloak using the new Operator you need to create a new Custom Resource (CR) to end up with a new Keycloak Deployment based on the Quarkus distribution.
+
+The old and new operator can co-exist even in the same namespace since they are using a different API Group and Version in the CRDs.
+
+For the old operator, the apiVersion is:
+[source,yaml]
+----
+apiVersion: keycloak.org/v1alpha1
+----
+
+For the new operator, the apiVersion is:
+[source,yaml]
+----
+apiVersion: k8s.keycloak.org/v2alpha1
+----
+
+When using `kubectl` commands, and the 2 CRDs are installed in the cluster, make sure to use fully qualified names including the API Group, e.g.:
+
+[source,bash]
+----
+$ kubectl get keycloaks.k8s.keycloak.org
+----
+
+The new operator doesn't support Client, User and Realm CRDs directly. Instead, it provides one CRD to perform a https://www.keycloak.org/operator/realm-import.html[Realm import].
+Using this new CR you can import Users, Clients and more through the wrapping Realm.
