@@ -3,6 +3,8 @@ package org.keycloak.webbuilder.builders;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
+import java.util.Arrays;
+import java.util.Optional;
 
 public class ResourcesBuilder extends AbstractBuilder {
 
@@ -16,6 +18,11 @@ public class ResourcesBuilder extends AbstractBuilder {
 
         FileUtils.copyDirectory(new File(context.getBlogDir(), "images"), new File(new File(targetResourcesDir, "images"), "blog"));
         FileUtils.copyDirectory(new File(context.getGuidesDir(), "images"), new File(new File(targetResourcesDir, "images"), "guides"));
+        Optional<File> genGuidesDir = Arrays.stream(context.getTmpDir().getParentFile().listFiles((f, s) -> s.startsWith("keycloak-guides"))).findFirst();
+        Optional<File> genGuidesImagesDir = genGuidesDir.flatMap( d -> Arrays.stream(new File(d, "generated-guides").listFiles(n -> n.getName().equals("images"))).findAny());
+        if (genGuidesImagesDir.isPresent()) {
+            FileUtils.copyDirectory(genGuidesImagesDir.get(), new File(new File(targetResourcesDir, "images"), "generated-guides"));
+        }
 
         printStep("copied", "blog images");
 
