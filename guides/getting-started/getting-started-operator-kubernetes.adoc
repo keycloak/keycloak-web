@@ -1,5 +1,9 @@
 :guide-title: Kubernetes Operator
-:guide-summary: Get started with Keycloak Operator on Kubernetes
+:guide-summary: Get started with Keycloak Operator on Kubernetes [Wildfly distribution]
+
+.Note:
+[NOTE]
+This guide refers to the Wildfly distribution of Keycloak.
 
 ## Before you start
 
