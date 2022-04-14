@@ -40,6 +40,7 @@ public class GuideBuilder extends AbstractBuilder {
 
     private void setCommonAttributes(Map<String, Object> attributes) {
         attributes.put("guideImages", context.getLinks().getRoot() + "/resources/images/guides");
+        attributes.put("generatedGuideImages", context.getLinks().getRoot() + "/resources/images/generated-guides");
         attributes.put("leveloffset", "0");
         attributes.put("fragment", "yes");
         attributes.put("notitle", "yes");
