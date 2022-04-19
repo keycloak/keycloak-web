@@ -1,5 +1,5 @@
 :guide-title: OpenShift Operator
-:guide-summary: Get started with Keycloak Operator on Openshift [Wildfly distribution]
+:guide-summary: Get started with Keycloak Operator on Openshift [Legacy Wildfly]
 
 .Note:
 [NOTE]
