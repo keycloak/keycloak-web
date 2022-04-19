@@ -1,5 +1,5 @@
 :guide-title: Kubernetes Operator
-:guide-summary: Get started with Keycloak Operator on Kubernetes [Wildfly distribution]
+:guide-summary: Get started with Keycloak Operator on Kubernetes [Legacy Wildfly]
 
 .Note:
 [NOTE]
