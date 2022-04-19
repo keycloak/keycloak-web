@@ -3,7 +3,7 @@
 
 .Note:
 [NOTE]
-This guide refers to the Wildfly distribution of Keycloak.
+This guide refers to the https://github.com/keycloak/keycloak-operator[deprecated legacy operator] and Wildfly distribution of Keycloak.
 
 ## Before you start
 
