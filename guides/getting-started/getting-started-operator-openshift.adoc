@@ -1,5 +1,9 @@
 :guide-title: OpenShift Operator
-:guide-summary: Get started with Keycloak Operator on Openshift
+:guide-summary: Get started with Keycloak Operator on Openshift [Legacy Wildfly]
+
+.Note:
+[NOTE]
+This guide refers to the https://github.com/keycloak/keycloak-operator[deprecated legacy operator] and Wildfly distribution of Keycloak.
 
 ## Before you start
 

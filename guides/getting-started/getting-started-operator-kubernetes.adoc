@@ -1,5 +1,9 @@
 :guide-title: Kubernetes Operator
-:guide-summary: Get started with Keycloak Operator on Kubernetes
+:guide-summary: Get started with Keycloak Operator on Kubernetes [Legacy Wildfly]
+
+.Note:
+[NOTE]
+This guide refers to the https://github.com/keycloak/keycloak-operator[deprecated legacy operator] and Wildfly distribution of Keycloak.
 
 ## Before you start
 
