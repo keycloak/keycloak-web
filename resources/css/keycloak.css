@@ -57,26 +57,32 @@ a:hover {
 /* Articles */
 
 .kc-article h1 {
-    font-size: 3rem;
+    font-size: 3.25rem;
+    font-weight: bold;
 }
 
 .kc-article h2 {
-    font-size: 2.0rem;
-    margin-top: 2.5rem;
+    font-size: 2.25rem;
+    font-weight: bold;
+    margin-top: 2.0rem;
 }
 
 .kc-article h3 {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
+    font-weight: bold;
     margin-top: 2.0rem;
 }
 
 .kc-article h4 {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
+    font-weight: bold;
     margin-top: 2.0rem;
 }
 
-.kc-article h4 {
-    margin-top: 1.5rem;
+.kc-article h5 {
+    font-size: 1.0rem;
+    font-weight: bold;
+    margin-top: 1.25rem;
 }
 
 .kc-article img {

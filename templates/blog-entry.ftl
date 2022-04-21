@@ -1,6 +1,6 @@
 <#import "/templates/template.ftl" as tmpl>
 
-<@tmpl.page current="search" title="Search">
+<@tmpl.page current="search" title="${blog.title}">
 
 <div class="container mt-5 kc-article">
     <h1>${blog.title}</h1>
