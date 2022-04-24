@@ -1,0 +1,3 @@
+:guide-title: Keycloakify
+:guide-summary: Creation of Keycloak theme with React
+:external-link: https://www.keycloakify.dev

@@ -218,7 +218,8 @@ public class Guides {
         GETTING_STARTED("getting-started", "Getting started"),
         SERVER("server", "Server"),
         OPERATOR("operator", "Operator"),
-        SECURING_APPS("securing-apps", "Securing applications");
+        SECURING_APPS("securing-apps", "Securing applications"),
+        THEMING("theming", "Theme creation");
 
         private String label;
 
