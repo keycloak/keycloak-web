@@ -10,6 +10,7 @@ on:
 
 jobs:
   build:
+    concurrency: publish-to-website
 
     runs-on: ubuntu-latest
 
