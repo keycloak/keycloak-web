@@ -8,7 +8,8 @@
 
         <ul class="ms-4 mt-2">
             <li><a href="search.html">Search</a> for information in the documentation and mailing list</li>
-            <li><a href="https://keycloak.discourse.group/">Forum</a> where you can ask questions</li>
+            <li><a href="https://github.com/keycloak/keycloak/discussions">GitHub Discussions Forum</a> for discussions and asking questions</li>
+            <li><a href="https://keycloak.discourse.group/">Discourse Forum</a> where you can ask questions</li>
             <li><a href="https://groups.google.com/forum/#!forum/keycloak-user">Mailing list</a> where you can ask questions</li>
         </ul>
     </div>
