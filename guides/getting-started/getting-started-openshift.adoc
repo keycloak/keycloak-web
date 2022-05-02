@@ -45,7 +45,7 @@ To spin up a Keycloak server in your project, execute the following command:
 
 [source,bash,subs="attributes+"]
 ----
-oc process -f https://raw.githubusercontent.com/keycloak/keycloak-quickstarts/latest/openshift-examples/keycloak.yaml \
+oc process -f https://raw.githubusercontent.com/keycloak/keycloak-quickstarts/main/openshift-examples/keycloak.yaml \
     -p KEYCLOAK_ADMIN=admin \
     -p KEYCLOAK_ADMIN_PASSWORD=admin \
     -p NAMESPACE=keycloak \
