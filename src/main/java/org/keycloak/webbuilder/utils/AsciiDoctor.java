@@ -84,9 +84,10 @@ public class AsciiDoctor {
         return document.getAttributes();
     }
 
-    public void init(Context contex) {
+    public void init(Context context) {
         globalAttributes = new HashMap<>();
-        globalAttributes.put("version", contex.versions().getLatest().getVersion());
+        globalAttributes.put("version", context.versions().getLatest().getVersion());
+        globalAttributes.put("majorMinorVersion", context.versions().getLatest().getVersionShorter());
     }
 
     public void close() {
