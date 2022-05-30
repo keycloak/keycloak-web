@@ -1,5 +1,5 @@
 :title: New Keycloak certifications
-:date: 2022-05-23
+:date: 2022-05-30
 :publish: true
 :author: Marek Posolda
 
