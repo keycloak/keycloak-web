@@ -1,0 +1,22 @@
+:title: New Keycloak certifications
+:date: 2022-05-30
+:publish: true
+:author: Marek Posolda
+
+We are glad to announce new certifications for Keycloak related to the https://openid.net/connect[OpenID Connect] and https://www.keycloak.org/docs/latest/securing_apps/#_fapi-support[FAPI]!
+In the https://www.keycloak.org/2022/01/fapi[previous post], we announced certification of Keycloak 15.0.2 with the FAPI and Brazil Open Banking. This is a follow-up of this post
+with the announcement of the additional certifications. Here are the details:
+
+- Keycloak 18.0.0 is re-certified as OpenID Connect Provider. We already obtained certification for the OpenID Connect protocol a long time ago with the Keycloak 2.3.0. We now
+re-certified all the existing configurations (Basic, Implicit, Hybrid, Config, Dynamic) with latest Keycloak 18.0.0 and added certification as a Form Post OP.
+See the https://openid.net/certification/#OPs[OpenID Connect certifications page] for the details.
+
+- Keycloak 18.0.0 is certified as OpenID Connect Logout Provider with all logout profiles (RP-Initiated OP, Session OP, Front-Channel OP, Backchannel OP).
+See the https://openid.net/certification/#OPs[OpenID Connect certifications page (logout section)] for the details.
+
+- Keycloak 15.0.2 is certified as https://consumerdatastandardsaustralia.github.io/standards/#security-profile[Australia CDR], which is the extension based on existing
+FAPI 1 Advanced Final certification, which Keycloak already obtained before. See the https://openid.net/certification/#FAPI_OPs[FAPI certifications page] for the details.
+
+This milestone was achieved due the hard work of the awesome Keycloak community, who contributed lots of features related to OpenID Connect Protocol, OpenID Connect Logout and FAPI.
+The special Thanks go to the https://github.com/keycloak/kc-sig-fapi/blob/main/members.adoc[FAPI-SIG], who helped a lot with the FAPI and OpenID Connect related features and especially
+to https://github.com/tnorimat[Takashi Norimatsu], who is doing an awesome job for the Keycloak project.
