@@ -135,7 +135,7 @@ keycloak.init({ onLoad: initOptions.onLoad }).then((auth) => {
 });
 ----
 
-NOTE: I am passing keycloak instance as prop to the App component. Which can be used to retrive token.
+NOTE: I am passing keycloak instance as prop to the App component. Which can be used to retrieve the token.
 
 
 Run the Vue app:
