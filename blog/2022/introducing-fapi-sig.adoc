@@ -1,0 +1,96 @@
+:title: FAPI-SIG - a Keycloak's community
+:date: 2022-07-01
+:publish: true
+:author: Takashi Norimatsu
+
+
+Hello everybody, I am https://github.com/tnorimat[Takashi Norimatsu], a https://github.com/keycloak/keycloak/blob/main/MAINTAINERS.md[keycloak maintainer]. In this article, I would like to introduce you https://github.com/keycloak/kc-sig-fapi[FAPI-SIG], a Keycloak's community. We welcome everyone to join FAPI-SIG.
+
+== What is FAPI-SIG?
+
+https://github.com/keycloak/kc-sig-fapi[The Financial-grade API Special Interest Group (FAPI-SIG)] is a Keycloak's community whose aim is to support security features called https://openid.net/wg/fapi/[Financial-grade API (FAPI) security profiles] to Keycloak. FAPI-SIG was established in Aug 2020.
+
+FAPI security profiles are the open security specifications for secure API access using OAuth 2.0. They are standardized by https://openid.net/[OpenID Foundation (OID-F)], the standardization organization about digital identity. For example, it standardized https://openid.net/specs/openid-connect-core-1_0.html[OpenID Connect].
+
+FAPI security profiles are for accessing an API that requires high security level. As its name suggests (Financial), they are originally intended to be used for securely accessing an API providing financial services (e.g., retrieving the balance of a user's bank account, initiating payment). However, also as its name suggests (Financial-grade), these can be used for other types of an API that requires the same security level (e.g., in healthcare industries, retrieving a user's medical records).
+
+By supporting FAPI security profiles, Keycloak can be applied in a wide range of use cases that requires high security level about API access (e.g., open banking).
+
+FAPI-SIG not only aim to support FAPI security profiles to Keycloak but confirm that Keycloak conforms to FAPI security profiles by using https://openid.net/certification/about-conformance-suite/[the conformance suite] of FAPI security profiles officially provided by OID-F.
+
+FAPI-SIG has created https://github.com/keycloak/kc-sig-fapi#passed-conformance-tests-per-keycloak-version[the environment] for automatically running FAPI security conformance tests. Whenever a new version of Keycloak is released, https://github.com/keycloak/kc-sig-fapi#passed-conformance-tests-per-keycloak-version[FAPI-SIG] checks if it still complies with FAPI security profiles by using the environment. Therefore, FAPI-SIG contributes to keeping every version of Keycloak compliant to FAPI security profiles.
+
+FAPI-SIG start working on supporting security standards defined by OID-F other than FAPI security profiles. For example, FAPI-SIG has created the environment for automatically running conformance tests for OpenID Connect 1.0 and OpenID Connect for Logout Profile, which contributed of getting the certifications of OpenID Connect 1.0 and OpenID Connect for Logout Profile.
+
+As described in https://www.keycloak.org/2022/05/oidc-certifications.html[the blog post], Keycloak has achieved several certifications: FAPI 1.0 Advanced, FAPI-CIBA, Australia CDR, Open Banking Brazil FAPI 1.0, OpenID Connect, and OpenID Connect for Logout Profiles. FAPI-SIG has contributed to these achievements.
+
+FAPI-SIG is an open community. All activities of FAPI-SIG are voluntary-based. All outputs of FAPI-SIG's activities are disclosed in FAPI-SIG's github repository. For example, the environment for automatically running FAPI security conformance tests is in the repository whose license is Apache License 2.0 so everyone can user the environment.
+
+
+== How do FAPI-SIG's activities proceed?
+
+FAPI-SIG holds monthly web meetings. In the meetings, we report the situation of the activity going on, propose and discuss what activity we work on. The minutes of the meetings are disclosed in https://github.com/keycloak/kc-sig-fapi/tree/main/FAPI-SIG/meetings[FAPI-SIG's github repository].
+
+FAPI-SIG's activity is not only writing codes and sending a pull request, but reviewing other contributor's pull requests, proposing and discussing an working item, and so on.
+
+Not only FAPI-SIG member but others can communicate with each other by the following ways.
+
+Mail : https://groups.google.com/forum/#!topic/keycloak-dev/Ck_1i5LHFrE[Google Group keycloak developer mailing list]
+Meeting : Web meeting on a regular basis
+
+
+== What has FAPI-SIG achieved?
+
+FAPI-SIG mainly contributed the implementation of https://github.com/keycloak/kc-sig-fapi#results[the following specifications]:
+
+* OAuth2/OIDC related specifications:
+**  https://openid.net/specs/openid-client-initiated-backchannel-authentication-core-1_0.html[OpenID Connect Client Initiated Backchannel Authentication (CIBA)]
+**  https://datatracker.ietf.org/doc/html/rfc9126[RFC 9126 OAuth 2.0 Pushed Authorization Requests (PAR)]
+
+* FAPI security profiles:
+**  https://openid.net/specs/openid-financial-api-part-1-1_0.html[FAPI 1.0 Baseline Security Profile]
+**  https://openid.net/specs/openid-financial-api-part-2-1_0.html[FAPI 1.0 Advanced Security Profile]
+**  https://openid.net/specs/openid-financial-api-ciba-ID1.html[FAPI Client Initiated Backchannel Authentication Profile (FAPI-CIBA)]
+
+* Specifications based on FAPI security profiles for open banking use cases:
+**  https://consumerdatastandardsaustralia.github.io/standards/#security-profile[Australia Consumer Data Right (CDR)]
+
+FAPI-SIG secondarily helped the other contributor's implementation of the following specifications:
+
+* FAPI security profiles:
+**  https://openid.net/specs/openid-financial-api-jarm.html[FAPI JWT Secured Authorization Response Mode for OAuth 2.0 (JARM)]
+
+* Specifications based on FAPI security profiles for open banking use cases:
+**  Open Banking Brasil FAPI 1.0 Security Profile
+
+FAPI-SIG has created https://github.com/keycloak/kc-sig-fapi#automated-conformance-test-run-environment-by-this-kc-fapi-sig-repository[the environment for automatically running FAPI security conformance tests]:
+
+* FAPI security profiles:
+**  FAPI 1.0 Advanced Security Profile
+**  FAPI Client Initiated Backchannel Authentication Profile (FAPI-CIBA)
+
+* Specifications based on FAPI security profiles for open banking use cases:
+**   Australia Consumer Data Right (CDR)
+**   Open Banking Brasil FAPI 1.0 Security Profile
+
+* OpenID Specifications:
+**  OpenID Connect 1.0
+**  OpenID Connect for Logout Profiles
+
+
+== What activities are going on in FAPI-SIG?
+
+FAPI-SIG are working on the following working items:
+
+*  FAPI 2.0 Baseline Security Profile
+*  FAPI 2.0 Grant Management for OAuth 2.0
+*  OAuth 2.0 Rich Authorization Requests (RAR)
+*  OAuth 2.0 Demonstrating Proof-of-Possession at the Application Layer (DPoP)
+
+== Where do I know FAPI-SIG's activities in detail?
+
+Please refer to the front page of https://github.com/keycloak/kc-sig-fapi/[FAPI-SIG's github repository] and meeting minutes.
+
+== How do I participate FAPI-SIG's activities?
+
+Please feel free to contact us in communication channels shown above.
