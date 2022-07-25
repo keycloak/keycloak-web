@@ -1,0 +1,129 @@
+:title: New storage in Keycloak
+:date: 2022-07-27
+:publish: true
+:author: Hynek Mlnařík
+
+The current store in Keycloak has some known limitations.
+For small deployments, it takes too long to initialize the database and
+start Keycloak. There is no native support for cloud-native deployment.
+Upgrading to a new Keycloak version often means a requirement for stop-the-world
+updates with little chance for no downtime upon upgrade.
+
+Keycloak 19 brings in an early preview of the future Keycloak store supporting
+no-downtime upgrades, per-realm storage, and cloud-nativity from its very inception.
+This so called _map_ storage stays focused at delivering optimal experience and thus
+limits its support to Postgres and CockroachDB databases, and Infinispan datastore.
+The early preview is available in the Quarkus distribution.
+
+This early preview lacks several features necessary for optimal performance
+and is thus not yet production ready; still we have a plan to deliver those:
+
+- In Keycloak 20, expect improved support especially for CockroachDB;
+  and also a file-based store. Together with another anticipated feature
+  - _tree_ store - it would be possible to combine several storage mechanisms
+  and have e.g. several static client declarations in static files managed
+  in a versioning system like Git, combined with dynamic clients stored in a database.
+  Per-request object caching is on radar for Keycloak 20 too and should result in
+  significantly better performance.
+
+- In Keycloak 21, expect LDAP support, and an offline tool for migrating
+  data from legacy store to new one, and further optimizations and garbage collection
+
+Note that the store used in previous versions (now called _legacy store_) does
+_not_ go away soon! Since the new store is not yet production ready, it remains the default
+store in Keycloak 19. Also other databases (MySQL, MariaDB, MS SQL Server, Oracle) are not
+supported by the new store, these are only supported by the legacy. We do consider
+second-level support for these databases, based on results of a community survey.
+
+For development and testing purposes, we offer a fast in-memory store called `chm`.
+This store is intentionally not capable of zero-downtime upgrade as that is not needed
+for development. As such, it also offers a quick Keycloak-without-database deployment.
+
+We will be glad to hear your feedback in https://github.com/keycloak/keycloak/discussions/new?category=keycloak-x-new-store&title=%5BUser%20feedback%5D%20&labels=team/storage-sig[GitHub Discussions].
+
+## Try it out
+
+The following section contains examples of how to configure Keycloak 19
+with the new store.
+
+WARNING: The experimental command line options starting with `--storage` might change
+         without prior warning, based on the feedback from the community
+         and project needs.
+
+### See what Keycloak can do without a database
+
+After downloading, you can try Keycloak in a single-node deployment as simply as running
+
+   bin/kc.sh start-dev --storage=chm
+
+This starts a Keycloak instance with a simple testing in-memory store which is saved
+to the local file system across Keycloak restarts but has no support
+for zero-downtime upgrades or clustering.
+
+### Next step: Persist data in a relational database
+
+_Requirements:_ Postgres 14 or CockroachDB 22.1 (or newer)
+
+To keep the data in a database, run the following command:
+
+   bin/kc.sh start-dev --storage=jpa --db-url=<jdbc-url> --db-username=<username> --db-password=<password>
+
+Reference to https://github.com/keycloak/keycloak/discussions/9596[Q&A live document].
+
+CAUTION: This feature has known issues in CockroachDB, see https://github.com/keycloak/keycloak/issues/11618[this tracker for list].
+
+### Alternative next step: Persist data in external Infinispan
+
+_Requirements:_ Infinispan 12
+
+If you have a Infinispan up and running, you can use it for storing the data as well.
+You can achieve it by running the following command:
+
+   bin/kc.sh start-dev --storage=hotrod --storage-hotrod-host=<host> --storage-hotrod-port=11222 --storage-hotrod-username=<username> --storage-hotrod-password=<password>
+
+Keycloak creates the needed caches in Infinispan upon first start if the caches
+do not exist already. You are free to create and configure the caches
+yourself if you prefer to fine-tune those or e.g. want to set up persistence.
+Refer to Infinispan documentation for available options for cache configuration.
+
+Reference to https://github.com/keycloak/keycloak/discussions/12010[Q&A live document].
+
+=== Next step: Store data in separate storages
+
+Eventually it turns out that some of the data should be stored in files or a database, other
+(e.g. session) data should be stored in Infinispan. Can this be achieved?
+
+Yes! Keycloak storage is divided into the following storage areas: Realms,
+clients, users, groups, roles, client scopes, authorization services,
+events, authentication sessions, user/client sessions, login failures,
+action tokens, and single-use tokens (last two areas to be merged in Keycloak 20).
+
+NOTE: For more details on this division, please see https://github.com/keycloak/keycloak-community/blob/main/design/keycloak.x/storage-architecture.md[architecture specification].
+
+Each area maintains its own storage for storing the data, and each area
+is independent of others. In other words, realms can be served by a database and
+users by Infinispan.
+
+To have all the session data stored in an external Infinispan,
+and realm / client / user / group / role / ... data stored in a relational database, you
+can issue the following command:
+
+   bin/kc.sh start-dev --storage=jpa \
+     --db-url=<jdbc-url> --db-username=<username> --db-password=<password> \
+     --storage-hotrod-host=<host> --storage-hotrod-port=<port> \
+     --storage-hotrod-username=<username> --storage-hotrod-password=<password> \
+     --storage-area-action-token=hotrod \
+     --storage-area-auth-session=hotrod \
+     --storage-area-single-use-object=hotrod \
+     --storage-area-user-session=hotrod
+
+This starts a Keycloak server with all areas being handled by the relational database
+(`--storage=jpa`) but those listed in specific `--storage-area-...` options which
+are set to use external Infinispan protocol. This setup is similar to the legacy store
+where all the session data are stored in Infinispan, with the exception that
+Infinispan is not embedded within Keycloak.
+
+## Conclusion
+
+We will be happy for you to try the new store and share your 
+https://github.com/keycloak/keycloak/discussions/new?category=keycloak-x-new-store&title=%5BUser%20feedback%5D%20&labels=team/storage-sig[feedback]!
