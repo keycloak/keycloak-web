@@ -18,15 +18,17 @@ The early preview is available in the Quarkus distribution.
 This early preview lacks several features necessary for optimal performance
 and is thus not yet production ready; still we have a plan to deliver those:
 
-- In Keycloak 20, expect improved support especially for CockroachDB;
+* In Keycloak 20, expect improved support especially for CockroachDB;
   and also a file-based store. Together with another anticipated feature
-  - _tree_ store - it would be possible to combine several storage mechanisms
-  and have e.g. several static client declarations in static files managed
-  in a versioning system like Git, combined with dynamic clients stored in a database.
-  Per-request object caching is on radar for Keycloak 20 too and should result in
-  significantly better performance.
 
-- In Keycloak 21, expect LDAP support, and an offline tool for migrating
+** _tree_ store - it would be possible to combine several storage mechanisms
+   and have e.g. several static client declarations in static files managed
+   in a versioning system like Git, combined with dynamic clients stored in a database.
+
+** Per-request object caching is on radar for Keycloak 20 too and should result in
+   significantly better performance.
+
+* In Keycloak 21, expect LDAP support, and an offline tool for migrating
   data from legacy store to new one, and further optimizations and garbage collection
 
 Note that the store used in previous versions (now called _legacy store_) does

@@ -303,3 +303,31 @@ ol.toc-list .is-collapsed {
 .kc-app div.show {
     display: block;
 }
+
+/* Admonitions */
+
+.admonitionblock {
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+.admonitionblock table {
+    margin-left: 2em
+}
+.admonitionblock td {
+    text-align: left;
+}
+
+.admonitionblock td.icon {
+    width:80px
+    text-align: center;
+    color: #19417d
+    padding-left: 1.25em;
+    padding-right: 1.25em;
+}
+
+.admonitionblock table td.content {
+    padding-left: 1.25em;
+    padding-right: 1.25em;
+    border-left: 1px solid #dddddf;
+}
