@@ -1,0 +1,12 @@
+:title: New Keycloak maintainer: Václav Muzikář
+:date: 2022-08-04
+:publish: true
+:author: Bruno Oliveira
+
+We are pleased to welcome https://github.com/vmuzikar[Václav Muzikář] as an official maintainer of Keycloak.
+
+Vašek has consistently collaborated to the success of Keycloak since 2015 when he joined Red Hat. He is known for his various contributions to our test suite, the Quickstarts, integration tests for the Node.js Adapter, improvements in the new Account Console, security auditing of our REST Account API, enhancement to our pipelines and also the maintenance and development of Keycloak Operator. Now he is coordinating the efforts on Cloud-Native development which includes the new Quarkus distribution and the new Operator.
+
+He has shown his commitment to the Keycloak community collaborating on design discussions, participating in GitHub discussions, reviewing pull-requests, answering questions on the Keycloak mailing lists, contributing to new features, bug fixes and triaging GitHub issues.
+
+The Keycloak team is very excited to welcome Vašek as our new maintainer and long-time contributor.
