@@ -19,7 +19,7 @@ reliability and predictability to the whole solution.
 
 However, since the new storage is still WIP and currently is lacking some features like the options for immutability that
 are crucial for the new CRs, the new Operator is currently missing those CRs for managing Keycloak resources. The missing
-CRs will be added once the new store has support for it, which is currently expected in Keycloak 21 (please not this is
+CRs will be added once the new store has support for it, which is currently expected in Keycloak 21 (please note this is
 a subject to change).
 
 In the meantime we have prepared a https://github.com/keycloak/keycloak-k8s-resources/tree/operators-tandem[few workarounds]
