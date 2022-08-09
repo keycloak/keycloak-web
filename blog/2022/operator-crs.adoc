@@ -15,7 +15,7 @@ such as Realm, Users and Clients, in a cloud-native way. One of the key aspects 
 way for managing these Keycloak resources via new CRs and git-ops. This new approach will leverage
 the https://www.keycloak.org/2022/07/storage-map.html[new storage architecture] and future immutability options,
 making the CRs the declarative single source of truth. In comparison to the legacy Operator, this will bring high robustness,
-reliability and predictability to the whole solution.
+reliability, and predictability to the whole solution.
 
 However, since the new storage is still WIP and currently is lacking some features like the options for immutability that
 are crucial for the new CRs, the new Operator is currently missing those CRs for managing Keycloak resources. The missing
