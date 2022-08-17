@@ -76,7 +76,7 @@ CAUTION: This feature has known issues in CockroachDB, see https://github.com/ke
 
 ### Alternative next step: Persist data in external Infinispan
 
-_Requirements:_ Infinispan 12
+_Requirements:_ Infinispan 12.1
 
 If you have a Infinispan up and running, you can use it for storing the data as well.
 You can achieve it by running the following command:
