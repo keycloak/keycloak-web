@@ -106,7 +106,7 @@
     <tbody>
     <tr>
         <td>
-            <a href="${root}docs-api/${version.versionShorter}/javadocs/index.html" target="_blank">
+            <a href="${root}docs-api/${version.version}/javadocs/index.html" target="_blank">
                 JavaDoc
             </a>
         </td>
@@ -116,7 +116,7 @@
     </tr>
     <tr>
         <td>
-            <a href="${root}docs-api/${version.versionShorter}/rest-api/index.html" target="_blank">
+            <a href="${root}docs-api/${version.version}/rest-api/index.html" target="_blank">
                 Administration REST API
             </a>
         </td>
