@@ -1,5 +1,5 @@
 :title: The future of Keycloak Operator CRs
-:date: 2022-08-10
+:date: 2022-09-01
 :publish: true
 :author: Václav Muzikář
 
@@ -16,10 +16,14 @@ of managing these Keycloak resources via CRs and git-ops. This new approach will
 the https://www.keycloak.org/2022/07/storage-map.html[new storage architecture] and future immutability options,
 making the CRs the declarative single source of truth. In comparison to the legacy Operator, this will bring high robustness,
 reliability, and predictability to the whole solution.
-However, since the new storage is still work in progress and currently is lacking some features like the options for immutability that
-are crucial for the new CRs, the new Operator is currently missing those CRs for managing Keycloak resources. The missing
-CRDs will be added once the new store has support for it, which is currently expected in Keycloak 21 (please note this is
-subject to change).
+
+The new storage is still work in progress and currently is lacking some features like the file store to persist
+data in a file instead of DB. Additionally, more features will have to be added to Keycloak, including but not limited to
+a completely new concept of immutability which will be used to ensure any data coming from the CRs (and subsequently from
+the file store) are read-only from the REST API, UI and other interfaces. All of this is critical to proper CRs implementation,
+hence the new Operator is currently missing the CRDs for managing Keycloak resources. The missing CRDs will be added once
+Keycloak has the necessary support for it, which is currently expected in Keycloak 21 (please note this is subject to
+change).
 
 In the meantime we have prepared a https://github.com/keycloak/keycloak-k8s-resources/tree/operators-tandem[few workarounds]
 in case the missing CRs are preventing you from giving the new Operator a try.
