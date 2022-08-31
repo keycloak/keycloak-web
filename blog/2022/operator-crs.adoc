@@ -29,5 +29,5 @@ All of this is critical to proper CRs implementation, hence the new Operator is 
 Keycloak resources. The missing CRDs will be added once Keycloak has the necessary support for it, which is currently
 expected in Keycloak 21.
 
-In the meantime we have prepared a https://github.com/keycloak/keycloak-k8s-resources/tree/operators-tandem[few workarounds]
-in case the missing CRs are preventing you from giving the new Operator a try.
+We have prepared a few options to alleviate the situation with missing CRDs
+in https://github.com/keycloak/keycloak-k8s-resources/tree/operators-tandem[this repository].
