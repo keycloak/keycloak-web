@@ -1,0 +1,33 @@
+:title: The future of Keycloak Operator CRs
+:date: 2022-09-02
+:publish: true
+:author: Václav Muzikář
+
+A while back, we have https://www.keycloak.org/2021/10/keycloak-x-update.html#_operator_and_containers[announced] a new
+Operator rewritten from scratch to provide the best experience for the Quarkus distribution. While the
+https://github.com/keycloak/keycloak-operator[legacy Operator] is now deprecated and
+https://www.keycloak.org/2022/03/releases.html[will reach EOL with Keycloak 20], the
+https://github.com/keycloak/keycloak/tree/main/operator[new one] is already available as
+a preview, see the https://www.keycloak.org/operator/installation[installation guide].
+
+One of the most common concerns around the new Operator is the current lack of the CRDs for managing Keycloak resources,
+such as realm, users and clients, in a cloud-native way. One of the key aspects of the new Operator will be redesign
+of managing these Keycloak resources via CRs and git-ops. This new approach will leverage
+the https://www.keycloak.org/2022/07/storage-map.html[new storage architecture] and future immutability options,
+making the CRs the declarative single source of truth. In comparison to the legacy Operator, this will bring high robustness,
+reliability, and predictability to the whole solution.
+
+Before we would consider operator ready for leveraging CRs, we expect completing several features including but not
+limited to:
+
+* File store (expected in Keycloak 20) to persist data in a file instead of DB.
+* Read-only possibilities for administration REST API, UI Console and other interfaces. This is required for the new immutability concept
+  which will be used to ensure any data coming from the CRs (and subsequently from the file store) are read-only from
+  all interfaces.
+
+All of this is critical to proper CRs implementation, hence the new Operator is currently missing the CRDs for managing
+Keycloak resources. The missing CRDs will be added once Keycloak has the necessary support for it, which is currently
+expected in Keycloak 21.
+
+We have prepared a few options to alleviate the situation with missing CRDs
+in https://github.com/keycloak/keycloak-k8s-resources/tree/operators-tandem[this repository].
