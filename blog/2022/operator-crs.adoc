@@ -1,5 +1,5 @@
 :title: The future of Keycloak Operator CRs
-:date: 2022-09-01
+:date: 2022-09-02
 :publish: true
 :author: Václav Muzikář
 
@@ -21,7 +21,7 @@ Before we would consider operator ready for leveraging CRs, we expect completing
 limited to:
 
 * File store (expected in Keycloak 20) to persist data in a file instead of DB.
-* Read-only administration REST API, UI Console and other interfaces. This is required for the new immutability concept
+* Read-only possibilities for administration REST API, UI Console and other interfaces. This is required for the new immutability concept
   which will be used to ensure any data coming from the CRs (and subsequently from the file store) are read-only from
   all interfaces.
 
