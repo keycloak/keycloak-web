@@ -1,0 +1,5 @@
+{
+    "name": "Apple Identity Provider",
+    "description": "<code>Sign in with Apple</code> using either a browser or natively by <code>token_exchange</code>.",
+    "website": "https://github.com/klausbetz/apple-identity-provider-keycloak"
+}
