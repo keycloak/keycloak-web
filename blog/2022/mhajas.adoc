@@ -1,0 +1,16 @@
+:title: New Keycloak maintainer: Michal Hajas
+:date: 2022-09-16
+:publish: true
+:author: Stian Thorgersen
+
+We are pleased to welcome https://github.com/mhajas[Michal Hajas] as an official maintainer of Keycloak.
+
+Michal has been with the Keycloak project since September 2015, and since that period has https://github.com/keycloak/keycloak/commits?author=mhajas[contributed]
+to almost every component of Keycloak - core server, authorization services, adapters, javascript, code auto-generation,
+legacy operator - either by review or code contribution.
+
+Since his first involvement, he has steadily contributed code, currently https://github.com/keycloak/keycloak/graphs/contributors[ranked as #8 highest contributor].
+Lately, he has designed and co-developed Hot Rod storage and has been instrumental in overall establishing the new map storage.
+
+He reviews community contributions and offers help to finalize PRs, as well as participates in community discussions and
+issue triaging. He understands and respects the code of conduct, and in reviews helps maintaining it.
