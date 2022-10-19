@@ -17,7 +17,7 @@
         <version.freemarker>2.3.31</version.freemarker>
         <version.asciidoctorj>2.5.2</version.asciidoctorj>
         <version.jackson-core>2.13.2</version.jackson-core>
-        <version.jackson-databind>2.13.2.2</version.jackson-databind>
+        <version.jackson-databind>2.13.4.1</version.jackson-databind>
         <version.commons-io>2.11.0</version.commons-io>
         <version.commons-compress>1.21</version.commons-compress>
 
