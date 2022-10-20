@@ -1,0 +1,102 @@
+:title: Removal of deprecated methods
+:date: 2022-10-20
+:publish: true
+:author: Michal Hajas
+
+During implementation of the new storage, we did a clean-up of provider and
+model interfaces where we deprecated some methods. Deprecated methods were
+usually replaced by a corresponding replacement.
+
+Most common reasons for deprecating the methods were following.
+
+* Streamification - Collection-based methods were replaced by Stream-based
+methods. More details in
+https://issues.redhat.com/browse/KEYCLOAK-14011[KEYCLOAK-14011]
+* Wrong parameter ordering - Majority of Keycloak entities are associated with
+a realm. Therefore, a lot of methods accessing storage are searching for
+entities associated with a specific realm. To make the search consistent we
+changed all methods to have `RealmModel` as the first parameter.
+
+As most of the deprecations were done around two years we decided to remove
+such methods in Keycloak 20. List of all interfaces that were changed during
+this removal can be found at the end of this blog post.
+
+== Examples of removed methods
+
+* In https://github.com/keycloak/keycloak/blob/main/server-spi/src/main/java/org/keycloak/models/GroupProvider.java[`GroupProvider`] interface, there was the following collection-based method:
+```java
+@Deprecated
+List<GroupModel> getGroups(RealmModel realm);
+```
+was removed and replaced by
+```java
+Stream<GroupModel> getGroupsStream(RealmModel realm);
+```
+
+* In https://github.com/keycloak/keycloak/blob/main/server-spi/src/main/java/org/keycloak/storage/user/UserLookupProvider.java[`UserLookupProvider`]
+interface, there was the following method with wrong attribute order:
+```java
+@Deprecated
+UserModel getUserById(String id, RealmModel realm);
+```
+was removed and replaced by
+```java
+UserModel getUserById(RealmModel realm, String id)
+```
+
+* In https://github.com/keycloak/keycloak/blob/main/server-spi/src/main/java/org/keycloak/storage/user/UserQueryProvider.java[`UserQueryProvider`]
+there was the following method, with both collection return value and wrong attribute ordering:
+```java
+@Deprecated
+List<UserModel> searchForUser(Map<String, String> params,
+                              RealmModel realm,
+                              int firstResult,
+                              int maxResults
+);
+```
+was removed and replaced by
+```java
+Stream<UserModel> searchForUserStream(RealmModel realm,
+                                      Map<String, String> params,
+                                      Integer firstResult,
+                                      Integer maxResults
+);
+```
+
+== List of changed interfaces
+
+Pull request
+
+* `server-spi-private` module
+** `EventQuery`
+** `AdminEventQuery`
+** `KeyProvider`
+* `server-spi` module
+** `CredentialInpuUpdater`
+** `UserCredentialStore`
+** `ClientProvider`
+** `ClientSessionContext`
+** `GroupModel`
+** `GroupProvider`
+** `KeyManager`
+** `KeycloakSessionFactory`
+** `ProtocolMapperContainerModel`
+** `RealmModel`
+** `RealmProvider`
+** `RoleContainerModel`
+** `RoleMapperModel`
+** `RoleModel`
+** `RoleProvider`
+** `ScopeContainerModel`
+** `UserCredentialManager`
+** `UserModel`
+** `UserProvider`
+** `UserSessionProvider`
+** `RoleUtils`
+** `AuthenticationSessionProvider`
+** `ClientLookupProvider`
+** `GroupLookupProvider`
+** `UserLookupProvider`
+** `UserQueryProvider`
+
+All changes can be seen in the following https://github.com/keycloak/keycloak/pull/14973[pull request].
