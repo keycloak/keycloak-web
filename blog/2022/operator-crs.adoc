@@ -30,4 +30,4 @@ Keycloak resources. The missing CRDs will be added once Keycloak has the necessa
 expected in Keycloak 21.
 
 We have prepared a few options to alleviate the situation with missing CRDs
-in https://github.com/keycloak/keycloak-k8s-resources/tree/operators-tandem[this repository].
+in https://github.com/keycloak/keycloak-realm-operator[this repository].
