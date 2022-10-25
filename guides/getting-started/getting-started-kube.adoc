@@ -24,8 +24,7 @@ minikube addons enable ingress
 
 ## Run Keycloak
 
-The Keycloak QuickStarts repository includes some example files to help deploy Keycloak to Kubernetes. First step is to retrieve
-these files by cloning the repository:
+The Keycloak QuickStarts repository includes some example files to help deploy Keycloak to Kubernetes.
 
 Let's start with creating the Keycloak deployment and service:
 
