@@ -99,10 +99,8 @@ public class AutoBuilder {
 
         if (recursive) {
             Arrays.stream(dir.listFiles(d -> d.isDirectory())).forEach(d -> {
-                System.out.println("Watching: " + d.getAbsolutePath());
                 try {
-                    WatchKey key1 = d.toPath().register(watcher, ENTRY_CREATE, ENTRY_DELETE, ENTRY_MODIFY);
-                    builders.put(key1, builder);
+                    register(d, recursive, builder);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
