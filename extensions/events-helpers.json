@@ -1,0 +1,5 @@
+{
+    "name": "Event Listener Utilities",
+    "description": "Useful event listener implementations and utilities. Webhooks, scripts, HTTP, etc."
+    "website": "https://github.com/p2-inc/keycloak-events"
+}

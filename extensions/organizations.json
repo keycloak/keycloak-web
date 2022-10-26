@@ -1,0 +1,5 @@
+{
+    "name": "Organizations Extensions",
+    "description": "Comprehensive extensions set for single realm multi-tenancy."
+    "website": "https://github.com/p2-inc/keycloak-orgs"
+}
