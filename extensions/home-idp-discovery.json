@@ -1,0 +1,5 @@
+{
+    "name": "Home IdP Discovery",
+    "description": "The authenticator redirects users to their home identity provider based on their email address and domain.",
+    "website": "https://github.com/sventorben/keycloak-home-idp-discovery"
+}
