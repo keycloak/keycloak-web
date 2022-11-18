@@ -6,7 +6,7 @@
 We are glad to announce that latest Keycloak 20 release contains experimental support for FIPS 140-2!
 
 The https://csrc.nist.gov/publications/detail/fips/140/2/final[FIPS 140-2 standard] is a set of requirements for cryptography modules, which needs
-to be met for the software used by U.S governments and related parties. The FIPS compliant software should use only secure cryptography algorithms
+to be met for the software used by U.S. governments and related parties. The FIPS compliant software should use only secure cryptography algorithms
 allowed by the FIPS specification and must use them in a secured way. Keycloak does not directly implement any cryptography algorithms, however it
 internally needs to use lots of cryptography functionalities. For this purpose, Keycloak mostly relies on the https://docs.oracle.com/en/java/javase/11/security/java-cryptography-architecture-jca-reference-guide.html[Java cryptography SPI]
 and 3rd party libraries for implementing cryptography related functionality - especially the https://www.bouncycastle.org/java.html[BouncyCastle library].
