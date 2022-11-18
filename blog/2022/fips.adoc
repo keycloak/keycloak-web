@@ -11,7 +11,7 @@ allowed by the FIPS specification and must use them in a secured way. Keycloak d
 internally needs to use lots of cryptography functionalities. For this purpose, Keycloak mostly relies on the https://docs.oracle.com/en/java/javase/11/security/java-cryptography-architecture-jca-reference-guide.html[Java cryptography SPI]
 and 3rd party libraries for implementing cryptography related functionality - especially the https://www.bouncycastle.org/java.html[BouncyCastle library].
 
-FIPS support is usually enabled at the OS level. For example during installation of https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/security_hardening/assembly_installing-a-rhel-8-system-with-fips-mode-enabled_security-hardening[RHEL 8.6]
+FIPS support is usually enabled at the OS level. For example, during installation of https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/security_hardening/assembly_installing-a-rhel-8-system-with-fips-mode-enabled_security-hardening[RHEL 8.6]
 , you can enable kernel flag during OS installation to make sure that your OS is FIPS compliant. When FIPS is enabled at the OS level, it means that various
 packages including OpenJDK are also set to be FIPS compliant and are pre-configured to rely on FIPS approved functions. For example `java.security` configuration file is pre-configured to contain
 only FIPS compliant security providers.
