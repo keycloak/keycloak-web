@@ -35,7 +35,7 @@ Also you can report any https://github.com/keycloak/keycloak/issues/new?title=%5
 The known limitation in the BCFIPS non-approved mode include:
 
 - Possible issues when using SAML clients and SAML Identity providers
-- Kerberos/SPNEGO authenticator doesn't work
+- Kerberos/SPNEGO authenticator does not work
 - X.509 client certificate authentication may not work for both users and clients
 
 In BCFIPS approved mode (more strict mode), there are even more limitations like:
