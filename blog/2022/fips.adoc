@@ -38,7 +38,7 @@ The known limitation in the BCFIPS non-approved mode include:
 - Kerberos/SPNEGO authenticator does not work
 - X.509 client certificate authentication may not work for both users and clients
 
-In BCFIPS approved mode (more strict mode), there are even more limitations like:
+In BCFIPS approved mode (more strict mode), more limitations exist such as:
 
 - User passwords must be at least 14 characters long. You should set password policy for your realm to be 14 characters to avoid issues during registration/authentication of users
 - Keystore/truststore must be of type `bcfks` due the both of `jks` and `pkcs12` don't work. This is a restriction of BCFIPS approved mode
