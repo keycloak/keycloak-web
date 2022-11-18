@@ -16,7 +16,7 @@ FIPS support is usually enabled at the OS level. For example, during installatio
 packages including OpenJDK are also set to be FIPS compliant and are pre-configured to rely on FIPS approved functions. For example `java.security` configuration file is pre-configured to contain
 only FIPS compliant security providers.
 
-The FIPS support in Keycloak means that Keycloak server is able to run on the FIPS compliant OS with FIPS compliant Java. It also means that Keycloak server itself is FIPS compliant and can be used
+The FIPS support in Keycloak means that the Keycloak server can run on the FIPS compliant OS with FIPS compliant Java. It also means that the Keycloak server is FIPS compliant and can be used
 by parties, which strictly require FIPS 140-2 support. Even if you do not use FIPS enabled OS, you can still try FIPS enabled Keycloak server by using custom `java.security` file with only
 BouncyCastle-FIPS security providers configured as described in the instructions below in the step 4.
 
