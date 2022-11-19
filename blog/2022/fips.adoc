@@ -41,5 +41,5 @@ The known limitation in the BCFIPS non-approved mode include:
 In BCFIPS approved mode (more strict mode), more limitations exist such as:
 
 - User passwords must be at least 14 characters long. You should set a password policy for your realm to be 14 characters to avoid issues during registration/authentication of users
-- Keystore/truststore must be of type `bcfks` because neither `jks` and `pkcs12`work. This is a restriction of BCFIPS approved mode
+- Keystore/truststore must be of type `bcfks` because neither `jks` and `pkcs12` work. This is a restriction of BCFIPS approved mode
 - Some warnings in the server.log at startup
