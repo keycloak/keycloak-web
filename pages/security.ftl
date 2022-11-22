@@ -11,9 +11,9 @@
 
     <p>It is important that suspected vulnerabilities are disclosed in a responsible way, and are not publicly disclosed until after they have been analysed and a fix is available.</p>
 
-    <p>To report a security vulnerability, send an email to <a href="mailto:keycloak-security@googlegroups.com">keycloak-security@googlegroups.com</a>.</p>
+    <p>To report a security vulnerability, please create a <a aria-label-position="top" aria-label="https://github.com/keycloak/keycloak/security/advisories/new." rel="noopener" class="external-link" href="https://github.com/keycloak-poc/keycloak/security/advisories/new." target="_blank">new GitHub advisory</a>, or if you don't have a GitHub account, you can email the Keycloak team at <a aria-label-position="top" aria-label="mailto:keycloak-security@googlegroups.com." rel="noopener" class="external-link" href="mailto:keycloak-security@googlegroups.com." target="_blank">keycloak-security@googlegroups.com.</a>&nbsp;Include steps to reproduce the vulnerability, the vulnerable versions, and any additional files necessary.</p>
 
-    <p>If you would like to work with us on a fix for the security vulnerability, please include your GitHub username in the above email, and we will provide you access to a temporary private fork where we can collaborate on a fix without it being disclosed publicly.</p>
+    <p>When creating an advisory, you should have access to the temporary private fork, so we can collaborate on a fix without it being disclosed publicly.</p>
 
     <p>Do not open a public issue, send a pull request, or disclose any information about the suspected vulnerability publicly. If you discover any publicly disclosed security vulnerabilities, please notify us immediately through <a href="mailto:keycloak-security@googlegroups.com">keycloak-security@googlegroups.com</a>.</p>
 
