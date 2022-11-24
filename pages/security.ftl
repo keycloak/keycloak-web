@@ -17,6 +17,20 @@
 
     <p>Do not open a public issue, send a pull request, or disclose any information about the suspected vulnerability publicly. If you discover any publicly disclosed security vulnerabilities, please notify us immediately through <a href="mailto:keycloak-security@googlegroups.com">keycloak-security@googlegroups.com</a>.</p>
 
+    <p>Public CVEs</p>
+
+    <p>For publicly known CVEs from third-party dependencies, we use <a aria-label-position="top" aria-label="https://github.com/aquasecurity/trivy" rel="noopener" class="external-link" href="https://github.com/aquasecurity/trivy" target="_blank">Trivy</a> and <a aria-label-position="top" aria-label="https://snyk.io/" rel="noopener" class="external-link" href="https://snyk.io/" target="_blank">Snyk</a>. Trivy is a vulnerability scanning tool that checks container images, and Snyk keeps track of our project's dependencies.</p>
+
+    <p>We review the reports coming from Trivy and Snyk on a daily basis, below you can find the list of issues:</p>
+
+    <ul>
+        <li><a href="https:/github.com/keycloak/keycloak/issues?q=is%3Aissue+sort%3Aupdated-desc+label%3Akind%2Fcve+is%3Aopen" target="_blank">Open Issues</a></li>
+        <li><a href="https:/github.com/keycloak/keycloak/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc+label%3Akind%2Fcve" target="_blank">New fixes</a></li>
+        <li><a href="https:/github.com/keycloak/keycloak/issues?q=is%3Aissue+sort%3Aupdated-desc+is%3Aclosed+label%3Akind%2Fcve" target="_blank">Closed issues</a></li>
+    </ul>
+
+    <p>Although we appreciate receiving reports from the community, it is not necessary to send scanner reports to the keycloak-security mailing list. Instead, please create <a href="https://github.com/keycloak/keycloak/issues/new?assignees=&amp;labels=kind%2Fbug%2Cstatus%2Ftriage&amp;template=bug.yml" target="_blank">a new GitHub issue</a> for public known CVEs on GitHub for public known CVEs.</p>
+
     <h2>Supported Versions</h2>
 
     <p>Depending on the severity of a vulnerability the issue may be fixed in the current <code>major.minor</code> release of Keycloak, or for lower severity vulnerabilities or hardening in the following <code>major.minor</code> release. Refer to <a href="https://www.keycloak.org/downloads">https://www.keycloak.org/downloads</a> to find the latest release.</p>
