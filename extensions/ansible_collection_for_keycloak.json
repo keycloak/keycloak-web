@@ -1,0 +1,5 @@
+{
+    "name": "Ansible collection for Keycloak",
+    "description": "Collection to install and configure Keycloak",
+    "website": "https://github.com/ansible-middleware/keycloak"
+}
