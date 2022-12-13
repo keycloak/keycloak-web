@@ -21,7 +21,7 @@
         <version.commons-io>2.11.0</version.commons-io>
         <version.commons-compress>1.21</version.commons-compress>
 
-        <version.keycloak>20.0.1</version.keycloak>
+        <version.keycloak>20.0.2</version.keycloak>
 
         <version.frontend-maven-plugin>1.12.1</version.frontend-maven-plugin>
         <version.node>v16.13.1</version.node>
