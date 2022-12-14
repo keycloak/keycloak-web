@@ -20,7 +20,7 @@ if [ ! -f "$TEMPLATE" ]; then
     exit
 fi
 
-cat $TEMPLATE | sed "s/\"version\":.*/\"version\": \"$VERSION\",/" | sed "s/DATE/$DATE/" > versions/$VERSION_NAME.json
+cat $TEMPLATE | sed "s/\"version\":.*/\"version\": \"$VERSION\",/" | sed 's/"date": ".*"/"date": "DATE"/' | sed "s/DATE/$DATE/" > versions/$VERSION_NAME.json
 
 CURRENT=`cat pom.xml | grep '<version.keycloak>' | cut -d '>' -f 2 | cut -d '<' -f 1`
 LATEST=`echo -e "$CURRENT\n$VERSION" | sort -V -r | head -n 1`
