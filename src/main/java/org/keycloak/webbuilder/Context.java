@@ -21,6 +21,7 @@ public class Context {
     private final File guidesDir;
     private final File targetDir;
     private final File tmpDir;
+    private final File cacheDir;
 
     private Config config;
     private Versions versions;
@@ -50,6 +51,7 @@ public class Context {
         guidesDir = new File(webSrcDir, "guides");
         targetDir = new File(rootDir, "target/web").getAbsoluteFile();
         tmpDir = new File(rootDir, "target/tmp").getAbsoluteFile();
+        cacheDir = new File(rootDir, "cache").getAbsoluteFile();
 
         init();
     }
@@ -166,5 +168,9 @@ public class Context {
 
     public File getTmpDir() {
         return tmpDir;
+    }
+
+    public File getCacheDir() {
+        return cacheDir;
     }
 }
