@@ -27,3 +27,4 @@ LATEST=`echo -e "$CURRENT\n$VERSION" | sort -V -r | head -n 1`
 
 sed -i "s|<version.keycloak>$CURRENT</version.keycloak>|<version.keycloak>$LATEST</version.keycloak>|g" pom.xml
 
+mvn install
