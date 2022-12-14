@@ -37,9 +37,12 @@ public class ChangelogBuilder extends AbstractBuilder {
                 }))
                 .withOAuthToken(token).build();
 
+        File changelogCache = new File(context.getCacheDir(), "changelogs");
+        changelogCache.mkdirs();
+
         for (Versions.Version v : context.versions()) {
             String fileName = "changelog-" + v.getVersion().replace(".", "_") + ".json";
-            File changeLogFile = new File(context.getTmpDir(), fileName);
+            File changeLogFile = new File(changelogCache, fileName);
 
             if (changeLogFile.exists()) {
                 Versions.ChangeLog changeLog = new Versions.ChangeLog(Arrays.asList(context.json().read(changeLogFile, ChangeLogEntry[].class)));

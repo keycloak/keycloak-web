@@ -1,0 +1,176 @@
+[ {
+  "number" : 8825,
+  "repository" : "keycloak",
+  "title" : "Multi-arch container image for Quarkus distribution (amd64 + arm64)",
+  "kind" : "enhancement",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/8825"
+}, {
+  "number" : 9539,
+  "repository" : "keycloak",
+  "title" : "Add Reactive Keycloak-X Admin Client",
+  "kind" : "feature",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/9539"
+}, {
+  "number" : 10031,
+  "repository" : "keycloak",
+  "title" : "Favicon missing in welcome page on chrome / macos",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/10031"
+}, {
+  "number" : 10112,
+  "repository" : "keycloak",
+  "title" : "Upgrade to Infinispan 13.0.6 in Quarkus dist",
+  "kind" : "enhancement",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/10112"
+}, {
+  "number" : 10130,
+  "repository" : "keycloak",
+  "title" : "Removing unnecessary code paths during startup",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/10130"
+}, {
+  "number" : 10157,
+  "repository" : "keycloak",
+  "title" : "Change DOCTYPE for base theme to <!DOCTYPE html>",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/10157"
+}, {
+  "number" : 10176,
+  "repository" : "keycloak",
+  "title" : "Different behavior between Quarkus and Wildfly distribution: SQLException on POST returns HTTP 201 instead 500",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/10176"
+}, {
+  "number" : 10178,
+  "repository" : "keycloak",
+  "title" : "Add ability to control debug suspend mode to kc scripts",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/10178"
+}, {
+  "number" : 10191,
+  "repository" : "keycloak",
+  "title" : "Quarkus-based distribution cannot use MariaDB with Galera replication due to XA transactions being unsupported",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/10191"
+}, {
+  "number" : 10222,
+  "repository" : "keycloak",
+  "title" : "Updating proxy guide with x509 client certificate lookup",
+  "kind" : "enhancement",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/10222"
+}, {
+  "number" : 10243,
+  "repository" : "keycloak",
+  "title" : "start-up with kc.bat outputs an error if folder name includes space",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/10243"
+}, {
+  "number" : 10338,
+  "repository" : "keycloak",
+  "title" : "On SQLException, invalid Content-Length header in response",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/10338"
+}, {
+  "number" : 10355,
+  "repository" : "keycloak",
+  "title" : "Wrong description for import/export options",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/10355"
+}, {
+  "number" : 10400,
+  "repository" : "keycloak",
+  "title" : "Configuring providers guide",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/10400"
+}, {
+  "number" : 10411,
+  "repository" : "keycloak",
+  "title" : "Change the flush mode to auto",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/10411"
+}, {
+  "number" : 10443,
+  "repository" : "keycloak",
+  "title" : "Can't change http-port by Keycloak/Quarkus on Windows",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/10443"
+}, {
+  "number" : 10627,
+  "repository" : "keycloak",
+  "title" : "Keycloak admin UI drops https port if --hostname is used",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/10627"
+}, {
+  "number" : 10664,
+  "repository" : "keycloak",
+  "title" : "kc.sh build option \"--help-all\" not found",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/10664"
+}, {
+  "number" : 10678,
+  "repository" : "keycloak",
+  "title" : "Update to Liquibase 4.8.0",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/10678"
+}, {
+  "number" : 10682,
+  "repository" : "keycloak",
+  "title" : "GitHub Action to release Keycloak container",
+  "kind" : "task",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/10682"
+}, {
+  "number" : 10685,
+  "repository" : "keycloak",
+  "title" : "Update Quarkus to 2.7.4",
+  "kind" : "enhancement",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/10685"
+}, {
+  "number" : 10708,
+  "repository" : "keycloak",
+  "title" : "Planning issues for 17.0.1",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/10708"
+}, {
+  "number" : 10749,
+  "repository" : "keycloak",
+  "title" : "Capacity to change hibernate dialect",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/10749"
+}, {
+  "number" : 10765,
+  "repository" : "keycloak",
+  "title" : "Sign artefacts uploaded to Maven Central",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/10765"
+}, {
+  "number" : 10819,
+  "repository" : "keycloak",
+  "title" : "Update Quarkus to 2.7.5",
+  "kind" : "enhancement",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/10819"
+} ]
