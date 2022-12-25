@@ -8,27 +8,7 @@
 
 ## Before you start
 
-### Install Vue-Cli
-[source,bash,subs="attributes+"]
-----
-npm install -g @vue/cli
-# OR
-yarn global add @vue/cli
-----
-
-Addon init plugin
-[source,bash,subs="attributes+"]
-----
-npm install -g @vue/cli-init
-# OR
-yarn global add @vue/cli-init
-----
-Using runtime build for Content Security Policy (CSP) compliant
-
-NOTE: https://vuejs.org/v2/guide/installation.html#CSP-environments[CSP-environments @ *Vuejs*]
-
-### Code Repository
-[source,bash,subs="attributes+"]
+##start a new vue js app with cloning the following repository
 ----
 git clone https://github.com/keycloak/keycloak-quickstarts.git
 cd applications/app-vue/
