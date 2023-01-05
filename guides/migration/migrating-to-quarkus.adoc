@@ -17,7 +17,7 @@ Before undertaking the migration we highly recommend reading through the new htt
 
 The WildFly distribution of Keycloak used complicated XML files for configuration, resulting in the need for a CLI tool (`jboss-cli`) to manipulate these files. These files also brought complication to upgrading, where an error-prone script was used to upgrade the config from a previous version.
 
-The new Quarkus powered distribution leverages a simple configuration file instead, with corresponding CLI arguments and environment variables as options, making it significantly easier to configure Keycloak. However, this results in the ability to automatically migrate the configuration from the previous distribution.
+The new Quarkus powered distribution leverages a simple configuration file instead, with corresponding CLI arguments and environment variables as options, making it significantly easier to configure Keycloak. However, this results in the inability to automatically migrate the configuration from the previous distribution.
 
 To migrate to the new Quarkus powered distribution the first step is to understand what configuration changes you are applying to the legacy distribution, and apply those that are necessary to the new distribution by following the new https://www.keycloak.org/guides#server[Server Guides].
 
