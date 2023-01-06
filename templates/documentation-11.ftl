@@ -100,31 +100,6 @@
     </tbody>
 </table>
 
-<h3 class="mt-4">Deprecated WildFly distribution</h3>
-
-<table class="table table-bordered table-striped">
-    <tr>
-        <td>
-            <a href="${docRoot}/server_installation/index.html" target="_blank">
-                Server Installation and Configuration
-            </a>
-        </td>
-        <td>
-            Installation and offline configuration of the Keycloak server
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <a href="https://github.com/keycloak/keycloak-containers/blob/${version.version}/server/README.md" target="_blank">
-                Server Container Image
-            </a>
-        </td>
-        <td>
-            Documentation specific to the server container image
-        </td>
-    </tr>
-</table>
-
 <h2 class="mt-4">API Documentation</h2>
 
 <table class="table table-bordered table-striped">
