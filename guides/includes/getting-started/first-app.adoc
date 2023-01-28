@@ -3,6 +3,7 @@
 Let's try to secure our first application. First step is to register this application with your Keycloak instance:
 
 . Open the {links-admin-console}
+. Make sure newly created realm is selected from the dropdown
 . Click 'Clients'
 . Click 'Create client'
 . Fill in the form with the following values:
