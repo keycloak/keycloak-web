@@ -120,7 +120,7 @@ a:hover {
 }
 
 .kc-asciidoc th {
-    padding: 1.0rem 0.5rem 1.rem 0;
+    padding: 1.0rem 0.5rem 1rem 0;
 }
 
 .kc-asciidoc td {
@@ -311,23 +311,62 @@ ol.toc-list .is-collapsed {
     margin-top: 1em;
 }
 
-.admonitionblock table {
-    margin-left: 2em
+.admonitionblock>table {
+    border-collapse: separate;
+    border: 0;
+    width: 100%;
 }
-.admonitionblock td {
+
+.admonitionblock>table td {
     text-align: left;
+    border: 0;
 }
 
-.admonitionblock td.icon {
-    width:80px
+.admonitionblock>table td.icon {
+    width: 4em;
     text-align: center;
-    color: #19417d
-    padding-left: 1.25em;
-    padding-right: 1.25em;
 }
 
-.admonitionblock table td.content {
+.admonitionblock>table td.icon [class^="fa icon-"] {
+    font-size: 2.5em;
+    text-shadow: 1px 1px 2px rgb(0 0 0 / 50%);
+    color: #19417d;
+}
+
+.admonitionblock>table td.content {
     padding-left: 1.25em;
     padding-right: 1.25em;
     border-left: 1px solid #dddddf;
 }
+
+.admonitionblock>table td.icon .icon-warning::before {
+    content: "\f071";
+    color: #bf6900;
+}
+
+.admonitionblock>table td.icon .icon-note::before {
+    content: "\f05a";
+    color: #19407c;
+}
+
+.admonitionblock>table td.icon .icon-tip::before {
+    content: "\f0eb";
+    text-shadow: 1px 1px 2px rgb(155 155 0 / 80%);
+    color: #f4bb2c;
+}
+
+.admonitionblock td.icon .icon-warning::before {
+    content: "\f071";
+    color: #bf6900;
+}
+
+.admonitionblock>table td.icon .icon-caution::before {
+    content: "\f06d";
+    color: #bf3400;
+}
+
+.admonitionblock td.icon .icon-important::before {
+    content: "\f06a";
+    color: #bf0000;
+}
+
