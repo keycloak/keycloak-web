@@ -11,17 +11,21 @@ public class ResourcesBuilder extends AbstractBuilder {
     @Override
     protected void build() throws Exception {
         File targetResourcesDir = new File(context.getTargetDir(), "resources");
+        File guidesImageDir = new File(new File(targetResourcesDir, "images"), "guides");
 
         FileUtils.copyDirectory(context.getResourcesDir(), targetResourcesDir);
 
         printStep("copied", "resources");
 
         FileUtils.copyDirectory(new File(context.getBlogDir(), "images"), new File(new File(targetResourcesDir, "images"), "blog"));
-        FileUtils.copyDirectory(new File(context.getGuidesDir(), "images"), new File(new File(targetResourcesDir, "images"), "guides"));
+        FileUtils.copyDirectory(new File(context.getGuidesDir(), "images"), guidesImageDir);
         Optional<File> genGuidesDir = Arrays.stream(context.getTmpDir().getParentFile().listFiles((f, s) -> s.startsWith("keycloak-guides"))).findFirst();
+
         Optional<File> genGuidesImagesDir = genGuidesDir.flatMap( d -> Arrays.stream(new File(d, "generated-guides").listFiles(n -> n.getName().equals("images"))).findAny());
         if (genGuidesImagesDir.isPresent()) {
-            FileUtils.copyDirectory(genGuidesImagesDir.get(), new File(new File(targetResourcesDir, "images"), "generated-guides"));
+            for (File f : genGuidesImagesDir.get().listFiles()) {
+                FileUtils.copyFileToDirectory(f, guidesImageDir);
+            }
         }
 
         printStep("copied", "blog images");

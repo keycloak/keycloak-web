@@ -35,14 +35,9 @@ cd applications/app-vue/
 npm install
 ----
 
-
-include::../includes/getting-started/start-keycloak-localhost.adoc[]
-
 # Keycloak Setup & Client Configuration:
 
-Creating a realm: “keycloak-demo” as shown in the following steps:
-
-include::../includes/getting-started/realm-config.adoc[]
+This guide assumes you have Keycloak already running on `http://localhost:8080` with a realm named `keycloak-demo`.
 
 ## Client Configuration:
 Clients tab allows you to manage your allow application clients
