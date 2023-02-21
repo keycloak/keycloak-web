@@ -363,3 +363,8 @@ ol.toc-list .is-collapsed {
     color: #bf0000;
 }
 
+@media (prefers-contrast: more) {
+    .kc-bg-triangles {
+        background-image: none;
+    }
+}

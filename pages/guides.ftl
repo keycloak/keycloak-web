@@ -21,7 +21,7 @@
     </div>
 </nav>
 
-<div class="jumbotron jumbotron-fluid kc-bg-triangles pt-4">
+<div class="jumbotron jumbotron-fluid bg-light kc-bg-triangles pt-4">
     <div class="container">
         <#list guides.categories as c>
             <div class="row guide-category" id="${c.id}">

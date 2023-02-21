@@ -2,8 +2,8 @@
 
 <@tmpl.page current="home" title="">
 
-<div class="jumbotron jumbotron-fluid kc-bg-triangles">
-  <div class="container text-white pt-4 pb-4">
+<div class="jumbotron jumbotron-fluid bg-light kc-bg-triangles">
+  <div class="container pt-4 pb-4">
     <div class="row">
         <div class="col">
             <h1 class="fs-xlarge">Open Source Identity and Access Management</h1>
@@ -23,7 +23,7 @@
             </div>
         </div>
         <div class="col col-4 d-none d-lg-block">
-            <img class="img-fluid" src="${links.getResource('images/keycloak_icon_512px.svg')}" alt="Keycloak"/>
+            <img class="img-fluid" src="${links.getResource('images/keycloak_icon_512px.svg')}" aria-hidden="true" alt="Keycloak"/>
         </div>
     </div>
   </div>
@@ -57,7 +57,7 @@
             </p>
         </div>
         <div class="col-5 text-end d-none d-md-block">
-            <img class="img-fluid" src="resources/images/screen-login.png"/>
+            <img class="img-fluid" src="resources/images/screen-login.png" alt="Screenshot showing a user's login screen as presented by Keycloak"/>
         </div>
     </div>
 
@@ -74,7 +74,7 @@
             </p>
         </div>
         <div class="col-5 text-end d-none d-md-block">
-             <img class="img-fluid" src="resources/images/dia-identity-brokering.png"/>
+             <img class="img-fluid" src="resources/images/dia-identity-brokering.png" alt="Diagram illustrating brokering"/>
         </div>
     </div>
 
@@ -87,7 +87,7 @@
             </p>
         </div>
         <div class="col-5 text-end d-none d-md-block">
-             <img class="img-fluid" src="resources/images/dia-user-fed.png"/>
+             <img class="img-fluid" src="resources/images/dia-user-fed.png" alt="Diagram illustrating user federation"/>
         </div>
     </div>
 
@@ -109,7 +109,7 @@
             </p>
         </div>
         <div class="col-5 text-end d-none d-md-block">
-             <img class="img-fluid border" src="resources/images/screen-admin.png"/>
+             <img class="img-fluid border" src="resources/images/screen-admin.png" alt="Screenshot of the admin console"/>
         </div>
     </div>
 
@@ -129,7 +129,7 @@
             </p>
         </div>
         <div class="col-5 text-end d-none d-md-block">
-             <img class="img-fluid border" src="resources/images/screen-account.png"/>
+             <img class="img-fluid border" src="resources/images/screen-account.png" alt="Screenshot of the account management console"/>
         </div>
     </div>
 
@@ -141,7 +141,7 @@
             </p>
         </div>
         <div class="col-5 text-end d-none d-md-block">
-             <img class="img-fluid" src="resources/images/dia-protocols.png"/>
+             <img class="img-fluid" src="resources/images/dia-protocols.png" alt="Logos of OpenID certification, SAML and OAuth 2.0" aria-hidden="true"/>
         </div>
     </div>
 
