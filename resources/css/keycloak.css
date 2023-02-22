@@ -235,31 +235,6 @@ table.options table tr:nth-child(even) {
     display: none;
 }
 
-
-/* Guide - Features */
-
-table.features {
-    width: 100%;
-}
-
-table.features p {
-    margin: 0;
-}
-
-table.features td {
-    vertical-align: top;
-    padding: 0.5rem;
-    border: 1px solid #dee2e6;
-}
-
-table.features tr:nth-child(even) {
-    background-color: #f8f9fa;
-}
-
-table.features .features-name {
-    font-weight: bold;
-}
-
 /* tocbot */
 
 ol.toc-list {
@@ -361,6 +336,10 @@ ol.toc-list .is-collapsed {
 .admonitionblock td.icon .icon-important::before {
     content: "\f06a";
     color: #bf0000;
+}
+
+dl dd {
+    margin-left: 1.125em;
 }
 
 @media (prefers-contrast: more) {
