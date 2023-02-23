@@ -34,6 +34,8 @@ public class Guides {
             try {
                 loadGuides(asciiDoctor, new File(f, "generated-guides/server"), GuideCategory.SERVER);
                 loadGuides(asciiDoctor, new File(f, "generated-guides/operator"), GuideCategory.OPERATOR);
+                loadGuides(asciiDoctor, new File(f, "generated-guides/migration"), GuideCategory.MIGRATION);
+                loadGuides(asciiDoctor, new File(f, "generated-guides/getting-started"), GuideCategory.GETTING_STARTED);
             } catch (IOException e) {
                 e.printStackTrace();
             }
