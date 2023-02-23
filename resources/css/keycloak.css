@@ -220,14 +220,7 @@ table.options table tr:nth-child(even) {
 }
 
 .options-build {
-    text-align: center;
-    width: 100%;
-    display: block;
     color: #6c757d;
-}
-
-.options-description-example {
-    display: block;
 }
 
 .options-collapsed .options-extended {
