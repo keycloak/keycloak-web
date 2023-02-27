@@ -5,7 +5,7 @@
 <script src="keycloak.js" type="text/javascript"></script>
 <script src="app.js" type="text/javascript"></script>
 
-<div class="jumbotron jumbotron-fluid kc-bg-triangles py-5 kc-app">
+<div class="jumbotron jumbotron-fluid bg-light kc-bg-triangles py-5 kc-app">
     <div class="container">
     <div class="row">
         <div class="card">

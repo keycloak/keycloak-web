@@ -2,7 +2,7 @@
 
 <@tmpl.page current="blog" title="Blog">
 
-<div class="jumbotron jumbotron-fluid kc-bg-triangles pt-4 pb-2">
+<div class="jumbotron jumbotron-fluid bg-light kc-bg-triangles pt-4 pb-2">
     <div class="container">
         <div class="row">
         <#assign displayed = 0>

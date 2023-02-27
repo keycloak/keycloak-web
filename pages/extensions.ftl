@@ -2,7 +2,7 @@
 
 <@tmpl.page current="extensions" title="Extensions">
 
-<div class="jumbotron jumbotron-fluid kc-bg-triangles pt-5">
+<div class="jumbotron jumbotron-fluid bg-light kc-bg-triangles pt-5">
     <div class="container">
         <h1 class="text-white">Extensions</h1>
 
