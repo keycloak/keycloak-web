@@ -25,7 +25,7 @@ Server and Operator guide sources are located at `https://github.com/keycloak/ke
     cd keycloak
     mvn -pl docs clean install
 
-Then you can build the website with the `999-snapshot` version:
+Then you can build the website with the `999.0.0-snapshot` version:
 
     cd keycloak-web
-    mvn clean install -Dversion.keycloak=999-SNAPSHOT
+    mvn clean install -Dversion.keycloak=999.0.0-SNAPSHOT
