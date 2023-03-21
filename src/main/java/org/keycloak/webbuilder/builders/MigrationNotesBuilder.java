@@ -11,7 +11,7 @@ import java.util.Map;
 
 public class MigrationNotesBuilder extends AbstractBuilder {
 
-    private static final String BASE_URL = "https://raw.githubusercontent.com/keycloak/keycloak-documentation/master/";
+    private static final String BASE_URL = "https://raw.githubusercontent.com/keycloak/keycloak/main/docs/documentation/";
     private static final String DOCUMENT_ATTRIBUTES_URL = BASE_URL + "topics/templates/document-attributes.adoc";
 
     @Override
