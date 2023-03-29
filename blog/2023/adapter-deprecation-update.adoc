@@ -26,7 +26,7 @@ generic Java client libraries for Authorization Services that can be leveraged w
 Expect this to be delivered in Keycloak 22.
 
 The Keycloak Java adapters will remain for a while though, at least towards the end of the year, but likely not be removed
-until early 2024. At the same time don't expect the adapters to be updated to be updated to support newer versions of
+until early 2024. At the same time don't expect the adapters to be updated to support newer versions of
 Tomcat, Jetty, WildFly, or Spring.
 
 ### Node.js
