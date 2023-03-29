@@ -1,0 +1,48 @@
+:title: Update on deprecation of Keycloak adapters
+:date: 2023-03-29
+:publish: true
+:author: Stian Thorgersen
+
+In 2022 we announce the deprecation of https://www.keycloak.org/2022/02/adapter-deprecation.html[deprecating Keycloak adapters], with
+a plan to stop delivering most adapters in https://www.keycloak.org/2022/03/releases.html[Keycloak 19].
+
+As we have not been able to make sufficient progress on finding alternatives and work on supporting material to help
+migrating away from Keycloak adapters we are extending the life of the Keycloak adapters.
+
+## OAuth 2.0 and OpenID Connect adapters
+
+### Java
+
+For Java applications there is now more than ever wide-spread support for OpenID Connect, where some examples include:
+
+* [Jakarta Security 3.0]https://jakarta.ee/specifications/security/3.0/jakarta-security-spec-3.0.html#openid-connect-annotation - OpenID Connect support in Jakarta EE 10
+* [Elytron OIDC]https://wildfly-security.github.io/wildfly-elytron/blog/securing-wildfly-apps-openid-connect/ - OpenID Connect support in WildFly
+* [Quarkus OIDC]https://quarkus.io/guides/security-openid-connect - OpenID Connect support for Quarkus applications
+* [Spring Security]https://docs.spring.io/spring-security/reference/servlet/oauth2/index.html - OAuth and OpenID Connect support in Spring
+* [Pac4j]https://www.pac4j.org/ - The Java security framework to protect all your web applications and web services
+
+Neither of these have support for Keycloak Authorization Services though, which is why we are planning to introduce a
+generic Java client libraries for Authorization Services that can be leveraged with other OpenID Connect client libraries.
+Expect this to be delivered in Keycloak 22.
+
+The Keycloak Java adapters will remain for a while though, at least towards the end of the year, but likely not be removed
+until early 2024. At the same time don't expect the adapters to be updated to be updated to support newer versions of
+Tomcat, Jetty, WildFly, or Spring.
+
+### Node.js
+
+We are still investigating alternatives for Node.js, so plan is available for those one just yet. Expect more information
+to come later in the year. Regardless of the alternative we will deliver support for Keycloak Authorization Services to
+Node.js.
+
+The Keycloak Node.js adapter will remain, at least towards the end of the year, but likely not be removed until early 2024.
+
+### Client-side JavaScript
+
+For now the Keycloak client-side JavaScript adapter remains, but we are looking into alternatives as well as the potential
+of completely overhauling our current adapter and continue maintaining and delivering this adapter.
+
+## SAML 2.0
+
+We are planning to continue supporting SAML 2.0 for WildFly and JBoss EAP in the long run, but support for Tomcat and
+Jetty are likely to be removed relatively soon.
