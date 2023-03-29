@@ -9,6 +9,12 @@ a plan to stop delivering most adapters in https://www.keycloak.org/2022/03/rele
 As we have not been able to make sufficient progress on finding alternatives and work on supporting material to help
 migrating away from Keycloak adapters we are extending the life of the Keycloak adapters.
 
+The plan is still to eventually stop delivering bespoke Keycloak adapters in the future, but we will do this in a more gradual process than previous laid out. 
+
+We still strongly belive that the community as a whole are better served in the long run by us focusing more on the Keycloak server with full compliance and support for specifications such as OAuth 2.0 and OpenID Connect, and adding support for additional relevant extensions to the specifications.
+
+We also believe by leaving the integration for various programming languages and frameworks to the relevant communities, the end result will be more extensive support, with more features and abilities, and last but not least better integrations and easy of use.
+
 ## OAuth 2.0 and OpenID Connect adapters
 
 ### Java
