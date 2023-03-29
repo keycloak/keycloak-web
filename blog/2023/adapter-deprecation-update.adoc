@@ -3,7 +3,7 @@
 :publish: true
 :author: Stian Thorgersen
 
-In 2022 we announce the deprecation of https://www.keycloak.org/2022/02/adapter-deprecation.html[deprecating Keycloak adapters], with
+In 2022 we announced the deprecation of https://www.keycloak.org/2022/02/adapter-deprecation.html[deprecating Keycloak adapters], with
 a plan to stop delivering most adapters in https://www.keycloak.org/2022/03/releases.html[Keycloak 19].
 
 As we have not been able to make sufficient progress on finding alternatives and work on supporting material to help
