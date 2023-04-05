@@ -6,7 +6,7 @@ Can be built locally from IDE by running AutoBuilder main method or with Maven b
     
 After the build is completed open `target/web/index.html` in your favourite web browser.
     
-There's also an auto-builder utility that watches the filesystem and continiously rebuilds the website. This can be very useful when working on the website, especially making stylesheet changes, etc. This can be ran from your IDE by running `AutoBuilder`, or from the command-line with:
+There's also an auto-builder utility that watches the filesystem and continiously rebuilds the website. This can be very useful when working on the website, especially making stylesheet changes, etc. This can be run from your IDE by running `AutoBuilder`, or from the command-line with:
 
     mvn -Pauto-run exec:java
 
@@ -25,7 +25,7 @@ Server and Operator guide sources are located at `https://github.com/keycloak/ke
     cd keycloak
     mvn -pl docs clean install
 
-Then you can build the website with the `999.0.0-snapshot` version:
+Then you can build the website with the `999.0.0-SNAPSHOT` version:
 
     cd keycloak-web
     mvn clean install -Dversion.keycloak=999.0.0-SNAPSHOT
