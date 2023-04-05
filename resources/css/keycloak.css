@@ -252,8 +252,10 @@ ol.toc-list .is-collapsed {
 
 /* Test application */
 
-.kc-app {
-    padding: 400px;
+@media only screen and (min-width: 1400px) {
+    .kc-app {
+        padding: 400px;
+    }
 }
 
 .kc-app a.hide {
