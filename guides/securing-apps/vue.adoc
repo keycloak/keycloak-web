@@ -31,7 +31,7 @@ NOTE: https://vuejs.org/v2/guide/installation.html#CSP-environments[CSP-environm
 [source,bash,subs="attributes+"]
 ----
 git clone https://github.com/keycloak/keycloak-quickstarts.git
-cd applications/app-vue/
+cd keycloak-quickstarts/applications/app-vue/
 npm install
 ----
 
