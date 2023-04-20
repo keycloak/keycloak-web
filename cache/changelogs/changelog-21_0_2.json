@@ -1,0 +1,176 @@
+[ {
+  "number" : 15686,
+  "repository" : "keycloak",
+  "title" : "[CVE-2022-45047] Deserialization of Untrusted Data vulnerability in org.apache.sshd:sshd-common",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/15686"
+}, {
+  "number" : 16652,
+  "repository" : "keycloak",
+  "title" : "CVE-2022-3143 - wildfly-elytron: possible timing attacks via use of unsafe comparator",
+  "kind" : "cve",
+  "area" : "dependencies",
+  "url" : "https://github.com/keycloak/keycloak/issues/16652"
+}, {
+  "number" : 16779,
+  "repository" : "keycloak",
+  "title" : "CVE-2022-45047 - wildfly-elytron: Deserialization of Untrusted Data vulnerability in org.apache.sshd:sshd-common",
+  "kind" : "cve",
+  "area" : "dependencies",
+  "url" : "https://github.com/keycloak/keycloak/issues/16779"
+}, {
+  "number" : 17094,
+  "repository" : "keycloak",
+  "title" : "CVE-2022-42003 - wildfly-elytron: A Denial of Service (DoS) vulnerability in com.fasterxml.jackson.core:jackson-databind",
+  "kind" : "cve",
+  "area" : "dependencies",
+  "url" : "https://github.com/keycloak/keycloak/issues/17094"
+}, {
+  "number" : 17095,
+  "repository" : "keycloak",
+  "title" : "CVE-2022-42004 - wildfly-elytron: Denial of Service (DoS) vulnerability in com.fasterxml.jackson.core:jackson-databind",
+  "kind" : "cve",
+  "area" : "dependencies",
+  "url" : "https://github.com/keycloak/keycloak/issues/17095"
+}, {
+  "number" : 17161,
+  "repository" : "keycloak",
+  "title" : "Acquisition timeout while waiting for new connection",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/17161"
+}, {
+  "number" : 17273,
+  "repository" : "keycloak",
+  "title" : "adding package using microdnf no longer works since keycloak version 21",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/17273"
+}, {
+  "number" : 17277,
+  "repository" : "keycloak",
+  "title" : "Can't accept terms and conditions after upgrade from 20.0.3 to 21.0.0",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/17277"
+}, {
+  "number" : 17281,
+  "repository" : "keycloak",
+  "title" : "Avoid recording raw UUIDs  URIs in metrics like http_server_requests_seconds collected via micrometer",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/17281"
+}, {
+  "number" : 17337,
+  "repository" : "keycloak",
+  "title" : "`testReleaseAllLocksMethod` test is intermittently timing out with HotRod store",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/17337"
+}, {
+  "number" : 17417,
+  "repository" : "keycloak",
+  "title" : "Build on Windows fails",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/17417"
+}, {
+  "number" : 17427,
+  "repository" : "keycloak",
+  "title" : "OutOfMemoryError when running Model Tests in CI",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/17427"
+}, {
+  "number" : 17790,
+  "repository" : "keycloak",
+  "title" : "Unable to use client tls certificate bound access token with the new admin UI",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/17790"
+}, {
+  "number" : 17803,
+  "repository" : "keycloak",
+  "title" : "Accessibility/Identity Providers: Critical Issues",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/17803"
+}, {
+  "number" : 17804,
+  "repository" : "keycloak",
+  "title" : "Accessibility/Realm Settings: Critical Issues",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/17804"
+}, {
+  "number" : 17805,
+  "repository" : "keycloak",
+  "title" : "Accessibility/Groups: Critical Issues",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/17805"
+}, {
+  "number" : 17806,
+  "repository" : "keycloak",
+  "title" : "Accessibility/Users: Critical Issues",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/17806"
+}, {
+  "number" : 17807,
+  "repository" : "keycloak",
+  "title" : "Accessibility/Clients List: Critical Issues",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/17807"
+}, {
+  "number" : 17810,
+  "repository" : "keycloak",
+  "title" : "Missing visual error information for \"Error while evaluating permissions\"",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/17810"
+}, {
+  "number" : 17813,
+  "repository" : "keycloak",
+  "title" : "With KC21: Authentication flows \"used by\" shows the name of the flow, not of the bind",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/17813"
+}, {
+  "number" : 17814,
+  "repository" : "keycloak",
+  "title" : "Wrong role required for Client Settings > Advanced > OpenID Connect Compatibility Modes",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/17814"
+}, {
+  "number" : 17815,
+  "repository" : "keycloak",
+  "title" : "Inconsistent SAML configuration generated for clients with forceNameId",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/17815"
+}, {
+  "number" : 17816,
+  "repository" : "keycloak",
+  "title" : "admin-ui: authz permissions tab not updated when switching between groups",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/17816"
+}, {
+  "number" : 17817,
+  "repository" : "keycloak",
+  "title" : "Alerts don't show in Keycloak nightly, also disrupting user feedback on actions",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/17817"
+}, {
+  "number" : 17846,
+  "repository" : "keycloak",
+  "title" : "In Authorization --> Evaluate, Users and Roles should not both be requred",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/17846"
+} ]

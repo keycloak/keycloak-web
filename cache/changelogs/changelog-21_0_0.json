@@ -1,0 +1,2696 @@
+[ {
+  "number" : 1738,
+  "repository" : "keycloak-documentation",
+  "title" : "Deprecate SHA1 based algorithms for SAML signatures",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak-documentation/issues/1738"
+}, {
+  "number" : 1743,
+  "repository" : "keycloak-documentation",
+  "title" : "Documentation of some options of SAML IDP is not up-to-date",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak-documentation/issues/1743"
+}, {
+  "number" : 1766,
+  "repository" : "keycloak-documentation",
+  "title" : "Add removal of old admin console to release notes",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak-documentation/issues/1766"
+}, {
+  "number" : 8820,
+  "repository" : "keycloak",
+  "title" : "Official Support for Microsoft mobile authenticator app",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/8820"
+}, {
+  "number" : 8833,
+  "repository" : "keycloak",
+  "title" : "Performing an external-to-internal token exchange with an ID token with provider mappers enabled results in `unknown_error`.",
+  "kind" : "bug",
+  "area" : "token-exchange",
+  "url" : "https://github.com/keycloak/keycloak/issues/8833"
+}, {
+  "number" : 8958,
+  "repository" : "keycloak",
+  "title" : "NullPointerException when editing a sub flow without a description",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/8958"
+}, {
+  "number" : 8982,
+  "repository" : "keycloak",
+  "title" : "Blacklist false positive rate could be set a lot lower.",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/8982"
+}, {
+  "number" : 9003,
+  "repository" : "keycloak",
+  "title" : "Documentation Error: User Storage SPI: CredentialInputValidator",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/9003"
+}, {
+  "number" : 9008,
+  "repository" : "keycloak",
+  "title" : "Update client with registration access token gained by client registration",
+  "kind" : "enhancement",
+  "area" : "authorization-services",
+  "url" : "https://github.com/keycloak/keycloak/issues/9008"
+}, {
+  "number" : 9017,
+  "repository" : "keycloak",
+  "title" : "Pre-authorization hook for client policies",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/9017"
+}, {
+  "number" : 9144,
+  "repository" : "keycloak",
+  "title" : "Remove Hashicorp Support",
+  "kind" : "enhancement",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/9144"
+}, {
+  "number" : 9345,
+  "repository" : "keycloak",
+  "title" : "Can't join a node under certain conditions",
+  "kind" : "bug",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/9345"
+}, {
+  "number" : 9388,
+  "repository" : "keycloak",
+  "title" : "Global lock interface",
+  "kind" : "enhancement",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/9388"
+}, {
+  "number" : 9420,
+  "repository" : "keycloak",
+  "title" : "Use bulk deletes in HotRod store",
+  "kind" : "enhancement",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/9420"
+}, {
+  "number" : 9699,
+  "repository" : "keycloak",
+  "title" : "Include list of possible option values in help messages.",
+  "kind" : "enhancement",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/9699"
+}, {
+  "number" : 9771,
+  "repository" : "keycloak",
+  "title" : "Hard-coded signature algorithm in token verification",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/9771"
+}, {
+  "number" : 9967,
+  "repository" : "keycloak",
+  "title" : "FIPS 140-2 support",
+  "kind" : "epic",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/9967"
+}, {
+  "number" : 9991,
+  "repository" : "keycloak",
+  "title" : "required action terms_and_conditions is not imported",
+  "kind" : "bug",
+  "area" : "import-export",
+  "url" : "https://github.com/keycloak/keycloak/issues/9991"
+}, {
+  "number" : 10018,
+  "repository" : "keycloak",
+  "title" : "JPA Map Storage: leverage function-based indexes (Postgresql)",
+  "kind" : "enhancement",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/10018"
+}, {
+  "number" : 10090,
+  "repository" : "keycloak",
+  "title" : "Remove workaround in HotRodUtils#paginateQuery",
+  "kind" : "enhancement",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/10090"
+}, {
+  "number" : 10376,
+  "repository" : "keycloak",
+  "title" : "Add MapKeycloakTransaction.exists(id) method",
+  "kind" : "enhancement",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/10376"
+}, {
+  "number" : 10668,
+  "repository" : "keycloak",
+  "title" : "Kerberos User Federation creates a user that does not exist",
+  "kind" : "bug",
+  "area" : "ldap",
+  "url" : "https://github.com/keycloak/keycloak/issues/10668"
+}, {
+  "number" : 10672,
+  "repository" : "keycloak",
+  "title" : "Kerberos User Federation creates a user that does not exist when username including \"//\"",
+  "kind" : "bug",
+  "area" : "ldap",
+  "url" : "https://github.com/keycloak/keycloak/issues/10672"
+}, {
+  "number" : 10755,
+  "repository" : "keycloak",
+  "title" : "Replace operation set wrong lifespan in remote infinispan database and leads to session eviction",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/10755"
+}, {
+  "number" : 10958,
+  "repository" : "keycloak",
+  "title" : "Client ID in LDAP Mappers User Federation doesn't align with Rename Client ID",
+  "kind" : "bug",
+  "area" : "ldap",
+  "url" : "https://github.com/keycloak/keycloak/issues/10958"
+}, {
+  "number" : 10988,
+  "repository" : "keycloak",
+  "title" : "Remove doubled field from HotRod entities",
+  "kind" : "enhancement",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/10988"
+}, {
+  "number" : 11608,
+  "repository" : "keycloak",
+  "title" : "Realm password policy regex does not work",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/11608"
+}, {
+  "number" : 11618,
+  "repository" : "keycloak",
+  "title" : "JPA Map Storage: Testsuite failures when running with CockroachDB",
+  "kind" : "epic",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/11618"
+}, {
+  "number" : 11627,
+  "repository" : "keycloak",
+  "title" : "New cluster joiners hang while trying to preload remote sessions (not offline)",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/11627"
+}, {
+  "number" : 11698,
+  "repository" : "keycloak",
+  "title" : "Add an option allowing to disable client registration access token rotation",
+  "kind" : "feature",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/11698"
+}, {
+  "number" : 11726,
+  "repository" : "keycloak",
+  "title" : "Conflicting data returned for /users/id and /users endpoints when user is temporarily locked",
+  "kind" : "bug",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/11726"
+}, {
+  "number" : 11744,
+  "repository" : "keycloak",
+  "title" : "Remove `session.area().getById(id)` from Map provider methods",
+  "kind" : "enhancement",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/11744"
+}, {
+  "number" : 11783,
+  "repository" : "keycloak",
+  "title" : "Timeout when waiting for 3rd party check iframe message.",
+  "kind" : "bug",
+  "area" : "adapter/javascript",
+  "url" : "https://github.com/keycloak/keycloak/issues/11783"
+}, {
+  "number" : 12039,
+  "repository" : "keycloak",
+  "title" : "Account console doesn't show the currently logged in user",
+  "kind" : "bug",
+  "area" : "account/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/12039"
+}, {
+  "number" : 12053,
+  "repository" : "keycloak",
+  "title" : "[SAML Broker] BadPaddingException because Keycloak uses signing key pair for decryption",
+  "kind" : "bug",
+  "area" : "saml",
+  "url" : "https://github.com/keycloak/keycloak/issues/12053"
+}, {
+  "number" : 12067,
+  "repository" : "keycloak",
+  "title" : "Investigate a way to update indexes in no-downtime way for HotRod store",
+  "kind" : "enhancement",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/12067"
+}, {
+  "number" : 12068,
+  "repository" : "keycloak",
+  "title" : "Leverage Infinispan lifespan for ExpirableEntities in HotRod storage",
+  "kind" : "enhancement",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/12068"
+}, {
+  "number" : 12280,
+  "repository" : "keycloak",
+  "title" : "Jpa Map Storage: Use JSONB `->>` function when comparing values in criteria builder",
+  "kind" : "task",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/12280"
+}, {
+  "number" : 12411,
+  "repository" : "keycloak",
+  "title" : "BDSA-2018-5235 - Update Bouncycastle to fix Cryptographic Issues vulnerability",
+  "kind" : "task",
+  "area" : "dependencies",
+  "url" : "https://github.com/keycloak/keycloak/issues/12411"
+}, {
+  "number" : 12523,
+  "repository" : "keycloak",
+  "title" : "DELETE user api uses inefficient SQL queries while deleting data from OFFLINE_CLIENT_SESSION ",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/12523"
+}, {
+  "number" : 12567,
+  "repository" : "keycloak",
+  "title" : "SQLGrammarException would occur if a user doesn't belong to any groups",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/12567"
+}, {
+  "number" : 12618,
+  "repository" : "keycloak",
+  "title" : "Role name containing \";\"(semicolon) leads \"Resource not found...\" error in the admin console",
+  "kind" : "bug",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/12618"
+}, {
+  "number" : 12649,
+  "repository" : "keycloak",
+  "title" : "GET /{realm}/users/{id}/groups ignores 'search' query parameter",
+  "kind" : "bug",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/12649"
+}, {
+  "number" : 12663,
+  "repository" : "keycloak",
+  "title" : "CWE-295 - Improper Certificate Validation vulnerability in io.netty:netty-handler",
+  "kind" : "cve",
+  "area" : "dependencies",
+  "url" : "https://github.com/keycloak/keycloak/issues/12663"
+}, {
+  "number" : 12707,
+  "repository" : "keycloak",
+  "title" : "Enable ConcurrentLoginTest for JPA map storages",
+  "kind" : "task",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/12707"
+}, {
+  "number" : 12819,
+  "repository" : "keycloak",
+  "title" : "Inconsistent behavior of group attribute caching",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/12819"
+}, {
+  "number" : 12913,
+  "repository" : "keycloak",
+  "title" : "Keycloak 18.0.2 mixed content issue.",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/12913"
+}, {
+  "number" : 12950,
+  "repository" : "keycloak",
+  "title" : "Implement \"advanced claim to group\" mapping for SAML",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/12950"
+}, {
+  "number" : 12970,
+  "repository" : "keycloak",
+  "title" : "Public URL autodetection from request does not work when using reverse proxy on non standard ports",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/12970"
+}, {
+  "number" : 12979,
+  "repository" : "keycloak",
+  "title" : "Admin console infinite redirect loop before password prompt",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/12979"
+}, {
+  "number" : 13063,
+  "repository" : "keycloak",
+  "title" : "Setting hostname-admin=localhost redirects to keycloak.example.com",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/13063"
+}, {
+  "number" : 13089,
+  "repository" : "keycloak",
+  "title" : "Infinispan/TCPPING does not span the cluster over all specified nodes",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/13089"
+}, {
+  "number" : 13114,
+  "repository" : "keycloak",
+  "title" : "Reencrypt proxy ignored with new operator",
+  "kind" : "bug",
+  "area" : "operator",
+  "url" : "https://github.com/keycloak/keycloak/issues/13114"
+}, {
+  "number" : 13122,
+  "repository" : "keycloak",
+  "title" : "Deleting Users in Keycloak Cluster with 3 or more Nodes is not possible",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/13122"
+}, {
+  "number" : 13136,
+  "repository" : "keycloak",
+  "title" : "Update wildfly-elytron dependency in the main Quarkus distribution (CVE-2020-36518)",
+  "kind" : "cve",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/13136"
+}, {
+  "number" : 13148,
+  "repository" : "keycloak",
+  "title" : "keycloak(behind nginx)  .well-known/openid-configuration  path not return correct token or jwt url（custom port loss）",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/13148"
+}, {
+  "number" : 13157,
+  "repository" : "keycloak",
+  "title" : "Response_mode not setup on request when using keycloak Java client ",
+  "kind" : "bug",
+  "area" : "authorization-services",
+  "url" : "https://github.com/keycloak/keycloak/issues/13157"
+}, {
+  "number" : 13210,
+  "repository" : "keycloak",
+  "title" : "JPA Map Storage with CRDB: ConcurrentLoginTest failures",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/13210"
+}, {
+  "number" : 13219,
+  "repository" : "keycloak",
+  "title" : "Followup: JPA Map store wants to use `hibernate.integrator_provider` in Quarkus",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/13219"
+}, {
+  "number" : 13222,
+  "repository" : "keycloak",
+  "title" : "Followup: Revisit JTA vs. RESOURCE_LOCAL for JPA map storage for Quarkus and other Setups",
+  "kind" : "enhancement",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/13222"
+}, {
+  "number" : 13236,
+  "repository" : "keycloak",
+  "title" : "Username is removed when updating service account with empty/null email when declarative user profile and registrationEmailAsUsername is enabled",
+  "kind" : "bug",
+  "area" : "user-profile",
+  "url" : "https://github.com/keycloak/keycloak/issues/13236"
+}, {
+  "number" : 13340,
+  "repository" : "keycloak",
+  "title" : "Performance Issues with many offline sessions",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/13340"
+}, {
+  "number" : 13346,
+  "repository" : "keycloak",
+  "title" : "Cannot save profile on User Management Console while CJK characters in username",
+  "kind" : "enhancement",
+  "area" : "user-profile",
+  "url" : "https://github.com/keycloak/keycloak/issues/13346"
+}, {
+  "number" : 13354,
+  "repository" : "keycloak",
+  "title" : "LDAP integration doesn't map emails",
+  "kind" : "bug",
+  "area" : "ldap",
+  "url" : "https://github.com/keycloak/keycloak/issues/13354"
+}, {
+  "number" : 13544,
+  "repository" : "keycloak",
+  "title" : "Quarkus testsuite should use storage=chm by default where it makes sense",
+  "kind" : "enhancement",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/13544"
+}, {
+  "number" : 13573,
+  "repository" : "keycloak",
+  "title" : "Run map-jpa model tests profile in GHA",
+  "kind" : "task",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/13573"
+}, {
+  "number" : 13606,
+  "repository" : "keycloak",
+  "title" : "Keycloak uses incorrect encryption keys as SAML identity brokers in SPSSODescriptor",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/13606"
+}, {
+  "number" : 13632,
+  "repository" : "keycloak",
+  "title" : "File map storage: Basic storage",
+  "kind" : "enhancement",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/13632"
+}, {
+  "number" : 13656,
+  "repository" : "keycloak",
+  "title" : "I get these [com.arjuna.ats.arjuna] warnings and right after the readiness probe dies",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/13656"
+}, {
+  "number" : 13725,
+  "repository" : "keycloak",
+  "title" : "Make GHA Map-JPA base testsuite running with Quarkus",
+  "kind" : "enhancement",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/13725"
+}, {
+  "number" : 13988,
+  "repository" : "keycloak",
+  "title" : "19 - update-email feature - email change does not affect the username when \"Email as username\" option is checked",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/13988"
+}, {
+  "number" : 14035,
+  "repository" : "keycloak",
+  "title" : "User/User Profile API inconsistent behaviour : partial PUT clear all user fields when user profile enabled",
+  "kind" : "bug",
+  "area" : "user-profile",
+  "url" : "https://github.com/keycloak/keycloak/issues/14035"
+}, {
+  "number" : 14071,
+  "repository" : "keycloak",
+  "title" : "Keycloak docker container default theme environment variable not working",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/14071"
+}, {
+  "number" : 14173,
+  "repository" : "keycloak",
+  "title" : "IDP Provider is hidden from the login form after the back button is pressed",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/14173"
+}, {
+  "number" : 14192,
+  "repository" : "keycloak",
+  "title" : "Removing testsuite/performance from main Keycloak repository",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/14192"
+}, {
+  "number" : 14197,
+  "repository" : "keycloak",
+  "title" : "Configurable session limits bug on chrome & edge",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/14197"
+}, {
+  "number" : 14234,
+  "repository" : "keycloak",
+  "title" : "SigningInPage has wrong icon",
+  "kind" : "bug",
+  "area" : "account/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/14234"
+}, {
+  "number" : 14323,
+  "repository" : "keycloak",
+  "title" : "Unexpected error when authenticating client: java.lang.RuntimeException: Illegal base64url string!",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/14323"
+}, {
+  "number" : 14433,
+  "repository" : "keycloak",
+  "title" : "customized ingress resource is deleted as soon as a Keycloak pod is killed",
+  "kind" : "bug",
+  "area" : "operator",
+  "url" : "https://github.com/keycloak/keycloak/issues/14433"
+}, {
+  "number" : 14503,
+  "repository" : "keycloak",
+  "title" : "Allow to configure firstname and lastname to be optional during registration",
+  "kind" : "enhancement",
+  "area" : "user-profile",
+  "url" : "https://github.com/keycloak/keycloak/issues/14503"
+}, {
+  "number" : 14504,
+  "repository" : "keycloak",
+  "title" : "Ability to add fields in job template for KeycloakRealmImport CR",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/14504"
+}, {
+  "number" : 14537,
+  "repository" : "keycloak",
+  "title" : "400 for /token endpoint for Multiple Keycloak Servers",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/14537"
+}, {
+  "number" : 14583,
+  "repository" : "keycloak",
+  "title" : "Provide partial import of realms for the map storage, ideally without needing a representation",
+  "kind" : "enhancement",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/14583"
+}, {
+  "number" : 14610,
+  "repository" : "keycloak",
+  "title" : "Default Build Failing Due to Test Failures",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/14610"
+}, {
+  "number" : 14638,
+  "repository" : "keycloak",
+  "title" : "Keycloak 19.0.1 can not atrt with mariaDB 10.8.4",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/14638"
+}, {
+  "number" : 14657,
+  "repository" : "keycloak",
+  "title" : "Keycloak 18.0.0 - Upgrade to 19.0.2 - ISPN Cache error",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/14657"
+}, {
+  "number" : 14686,
+  "repository" : "keycloak",
+  "title" : "Add missing german translation for emailInstructionUsername",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/14686"
+}, {
+  "number" : 14689,
+  "repository" : "keycloak",
+  "title" : "User Session Count Limiter not working for some users",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/14689"
+}, {
+  "number" : 14703,
+  "repository" : "keycloak",
+  "title" : "Email field that is not required still renders with an asterisk in registration form",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/14703"
+}, {
+  "number" : 14739,
+  "repository" : "keycloak",
+  "title" : "Improve readability and manageability of deployment configuration for operator",
+  "kind" : "enhancement",
+  "area" : "operator",
+  "url" : "https://github.com/keycloak/keycloak/issues/14739"
+}, {
+  "number" : 14772,
+  "repository" : "keycloak",
+  "title" : "Paging for \"Users in role\" is not guaranteed to work with JPA",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/14772"
+}, {
+  "number" : 14794,
+  "repository" : "keycloak",
+  "title" : "Error when using similar keys with different algorithms in a jwks for identity provider signature validation",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/14794"
+}, {
+  "number" : 14795,
+  "repository" : "keycloak",
+  "title" : "Refactoring ClientPoliciesTest",
+  "kind" : "task",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/14795"
+}, {
+  "number" : 14843,
+  "repository" : "keycloak",
+  "title" : "User password is visible on admin events tab",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/14843"
+}, {
+  "number" : 14884,
+  "repository" : "keycloak",
+  "title" : "Weird export/re-import behaviour regarding `post.logout.redirect.uris`",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/14884"
+}, {
+  "number" : 14915,
+  "repository" : "keycloak",
+  "title" : "Cleanup setting of Hibernate version twice in root pom and Quarkus pom ",
+  "kind" : "enhancement",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/14915"
+}, {
+  "number" : 15008,
+  "repository" : "keycloak",
+  "title" : "Configure custom user provider results in RuntimeException: Failed to find provider map for user",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/15008"
+}, {
+  "number" : 15021,
+  "repository" : "keycloak",
+  "title" : "Unable to create idp role mapper (oidc / saml) with old admin UI",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/15021"
+}, {
+  "number" : 15026,
+  "repository" : "keycloak",
+  "title" : "Declarative user profile should allow to mark the email attribute as non required",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/15026"
+}, {
+  "number" : 15053,
+  "repository" : "keycloak",
+  "title" : "Remove deprecated methods from `login-failure` area from `user-session` interface",
+  "kind" : "enhancement",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/15053"
+}, {
+  "number" : 15060,
+  "repository" : "keycloak",
+  "title" : "Transaction deadlock with Microsoft SQL if \"sendStringParametersAsUnicode=false\" not set in db url properties",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/15060"
+}, {
+  "number" : 15083,
+  "repository" : "keycloak",
+  "title" : "Status 500 when trying to retrieve non-existing external IDP token",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/15083"
+}, {
+  "number" : 15089,
+  "repository" : "keycloak",
+  "title" : "[CVE-2022-25857] Denial of Service (DoS) due to missing nested depth limitation for collections in org.yaml:snakeyaml",
+  "kind" : "task",
+  "area" : "dependencies",
+  "url" : "https://github.com/keycloak/keycloak/issues/15089"
+}, {
+  "number" : 15093,
+  "repository" : "keycloak",
+  "title" : "JPA Map Storage: JpaRootAuthenticationSessionEntity constructor missing version parameter",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/15093"
+}, {
+  "number" : 15116,
+  "repository" : "keycloak",
+  "title" : "Old admin console theme still visible for selection even though the corresponding feature is disabled",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/15116"
+}, {
+  "number" : 15118,
+  "repository" : "keycloak",
+  "title" : "Build Timeouts on integration tests",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/15118"
+}, {
+  "number" : 15126,
+  "repository" : "keycloak",
+  "title" : "Start a discussion in the community",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/15126"
+}, {
+  "number" : 15128,
+  "repository" : "keycloak",
+  "title" : "Create a quickstart for the alternative provided",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/15128"
+}, {
+  "number" : 15129,
+  "repository" : "keycloak",
+  "title" : "Provide integration tests for the quickstarts",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/15129"
+}, {
+  "number" : 15152,
+  "repository" : "keycloak",
+  "title" : "Investigate test failures in GHA after upgrading Quarkus to 2.13.x version",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/15152"
+}, {
+  "number" : 15200,
+  "repository" : "keycloak",
+  "title" : "Remove AccountPasswordPage from testsuite",
+  "kind" : "task",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/15200"
+}, {
+  "number" : 15206,
+  "repository" : "keycloak",
+  "title" : "Refactor of Profile",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/15206"
+}, {
+  "number" : 15223,
+  "repository" : "keycloak",
+  "title" : "Make sure the KeycloakSession is not closed more than once",
+  "kind" : "enhancement",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/15223"
+}, {
+  "number" : 15231,
+  "repository" : "keycloak",
+  "title" : "Groups beyond first 10 are not accessible",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/15231"
+}, {
+  "number" : 15234,
+  "repository" : "keycloak",
+  "title" : "Switch to micrometer metrics",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/15234"
+}, {
+  "number" : 15236,
+  "repository" : "keycloak",
+  "title" : "Cannot convert undefined or null to object",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/15236"
+}, {
+  "number" : 15247,
+  "repository" : "keycloak",
+  "title" : "Remove old admin console",
+  "kind" : "eol",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/15247"
+}, {
+  "number" : 15252,
+  "repository" : "keycloak",
+  "title" : "Conditional Authentication flow - Deny Access Error Message - custom property not loaded",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/15252"
+}, {
+  "number" : 15256,
+  "repository" : "keycloak",
+  "title" : "Expose attribute metadata from the User API",
+  "kind" : "enhancement",
+  "area" : "user-profile",
+  "url" : "https://github.com/keycloak/keycloak/issues/15256"
+}, {
+  "number" : 15269,
+  "repository" : "keycloak",
+  "title" : "User Profile removes all user attributes",
+  "kind" : "bug",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/15269"
+}, {
+  "number" : 15271,
+  "repository" : "keycloak",
+  "title" : "Add support for Microsoft Authenticator",
+  "kind" : "feature",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/15271"
+}, {
+  "number" : 15278,
+  "repository" : "keycloak",
+  "title" : "KeycloakErrorHandler throws NPE if session is missing",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/15278"
+}, {
+  "number" : 15295,
+  "repository" : "keycloak",
+  "title" : "AdminV2 not loading through reverse proxy (reencrypt) ",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/15295"
+}, {
+  "number" : 15324,
+  "repository" : "keycloak",
+  "title" : "KC_HTTP_RELATIVE_PATH --http-relative-path ingress or nginx not work",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/15324"
+}, {
+  "number" : 15325,
+  "repository" : "keycloak",
+  "title" : "Cleanup dependencies and align with Quarkus",
+  "kind" : "task",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/15325"
+}, {
+  "number" : 15326,
+  "repository" : "keycloak",
+  "title" : "Multipod (kubernetes) upgrade from v19 to v20 fails",
+  "kind" : "bug",
+  "area" : "infinispan",
+  "url" : "https://github.com/keycloak/keycloak/issues/15326"
+}, {
+  "number" : 15346,
+  "repository" : "keycloak",
+  "title" : "Error when loading public keys",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/15346"
+}, {
+  "number" : 15361,
+  "repository" : "keycloak",
+  "title" : "user_info not working after upgrading from 19.0.3 to 20.0.0",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/15361"
+}, {
+  "number" : 15371,
+  "repository" : "keycloak",
+  "title" : "Unstable CustomJpaUserProviderDistTest on Windows",
+  "kind" : "task",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/15371"
+}, {
+  "number" : 15374,
+  "repository" : "keycloak",
+  "title" : "Remove dependencies on Resteasy API and rely on JAX-RS API as much as possible",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/15374"
+}, {
+  "number" : 15394,
+  "repository" : "keycloak",
+  "title" : "Admin account user name is forcibly changed",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/15394"
+}, {
+  "number" : 15412,
+  "repository" : "keycloak",
+  "title" : "All configurations documentation lists database vendor as a build configuration",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/15412"
+}, {
+  "number" : 15422,
+  "repository" : "keycloak",
+  "title" : "Keycloak User Federation Provider LDAP connection with Azure Active Directory connection is unsuccessful. ",
+  "kind" : "bug",
+  "area" : "ldap",
+  "url" : "https://github.com/keycloak/keycloak/issues/15422"
+}, {
+  "number" : 15429,
+  "repository" : "keycloak",
+  "title" : "NPE in userinfo endpoint",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/15429"
+}, {
+  "number" : 15431,
+  "repository" : "keycloak",
+  "title" : "User Profile Attributes not showing up in Admincp User view and User account management view",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/15431"
+}, {
+  "number" : 15432,
+  "repository" : "keycloak",
+  "title" : "Startup Fails with NullPointerException in Kubernetes with Keycloakx Helm chart",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/15432"
+}, {
+  "number" : 15449,
+  "repository" : "keycloak",
+  "title" : "Not able to create user with non english character in Keycloak 14 environment",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/15449"
+}, {
+  "number" : 15450,
+  "repository" : "keycloak",
+  "title" : "Remove unnecessary injection points from JAX-RS (sub)resources",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/15450"
+}, {
+  "number" : 15482,
+  "repository" : "keycloak",
+  "title" : "User Federation: getReadable() can throw a NPR for a federated user if the user has no attributes",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/15482"
+}, {
+  "number" : 15485,
+  "repository" : "keycloak",
+  "title" : "12.0.4 - User names fields accept special characters ",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/15485"
+}, {
+  "number" : 15487,
+  "repository" : "keycloak",
+  "title" : "Flaky test: Model Tests DBLockTest ",
+  "kind" : "bug",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/15487"
+}, {
+  "number" : 15493,
+  "repository" : "keycloak",
+  "title" : "make nginx certificate-lookup thread safe",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/15493"
+}, {
+  "number" : 15497,
+  "repository" : "keycloak",
+  "title" : "Unknown bind DN using LDAP anonymous bind aka bind type none",
+  "kind" : "bug",
+  "area" : "ldap",
+  "url" : "https://github.com/keycloak/keycloak/issues/15497"
+}, {
+  "number" : 15503,
+  "repository" : "keycloak",
+  "title" : "Flaky tests: Connection timed out to repo.maven",
+  "kind" : "bug",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/15503"
+}, {
+  "number" : 15507,
+  "repository" : "keycloak",
+  "title" : "JPA Map Storage: leverage function-based indexes (CockroachDB)",
+  "kind" : "enhancement",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/15507"
+}, {
+  "number" : 15525,
+  "repository" : "keycloak",
+  "title" : "Remove unnecessary injection points from our JAX-RS resources",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/15525"
+}, {
+  "number" : 15538,
+  "repository" : "keycloak",
+  "title" : "Custom admin theme not working",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/15538"
+}, {
+  "number" : 15539,
+  "repository" : "keycloak",
+  "title" : "Invalid redirect uri /",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/15539"
+}, {
+  "number" : 15558,
+  "repository" : "keycloak",
+  "title" : "UserSessionProviderTest#testOnClientRemoved fails on CockroachDB",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/15558"
+}, {
+  "number" : 15564,
+  "repository" : "keycloak",
+  "title" : "Flaky test: RequiredActionTotpSetupTest.setupTotpExistingReusableCodeDisabled",
+  "kind" : "bug",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/15564"
+}, {
+  "number" : 15566,
+  "repository" : "keycloak",
+  "title" : "Failed to generate javadoc",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/15566"
+}, {
+  "number" : 15571,
+  "repository" : "keycloak",
+  "title" : "Keycloak 20.0 - Build Configurations not applied? KC_FEATURES=token-exchange",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/15571"
+}, {
+  "number" : 15576,
+  "repository" : "keycloak",
+  "title" : "Enable Oracle DB drivers for KeycloakServer in the testsuite utils",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/15576"
+}, {
+  "number" : 15602,
+  "repository" : "keycloak",
+  "title" : "Remove injection points for Resteasy contextual data and use the Keycloak context instead",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/15602"
+}, {
+  "number" : 15603,
+  "repository" : "keycloak",
+  "title" : "Keycloak distribution contains testing libraries",
+  "kind" : "enhancement",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/15603"
+}, {
+  "number" : 15605,
+  "repository" : "keycloak",
+  "title" : "Avoid creating proxies at runtime for Rest-based SPIs",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/15605"
+}, {
+  "number" : 15607,
+  "repository" : "keycloak",
+  "title" : "JDK 17 InaccessibleObjectException with infinispan",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/15607"
+}, {
+  "number" : 15608,
+  "repository" : "keycloak",
+  "title" : "Keycloak wrongly assumes that the default datasource is the first one",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/15608"
+}, {
+  "number" : 15612,
+  "repository" : "keycloak",
+  "title" : "Client registration service must not check client protocol for Bearer token",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/15612"
+}, {
+  "number" : 15614,
+  "repository" : "keycloak",
+  "title" : "Fix update of group mappers on certain changes of the group path",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/15614"
+}, {
+  "number" : 15644,
+  "repository" : "keycloak",
+  "title" : "Review `set-quarkus-version.sh`",
+  "kind" : "enhancement",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/15644"
+}, {
+  "number" : 15656,
+  "repository" : "keycloak",
+  "title" : "Password change sometimes triggers error",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/15656"
+}, {
+  "number" : 15666,
+  "repository" : "keycloak",
+  "title" : "Update to latest version of Keycloak Actionbot",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/15666"
+}, {
+  "number" : 15668,
+  "repository" : "keycloak",
+  "title" : "User Profile: Editing the username attribute adds empty permissions",
+  "kind" : "bug",
+  "area" : "user-profile",
+  "url" : "https://github.com/keycloak/keycloak/issues/15668"
+}, {
+  "number" : 15677,
+  "repository" : "keycloak",
+  "title" : "Enumerate fields in autogenerated class descriptor",
+  "kind" : "enhancement",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/15677"
+}, {
+  "number" : 15685,
+  "repository" : "keycloak",
+  "title" : "Search by group attributes might break on OracleDB ",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/15685"
+}, {
+  "number" : 15687,
+  "repository" : "keycloak",
+  "title" : "IdentityProviderModel from third party packages are ignored",
+  "kind" : "bug",
+  "area" : "identity-brokering",
+  "url" : "https://github.com/keycloak/keycloak/issues/15687"
+}, {
+  "number" : 15699,
+  "repository" : "keycloak",
+  "title" : "Unique constraints should use attribute value hash instead of the value itself",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/15699"
+}, {
+  "number" : 15701,
+  "repository" : "keycloak",
+  "title" : "Unable to run map-storage-jpa tests with custom Postgres image",
+  "kind" : "bug",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/15701"
+}, {
+  "number" : 15706,
+  "repository" : "keycloak",
+  "title" : "Create model-map-file module with empty implementations",
+  "kind" : "enhancement",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/15706"
+}, {
+  "number" : 15712,
+  "repository" : "keycloak",
+  "title" : "Keycloak won't start due to Unsupported database file version or invalid file header in file \"/var/lib/keycloak/data/h2/keycloakdb.mv.db\" [90048-214]",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/15712"
+}, {
+  "number" : 15718,
+  "repository" : "keycloak",
+  "title" : "Flaky test: RefreshTokenTest.tokenRefreshRequest_ClientES512_RealmRS256",
+  "kind" : "bug",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/15718"
+}, {
+  "number" : 15738,
+  "repository" : "keycloak",
+  "title" : "ERROR: Failed to start server in (production) mode after update from 19.0.3 quarkus to 20.0.1",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/15738"
+}, {
+  "number" : 15739,
+  "repository" : "keycloak",
+  "title" : "Device Authorization Grant fails with valid S256 code challenge",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/15739"
+}, {
+  "number" : 15740,
+  "repository" : "keycloak",
+  "title" : "./kc.sh does not pickups conf/quarkus.properties",
+  "kind" : "enhancement",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/15740"
+}, {
+  "number" : 15744,
+  "repository" : "keycloak",
+  "title" : "CORS error from token endpoint",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/15744"
+}, {
+  "number" : 15749,
+  "repository" : "keycloak",
+  "title" : "Add logging to KeycloakModelUtils.runJobInRetriableTransaction",
+  "kind" : "enhancement",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/15749"
+}, {
+  "number" : 15759,
+  "repository" : "keycloak",
+  "title" : "JPA map storage: verify if JsonbPostgreSQL95Dialect is required",
+  "kind" : "task",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/15759"
+}, {
+  "number" : 15761,
+  "repository" : "keycloak",
+  "title" : "Flaky test: JavascriptAdapterTest.implicitFlowOnTokenExpireTest",
+  "kind" : "bug",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/15761"
+}, {
+  "number" : 15764,
+  "repository" : "keycloak",
+  "title" : "Downgrade to Quarkus 2.13.5.Final",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/15764"
+}, {
+  "number" : 15767,
+  "repository" : "keycloak",
+  "title" : "Make KeycloakDeploymentBuilder initialize CryptoIntegration",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/15767"
+}, {
+  "number" : 15777,
+  "repository" : "keycloak",
+  "title" : "Can't change 'Restart login'",
+  "kind" : "bug",
+  "area" : "account/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/15777"
+}, {
+  "number" : 15781,
+  "repository" : "keycloak",
+  "title" : "kc 19.0.3 with oracle 11g: realm export with users leads SQL Error: 1000, SQLState: 72000 (maximum open cursors exceeded)",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/15781"
+}, {
+  "number" : 15801,
+  "repository" : "keycloak",
+  "title" : "Multiple failures in Model Tests",
+  "kind" : "bug",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/15801"
+}, {
+  "number" : 15803,
+  "repository" : "keycloak",
+  "title" : "Keycloak upgrade fails: relation databasechangeloglock already exists",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/15803"
+}, {
+  "number" : 15806,
+  "repository" : "keycloak",
+  "title" : "Console not login since Keycloak 19+",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/15806"
+}, {
+  "number" : 15807,
+  "repository" : "keycloak",
+  "title" : "fix typo in kcWebAuthnKeyIcon",
+  "kind" : "bug",
+  "area" : "account/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/15807"
+}, {
+  "number" : 15810,
+  "repository" : "keycloak",
+  "title" : "Remove dependency on Resteasy Multipart Provider",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/15810"
+}, {
+  "number" : 15811,
+  "repository" : "keycloak",
+  "title" : "Make sure JAX-RS resource methods are advertizing the media type they support",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/15811"
+}, {
+  "number" : 15812,
+  "repository" : "keycloak",
+  "title" : "ConcurrentModificationException in DeclarativeUserProfileProvider",
+  "kind" : "enhancement",
+  "area" : "user-profile",
+  "url" : "https://github.com/keycloak/keycloak/issues/15812"
+}, {
+  "number" : 15817,
+  "repository" : "keycloak",
+  "title" : "Get opentid token server error",
+  "kind" : "bug",
+  "area" : "account/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/15817"
+}, {
+  "number" : 15823,
+  "repository" : "keycloak",
+  "title" : "Overriding email template provider according to guide fails ",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/15823"
+}, {
+  "number" : 15824,
+  "repository" : "keycloak",
+  "title" : " Failed to find Liquibase implementation when using Postgres DB ",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/15824"
+}, {
+  "number" : 15833,
+  "repository" : "keycloak",
+  "title" : "Move hok, par, and rar tests to oauth package",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/15833"
+}, {
+  "number" : 15846,
+  "repository" : "keycloak",
+  "title" : "Support autogeneration of camel case field names",
+  "kind" : "enhancement",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/15846"
+}, {
+  "number" : 15849,
+  "repository" : "keycloak",
+  "title" : "JPA Map Storage: Add transaction retry logic to LoginActionsService.authenticate",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/15849"
+}, {
+  "number" : 15861,
+  "repository" : "keycloak",
+  "title" : "Refactor Keycloak CI workflow",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/15861"
+}, {
+  "number" : 15869,
+  "repository" : "keycloak",
+  "title" : "Upload Script error",
+  "kind" : "bug",
+  "area" : "account/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/15869"
+}, {
+  "number" : 15885,
+  "repository" : "keycloak",
+  "title" : "Add write ability to file store",
+  "kind" : "enhancement",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/15885"
+}, {
+  "number" : 15886,
+  "repository" : "keycloak",
+  "title" : "After changing URL, admin console load old URL",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/15886"
+}, {
+  "number" : 15889,
+  "repository" : "keycloak",
+  "title" : "Keycloak 20.0.1 on Oracle Database - ORA-00932: inconsistent datatypes: expected - got NCLOB",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/15889"
+}, {
+  "number" : 15890,
+  "repository" : "keycloak",
+  "title" : "Introduce tests for pessimistic locking usecases",
+  "kind" : "enhancement",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/15890"
+}, {
+  "number" : 15894,
+  "repository" : "keycloak",
+  "title" : "Sign in to your account with SAML integration resulting in \"Unexpected error when authenticating with identity provider\" and no error found on logs.",
+  "kind" : "bug",
+  "area" : "saml",
+  "url" : "https://github.com/keycloak/keycloak/issues/15894"
+}, {
+  "number" : 15901,
+  "repository" : "keycloak",
+  "title" : "Enable Infinispan Metrics",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/15901"
+}, {
+  "number" : 15904,
+  "repository" : "keycloak",
+  "title" : "Flaky test: HostnameDistTest",
+  "kind" : "bug",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/15904"
+}, {
+  "number" : 15915,
+  "repository" : "keycloak",
+  "title" : "CVE-2022-42889 - Apache Commons Text prior to 1.10.0 allows RCE",
+  "kind" : "cve",
+  "area" : "dependencies",
+  "url" : "https://github.com/keycloak/keycloak/issues/15915"
+}, {
+  "number" : 15916,
+  "repository" : "keycloak",
+  "title" : "Java 17 support not given",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/15916"
+}, {
+  "number" : 15921,
+  "repository" : "keycloak",
+  "title" : "Can not set Context path on Keycloak 20",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/15921"
+}, {
+  "number" : 15925,
+  "repository" : "keycloak",
+  "title" : "JAVA_OPTS_APPEND does not allow overriding the ipv4/ipv6 setting",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/15925"
+}, {
+  "number" : 15944,
+  "repository" : "keycloak",
+  "title" : "API call to get user profile config should allow any admin role.",
+  "kind" : "bug",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/15944"
+}, {
+  "number" : 15946,
+  "repository" : "keycloak",
+  "title" : "User Attribute Policy",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/15946"
+}, {
+  "number" : 15948,
+  "repository" : "keycloak",
+  "title" : "Improve german email messages",
+  "kind" : "task",
+  "area" : "translations",
+  "url" : "https://github.com/keycloak/keycloak/issues/15948"
+}, {
+  "number" : 15952,
+  "repository" : "keycloak",
+  "title" : "export client saml key JKS from realm ui admin theme keycloakv2 give invalid JKS",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/15952"
+}, {
+  "number" : 15956,
+  "repository" : "keycloak",
+  "title" : "Move authorization tests into authz package",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/15956"
+}, {
+  "number" : 15958,
+  "repository" : "keycloak",
+  "title" : "Evaluate Hibernate 6 for new and old store to see how much work is ahead",
+  "kind" : "task",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/15958"
+}, {
+  "number" : 15977,
+  "repository" : "keycloak",
+  "title" : "Upgrade to Infinispan 14.0.4.Final",
+  "kind" : "enhancement",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/15977"
+}, {
+  "number" : 15995,
+  "repository" : "keycloak",
+  "title" : "Deprecate server support for OpenJDK 11",
+  "kind" : "eol",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/15995"
+}, {
+  "number" : 16002,
+  "repository" : "keycloak",
+  "title" : "Health Check failure when KC_HTTP_RELATIVE_PATH set on 20.0.0",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/16002"
+}, {
+  "number" : 16008,
+  "repository" : "keycloak",
+  "title" : "Update to JBoss Parent 39",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/16008"
+}, {
+  "number" : 16020,
+  "repository" : "keycloak",
+  "title" : "Adding CRDB into GHA for the new store",
+  "kind" : "enhancement",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/16020"
+}, {
+  "number" : 16030,
+  "repository" : "keycloak",
+  "title" : "Better error handling on startup",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/16030"
+}, {
+  "number" : 16035,
+  "repository" : "keycloak",
+  "title" : "Add MariaDB to Legacy Store IT",
+  "kind" : "task",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/16035"
+}, {
+  "number" : 16036,
+  "repository" : "keycloak",
+  "title" : "Add MSSQL to Legacy Store IT",
+  "kind" : "task",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/16036"
+}, {
+  "number" : 16037,
+  "repository" : "keycloak",
+  "title" : "Add Oracle to Legacy Store IT",
+  "kind" : "task",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/16037"
+}, {
+  "number" : 16038,
+  "repository" : "keycloak",
+  "title" : "Add account2 tests to Keycloak CI",
+  "kind" : "task",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/16038"
+}, {
+  "number" : 16046,
+  "repository" : "keycloak",
+  "title" : "GHA are not running HotRod tests because of config error",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/16046"
+}, {
+  "number" : 16047,
+  "repository" : "keycloak",
+  "title" : "NPE while trying to access the list of users in the admin console",
+  "kind" : "bug",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/16047"
+}, {
+  "number" : 16048,
+  "repository" : "keycloak",
+  "title" : "Flaky test: OfflineServletsAdapterTest",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/16048"
+}, {
+  "number" : 16053,
+  "repository" : "keycloak",
+  "title" : "`FieldsGenerator` doesn't generate `getMapKeyClass()` and `getMapValueClass()` for `Map<String, String> config` fields",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/16053"
+}, {
+  "number" : 16067,
+  "repository" : "keycloak",
+  "title" : "Title/header of Admin REST API page incorrectly shows placeholder",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/16067"
+}, {
+  "number" : 16069,
+  "repository" : "keycloak",
+  "title" : "Stuck at Loading the admin console",
+  "kind" : "bug",
+  "area" : "admin/cli",
+  "url" : "https://github.com/keycloak/keycloak/issues/16069"
+}, {
+  "number" : 16075,
+  "repository" : "keycloak",
+  "title" : "Vulnerable packages and or dependencies found in keycloak 20.0.2 quarkus distribution",
+  "kind" : "cve",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/16075"
+}, {
+  "number" : 16078,
+  "repository" : "keycloak",
+  "title" : "Flaky test: UserSessionConcurrencyTest.testConcurrentNotesChange",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/16078"
+}, {
+  "number" : 16079,
+  "repository" : "keycloak",
+  "title" : "Flaky test: UserSessionExpirationTest>KeycloakModelTest.createEnvironment",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/16079"
+}, {
+  "number" : 16089,
+  "repository" : "keycloak",
+  "title" : "Normalize memory usage in tests and OOM behavior",
+  "kind" : "enhancement",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/16089"
+}, {
+  "number" : 16091,
+  "repository" : "keycloak",
+  "title" : "Cache Maven Wrapper JAR in GitHub actions",
+  "kind" : "enhancement",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/16091"
+}, {
+  "number" : 16099,
+  "repository" : "keycloak",
+  "title" : "Keycloak admin page is not loading",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/16099"
+}, {
+  "number" : 16107,
+  "repository" : "keycloak",
+  "title" : "Short verification_uri for Device Authorization Request",
+  "kind" : "feature",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/16107"
+}, {
+  "number" : 16108,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.federation.kerberos.KerberosLdapTest#spnegoLoginTest",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/16108"
+}, {
+  "number" : 16109,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.federation.kerberos.KerberosLdapTest#validatePasswordPolicyTest",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/16109"
+}, {
+  "number" : 16110,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.federation.kerberos.KerberosLdapTest#testClientOverrideFlowUsingBrowserHttpChallenge",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/16110"
+}, {
+  "number" : 16111,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.federation.kerberos.KerberosLdapTest#writableEditModeTest",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/16111"
+}, {
+  "number" : 16112,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.federation.kerberos.KerberosLdapTest#spnegoCaseInsensitiveTest",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/16112"
+}, {
+  "number" : 16113,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.federation.kerberos.KerberosLdapTest#usernamePasswordLoginTest",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/16113"
+}, {
+  "number" : 16114,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.federation.kerberos.KerberosLdapTest#credentialDelegationTest",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/16114"
+}, {
+  "number" : 16115,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.federation.kerberos.KerberosLdapTest#spnegoLoginWithRequiredKerberosAuthExecutionTest",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/16115"
+}, {
+  "number" : 16116,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.federation.kerberos.KerberosLdapTest#spnegoNotAvailableTest",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/16116"
+}, {
+  "number" : 16117,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.federation.kerberos.KerberosLdapTest#spnegoWithInvalidTokenTest",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/16117"
+}, {
+  "number" : 16125,
+  "repository" : "keycloak",
+  "title" : "Warning printed in Keycloak CI jobs",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/16125"
+}, {
+  "number" : 16130,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.cookies.CookiesPathTest#testOldCookieWithNodeInValue",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/16130"
+}, {
+  "number" : 16131,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.cookies.CookiesPathTest#testMultipleCookies",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/16131"
+}, {
+  "number" : 16132,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.cookies.CookiesPathTest#testOldCookieWithWrongPath",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/16132"
+}, {
+  "number" : 16133,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.cookies.CookiesPathTest#testCookiesPath",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/16133"
+}, {
+  "number" : 16139,
+  "repository" : "keycloak",
+  "title" : "The search does not work if only partial information is entered",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/16139"
+}, {
+  "number" : 16143,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.forms.LoginTest#loginWithoutForcePasswordChangePolicy",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/16143"
+}, {
+  "number" : 16164,
+  "repository" : "keycloak",
+  "title" : "Keycloak 20.0.1 have redirection issue",
+  "kind" : "epic",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/16164"
+}, {
+  "number" : 16174,
+  "repository" : "keycloak",
+  "title" : "Username is not updated if email was changed",
+  "kind" : "bug",
+  "area" : "user-profile",
+  "url" : "https://github.com/keycloak/keycloak/issues/16174"
+}, {
+  "number" : 16191,
+  "repository" : "keycloak",
+  "title" : "Keycloak 20.0.1 quarkus Distro is failing with MSSqlServer on second time restart",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/16191"
+}, {
+  "number" : 16192,
+  "repository" : "keycloak",
+  "title" : "Keycloak 20.0.1 quarkus Distro we are not able to login in keycloak with mssql server database connected",
+  "kind" : "epic",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/16192"
+}, {
+  "number" : 16202,
+  "repository" : "keycloak",
+  "title" : "LinkageError for FipsMode during startup",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/16202"
+}, {
+  "number" : 16211,
+  "repository" : "keycloak",
+  "title" : "AccountConsole leaks translated messages into cached theme",
+  "kind" : "bug",
+  "area" : "account/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/16211"
+}, {
+  "number" : 16216,
+  "repository" : "keycloak",
+  "title" : "Some authorization adapter test failing on Java 17",
+  "kind" : "bug",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/16216"
+}, {
+  "number" : 16220,
+  "repository" : "keycloak",
+  "title" : "Clarify using of `--optimized` flag with DBs",
+  "kind" : "enhancement",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/16220"
+}, {
+  "number" : 16222,
+  "repository" : "keycloak",
+  "title" : "operator doesn't watch other namespaces",
+  "kind" : "bug",
+  "area" : "operator",
+  "url" : "https://github.com/keycloak/keycloak/issues/16222"
+}, {
+  "number" : 16224,
+  "repository" : "keycloak",
+  "title" : "Incrementally cache consents on a per client basis",
+  "kind" : "enhancement",
+  "area" : "infinispan",
+  "url" : "https://github.com/keycloak/keycloak/issues/16224"
+}, {
+  "number" : 16232,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.admin.UserTest.sendResetPasswordEmailWithCustomLifespan",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/16232"
+}, {
+  "number" : 16240,
+  "repository" : "keycloak",
+  "title" : "SAMLServletAdapterTest and SAMLFilterServletAdapterTest failing on Java 17",
+  "kind" : "bug",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/16240"
+}, {
+  "number" : 16248,
+  "repository" : "keycloak",
+  "title" : "Keycloak operator. Add labels to keycloak PODs",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/16248"
+}, {
+  "number" : 16255,
+  "repository" : "keycloak",
+  "title" : "Field generator: `getCollectionElementClass` method not generated when no addElement method is present in interface",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/16255"
+}, {
+  "number" : 16261,
+  "repository" : "keycloak",
+  "title" : "io.quarkus.builder.BuildException caused by java.lang.OutOfMemoryError: unable to create native thread",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/16261"
+}, {
+  "number" : 16263,
+  "repository" : "keycloak",
+  "title" : "Do not show username field when updating profile if UPDATE_EMAIL feature is enabled and email as username is enabled",
+  "kind" : "bug",
+  "area" : "user-profile",
+  "url" : "https://github.com/keycloak/keycloak/issues/16263"
+}, {
+  "number" : 16274,
+  "repository" : "keycloak",
+  "title" : "Read-only user attributes error from Keycloak Admin API",
+  "kind" : "bug",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/16274"
+}, {
+  "number" : 16281,
+  "repository" : "keycloak",
+  "title" : "Keep consistency when importing realms at startup when they are exported via the `export` command",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/16281"
+}, {
+  "number" : 16283,
+  "repository" : "keycloak",
+  "title" : "No data stored in external database (MariaDB)",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/16283"
+}, {
+  "number" : 16290,
+  "repository" : "keycloak",
+  "title" : "Migrating from keycloak 15 to keycloak 20.0.1: If we pass wrong username then getting Internal Server Error",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/16290"
+}, {
+  "number" : 16297,
+  "repository" : "keycloak",
+  "title" : "NPE if user not exists in PolicyEvaluationRequest",
+  "kind" : "bug",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/16297"
+}, {
+  "number" : 16306,
+  "repository" : "keycloak",
+  "title" : " Role/Group based authentication not working for users authenticated by External IdPs (Azure AD, GitHub etc)",
+  "kind" : "bug",
+  "area" : "authorization-services",
+  "url" : "https://github.com/keycloak/keycloak/issues/16306"
+}, {
+  "number" : 16308,
+  "repository" : "keycloak",
+  "title" : "Compatibility with Maven4 build cache and parallel builds",
+  "kind" : "enhancement",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/16308"
+}, {
+  "number" : 16313,
+  "repository" : "keycloak",
+  "title" : "In CI, new-store-integration-tests for CRDB is sometimes cancelled after 70 minutes",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/16313"
+}, {
+  "number" : 16317,
+  "repository" : "keycloak",
+  "title" : "EntityField `mapPut` and  `collectionAdd` default methods doesn't insert an element when `get(e)` returns `null`",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/16317"
+}, {
+  "number" : 16320,
+  "repository" : "keycloak",
+  "title" : "Single client export bug",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/16320"
+}, {
+  "number" : 16330,
+  "repository" : "keycloak",
+  "title" : "Hibernate 6 upgrade: native query registration",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/16330"
+}, {
+  "number" : 16332,
+  "repository" : "keycloak",
+  "title" : "Hibernate 6 upgrade: unable to extract query parameter name in QueryCacheKey",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/16332"
+}, {
+  "number" : 16333,
+  "repository" : "keycloak",
+  "title" : "Email theme is not working after update to 20.0.2",
+  "kind" : "bug",
+  "area" : "translations",
+  "url" : "https://github.com/keycloak/keycloak/issues/16333"
+}, {
+  "number" : 16334,
+  "repository" : "keycloak",
+  "title" : "Hibernate 6 upgrade: API changes in JpaAutoFlushListener",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/16334"
+}, {
+  "number" : 16335,
+  "repository" : "keycloak",
+  "title" : "Hibernate 6 upgrade: valueType in `JsonbType` is no longer set",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/16335"
+}, {
+  "number" : 16336,
+  "repository" : "keycloak",
+  "title" : "Hibernate 6 upgrade: JSON functions need to be registered using new APIs",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/16336"
+}, {
+  "number" : 16337,
+  "repository" : "keycloak",
+  "title" : "Hibernate 6 upgrade: Entity -> id mapping no longer automatically done",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/16337"
+}, {
+  "number" : 16347,
+  "repository" : "keycloak",
+  "title" : "Priority order of protocol mappers",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/16347"
+}, {
+  "number" : 16373,
+  "repository" : "keycloak",
+  "title" : "Remove invalid property from Operator properties",
+  "kind" : "enhancement",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/16373"
+}, {
+  "number" : 16393,
+  "repository" : "keycloak",
+  "title" : "Please update antlr-runtime",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/16393"
+}, {
+  "number" : 16401,
+  "repository" : "keycloak",
+  "title" : "Clients secret with % for clients (access type : confidential) have to be encoded",
+  "kind" : "bug",
+  "area" : "authorization-services",
+  "url" : "https://github.com/keycloak/keycloak/issues/16401"
+}, {
+  "number" : 16403,
+  "repository" : "keycloak",
+  "title" : "Keycloak - Missing data in the userinfo response",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/16403"
+}, {
+  "number" : 16420,
+  "repository" : "keycloak",
+  "title" : "Support runnning tests using an embedded distribution",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/16420"
+}, {
+  "number" : 16443,
+  "repository" : "keycloak",
+  "title" : "Keycloak 19.0.1 search from UI bug",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/16443"
+}, {
+  "number" : 16465,
+  "repository" : "keycloak",
+  "title" : "ElytronSessionTokenStore#logoutHttpSessions() does not work as expected due to UNDERTOW-2159",
+  "kind" : "bug",
+  "area" : "adapter/jee",
+  "url" : "https://github.com/keycloak/keycloak/issues/16465"
+}, {
+  "number" : 16467,
+  "repository" : "keycloak",
+  "title" : "The user could not be deleted unknown_error",
+  "kind" : "bug",
+  "area" : "account/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/16467"
+}, {
+  "number" : 16502,
+  "repository" : "keycloak",
+  "title" : "Hibernate 6 upgrade: Warning about missing Bean Validation provider",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/16502"
+}, {
+  "number" : 16513,
+  "repository" : "keycloak",
+  "title" : "Wrong property for events in map-storage-hot-rod on Undertow",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/16513"
+}, {
+  "number" : 16514,
+  "repository" : "keycloak",
+  "title" : "Flaky tests: DateTimeParse failures in New Account Console tests",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/16514"
+}, {
+  "number" : 16529,
+  "repository" : "keycloak",
+  "title" : "Move Admin UI custom REST endpoints to main repository",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/16529"
+}, {
+  "number" : 16538,
+  "repository" : "keycloak",
+  "title" : "Quarkus 3: Model tests fail to finish",
+  "kind" : "bug",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/16538"
+}, {
+  "number" : 16552,
+  "repository" : "keycloak",
+  "title" : "JpaClientModelCriteriaBuilder doesn't work correctly with H6",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/16552"
+}, {
+  "number" : 16575,
+  "repository" : "keycloak",
+  "title" : "Move getting started and migration guides to main repository",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/16575"
+}, {
+  "number" : 16584,
+  "repository" : "keycloak",
+  "title" : "Userinfo Endpoint Gives 500 (nullpointerexception) on POST request",
+  "kind" : "bug",
+  "area" : "account/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/16584"
+}, {
+  "number" : 16586,
+  "repository" : "keycloak",
+  "title" : "Upgrading from keycloak 20.0.1-20.0.2+ breaks app logout",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/16586"
+}, {
+  "number" : 16592,
+  "repository" : "keycloak",
+  "title" : "Memory leak when running the embedded server",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/16592"
+}, {
+  "number" : 16605,
+  "repository" : "keycloak",
+  "title" : "http-relative-path is not working",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/16605"
+}, {
+  "number" : 16616,
+  "repository" : "keycloak",
+  "title" : "Make lockTimeout better configurable in JpaMapStorageProviderFactory",
+  "kind" : "enhancement",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/16616"
+}, {
+  "number" : 16622,
+  "repository" : "keycloak",
+  "title" : "Snyk workflow failing when running the checks against the Operator",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/16622"
+}, {
+  "number" : 16634,
+  "repository" : "keycloak",
+  "title" : "Hibernate Error performing load command with JDK 17",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/16634"
+}, {
+  "number" : 16636,
+  "repository" : "keycloak",
+  "title" : "Introduce CODEOWNERS",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/16636"
+}, {
+  "number" : 16642,
+  "repository" : "keycloak",
+  "title" : "Database migrations are not transactional",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/16642"
+}, {
+  "number" : 16649,
+  "repository" : "keycloak",
+  "title" : "Fixing OfflineSessionPersistenceTest in Quarkus3 branch",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/16649"
+}, {
+  "number" : 16657,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.common.ProfileTest#enablePreviewWithPropertiesFile & #configWithPropertiesFile",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/16657"
+}, {
+  "number" : 16658,
+  "repository" : "keycloak",
+  "title" : "Label for \"Review Profile config\" modal is not displayed properly in new admin console",
+  "kind" : "bug",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/16658"
+}, {
+  "number" : 16665,
+  "repository" : "keycloak",
+  "title" : "Make ci.yml and operator-ci.yml workflows conditional",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/16665"
+}, {
+  "number" : 16669,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.ui.account2.WelcomeScreenTest#resourcesTest",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/16669"
+}, {
+  "number" : 16676,
+  "repository" : "keycloak",
+  "title" : "Create basic read-only file store",
+  "kind" : "enhancement",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/16676"
+}, {
+  "number" : 16679,
+  "repository" : "keycloak",
+  "title" : "Update Email Action does not properly update username if username=email is active",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/16679"
+}, {
+  "number" : 16684,
+  "repository" : "keycloak",
+  "title" : "cannot open admin console after upgrade to 20.0.3",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/16684"
+}, {
+  "number" : 16690,
+  "repository" : "keycloak",
+  "title" : "Make LockAcquiringTimeoutException a runtime exception",
+  "kind" : "enhancement",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/16690"
+}, {
+  "number" : 16693,
+  "repository" : "keycloak",
+  "title" : "Hibernate 6 referencing m:n association from both entities with both `joinColumns` and `inverseJoinColumns` causes interference",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/16693"
+}, {
+  "number" : 16705,
+  "repository" : "keycloak",
+  "title" : "Snyk Workflow failing due to the usage of the same category on multiple sections",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/16705"
+}, {
+  "number" : 16711,
+  "repository" : "keycloak",
+  "title" : "SAML tests in quarkus3 branch failing due to missing SAAJ factory",
+  "kind" : "bug",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/16711"
+}, {
+  "number" : 16721,
+  "repository" : "keycloak",
+  "title" : "Failing tests due to outdated X509Certificate request attribute name",
+  "kind" : "bug",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/16721"
+}, {
+  "number" : 16727,
+  "repository" : "keycloak",
+  "title" : "Keycloak 20.0.3 container does not support Java 17",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/16727"
+}, {
+  "number" : 16731,
+  "repository" : "keycloak",
+  "title" : "Upgrade twitter4j (WAS: Dependency review: twitter4j)",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/16731"
+}, {
+  "number" : 16743,
+  "repository" : "keycloak",
+  "title" : "ArtifactBindingTest fails on quarkus 3 branch with ClassNotFoundException",
+  "kind" : "bug",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/16743"
+}, {
+  "number" : 16745,
+  "repository" : "keycloak",
+  "title" : "ISPN000559: Cannot marshall 'class org.infinispan.marshall.protostream.impl.MarshallableUserObject': java.io.NotSerializableException: org.keycloak.models.cache.infinispan.entities.NonExistentItem",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/16745"
+}, {
+  "number" : 16751,
+  "repository" : "keycloak",
+  "title" : "Do not enable caching metrics by default and provide a guide",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/16751"
+}, {
+  "number" : 16775,
+  "repository" : "keycloak",
+  "title" : "Operator ignores DB vendor when using custom image. Forces h2 instead of chosen vendor.",
+  "kind" : "bug",
+  "area" : "operator",
+  "url" : "https://github.com/keycloak/keycloak/issues/16775"
+}, {
+  "number" : 16784,
+  "repository" : "keycloak",
+  "title" : "Remove duplicate references on the main pom.xml for SnakeYAML",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/16784"
+}, {
+  "number" : 16787,
+  "repository" : "keycloak",
+  "title" : "support multi hosted-domain in `GoogleIdentityProvider`",
+  "kind" : "feature",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/16787"
+}, {
+  "number" : 16797,
+  "repository" : "keycloak",
+  "title" : "Make sure PBKDF2 providers are using the expect size for derived keys ",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/16797"
+}, {
+  "number" : 16801,
+  "repository" : "keycloak",
+  "title" : "Log message about leaked statement in JPA map storage ",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/16801"
+}, {
+  "number" : 16804,
+  "repository" : "keycloak",
+  "title" : "Connection Refused on Quarkus Tests",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/16804"
+}, {
+  "number" : 16807,
+  "repository" : "keycloak",
+  "title" : "KeycloakIngress (controller) should configure edge TLS when back-end protocol is HTTP",
+  "kind" : "enhancement",
+  "area" : "operator",
+  "url" : "https://github.com/keycloak/keycloak/issues/16807"
+}, {
+  "number" : 16818,
+  "repository" : "keycloak",
+  "title" : "Any tests using PhantomJS failing in some newer linux environments",
+  "kind" : "bug",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/16818"
+}, {
+  "number" : 16821,
+  "repository" : "keycloak",
+  "title" : "Add support for file store configuration into Quarkus",
+  "kind" : "task",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/16821"
+}, {
+  "number" : 16857,
+  "repository" : "keycloak",
+  "title" : "Fix `Overwriting value of clientRole field` log message",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/16857"
+}, {
+  "number" : 16858,
+  "repository" : "keycloak",
+  "title" : "Remove old admin console tests",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/16858"
+}, {
+  "number" : 16860,
+  "repository" : "keycloak",
+  "title" : "Remove old admin console feature",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/16860"
+}, {
+  "number" : 16862,
+  "repository" : "keycloak",
+  "title" : "Remove old admin console theme",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/16862"
+}, {
+  "number" : 16863,
+  "repository" : "keycloak",
+  "title" : "Remove common resources no longer needed after old admin console is removed",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/16863"
+}, {
+  "number" : 16880,
+  "repository" : "keycloak",
+  "title" : "Keycloak LDAPS does not find valid certification path to requested target in Production",
+  "kind" : "bug",
+  "area" : "ldap",
+  "url" : "https://github.com/keycloak/keycloak/issues/16880"
+}, {
+  "number" : 16885,
+  "repository" : "keycloak",
+  "title" : "Remove old admin console messages",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/16885"
+}, {
+  "number" : 16892,
+  "repository" : "keycloak",
+  "title" : "Update proxy guide with information about session stickness",
+  "kind" : "enhancement",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/16892"
+}, {
+  "number" : 16899,
+  "repository" : "keycloak",
+  "title" : "[typing] user.listGroups typing seems incorrect",
+  "kind" : "bug",
+  "area" : "admin/client-js",
+  "url" : "https://github.com/keycloak/keycloak/issues/16899"
+}, {
+  "number" : 16900,
+  "repository" : "keycloak",
+  "title" : "Documentation for handling errors",
+  "kind" : "enhancement",
+  "area" : "admin/client-js",
+  "url" : "https://github.com/keycloak/keycloak/issues/16900"
+}, {
+  "number" : 16901,
+  "repository" : "keycloak",
+  "title" : "Can't update user groups",
+  "kind" : "bug",
+  "area" : "admin/client-js",
+  "url" : "https://github.com/keycloak/keycloak/issues/16901"
+}, {
+  "number" : 16918,
+  "repository" : "keycloak",
+  "title" : "Add admin/client as an area selection when creating a new bug.",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/16918"
+}, {
+  "number" : 16921,
+  "repository" : "keycloak",
+  "title" : "Recovery codes input error not displayed in the standardized way",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/16921"
+}, {
+  "number" : 16962,
+  "repository" : "keycloak",
+  "title" : "Make it possible to run the embedded distribution in FIPS mode",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/16962"
+}, {
+  "number" : 16974,
+  "repository" : "keycloak",
+  "title" : "Trivy Workflow failing with context deadline exceeded",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/16974"
+}, {
+  "number" : 16988,
+  "repository" : "keycloak",
+  "title" : "application/x-unknown-content-type when loading admin console JS and CSS",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/16988"
+}, {
+  "number" : 17010,
+  "repository" : "keycloak",
+  "title" : "Changing realm id will not update relative URLs in `account-console` client",
+  "kind" : "bug",
+  "area" : "account/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/17010"
+}, {
+  "number" : 17022,
+  "repository" : "keycloak",
+  "title" : "lastSync value into COMPONENT_CONFIG is always updated",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/17022"
+}, {
+  "number" : 17029,
+  "repository" : "keycloak",
+  "title" : "File store path traversal",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/17029"
+}, {
+  "number" : 17037,
+  "repository" : "keycloak",
+  "title" : "Allow configuring of redirectUri for the cordova adapter",
+  "kind" : "feature",
+  "area" : "adapter/javascript",
+  "url" : "https://github.com/keycloak/keycloak/issues/17037"
+}, {
+  "number" : 17057,
+  "repository" : "keycloak",
+  "title" : "Update Quarkus container to UBI 9 / RHEL 9",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/17057"
+}, {
+  "number" : 17068,
+  "repository" : "keycloak",
+  "title" : "Update Operator container to UBI 9 / RHEL 9",
+  "kind" : "task",
+  "area" : "operator",
+  "url" : "https://github.com/keycloak/keycloak/issues/17068"
+}, {
+  "number" : 17107,
+  "repository" : "keycloak",
+  "title" : "Sync properties in `map-storage-*` profiles in `base/pom.xml`",
+  "kind" : "task",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/17107"
+}, {
+  "number" : 17133,
+  "repository" : "keycloak",
+  "title" : "Apply documentation standards to Getting Started Guides",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/17133"
+}, {
+  "number" : 17134,
+  "repository" : "keycloak",
+  "title" : "Create an SPI for DeviceActivityManager",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/17134"
+}, {
+  "number" : 17141,
+  "repository" : "keycloak",
+  "title" : "Exception in log: Response already committed, can't be changed",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/17141"
+}, {
+  "number" : 17144,
+  "repository" : "keycloak",
+  "title" : "Deprecate IS_CLIENT_ROLE searchable field",
+  "kind" : "task",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/17144"
+}, {
+  "number" : 17162,
+  "repository" : "keycloak",
+  "title" : "build failed with pom can not import",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/17162"
+}, {
+  "number" : 17197,
+  "repository" : "keycloak",
+  "title" : "Discovery document is missing mandatory fields",
+  "kind" : "bug",
+  "area" : "account/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/17197"
+}, {
+  "number" : 17216,
+  "repository" : "keycloak",
+  "title" : "Link \"Sign out\" incorrectly hardcoded to localhost in the authz example applications",
+  "kind" : "bug",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/17216"
+}, {
+  "number" : 17833,
+  "repository" : "keycloak",
+  "title" : "Paging doesn't work on filtered tables",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/17833"
+}, {
+  "number" : 17865,
+  "repository" : "keycloak",
+  "title" : "Add \"Encryption algorithm\" option of SAML IDP",
+  "kind" : "enhancement",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/17865"
+}, {
+  "number" : 17870,
+  "repository" : "keycloak",
+  "title" : "User profile - Button email verified doesn't appear",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/17870"
+}, {
+  "number" : 17874,
+  "repository" : "keycloak",
+  "title" : "Client assertion signature configuration of identity broker is missing on new security admin console",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/17874"
+}, {
+  "number" : 17887,
+  "repository" : "keycloak",
+  "title" : "User profile - Validation Options not working",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/17887"
+}, {
+  "number" : 17914,
+  "repository" : "keycloak",
+  "title" : "Client Advanced Settings: Access Token Lifespan displayed as \"Never expires\" when realm value is used (default 1h)",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/17914"
+}, {
+  "number" : 17919,
+  "repository" : "keycloak",
+  "title" : "Federation Link no longer visible for Users",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/17919"
+}, {
+  "number" : 17920,
+  "repository" : "keycloak",
+  "title" : "User profile - firstName not showing",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/17920"
+}, {
+  "number" : 17921,
+  "repository" : "keycloak",
+  "title" : "[Keycloak  20.0.1 ] JWKS url can't be configured",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/17921"
+}, {
+  "number" : 17925,
+  "repository" : "keycloak",
+  "title" : "New admin console missing action that allows synchronizing LDAP groups to Keycloak",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/17925"
+}, {
+  "number" : 17935,
+  "repository" : "keycloak",
+  "title" : "Update message for 'Valid Post Logout Redirect URIs' client option",
+  "kind" : "enhancement",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/17935"
+}, {
+  "number" : 17937,
+  "repository" : "keycloak",
+  "title" : "Custom User Provider SPI: MULTIVALUED_STRING_TYPE setting not being shown on ui (but saved and retrieved)",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/17937"
+}, {
+  "number" : 17968,
+  "repository" : "keycloak",
+  "title" : "Azure AD Error: AADSTS90023: Unsupported 'prompt' value",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/17968"
+}, {
+  "number" : 17974,
+  "repository" : "keycloak",
+  "title" : "Align user profile UI with the behavior from the old admin console",
+  "kind" : "bug",
+  "area" : "user-profile",
+  "url" : "https://github.com/keycloak/keycloak/issues/17974"
+}, {
+  "number" : 18080,
+  "repository" : "keycloak",
+  "title" : "Testing running on release branches",
+  "kind" : "enhancement",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/18080"
+} ]

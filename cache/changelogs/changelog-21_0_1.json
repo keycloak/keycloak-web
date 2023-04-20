@@ -1,0 +1,22 @@
+[ {
+  "number" : 17192,
+  "repository" : "keycloak",
+  "title" : "Duplicated set-cookie headers sent causing issues with proxies",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/17192"
+}, {
+  "number" : 17248,
+  "repository" : "keycloak",
+  "title" : "MigrateT021_0_0 fails with NPE if adminTheme is not configured explictly",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/17248"
+}, {
+  "number" : 17313,
+  "repository" : "keycloak",
+  "title" : "When upgrading from v20.0.2 to v21.0.0 I get a NPE on Theme",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/17313"
+} ]
