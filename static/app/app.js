@@ -15,7 +15,7 @@ function init() {
 
         keycloak.init({
             checkLoginIframe: false
-        }).success(function(auth) {
+        }).then(function(auth) {
             document.getElementById('login').onclick = keycloak.login;
             document.getElementById('logout').onclick = keycloak.logout;
 
