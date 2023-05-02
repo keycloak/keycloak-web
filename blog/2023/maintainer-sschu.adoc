@@ -1,0 +1,18 @@
+:title: New Keycloak maintainer: Sebastian Schuster
+:date: 2023-05-02
+:publish: true
+:author: Stian Thorgersen
+
+We are pleased to welcome https://github.com/sschu[Sebastian Schuster] as an official maintainer of Keycloak.
+
+Sebastian has contributed to Keycloak since 2019, when he convinced his company Bosch to use Keycloak for identity and
+access management. He has been active in the community providing help, taking part in discussions and contributing.
+Behind him, there is a whole team at Bosch providing more than 60 contributions over the last years in various areas.
+The declarative user profile was the most prominent feature contributed.
+
+His company allows him to dedicate a considerable amount of time for Keycloak to help review contributions and reports
+and get involved in discussions. Since Sebastian has got experience operating Keycloak on a wide scale over several
+years, he will focus on topics around cloud-native and Keycloak operations like observability.
+
+Not only will Sebastian on his own bring a lot of value to Keycloak, but he will also serve as an integration point for
+Bosch to enable more contributions from his team, allowing them to contribute more value to Keycloak in the future.
