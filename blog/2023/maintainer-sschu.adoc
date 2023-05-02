@@ -1,4 +1,4 @@
-:title: New Keycloak maintainer: Michal Hajas
+:title: New Keycloak maintainer: Sebastian Schuster
 :date: 2023-05-02
 :publish: true
 :author: Stian Thorgersen
