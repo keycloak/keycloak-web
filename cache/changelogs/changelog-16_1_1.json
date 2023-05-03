@@ -1,8 +1,0 @@
-[ {
-  "number" : 9767,
-  "repository" : "keycloak",
-  "title" : "Upgrade to WildFly 26.0.1.Final",
-  "kind" : "enhancement",
-  "area" : null,
-  "url" : "https://github.com/keycloak/keycloak/issues/9767"
-} ]
