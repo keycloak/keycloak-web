@@ -1,8 +1,0 @@
-[ {
-  "number" : 9247,
-  "repository" : "keycloak",
-  "title" : "Incorrect authorization allows unpriviledged users to create other users",
-  "kind" : "bug",
-  "area" : null,
-  "url" : "https://github.com/keycloak/keycloak/issues/9247"
-} ]
