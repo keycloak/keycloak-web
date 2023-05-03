@@ -52,7 +52,7 @@
                 Keycloak, users don't have to login again to access a different application.
             </p>
             <p>
-                This also applied to logout. Keycloak provides single-sign out, which means users only have to logout once to be
+                This also applies to logout. Keycloak provides single-sign out, which means users only have to logout once to be
                 logged-out of all applications that use Keycloak.
             </p>
         </div>
