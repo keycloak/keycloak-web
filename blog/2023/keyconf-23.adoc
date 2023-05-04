@@ -1,0 +1,11 @@
+:title: Keyconf 23
+:date: 2023-05-04
+:publish: true
+:author: Marek Posolda
+
+We would like to invite you to the Keycloak conference Keyconf 23!
+
+The event will take place on June 16 in London. The details about this event together with the links for free registration are
+https://www.eventbrite.co.uk/e/keyconf-23-tickets-621079815447[here]!
+
+The Keyconf conference takes place the day after the https://whitehallmedia.co.uk/idmjun2023/[IDM Identity Management] conference. If you are interested in security in general, this is a good opportunity to join the both conferences.
