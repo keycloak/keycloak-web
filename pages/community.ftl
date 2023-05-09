@@ -7,6 +7,7 @@
         <h2>Questions and help</h2>
 
         <ul class="ms-4 mt-2">
+            <li>Join <a href="https://cloud-native.slack.com/archives/C056HC17KK9">#keycloak</a>, or <a href="https://cloud-native.slack.com/archives/C056XU905S6">#keycloak-dev</a> on Slack for design discussions, or questions by creating an account at <a href="https://slack.cncf.io/">https://slack.cncf.io/</a></li>
             <li><a href="search.html">Search</a> for information in the documentation and mailing list</li>
             <li><a href="https://github.com/keycloak/keycloak/discussions">GitHub Discussions Forum</a> for discussions and asking questions</li>
             <li><a href="https://keycloak.discourse.group/">Discourse Forum</a> where you can ask questions</li>
