@@ -1,0 +1,10 @@
+:title: Authorization Survey
+:date: 2023-06-28
+:publish: true
+:author: Alec Henninger
+
+The authorization space is evolving rapidly. There is a steady establishment of general purpose policy languages for authorization, as well as a growing number of implementations of Google's "Zanzibar" whitepaper.
+
+To better understand how we should evolve Keycloak Authorization Services, we'd appreciate the opportunity to learn more about the Keycloak communities' authorization use cases and experience, regardless of whether you've used Keycloak Authorization Services before or if you use a different service for access management.
+
+Please consider filling out https://forms.gle/MkaSXQ9NuaR24qZt9[this brief, anonymous survey] to help shape Keycloak's future authorization experience.
