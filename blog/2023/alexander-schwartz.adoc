@@ -1,0 +1,12 @@
+:title: New Keycloak maintainer: Alexander Schwartz
+:date: 2023-06-28
+:publish: true
+:author: Bruno Oliveira
+
+We're delighted to announce https://github.com/ahus1[Alexander Schwartz] as an official maintainer of Keycloak.
+
+Alexander started contributing to Keycloak in 2015. He applied it in several customer installations and is maintaining the Dropwizard module for Keycloak. In January 2022, he joined Red Hat. Since then, he has contributed to Keycloak’s store and documentation and is the key contributor to the Keycloak benchmark project. He helped with Keycloak’s submission to CNCF, and represented Keycloak at KubeCon Amsterdam in April 2023. 
+
+He has shown his commitment to the Keycloak community by collaborating on design discussions, participating in GitHub discussions, reviewing pull-requests, answering questions on the Keycloak mailing lists, contributing to new features, bug fixes and triaging GitHub issues.
+
+The Keycloak team is very excited to welcome Alexander as our new maintainer and long-time contributor.
