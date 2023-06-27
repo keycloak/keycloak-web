@@ -1,5 +1,5 @@
 :title: New Keycloak maintainer: Alexander Schwartz
-:date: 2023-06-28
+:date: 2023-06-27
 :publish: true
 :author: Bruno Oliveira
 
