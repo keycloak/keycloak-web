@@ -1,0 +1,14 @@
+:title: Survey - Cross-site Replication in Keycloak
+:date: 2023-06-21
+:publish: true
+:author: Bruno Oliveira
+
+The Keycloak and Infinispan engineering teams are working together to bring Cross-Site Replication (CSR) to a fully
+supported state in future Keycloak releases, with Active/Passive support and Active/Active support.
+
+We would like to gather inputs on your expectations, requirements, use-cases and sizing of the target deployment
+environments for the CSR feature. Thanks in advance for filling out this survey form to help us better plan and deliver
+this feature.
+
+If your are interested in Active/Passive or Active/Active deployments of Keycloak please fill in
+https://forms.gle/RJAYDPScGdHrsaPa7[the survey].
