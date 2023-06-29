@@ -1,5 +1,5 @@
 :title: Survey - Cross-site Replication in Keycloak
-:date: 2023-06-21
+:date: 2023-06-29
 :publish: true
 :author: Bruno Oliveira
 
