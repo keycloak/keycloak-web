@@ -11,4 +11,4 @@ environments for the CSR feature. Thanks in advance for filling out this survey 
 this feature.
 
 If your are interested in Active/Passive or Active/Active deployments of Keycloak please fill in
-https://forms.gle/RJAYDPScGdHrsaPa7[the survey].
+https://forms.gle/B5TogcX7WvgdeNKD6[the survey].
