@@ -1,5 +1,5 @@
 :title: Survey - Cross-Site Replication in Keycloak
-:date: 2023-06-29
+:date: 2023-06-30
 :publish: true
 :author: Stian Thorgersen
 
