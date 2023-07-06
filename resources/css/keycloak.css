@@ -120,13 +120,20 @@ a:hover {
 }
 
 .kc-asciidoc th {
-    padding: 1.0rem 0.5rem 1rem 0;
+    padding: 0.5rem;
+    border: 1px solid #dee2e6;
+    background-color: #efefef;
 }
 
 .kc-asciidoc td {
     vertical-align: top;
     padding: 0.5rem;
     border: 1px solid #dee2e6;
+}
+
+/* the last paragraph in a table cell should not add additional margin, as the td already has a padding */
+.kc-asciidoc td p:last-of-type {
+    margin-bottom: 0;
 }
 
 .kc-asciidoc div.title {
@@ -159,6 +166,8 @@ table.options tr {
 
 table.options th {
     padding: 1.0rem 0.5rem;
+    border: none;
+    background-color: transparent;
 }
 
 table.options td {
