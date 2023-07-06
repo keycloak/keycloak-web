@@ -1,0 +1,10 @@
+:title: Authorization Survey
+:date: 2023-07-06
+:publish: true
+:author: Alec Henninger
+
+Services dedicated to authorization are evolving rapidly. There is a steady establishment of policy languages, purpose-built for authorization, as well as a growing number of implementations of Google's "Zanzibar" whitepaper, their https://research.google/pubs/pub48190/[global, consistent authorization system].
+
+To better understand how we should evolve Keycloak Authorization Services in this context, we'd appreciate the opportunity to learn more about the Keycloak communities' authorization use cases and experience, regardless of whether you've used Keycloak Authorization Services before or if you use a different service for access management.
+
+Please consider filling out https://forms.gle/MkaSXQ9NuaR24qZt9[this brief, anonymous survey] to help shape Keycloak's future authorization experience.
