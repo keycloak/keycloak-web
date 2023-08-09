@@ -23,7 +23,7 @@ Server and Operator guide sources are located at `https://github.com/keycloak/ke
 
     git clone https://github.com/keycloak/keycloak
     cd keycloak
-    mvn -pl docs clean install
+    mvn -pl docs/guides clean install
 
 Then you can build the website with the `999.0.0-SNAPSHOT` version:
 

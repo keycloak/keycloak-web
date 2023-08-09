@@ -88,6 +88,7 @@ public class AsciiDoctor {
         globalAttributes = new HashMap<>();
         globalAttributes.put("version", context.versions().getLatest().getVersion());
         globalAttributes.put("majorMinorVersion", context.versions().getLatest().getVersionShorter());
+        globalAttributes.put("project_community", "true");
     }
 
     public void close() {
