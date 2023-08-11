@@ -1,0 +1,5 @@
+{
+  "name": "Cassandra Datastore",
+  "description": "Use Apache Cassandra as storage backend. Can be used to just replace Infinispan as distributed cache. Requires experimental map storage feature.",
+  "website": "https://github.com/opdt/keycloak-cassandra-extension"
+}
