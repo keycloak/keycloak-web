@@ -1,0 +1,5 @@
+{
+    "name": "Keycloak Multi-Tenancy",
+    "description": "Keycloak extension for creating multi-tenant IAM for B2B SaaS applications.",
+    "website": "https://github.com/anarsultanov/keycloak-multi-tenancy"
+}
