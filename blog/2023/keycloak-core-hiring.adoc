@@ -1,0 +1,8 @@
+:title: Senior Software Engineer Opening on Keycloak's Core Team!
+:date: 2023-08-29
+:publish: true
+:author: Bruno Oliveira
+
+Red Hat is looking for a Senior Software Engineer who is eager to contribute to the evolving landscape of Identity and Access Management through Keycloak. In addition to improving existing functionalities, you will have the opportunity to innovate and work on new features. 
+
+If you have a solid Java experience, a strong interest in security, thrive in a collaborative environment, and are keen to make a meaningful impact on the IAM landscape, https://global-redhat.icims.com/jobs/100108/senior-software-engineer---identity-%26-access-management/job?mode=view&mobile=false&width=708&height=500&bga=true&needsRedirect=false&jan1offset=60&jun1offset=120[we invite you to apply and become part of our team].
