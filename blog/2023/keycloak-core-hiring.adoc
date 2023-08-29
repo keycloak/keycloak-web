@@ -1,5 +1,5 @@
 :title: Senior Software Engineer Opening on Keycloak's Core Team!
-:date: 2023-08-25
+:date: 2023-08-29
 :publish: true
 :author: Bruno Oliveira
 
