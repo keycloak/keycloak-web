@@ -1,0 +1,15 @@
+:title: 2nd edition of the Keycloak book is out
+:date: 2023-09-11
+:publish: true
+:author: Stian Thorgersen
+
+We're pleased to announce that the 2nd edition of the Keycloak book is out, and available for
+link:https://a.co/d/58BbJ96[available for purchase on Amazon].
+
+This new edition has been updated to the latest release of Keycloak, making the book compatible with the newer Quarkus
+distribution of Keycloak, as well as the new administration console.
+
+If you are new to Keycloak this book brings an excellent guide to getting started with Keycloak, including how to secure
+a range of different application types with Keycloak.
+
+image:${blogImages}/book-2nd-edition.png["Keycloak - Identity and Access Management for Modern Applications: Harness the power of Keycloak, OpenID Connect, and OAuth 2.0 to secure applications 2nd Edition"]
