@@ -11,8 +11,9 @@ import java.util.Map;
 
 public class ReleaseNotesBuilder extends AbstractBuilder {
 
-    private static final String BASE_URL = "https://raw.githubusercontent.com/keycloak/keycloak/main/docs/documentation/";
-    private static final String DOCUMENT_ATTRIBUTES_URL = BASE_URL + "topics/templates/document-attributes.adoc";
+    private static final String DOCUMENT_ATTRIBUTES_URL = "https://raw.githubusercontent.com/keycloak/keycloak/main/docs/documentation/topics/templates/document-attributes.adoc";
+
+    private static final String RELEASE_NOTES_URL = "https://raw.githubusercontent.com/keycloak/keycloak/release/%s/docs/documentation/release_notes/topics/%s.adoc";
 
     @Override
     protected String getTitle() {
@@ -32,7 +33,8 @@ public class ReleaseNotesBuilder extends AbstractBuilder {
 
         for (Versions.Version v : context.versions()) {
             try {
-                URL url = new URL(BASE_URL + "release_notes/topics/" + v.getVersion().replace(".", "_") + ".adoc");
+                String releaseNotesUrl = String.format(RELEASE_NOTES_URL, v.getVersionShorter(), v.getVersion().replace(".", "_"));
+                URL url = new URL(releaseNotesUrl);
 
                 String fileName = "release-notes-" + v.getVersion().replace(".", "_") + ".html";
 
