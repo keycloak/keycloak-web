@@ -1,8 +1,0 @@
-[ {
-  "number" : 12619,
-  "repository" : "keycloak",
-  "title" : "New admin console inaccessible",
-  "kind" : "bug",
-  "area" : "admin/ui",
-  "url" : "https://github.com/keycloak/keycloak/issues/12619"
-} ]
