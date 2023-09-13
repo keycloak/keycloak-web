@@ -4,11 +4,9 @@ import org.keycloak.webbuilder.builders.AbstractBuilder;
 import org.keycloak.webbuilder.builders.AppBuilder;
 import org.keycloak.webbuilder.builders.BlogBuilder;
 import org.keycloak.webbuilder.builders.ChangelogBuilder;
-import org.keycloak.webbuilder.builders.Cleaner;
 import org.keycloak.webbuilder.builders.DocumentationArchiveBuilder;
 import org.keycloak.webbuilder.builders.DownloadsArchiveBuilder;
 import org.keycloak.webbuilder.builders.GuideBuilder;
-import org.keycloak.webbuilder.builders.MigrationNotesBuilder;
 import org.keycloak.webbuilder.builders.PageBuilder;
 import org.keycloak.webbuilder.builders.ReleaseNotesBuilder;
 import org.keycloak.webbuilder.builders.ResourcesBuilder;
@@ -25,7 +23,6 @@ public class WebBuilder {
 //            new Cleaner(),
             new ResourcesBuilder(),
             new ReleaseNotesBuilder(),
-            new MigrationNotesBuilder(),
             new ChangelogBuilder(),
             new BlogBuilder(),
             new GuideBuilder(),
