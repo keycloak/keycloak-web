@@ -25,7 +25,7 @@ public class Versions extends LinkedList<Versions.Version> {
     }
 
     public Version getLatest() {
-        return get(0);
+        return get(1);
     }
 
     public Version getPrevious() {
