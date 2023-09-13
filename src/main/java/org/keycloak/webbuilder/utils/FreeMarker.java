@@ -79,7 +79,6 @@ public class FreeMarker {
         globalAttributes.put("extensions", context.extensions());
 
         globalAttributes.put("version", context.versions().getLatest());
-        globalAttributes.put("versionPrevious", context.versions().getPrevious());
 
         globalAttributes.put("news", context.news());
         globalAttributes.put("blogs", context.blogs());
