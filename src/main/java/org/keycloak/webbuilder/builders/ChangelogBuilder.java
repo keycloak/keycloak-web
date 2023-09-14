@@ -16,6 +16,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class ChangelogBuilder extends AbstractBuilder {
 
@@ -104,13 +105,11 @@ public class ChangelogBuilder extends AbstractBuilder {
         }
 
         try {
-            Process process = Runtime.getRuntime().exec("gh auth status -t");
-            BufferedReader ir = new BufferedReader(new InputStreamReader(process.getErrorStream()));
+            Process process = Runtime.getRuntime().exec("gh auth token");
+            process.waitFor(60, TimeUnit.SECONDS);
+            BufferedReader ir = new BufferedReader(new InputStreamReader(process.getInputStream()));
             for (String l = ir.readLine(); l != null; l = ir.readLine()) {
-                if (l.contains("Token:")) {
-                    printStep("token", "Using token from GitHub command line");
-                    return l.split(": ")[1];
-                }
+                return l.trim();
             }
             process.destroy();
         } catch (Exception e) {

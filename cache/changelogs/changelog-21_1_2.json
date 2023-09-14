@@ -1,0 +1,260 @@
+[ {
+  "number" : 51,
+  "repository" : "security",
+  "title" : "CVE-2023-1664 keycloak-core: keycloak: Untrusted Certificate Validation [rhsso-7]",
+  "kind" : "publicly-disclosed",
+  "area" : null,
+  "url" : "https://github.com/keycloak/security/issues/51"
+}, {
+  "number" : 15878,
+  "repository" : "keycloak",
+  "title" : "CVE-2022-41946 - Information Exposure vulnerability in org.postgresql:postgresql",
+  "kind" : "cve",
+  "area" : "dependencies",
+  "url" : "https://github.com/keycloak/keycloak/issues/15878"
+}, {
+  "number" : 15879,
+  "repository" : "keycloak",
+  "title" : "[CVE-2022-4147] Access Restriction Bypass vulnerability in io.quarkus:quarkus-vertx-http",
+  "kind" : "cve",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/15879"
+}, {
+  "number" : 17165,
+  "repository" : "keycloak",
+  "title" : "Issue with \"User-Initiated Action Lifespan\"",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/17165"
+}, {
+  "number" : 17475,
+  "repository" : "keycloak",
+  "title" : "CVE-2023-0482 - Creation of Temporary File With Insecure Permissions vulnerability in org.jboss.resteasy:resteasy-core",
+  "kind" : "cve",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/17475"
+}, {
+  "number" : 17555,
+  "repository" : "keycloak",
+  "title" : "CVE-2023-0482- Creation of Temporary File With Insecure Permissions vulnerability in org.jboss.resteasy:resteasy-multipart-provider",
+  "kind" : "cve",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/17555"
+}, {
+  "number" : 17556,
+  "repository" : "keycloak",
+  "title" : "CVE-2022-45787 - Information Exposure vulnerability in org.apache.james:apache-mime4j-storage",
+  "kind" : "cve",
+  "area" : "dependencies",
+  "url" : "https://github.com/keycloak/keycloak/issues/17556"
+}, {
+  "number" : 17557,
+  "repository" : "keycloak",
+  "title" : "CVE-2023-0481 - Creation of Temporary File With Insecure Permissions vulnerability in io.quarkus.resteasy.reactive:resteasy-reactive-common",
+  "kind" : "cve",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/17557"
+}, {
+  "number" : 19080,
+  "repository" : "keycloak",
+  "title" : "Vulnerable packages and or dependencies found in keycloak 21.0.1 quarkus distribution",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/19080"
+}, {
+  "number" : 19286,
+  "repository" : "keycloak",
+  "title" : "CVE-2022-1471",
+  "kind" : "bug",
+  "area" : "dependencies",
+  "url" : "https://github.com/keycloak/keycloak/issues/19286"
+}, {
+  "number" : 19491,
+  "repository" : "keycloak",
+  "title" : "Cannot set initial password for new users when using a custom UserFederation",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/19491"
+}, {
+  "number" : 19689,
+  "repository" : "keycloak",
+  "title" : "SAML Encryption: Missing Support for http://www.w3.org/2009/xmlenc11#rsa-oaep",
+  "kind" : "bug",
+  "area" : "saml",
+  "url" : "https://github.com/keycloak/keycloak/issues/19689"
+}, {
+  "number" : 19835,
+  "repository" : "keycloak",
+  "title" : "Keycloak issues on edge and after chrome upgarde to 112 (with experimental features)",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/19835"
+}, {
+  "number" : 19865,
+  "repository" : "keycloak",
+  "title" : "Enabling Dynamic Scope missing in UI",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/19865"
+}, {
+  "number" : 19879,
+  "repository" : "keycloak",
+  "title" : "Incorrect function is used in 'keycloak-admin-client' library in getToken function",
+  "kind" : "bug",
+  "area" : "adapter/javascript",
+  "url" : "https://github.com/keycloak/keycloak/issues/19879"
+}, {
+  "number" : 19883,
+  "repository" : "keycloak",
+  "title" : "Saving client admin-cli in master realm gives a javascript error",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/19883"
+}, {
+  "number" : 19966,
+  "repository" : "keycloak",
+  "title" : "Paginating on the group tree view doesn't work",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/19966"
+}, {
+  "number" : 19974,
+  "repository" : "keycloak",
+  "title" : "Dropdown options on Documentation pointing to 21.1 endpoint instead of latest and throwing 404 when clicking on it.",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/19974"
+}, {
+  "number" : 19981,
+  "repository" : "keycloak",
+  "title" : "Keycloak 21.1.1: Paging and filtering not working in \"Assign roles\" popup for Groups",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/19981"
+}, {
+  "number" : 19999,
+  "repository" : "keycloak",
+  "title" : "Keycloak 21.1.1: filter on Sessions gets stuck",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/19999"
+}, {
+  "number" : 20032,
+  "repository" : "keycloak",
+  "title" : "Processing of env variable references in config file broken",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/20032"
+}, {
+  "number" : 20068,
+  "repository" : "keycloak",
+  "title" : "LDAP Mapper Action Menu Error",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/20068"
+}, {
+  "number" : 20087,
+  "repository" : "keycloak",
+  "title" : "Event-Type: \"User info request error\" does not work",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/20087"
+}, {
+  "number" : 20096,
+  "repository" : "keycloak",
+  "title" : "Create new user UI: username is not marked with an asterisk",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/20096"
+}, {
+  "number" : 20140,
+  "repository" : "keycloak",
+  "title" : "role filter has no effect on roles list",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/20140"
+}, {
+  "number" : 20143,
+  "repository" : "keycloak",
+  "title" : "required fields don't show errors when user profile is enabled",
+  "kind" : "bug",
+  "area" : "account/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/20143"
+}, {
+  "number" : 20258,
+  "repository" : "keycloak",
+  "title" : "OTP devices are not shown in the admin UI",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/20258"
+}, {
+  "number" : 20307,
+  "repository" : "keycloak",
+  "title" : "Test `InternationalizationTest` fails in CI",
+  "kind" : "bug",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/20307"
+}, {
+  "number" : 20364,
+  "repository" : "keycloak",
+  "title" : "Update Snyk Workflow to target other branches",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/20364"
+}, {
+  "number" : 20370,
+  "repository" : "keycloak",
+  "title" : "Deleting a client scope in the Admin UI should redirect to the list of ClientScopes",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/20370"
+}, {
+  "number" : 20379,
+  "repository" : "keycloak",
+  "title" : "SAML Protocol Mapper's NameIDFormat is null",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/20379"
+}, {
+  "number" : 20515,
+  "repository" : "keycloak",
+  "title" : "Headers is not defined",
+  "kind" : "bug",
+  "area" : "admin/client-js",
+  "url" : "https://github.com/keycloak/keycloak/issues/20515"
+}, {
+  "number" : 20562,
+  "repository" : "keycloak",
+  "title" : "Update Keycloak to Quarkus 2.13.8.Final",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/20562"
+}, {
+  "number" : 20613,
+  "repository" : "keycloak",
+  "title" : "Avoid using user property mapper when resolving root user attributes",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/20613"
+}, {
+  "number" : 20631,
+  "repository" : "keycloak",
+  "title" : "\nHigh severity - Use of a Broken or Risky Cryptographic Algorithm vulnerability in org.bitbucket.b_c:jose4j",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/20631"
+}, {
+  "number" : 20663,
+  "repository" : "keycloak",
+  "title" : "Fix for certificate revalidation ",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/20663"
+}, {
+  "number" : 20664,
+  "repository" : "keycloak",
+  "title" : "Upgrade Operator to QOSDK 4.0.9",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/20664"
+} ]

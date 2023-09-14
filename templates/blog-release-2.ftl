@@ -8,7 +8,7 @@
 <h2>Upgrading</h2>
 <p>Before upgrading refer to <a href="${home}/docs/latest/upgrading/index.html#migration-changes">the migration guide</a> for a complete list of changes.</p>
 
-<#if version.changes??>
+<#if version.changes?? && version.changes.all?has_content>
 <h2>All resolved issues</h2>
 
 <#if version.changes.deprecations?has_content>
