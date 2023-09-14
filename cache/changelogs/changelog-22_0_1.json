@@ -1,0 +1,85 @@
+[ {
+  "number" : 10503,
+  "repository" : "keycloak",
+  "title" : "Revisit Pod-Template in Keycloak CR",
+  "kind" : "enhancement",
+  "area" : "operator",
+  "url" : "https://github.com/keycloak/keycloak/issues/10503"
+}, {
+  "number" : 15344,
+  "repository" : "keycloak",
+  "title" : "Support configurable custom Identity Providers",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/15344"
+}, {
+  "number" : 17711,
+  "repository" : "keycloak",
+  "title" : "Accessibility/Clients List: Minor Issues",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/17711"
+}, {
+  "number" : 21258,
+  "repository" : "keycloak",
+  "title" : "CVE-2022-1471- SnakeYaml remote code execution by sending malicious YAML content",
+  "kind" : "cve",
+  "area" : "dependencies",
+  "url" : "https://github.com/keycloak/keycloak/issues/21258"
+}, {
+  "number" : 21607,
+  "repository" : "keycloak",
+  "title" : "`keycloakCRName` and `realm` are no longer marked as required in KeycloakRealmImport CRD",
+  "kind" : "bug",
+  "area" : "operator",
+  "url" : "https://github.com/keycloak/keycloak/issues/21607"
+}, {
+  "number" : 21625,
+  "repository" : "keycloak",
+  "title" : "Version 22.0.0 not started in dev mode and build mode",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/21625"
+}, {
+  "number" : 21626,
+  "repository" : "keycloak",
+  "title" : "[REG 21->22] Error messages on kc build",
+  "kind" : "enhancement",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/21626"
+}, {
+  "number" : 21629,
+  "repository" : "keycloak",
+  "title" : "Migration for 22.0.0 is missing from the documentation",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/21629"
+}, {
+  "number" : 21637,
+  "repository" : "keycloak",
+  "title" : "Broken links to quickstarts in documentation",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/21637"
+}, {
+  "number" : 21657,
+  "repository" : "keycloak",
+  "title" : "Account V3 Missing translate Refresh",
+  "kind" : "bug",
+  "area" : "account/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/21657"
+}, {
+  "number" : 21698,
+  "repository" : "keycloak",
+  "title" : "Keycloak is storing error events even if storing events is disabled",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/21698"
+}, {
+  "number" : 21733,
+  "repository" : "keycloak",
+  "title" : "Fixing broken JSON translation files",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/21733"
+} ]

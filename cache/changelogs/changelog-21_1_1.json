@@ -1,0 +1,99 @@
+[ {
+  "number" : 17514,
+  "repository" : "keycloak",
+  "title" : "SAML2 Client Signing Keys Config does not accept PEM import",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/17514"
+}, {
+  "number" : 19469,
+  "repository" : "keycloak",
+  "title" : "ClientPolicies: Deserialization of `MultivaluedString ` config property doesn't work properly between new admin-ui and backend",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/19469"
+}, {
+  "number" : 19513,
+  "repository" : "keycloak",
+  "title" : "Trusted Hosts configuration in Client Registration Policy not working",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/19513"
+}, {
+  "number" : 19532,
+  "repository" : "keycloak",
+  "title" : "When editing JS policy, the text area with \"Code\" should be read-only",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/19532"
+}, {
+  "number" : 19582,
+  "repository" : "keycloak",
+  "title" : "UI glitches in Users - Groups - Join Group",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/19582"
+}, {
+  "number" : 19609,
+  "repository" : "keycloak",
+  "title" : "Declarative user profile attribute options validator is not added correctly",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/19609"
+}, {
+  "number" : 19673,
+  "repository" : "keycloak",
+  "title" : "Sessions displayed multiple times",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/19673"
+}, {
+  "number" : 19800,
+  "repository" : "keycloak",
+  "title" : "Installation of keycloak-js fails with npm and yarn",
+  "kind" : "bug",
+  "area" : "adapter/javascript",
+  "url" : "https://github.com/keycloak/keycloak/issues/19800"
+}, {
+  "number" : 19801,
+  "repository" : "keycloak",
+  "title" : "Documentation doesn't have versions set properly",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/19801"
+}, {
+  "number" : 19803,
+  "repository" : "keycloak",
+  "title" : "`.\\kc.bat start-dev` on Windows failed to start in 21.1.0",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/19803"
+}, {
+  "number" : 19841,
+  "repository" : "keycloak",
+  "title" : "Upgrade from 21.0.2 to 21.1.0 fails on oracle db",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/19841"
+}, {
+  "number" : 19850,
+  "repository" : "keycloak",
+  "title" : "Keycloak Quarkus Server dependency broken",
+  "kind" : "bug",
+  "area" : "dependencies",
+  "url" : "https://github.com/keycloak/keycloak/issues/19850"
+}, {
+  "number" : 19867,
+  "repository" : "keycloak",
+  "title" : "Not possible to override default or built-in providers",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/19867"
+}, {
+  "number" : 19875,
+  "repository" : "keycloak",
+  "title" : "Validators not saved when creating new User profile -> Attribute",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/19875"
+} ]

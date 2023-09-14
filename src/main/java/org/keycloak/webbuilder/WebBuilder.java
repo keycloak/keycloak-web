@@ -21,9 +21,9 @@ public class WebBuilder {
 
     private AbstractBuilder[] builders = new AbstractBuilder[] {
 //            new Cleaner(),
+            new ChangelogBuilder(),
             new ResourcesBuilder(),
             new ReleaseNotesBuilder(),
-            new ChangelogBuilder(),
             new BlogBuilder(),
             new GuideBuilder(),
             new PageBuilder(),
