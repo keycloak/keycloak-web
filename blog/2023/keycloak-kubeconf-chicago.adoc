@@ -1,0 +1,50 @@
+:title: Meet Keycloak at KubeCon Chicago in Nov 2023
+:date: 2023-10-10
+:publish: true
+:author: Kamesh Akella
+
+We are thrilled to announce that Keycloak will be at KubeCon Chicago 2023. There are several Keycloak specific sessions lined up during this Conference, and we will be hosting a Kiosk at the Project Pavilion at KubeCon 2023 Chicago.
+
+== What is KubeCon?
+
+As some of you might already know, KubeCon is a fast-growing Cloud Native tech conference that is expected to have 8,000 developers, architects, and technical leaders onsite as well as thousands of participants virtually.
+
+KubeCon Chicago will be held from Nov. 6th, 2023 through Nov. 9th, 2023, with many of the co-located events happening on Monday Nov 6th, 2023.
+
+== Keycloak community Meet & Greet at the Project Pavilion
+
+https://github.com/ahus1[Alexander Schwartz], https://github.com/mhajas[Michal Hajas], https://github.com/tnorimat[Takashi Norimatsu] and https://github.com/kami619[Kamesh Akella] will be at the Keycloak kiosk at the Project Pavilion. This is a great chance to meet people who use Keycloak, contribute to Keycloak, take our survey about new Keycloak features, and get some cool swag!
+
+*Keycloak Kiosk opening hours:*
+
+- Tuesday, November 7: 10:30 - 3:30 PM CST
+- Wednesday, November 8: 10:30 - 2:00 PM CST
+- Thursday, November 9: 10:30 - 12:30 PM CST
+
+== OpenShift Commons Gathering
+
+The OpenShift Commons Gathering happens on Monday (Nov. 6th, 2023) and builds connections and collaboration across OpenShift communities, projects and stakeholders. Some maintainers from the Keycloak development team will be here during the afternoon. This gives a chance for more community Keycloak maintainers, contributors, and users to meet and share their ideas or just hang out. Access to the OpenShift Commons event is free and does not require a paid KubeCon ticket, https://commons.openshift.org/gatherings/kubecon-23-nov-6/[still you’ll need to register on their website in advance].
+
+== Keycloak specific events at KubeCon
+
+Below are some Keycloak specific events that the attendees both in-person and virtually can plan to attend.
+
+- Tuesday, November 7, 11:00am - 11:35am CST(UTC-6) +
+https://kccncna2023.sched.com/event/1R2mH/10-years-of-keycloak-whats-next-for-cloud-native-authentication-and-oidc-alexander-schwartz-red-hat-takashi-norimatsu-hitachi-ltd?iframe=no&w=100%&sidebar=yes&bg=no[*10 Years of Keycloak - What's Next for Cloud-Native Authentication and OIDC?*] +
+By Alexander Schwartz, Red Hat & Takashi Norimatsu, Hitachi, Ltd.
+
+- Tuesday, November 7, 11:55am - 12:30pm CST(UTC-6) +
+https://kccncna2023.sched.com/event/1R2ma/challenge-to-implementing-scalable-authorization-with-keycloak-yoshiyuki-tabata-hitachi-ltd?iframe=no&w=100%&sidebar=yes&bg=no[*Challenge to Implementing "`Scalable`" Authorization with Keycloak*] +
+By Yoshiyuki Tabata, Hitachi, Ltd.
+
+- Tuesday, November 7, 2:30pm - 4:00pm CST(UTC-6) +
+https://kccncna2023.sched.com/event/1R2nt/contribfest-keycloak-accelerate-new-features-squash-bugs-and-learn-to-contribute-alexander-schwartz-michal-hajas-red-hat?iframe=no&w=100%&sidebar=yes&bg=no[*Contribfest: Keycloak - Accelerate New Features, Squash Bugs and Learn to Contribute*] +
+By Alexander Schwartz & Michal Hajas, Red Hat
+
+- Wednesday, November 8, 11:55am - 12:30pm CST(UTC-6) +
+https://kccncna2023.sched.com/event/1R2qR/beyond-passwords-keycloaks-contributions-to-iamidentity-and-access-management-security-soojin-lee-hoon-jo-megazone?iframe=no&w=100%&sidebar=yes&bg=no[*Beyond Passwords: Keycloak's Contributions to IAM (Identity and Access Management) + Security*] +
+By Soojin Lee & Hoon Jo, Megazone
+
+We're preparing for KubeCon Chicago 2023 and can't wait to connect with our community. Mark your calendars and join us.
+
+See you in Chicago!
