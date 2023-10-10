@@ -1,5 +1,5 @@
 :title: Meet Keycloak at KubeCon Chicago in Nov 2023
-:date: 2023-10-12
+:date: 2023-10-10
 :publish: true
 :author: Kamesh Akella
 
