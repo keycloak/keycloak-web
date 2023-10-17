@@ -1,0 +1,24 @@
+:title: Announcement: Discontinuation of Keycloak's Map Store
+:date: 2023-10-17
+:publish: true
+:author: Stefan Guilhen
+
+Dear Keycloak community,
+
+For the past two years, the Keycloak store team has been working on a https://github.com/keycloak/keycloak-community/blob/main/design/keycloak.x/storage.md[replacement for the storage layer], which became known as the Map Store. Despite the successful development of many features, such as a new JPA storage layer with some no downtime capabilities, a new Hot Rod storage layer, flexible configuration, among others, the amount of work remaining for the store to be fully operational and supported is still quite significant. There is still a lot of uncertainty and risk involved in getting to the point where the store is production ready and able to provide enough value for users to migrate to it.
+
+To give more context, the new Map Store still lacks support for databases other than PostgreSQL and CockroachDB, a caching layer, implementation of the tree store that ties all the stores together, a migration strategy to Map Store, thorough testing, among other things. Each of these items is complex, require a significant amount of development and testing time, and carry risks of their own.
+
+This situation, combined with the need to address existing issues and demands in the storage area now rather than in a somewhat distant future, led us to the tough decision to stop any development in the Map Store. Instead the team will focus on improving the capabilities of the current store and deliver these improvements in smaller chunks and quicker iterations. One of these improvements is to fully support a high availability setup for Keycloak spanning multiple data centers and regions, also known as cross-DC support. While this has been a preview feature in the past, this should now become fully supported in a future release and include guides on how to configure different parts in a cloud environment.
+
+The experience we gained from the Map Store development won’t be wasted though, as the ideas and experiments that worked well in the Map Store are all natural candidates for enhancements in the storage area. Still the Map Store will be entirely removed from the main codebase. Having two different storage implementations is greatly complicating the maintenance process and also making it more difficult for users and other teams to work with the store as they need to understand how to operate on two very different implementations.
+
+== What's next?
+
+For the time being, the Map Store will be available in a separate branch, yet to be created. It will exist mainly to provide us with a way to fetch bits and pieces that can be valuable to the current store. Then, you can expect the gradual removal of the Map Storage bits from the codebase starting with Keycloak 23. This encompasses, among other things, closing the Map Storage issues on Github, removal of Map Store CLI options, and removal of the Map Store modules.
+
+In the near to mid-term future, the store team will continue to focus on cross-DC and some selected smaller improvements/refactorings for the current store. We will prioritize working on highly voted issues and pull requests provided by the community. In parallel, the plan is to develop a roadmap for features and capabilities that we want to bring to the Keycloak store after wrapping up the cross-DC work, and then share this roadmap so it can be discussed and prioritized according to the community's feedback.
+
+We would also like to thank the Keycloak community for the engagement and feedback during the development of the Map Store. We know that discarding a significant amount of work is not ideal, but we are confident that this decision is the most beneficial for Keycloak and its users in the long run as it will allow us to deliver meaningful value quicker. The team remains focused on improving the store layer and is looking forward to meeting all the challenges ahead.
+
+Keycloak Store Team
