@@ -23,7 +23,7 @@
             </div>
         </div>
         <div class="col col-4 d-none d-lg-block">
-            <img class="img-fluid" src="${links.getResource('images/keycloak_icon_512px.svg')}" aria-hidden="true" alt="Keycloak"/>
+            <img class="img-fluid" src="${links.getResource('images/icon.svg')}" width="550" aria-hidden="true" alt="Keycloak"/>
         </div>
     </div>
   </div>
