@@ -28,7 +28,7 @@
 <header class="navbar navbar-expand-md bg-light shadow-sm">
 <nav class="container-xxl flex-wrap flex-md-no-wrap navbar-light">
     <a class="navbar-brand me-5" href="${links.home}">
-        <img class="img-fluid" src="${links.getResource('images/keycloak_logo_200px.svg')}" width="240" alt="Keycloak"/>
+        <img class="img-fluid" src="${links.getResource('images/logo.svg')}" width="240" alt="Keycloak"/>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="fa fa-bars fa-lg px-1 py-2"></span>
@@ -58,13 +58,12 @@
 <#nested>
 
 <div class="container">
-    <footer class="d-flex flex-wrap justify-content-between align-items-center pt-2 mt-3 mb-3">
-        <div class="col-md-4 d-flex align-items-center">
-            <span class="text-muted me-3">Sponsored by</span>
-            <a href="http://www.redhat.com/" target="_blank" class="">
-                <img alt="Red Hat" src="${links.getResource('images/Logo-RedHat-A-Standard-RGB.svg')}" width="100">
-            </a>
+    <footer class="py-3 my-4">
+        <p class="text-center text-muted">Keycloak is a Cloud Native Computing Foundation incubation project</p>
+        <div class="text-center">
+            <img alt="Cloud Native Computing Foundation" src="${links.getResource('images/cncf_logo.png')}"/>
         </div>
+        <p class="mt-4 text-center small text-muted">&copy; Keycloak Authors 2023. &copy; 2023 The Linux Foundation. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage">Trademark Usage page</a>.</p>
     </footer>
 </div>
 
