@@ -1,0 +1,29 @@
+:title: Developer Certificate of Origin
+:date: 2023-10-31
+:publish: true
+:author: Stian Thorgersen
+
+For any Open Source project, it is important that any contributions contain code that can legally be contributed to the
+project, and that the project has the right to distribute it under its license. There are many ways to achieve this,
+where two popular approaches are Developer Certificate of Origin (DCO) and Contributor License Agreement (CLA).
+
+https://developercertificate.org/[Developer Certificate of Origin (DCO)] is the most lightweight approach, which
+requires contributors to sign-off on individual commits that are part of a contribution. This is easily done by using
+the `--signoff` (`-s`) option when creating a commit. For example:
+
+....
+git commit -s -m "Description of the commit"
+....
+
+This adds a `Signed-off-by` statement at the end of the commit, where the contributor certifies they are following the
+agreement laid out in the https://developercertificate.org/[Developer Certificate of Origin (DCO)].
+
+Contributor License Agreement (CLA), on the other hand, is a more complicated approach. As part of CLA, any contributors
+are required to sign an upfront agreement with the project before making any contributions. This provides a higher
+barrier for contributors, and also a higher cost for the Open Source Project as it has to maintain a list of approved
+contributors with a corresponding maintained archive of agreements.
+
+For Keycloak we decided to go with DCO as we believe it is much simpler both for contributors as well as maintainers.
+
+If you are interested in learning more about CLA vs DCO,
+https://opensource.com/article/18/3/cla-vs-dco-whats-difference[opensource.com has an excellent article on the subject].
