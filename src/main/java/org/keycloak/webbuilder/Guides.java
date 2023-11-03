@@ -68,8 +68,11 @@ public class Guides {
 
         Map<String, Integer> guidePriorities = loadPinnedGuides(new File(d, "pinned-guides"));
 
+        File sharedAttributesFile = new File(d.getParentFile(), "attributes.adoc");
+        Map<String, Object> sharedAttributes = sharedAttributesFile.isFile() ? asciiDoctor.parseAttributes(sharedAttributesFile) : Collections.emptyMap();
+
         for (File f: d.listFiles((dir, name) -> name.endsWith(".adoc") && !name.equals("index.adoc"))) {
-            Map<String, Object> attributes = asciiDoctor.parseAttributes(f);
+            Map<String, Object> attributes = asciiDoctor.parseAttributes(f, sharedAttributes);
 
             boolean community = "true".equals(attributes.get("community"));
             try {
