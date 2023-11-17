@@ -29,25 +29,36 @@ public class ReleaseNotesBuilder extends AbstractBuilder {
 
         attributes = context.asciiDoctor().parseAttributes(new URL(DOCUMENT_ATTRIBUTES_URL), attributes);
 
-        context.getTmpDir().mkdirs();
+        File releasesCache = new File(context.getCacheDir(), "releases");
 
         for (Versions.Version v : context.versions()) {
             try {
-                String releaseNotesUrl = String.format(RELEASE_NOTES_URL, v.getVersionShorter(), v.getVersion().replace(".", "_"));
-                URL url = new URL(releaseNotesUrl);
+                File releaseCacheDir = new File(releasesCache, v.getVersion());
+                releaseCacheDir.mkdirs();
 
-                String fileName = "release-notes-" + v.getVersion().replace(".", "_") + ".html";
+                File releaseNotesFile = new File(releaseCacheDir, "release-notes.html");
+                File releaseNotesMissingFile = new File(releaseCacheDir, "release-notes.empty");
 
-                if (new File(context.getTmpDir(), fileName).isFile()) {
+                if (releaseNotesFile.isFile()) {
                     printStep("exists", v.getVersion());
+                } else if (releaseNotesMissingFile.isFile()) {
+                    printStep("missing",  v.getVersion());
                 } else {
-                    context.asciiDoctor().writeFile(attributes, url, context.getTmpDir(), fileName);
-                    printStep("created", v.getVersion());
+                    String releaseNotesUrl = String.format(RELEASE_NOTES_URL, v.getVersionShorter(), v.getVersion().replace(".", "_"));
+                    URL url = new URL(releaseNotesUrl);
+
+                    try {
+                        context.asciiDoctor().writeFile(attributes, url, releaseNotesFile.getParentFile(), releaseNotesFile.getName());
+                        printStep("created", v.getVersion());
+                    } catch (FileNotFoundException e) {
+                        printStep("notfound",  v.getVersion());
+                        releaseNotesMissingFile.createNewFile();
+                    }
                 }
 
-                v.setReleaseNotes("target/tmp/" + fileName);
-            } catch (FileNotFoundException e) {
-                printStep("missing",  v.getVersion());
+                if (releaseNotesFile.isFile()) {
+                    v.setReleaseNotes("cache/releases/" + v.getVersion() + "/release-notes.html");
+                }
             } catch (Exception e) {
                 printStep("error", v.getVersion() + " (" + e.getClass().getSimpleName() + ")");
             }

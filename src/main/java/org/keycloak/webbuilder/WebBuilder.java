@@ -6,6 +6,7 @@ import org.keycloak.webbuilder.builders.BlogBuilder;
 import org.keycloak.webbuilder.builders.ChangelogBuilder;
 import org.keycloak.webbuilder.builders.DocumentationArchiveBuilder;
 import org.keycloak.webbuilder.builders.DownloadsArchiveBuilder;
+import org.keycloak.webbuilder.builders.GitHubReleaseNotesBuilder;
 import org.keycloak.webbuilder.builders.GuideBuilder;
 import org.keycloak.webbuilder.builders.PageBuilder;
 import org.keycloak.webbuilder.builders.ReleaseNotesBuilder;
@@ -24,6 +25,7 @@ public class WebBuilder {
             new ChangelogBuilder(),
             new ResourcesBuilder(),
             new ReleaseNotesBuilder(),
+            new GitHubReleaseNotesBuilder(),
             new BlogBuilder(),
             new GuideBuilder(),
             new PageBuilder(),

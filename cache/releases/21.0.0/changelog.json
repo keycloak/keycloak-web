@@ -2442,13 +2442,6 @@
   "area" : "admin/client-js",
   "url" : "https://github.com/keycloak/keycloak/issues/16899"
 }, {
-  "number" : 16900,
-  "repository" : "keycloak",
-  "title" : "Documentation for handling errors",
-  "kind" : "enhancement",
-  "area" : "admin/client-js",
-  "url" : "https://github.com/keycloak/keycloak/issues/16900"
-}, {
   "number" : 16901,
   "repository" : "keycloak",
   "title" : "Can't update user groups",

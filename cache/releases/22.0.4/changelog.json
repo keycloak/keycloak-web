@@ -1,0 +1,267 @@
+[ {
+  "number" : 11931,
+  "repository" : "keycloak",
+  "title" : "user first name not refreshed in Keycloak V2 theme ",
+  "kind" : "bug",
+  "area" : "account/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/11931"
+}, {
+  "number" : 17733,
+  "repository" : "keycloak",
+  "title" : "Improve feature (detection) code in the Admin Console",
+  "kind" : "enhancement",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/17733"
+}, {
+  "number" : 21935,
+  "repository" : "keycloak",
+  "title" : "Using truststore with LDAP and StartTLS is not working",
+  "kind" : "bug",
+  "area" : "ldap",
+  "url" : "https://github.com/keycloak/keycloak/issues/21935"
+}, {
+  "number" : 22185,
+  "repository" : "keycloak",
+  "title" : "Can't boot Keycloak server with Java KeyStore p12 file running on Windows 10/2019 ",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/22185"
+}, {
+  "number" : 22478,
+  "repository" : "keycloak",
+  "title" : "Custom User Provider SPI: MULTIVALUED_STRING_TYPE value isn't correctly displayed on ui (but correctly saved and retrieved)",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/22478"
+}, {
+  "number" : 22778,
+  "repository" : "keycloak",
+  "title" : "Deep link format for redirect uri parameter is not parsed correctly",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/22778"
+}, {
+  "number" : 22825,
+  "repository" : "keycloak",
+  "title" : "Keycloak 22.0.1 unable to create user with long email address",
+  "kind" : "bug",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/22825"
+}, {
+  "number" : 22839,
+  "repository" : "keycloak",
+  "title" : "Linux Firefox + Keycloak 22.0.1 issue(continuation of issue 21307)",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/22839"
+}, {
+  "number" : 22892,
+  "repository" : "keycloak",
+  "title" : "Not-working link during adding a SAML Identity provider",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/22892"
+}, {
+  "number" : 22923,
+  "repository" : "keycloak",
+  "title" : "Events filter by IP Address not working",
+  "kind" : "bug",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/22923"
+}, {
+  "number" : 22974,
+  "repository" : "keycloak",
+  "title" : "NullpointerException when using encrypted SAML assertions",
+  "kind" : "bug",
+  "area" : "saml",
+  "url" : "https://github.com/keycloak/keycloak/issues/22974"
+}, {
+  "number" : 23053,
+  "repository" : "keycloak",
+  "title" : "KC22: Issue with FIPS140 in non approved mode.",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/23053"
+}, {
+  "number" : 23065,
+  "repository" : "keycloak",
+  "title" : "Admin console throwing 403 error when logged in for sub realm using local admin user",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/23065"
+}, {
+  "number" : 23066,
+  "repository" : "keycloak",
+  "title" : "Remove bearer-only content from the Server Administration Guide",
+  "kind" : "enhancement",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/23066"
+}, {
+  "number" : 23124,
+  "repository" : "keycloak",
+  "title" : "Move email validation change docs to migration guide of 22.0.3",
+  "kind" : "enhancement",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/23124"
+}, {
+  "number" : 23177,
+  "repository" : "keycloak",
+  "title" : "Move email validation change docs to migration guide of 22.0.4",
+  "kind" : "enhancement",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/23177"
+}, {
+  "number" : 23185,
+  "repository" : "keycloak",
+  "title" : "Registration page not showing username when edit username is not enabled",
+  "kind" : "bug",
+  "area" : "user-profile",
+  "url" : "https://github.com/keycloak/keycloak/issues/23185"
+}, {
+  "number" : 23233,
+  "repository" : "keycloak",
+  "title" : "Backport Registration CVE fix",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/23233"
+}, {
+  "number" : 23246,
+  "repository" : "keycloak",
+  "title" : "Improve documentation about manual database migration",
+  "kind" : "enhancement",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/23246"
+}, {
+  "number" : 23251,
+  "repository" : "keycloak",
+  "title" : "SAML Encryption Key Export Downloads Signing Key",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/23251"
+}, {
+  "number" : 23258,
+  "repository" : "keycloak",
+  "title" : "Race condition inside Keycloak build chain execution",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/23258"
+}, {
+  "number" : 23280,
+  "repository" : "keycloak",
+  "title" : "Upgrade to Quarkus 3.2.6",
+  "kind" : "task",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/23280"
+}, {
+  "number" : 23306,
+  "repository" : "keycloak",
+  "title" : "NPE in AuthenticationManager backchannelLogout",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/23306"
+}, {
+  "number" : 23312,
+  "repository" : "keycloak",
+  "title" : "Deploy JavaScript adapter to Maven repository",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/23312"
+}, {
+  "number" : 23325,
+  "repository" : "keycloak",
+  "title" : "PolicyEnforcer should set WWW-Authenticate header before calling sendError() method",
+  "kind" : "bug",
+  "area" : "authorization-services",
+  "url" : "https://github.com/keycloak/keycloak/issues/23325"
+}, {
+  "number" : 23327,
+  "repository" : "keycloak",
+  "title" : "User cannot be created via Admin UI if custom user attribute is required",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/23327"
+}, {
+  "number" : 23341,
+  "repository" : "keycloak",
+  "title" : "Keycloak 22.0.3: Create user: select groups to join filter does nothing",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/23341"
+}, {
+  "number" : 23342,
+  "repository" : "keycloak",
+  "title" : "Test failures with Wildfly/EAP adapters using TLS",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/23342"
+}, {
+  "number" : 23366,
+  "repository" : "keycloak",
+  "title" : "Reopening of  CVE-2023-21971 - Update Connector/J to 8.0.33",
+  "kind" : "bug",
+  "area" : "dependencies",
+  "url" : "https://github.com/keycloak/keycloak/issues/23366"
+}, {
+  "number" : 23402,
+  "repository" : "keycloak",
+  "title" : "Outdated kcadm.sh help examples can be misleading to our users",
+  "kind" : "bug",
+  "area" : "admin/cli",
+  "url" : "https://github.com/keycloak/keycloak/issues/23402"
+}, {
+  "number" : 23438,
+  "repository" : "keycloak",
+  "title" : "Cannot update email address when \"Email as username\" is enabled",
+  "kind" : "bug",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/23438"
+}, {
+  "number" : 23447,
+  "repository" : "keycloak",
+  "title" : "Allow 'prompt' Value 'consent' in Keycloak JavaScript Adapter",
+  "kind" : "bug",
+  "area" : "adapter/javascript",
+  "url" : "https://github.com/keycloak/keycloak/issues/23447"
+}, {
+  "number" : 23460,
+  "repository" : "keycloak",
+  "title" : "Minor typo in documentation (Server - Configuring Keycloak)",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/23460"
+}, {
+  "number" : 23464,
+  "repository" : "keycloak",
+  "title" : "CVE-2023-4853 HTTP security policy bypass (io.quarkus:quarkus-vertx-http)",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/23464"
+}, {
+  "number" : 23481,
+  "repository" : "keycloak",
+  "title" : "Text field for last name field in user form has an incorrect ID",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/23481"
+}, {
+  "number" : 23637,
+  "repository" : "keycloak",
+  "title" : "Some container implementations don't work with the documented additional RPM install procedure",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/23637"
+}, {
+  "number" : 23661,
+  "repository" : "keycloak",
+  "title" : "Upload JVM Heapdumps action fail on Windows",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/23661"
+}, {
+  "number" : 23773,
+  "repository" : "keycloak",
+  "title" : "22.0.4 Operator installed via OLM deploys Keycloak nightly version",
+  "kind" : "bug",
+  "area" : "operator",
+  "url" : "https://github.com/keycloak/keycloak/issues/23773"
+} ]

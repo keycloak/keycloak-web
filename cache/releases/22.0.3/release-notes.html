@@ -1,0 +1,62 @@
+<div class="sect2">
+<h3 id="_security_vulnerability_when_registering_or_updating_user_through_templates">Security vulnerability when registering or updating user through templates</h3>
+<div class="paragraph">
+<p>A security vulnerability was introduced in Keycloak 22.0.2. We highly recommend not upgrading to 22.0.2, and for anyone that has deployed 22.0.2 in production to upgrade to 22.0.3 immediately.</p>
+</div>
+<div class="paragraph">
+<p>For users that has self-registered after Keycloak was upgraded to 22.0.2 their password is not stored securely, and can be exposed to administrators of Keycloak. This only affects users that has registered after the upgrade was rolled-out, and does not affect any previously registered users.</p>
+</div>
+<div class="paragraph">
+<p>Any realm using the preview declarative user profile is not affected by this issue, and only realms using the default user profile provider is affected.</p>
+</div>
+<div class="paragraph">
+<p>To identify if there are any affected users in your deployment you can query these by accessing the database, and running the following SQL statement:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sql" data-lang="sql">SELECT DISTINCT U.ID, U.USERNAME, U.EMAIL, U.REALM_ID FROM USER_ENTITY U
+    INNER JOIN USER_ATTRIBUTE UA ON U.ID = UA.USER_ID
+    WHERE UA.NAME IN ('password','password-confirm')</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We recommend contacting any affected users as well as adding the update password required action for them.</p>
+</div>
+<div class="paragraph">
+<p>If there are any affected users we also recommend removing these attributes from the database by running the following SQL statement:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sql" data-lang="sql">DELETE FROM USER_ATTRIBUTE UA WHERE UA.NAME IN ('password','password-confirm')</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If any backups have been done of the database after the 22.0.2 release and there are affected users, we recommend deleting these.</p>
+</div>
+<div class="sect3">
+<h4 id="_custom_user_storage_providers">Custom user storage providers</h4>
+<div class="paragraph">
+<p>Any deployments with custom user storage federation providers may also be affected, please verify your custom user storage to identify if this is an issue.</p>
+</div>
+<div class="paragraph">
+<p>To identify if there are any federated user affected in your deployment in case the user storage provider is delegating management of attributes to Keycloak, you can query these by accessing the database, and running the following SQL statement:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sql" data-lang="sql">SELECT DISTINCT USER_ID,REALM_ID,STORAGE_PROVIDER_ID FROM FED_USER_ATTRIBUTE
+    WHERE NAME IN ('password','password-confirm')</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If there are any affected federated users, we also recommend removing these attributes from the database by running the following SQL statement:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sql" data-lang="sql">DELETE FROM FED_USER_ATTRIBUTE UA WHERE UA.NAME IN ('password','password-confirm')</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If your custom user storage provider is managing attributes itself, you should look at your custom storage to remove the <code>password</code> and <code>password-confirm</code> attributes.</p>
+</div>
+</div>
+</div>
