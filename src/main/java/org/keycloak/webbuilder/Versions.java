@@ -46,11 +46,11 @@ public class Versions extends LinkedList<Versions.Version> {
 
         private String version;
 
-        private String documentationTemplate;
+        private int documentationTemplate;
 
-        private String downloadTemplate;
+        private int downloadTemplate;
 
-        private String blogTemplate;
+        private int blogTemplate;
 
         private boolean latest;
 
@@ -90,27 +90,27 @@ public class Versions extends LinkedList<Versions.Version> {
             this.version = version;
         }
 
-        public String getBlogTemplate() {
+        public int getBlogTemplate() {
             return blogTemplate;
         }
 
-        public void setBlogTemplate(String blogTemplate) {
+        public void setBlogTemplate(int blogTemplate) {
             this.blogTemplate = blogTemplate;
         }
 
-        public String getDocumentationTemplate() {
+        public int getDocumentationTemplate() {
             return documentationTemplate;
         }
 
-        public void setDocumentationTemplate(String documentationTemplate) {
+        public void setDocumentationTemplate(int documentationTemplate) {
             this.documentationTemplate = documentationTemplate;
         }
 
-        public String getDownloadTemplate() {
+        public int getDownloadTemplate() {
             return downloadTemplate;
         }
 
-        public void setDownloadTemplate(String downloadTemplate) {
+        public void setDownloadTemplate(int downloadTemplate) {
             this.downloadTemplate = downloadTemplate;
         }
 
@@ -148,8 +148,12 @@ public class Versions extends LinkedList<Versions.Version> {
 
         @Override
         public int compareTo(Version o) {
+            return compareTo(o.getVersion());
+        }
+
+        public int compareTo(String o) {
             String[] v1 = version.split("\\.");
-            String[] v2 = o.getVersion().split("\\.");
+            String[] v2 = o.split("\\.");
 
             int r = stringNumberCompareTo(v2[0], v1[0]);
             if (r != 0) {

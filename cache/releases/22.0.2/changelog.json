@@ -174,13 +174,6 @@
   "area" : "admin/ui",
   "url" : "https://github.com/keycloak/keycloak/issues/21693"
 }, {
-  "number" : 21710,
-  "repository" : "keycloak",
-  "title" : "Liquibase CustomChange are executed twice because of a Liquibase bug fixed in 4.21.0",
-  "kind" : "bug",
-  "area" : "storage",
-  "url" : "https://github.com/keycloak/keycloak/issues/21710"
-}, {
   "number" : 21719,
   "repository" : "keycloak",
   "title" : "New Admin UI: User attributes UI does not refresh, shows stale values",

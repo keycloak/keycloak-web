@@ -1,0 +1,302 @@
+[ {
+  "number" : 14820,
+  "repository" : "keycloak",
+  "title" : "Calling getTopLevelGroups is slow inside GroupLDAPStorageMapper#getLDAPGroupMappingsConverted",
+  "kind" : "enhancement",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/14820"
+}, {
+  "number" : 19348,
+  "repository" : "keycloak",
+  "title" : "Sort subgroups",
+  "kind" : "enhancement",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/19348"
+}, {
+  "number" : 22109,
+  "repository" : "keycloak",
+  "title" : "Add non-blocking liveness and readiness checks to Keycloak",
+  "kind" : "enhancement",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/22109"
+}, {
+  "number" : 22170,
+  "repository" : "keycloak",
+  "title" : "Operator secrets sequencing",
+  "kind" : "bug",
+  "area" : "operator",
+  "url" : "https://github.com/keycloak/keycloak/issues/22170"
+}, {
+  "number" : 22200,
+  "repository" : "keycloak",
+  "title" : "External Link check for documentation logs warning and exception: WARN FilenoUtil: Native subprocess control requires open access",
+  "kind" : "enhancement",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/22200"
+}, {
+  "number" : 22600,
+  "repository" : "keycloak",
+  "title" : "Keycloak admin v2 theme js mapper adding issue",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/22600"
+}, {
+  "number" : 22960,
+  "repository" : "keycloak",
+  "title" : "Do not store empty attributes when updating user profile",
+  "kind" : "bug",
+  "area" : "user-profile",
+  "url" : "https://github.com/keycloak/keycloak/issues/22960"
+}, {
+  "number" : 22982,
+  "repository" : "keycloak",
+  "title" : "User attributes can't be saved when user profile is enabled",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/22982"
+}, {
+  "number" : 23220,
+  "repository" : "keycloak",
+  "title" : "Update to Keycloak 22.0.3 fails: Migration failed for change set META-INF/jpa-changelog-13.0.0.xml::default-roles::keycloak",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/23220"
+}, {
+  "number" : 23294,
+  "repository" : "keycloak",
+  "title" : "admin-fine-grained-authz + client authorization settings requires more realm-management roles",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/23294"
+}, {
+  "number" : 23331,
+  "repository" : "keycloak",
+  "title" : "CVE-2023-42503 - Improper Input Validation vulnerability in org.apache.commons:commons-compress",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/23331"
+}, {
+  "number" : 23345,
+  "repository" : "keycloak",
+  "title" : "Broken link https://stackapps.com/apps/oauth/register ",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/23345"
+}, {
+  "number" : 23397,
+  "repository" : "keycloak",
+  "title" : "The \"invalid_grant\" error occurs again when loading the offline client session with an early creation time.",
+  "kind" : "bug",
+  "area" : "infinispan",
+  "url" : "https://github.com/keycloak/keycloak/issues/23397"
+}, {
+  "number" : 23434,
+  "repository" : "keycloak",
+  "title" : "Can not view or update user profile attribute in user details",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/23434"
+}, {
+  "number" : 23507,
+  "repository" : "keycloak",
+  "title" : "User cannot be created via Admin UI if custom user attribute is required",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/23507"
+}, {
+  "number" : 23581,
+  "repository" : "keycloak",
+  "title" : "Code certain topics as upstream only",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/23581"
+}, {
+  "number" : 23584,
+  "repository" : "keycloak",
+  "title" : "Return attribute group metadata from Admin and Account APIs",
+  "kind" : "bug",
+  "area" : "user-profile",
+  "url" : "https://github.com/keycloak/keycloak/issues/23584"
+}, {
+  "number" : 23654,
+  "repository" : "keycloak",
+  "title" : "Attributes tab fields are not changing when a different group is selected ",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/23654"
+}, {
+  "number" : 23711,
+  "repository" : "keycloak",
+  "title" : "Remove recommendation to file a GitHub issue",
+  "kind" : "enhancement",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/23711"
+}, {
+  "number" : 23713,
+  "repository" : "keycloak",
+  "title" : "Weak hashing algorithm usage in SSSD User federation",
+  "kind" : "bug",
+  "area" : "identity-brokering",
+  "url" : "https://github.com/keycloak/keycloak/issues/23713"
+}, {
+  "number" : 23740,
+  "repository" : "keycloak",
+  "title" : "Admin Console doesn't show user when user attribute has annotation inputType",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/23740"
+}, {
+  "number" : 23743,
+  "repository" : "keycloak",
+  "title" : "Keycloak  22.0.4 crashes on file step1.html on old safari versions",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/23743"
+}, {
+  "number" : 23774,
+  "repository" : "keycloak",
+  "title" : "User can't be updated in admin console when user profile is used",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/23774"
+}, {
+  "number" : 23783,
+  "repository" : "keycloak",
+  "title" : "'Show version information' is not working",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/23783"
+}, {
+  "number" : 23790,
+  "repository" : "keycloak",
+  "title" : "The `Enabled When` setting should be set to `Always` by default",
+  "kind" : "bug",
+  "area" : "user-profile",
+  "url" : "https://github.com/keycloak/keycloak/issues/23790"
+}, {
+  "number" : 23794,
+  "repository" : "keycloak",
+  "title" : "Made adapters compatible with KC23 \"iss\" parameter change",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/23794"
+}, {
+  "number" : 23800,
+  "repository" : "keycloak",
+  "title" : "Add a disclaimer about refererences to Kubernetes",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/23800"
+}, {
+  "number" : 23856,
+  "repository" : "keycloak",
+  "title" : "Allow documentation to be build referencing only Linux, not Windows",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/23856"
+}, {
+  "number" : 23862,
+  "repository" : "keycloak",
+  "title" : "Update Operator product documentation",
+  "kind" : "task",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/23862"
+}, {
+  "number" : 23873,
+  "repository" : "keycloak",
+  "title" : "Simplify the docs referencing the container registry",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/23873"
+}, {
+  "number" : 23910,
+  "repository" : "keycloak",
+  "title" : "Removing the default cache metadata",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/23910"
+}, {
+  "number" : 23911,
+  "repository" : "keycloak",
+  "title" : "User profile attribute default render should be ordinary input",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/23911"
+}, {
+  "number" : 23930,
+  "repository" : "keycloak",
+  "title" : "Admin console does not allow several special characters for realm name anymore",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/23930"
+}, {
+  "number" : 23940,
+  "repository" : "keycloak",
+  "title" : "Address test failures for WatchedSecretsTest.testSingleSecretMultipleKeycloaks",
+  "kind" : "task",
+  "area" : "operator",
+  "url" : "https://github.com/keycloak/keycloak/issues/23940"
+}, {
+  "number" : 23946,
+  "repository" : "keycloak",
+  "title" : "Limit Keycloak 22 Windows support to the Admin CLI to upstream",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/23946"
+}, {
+  "number" : 23949,
+  "repository" : "keycloak",
+  "title" : "CVE-2023-44487 - Denial of Service (DoS) vulnerability in io.netty:netty-codec-http2",
+  "kind" : "cve",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/23949"
+}, {
+  "number" : 23951,
+  "repository" : "keycloak",
+  "title" : "Update Keycloak 22 Getting Started",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/23951"
+}, {
+  "number" : 23954,
+  "repository" : "keycloak",
+  "title" : "FederatedUserLink errors when user does not have view-realm role",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/23954"
+}, {
+  "number" : 24007,
+  "repository" : "keycloak",
+  "title" : "Remove mentions of Crunchy Operator from docs",
+  "kind" : "task",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/24007"
+}, {
+  "number" : 24017,
+  "repository" : "keycloak",
+  "title" : "Operator operand env var does not conform to OSBS naming requirements",
+  "kind" : "bug",
+  "area" : "operator",
+  "url" : "https://github.com/keycloak/keycloak/issues/24017"
+}, {
+  "number" : 24031,
+  "repository" : "keycloak",
+  "title" : "Missing migration step for Keycloak 22 during import",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/24031"
+}, {
+  "number" : 24081,
+  "repository" : "keycloak",
+  "title" : "Scopes still persisted when required attribute is set to `Always`",
+  "kind" : "bug",
+  "area" : "user-profile",
+  "url" : "https://github.com/keycloak/keycloak/issues/24081"
+}, {
+  "number" : 24143,
+  "repository" : "keycloak",
+  "title" : "Operator docs link is broken",
+  "kind" : "bug",
+  "area" : "operator",
+  "url" : "https://github.com/keycloak/keycloak/issues/24143"
+} ]

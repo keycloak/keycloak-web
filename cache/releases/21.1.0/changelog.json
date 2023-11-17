@@ -244,6 +244,13 @@
   "area" : null,
   "url" : "https://github.com/keycloak/keycloak/issues/16730"
 }, {
+  "number" : 16782,
+  "repository" : "keycloak",
+  "title" : "CVE-2020-29582 - Information Exposure vulnerability in org.jetbrains.kotlin:kotlin-stdlib",
+  "kind" : "cve",
+  "area" : "dependencies",
+  "url" : "https://github.com/keycloak/keycloak/issues/16782"
+}, {
   "number" : 16844,
   "repository" : "keycloak",
   "title" : "Get UserInfo return 401 Unauthorized",

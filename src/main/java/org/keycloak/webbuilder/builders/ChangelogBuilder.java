@@ -38,19 +38,30 @@ public class ChangelogBuilder extends AbstractBuilder {
                 }))
                 .withOAuthToken(token).build();
 
-        File changelogCache = new File(context.getCacheDir(), "changelogs");
-        changelogCache.mkdirs();
+        File releasesCache = new File(context.getCacheDir(), "releases");
 
         for (Versions.Version v : context.versions()) {
-            String fileName = "changelog-" + v.getVersion().replace(".", "_") + ".json";
-            File changeLogFile = new File(changelogCache, fileName);
+            File releaseCacheDir = new File(releasesCache, v.getVersion());
+            releaseCacheDir.mkdirs();
+
+            File changeLogFile = new File(releaseCacheDir, "changelog.json");
 
             if (changeLogFile.exists()) {
                 Versions.ChangeLog changeLog = new Versions.ChangeLog(Arrays.asList(context.json().read(changeLogFile, ChangeLogEntry[].class)));
+
+                if (v.getBlogTemplate() >= 3) {
+                    for (ChangeLogEntry e : changeLog.getAll()) {
+                        if (!e.getRepository().equals("keycloak")) {
+                            String area = e.getRepository().replaceAll("keycloak-", "");
+                            e.setArea(area);
+                        }
+                    }
+                }
+
                 v.setChanges(changeLog);
                 printStep("exists", v.getVersion());
             } else {
-                if (Integer.parseInt(v.getBlogTemplate()) >= 2) {
+                if (v.getBlogTemplate() >= 2) {
                     List<GHIssue> ghIssues = gh.searchIssues().q("user:keycloak milestone:" + v.getVersion() + " is:closed is:issue").isClosed().list().toList();
 
                     List<ChangeLogEntry> changes = new LinkedList<>();

@@ -1,0 +1,6 @@
+<div class="sect2">
+<h3 id="_changes_in_validating_schemes_for_valid_redirect_uris">Changes in validating schemes for valid redirect URIs</h3>
+<div class="paragraph">
+<p>If an application client is using non http(s) custom schemes, from now on the validation requires that a valid redirect pattern explicitly allows that scheme. Example patterns for allowing <code>custom</code> scheme are <code>custom:/test</code>, <code>custom:/test/*</code> or <code>custom:*</code>. For security reasons a general pattern like <code>*</code> does not cover them anymore.</p>
+</div>
+</div>
