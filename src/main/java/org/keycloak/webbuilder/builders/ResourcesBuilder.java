@@ -3,8 +3,12 @@ package org.keycloak.webbuilder.builders;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 public class ResourcesBuilder extends AbstractBuilder {
 
@@ -24,7 +28,11 @@ public class ResourcesBuilder extends AbstractBuilder {
         Optional<File> genGuidesImagesDir = genGuidesDir.flatMap( d -> Arrays.stream(new File(d, "generated-guides").listFiles(n -> n.getName().equals("images"))).findAny());
         if (genGuidesImagesDir.isPresent()) {
             for (File f : genGuidesImagesDir.get().listFiles()) {
-                FileUtils.copyFileToDirectory(f, guidesImageDir);
+                if (f.isFile()) {
+                    FileUtils.copyFileToDirectory(f, guidesImageDir);
+                } else {
+                    FileUtils.copyDirectoryToDirectory(f, guidesImageDir);
+                }
             }
         }
 

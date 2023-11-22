@@ -36,6 +36,7 @@ public class Guides {
                 loadGuides(asciiDoctor, new File(f, "generated-guides/operator"), GuideCategory.OPERATOR);
                 loadGuides(asciiDoctor, new File(f, "generated-guides/migration"), GuideCategory.MIGRATION);
                 loadGuides(asciiDoctor, new File(f, "generated-guides/getting-started"), GuideCategory.GETTING_STARTED);
+                loadGuides(asciiDoctor, new File(f, "generated-guides/high-availability"), GuideCategory.HIGH_AVAILABILITY);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -223,7 +224,8 @@ public class Guides {
         GETTING_STARTED("getting-started", "Getting started"),
         SERVER("server", "Server"),
         OPERATOR("operator", "Operator"),
-        SECURING_APPS("securing-apps", "Securing applications");
+        SECURING_APPS("securing-apps", "Securing applications"),
+        HIGH_AVAILABILITY("high-availability", "High availability");
 
         private String label;
 
