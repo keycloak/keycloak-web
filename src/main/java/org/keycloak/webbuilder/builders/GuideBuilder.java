@@ -44,8 +44,6 @@ public class GuideBuilder extends AbstractBuilder {
         attributes.put("fragment", "yes");
         attributes.put("notitle", "yes");
         attributes.put("icons", "font");
-        attributes.put("section", "guide");
-        attributes.put("sections", "guides");
 
         setGuideLinkAttributes(attributes);
     }

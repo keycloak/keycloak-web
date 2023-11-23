@@ -353,6 +353,79 @@ dl dd {
     margin-left: 1.125em;
 }
 
+/* allow callout numbers for listings - taken from the AsciiDoc stylesheet */
+.conum[data-value] {
+    display: inline-block;
+    color: #fff !important;
+    background-color: rgba(0, 0, 0, .8);
+    -webkit-border-radius: 100px;
+    border-radius: 100px;
+    text-align: center;
+    font-size: .75em;
+    width: 1.67em;
+    height: 1.67em;
+    line-height: 1.67em;
+    font-family: "Open Sans", "DejaVu Sans", sans-serif;
+    font-style: normal;
+    font-weight: bold
+}
+
+.conum[data-value] * {
+    color: #fff !important
+}
+
+.conum[data-value] + b {
+    display: none
+}
+
+.conum[data-value]::after {
+    content: attr(data-value)
+}
+
+pre .conum[data-value] {
+    position: relative;
+    top: -.125em
+}
+
+b.conum * {
+    color: inherit !important
+}
+
+.conum:not([data-value]):empty {
+    display: none
+}
+
+.colist > table {
+    border: 0;
+    background: none
+}
+
+.colist > table > tbody > tr {
+    background: none
+}
+
+.literalblock + .colist, .listingblock + .colist {
+    margin-top: -.5em
+}
+
+.colist td:not([class]):first-child {
+    padding: .4em .75em 0;
+    line-height: 1;
+    vertical-align: top
+}
+
+.colist td:not([class]):first-child img {
+    max-width: none
+}
+
+.colist td:not([class]):last-child {
+    padding: .25em 0
+}
+
+.colist td {
+    border: 0
+}
+
 @media (prefers-contrast: more) {
     .kc-bg-triangles {
         background-image: none;

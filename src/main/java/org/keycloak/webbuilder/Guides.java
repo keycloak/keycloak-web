@@ -36,6 +36,7 @@ public class Guides {
                 loadGuides(asciiDoctor, new File(f, "generated-guides/operator"), GuideCategory.OPERATOR);
                 loadGuides(asciiDoctor, new File(f, "generated-guides/migration"), GuideCategory.MIGRATION);
                 loadGuides(asciiDoctor, new File(f, "generated-guides/getting-started"), GuideCategory.GETTING_STARTED);
+                loadGuides(asciiDoctor, new File(f, "generated-guides/high-availability"), GuideCategory.HIGH_AVAILABILITY);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -75,8 +76,12 @@ public class Guides {
             Map<String, Object> attributes = asciiDoctor.parseAttributes(f, sharedAttributes);
 
             boolean community = "true".equals(attributes.get("community"));
+
+            Object isTileVisibileAttribute = attributes.get("guide-tile-visible");
+            boolean isTileVisibile = isTileVisibileAttribute == null || "true".equals(isTileVisibileAttribute);
             try {
-                Guide g = new Guide(category, f, (String) attributes.get("guide-title"), (String) attributes.get("guide-summary"), (String) attributes.get("guide-tags"), (String) attributes.get("author"), community, (String) attributes.get("external-link"));
+                Guide g = new Guide(category, f, (String) attributes.get("guide-title"), (String) attributes.get("guide-summary"), (String) attributes.get("guide-tags"), (String) attributes.get("author"), community,
+                        (String) attributes.get("external-link"), isTileVisibile);
 
                 if (guidePriorities != null) {
                     Integer priority = guidePriorities.get(g.getName());
@@ -147,8 +152,9 @@ public class Guides {
         private List<String> tags;
         private int priority = Integer.MAX_VALUE;
         private String externalLink;
+        private boolean tileVisible;
 
-        public Guide(GuideCategory category, File source, String title, String summary, String tags, String author, boolean community, String externalLink) {
+        public Guide(GuideCategory category, File source, String title, String summary, String tags, String author, boolean community, String externalLink, boolean tileVisible) {
             this.category = category;
             this.name = source.getName().replace(".adoc", "");
             this.author = author;
@@ -162,6 +168,7 @@ public class Guides {
             }
             this.path = category.getId() + "/" + name;
             this.externalLink = externalLink;
+            this.tileVisible = tileVisible;
         }
 
         public String getName() {
@@ -215,6 +222,10 @@ public class Guides {
         public boolean isExternal() {
             return externalLink != null;
         }
+
+        public boolean isTileVisible() {
+            return tileVisible;
+        }
     }
 
     public enum GuideCategory {
@@ -223,7 +234,8 @@ public class Guides {
         GETTING_STARTED("getting-started", "Getting started"),
         SERVER("server", "Server"),
         OPERATOR("operator", "Operator"),
-        SECURING_APPS("securing-apps", "Securing applications");
+        SECURING_APPS("securing-apps", "Securing applications"),
+        HIGH_AVAILABILITY("high-availability", "High availability");
 
         private String label;
 

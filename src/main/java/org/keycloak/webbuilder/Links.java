@@ -68,6 +68,8 @@ public class Links {
                 return "https://github.com/keycloak/keycloak/tree/main/docs/guides/operator/" + guide.getName() + ".adoc";
             case GETTING_STARTED:
                 return "https://github.com/keycloak/keycloak/tree/main/docs/guides/getting-started/" + guide.getName() + ".adoc";
+            case HIGH_AVAILABILITY:
+                return "https://github.com/keycloak/keycloak/tree/main/docs/guides/high-availability/" + guide.getName() + ".adoc";
             default:
                 return null;
         }
