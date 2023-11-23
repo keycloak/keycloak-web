@@ -1,0 +1,169 @@
+<div class="sect2">
+<h3 id="_openid_connect_oauth_2_0">OpenID Connect / OAuth 2.0</h3>
+<div class="sect3">
+<h4 id="_fapi_2_drafts_support">FAPI 2 drafts support</h4>
+<div class="paragraph">
+<p>Keycloak has new client profiles <code>fapi-2-security-profile</code> and <code>fapi-2-message-signing</code>, which ensure Keycloak enforces compliance with
+the latest FAPI 2 draft specifications when communicating with your clients. Thanks to <a href="https://github.com/tnorimat">Takashi Norimatsu</a> for the contribution.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_dpop_preview_support">DPoP preview support</h4>
+<div class="paragraph">
+<p>Keycloak has preview for support for OAuth 2.0 Demonstrating Proof-of-Possession at the Application Layer (DPoP). Thanks to
+<a href="https://github.com/tnorimat">Takashi Norimatsu</a> and <a href="https://github.com/dteleguin">Dmitry Telegin</a> for their contributions.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_more_flexibility_for_introspection_endpoint">More flexibility for introspection endpoint</h4>
+<div class="paragraph">
+<p>In previous versions, introspection endpoint  automatically returned most claims, which were available in the access token. Now there is new
+switch <code>Add to token introspection</code> on most of protocol mappers. This addition allows more flexibility as introspection endpoint can return different
+claims than access token. This is first step towards "Lightweight access tokens" support as access tokens can omit lots of the claims, which would be still returned
+by the introspection endpoint. When migrating from previous versions, the introspection endpoint should return same claims, which are returned from access token,
+so the behavior should be effectively the same by default after the migration. Thanks to <a href="https://github.com/skabano">Shigeyuki Kabano</a> for the contribution.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_feature_flag_for_oauth_2_0_device_authorization_grant_flow">Feature flag for OAuth 2.0 device authorization grant flow</h4>
+<div class="paragraph">
+<p>The OAuth 2.0 device authorization grant flow now includes a feature flag, so you can easily disable this feature. This feature is still enabled by default.
+Thanks to <a href="https://github.com/thomasdarimont">Thomas Darimont</a> for the contribution.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_authentication">Authentication</h3>
+<div class="sect3">
+<h4 id="_passkeys_support">Passkeys support</h4>
+<div class="paragraph">
+<p>Keycloak has preview support for <a href="https://fidoalliance.org/passkeys/">Passkeys</a>.</p>
+</div>
+<div class="paragraph">
+<p>Passkey registration and authentication are realized by the features of WebAuthn.
+Therefore, users of Keycloak can do passkey registration and authentication by existing WebAuthn registration and authentication.</p>
+</div>
+<div class="paragraph">
+<p>Both synced passkeys and device-bound passkeys can be used for both Same-Device and Cross-Device Authentication.
+However, passkeys operations success depends on the user&#8217;s environment. Make sure which operations can succeed in <a href="https://passkeys.dev/device-support/">the environment</a>.
+Thanks to <a href="https://github.com/tnorimat">Takashi Norimatsu</a> for the contribution and thanks to <a href="https://github.com/thomasdarimont">Thomas Darimont</a> for the help with the
+ideas and testing of this feature.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_webauthn_improvements">WebAuthn improvements</h4>
+<div class="paragraph">
+<p>WebAuthn policy now includes a new field: <code>Extra Origins</code>.  It provides better interoperability with non-Web platforms (for example, native mobile applications).
+Thanks to <a href="https://github.com/akunzai">Charley Wu</a> for the contribution.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_you_are_already_logged_in">You are already logged-in</h4>
+<div class="paragraph">
+<p>There was an infamous issue that when user had login page opened in multiple browser tabs and authenticated in one of them,
+the attempt to authenticate in subsequent browser tabs opened the page <code>You are already logged-in</code>. This is improved now as
+other browser tabs just automatically authenticate as well after authentication of first browser tab. There are still
+corner cases when the behaviour is not 100% correct, like the scenario with expired authentication session, which is then
+restarted just in one browser tab and hence other browser tabs won&#8217;t follow automatically with the login.
+So we still plan improvements in this area.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_password_policy_for_specify_maximum_authentication_time">Password policy for specify Maximum authentication time</h4>
+<div class="paragraph">
+<p>Keycloak supports new password policy, which allows to specify the maximum age of an authentication with which a password may be changed by user without re-authentication.
+When this password policy is set to 0, the user will be required to re-authenticate to change the  password in the Account Console or by other means.
+You can also specify a lower or higher value than the default value of 5 minutes. Thanks to <a href="https://github.com/thomasdarimont">Thomas Darimont</a> for the contribution.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_deployments">Deployments</h3>
+<div class="sect3">
+<h4 id="_preview_support_for_multi_site_active_passive_deployments">Preview support for multi-site active-passive deployments</h4>
+<div class="paragraph">
+<p>Deploying Keycloak to multiple independent sites is essential for some environments to provide high availability and a speedy recovery from failures.
+This release adds preview-support for active-passive deployments for Keycloak.</p>
+</div>
+<div class="paragraph">
+<p>A lot of work has gone into testing and verifying a setup which can sustain load and recover from the failure scenarios.
+To get started, use the high-availability guide which also includes a comprehensive blueprint to deploy a highly available Keycloak to a cloud environment.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_adapters">Adapters</h3>
+<div class="sect3">
+<h4 id="_openid_connect_wildfly_and_jboss_eap">OpenID Connect WildFly and JBoss EAP</h4>
+<div class="paragraph">
+<p>OpenID Connect adapter for WildFly and JBoss EAP, which was deprecated in previous versions, has been removed in this release.
+It is being replaced by the Elytron OIDC adapter,which is included in WildFly, and provides a seamless migration from
+Keycloak adapters.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_saml_wildfly_and_jboss_eap">SAML WildFly and JBoss EAP</h4>
+<div class="paragraph">
+<p>The SAML adapter for WildFly and JBoss EAP is no longer distributed as a ZIP download, but rather a Galleon feature pack,
+making it easier and more seamless to install.</p>
+</div>
+<div class="paragraph">
+<p>See the <a href="https://www.keycloak.org/docs/DEV/securing_apps/">Securing Applications and Services Guide</a> for the details.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_server_distribution">Server distribution</h3>
+<div class="sect3">
+<h4 id="_load_shedding_support">Load Shedding support</h4>
+<div class="paragraph">
+<p>Keycloak now features <code>http-max-queued-requests</code> option to allow proper rejecting of incoming requests under high load.
+For details refer to the <a href="https://www.keycloak.org/server/configuration-production">production guide</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_resteasy_reactive">RESTEasy Reactive</h4>
+<div class="paragraph">
+<p>Keycloak has switched to RESTEasy Reactive. Applications using <code>quarkus-resteasy-reactive</code> should still benefit from a better startup time, runtime performance, and memory footprint, even though not using reactive style/semantics. SPI&#8217;s that depend directly on JAX-RS API should be compatible with this change. SPI&#8217;s that depend on RESTEasy Classic including <code>ResteasyClientBuilder</code> will not be compatible and will require update, this will also be true for other implementation of the JAX-RS API like Jersey.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_user_profile">User profile</h3>
+<div class="paragraph">
+<p>Declarative user profile is still a preview feature in this release, but we are working hard on promoting it to a supported feature. Feedback is welcome.
+If you find any issues or have any improvements in mind,  you are welcome to create <a href="https://github.com/keycloak/keycloak/issues/new/choose">Github issue</a>,
+ideally with the label <code>area/user-profile</code>. It is also recommended to check the <a href="https://www.keycloak.org/docs/DEV/upgrading/">Upgrading Guide</a>  with the migration changes for this
+release for some additional informations related to the migration.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_group_scalability">Group scalability</h3>
+<div class="paragraph">
+<p>Performance around searching of groups is improved for the use-cases with many groups and subgroups. There are improvements, which allow
+paginated lookup of subgroups. Thanks to <a href="https://github.com/alice-wondered">Alice</a> for the contribution.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_themes">Themes</h3>
+<div class="sect3">
+<h4 id="_localization_files_for_themes_default_to_utf_8_encoding">Localization files for themes default to UTF-8 encoding</h4>
+<div class="paragraph">
+<p>Message properties files for themes are now read in UTF-8 encoding, with an automatic fallback to ISO-8859-1 encoding.</p>
+</div>
+<div class="paragraph">
+<p>See the migration guide for more details.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_storage">Storage</h3>
+<div class="sect3">
+<h4 id="_removal_of_the_map_store">Removal of the Map Store</h4>
+<div class="paragraph">
+<p>The Map Store has been an experimental feature in previous releases.
+Starting with this release, it is removed and users should continue to use the current JPA store.
+See the migration guide for details.</p>
+</div>
+</div>
+</div>
