@@ -11,7 +11,7 @@ import java.util.Map;
 
 public class ReleaseNotesBuilder extends AbstractBuilder {
 
-    private static final String DOCUMENT_ATTRIBUTES_URL = "https://raw.githubusercontent.com/keycloak/keycloak/main/docs/documentation/topics/templates/document-attributes.adoc";
+    private static final String DOCUMENT_ATTRIBUTES_URL = "https://raw.githubusercontent.com/keycloak/keycloak/%s/docs/documentation/topics/templates/document-attributes.adoc";
 
     private static final String RELEASE_NOTES_URL = "https://raw.githubusercontent.com/keycloak/keycloak/release/%s/docs/documentation/release_notes/topics/%s.adoc";
 
@@ -21,14 +21,6 @@ public class ReleaseNotesBuilder extends AbstractBuilder {
     }
 
     public void build() throws IOException {
-        Map<String, Object> attributes = new HashMap<>();
-
-        attributes.put("project_buildType", "latest");
-        attributes.put("leveloffset", "2");
-        attributes.put("fragment", "yes");
-
-        attributes = context.asciiDoctor().parseAttributes(new URL(DOCUMENT_ATTRIBUTES_URL), attributes);
-
         File releasesCache = new File(context.getCacheDir(), "releases");
 
         for (Versions.Version v : context.versions()) {
@@ -44,6 +36,14 @@ public class ReleaseNotesBuilder extends AbstractBuilder {
                 } else if (releaseNotesMissingFile.isFile()) {
                     printStep("missing",  v.getVersion());
                 } else {
+                    Map<String, Object> attributes = new HashMap<>();
+
+                    attributes.put("project_buildType", "latest");
+                    attributes.put("leveloffset", "2");
+                    attributes.put("fragment", "yes");
+
+                    attributes = context.asciiDoctor().parseAttributes(new URL(String.format(DOCUMENT_ATTRIBUTES_URL, v.getVersion())), attributes);
+
                     String releaseNotesUrl = String.format(RELEASE_NOTES_URL, v.getVersionShorter(), v.getVersion().replace(".", "_"));
                     URL url = new URL(releaseNotesUrl);
 
