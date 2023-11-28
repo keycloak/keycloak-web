@@ -14,8 +14,10 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 public class ChangelogBuilder extends AbstractBuilder {
@@ -62,11 +64,14 @@ public class ChangelogBuilder extends AbstractBuilder {
                 printStep("exists", v.getVersion());
             } else {
                 if (v.getBlogTemplate() >= 2) {
-                    List<GHIssue> ghIssues = gh.searchIssues().q("user:keycloak milestone:" + v.getVersion() + " is:closed is:issue").isClosed().list().toList();
+                    Map<Integer, GHIssue> ghIssues = new HashMap<>();
+
+                    gh.searchIssues().q("user:keycloak milestone:" + v.getVersion() + " is:closed is:issue").isClosed().list().forEach(i -> ghIssues.put(i.getNumber(), i));
+                    gh.searchIssues().q("user:keycloak label:release/" + v.getVersion() + " is:closed is:issue").isClosed().list().forEach(i -> ghIssues.put(i.getNumber(), i));
 
                     List<ChangeLogEntry> changes = new LinkedList<>();
 
-                    for (GHIssue issue : ghIssues) {
+                    for (GHIssue issue : ghIssues.values()) {
                         ChangeLogEntry change = new ChangeLogEntry();
                         change.setNumber(issue.getNumber());
                         change.setRepository(issue.getRepository().getName());
