@@ -1,0 +1,64 @@
+[ {
+  "number" : 23841,
+  "repository" : "keycloak",
+  "title" : "Users page with LDAP User Storage Provider Cannot read properties of undefined ",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/23841"
+}, {
+  "number" : 23872,
+  "repository" : "keycloak",
+  "title" : "Attempt to request storage access in Firefox",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/23872"
+}, {
+  "number" : 24261,
+  "repository" : "keycloak",
+  "title" : "„Unlink users“-Option greyed out in ldap federation",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/24261"
+}, {
+  "number" : 24958,
+  "repository" : "keycloak",
+  "title" : "Error handling in admin console when update of user fails due the 400 HTTP error code",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/24958"
+}, {
+  "number" : 24961,
+  "repository" : "keycloak",
+  "title" : "Keycloak not able to handle multiple validating X509 certificates when public key are the same",
+  "kind" : "bug",
+  "area" : "saml",
+  "url" : "https://github.com/keycloak/keycloak/issues/24961"
+}, {
+  "number" : 24975,
+  "repository" : "keycloak",
+  "title" : "Adress keycloak high-availability guide follow-up items",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/24975"
+}, {
+  "number" : 24984,
+  "repository" : "keycloak",
+  "title" : "Operator is missing CRDs metadata in CSV",
+  "kind" : "bug",
+  "area" : "operator",
+  "url" : "https://github.com/keycloak/keycloak/issues/24984"
+}, {
+  "number" : 25008,
+  "repository" : "keycloak",
+  "title" : "Group search when creating user",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/25008"
+}, {
+  "number" : 25022,
+  "repository" : "keycloak",
+  "title" : "NPE in checkAndBindMtlsHoKToken on Token Refresh when using SuppressRefreshTokenRotationExecutor and Certificate Bound Token",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/25022"
+} ]
