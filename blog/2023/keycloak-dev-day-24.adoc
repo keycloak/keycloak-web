@@ -1,0 +1,26 @@
+:title: Join Keycloak Developer Day: A Celebration of Innovation and Community!
+:date: 2023-12-11
+:publish: true
+:author: Sebastian Rose
+
+Are you passionate about Keycloak and eager to dive deeper into this incredible Open Source IAM solution?
+Then don’t miss https://keycloak-day.dev[Keycloak Developer Day] – a one-day, community-driven conference in Frankfurt/Main Germany in February 2024, dedicated to Keycloak and its vibrant community.
+
+== Community Event to celebrate Keycloak
+
+https://github.com/dasniko[Niko] and https://github.com/srose[I (Sebastian)] have been active in the Keycloak community for years and have been using Keycloak in many customer projects.
+We co-organize the Java User Group Darmstadt, and participate in community events like the JavaLand conference.
+Now we want to take the next step: Create a special event to celebrate and explore the vast possibilities of Keycloak.
+We're thrilled to invite you to be part of this exciting first occasion, the Keycloak Developer Day 2024!
+
+== Tailored for users of Keycloak
+
+We're calling everyone using Keycloak in their day-to-day work – whether you're tackling operational challenges, brainstorming innovative solutions to unique use-cases, or just curious about the future of IAM – to join us.
+
+Expect a day filled with insightful talks, hands-on workshops, and plenty of opportunities to network with fellow Keycloak enthusiasts and Keycloak maintainers.
+The feature set of Keycloak is as vast as it is impressive, promising a rich array of topics to explore.
+
+== Book your ticket online
+
+Don't miss this unique opportunity to connect, share, and grow with the Keycloak community.
+Book your ticket today at https://keycloak-day.dev[keycloak-day.dev] and join us in celebrating Keycloak!
