@@ -1,0 +1,106 @@
+[ {
+  "number" : 24652,
+  "repository" : "keycloak",
+  "title" : "SAML decryption fails if keycloak.saml.deprecated.encryption flag is set",
+  "kind" : "bug",
+  "area" : "saml",
+  "url" : "https://github.com/keycloak/keycloak/issues/24652"
+}, {
+  "number" : 24986,
+  "repository" : "keycloak",
+  "title" : "`getMultiPartFormParameters()` always returns `EmptyMultivaluedMap` after upgrade to Resteasy Reactive",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/24986"
+}, {
+  "number" : 25001,
+  "repository" : "keycloak",
+  "title" : "Client redirect_uri check must be compared using exact string matching",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/25001"
+}, {
+  "number" : 25010,
+  "repository" : "keycloak",
+  "title" : "Bug: KC_DB_USERNAME environment variable is causing a crash in latest version",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/25010"
+}, {
+  "number" : 25051,
+  "repository" : "keycloak",
+  "title" : "Unexpected Application Error when clicking \"Cancel\" on user creation page",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/25051"
+}, {
+  "number" : 25077,
+  "repository" : "keycloak",
+  "title" : "Publish information about Infinispan availability in lb-check if MULTI_SITE is enabled",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/25077"
+}, {
+  "number" : 25090,
+  "repository" : "keycloak",
+  "title" : "Minor corrections to the HA guides",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/25090"
+}, {
+  "number" : 25108,
+  "repository" : "keycloak",
+  "title" : "Documentation Inconsistency about Open Banking(Finance) Brasil FAPI security profile",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/25108"
+}, {
+  "number" : 25113,
+  "repository" : "keycloak",
+  "title" : "Add a test for the LoadBalancerCheck",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/25113"
+}, {
+  "number" : 25124,
+  "repository" : "keycloak",
+  "title" : "If a client does not have a URL the applications page in the account console links to about:blank",
+  "kind" : "bug",
+  "area" : "account/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/25124"
+}, {
+  "number" : 25173,
+  "repository" : "keycloak",
+  "title" : "Make sure username is lowercase when normalizing attributes",
+  "kind" : "bug",
+  "area" : "user-profile",
+  "url" : "https://github.com/keycloak/keycloak/issues/25173"
+}, {
+  "number" : 25183,
+  "repository" : "keycloak",
+  "title" : "NullPointerException thrown for UPConfig.getGroups()",
+  "kind" : "bug",
+  "area" : "user-profile",
+  "url" : "https://github.com/keycloak/keycloak/issues/25183"
+}, {
+  "number" : 25270,
+  "repository" : "keycloak",
+  "title" : "Link to GitHub discussion to ask for feedback about Multi-Site",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/25270"
+}, {
+  "number" : 25287,
+  "repository" : "keycloak",
+  "title" : "Upgrade Infinispan to 14.0.21.Final",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/25287"
+}, {
+  "number" : 25307,
+  "repository" : "keycloak",
+  "title" : "Keycloak instance `HasErrors` true after update: `More than 1 secondary resource related to primary`",
+  "kind" : "bug",
+  "area" : "operator",
+  "url" : "https://github.com/keycloak/keycloak/issues/25307"
+} ]
