@@ -11,7 +11,7 @@
 
     <p>It is important that suspected vulnerabilities are disclosed in a responsible way, and are not publicly disclosed until after they have been analysed and a fix is available.</p>
 
-    <p>To report a security vulnerability, send an email to <a href="mailto:keycloak-security@googlegroups.com">keycloak-security@googlegroups.com</a>.</p>
+    <p>To report a security vulnerability in the Keycloak codebase, send an email to <a href="mailto:keycloak-security@googlegroups.com">keycloak-security@googlegroups.com</a>. Please include the version affected, provide detailed instructions on how to reproduce the issue, and include your contact information for acknowledgements. If you are reporting known CVEs related to third-party libraries used in Keycloak, please <a href="https://github.com/keycloak/keycloak/issues/new/choose">create a new GitHub issue</a>.</p>
 
     <p>If you would like to work with us on a fix for the security vulnerability, please include your GitHub username in the above email, and we will provide you access to a temporary private fork where we can collaborate on a fix without it being disclosed publicly.</p>
 
