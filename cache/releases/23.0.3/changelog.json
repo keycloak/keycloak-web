@@ -1,0 +1,50 @@
+[ {
+  "number" : 24718,
+  "repository" : "keycloak",
+  "title" : "Mapper Option \"Add to access token\" Toggled Off Despite Claim Added to Token",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/24718"
+}, {
+  "number" : 25208,
+  "repository" : "keycloak",
+  "title" : "GH Actions -> Keycloak CI -> MSSQL docker images fails during startup",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/25208"
+}, {
+  "number" : 25220,
+  "repository" : "keycloak",
+  "title" : "Authenticated users should not be able to delete their passwords via a DELETE request",
+  "kind" : "weakness",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/25220"
+}, {
+  "number" : 25231,
+  "repository" : "keycloak",
+  "title" : "CIBA and PAR are broken since 23.0.0 (NPE) when using http protocol",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/25231"
+}, {
+  "number" : 25322,
+  "repository" : "keycloak",
+  "title" : "Warning \"Event object wasn't available in remote cache\" when using remote store",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/25322"
+}, {
+  "number" : 25388,
+  "repository" : "keycloak",
+  "title" : "Enable concurrent remote operations for Infinispan",
+  "kind" : "enhancement",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/25388"
+}, {
+  "number" : 25437,
+  "repository" : "keycloak",
+  "title" : "Failed to find theme resources, using built-in themes when accessing account console",
+  "kind" : "bug",
+  "area" : "account/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/25437"
+} ]
