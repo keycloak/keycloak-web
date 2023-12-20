@@ -97,7 +97,7 @@ The metrics can now expose the cache names as labels, so they can be plotted sim
 Additional metrics are available for the latencies between sites.
 
 Reliable Infinispan operations:: We tested Infinispan and its communication layer JGroups thoroughly, and we were able to fix situations where a state transfer stalled (https://issues.redhat.com/browse/ISPN-14982[ISPN-14982]), or an initial state transfer failed.
-The Gossip router used in the multi-site setup now works even in situations where a load balancer has multiple IP addresses.
+The Gossip router used in the multi-site setup now works even in situations where a load balancer has multiple IP addresses (https://issues.redhat.com/browse/JGRP-2722[JGRP-2722], https://issues.redhat.com/browse/JGRP-2721[JGRP-2721], https://github.com/infinispan/infinispan-operator/issues/1857[infinispan-operator#1857], and https://github.com/infinispan/infinispan-operator/issues/1856[infinispan-operator#1856]).
 
 == Can the blueprints or scripts be used in production?
 
