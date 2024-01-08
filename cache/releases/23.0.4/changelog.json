@@ -1,0 +1,85 @@
+[ {
+  "number" : 9693,
+  "repository" : "keycloak",
+  "title" : "PubKeySignRegisterTest failures in WebAuthn tests",
+  "kind" : "bug",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/9693"
+}, {
+  "number" : 24508,
+  "repository" : "keycloak",
+  "title" : "Deadlock when pre-loading remote sessions from external Infinispan",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/24508"
+}, {
+  "number" : 24763,
+  "repository" : "keycloak",
+  "title" : "Remove sign out action for offline sessions",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/24763"
+}, {
+  "number" : 25016,
+  "repository" : "keycloak",
+  "title" : "Make password visibility css classes configurable for themes",
+  "kind" : "bug",
+  "area" : "login/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/25016"
+}, {
+  "number" : 25096,
+  "repository" : "keycloak",
+  "title" : "Meaning of briefRepresentation query parameter is inverted in GroupResource.getSubGroups",
+  "kind" : "bug",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/25096"
+}, {
+  "number" : 25111,
+  "repository" : "keycloak",
+  "title" : "RealmAdminResource.getGroupByPathGroup does not work with space in path parameter",
+  "kind" : "bug",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/25111"
+}, {
+  "number" : 25120,
+  "repository" : "keycloak",
+  "title" : "CORS issue in 'openid-connect/certs' endpoint",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/25120"
+}, {
+  "number" : 25424,
+  "repository" : "keycloak",
+  "title" : "Improve logging of Quarkus process when it failed to stop it",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/25424"
+}, {
+  "number" : 25475,
+  "repository" : "keycloak",
+  "title" : "User Profile: If required roles (\"user\") and reqired scopes are set, the required scopes have no effect",
+  "kind" : "bug",
+  "area" : "user-profile",
+  "url" : "https://github.com/keycloak/keycloak/issues/25475"
+}, {
+  "number" : 25633,
+  "repository" : "keycloak",
+  "title" : "Parsing of labels issue IDs doesn't work with colons and the \"fixes\" keyword",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/25633"
+}, {
+  "number" : 25753,
+  "repository" : "keycloak",
+  "title" : "Backchannel logout token is missing the \"exp\" claim",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/25753"
+}, {
+  "number" : 25878,
+  "repository" : "keycloak",
+  "title" : "HTML emails in Catalan don't contain links",
+  "kind" : "bug",
+  "area" : "translations",
+  "url" : "https://github.com/keycloak/keycloak/issues/25878"
+} ]
