@@ -1,0 +1,162 @@
+[ {
+  "number" : 14448,
+  "repository" : "keycloak",
+  "title" : "Multiple failures in OfflineServletsAdapterTest (testServlet, testServletWithConsent, testServletWithRevoke)",
+  "kind" : "bug",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/14448"
+}, {
+  "number" : 20125,
+  "repository" : "keycloak",
+  "title" : "Role mapping tab no longer visible when using fine grained permissions after upgrade from 20.0.3 to 21.0.2",
+  "kind" : "enhancement",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/20125"
+}, {
+  "number" : 24219,
+  "repository" : "keycloak",
+  "title" : "admin-fine-grained-authz + client authorization settings requires view-client role",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/24219"
+}, {
+  "number" : 24586,
+  "repository" : "keycloak",
+  "title" : "Read Only Access of a realm clients' Authz is broken for Admin Console ",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/24586"
+}, {
+  "number" : 24918,
+  "repository" : "keycloak",
+  "title" : "User details tab does not display or update attibutes with dot",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/24918"
+}, {
+  "number" : 25054,
+  "repository" : "keycloak",
+  "title" : "Read Only Access of the realm users' \"Role mapping\" tab is broken for Admin Console",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/25054"
+}, {
+  "number" : 25078,
+  "repository" : "keycloak",
+  "title" : "Log Injection during WebAuthn authentication/registration",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/25078"
+}, {
+  "number" : 25392,
+  "repository" : "keycloak",
+  "title" : "Admin Console: Realm Dropdown should only show the realms the user has access to",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/25392"
+}, {
+  "number" : 25502,
+  "repository" : "keycloak",
+  "title" : "Account v3 theme - theme.properties Custom theme scripts not loading",
+  "kind" : "bug",
+  "area" : "account/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/25502"
+}, {
+  "number" : 25677,
+  "repository" : "keycloak",
+  "title" : "Removing all group attributes no longer works with keycloak-admin-client (java)",
+  "kind" : "bug",
+  "area" : "admin/client-java",
+  "url" : "https://github.com/keycloak/keycloak/issues/25677"
+}, {
+  "number" : 25679,
+  "repository" : "keycloak",
+  "title" : "`/admin/realms/{realm-name}/ui-ext/realms` endpoint leaks realms the user doesn't have access to see",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/25679"
+}, {
+  "number" : 25714,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.adapter.servlet.OfflineServletsAdapterTest#testServlet",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/25714"
+}, {
+  "number" : 25733,
+  "repository" : "keycloak",
+  "title" : "Update Route53 HA guide to be compatible with ROSA and Openshift 4.14.x",
+  "kind" : "feature",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/25733"
+}, {
+  "number" : 25783,
+  "repository" : "keycloak",
+  "title" : "Since 23, start-dev command line arguments parsing is buggy",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/25783"
+}, {
+  "number" : 25827,
+  "repository" : "keycloak",
+  "title" : "admin ui uses hyphen instead of dot as realm attribute separator",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/25827"
+}, {
+  "number" : 25909,
+  "repository" : "keycloak",
+  "title" : "Keycloak HA Guide uses token for cross-site setup that expires",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/25909"
+}, {
+  "number" : 25981,
+  "repository" : "keycloak",
+  "title" : "GitHub Status check is green if the build fails",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/25981"
+}, {
+  "number" : 26006,
+  "repository" : "keycloak",
+  "title" : "Clarification needed of use of containers",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/26006"
+}, {
+  "number" : 26028,
+  "repository" : "keycloak",
+  "title" : "Remove conditional statements about Windows / Linux from the docs",
+  "kind" : "feature",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/26028"
+}, {
+  "number" : 26083,
+  "repository" : "keycloak",
+  "title" : "Change RHDG references to Infinispan",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/26083"
+}, {
+  "number" : 26220,
+  "repository" : "keycloak",
+  "title" : "Don't differentiate Windows for getting started",
+  "kind" : "enhancement",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/26220"
+}, {
+  "number" : 26291,
+  "repository" : "keycloak",
+  "title" : "Workflow failure: FIPS IT - KcSamlEncryptedIdTest#testEncryptedElementIsReadableInDeprecatedMode",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/26291"
+}, {
+  "number" : 26417,
+  "repository" : "keycloak",
+  "title" : "Update to Quarkus 3.2.10",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/26417"
+} ]
