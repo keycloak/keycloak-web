@@ -1,0 +1,22 @@
+[ {
+  "number" : 26427,
+  "repository" : "keycloak",
+  "title" : "Operator CSV uses wrong format for `createdAt` field",
+  "kind" : "bug",
+  "area" : "operator",
+  "url" : "https://github.com/keycloak/keycloak/issues/26427"
+}, {
+  "number" : 26597,
+  "repository" : "keycloak",
+  "title" : "Keycloak UI meets \"Internal Sever Error\" after save \"Refresh Token Max Reuse\" number",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/26597"
+}, {
+  "number" : 26665,
+  "repository" : "keycloak",
+  "title" : "Unable to modify access token lifespan at realm level. Keycloak stops working.",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/26665"
+} ]
