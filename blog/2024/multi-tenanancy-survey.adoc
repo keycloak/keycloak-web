@@ -1,0 +1,12 @@
+:title: Multi-Tenancy Survey
+:date: 2024-01-08
+:publish: true
+:author: Zachary Witter
+
+Multi-Tenancy is a common problem amongst larger institutions that isn’t properly addressed with Keycloak’s existing feature set.
+
+Our Institution requires an additional highly configurable layer within keycloak that enables us to draw links between individual users and their governing organizations. This additional layer (the tenant), needs to be customizable enough for our business partners to be able to manage certain aspects of their relationship with our services.
+
+With this in mind we would like to learn more about how this type of feature set might benefit other consumers of Keycloak. Please consider helping us out with this by responding to our poll below.
+
+https://docs.google.com/forms/d/1tS5Qh5gH-mhshfUcP74tuQTNJGNPb8N5vAGCugZjfAk/edit
