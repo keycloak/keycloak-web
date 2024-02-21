@@ -9,4 +9,4 @@ Many Keycloak users have expressed interest in a single Realm which can house mu
 
 With this in mind we would like to learn more about how this type of feature set might benefit other consumers of Keycloak. Please consider helping us out with this by responding to our survey below.
 
-https://docs.google.com/forms/d/1tS5Qh5gH-mhshfUcP74tuQTNJGNPb8N5vAGCugZjfAk/edit
+https://forms.gle/BjAdUkLvGfdPHgyB8
