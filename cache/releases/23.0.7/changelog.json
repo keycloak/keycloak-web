@@ -1,0 +1,85 @@
+[ {
+  "number" : 22431,
+  "repository" : "keycloak",
+  "title" : "Localization: Admin UI doesn't pick up message bundles from realms other than master ",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/22431"
+}, {
+  "number" : 23786,
+  "repository" : "keycloak",
+  "title" : "Failure: FipsDistTest",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/23786"
+}, {
+  "number" : 25294,
+  "repository" : "keycloak",
+  "title" : "Kerberos principal attribute not found on LDAP user - even if kerberos authentication is off",
+  "kind" : "bug",
+  "area" : "ldap",
+  "url" : "https://github.com/keycloak/keycloak/issues/25294"
+}, {
+  "number" : 25731,
+  "repository" : "keycloak",
+  "title" : "/admin/realms/{realm}/groups Endpoint is slow",
+  "kind" : "performance",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/25731"
+}, {
+  "number" : 25883,
+  "repository" : "keycloak",
+  "title" : "ldap-group-mapper fails when empty member: attribute is present",
+  "kind" : "bug",
+  "area" : "ldap",
+  "url" : "https://github.com/keycloak/keycloak/issues/25883"
+}, {
+  "number" : 25912,
+  "repository" : "keycloak",
+  "title" : "LDAP federation reports \"Creating new LDAP Store...\" on every login",
+  "kind" : "bug",
+  "area" : "ldap",
+  "url" : "https://github.com/keycloak/keycloak/issues/25912"
+}, {
+  "number" : 25961,
+  "repository" : "keycloak",
+  "title" : "Native SQL Schema names broken on MySQL",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/25961"
+}, {
+  "number" : 26374,
+  "repository" : "keycloak",
+  "title" : "Workflow failure: Quarkus IT - FipsDistTest#testUnsupportedHttpsPkcs12KeyStoreInStrictMode",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/26374"
+}, {
+  "number" : 26529,
+  "repository" : "keycloak",
+  "title" : "Workflow failure: Quarkus IT - FipsDistTest#testUnsupportedHttpsPkcs12KeyStoreInStrictMode",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/26529"
+}, {
+  "number" : 26810,
+  "repository" : "keycloak",
+  "title" : "Shorter lifespan for offline session cache entries in memory",
+  "kind" : "enhancement",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/26810"
+}, {
+  "number" : 26826,
+  "repository" : "keycloak",
+  "title" : "Freemarker erroneously escapes/sanitizes URL in template.ftl (&amp;)",
+  "kind" : "bug",
+  "area" : "login/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/26826"
+}, {
+  "number" : 27120,
+  "repository" : "keycloak",
+  "title" : "Microsoft social login failure",
+  "kind" : "bug",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/27120"
+} ]
