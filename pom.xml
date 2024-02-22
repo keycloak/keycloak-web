@@ -19,7 +19,7 @@
         <version.jackson-core>2.13.2</version.jackson-core>
         <version.jackson-databind>2.13.4.2</version.jackson-databind>
         <version.commons-io>2.11.0</version.commons-io>
-        <version.commons-compress>1.21</version.commons-compress>
+        <version.commons-compress>1.26.0</version.commons-compress>
 
         <version.keycloak>23.0.7</version.keycloak>
 
