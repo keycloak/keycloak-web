@@ -1,0 +1,629 @@
+<div class="sect2">
+<h3 id="_supported_user_profile_and_progressive_profiling">Supported user profile and progressive profiling</h3>
+<div class="paragraph">
+<p>The user profile preview feature is promoted to be fully supported and user profile is enabled by default.</p>
+</div>
+<div class="paragraph">
+<p>In the past months, the Keycloak team spent a huge amount of effort in polishing the user
+profile feature to make it fully supported. In this release, we continued the effort. Lots of improvements, fixes and
+polishing were done based on the thorough testing and feedback from our awesome community.</p>
+</div>
+<div class="paragraph">
+<p>The following are a few highlights of this feature;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Fine-grained control over the attributes that users and administrators can manage so that you can prevent unexpected attributes and values from being set.</p>
+</li>
+<li>
+<p>Ability to specify what user attributes are managed and should be displayed on the forms to regular users or administrators.</p>
+</li>
+<li>
+<p>Dynamic forms - Previously, the forms where users created or updated their profiles, contain four basic attributes like username, email, first name and last name. The addition of any
+attributes (or removing some default attributes) required you to create a custom theme. Now custom themes may not be needed because users see exactly the requested attributes based on the requirement of the particular deployment.</p>
+</li>
+<li>
+<p>Validations - Ability to specify validators for the user attributes including built-in validators that you can use to specify a maximum or minimum length, a specific regex, or limiting a
+particular attribute to be a URL or number.</p>
+</li>
+<li>
+<p>Annotations - Ability to specify that particular attribute should be rendered for instance as a text area, an HTML select with specified options, or calendar or many other options. You can also bind JavaScript code to a specific field to change how an attribute is rendered and customize its behavior.</p>
+</li>
+<li>
+<p>Progressive profiling - Ability to specify that some fields are required or available on the forms just for particular values of <code>scope</code> parameter. This effectively allow progressive
+profiling. You no longer need to ask the user for twenty attributes during registration; you can instead ask the user to fill in attributes incrementally according to the requirements of the individual client
+applications that are used by the user.</p>
+</li>
+<li>
+<p>Migration from previous versions - The user profile is now always enabled, but it operates as before for those who did not use this feature. You can
+benefit from the user profile capabilities, but you are not required to use them. For migration instructions, see the <a href="https://www.keycloak.org/docs/24.0.0/upgrading/">Upgrading Guide</a>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The first release of the user profile as a supported feature is just the starting point and the baseline for delivering many more capabilities around identity management.</p>
+</div>
+<div class="paragraph">
+<p>We would like to give huge thanks to the awesome Keycloak community as lots of ideas, requirements and contributions came from the community! Special thanks to:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/velias">Vlastimil Eliáš</a></p>
+</li>
+<li>
+<p><a href="https://github.com/alechenninger">Alec Henninger</a></p>
+</li>
+<li>
+<p><a href="https://github.com/thomasdarimont">Thomas Darimont</a></p>
+</li>
+<li>
+<p><a href="https://github.com/bs-matil">Markus Till</a></p>
+</li>
+<li>
+<p><a href="https://github.com/sschu">Sebastian Schuster</a></p>
+</li>
+<li>
+<p><a href="https://github.com/antikalk">Oliver</a></p>
+</li>
+<li>
+<p><a href="https://github.com/patrickjennings">Patrick Jennings</a></p>
+</li>
+<li>
+<p><a href="https://github.com/adrhine">Andrew</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For more details about user profile capabilities, see the <a href="https://www.keycloak.org/docs/24.0.0/server_admin/#user-profile">Server Administration Guide</a>.</p>
+</div>
+<div class="sect3">
+<h4 id="_breaking_changes_to_the_user_profile_spi">Breaking changes to the User Profile SPI</h4>
+<div class="paragraph">
+<p>In this release, changes to the User Profile SPI might impact existing implementations based on this SPI. For more details, see the
+<a href="https://www.keycloak.org/docs/24.0.0/upgrading/">Upgrading Guide</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_changes_to_freemarker_templates_to_render_pages_based_on_the_user_profile_and_realm">Changes to Freemarker templates to render pages based on the user profile and realm</h4>
+<div class="paragraph">
+<p>In this release, the following templates were updated to make it possible to dynamically render attributes based
+on the user profile configuration set to a realm:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>login-update-profile.ftl</code></p>
+</li>
+<li>
+<p><code>register.ftl</code></p>
+</li>
+<li>
+<p><code>update-email.ftl</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For more details, see the <a href="https://www.keycloak.org/docs/24.0.0/upgrading/">Upgrading Guide</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_new_freemarker_template_for_the_update_profile_page_at_first_login_through_a_broker">New Freemarker template for the update profile page at first login through a broker</h4>
+<div class="paragraph">
+<p>In this release, the server renders the update profile page when the user is authenticating through a broker for the
+first time using the <code>idp-review-user-profile.ftl</code> template.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see the <a href="https://www.keycloak.org/docs/24.0.0/upgrading/">Upgrading Guide</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_java_adapter_deprecation_and_removal">Java adapter deprecation and removal</h3>
+<div class="paragraph">
+<p>Back in 2022 we announced the <a href="https://www.keycloak.org/2022/02/adapter-deprecation.html">deprecation of Keycloak adapters in Keycloak 19</a>.
+To give the community more time to adopt this <a href="https://www.keycloak.org/2023/03/adapter-deprecation-update.html">was delayed</a>.</p>
+</div>
+<div class="paragraph">
+<p>With that in mind, this will be the last major release of Keycloak to include OpenID Connect and SAML adapters.
+As Jetty 9.x has not been supported since 2022 the Jetty adapter has been removed already in this release.</p>
+</div>
+<div class="paragraph">
+<p>The generic Authorization Client library will continue to be supported, and aims to be used in combination with any
+other OAuth 2.0 or OpenID Connect libraries.</p>
+</div>
+<div class="paragraph">
+<p>The only adapter we will continue to deliver is the SAML adapter for latest releases of WildFly and EAP 8.x. Reasoning
+for continuing to support this is down to the fact that the majority of the SAML codebase in Keycloak was a contribution
+from WildFly. As part of this contribution we agreed to maintain SAML adapters for WildFly and EAP in the long run.</p>
+</div>
+<div class="sect3">
+<h4 id="_jetty_adapter_removed">Jetty adapter removed</h4>
+<div class="paragraph">
+<p>Jetty 9.4 has not been supported in the community for a long time, and reached end-of-life in 2022. At the same time the
+adapter has not been updated or tested with more recent versions of Jetty. For these reasons the Jetty adapter has been
+removed from this release.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_new_welcome_page">New Welcome Page</h3>
+<div class="paragraph">
+<p>The 'welcome' page that appears at the first use of Keycloak is redesigned. It provides a better setup experience and conforms to the latest version of <a href="https://www.patternfly.org/">PatternFly</a>. The simplified page layout includes only a form to register the first administrative user. After completing the registration, the user is sent directly to the Admin Console.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/new-welcome-screen.png" alt="New welcome page with a simplified layout and registration form">
+</div>
+<div class="title">Figure 1. New welcome page with a simplified layout and registration form</div>
+</div>
+<div class="paragraph">
+<p>If you use a custom theme, you may need to update it to support the new welcome page. For details, see the <a href="https://www.keycloak.org/docs/24.0.0/upgrading/">Upgrading Guide</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_new_account_console_now_the_default">New Account Console now the default</h3>
+<div class="paragraph">
+<p>We introduced version 3 of the Account Console in Keycloak 22 as a preview feature. In this release, we are making it the default version, and deprecating version 2 in the process, which will be removed in a subsequent release.</p>
+</div>
+<div class="paragraph">
+<p>This new version has built-in support for the user profile feature, which allows administrators to configure which attributes are available to users in the Account Console, and lands a user directly on their personal account page after logging in.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/new-account-console.png" alt="New Account Console with custom attributes">
+</div>
+<div class="title">Figure 2. New Account Console with custom attributes</div>
+</div>
+<div class="paragraph">
+<p>If you are using or extending the customization features of this theme,  you may need to perform additional migrations. For more details, see the <a href="https://www.keycloak.org/docs/24.0.0/upgrading/">Upgrading Guide</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_keycloak_js">Keycloak JS</h3>
+<div class="sect3">
+<h4 id="_using_exports_field_in_package_json">Using <code>exports</code> field in <code>package.json</code></h4>
+<div class="paragraph">
+<p>The Keycloak JS adapter now uses the <a href="https://webpack.js.org/guides/package-exports/"><code>exports</code> field</a> in its <code>package.json</code>. This change improves support for more modern bundlers like Webpack 5 and Vite, but comes with some unavoidable breaking changes. See the <a href="https://www.keycloak.org/docs/24.0.0/upgrading/">Upgrading Guide</a> for more details.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_pkce_enabled_by_default">PKCE enabled by default</h4>
+<div class="paragraph">
+<p>The Keycloak JS adapter now sets the <code>pkceMethod</code> option to <code>S256</code> by default. This change enables Proof Key Code Exchange (<a href="https://datatracker.ietf.org/doc/html/rfc7636">PKCE</a>) for all applications using the adapter. If you use the adapter on a system that does not support PKCE, you can set the <code>pkceMethod</code> option to <code>false</code> to disable it.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_changes_to_password_hashing">Changes to Password Hashing</h3>
+<div class="paragraph">
+<p>In this release, we adapted the password hashing defaults to match the <a href="https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html#pbkdf2">OWASP recommendations for Password Storage</a>.</p>
+</div>
+<div class="paragraph">
+<p>As part of this change, the default password hashing provider has changed from <code>pbkdf2-sha256</code> to <code>pbkdf2-sha512</code>.
+Also, the number of default hash iterations for <code>pbkdf2</code> based password hashing algorithms changed. This change means better security aligned with latest recommendations, but
+it has impact on performance. It is possible to stick to the old behaviour by adding password policies <code>hashAlgorithm</code> and <code>hashIterations</code> to your realm. For more details, see the <a href="https://www.keycloak.org/docs/24.0.0/upgrading/">Upgrading Guide</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_oauthoidc_related_improvements">OAuth/OIDC related improvements</h3>
+<div class="sect3">
+<h4 id="_lightweight_access_tokens_support">Lightweight access tokens support</h4>
+<div class="paragraph">
+<p>This release contains support for Lightweight access tokens. As a result, you can have smaller access tokens for specified clients. These tokens have only a few
+claims, which is why they are smaller. Note that lightweight access token is still JWT signed by the realm key by default and still contains some very basic claims.</p>
+</div>
+<div class="paragraph">
+<p>This release introduces an <strong>Add to lightweight access token</strong> flag that is available on some OIDC protocol mappers. Use this flag to specify if a particular claim should be added to a lightweight
+access token. It is <strong>OFF</strong> by default, which means that most claims are not added.</p>
+</div>
+<div class="paragraph">
+<p>Also, a client policy executor exists. Use it to specify if a particular client request
+should use lightweight access tokens or regular access tokens. An alternative to the executor is to use an <strong>Always use lightweight access token</strong> flag on client advanced
+settings, which causes that client to always use lightweight access tokens. An executor can be an alternative if you need
+more flexibility. For instance, you may choose to use lightweight access tokens by default but use regular tokens only for the specified <strong>scope</strong> parameter.</p>
+</div>
+<div class="paragraph">
+<p>A previous release added an <strong>Add to token introspection</strong> switch. You use it to add
+claims that are not present in the access token into the introspection endpoint response.</p>
+</div>
+<div class="paragraph">
+<p>Thanks to <a href="https://github.com/skabano">Shigeyuki Kabano</a> for the contribution and Thanks to
+<a href="https://github.com/tnorimat">Takashi Norimatsu</a> for a help and review of this feature.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_oauth_2_1_support">OAuth 2.1 support</h4>
+<div class="paragraph">
+<p>This release contains optional OAuth 2.1 support. New client policy profiles were introduced in this release, which administrators can use to make sure that clients and particular client requests comply with the OAuth 2.1 specification. A dedicated client profile exists for confidential clients and a dedicated profile for public clients.
+Thanks to <a href="https://github.com/tnorimat">Takashi Norimatsu</a> and <a href="https://github.com/skabano">Shigeyuki Kabano</a> for the contribution.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_scope_parameter_supported_in_the_refresh_token_flow">Scope parameter supported in the refresh token flow</h4>
+<div class="paragraph">
+<p>Starting with this release, the <strong>scope</strong> parameter in the OAuth2/OIDC endpoint for token refresh is supported. Use this parameter to request access tokens with a smaller amount
+of scopes than originally granted, which means you cannot increase access token scope. This scope limitation does not affect the scope of the refreshed refresh token. This function works as
+described in the OAuth2 specification.
+Thanks to <a href="https://github.com/cgeorgilakis">Konstantinos Georgilakis</a> for the contribution.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_client_policy_executor_for_secure_redirect_uris">Client policy executor for secure redirect URIs</h4>
+<div class="paragraph">
+<p>A new client policy executor <code>secure-redirect-uris-enforcer</code> is introduced. Use it to restrict which redirect URIs can be used by the clients. For instance,
+you can specify that client redirect URIs cannot have wildcards, should be just from specific domain, must be OAuth 2.1 compliant, and so on.
+Thanks to <a href="https://github.com/lexcao">Lex Cao</a> and <a href="https://github.com/tnorimat">Takashi Norimatsu</a> for the contribution.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_client_policy_executor_for_enforcing_dpop">Client policy executor for enforcing DPoP</h4>
+<div class="paragraph">
+<p>A new client policy executor <code>dpop-bind-enforcer</code> is introduced. You can use it to enforce DPoP for a particular client if <code>dpop</code> preview
+ is enabled.
+Thanks to <a href="https://github.com/tnorimat">Takashi Norimatsu</a> for the contribution.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_supporting_eddsa">Supporting EdDSA</h4>
+<div class="paragraph">
+<p>You can create EdDSA realm keys and use them as signature algorithms for various clients. For instance, you can use these keys to sign tokens or for client authentication with signed JWT.
+This feature includes identity brokering where Keycloak itself signs client assertions that are used for <code>private_key_jwt</code> authentication to third party identity providers.
+Thanks to
+<a href="https://github.com/tnorimat">Takashi Norimatsu</a> and <a href="https://github.com/MuhammadZakwan">Muhammad Zakwan Bin Mohd Zahid</a> for the contribution.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_ec_keys_supported_by_javakeystore_provider">EC Keys supported by JavaKeystore provider</h4>
+<div class="paragraph">
+<p>The provider <code>JavaKeystoreProvider</code> for providing realm keys now supports EC keys in addition to previously supported RSA keys.
+Thanks to <a href="https://github.com/wistefan">Stefan Wiedemann</a> for the contribution.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_option_to_add_x509_thumbprint_to_jwt_when_using_private_key_jwt_authentication_for_identity_providers">Option to add X509 thumbprint to JWT when using private_key_jwt authentication for identity providers</h4>
+<div class="paragraph">
+<p>OIDC identity providers now have the <strong>Add X.509 Headers to the JWT</strong> option for the situation when client authentication with JWT signed by private key is used. This option can be useful
+for interoperability with some identity providers such as Azure AD, which require the thumbprint to be present on the JWT.
+Thanks to <a href="https://github.com/MikeTangoEcho">MT</a> for the contribution.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_oauth_grant_type_spi">OAuth Grant Type SPI</h4>
+<div class="paragraph">
+<p>The Keycloak codebase includes an internal update  to introduce the OAuth Grant Type SPI. This update allows additional flexibility when introducing custom grant types
+supported by the Keycloak OAuth 2 token endpoint.
+Thanks to <a href="https://github.com/dteleguin">Dmitry Telegin</a> for the contribution.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_cors_improvements">CORS improvements</h3>
+<div class="paragraph">
+<p>The CORS related Keycloak functionality was extracted into the SPI, which can allow additional flexibility. Note that <code>CorsSPI</code> is internal and may change at a future release.
+Thanks to <a href="https://github.com/dteleguin">Dmitry Telegin</a> for the contribution.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_truststore_improvements">Truststore improvements</h3>
+<div class="paragraph">
+<p>Keycloak introduces improved truststores configuration options. The Keycloak truststore is now used across the server, including outgoing connections, mTLS, and database drivers. You no longer need to configure separate truststores for individual areas. To configure the truststore, you can put your truststores files or certificates in the default <code>conf/truststores</code>, or use the new <code>truststore-paths</code> config option. For details refer to the relevant <a href="https://www.keycloak.org/server/keycloak-truststore">guide</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_versioned_features">Versioned Features</h3>
+<div class="paragraph">
+<p>Features now support versioning. To preserve backward compatibility, all existing features (including <code>account2</code> and <code>account3</code>) are marked as version 1. Newly introduced features will use versioning, which means that users can select between different implementations of desired features.</p>
+</div>
+<div class="paragraph">
+<p>For details refer to the <a href="https://www.keycloak.org/server/features">features guide</a>.</p>
+</div>
+<div class="sect3">
+<h4 id="_keycloak_cr_truststores">Keycloak CR Truststores</h4>
+<div class="paragraph">
+<p>You may also take advantage of the new server-side handling of truststores by using the Keycloak CR, for example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">spec:
+  truststores:
+    mystore:
+      secret:
+        name: mystore-secret
+    myotherstore:
+      secret:
+        name: myotherstore-secret</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Currently only Secrets are supported.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_trust_kubernetes_ca">Trust Kubernetes CA</h4>
+<div class="paragraph">
+<p>The cert for the Kubernetes CA is added automatically to your Keycloak Pods managed by the Operator.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_automatic_certificate_management_for_saml_identity_providers">Automatic certificate management for SAML identity providers</h3>
+<div class="paragraph">
+<p>The SAML identity providers can now be configured to automatically download the signing certificates from the IDP entity metadata descriptor endpoint. In order to use the new feature, configure the <code>Metadata descriptor URL</code> option in the provider (the URL where the IDP metadata information with the certificates is published) and set <code>Use metadata descriptor URL</code> to <code>ON</code>. The certificates are automatically downloaded and cached in the <code>public-key-storage</code> SPI from that URL. The certificates can also be reloaded or imported from the Admin Console, using the action combo in the provider page.</p>
+</div>
+<div class="paragraph">
+<p>See the <a href="https://www.keycloak.org/docs/latest/server_admin/index.html#saml-v2-0-identity-providers">documentation</a> for more details about the new options.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_non_blocking_health_check_for_load_balancers">Non-blocking health check for load balancers</h3>
+<div class="paragraph">
+<p>A new health check endpoint available at <code>/lb-check</code> was added.
+The execution is running in the event loop, which means this check is responsive also in overloaded situations when Keycloak needs to handle many requests waiting in request queue.
+This behavior is useful, for example, in multi-site deployment to avoid failing over to another site that is under heavy load.
+The endpoint is currently checking availability of the embedded and external Infinispan caches. Other checks may be added later.</p>
+</div>
+<div class="paragraph">
+<p>This endpoint is not available by default.
+To enable it, run Keyloak with the <code>multi-site</code> feature.
+For more details, see <a href="https://www.keycloak.org/server/features">Enabling and disabling features</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_keycloak_cr_optimized_field">Keycloak CR Optimized Field</h3>
+<div class="paragraph">
+<p>The Keycloak CR now includes an <code>startOptimized</code> field, which may be used to override the default assumption about whether to use the <code>--optimized</code> flag for the start command.
+As a result, you can use the CR to configure build time options also when a custom Keycloak image is used.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_enhanced_reverse_proxy_settings">Enhanced reverse proxy settings</h3>
+<div class="paragraph">
+<p>It is now possible to separately enable parsing of either <code>Forwarded</code> or <code>X-Forwarded-*</code> headers by using the new <code>--proxy-headers</code> option.
+For details, see the <a href="https://www.keycloak.org/server/reverseproxy">Reverse Proxy Guide</a>.
+The original <code>--proxy</code> option is now deprecated and will be removed in a future release. For migration instructions, see the <a href="https://www.keycloak.org/docs/24.0.0/upgrading/">Upgrading Guide</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_changes_to_the_user_representation_in_both_admin_api_and_account_contexts">Changes to the user representation in both Admin API and Account contexts</h3>
+<div class="paragraph">
+<p>In this release, we are encapsulating the root user attributes (such as <code>username</code>, <code>email</code>, <code>firstName</code>, <code>lastName</code>, and <code>locale</code>) by moving them to a base/abstract class in order to align how these attributes
+are marshalled and unmarshalled when using both Admin and Account REST APIs.</p>
+</div>
+<div class="paragraph">
+<p>This strategy provides consistency in how attributes are managed by clients and makes sure they conform to the user profile
+configuration set to a realm.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see the <a href="https://www.keycloak.org/docs/24.0.0/upgrading/">Upgrading Guide</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sequential_loading_of_offline_sessions_and_remote_sessions">Sequential loading of offline sessions and remote sessions</h3>
+<div class="paragraph">
+<p>Starting with this release, the first member of a Keycloak cluster will load remote sessions sequentially instead of in parallel.
+If offline session preloading is enabled, those will be loaded sequentially as well.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see the <a href="https://www.keycloak.org/docs/24.0.0/upgrading/">Upgrading Guide</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_performing_actions_on_behalf_of_another_already_authenticated_user_is_not_longer_possible">Performing actions on behalf of another already authenticated user is not longer possible</h3>
+<div class="paragraph">
+<p>In this release, you can no longer perform actions such as email verification if the user is already authenticated
+and the action is bound to another user. For instance, a user can not complete the verification email flow if the email link
+is bound to a different account.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_changes_to_the_email_verification_flow">Changes to the email verification flow</h3>
+<div class="paragraph">
+<p>In this release, if a user tries to follow the link to verify the email and the email was previously verified, a proper message
+will be shown.</p>
+</div>
+<div class="paragraph">
+<p>In addition to that, a new error (<code>EMAIL_ALREADY_VERIFIED</code>) event will be fired to indicate an attempt to verify an already verified email. You can
+use this event to track possible attempts to hijack user accounts in case the link has leaked or to alert users if they do not recognize the action.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_deprecated_offline_session_preloading">Deprecated offline session preloading</h3>
+<div class="paragraph">
+<p>The default behavior of Keycloak is to load offline sessions on demand.
+The old behavior to preload them at startup is now deprecated, as pre-loading them at startup does not scale well with a growing number of sessions, and increases Keycloak memory usage. The old behavior will be removed in a future release.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see the
+<a href="https://www.keycloak.org/docs/24.0.0/upgrading/">Upgrading Guide</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_configuration_option_for_offline_session_lifespan_override_in_memory">Configuration option for offline session lifespan override in memory</h3>
+<div class="paragraph">
+<p>To reduce memory requirements, we introduced a configuration option to shorten lifespan for offline sessions imported into the Infinispan caches. Currently, the offline session lifespan override is disabled by default.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see the
+<a href="https://www.keycloak.org/docs/24.0.0/server_admin/#_offline-access">Server Administration Guide</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_infinispan_metrics_use_labels_for_cache_manager_and_cache_names">Infinispan metrics use labels for cache manager and cache names</h3>
+<div class="paragraph">
+<p>When enabling metrics for Keycloak&#8217;s embedded caches, the metrics now use labels for the cache manager and the cache names.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see the
+<a href="https://www.keycloak.org/docs/24.0.0/upgrading/">Upgrading Guide</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_user_attribute_value_length_extension">User attribute value length extension</h3>
+<div class="paragraph">
+<p>As of this release, Keycloak supports storing and searching by user attribute values longer than 255 characters, which was previously a limitation.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see the
+<a href="https://www.keycloak.org/docs/24.0.0/upgrading/">Upgrading Guide</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_brute_force_protection_changes">Brute Force Protection changes</h3>
+<div class="paragraph">
+<p>There have been a couple of enhancements to the Brute Protection:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>When an attempt to authenticate with an OTP or Recovery Code fails due to Brute Force Protection the active Authentication Session is invalidated. Any further attempts to authenticate with that session will fail.</p>
+</li>
+<li>
+<p>In previous versions of Keycloak, the administrator had to choose between disabling users temporarily or permanently due to a Brute Force attack on their accounts. The administrator can now permanently disable a user after a given number of temporary lockouts.</p>
+</li>
+<li>
+<p>The property <code>failedLoginNotBefore</code> has been added to the <code>brute-force/users/{userId}</code> endpoint</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_authorization_policy">Authorization Policy</h3>
+<div class="paragraph">
+<p>In previous versions of Keycloak, when the last member of a User, Group or Client policy was deleted then that policy would also be deleted. Unfortunately this could lead to an escalation of privileges if the policy was used in an aggregate policy. To avoid privilege escalation the effect policies are no longer deleted and an administrator will need to update those policies.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_keycloak_cr_cache_config_file_option">Keycloak CR cache-config-file option</h3>
+<div class="paragraph">
+<p>The Keycloak CR now allows for specifying the <code>cache-config-file</code> option by using the <code>cache</code> spec <code>configMapFile</code> field, for example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: k8s.keycloak.org/v2alpha1
+kind: Keycloak
+metadata:
+  name: example-kc
+spec:
+  ...
+  cache:
+    configMapFile:
+      name: my-configmap
+      key: config.xml</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_keycloak_cr_resources_options">Keycloak CR resources options</h3>
+<div class="paragraph">
+<p>The Keycloak CR now allows for specifying the <code>resources</code> options for managing compute resources for the Keycloak container.
+It provides the ability to request and limit resources independently for the main Keycloak deployment via the Keycloak CR, and for the realm import Job via the Realm Import CR.</p>
+</div>
+<div class="paragraph">
+<p>When no values are specified, the default <code>requests</code> memory is set to <code>1700MiB</code>, and the <code>limits</code> memory is set to <code>2GiB</code>.</p>
+</div>
+<div class="paragraph">
+<p>You can specify your custom values based on your requirements as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: k8s.keycloak.org/v2alpha1
+kind: Keycloak
+metadata:
+  name: example-kc
+spec:
+  ...
+  resources:
+    requests:
+      cpu: 1200m
+      memory: 896Mi
+    limits:
+      cpu: 6
+      memory: 3Gi</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For more details, see the
+<a href="https://www.keycloak.org/operator/advanced-configuration">Operator Advanced configuration</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_temporary_lockout_log_replaced_with_event">Temporary lockout log replaced with event</h3>
+<div class="paragraph">
+<p>There is now a new event <code>USER_DISABLED_BY_TEMPORARY_LOCKOUT</code> when a user is temporarily locked out by the brute force protector.
+The log with ID <code>KC-SERVICES0053</code> has been removed as the new event offers the information in a structured form.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see the
+<a href="https://www.keycloak.org/docs/24.0.0/upgrading/">Upgrading Guide</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_updates_to_cookies">Updates to cookies</h3>
+<div class="paragraph">
+<p>Cookie handling code has been refactored and improved, including a new Cookie Provider. This provides better consistency
+for cookies handled by Keycloak, and the ability to introduce configuration options around cookies if needed.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_saml_user_attribute_mapper_for_nameid_now_suggests_only_valid_nameid_formats">SAML User Attribute Mapper For NameID now suggests only valid NameID formats</h3>
+<div class="paragraph">
+<p>User Attribute Mapper For NameID allowed setting <code>Name ID Format</code> option to the following values:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>urn:oasis:names:tc:SAML:1.1:nameid-format:X509SubjectName</code></p>
+</li>
+<li>
+<p><code>urn:oasis:names:tc:SAML:1.1:nameid-format:WindowsDomainQualifiedName</code></p>
+</li>
+<li>
+<p><code>urn:oasis:names:tc:SAML:2.0:nameid-format:kerberos</code></p>
+</li>
+<li>
+<p><code>urn:oasis:names:tc:SAML:2.0:nameid-format:entity</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>However, Keycloak does not support receiving <code>AuthnRequest</code> document with one of these <code>NameIDPolicy</code>, therefore these
+mappers would never be used. The supported options were updated to only include the following Name ID Formats:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</code></p>
+</li>
+<li>
+<p><code>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</code></p>
+</li>
+<li>
+<p><code>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</code></p>
+</li>
+<li>
+<p><code>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_different_jvm_memory_settings_when_running_in_container">Different JVM memory settings when running in container</h3>
+<div class="paragraph">
+<p>Instead of specifying hardcoded values for the initial and maximum heap size, Keycloak uses relative values to the total memory of a container.
+The JVM options <code>-Xms</code>, and <code>-Xmx</code> were replaced by <code>-XX:InitialRAMPercentage</code>, and <code>-XX:MaxRAMPercentage</code>.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see the
+<a href="https://www.keycloak.org/server/containers">Running Keycloak in a container</a> guide.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_gelf_log_handler_has_been_deprecated">GELF log handler has been deprecated</h3>
+<div class="paragraph">
+<p>With sunsetting of the <a href="https://github.com/mp911de/logstash-gelf">underlying library</a> providing integration
+with GELF, Keycloak will no longer support the GELF log handler out-of-the-box. This feature will be removed in a future
+release. If you require an external log management, consider using file log parsing.</p>
+</div>
+</div>
