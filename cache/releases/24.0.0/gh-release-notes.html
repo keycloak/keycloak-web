@@ -154,12 +154,6 @@ removed from this release.</p>
 <div class="paragraph">
 <p>The 'welcome' page that appears at the first use of Keycloak is redesigned. It provides a better setup experience and conforms to the latest version of <a href="https://www.patternfly.org/">PatternFly</a>. The simplified page layout includes only a form to register the first administrative user. After completing the registration, the user is sent directly to the Admin Console.</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="images/new-welcome-screen.png" alt="New welcome page with a simplified layout and registration form">
-</div>
-<div class="title">Figure 1. New welcome page with a simplified layout and registration form</div>
-</div>
 <div class="paragraph">
 <p>If you use a custom theme, you may need to update it to support the new welcome page. For details, see the <a href="https://www.keycloak.org/docs/24.0.0/upgrading/">Upgrading Guide</a>.</p>
 </div>
@@ -171,12 +165,6 @@ removed from this release.</p>
 </div>
 <div class="paragraph">
 <p>This new version has built-in support for the user profile feature, which allows administrators to configure which attributes are available to users in the Account Console, and lands a user directly on their personal account page after logging in.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/new-account-console.png" alt="New Account Console with custom attributes">
-</div>
-<div class="title">Figure 2. New Account Console with custom attributes</div>
 </div>
 <div class="paragraph">
 <p>If you are using or extending the customization features of this theme,  you may need to perform additional migrations. For more details, see the <a href="https://www.keycloak.org/docs/24.0.0/upgrading/">Upgrading Guide</a>.</p>
@@ -629,8 +617,18 @@ with GELF, Keycloak will no longer support the GELF log handler out-of-the-box. 
 release. If you require an external log management, consider using file log parsing.</p>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_support_for_multi_site_active_passive_deployments">Support for multi-site active-passive deployments</h3>
+<div class="paragraph">
+<p>Deploying Keycloak to multiple independent sites is essential for some environments to provide high availability and a speedy recovery from failures.
+This release supports active-passive deployments for Keycloak.</p>
+</div>
+<div class="paragraph">
+<p>To get started, use the <a href="{highavailabilityguide_link}">{highavailabilityguide_name}</a> which also includes a comprehensive blueprint to deploy a highly available Keycloak to a cloud environment.</p>
+</div>
+</div>
 <h2>Upgrading</h2>
-<p>Before upgrading refer to <a href="file:/home/runner/work/keycloak-rel/keycloak-rel/target/web/docs/latest/upgrading/index.html#migration-changes">the migration guide</a> for a complete list of changes.</p>
+<p>Before upgrading refer to <a href="file:/home/st/dev/keycloak-web/target/web/docs/latest/upgrading/index.html#migration-changes">the migration guide</a> for a complete list of changes.</p>
 
 <h2>All resolved issues</h2>
 
