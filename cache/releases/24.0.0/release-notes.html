@@ -37,7 +37,7 @@ applications that are used by the user.</p>
 </li>
 <li>
 <p>Migration from previous versions - The user profile is now always enabled, but it operates as before for those who did not use this feature. You can
-benefit from the user profile capabilities, but you are not required to use them. For migration instructions, see the <a href="https://www.keycloak.org/docs/24.0.0/upgrading/">Upgrading Guide</a>.</p>
+benefit from the user profile capabilities, but you are not required to use them. For migration instructions, see the <a href="https://www.keycloak.org/docs/DEV/upgrading/">Upgrading Guide</a>.</p>
 </li>
 </ul>
 </div>
@@ -76,13 +76,13 @@ benefit from the user profile capabilities, but you are not required to use them
 </ul>
 </div>
 <div class="paragraph">
-<p>For more details about user profile capabilities, see the <a href="https://www.keycloak.org/docs/24.0.0/server_admin/#user-profile">Server Administration Guide</a>.</p>
+<p>For more details about user profile capabilities, see the <a href="https://www.keycloak.org/docs/DEV/server_admin/#user-profile">Server Administration Guide</a>.</p>
 </div>
 <div class="sect3">
 <h4 id="_breaking_changes_to_the_user_profile_spi">Breaking changes to the User Profile SPI</h4>
 <div class="paragraph">
 <p>In this release, changes to the User Profile SPI might impact existing implementations based on this SPI. For more details, see the
-<a href="https://www.keycloak.org/docs/24.0.0/upgrading/">Upgrading Guide</a>.</p>
+<a href="https://www.keycloak.org/docs/DEV/upgrading/">Upgrading Guide</a>.</p>
 </div>
 </div>
 <div class="sect3">
@@ -105,7 +105,7 @@ on the user profile configuration set to a realm:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>For more details, see the <a href="https://www.keycloak.org/docs/24.0.0/upgrading/">Upgrading Guide</a>.</p>
+<p>For more details, see the <a href="https://www.keycloak.org/docs/DEV/upgrading/">Upgrading Guide</a>.</p>
 </div>
 </div>
 <div class="sect3">
@@ -115,7 +115,7 @@ on the user profile configuration set to a realm:</p>
 first time using the <code>idp-review-user-profile.ftl</code> template.</p>
 </div>
 <div class="paragraph">
-<p>For more details, see the <a href="https://www.keycloak.org/docs/24.0.0/upgrading/">Upgrading Guide</a>.</p>
+<p>For more details, see the <a href="https://www.keycloak.org/docs/DEV/upgrading/">Upgrading Guide</a>.</p>
 </div>
 </div>
 </div>
@@ -153,7 +153,7 @@ removed from this release.</p>
 <p>The 'welcome' page that appears at the first use of Keycloak is redesigned. It provides a better setup experience and conforms to the latest version of <a href="https://www.patternfly.org/">PatternFly</a>. The simplified page layout includes only a form to register the first administrative user. After completing the registration, the user is sent directly to the Admin Console.</p>
 </div>
 <div class="paragraph">
-<p>If you use a custom theme, you may need to update it to support the new welcome page. For details, see the <a href="https://www.keycloak.org/docs/24.0.0/upgrading/">Upgrading Guide</a>.</p>
+<p>If you use a custom theme, you may need to update it to support the new welcome page. For details, see the <a href="https://www.keycloak.org/docs/DEV/upgrading/">Upgrading Guide</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -165,7 +165,7 @@ removed from this release.</p>
 <p>This new version has built-in support for the user profile feature, which allows administrators to configure which attributes are available to users in the Account Console, and lands a user directly on their personal account page after logging in.</p>
 </div>
 <div class="paragraph">
-<p>If you are using or extending the customization features of this theme,  you may need to perform additional migrations. For more details, see the <a href="https://www.keycloak.org/docs/24.0.0/upgrading/">Upgrading Guide</a>.</p>
+<p>If you are using or extending the customization features of this theme,  you may need to perform additional migrations. For more details, see the <a href="https://www.keycloak.org/docs/DEV/upgrading/">Upgrading Guide</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -173,7 +173,7 @@ removed from this release.</p>
 <div class="sect3">
 <h4 id="_using_exports_field_in_package_json">Using <code>exports</code> field in <code>package.json</code></h4>
 <div class="paragraph">
-<p>The Keycloak JS adapter now uses the <a href="https://webpack.js.org/guides/package-exports/"><code>exports</code> field</a> in its <code>package.json</code>. This change improves support for more modern bundlers like Webpack 5 and Vite, but comes with some unavoidable breaking changes. See the <a href="https://www.keycloak.org/docs/24.0.0/upgrading/">Upgrading Guide</a> for more details.</p>
+<p>The Keycloak JS adapter now uses the <a href="https://webpack.js.org/guides/package-exports/"><code>exports</code> field</a> in its <code>package.json</code>. This change improves support for more modern bundlers like Webpack 5 and Vite, but comes with some unavoidable breaking changes. See the <a href="https://www.keycloak.org/docs/DEV/upgrading/">Upgrading Guide</a> for more details.</p>
 </div>
 </div>
 <div class="sect3">
@@ -191,7 +191,7 @@ removed from this release.</p>
 <div class="paragraph">
 <p>As part of this change, the default password hashing provider has changed from <code>pbkdf2-sha256</code> to <code>pbkdf2-sha512</code>.
 Also, the number of default hash iterations for <code>pbkdf2</code> based password hashing algorithms changed. This change means better security aligned with latest recommendations, but
-it has impact on performance. It is possible to stick to the old behaviour by adding password policies <code>hashAlgorithm</code> and <code>hashIterations</code> to your realm. For more details, see the <a href="https://www.keycloak.org/docs/24.0.0/upgrading/">Upgrading Guide</a>.</p>
+it has impact on performance. It is possible to stick to the old behaviour by adding password policies <code>hashAlgorithm</code> and <code>hashIterations</code> to your realm. For more details, see the <a href="https://www.keycloak.org/docs/DEV/upgrading/">Upgrading Guide</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -370,7 +370,7 @@ As a result, you can use the CR to configure build time options also when a cust
 <div class="paragraph">
 <p>It is now possible to separately enable parsing of either <code>Forwarded</code> or <code>X-Forwarded-*</code> headers by using the new <code>--proxy-headers</code> option.
 For details, see the <a href="https://www.keycloak.org/server/reverseproxy">Reverse Proxy Guide</a>.
-The original <code>--proxy</code> option is now deprecated and will be removed in a future release. For migration instructions, see the <a href="https://www.keycloak.org/docs/24.0.0/upgrading/">Upgrading Guide</a>.</p>
+The original <code>--proxy</code> option is now deprecated and will be removed in a future release. For migration instructions, see the <a href="https://www.keycloak.org/docs/DEV/upgrading/">Upgrading Guide</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -384,7 +384,7 @@ are marshalled and unmarshalled when using both Admin and Account REST APIs.</p>
 configuration set to a realm.</p>
 </div>
 <div class="paragraph">
-<p>For more details, see the <a href="https://www.keycloak.org/docs/24.0.0/upgrading/">Upgrading Guide</a>.</p>
+<p>For more details, see the <a href="https://www.keycloak.org/docs/DEV/upgrading/">Upgrading Guide</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -394,7 +394,7 @@ configuration set to a realm.</p>
 If offline session preloading is enabled, those will be loaded sequentially as well.</p>
 </div>
 <div class="paragraph">
-<p>For more details, see the <a href="https://www.keycloak.org/docs/24.0.0/upgrading/">Upgrading Guide</a>.</p>
+<p>For more details, see the <a href="https://www.keycloak.org/docs/DEV/upgrading/">Upgrading Guide</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -424,7 +424,7 @@ The old behavior to preload them at startup is now deprecated, as pre-loading th
 </div>
 <div class="paragraph">
 <p>For more details, see the
-<a href="https://www.keycloak.org/docs/24.0.0/upgrading/">Upgrading Guide</a>.</p>
+<a href="https://www.keycloak.org/docs/DEV/upgrading/">Upgrading Guide</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -434,7 +434,7 @@ The old behavior to preload them at startup is now deprecated, as pre-loading th
 </div>
 <div class="paragraph">
 <p>For more details, see the
-<a href="https://www.keycloak.org/docs/24.0.0/server_admin/#_offline-access">Server Administration Guide</a>.</p>
+<a href="https://www.keycloak.org/docs/DEV/server_admin/#_offline-access">Server Administration Guide</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -444,7 +444,7 @@ The old behavior to preload them at startup is now deprecated, as pre-loading th
 </div>
 <div class="paragraph">
 <p>For more details, see the
-<a href="https://www.keycloak.org/docs/24.0.0/upgrading/">Upgrading Guide</a>.</p>
+<a href="https://www.keycloak.org/docs/DEV/upgrading/">Upgrading Guide</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -454,7 +454,7 @@ The old behavior to preload them at startup is now deprecated, as pre-loading th
 </div>
 <div class="paragraph">
 <p>For more details, see the
-<a href="https://www.keycloak.org/docs/24.0.0/upgrading/">Upgrading Guide</a>.</p>
+<a href="https://www.keycloak.org/docs/DEV/upgrading/">Upgrading Guide</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -544,7 +544,7 @@ The log with ID <code>KC-SERVICES0053</code> has been removed as the new event o
 </div>
 <div class="paragraph">
 <p>For more details, see the
-<a href="https://www.keycloak.org/docs/24.0.0/upgrading/">Upgrading Guide</a>.</p>
+<a href="https://www.keycloak.org/docs/DEV/upgrading/">Upgrading Guide</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -622,6 +622,6 @@ release. If you require an external log management, consider using file log pars
 This release supports active-passive deployments for Keycloak.</p>
 </div>
 <div class="paragraph">
-<p>To get started, use the <a href="{highavailabilityguide_link}">{highavailabilityguide_name}</a> which also includes a comprehensive blueprint to deploy a highly available Keycloak to a cloud environment.</p>
+<p>To get started, use the <a href="https://www.keycloak.org/guides#high-availability">High Availability Guide</a> which also includes a comprehensive blueprint to deploy a highly available Keycloak to a cloud environment.</p>
 </div>
 </div>

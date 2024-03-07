@@ -11,7 +11,7 @@ import java.util.Map;
 
 public class ReleaseNotesBuilder extends AbstractBuilder {
 
-    private static final String DOCUMENT_ATTRIBUTES_URL = "https://raw.githubusercontent.com/keycloak/keycloak/%s/docs/documentation/topics/templates/document-attributes.adoc";
+    private static final String DOCUMENT_ATTRIBUTES_URL = "https://raw.githubusercontent.com/keycloak/keycloak/release/%s/docs/documentation/topics/templates/document-attributes.adoc";
 
     private static final String RELEASE_NOTES_URL = "https://raw.githubusercontent.com/keycloak/keycloak/release/%s/docs/documentation/release_notes/topics/%s.adoc";
 
@@ -42,7 +42,7 @@ public class ReleaseNotesBuilder extends AbstractBuilder {
                     attributes.put("leveloffset", "2");
                     attributes.put("fragment", "yes");
 
-                    attributes = context.asciiDoctor().parseAttributes(new URL(String.format(DOCUMENT_ATTRIBUTES_URL, v.getVersion())), attributes);
+                    attributes = context.asciiDoctor().parseAttributes(new URL(String.format(DOCUMENT_ATTRIBUTES_URL, v.getVersionShorter())), attributes);
 
                     String releaseNotesUrl = String.format(RELEASE_NOTES_URL, v.getVersionShorter(), v.getVersion().replace(".", "_"));
                     URL url = new URL(releaseNotesUrl);
