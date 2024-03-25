@@ -1,0 +1,79 @@
+<div>
+
+<h2>Upgrading</h2>
+<p>Before upgrading refer to <a href="file:/home/runner/work/keycloak-rel/keycloak-rel/target/web/docs/latest/upgrading/index.html#migration-changes">the migration guide</a> for a complete list of changes.</p>
+
+<h2>All resolved issues</h2>
+
+
+
+<h3>Enhancements</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/25057">#25057</a> Inconsistent behaviour on getting user permissions using authorization <code>authorization-services</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27433">#27433</a> Clarify format of keys in `additionalOptions` field in the Keycloak CR <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27481">#27481</a> Edit High Availability guide </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27484">#27484</a> Edit 23.0 changes part of Upgrading Guide </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27632">#27632</a> Integrate downstream Upgrading Guide changes into upstream </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27696">#27696</a> Upgrade to Quarkus 3.8.2 <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27867">#27867</a> Corrections to Securing Apps Guide </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27871">#27871</a> Upgrade to Infinispan 14.0.26 <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27953">#27953</a> Address feedback to Keycloak Server guide <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27955">#27955</a> Address term Keycloak in Server Administration Guide <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28009">#28009</a> Address edits to the Operator Guide </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28033">#28033</a> Upgrade Infinispan to 14.0.27.Final </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28084">#28084</a> Upgrade to Quarkus 3.8.3 <code>dist/quarkus</code></li>
+</ul>
+
+<h3>Bugs</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/14501">#14501</a> Getting failed to initialize js message if consent is rejected by user <code>account/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/15403">#15403</a> No email send on TOTP/Authenticator app removal <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/20637">#20637</a> Reset password flow fails with "Page has expired" error when Kerberos authentication is enabled in the browser flow <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/22644">#22644</a> Flaky test: org.keycloak.testsuite.forms.BrowserFlowTest#testAlternativeNonInteractiveExecutorInSubflow <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/23701">#23701</a> Attribute search does not work with federated users with ldap. <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/23980">#23980</a> Keycloak Operator fails to install realm authentication flow because "flow is null" <code>import-export</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/25490">#25490</a> Partial export/import is not mentioned in Keycloak's Server Administration Guide <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/25687">#25687</a> A java.lang.NullPointerException occurs when sending a Multipart/form-data request to any file upload interface. <code>admin/api</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/26396">#26396</a> How do you update a custom user storage provider jar that includes a version number? <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27117">#27117</a> user sessions not accessible in all cluster nodes <code>infinispan</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27180">#27180</a> Grant type "urn:ietf:params:oauth:grant-type:uma-ticket" openid-connect/token service endpoint is returning refresh token with invalid Expiration <code>authorization-services</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27228">#27228</a> Lowercased "terms_and_conditions" is not migrated in fed_user_required_action table <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27245">#27245</a> Account console does not correctly treat link / unlink account <code>account/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27269">#27269</a> mvnw clean install -Pdistribution on Windows deletes necessary files during clean of org.keycloak:keycloak-admin-ui  <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27275">#27275</a> Invalidating offline token is not working from client sessions tab   <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27366">#27366</a> Social login - test failures with unexpected status code <code>testsuite</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27483">#27483</a> Authz-client AuthorizationResource.getPermissions() ClassCastException <code>authorization-services</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27504">#27504</a> Cpu and memory sizing typo  <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27529">#27529</a> LegacyUserCredentialManager class not found <code>storage</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27540">#27540</a> URL change for liquibase docs <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27548">#27548</a> Custom Browser Flow not working anymore <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27573">#27573</a> Release notes from 24.0.0 miss that multi-site active-passive deployments are supported <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27597">#27597</a> dropping KC_PROXY=edge causes startup error  <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27611">#27611</a> Cannot modify realm email settings since keycloak 24 <code>user-profile</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27653">#27653</a> Admin tests: Flaky realm_settings_user_profile_enabled test <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27701">#27701</a> MTLS Cache options should be runtime options, not build time options <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27719">#27719</a> Wrong Welcome page image in the documentation <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27745">#27745</a> Registration template in login2 is broken <code>login/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27761">#27761</a> Snyk workflow failure <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27779">#27779</a> Broken Migration "MigrateTo24_0_0"  <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27780">#27780</a> Fixing downstream documentation build <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27797">#27797</a> User profile fields cannot be set empty once they have a non-empty value (in Login Theme) <code>user-profile</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27820">#27820</a> Account console confusing with WebAuthn <code>account/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27841">#27841</a> ES translation causes FreeMarker rendering issues <code>translations</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27852">#27852</a> VerifyUserProfile invalidates user cache on every login <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27878">#27878</a> Error when executing refresh grant, with scope param, without offline_access scope specified <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27882">#27882</a> Incorrect version of bctls-fips in the docs <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27892">#27892</a> Truststore handling for the Operator is not documented <code>operator</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27894">#27894</a> Multi datasource configuration does not work in Keycloak 24.0.1 <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27900">#27900</a> Performance impact in changed hashing measured wrong <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27925">#27925</a> Keycloak docs state that there are http metrics, but they are disabled <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27954">#27954</a> Hibernate Dialect detection does not work anymore for Oracle DBs <code>storage</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27966">#27966</a> 🍺 instead of dot: Attributes in account UI are not loaded <code>user-profile</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27967">#27967</a> ORA-01450 when updating keycloak 23 -> 24 <code>storage</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27981">#27981</a> User Profile: Inconsistent ordering of attributes between account and login themes <code>user-profile</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28001">#28001</a> MySQL connector artifact should be ignored <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28012">#28012</a> Keycloak CR Truststore should not have a name <code>operator</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28113">#28113</a> WebAuthN registration broken after upgrading to 24.0.1 <code>authentication/webauthn</code></li>
+</ul>
+
+</div>
