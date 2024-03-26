@@ -88,6 +88,11 @@ public class AsciiDoctor {
         globalAttributes = new HashMap<>();
         globalAttributes.put("version", context.versions().getLatest().getVersion());
         globalAttributes.put("majorMinorVersion", context.versions().getLatest().getVersionShorter());
+
+        // The attribute 'project_community' was missing in 24.0.2. Will be added in 25.x in the attributes.adoc,
+        // and it can then be removed here.
+        // https://github.com/keycloak/keycloak/issues/28215
+        globalAttributes.put("project_community", "true");
     }
 
     public void close() {
