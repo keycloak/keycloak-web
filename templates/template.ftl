@@ -16,12 +16,15 @@
     <link href="${links.getResource('bootstrap/dist/css/bootstrap.min.css')}" rel="stylesheet">
     <link href="${links.getResource('@fortawesome/fontawesome-free/css/all.min.css')}" rel="stylesheet">
     <link href="${links.getResource('css/keycloak.css')}" rel="stylesheet">
+    <link rel="stylesheet" href="https://esm.sh/@orama/searchbox@1.0.0-rc13/dist/index.css" />
 
     <link rel="shortcut icon" href="${links.getResource('favicon.ico')}">
 
     <script src="${links.getResource('js/ga.js')}" type="text/javascript"></script>
     <script src="${links.getResource('bootstrap/dist/js/bootstrap.min.js')}" type="text/javascript"></script>
     <script src="${links.getResource('tocbot/dist/tocbot.min.js')}" type="text/javascript"></script>
+
+    <#include "orama-search-register.ftl" />
 </head>
 <body>
 
@@ -33,6 +36,9 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="fa fa-bars fa-lg px-1 py-2"></span>
     </button>
+
+    <#include "orama-search-search-button.ftl" />
+
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav flex-row flex-wrap bd-navbar-nav pt-2 py-md-0">
         <li class="nav-item col-6 col-md-auto">
@@ -54,6 +60,8 @@
     </div>
 </nav>
 </header>
+
+<#include "orama-search-box.ftl" />
 
 <#nested>
 

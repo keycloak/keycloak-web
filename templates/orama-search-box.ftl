@@ -1,0 +1,3 @@
+<div>
+  <orama-searchbox />
+</div>
