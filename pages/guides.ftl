@@ -13,11 +13,6 @@
             </li>
             </#list>
         </ul>
-        <div class="float-right">
-            <form>
-                <input id="guide-search" class="form-control" type="text" placeholder="Search" aria-label="Search">
-            </form>
-        </div>
     </div>
 </nav>
 

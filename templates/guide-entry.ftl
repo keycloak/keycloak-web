@@ -25,9 +25,6 @@
                     <form>
                         <div class="row">
                             <div class="col">
-                                <input id="options-search" class="form-control" type="text" placeholder="Search" aria-label="Search">
-                            </div>
-                            <div class="col">
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="options-filter" value="all" id="options-filter-all" checked>
                                     <label class="form-check-label" for="options-filter-all">All</label>
