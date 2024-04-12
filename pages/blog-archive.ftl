@@ -1,6 +1,6 @@
 <#import "/templates/template.ftl" as tmpl>
 
-<@tmpl.page current="blog" title="Blog archive">
+<@tmpl.page current="blog" title="Blog archive" noindex=true>
 
 <div class="container mt-5 kc-article">
     <h1>Blog Archive</h1>
