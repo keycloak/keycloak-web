@@ -1,6 +1,6 @@
 :title: Recap from KubeCon + CloudNativeCon Europe 2024
 :date: 2024-04-15
-:publish: false
+:publish: true
 :author: Thomas Darimont
 
 After a packed week of fantastic talks at https://events.linuxfoundation.org/kubecon-cloudnativecon-europe[KubeCon + CloudNativeCon Europe 2024 in Paris], we're delighted to share our impressions with the rest of the Keycloak community.
