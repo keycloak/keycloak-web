@@ -16,6 +16,7 @@
     <link href="${links.getResource('bootstrap/dist/css/bootstrap.min.css')}" rel="stylesheet">
     <link href="${links.getResource('@fortawesome/fontawesome-free/css/all.min.css')}" rel="stylesheet">
     <link href="${links.getResource('css/keycloak.css')}" rel="stylesheet">
+    <link rel="canonical" href="${ canonical }">
 
     <link rel="shortcut icon" href="${links.getResource('favicon.ico')}">
 

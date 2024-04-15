@@ -18,6 +18,8 @@ public class FreeMarker {
 
     private Configuration cfg;
     private Map<String, Object> globalAttributes;
+    private boolean isPublish;
+    private File targetDir;
 
     public FreeMarker(File webSrcDir) throws IOException {
         cfg = new Configuration(Configuration.VERSION_2_3_24);
@@ -46,14 +48,18 @@ public class FreeMarker {
     }
 
     public void writeFile(Map<String, Object> attr, String template, File targetDir, String output) throws Exception {
-        Map<String, Object> attributes;
+        Map<String, Object> attributes = new HashMap<>();
+        attributes.putAll(globalAttributes);
         if (attr != null) {
-            attributes = new HashMap<>();
-            attributes.putAll(globalAttributes);
             attributes.putAll(attr);
-        } else {
-            attributes = globalAttributes;
         }
+        String canonical = new File(targetDir, output).toURI().toString().substring(this.targetDir.toURI().toString().length());
+        if (isPublish) {
+            canonical = canonical.replaceAll("\\.html$", "");
+            canonical = canonical.replaceAll("/index$", "");
+            canonical = canonical.replaceAll("^index$", "");
+        }
+        attributes.put("canonical", attributes.get("root") + canonical);
 
         Template downloadTemplate = cfg.getTemplate(template);
 
@@ -88,6 +94,9 @@ public class FreeMarker {
         globalAttributes.put("archive", false);
 
         globalAttributes.put("links", context.getLinks());
+
+        isPublish = context.config().isPublish();
+        targetDir = context.getTargetDir();
     }
 
 }
