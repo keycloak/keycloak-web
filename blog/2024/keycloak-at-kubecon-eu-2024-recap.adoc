@@ -1,5 +1,5 @@
 :title: Recap from KubeCon + CloudNativeCon Europe 2024
-:date: 2024-04-12
+:date: 2024-04-15
 :publish: false
 :author: Thomas Darimont
 
