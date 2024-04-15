@@ -1,6 +1,1 @@
 User-agent: *
-Disallow: /archive/
-Disallow: /blog-archive.html
-Disallow: /blog-archive
-Disallow: /downloads-archive.html
-Disallow: /downloads-archive

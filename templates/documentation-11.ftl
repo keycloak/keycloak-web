@@ -2,8 +2,10 @@
 
 <#if archive>
     <#assign docRoot = "${root}docs/${version.version}">
+    <#assign docApiRoot = "${root}docs-api/${version.version}">
 <#else>
     <#assign docRoot = "${root}docs/latest">
+    <#assign docApiRoot = "${root}docs-api/latest">
 </#if>
 
 <table class="table table-bordered table-striped">
@@ -106,7 +108,7 @@
     <tbody>
     <tr>
         <td>
-            <a href="${root}docs-api/${version.version}/javadocs/index.html" target="_blank">
+            <a href="${docApiRoot}/javadocs/index.html" target="_blank">
                 JavaDoc
             </a>
         </td>
@@ -116,7 +118,7 @@
     </tr>
     <tr>
         <td>
-            <a href="${root}docs-api/${version.version}/rest-api/index.html" target="_blank">
+            <a href="${docApiRoot}/rest-api/index.html" target="_blank">
                 Administration REST API
             </a>
         </td>
