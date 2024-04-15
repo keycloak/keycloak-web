@@ -1,0 +1,37 @@
+:title: Recap from KubeCon + CloudNativeCon Europe 2024
+:date: 2024-04-15
+:publish: true
+:author: Thomas Darimont
+
+After a packed week of fantastic talks at https://events.linuxfoundation.org/kubecon-cloudnativecon-europe[KubeCon + CloudNativeCon Europe 2024 in Paris], we're delighted to share our impressions with the rest of the Keycloak community.
+
+== Keycloak and OAuth2 Token Exchange for Microservice API Security
+
+The presence of Keycloak in many presentations highlighted its importance in the cloud-native ecosystem. Notably, the talk link:https://kccnceu2024.sched.com/event/1YeLf["`OAuth2 Token
+Exchange for Microservice API Security`" by Ahmet Soormally & Letz Yaara] on https://oauth.net/2/token-exchange[OAuth2 Token Exchange (RFC 8693)] underscored its application in
+microservice security and pinpointed areas for Keycloak's enhancement. Efforts to advance the support for Token Exchange are underway, and community feedback is
+invaluable. Please join the https://github.com/keycloak/keycloak/discussions/26502[discussion on the current usage of Token Exchange] to help us out.
+
+== Keycloak and the Secrets of the Universe at CERN
+
+A standout moment was learning about Keycloak's role at CERN in the talk link:https://kccnceu2024.sched.com/event/1YeOF["`The Hard Life of Securing a Particle Accelerator`", as shared by
+Antonio Nappi and Sebastian Lopienski], emphasizing its contribution to securing the particle accelerator's IAM infrastructure.
+Keycloak supports research on the nature of the universe. How cool is that :)
+
+== Keycloak, OpenFGA, and Kubernetes Authorizer
+
+https://kccnceu2024.sched.com/event/1YeQD[Jonathan Whitaker's talk "`Federated IAM for Kubernetes with OpenFGA`"] on federated IAM with OpenFGA showcased innovative
+approaches for managing access to Kubernetes resources through the combination of Keycloak, https://openfga.dev/[OpenFGA] and a https://kubernetes.io/docs/reference/access-authn-authz/authorization/[custom Kubernetes Authorizer Web Hook]. In particular, the demonstration of temporarily elevated access to Kubernetes resources was very well received.
+
+== Keycloak: The Leading Edge of AuthN and AuthZ
+
+Last but not least, our session, https://kccnceu2024.sched.com/event/1YhiQ["`The Leading Edge of AuthN and AuthZ by Keycloak`", presented by Takashi Norimatsu
+ and Thomas Darimont], introduced the latest Keycloak advancements, including support for https://passkeys.dev[Passkeys], https://oauth.net/2.1[OAuth 2.1], and OpenID for Verifiable Credentials (https://oauth.net/openid-for-verifiable-credentials[OpenID4VC]). As part of our talk, we showed the current https://www.keycloak.org/docs/latest/server_admin/index.html#passkeys_server_administration_guide[support for Passkeys] and https://github.com/thomasdarimont/keycloak-opa-authz-demo[some integration options] with https://www.openpolicyagent.org[Open Policy Agent].
+
+== Summary
+
+Keycloak is an essential pillar of many cloud-native systems and significantly impacted the conference, attracting thousands of Kubernetes and cloud-native professionals. 
+
+The engagement and collaborative spirit of the cloud-native community were genuinely inspiring, underscoring the collective drive to enhance and innovate within this vibrant ecosystem. 
+
+We're very proud and happy to be part of this fantastic community!
