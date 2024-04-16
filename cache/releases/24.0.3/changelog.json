@@ -1,0 +1,43 @@
+[ {
+  "number" : 24201,
+  "repository" : "keycloak",
+  "title" : "Cannot disable LDAP-backed user if importEnabled=false",
+  "kind" : "bug",
+  "area" : "ldap",
+  "url" : "https://github.com/keycloak/keycloak/issues/24201"
+}, {
+  "number" : 26695,
+  "repository" : "keycloak",
+  "title" : "Keycloak and MSAD: enabling account in MSAD does not propagate to Keycloak",
+  "kind" : "enhancement",
+  "area" : "ldap",
+  "url" : "https://github.com/keycloak/keycloak/issues/26695"
+}, {
+  "number" : 28100,
+  "repository" : "keycloak",
+  "title" : "Failed authentication: java.lang.NullPointerException: Cannot invoke \"org.keycloak.models.UserModel.getFederationLink()\" because \"this.delegate\" is null",
+  "kind" : "bug",
+  "area" : "identity-brokering",
+  "url" : "https://github.com/keycloak/keycloak/issues/28100"
+}, {
+  "number" : 28248,
+  "repository" : "keycloak",
+  "title" : "Update user makes User ID changes when federationLink and LDAP_ID is not set properly",
+  "kind" : "bug",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/28248"
+}, {
+  "number" : 28335,
+  "repository" : "keycloak",
+  "title" : "The false option of the pkceMethod init parameter for the JavaScript adapter is ignored",
+  "kind" : "bug",
+  "area" : "adapter/javascript",
+  "url" : "https://github.com/keycloak/keycloak/issues/28335"
+}, {
+  "number" : 28638,
+  "repository" : "keycloak",
+  "title" : "Missing permission to read configmaps in `keycloak-operator-role`",
+  "kind" : "bug",
+  "area" : "operator",
+  "url" : "https://github.com/keycloak/keycloak/issues/28638"
+} ]
