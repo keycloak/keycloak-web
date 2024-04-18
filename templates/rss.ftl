@@ -6,7 +6,7 @@
 
 <channel>
   <title>Keycloak Blog</title>
-  <link>https://www.keycloak.org/blog.html</link>
+  <link>${ links.blog }</link>
   <atom:link href="${home}/rss.xml" rel="self" type="application/rss+xml" />
   <description>Keycloak Blog</description>
   <language>en-us</language>
