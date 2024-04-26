@@ -21,7 +21,7 @@
 
     <p>Depending on the severity of a vulnerability the issue may be fixed in the current <code>major.minor</code> release of Keycloak, or for lower severity vulnerabilities or hardening in the following <code>major.minor</code> release. Refer to <a href="https://www.keycloak.org/downloads">https://www.keycloak.org/downloads</a> to find the latest release.</p>
 
-    <p>If you are unable to regularly upgrade Keycloak we encourage you to consider <a href="https://access.redhat.com/products/red-hat-single-sign-on">Red Hat Single Sign-On</a>, which offers <a href="https://access.redhat.com/support/policy/updates/jboss_notes#p_sso">long term support</a> of specific versions of Keycloak.</p>
+    <p>If you are unable to regularly upgrade Keycloak we encourage you to consider <a href="https://access.redhat.com/products/red-hat-build-of-keycloak">Red Hat build of Keycloak</a>, which offers <a href="https://access.redhat.com/support/policy/updates/jboss_notes#p_sso">long term support</a> of specific versions of Keycloak.</p>
 </div>
 
 </@tmpl.page>
