@@ -7,7 +7,7 @@ A single sign on solution for your customers and employees shouldn't be a single
 At Devoxx France 2024, Ryan Emerson and Alexander Schwartz presented, from an architects and developer perspective, how Keycloak approached the problem.
 They describe which architecture the Keycloak team chose, the challenges they faced and which tools helped along the way.
 The slides and the recorded video are linked below.
-Scroll down for additional links and the task we work to enhance it even further.
+Scroll down for additional links and details of the tasks we're currently working on to further enhance the architecture.
 
 --
 ++++
