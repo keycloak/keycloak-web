@@ -1,0 +1,47 @@
+:title: High availability in Keycloak 24
+:date: 2024-05-07
+:publish: true
+:author: Alexander Schwartz, Ryan Emerson
+
+A single sign on solution for your customers and employees shouldn't be a single-point-of-failure in your architecture.
+At Devoxx France 2024, Ryan Emerson and Alexander Schwartz presented, from an architects and developer perspective, how Keycloak approached the problem.
+They describe which architecture the Keycloak team chose, the challenges they faced and which tools helped along the way.
+The slides and the recorded video are linked below.
+Scroll down for additional links and details of the tasks we're currently working on to further enhance the architecture.
+
+--
+++++
+<div class="paragraph">
+<iframe src="https://www.youtube.com/embed/y1yE7Rd3lGE?si=rllY8vPtmAw1CvaP&amp;start=8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width: 100%; max-width: 600px; height: auto; aspect-ratio: 560 / 315;" ></iframe>
+</div>
+++++
+--
+
+--
+++++
+<div class="paragraph">
+<iframe class="speakerdeck-iframe" frameborder="0" src="https://speakerdeck.com/player/9514fa8879e24fea9b706e7331fed95d" title="Highly available Identity and Access Management with multi-site Keycloak deployments in the cloud" allowfullscreen="true" style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 100%; max-width: 600px; height: auto; aspect-ratio: 560 / 315;" data-ratio="1.7777777777777777"></iframe>
+</div>
+++++
+--
+
+--
+++++
+<div class="paragraph">
+<a href="${blogImages}/devoxx_france_2024.jpg"><img src="${blogImages}/devoxx_france_2024.jpg" alt="Two speakers on a stage at Devoxx France with slides from Keycloak" style="width: 100%; max-width: 600px; height: auto; aspect-ratio: 560 / 315;"></a>
+</div>
+++++
+--
+
+A clustered Keycloak deployment in a single site or datacenter provides sufficient availability for many.
+However, an increasing number of organizations need to utilize multiple sites for improved resiliency or to meet legal requirements.
+In 2023, Keycloak overhauled its multi-site capabilities for public and private cloud infrastructures, tested them thoroughly and provided deployment blueprints to the community.
+As part of the release of Keycloak 24, an active/passive setup is now fully supported.
+
+Read more about it in the new https://www.keycloak.org/high-availability/introduction[high availability guide] published as part of https://www.keycloak.org/documentation[Keycloak’s documentation], and get more tools and background information in the https://github.com/keycloak/keycloak-benchmark[Keycloak Benchmark Project].
+Since the https://www.keycloak.org/2023/12/recover-site-failures.html[previous blog post] which covered Keycloak 23, we have made the configuration of such a setup simpler, with fewer options required by Keycloak and the Keycloak Operator.
+Thank you to everyone who provided feedback along the way, and those who participated in our survey in early 2023 which guided us in the implementation of this setup.
+
+Still, the journey doesn't stop here: The team is now working on https://github.com/keycloak/keycloak/discussions/28271[durable sessions across restarts and upgrades], and a
+https://github.com/keycloak/keycloak/issues/28745[simpler Infinispan architecture which aims to eventually support active/active].
+Follow these issues and discussions to stay up-to-date with the latest developments, and provide feedback on Keycloak’s nightly builds.
