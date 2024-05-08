@@ -1,0 +1,56 @@
+<div>
+    <h2>Highlights</h2>
+<div class="sect2">
+<h3 id="_partial_update_to_user_attributes_when_updating_users_through_the_admin_user_api_is_no_longer_supported">Partial update to user attributes when updating users through the Admin User API is no longer supported</h3>
+<div class="paragraph">
+<p>When updating user attributes through the Admin User API, you cannot execute partial updates when updating the
+user attributes, including the root attributes like <code>username</code>, <code>email</code>, <code>firstName</code>, and <code>lastName</code>.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see the <a href="https://www.keycloak.org/docs/24.0.4/upgrading/">Upgrading Guide</a>.</p>
+</div>
+</div>
+<h2>Upgrading</h2>
+<p>Before upgrading refer to <a href="file:/home/runner/work/keycloak-rel/keycloak-rel/target/web/docs/latest/upgrading/index.html#migration-changes">the migration guide</a> for a complete list of changes.</p>
+
+<h2>All resolved issues</h2>
+
+
+
+<h3>Enhancements</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/27508">#27508</a> Use new remote-store options in HA guides </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28429">#28429</a> Add details to error messages, especially around refresh tokens </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28729">#28729</a> Emphasize the need for setting container limit <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28880">#28880</a> Upgrade to Quarkus 3.8.4 <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29183">#29183</a> Minor corrections to High Availability Guide <code>docs</code></li>
+</ul>
+
+<h3>Bugs</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/16345">#16345</a> Unable to delete realm names with invalid URL characters <code>admin/api</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/22617">#22617</a> kc export fails when using User Federation (LDAP) with file-based Vault enabled <code>import-export</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/24568">#24568</a> iframe for frontend logout gets blocked if a custom CSP header is used <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/24878">#24878</a> NoClassDefFoundError for Apache XML and EAP8 <code>adapter/jee-saml</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27021">#27021</a> Workflow failure: Fuse adapter tests <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27080">#27080</a> Workflow failure: Operator CI - KeycloakTruststoresTests#testTrustroreExists <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27514">#27514</a> Uncaught server error: java.lang.IllegalArgumentException: Path parameter not provided <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28079">#28079</a> Group search does not work in user view <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28187">#28187</a> Admin UI drag & drop in flow config seems to delete actions <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28220">#28220</a> Admin API: User PUT operation clears firstname, lastname email fields <code>admin/api</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28303">#28303</a> WARN - Event object wasn't available in remote cache after event was received <code>infinispan</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28377">#28377</a> Broken lists in import/export server guide <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28431">#28431</a> Dedicated client scopes always show up when searching <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28514">#28514</a> Message for searchClientRegistration is missing <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28666">#28666</a> Accessing a transient (lightweight) user through client session fails in admin-api/-ui <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28684">#28684</a> "Extend to children" button in authorization group policies is wrongly disabled <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28911">#28911</a> clients_saml_test.spec.ts fails in main <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29072">#29072</a> Startup probe should check for existence of an Admin user before returning 200 <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29094">#29094</a> Fix the client name help grammatical error <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29133">#29133</a> DuplicateEmailValidator causes two DB queries on every login if a user has an email address <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29147">#29147</a> local user login not possible after LDAP connection problem <code>ldap</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29154">#29154</a> Update docs to distinguish between product names and CR names <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29233">#29233</a> Broken link in documentation <code>docs</code></li>
+</ul>
+
+</div>

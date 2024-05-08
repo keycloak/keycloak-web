@@ -1,0 +1,197 @@
+[ {
+  "number" : 16345,
+  "repository" : "keycloak",
+  "title" : "Unable to delete realm names with invalid URL characters",
+  "kind" : "bug",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/16345"
+}, {
+  "number" : 22617,
+  "repository" : "keycloak",
+  "title" : "kc export fails when using User Federation (LDAP) with file-based Vault enabled",
+  "kind" : "bug",
+  "area" : "import-export",
+  "url" : "https://github.com/keycloak/keycloak/issues/22617"
+}, {
+  "number" : 24568,
+  "repository" : "keycloak",
+  "title" : "iframe for frontend logout gets blocked if a custom CSP header is used",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/24568"
+}, {
+  "number" : 24878,
+  "repository" : "keycloak",
+  "title" : "NoClassDefFoundError for Apache XML and EAP8",
+  "kind" : "bug",
+  "area" : "adapter/jee-saml",
+  "url" : "https://github.com/keycloak/keycloak/issues/24878"
+}, {
+  "number" : 27021,
+  "repository" : "keycloak",
+  "title" : "Workflow failure: Fuse adapter tests",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/27021"
+}, {
+  "number" : 27080,
+  "repository" : "keycloak",
+  "title" : "Workflow failure: Operator CI - KeycloakTruststoresTests#testTrustroreExists",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/27080"
+}, {
+  "number" : 27508,
+  "repository" : "keycloak",
+  "title" : "Use new remote-store options in HA guides",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/27508"
+}, {
+  "number" : 27514,
+  "repository" : "keycloak",
+  "title" : "Uncaught server error: java.lang.IllegalArgumentException: Path parameter not provided",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/27514"
+}, {
+  "number" : 28079,
+  "repository" : "keycloak",
+  "title" : "Group search does not work in user view",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/28079"
+}, {
+  "number" : 28187,
+  "repository" : "keycloak",
+  "title" : "Admin UI drag & drop in flow config seems to delete actions",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/28187"
+}, {
+  "number" : 28220,
+  "repository" : "keycloak",
+  "title" : "Admin API: User PUT operation clears firstname, lastname email fields",
+  "kind" : "bug",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/28220"
+}, {
+  "number" : 28303,
+  "repository" : "keycloak",
+  "title" : "WARN - Event object wasn't available in remote cache after event was received",
+  "kind" : "bug",
+  "area" : "infinispan",
+  "url" : "https://github.com/keycloak/keycloak/issues/28303"
+}, {
+  "number" : 28377,
+  "repository" : "keycloak",
+  "title" : "Broken lists in import/export server guide",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/28377"
+}, {
+  "number" : 28429,
+  "repository" : "keycloak",
+  "title" : "Add details to error messages, especially around refresh tokens",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/28429"
+}, {
+  "number" : 28431,
+  "repository" : "keycloak",
+  "title" : "Dedicated client scopes always show up when searching",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/28431"
+}, {
+  "number" : 28514,
+  "repository" : "keycloak",
+  "title" : "Message for searchClientRegistration is missing",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/28514"
+}, {
+  "number" : 28666,
+  "repository" : "keycloak",
+  "title" : "Accessing a transient (lightweight) user through client session fails in admin-api/-ui",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/28666"
+}, {
+  "number" : 28684,
+  "repository" : "keycloak",
+  "title" : "\"Extend to children\" button in authorization group policies is wrongly disabled",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/28684"
+}, {
+  "number" : 28729,
+  "repository" : "keycloak",
+  "title" : "Emphasize the need for setting container limit",
+  "kind" : "enhancement",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/28729"
+}, {
+  "number" : 28880,
+  "repository" : "keycloak",
+  "title" : "Upgrade to Quarkus 3.8.4",
+  "kind" : "enhancement",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/28880"
+}, {
+  "number" : 28911,
+  "repository" : "keycloak",
+  "title" : "clients_saml_test.spec.ts fails in main",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/28911"
+}, {
+  "number" : 29072,
+  "repository" : "keycloak",
+  "title" : "Startup probe should check for existence of an Admin user before returning 200",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/29072"
+}, {
+  "number" : 29094,
+  "repository" : "keycloak",
+  "title" : "Fix the client name help grammatical error",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/29094"
+}, {
+  "number" : 29133,
+  "repository" : "keycloak",
+  "title" : "DuplicateEmailValidator causes two DB queries on every login if a user has an email address",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/29133"
+}, {
+  "number" : 29147,
+  "repository" : "keycloak",
+  "title" : "local user login not possible after LDAP connection problem",
+  "kind" : "bug",
+  "area" : "ldap",
+  "url" : "https://github.com/keycloak/keycloak/issues/29147"
+}, {
+  "number" : 29154,
+  "repository" : "keycloak",
+  "title" : "Update docs to distinguish between product names and CR names",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/29154"
+}, {
+  "number" : 29183,
+  "repository" : "keycloak",
+  "title" : "Minor corrections to High Availability Guide",
+  "kind" : "enhancement",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/29183"
+}, {
+  "number" : 29233,
+  "repository" : "keycloak",
+  "title" : "Broken link in documentation",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/29233"
+} ]
