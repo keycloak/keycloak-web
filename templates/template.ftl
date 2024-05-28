@@ -28,9 +28,11 @@
 
 <header class="navbar navbar-expand-md bg-light shadow-sm">
 <nav class="container-xxl flex-wrap flex-md-no-wrap navbar-light">
-    <a class="navbar-brand me-5" href="${links.home}">
+    <a class="navbar-brand me-3 me-md-4 me-lg-5" href="${links.home}">
         <img class="img-fluid" src="${links.getResource('images/logo.svg')}" width="240" alt="Keycloak"/>
     </a>
+    <a class="nav-link d-none d-sm-block d-md-none d-lg-block" href="https://github.com/keycloak/keycloak"><img src="https://img.shields.io/github/stars/keycloak/keycloak?label=GitHub%20Stars" style="height: 25px" alt="GitHub stars"/></a>
+    <a class="nav-link d-block d-sm-none d-md-block d-lg-none" href="https://github.com/keycloak/keycloak"><img src="https://img.shields.io/github/stars/keycloak/keycloak?label=" style="height: 25px" alt="GitHub stars"/></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="fa fa-bars fa-lg px-1 py-2"></span>
     </button>
