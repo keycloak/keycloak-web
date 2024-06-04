@@ -1,0 +1,71 @@
+[ {
+  "number" : 29073,
+  "repository" : "keycloak",
+  "title" : "Use cache.compute() method to improve the replace retry loop",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/29073"
+}, {
+  "number" : 29129,
+  "repository" : "keycloak",
+  "title" : "JGroups creates log messages as it switched internally to \"trace\"",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/29129"
+}, {
+  "number" : 29206,
+  "repository" : "keycloak",
+  "title" : "LDAP user creation reports error but user is created",
+  "kind" : "bug",
+  "area" : "ldap",
+  "url" : "https://github.com/keycloak/keycloak/issues/29206"
+}, {
+  "number" : 29280,
+  "repository" : "keycloak",
+  "title" : "Update Create Realm in Keycloak 24 Getting Started",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/29280"
+}, {
+  "number" : 29314,
+  "repository" : "keycloak",
+  "title" : "Clicking the \"save\" button multiple times in the Saml IDP configuration page corrupts the value of \"AuthnContext ClassRefs\"",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/29314"
+}, {
+  "number" : 29458,
+  "repository" : "keycloak",
+  "title" : "Empty CSP header value breaks security filter",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/29458"
+}, {
+  "number" : 29471,
+  "repository" : "keycloak",
+  "title" : "Cypress tests store videos even for passing tests",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/29471"
+}, {
+  "number" : 29525,
+  "repository" : "keycloak",
+  "title" : "Maven clean build doesn't clean admin client generated files",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/29525"
+}, {
+  "number" : 29554,
+  "repository" : "keycloak",
+  "title" : "Cypress failing on video recording",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/29554"
+}, {
+  "number" : 29625,
+  "repository" : "keycloak",
+  "title" : "Database driver install examples can lead to permission errors in some circumstances",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/29625"
+} ]

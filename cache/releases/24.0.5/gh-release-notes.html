@@ -1,0 +1,36 @@
+<div>
+    <h2>Highlights</h2>
+<div class="sect2">
+<h3 id="_security_issue_with_par_clients_using_client_secret_post_based_authentication">Security issue with PAR clients using client_secret_post based authentication</h3>
+<div class="paragraph">
+<p>This release contains the fix of the important security issue affecting some OIDC confidential clients using PAR (Pushed authorization request). In case you use OIDC confidential clients together
+with PAR and you use client authentication based on <code>client_id</code> and <code>client_secret</code> sent as parameters in the HTTP request body (method <code>client_secret_post</code> specified in the OIDC specification), it is
+highly encouraged to rotate the client secrets of your clients after upgrading to this version.</p>
+</div>
+</div>
+<h2>Upgrading</h2>
+<p>Before upgrading refer to <a href="file:/home/runner/work/keycloak-rel/keycloak-rel/target/web/docs/latest/upgrading/index.html#migration-changes">the migration guide</a> for a complete list of changes.</p>
+
+<h2>All resolved issues</h2>
+
+
+
+<h3>Enhancements</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/29073">#29073</a> Use cache.compute() method to improve the replace retry loop </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29280">#29280</a> Update Create Realm in Keycloak 24 Getting Started </li>
+</ul>
+
+<h3>Bugs</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/29129">#29129</a> JGroups creates log messages as it switched internally to "trace" <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29206">#29206</a> LDAP user creation reports error but user is created <code>ldap</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29314">#29314</a> Clicking the "save" button multiple times in the Saml IDP configuration page corrupts the value of "AuthnContext ClassRefs" <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29458">#29458</a> Empty CSP header value breaks security filter <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29471">#29471</a> Cypress tests store videos even for passing tests <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29525">#29525</a> Maven clean build doesn't clean admin client generated files <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29554">#29554</a> Cypress failing on video recording <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29625">#29625</a> Database driver install examples can lead to permission errors in some circumstances <code>docs</code></li>
+</ul>
+
+</div>
