@@ -1,0 +1,41 @@
+:title: Announcing Keycloak's Identity Summit: KeyConf24
+:date: 2024-06-10
+:publish: true
+:author: Nathalia Pinesi
+
+KeyConf23 was an incredible success, bringing together nearly 60 passionate members of the Keycloak community in London. The energy and collaboration were palpable as attendees
+delved into the latest developments in identity and access management. We witnessed thought-provoking discussions, learned from industry experts, and forged valuable connections.
+
+Building on that momentum, we're thrilled to announce KeyConf24, our 2024 Keycloak Identity Summit! This year's event promises to be even bigger and better, with a program packed
+full of relevant, cutting-edge topics.
+
+=== What to Expect at KeyConf24
+
+* *European Digital Identity Wallet:* Deep dives into the European Union's ambitious initiative and its impact on identity management.
+
+* *Verifiable Credentials:* Explore the exciting potential of decentralized identity verification and the role of Keycloak.
+
+* *State of OIDC FAPI2:* Get the latest updates on OpenID Connect's Financial-grade API (FAPI) security profile.
+
+* *New Grant Type SPI & Token Exchange Endpoints:* Technical sessions on Keycloak's expanded capabilities and how to leverage them.
+
+* *Many more to be announced...*
+
+And of course, there will be ample opportunities for networking, knowledge sharing, and connecting with the vibrant Keycloak community and Keycloak maintainers.
+
+=== Save the Date and Join Us!
+
+We invite all developers, architects, security professionals, and anyone interested in identity and access management to join us for KeyConf24. We'll be announcing more details soon, so stay tuned for more information.
+
+In the meantime, mark your calendars and prepare for an unforgettable experience!
+
+=== Want to get involved?
+
+You can register to attend to the event https://www.eventbrite.de/e/keyconf24-tickets-887467387847[here].
+
+We are actively seeking speakers and sponsors for KeyConf24. If you'd like to share your expertise or help support this community-driven event, please submit your ideas
+https://forms.office.com/e/pgBuPzbgqP[here].
+
+If you have any further questions reach out to us on marketing@adorsys.com
+
+Let's continue to shape the future of identity together!
