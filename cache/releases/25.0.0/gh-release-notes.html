@@ -1,0 +1,901 @@
+<div>
+    <h2>Highlights</h2>
+<div class="sect2">
+<h3 id="_account_console_v2_theme_removed">Account Console v2 theme removed</h3>
+<div class="paragraph">
+<p>The Account Console v2 theme has been removed from Keycloak. This theme was deprecated in Keycloak 24 and replaced by the Account Console v3 theme. If you are still using this theme, you should migrate to the Account Console v3 theme.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_java_21_support">Java 21 support</h3>
+<div class="paragraph">
+<p>Keycloak now supports OpenJDK 21, as we want to stick to the latest LTS OpenJDK versions.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_java_17_support_is_deprecated">Java 17 support is deprecated</h3>
+<div class="paragraph">
+<p>OpenJDK 17 support is deprecated in Keycloak, and will be removed in a following release in favor of OpenJDK 21.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_most_of_java_adapters_removed">Most of Java adapters removed</h3>
+<div class="paragraph">
+<p>As stated in the release notes of previous Keycloak version, the most of Java adapters are now removed from the Keycloak codebase and downloads pages.</p>
+</div>
+<div class="paragraph">
+<p>For OAuth 2.0/OIDC, this includes removal of the Tomcat adapter, WildFly/EAP adapter, Servlet Filter adapter, <code>KeycloakInstalled</code> desktop adapter, the <code>jaxrs-oauth-client</code> adapter, JAAS login modules, Spring adapter and SpringBoot adapters.
+You can check <a href="https://www.keycloak.org/2023/03/adapter-deprecation-update.html">our older post</a> for the list of some alternatives.</p>
+</div>
+<div class="paragraph">
+<p>For SAML, this includes removal of the Tomcat adapter and Servlet filter adapter. SAML adapters are still supported with WildFly and JBoss EAP.</p>
+</div>
+<div class="paragraph">
+<p>The generic Authorization Client library is still supported, and we still plan to support it. It aims to be used in combination with any other OAuth 2.0 or OpenID Connect libraries. You can
+check the <a href="https://github.com/keycloak/keycloak-quickstarts">quickstarts</a> for some examples where this authorization client library is used together with the 3rd party Java adapters like
+Elytron OIDC or SpringBoot. You can check the quickstarts also for the example of SAML adapter used with WildFly.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_upgrade_to_patternfly_5">Upgrade to PatternFly 5</h3>
+<div class="paragraph">
+<p>In Keycloak 24, the Welcome page is updated to use <a href="https://www.patternfly.org/">PatternFly 5</a>, the latest version of the design system that underpins the user interface of Keycloak. In this release, the  Admin Console and Account Console are also updated to use PatternFly 5. If you want to extend and customize the Admin Console and Account Console, review <a href="https://www.patternfly.org/get-started/upgrade/">the changes in PatternFly 5</a> and update your customizations accordingly.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_argon2_password_hashing">Argon2 password hashing</h3>
+<div class="paragraph">
+<p>Argon2 is now the default password hashing algorithm used by Keycloak in a non-FIPS environment.</p>
+</div>
+<div class="paragraph">
+<p>Argon2 was the winner of the <a href="https://en.wikipedia.org/wiki/Password_Hashing_Competition">2015 password hashing competition</a>
+and is the recommended hashing algorithm by <a href="https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html#argon2id">OWASP</a>.</p>
+</div>
+<div class="paragraph">
+<p>In Keycloak 24 the default hashing iterations for PBKDF2 were increased from 27.5K to 210K, resulting in a more than
+10 times increase in the amount of CPU time required to generate a password hash. With Argon2 it is possible to achieve
+better security, with almost the same CPU time as previous releases of Keycloak. One downside is Argon2 requires more
+memory, which is a requirement to be resistant against GPU attacks. The defaults for Argon2 in Keycloak requires 7MB
+per-hashing request.
+To prevent excessive memory and CPU usage, the parallel computation of hashes by Argon2 is by default limited to the number of cores available to the JVM.
+To support the memory intensive nature of Argon2, we have updated the default GC from ParallelGC to G1GC for a better heap utilization.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_new_hostname_options">New Hostname options</h3>
+<div class="paragraph">
+<p>In response to the complexity and lack of intuitiveness experienced with previous hostname configuration settings, we are proud to introduce Hostname v2 options.</p>
+</div>
+<div class="paragraph">
+<p>We have listened to your feedback, tackled the tricky issues, and created a smoother experience for managing hostname configuration.
+Be aware that even the behavior behind these options has changed and requires your attention - if you are dealing with custom hostname settings.</p>
+</div>
+<div class="paragraph">
+<p>Hostname v2 options are supported by default, as the old hostname options are deprecated and will be removed in the following releases.
+You should migrate to them as soon as possible.</p>
+</div>
+<div class="paragraph">
+<p>New options are activated by default, so Keycloak will not recognize the old ones.</p>
+</div>
+<div class="paragraph">
+<p>For information on how to migrate, see the <a href="https://www.keycloak.org/docs/25.0.0/upgrading/">Upgrading Guide</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_persistent_user_sessions">Persistent user sessions</h3>
+<div class="paragraph">
+<p>Previous versions of Keycloak stored only offline user and offline client sessions in the databases.
+The new feature <code>persistent-user-session</code> stores online user sessions and online client sessions not only in memory, but also in the database.
+This will allow a user to stay logged in even if all instances of Keycloak are restarted or upgraded.</p>
+</div>
+<div class="paragraph">
+<p>The feature is a preview feature and disabled by default. To use it, add the following to your build command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>bin/kc.sh build --features=persistent-user-session ...</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For more details see the <a href="https://www.keycloak.org/server/features">Enabling and disabling features</a> guide.
+The <a href="https://www.keycloak.org/high-availability/concepts-memory-and-cpu-sizing">sizing guide</a> contains a new paragraph describing the updated resource requirements when this feature is enabled.</p>
+</div>
+<div class="paragraph">
+<p>For information on how to upgrade, see the <a href="https://www.keycloak.org/docs/25.0.0/upgrading/">Upgrading Guide</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_cookies_updates">Cookies updates</h3>
+<div class="sect3">
+<h4 id="_samesite_attribute_set_for_all_cookies">SameSite attribute set for all cookies</h4>
+<div class="paragraph">
+<p>The following cookies did not use to set the <code>SameSite</code> attribute, which in recent browser versions results in them
+defaulting to <code>SameSite=Lax</code>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>KC_STATE_CHECKER</code> now sets <code>SameSite=Strict</code></p>
+</li>
+<li>
+<p><code>KC_RESTART</code> now sets <code>SameSite=None</code></p>
+</li>
+<li>
+<p><code>KEYCLOAK_LOCALE</code> now sets <code>SameSite=None</code></p>
+</li>
+<li>
+<p><code>KEYCLOAK_REMEMBER_ME</code> now sets <code>SameSite=None</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The default value <code>SameSite=Lax</code> causes issues with POST based bindings, mostly applicable to SAML, but also used in
+some OpenID Connect / OAuth 2.0 flows.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_removing_kc_auth_state_cookie">Removing KC_AUTH_STATE cookie</h4>
+<div class="paragraph">
+<p>The cookie <code>KC_AUTH_STATE</code> is removed and it is no longer set by the Keycloak server as this server no longer needs this cookie.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_deprecated_cookie_methods_removed">Deprecated cookie methods removed</h3>
+<div class="paragraph">
+<p>The following APIs for setting custom cookies have been removed:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>ServerCookie</code> - replaced by <code>NewCookie.Builder</code></p>
+</li>
+<li>
+<p><code>LocaleSelectorProvider.KEYCLOAK_LOCALE</code> - replaced by <code>CookieType.LOCALE</code></p>
+</li>
+<li>
+<p><code>HttpCookie</code> - replaced by <code>NewCookie.Builder</code></p>
+</li>
+<li>
+<p><code>HttpResponse.setCookieIfAbsent(HttpCookie cookie)</code> - replaced by <code>HttpResponse.setCookieIfAbsent(NewCookie cookie)</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_addressed_you_are_already_logged_in_for_expired_authentication_sessions">Addressed 'You are already logged in' for expired authentication sessions</h3>
+<div class="paragraph">
+<p>The Keycloak 23 release provided improvements for when a user is authenticated in parallel in multiple browser tabs. However, this improvement did not address the case when an authentication session
+expired. Now for the case when user is already logged-in in one browser tab and an authentication session expired in other browser tabs, Keycloak is able to redirect back to the client
+application with an OIDC/SAML error, so the client application can immediately retry authentication, which should usually automatically log in the application because of the SSO session. For more
+details, see <a href="https://www.keycloak.org/docs/25.0.0/server_admin/#_authentication-sessions">Server Administration Guide authentication sessions</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_lightweight_access_token_to_be_even_more_lightweight">Lightweight access token to be even more lightweight</h3>
+<div class="paragraph">
+<p>In previous releases, the support for lightweight access token was added. In this release, we managed to remove even more built-in claims from the lightweight access token. The claims are added
+by protocol mappers. Some of them affect even the regular access tokens or ID tokens as they were not strictly required by the OIDC specification.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Claims <code>sub</code> and <code>auth_time</code> are added by protocol mappers now, which are configured by default on the new client scope <code>basic</code>, which is added automatically to all the clients. The claims are still added to the ID token and access token as before, but not to lightweight access token.</p>
+</li>
+<li>
+<p>Claim <code>nonce</code> is added only to the ID token now.  It is not added to a regular access token or lightweight access token. For backwards compatibility, you can add this claim to an access token by protocol mapper, which needs to be explicitly configured.</p>
+</li>
+<li>
+<p>Claim <code>session_state</code> is not added to any token now. It is still possible to add it by protocol mapper if needed. There is still the other dedicated claim <code>sid</code> supported by the specification, which was available in previous versions as well and which has exactly the same value.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For more details, see the <a href="https://www.keycloak.org/docs/25.0.0/upgrading/">Upgrading Guide</a>..</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_support_for_applicationjwt_media_type_in_token_introspection_endpoint">Support for application/jwt media-type in token introspection endpoint</h3>
+<div class="paragraph">
+<p>You can use the HTTP Header <code>Accept: application/jwt</code> when invoking a token introspection endpoint. When enabled for a particular client, it returns a claim <code>jwt</code> from the
+token introspection endpoint with the full JWT access token, which can be useful especially for the use-cases when the client calling introspection endpoint used lightweight access
+token. Thanks to <a href="https://github.com/thomasdarimont">Thomas Darimont</a> for the contribution.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_password_policy_for_check_if_password_contains_username">Password policy for check if password contains Username</h3>
+<div class="paragraph">
+<p>Keycloak supports a new password policy that allows you to deny user passwords which contains the user username.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_required_actions_improvements">Required actions improvements</h3>
+<div class="paragraph">
+<p>In the Admin Console, you can now configure some required actions in the <strong>Required actions</strong> tab of a particular realm. Currently, the <strong>Update password</strong> is the only built-in configurable required action. It supports setting <strong>Maximum Age of Authentication</strong>, which is the maximum time users can update their password
+by the <code>kc_action</code> parameter (used for instance when updating password in the Account Console) without re-authentication. The sorting of required actions is also improved. When there are multiple required
+actions during authentication, all actions are sorted together regardless of whether those are actions set during authentication (for instance by the <code>kc_action</code> parameter) or actions added to the user account manually by an administrator.
+Thanks to <a href="https://github.com/thomasdarimont">Thomas Darimont</a> and <a href="https://github.com/danielFesenmeyer">Daniel Fesenmeyer</a> for the contributions.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_passkeys_improvements">Passkeys improvements</h3>
+<div class="paragraph">
+<p>The support for Passkeys conditional UI was added. When the Passkeys preview feature is enabled, there is a dedicated authenticator available, which means you can select from a list of available passkeys accounts
+and authenticate a user based on that. Thanks to <a href="https://github.com/tnorimat">Takashi Norimatsu</a> for the contribution.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_default_client_profile_for_saml">Default client profile for SAML</h3>
+<div class="paragraph">
+<p>The default client profile to have secured SAML clients was added. When browsing through client policies of a realm in the Admin Console, you see a new client profile <code>saml-security-profile</code>. When it is used, there are
+security best practices applied for SAML clients such as signatures are enforced, SAML Redirect binding is disabled, and wildcard redirect URLs are prohibited.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_authenticator_for_override_existing_idp_link_during_first_broker_login">Authenticator for override existing IDP link during first-broker-login</h3>
+<div class="paragraph">
+<p>There was new authenticator <code>Confirm override existing link</code> added. This authenticator allows to override linked IDP username for the Keycloak user, which was already linked to different
+IDP identity before. More details in the <a href="https://www.keycloak.org/docs/25.0.0/server_admin/#_override_existing_broker_link">Server Administration Guide</a>. Thanks to <a href="https://github.com/lexcao">Lex Cao</a> for the contribution.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_openid_for_verifiable_credential_issuance_experimental_support">OpenID for Verifiable Credential Issuance - experimental support</h3>
+<div class="paragraph">
+<p>There is work in progress on the support of OpenID for Verifiable Credential Issuance (OID4VCI). Right now, this is still work in progress, but things are being gradually added. Keycloak
+can act as an OID4VC Issuer with support of Pre-Authorized code flow. There is support for verifiable credentials in the JWT-VC, SD-JWT-VC and VCDM formats. Thanks to the members of the OAuth SIG
+groups for the contributions and feedback and especially thanks to <a href="https://github.com/wistefan">Stefan Wiedemann</a>, <a href="https://github.com/francis-pouatcha">Francis Pouatcha</a>, <a href="https://github.com/tnorimat">Takashi Norimatsu</a>
+and <a href="https://github.com/bucchi">Yutaka Obuchi</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_searching_by_user_attribute_no_longer_case_insensitive">Searching by user attribute no longer case insensitive</h3>
+<div class="paragraph">
+<p>When searching for users by user attribute, Keycloak no longer searches for user attribute names forcing lower case comparisons. The goal of this change was to speed up searches by using Keycloak&#8217;s native index on the user attribute table. If your database collation is case-insensitive, your search results will stay the same. If your database collation is case-sensitive, you might see less search results than before.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_breaking_fix_in_authorization_client_library">Breaking fix in authorization client library</h3>
+<div class="paragraph">
+<p>For users of the <code>keycloak-authz-client</code> library, calling <code>AuthorizationResource.getPermissions(&#8230;&#8203;)</code> now correctly returns a <code>List&lt;Permission&gt;</code>.</p>
+</div>
+<div class="paragraph">
+<p>Previously, it would return a <code>List&lt;Map&gt;</code> at runtime, even though the method declaration advertised <code>List&lt;Permission&gt;</code>.</p>
+</div>
+<div class="paragraph">
+<p>This fix will break code that relied on casting the List or its contents to <code>List&lt;Map&gt;</code>. If you have used this method in any capacity, you are likely to have done this and be affected.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ids_are_no_longer_set_when_exporting_authorization_settings_for_a_client">IDs are no longer set when exporting authorization settings for a client</h3>
+<div class="paragraph">
+<p>When exporting the authorization settings for a client, the IDs for resources, scopes, and policies are no longer set. As a
+result, you can now import the settings from a client to another client.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_management_port_for_metrics_and_health_endpoints">Management port for metrics and health endpoints</h3>
+<div class="paragraph">
+<p>Metrics and health checks endpoints are no longer accessible through the standard Keycloak server port.
+As these endpoints should be hidden from the outside world, they can be accessed on a separate default management port <code>9000</code>.</p>
+</div>
+<div class="paragraph">
+<p>It allows to not expose it to the users as standard Keycloak endpoints in Kubernetes environments.
+The new management interface provides a new set of options and is fully configurable.</p>
+</div>
+<div class="paragraph">
+<p>Keycloak Operator assumes the management interface is turned on by default.
+For more details, see <a href="https://www.keycloak.org/server/management-interface">Configuring the Management Interface</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_syslog_for_remote_logging">Syslog for remote logging</h3>
+<div class="paragraph">
+<p>Keycloak now supports <a href="https://en.wikipedia.org/wiki/Syslog">Syslog</a> protocol for remote logging.
+It utilizes the protocol defined in <a href="https://datatracker.ietf.org/doc/html/rfc5424">RFC 5424</a>.
+By default, the syslog handler is disabled, but when enabled, it sends all log events to a remote syslog server.</p>
+</div>
+<div class="paragraph">
+<p>For more information, see the <a href="https://www.keycloak.org/server/logging">Configuring logging</a> guide.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_change_to_class_environmentdependentproviderfactory">Change to class <code>EnvironmentDependentProviderFactory</code></h3>
+<div class="paragraph">
+<p>The method <code>EnvironmentDependentProviderFactory.isSupported()</code> was deprecated for several releases and has now been removed.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see the <a href="https://www.keycloak.org/docs/25.0.0/upgrading/">Upgrading Guide</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_all_cache_options_are_runtime">All <code>cache</code> options are runtime</h3>
+<div class="paragraph">
+<p>It is now possible to specify the <code>cache</code>, <code>cache-stack</code>, and <code>cache-config-file</code> options during runtime.
+This eliminates the need to execute the build phase and rebuild your image due to them.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see the <a href="https://www.keycloak.org/docs/25.0.0/upgrading/">Upgrading Guide</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_high_availability_guide_enhanced">High availability guide enhanced</h3>
+<div class="paragraph">
+<p>The high availability guide now contains a guide on how to configure an AWS Lambda to prevent an intended automatic failback from the Backup site to the Primary site.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_removing_deprecated_methods_from_accesstoken_idtoken_and_jsonwebtoken_classes">Removing deprecated methods from <code>AccessToken</code>, <code>IDToken</code>, and <code>JsonWebToken</code> classes</h3>
+<div class="paragraph">
+<p>In this release, we are finally removing deprecated methods from the following classes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>AccessToken</code></p>
+</li>
+<li>
+<p><code>IDToken</code></p>
+</li>
+<li>
+<p><code>JsonWebToken</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For more details, see the <a href="https://www.keycloak.org/docs/25.0.0/upgrading/">Upgrading Guide</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_method_getexp_added_to_singleuseobjectkeymodel">Method <code>getExp</code> added to <code>SingleUseObjectKeyModel</code></h3>
+<div class="paragraph">
+<p>As a consequence of the removal of deprecated methods from <code>AccessToken</code>, <code>IDToken</code>, and <code>JsonWebToken</code>,
+the <code>SingleUseObjectKeyModel</code> also changed to keep consistency with the method names related to expiration values.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see the <a href="https://www.keycloak.org/docs/25.0.0/upgrading/">Upgrading Guide</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_support_for_postgresql_16">Support for PostgreSQL 16</h3>
+<div class="paragraph">
+<p>The supported and tested databases now include PostgreSQL 16.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_introducing_support_for_customer_identity_and_access_management_ciam_and_multi_tenancy">Introducing support for Customer Identity and Access Management (CIAM) and Multi-tenancy</h3>
+<div class="paragraph">
+<p>In this release, we are delivering Keycloak Organizations as a technology preview feature.</p>
+</div>
+<div class="paragraph">
+<p>This feature provides a realm with some core CIAM capabilities, which will serve as the baseline for more capabilities
+in the future to address Business-to-Business (B2B) and Business-to-Business-to-Customers (B2B2C) use cases.</p>
+</div>
+<div class="paragraph">
+<p>In terms of functionality, the feature is completed. However, we still have work to do to make it fully supported in the next major release.
+This remaining work is mainly about preparing the feature for production deployments with a focus on scalability. Also, depending
+on the feedback we get until the next major release, we might eventually accept additional capabilities and add more value to
+the feature, without compromising its roadmap.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see <a href="https://www.keycloak.org/docs/25.0.0/server_admin/#<em>managing_organizations</em>">Server Administration Guide</a>.</p>
+</div>
+</div>
+<h2>Upgrading</h2>
+<p>Before upgrading refer to <a href="file:/home/runner/work/keycloak-rel/keycloak-rel/target/web/docs/latest/upgrading/index.html#migration-changes">the migration guide</a> for a complete list of changes.</p>
+
+<h2>All resolved issues</h2>
+
+
+<h3>New features</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/25940">#25940</a> Support Credentials Issuance through the OID4VCI Protocol <code>oid4vc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/25942">#25942</a> Issue Verifiable Credentials in the SD-JWT-VC format <code>oid4vc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/25943">#25943</a> Issue Verifiable Credentials in the VCDM format <code>oid4vc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/25945">#25945</a> Extend Account Console to support Credentials Issuance Self-Service <code>account/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/26201">#26201</a> Introduce a new Authenticator to handle duplicate IdP broker links <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27673">#27673</a> Hardcoded SAML metadata URL in admin-v2 <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27728">#27728</a> Reflect new hostname v2 options in Keycloak CR <code>operator</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27729">#27729</a> Add documentation for Hostname v2 <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27730">#27730</a> Release notes and Migration guide for Hostname v2 <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28030">#28030</a> Create Argon2 password hashing provider </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28400">#28400</a> Make RequiredActions configurable </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28608">#28608</a> Allow onboarding organization members through a registration invitation link </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28750">#28750</a> CLI options to disable encryption and authentication to external Infinispan <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28938">#28938</a> Need inline translation assistance for user profile attribute groups. </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29491">#29491</a> Remove Oracle JDBC driver out of the box <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29539">#29539</a> Add CRUD for organizations to admin client </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29627">#29627</a> Expose Authorization Server Metadata Endpoint under /.well-known/oauth-authorization-server to comply with rfc8414 <code>oid4vc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29634">#29634</a> Expose JWT VC Issuer Metadata /.well-known/jwt-vc-issuer to comply with SD-JWT VC Specification <code>oid4vc</code></li>
+</ul>
+
+<h3>Enhancements</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/11757">#11757</a> Declarative User Profile: local-date validation and html5-date clash <code>user-profile</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/13113">#13113</a> Conditionally enable and disable CLI options <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/16295">#16295</a> JsonSerialization does not load all available modules from the classpath </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/17530">#17530</a> Add Portuguese translations </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/19334">#19334</a> Support management port for health and metrics in Quarkus 3 <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/20736">#20736</a> uma-ticket returns 403 even though user has access, when User Realm Role isn't present in access Token <code>authorization-services</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/20792">#20792</a> Make it clear that `Client Offline Token Max` should not be set when `Offline Session Max Limited` is disabled for realm <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/20916">#20916</a> DefaultHttpClientFactory should handle the encoding of the response <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/21185">#21185</a> Protocol mapper and client scope for sub claim </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/21344">#21344</a> Upgrade account theme to PatternFly 5 <code>account/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/21345">#21345</a> Upgrade admin theme to PatternFly 5 <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/21439">#21439</a> Allow options to support any value in addition to a list of pre-defined values. <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/21562">#21562</a> Make sure admin events are not referencing sensitive data from their representation <code>admin/api</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/21961">#21961</a> Allow to provider password to kcadm (keycloak-admin-cli) via environment variable <code>admin/cli</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/22436">#22436</a> Query users by 'LDAP_ID' is not working <code>ldap</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/22711">#22711</a> Enable theme caches by default in start-dev <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/24192">#24192</a> Refine how ConfigSource names are being used <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/24264">#24264</a> Passkeys: Supporting WebAuthn Conditional UI <code>authentication/webauthn</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/24466">#24466</a> Look if checks in IntrospectionEndpoint can be simplified <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/25057">#25057</a> Inconsistent behaviour on getting user permissions using authorization <code>authorization-services</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/25114">#25114</a> User Profile "Input placeholder" and other annotations - Use Localization keys <code>user-profile</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/26162">#26162</a> Optimize query batching and result fetching by tuning Hibernate parameters </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/26443">#26443</a> Show an error message when file does not exist for the `config-file` parameter <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/26504">#26504</a> Localization Proposal 2 <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/26654">#26654</a> Initial client policies integration for SAML <code>saml</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/26657">#26657</a> Map Storage Removal: Remove deprecated model/legacy module <code>storage</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/26695">#26695</a> Keycloak and MSAD: enabling account in MSAD does not propagate to Keycloak <code>ldap</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/26713">#26713</a> Refactoring JavaScript code of WebAuthn's authenticators to follow the current Keycloak's JavaScript coding convention <code>authentication/webauthn</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27264">#27264</a> Trivy Analysis warnings should be fixed </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27433">#27433</a> Clarify format of keys in `additionalOptions` field in the Keycloak CR <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27442">#27442</a> Use browser router for Account Console <code>account/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27481">#27481</a> Edit High Availability guide </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27484">#27484</a> Edit 23.0 changes part of Upgrading Guide </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27494">#27494</a> Use JDK17 functionality in the KC Operator <code>operator</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27508">#27508</a> Use new remote-store options in HA guides </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27509">#27509</a> Upgrade to Aurora Postgres 15.5 </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27515">#27515</a> `ClusterProvider` should no longer be deprecated now that "legacy" is the default </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27527">#27527</a> CS and SK localized messages need an update </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27544">#27544</a> Expose quarkus syslog logging now GELF is being deprecated from Keycloak <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27545">#27545</a> Simplify handling of profile features in test cases </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27549">#27549</a> Make general `cache` options runtime <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27574">#27574</a> Support for script providers when running in embedded mode <code>testsuite</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27602">#27602</a> Remove offline session preloading </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27614">#27614</a> Remove additional handlers for health and metrics endpoints <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27632">#27632</a> Integrate downstream Upgrading Guide changes into upstream </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27696">#27696</a> Upgrade to Quarkus 3.8.2 <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27724">#27724</a> Enable Infinispan metrics by default </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27787">#27787</a> Missing API documentation for /admin/realms/{realm}/groups/{group-id}  </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27871">#27871</a> Upgrade to Infinispan 14.0.26 <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27924">#27924</a> Enable http metrics once Quarkus 3.8.3 is available </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27953">#27953</a> Address feedback to Keycloak Server guide <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27976">#27976</a> Persist online sessions to the database </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27997">#27997</a> Make the Language Selector sorted and searchable </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28009">#28009</a> Address edits to the Operator Guide </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28033">#28033</a> Upgrade Infinispan to 14.0.27.Final </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28035">#28035</a> update for messages_de.properties required <code>translations</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28084">#28084</a> Upgrade to Quarkus 3.8.3 <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28120">#28120</a> Default password hashing algorithm should be set to default password hash provider </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28142">#28142</a> Update HA Guide now that non-XA mode is the default </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28145">#28145</a> Align help output for Quarkus distribution across Windows and Linux <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28161">#28161</a> Use Argon2 password hashing by default </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28178">#28178</a> Provide histograms for http server metrics </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28256">#28256</a> Prevent duplicate form submission in Create realm dialog in admin ui  <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28318">#28318</a> Use the same new code for persistent sessions for offline sessions <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28336">#28336</a> Provide a dedicated way of updating Quarkus classloading indices </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28388">#28388</a> Handle concurrent writes to sessions more gracefullly </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28429">#28429</a> Add details to error messages, especially around refresh tokens </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28436">#28436</a> When LDAP groups synchronization fails, show root cause in admin UI <code>admin/api</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28448">#28448</a> Avoid deprecated `jboss-modules` method usage </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28453">#28453</a> More conventional looking conditional element in authentication diagram <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28460">#28460</a> Polishing docs for lightweight tokens <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28477">#28477</a> The concurrency of hashing leads to increased memory usage and CPU throttling </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28501">#28501</a> Batch updates to the database to avoid using too many IOPS </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28517">#28517</a> Java 21 support </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28567">#28567</a> Change user_id value for REFRESH_TOKEN and REFRESH_TOKEN_ERROR events <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28616">#28616</a> Add ui-tab context information into the onCreate </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28650">#28650</a> Improve german translations for admin ui </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28654">#28654</a> Refine the warning produced when a non-cli build-time property is used at runtime <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28672">#28672</a> For client-credential-grants, there shouldn't be an interaction with the authentication cache </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28729">#28729</a> Emphasize the need for setting container limit <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28814">#28814</a> Add missing german translations for user federation in admin UI </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28848">#28848</a> Automatically fill username when authenticating to through a broker </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28861">#28861</a> Improve the performance of the PermissionTicketStore.findGrantedResources method <code>authorization-services</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28862">#28862</a> Improve persistent sessions DB throughput for logins/logouts by batching </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28879">#28879</a> Indicate whether a user is transient or not in user sessions list </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28880">#28880</a> Upgrade to Quarkus 3.8.4 <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28906">#28906</a> ID fields in SessionWrapper should be immutable </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28926">#28926</a> Store extended error message in events for client credential grants </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28935">#28935</a> Ensure GroupResource.getSubGroups doesn't rely on no-arg version of GroupModel.getSubGroupsStream to avoid prematurely loading all subgroups <code>storage</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28939">#28939</a> OIDC: Backchannel logout token should use "typ":"logout+jwt" <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28974">#28974</a> Replace tooltip for adding a translation to an attribute with a text underneath `Display name` </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29023">#29023</a> Support adding existing users to an organization </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29068">#29068</a> Infinispan 15.0.3.Final </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29073">#29073</a> Use cache.compute() method to improve the replace retry loop </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29118">#29118</a> Conditionally run Quarkus IT in GHA based on code changes <code>testsuite</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29124">#29124</a> Use Java locale translations instead of manually edited translations <code>translations</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29166">#29166</a> Improve details for user error events in OIDC protocol endpoints <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29183">#29183</a> Minor corrections to High Availability Guide <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29203">#29203</a> Revisit SessionsResource#realmSessions as it current loads all sessions into memory </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29223">#29223</a> Complete transistion away from Resteasy core </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29280">#29280</a> Update Create Realm in Keycloak 24 Getting Started </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29319">#29319</a> Don't sort persistent sessions when retrieving a list </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29348">#29348</a> Set default role mapping filter in the role mapping modal </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29375">#29375</a> Allow migration of non-persistent sessions to persistent sessions </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29392">#29392</a> Avoid conflicts when writing make store keys </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29431">#29431</a> Make sure organization groups can not be managed but when managing an organization </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29460">#29460</a> Email validation for managed members should only fail if it does not match the domain set to a broker </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29489">#29489</a> Describe how to enable and disable persistent sessions for an installation <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29561">#29561</a> Revisit rolling configuration upgrades for persistent-sessions feature </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29639">#29639</a> Enhance documentation for REST API for X.509 Direct Grant Flow usage <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29724">#29724</a> VC issuance in Authz Code flow without considering “scope” parameter </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29743">#29743</a> Infinispan 15.0.4.Final </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29750">#29750</a> Require external Infinispan be of version 15 or greater </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29778">#29778</a> Upgrade Selenium and Arquillian dependencies in testsuite <code>testsuite</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29780">#29780</a> Unify approach for WebAuthn tests <code>testsuite</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29787">#29787</a> Document Failover Lambda for Active/Passive deployments </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29794">#29794</a> Show a message when confirming an invitation link </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29813">#29813</a> Snyk report to identify branches impacted by a CVE <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29818">#29818</a> Avoid explicit flush when handling persistent sessions </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29880">#29880</a> Improve documentation for the case when 'basic' client scope already exists <code>storage</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29883">#29883</a> Upgrade old Keycloak version for DB migration tests <code>testsuite</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29919">#29919</a> Avoid IntelliJ to automatically create start imports  </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/30017">#30017</a> Improve Client Type Integration Tests <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/30026">#30026</a> Conditionally execute WebAuthn tests when Account console UI is changed <code>testsuite</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/30052">#30052</a> Add periodic synchronisation for Weblate contents </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/30104">#30104</a> Release notes for support application/jwt response in token introspection endpoint <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/30160">#30160</a> Upgrade to Quarkus 3.8.5 <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/30241">#30241</a> Adding ability to get realm attributes in themes </li>
+</ul>
+
+<h3>Bugs</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/8887">#8887</a> Information not displayed when a logged in user reset his password <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/9695">#9695</a> Add `id_token_signed_response_alg` when realm default algorithm is not `RS256` <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/12298">#12298</a> Security bug: Timing Oracle @ Authorization Grant Request , CWE 208 <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/12326">#12326</a> AccessTokens generated from RefreshTokens without scope <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/12585">#12585</a> False implementation of SAML element EncryptionMethod <code>saml</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/12671">#12671</a> Slow user query by attribute <code>storage</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/13045">#13045</a> Duplicated user consents <code>storage</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/14084">#14084</a> DefaultBruteForceProtector leverages a single thread to write success/failed events <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/14122">#14122</a> Refresh token rotation with multiple tabs <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/14188">#14188</a> "1403 Killed" after starting a fresh build <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/14501">#14501</a> Getting failed to initialize js message if consent is rejected by user <code>account/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/15403">#15403</a> No email send on TOTP/Authenticator app removal <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/16064">#16064</a> RS256 signed token validation fails <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/16345">#16345</a> Unable to delete realm names with invalid URL characters <code>admin/api</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/16520">#16520</a> AuthzClient getPermissions() deserializes to List<LinkedHashSet> and not List<Permission> <code>authorization-services</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/16873">#16873</a> Required actions execution order (session and user required actions) <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/16948">#16948</a> search users by custom attributes <code>admin/client-js</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/17154">#17154</a> User locale in server info has language and country switched around <code>admin/api</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/17483">#17483</a> MultiVersionClusterTest not working for Quarkus based distribution <code>storage</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/17678">#17678</a> Stop using nested components <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/19671">#19671</a> Refresh token have a negative exp claim because TokenManager is vulnerable to integer overflow for long lasting sessions (YEAR 2038 bug) <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/19853">#19853</a> CRL Verification failing due to client certificate not being in a chain <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/20411">#20411</a> Entering a single space in a regex password policy makes admin interface unusable. <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/20490">#20490</a> SAML IDP initiated SSO getting cookie_not_found error <code>saml</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/20637">#20637</a> Reset password flow fails with "Page has expired" error when Kerberos authentication is enabled in the browser flow <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/20747">#20747</a> Keycloak admin cli creating/updating authention executions not respecting the priority value specified <code>admin/api</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/21422">#21422</a> Flaky test: org.keycloak.testsuite.forms.ResetPasswordTest#resetPasswordLink <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/22617">#22617</a> kc export fails when using User Federation (LDAP) with file-based Vault enabled <code>import-export</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/22644">#22644</a> Flaky test: org.keycloak.testsuite.forms.BrowserFlowTest#testAlternativeNonInteractiveExecutorInSubflow <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/23252">#23252</a> Invalid redirect after logging in using Twitter (X) <code>testsuite</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/23528">#23528</a> NullPointerException in SAML IdP Logout request with SessionIndex and without NameID  <code>identity-brokering</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/23701">#23701</a> Attribute search does not work with federated users with ldap. <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/23832">#23832</a> New admin console doesn't support automatic logout <code>account/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/23833">#23833</a> Account console v2 doesn't support automatic logout <code>account/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/23900">#23900</a> Duplicate path in groups claim <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/23980">#23980</a> Keycloak Operator fails to install realm authentication flow because "flow is null" <code>import-export</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/24201">#24201</a> Cannot disable LDAP-backed user if importEnabled=false <code>ldap</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/24414">#24414</a> Container labels inherited from UBI image <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/24462">#24462</a> Remove non-unique `id` attributes from `webauthn-authenticate.ftl` <code>login/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/24568">#24568</a> iframe for frontend logout gets blocked if a custom CSP header is used <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/24571">#24571</a> Parallel builds stopped working <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/24795">#24795</a> Not proper remove for nested sub-flows from DB <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/24878">#24878</a> NoClassDefFoundError for Apache XML and EAP8 <code>adapter/jee-saml</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/24936">#24936</a> Negative token expiration when changing client session max lifetime <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/25038">#25038</a> ServerRequestFilter / ServerResponseFilter not being picked up <code>extensions</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/25219">#25219</a> Restrict the access to 'whoami' endpoint for tokens issued for the admin console client <code>admin/api</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/25490">#25490</a> Partial export/import is not mentioned in Keycloak's Server Administration Guide <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/25514">#25514</a> Errors in Outgoing HTTP requests documentation <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/25687">#25687</a> A java.lang.NullPointerException occurs when sending a Multipart/form-data request to any file upload interface. <code>admin/api</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/25778">#25778</a> Incorrect JSON format returned in case of existing user (with user federation) <code>admin/api</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/25807">#25807</a> Space in realm name breaks initial console uris <code>admin/api</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/25815">#25815</a> Loosing refresh token with Google Identity Provider <code>identity-brokering</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/25975">#25975</a> Failing to import client's authorisation settings through UI <code>authorization-services</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/25993">#25993</a> PostgreSQL deadlock causes 400 client error instead of 500 server error <code>storage</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/26019">#26019</a> Identity provider sync mode: incorrect selection in case of null <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/26100">#26100</a> Device verification flow does not require consent under certain circumstances <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/26108">#26108</a> Realm improper input sanitization <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/26109">#26109</a> Improper Input Validation and Sanitization Leads to persistent partial Denial of Service <code>admin/api</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/26113">#26113</a> Revoked Token may be valid for a short time after expiring <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/26364">#26364</a> Duplicate emails is On when Email as username and Login with email are On <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/26396">#26396</a> How do you update a custom user storage provider jar that includes a version number? <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/26438">#26438</a> Keycloak cannot run on windows machine in dev-mode. Because non-English systems cannot support keycloak's package's. <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/26439">#26439</a> Incorrect position of nonce in OCSP request <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/26464">#26464</a> "Test connection" on LDAPS URI does not test TLS handshake <code>admin/api</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/26515">#26515</a> Wrong rendering duplicated options in guides <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/26658">#26658</a> `LogoutEvent` is not fired on required UpdatePassword action  <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/26667">#26667</a> Can't access hidden tabs on the left in admin UI <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/26868">#26868</a> Login via brokerage to identity provider fails with clients having UUID with uppercase letter  <code>identity-brokering</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/26893">#26893</a> Access tokens includes nonce claim <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/26915">#26915</a> Deleting sub-realm roles throw errors (even tho it succeeded) <code>authorization-services</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/26981">#26981</a> Workflow failure Quarkus IT - StartCommandDistTest#testWarningWhenOverridingBuildOptionsDuringStart <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27021">#27021</a> Workflow failure: Fuse adapter tests <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27080">#27080</a> Workflow failure: Operator CI - KeycloakTruststoresTests#testTrustroreExists <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27180">#27180</a> Grant type "urn:ietf:params:oauth:grant-type:uma-ticket" openid-connect/token service endpoint is returning refresh token with invalid Expiration <code>authorization-services</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27184">#27184</a> Editing built-in client policy profiles are silently reverted <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27201">#27201</a> Missing `exp` claim from Offline tokens when `Offline Session Max Limited` is disabled <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27228">#27228</a> Lowercased "terms_and_conditions" is not migrated in fed_user_required_action table <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27245">#27245</a> Account console does not correctly treat link / unlink account <code>account/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27269">#27269</a> mvnw clean install -Pdistribution on Windows deletes necessary files during clean of org.keycloak:keycloak-admin-ui  <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27275">#27275</a> Invalidating offline token is not working from client sessions tab   <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27308">#27308</a> Warnings in log during normal startup <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27349">#27349</a> Google Authenticator now supports SHA256 and SHA512 <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27366">#27366</a> Social login - test failures with unexpected status code <code>testsuite</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27391">#27391</a> Log warning when not using scope `openid` <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27416">#27416</a> Missing feature ID for tech preview feature in docs <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27444">#27444</a> type of clients.findRole() in @keycloak/keycloak-admin-client is wrong <code>admin/client-js</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27483">#27483</a> Authz-client AuthorizationResource.getPermissions() ClassCastException <code>authorization-services</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27499">#27499</a> LdapSyncTest failures running with external Active Directory <code>testsuite</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27504">#27504</a> Cpu and memory sizing typo  <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27506">#27506</a> Readable realm name no longer visible in logs, but realm id is used instead <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27512">#27512</a> Getting subgroups does pagination before filtering <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27514">#27514</a> Uncaught server error: java.lang.IllegalArgumentException: Path parameter not provided <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27529">#27529</a> LegacyUserCredentialManager class not found <code>storage</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27538">#27538</a> User tab "Identity Provider Links" is not available when only "view-users" or "manage-users" realm-management role is assigned as in the v1 Keycloak theme <code>account/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27540">#27540</a> URL change for liquibase docs <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27548">#27548</a> Custom Browser Flow not working anymore <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27558">#27558</a> Client registration policy "Allowed Protocol Mapper Types" prevents clients from self-updating via the client registration api <code>admin/api</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27565">#27565</a> Admin Console tests are failing due to changes in supported authenticators <code>testsuite</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27573">#27573</a> Release notes from 24.0.0 miss that multi-site active-passive deployments are supported <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27597">#27597</a> dropping KC_PROXY=edge causes startup error  <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27604">#27604</a> Account console dev environment broken <code>account/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27609">#27609</a> Mixed use of javax and jakarta in org.keycloak.admin.client <code>adapter/jee</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27611">#27611</a> Cannot modify realm email settings since keycloak 24 <code>user-profile</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27620">#27620</a> Incomplete documentation when an email about changed credentials is sent <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27622">#27622</a> In the account console, the link "Back to security-admin-console" disappears after the first navigation <code>account/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27628">#27628</a> Only allow a known refferer URI for the Account Console <code>account/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27643">#27643</a> Password policy for not having username in the password <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27646">#27646</a> Account Console REST API for /linked-accounts Returns Multiple Access-Control-Allow-Origin Headers <code>account/api</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27653">#27653</a> Admin tests: Flaky realm_settings_user_profile_enabled test <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27683">#27683</a> Quarkus-next build failure: Could not find artifact io.quarkus:quarkus-extension-maven-plugin <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27691">#27691</a> Unable to set a newly created flow in First Login Flow override for a SAML identity provider <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27701">#27701</a> MTLS Cache options should be runtime options, not build time options <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27709">#27709</a> Account console does not work with `--http-relative-path` <code>account/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27719">#27719</a> Wrong Welcome page image in the documentation <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27745">#27745</a> Registration template in login2 is broken <code>login/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27756">#27756</a> SMTP email sending fails because of tls certificate verification even with tls-hostname-verifier=ANY  <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27761">#27761</a> Snyk workflow failure <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27779">#27779</a> Broken Migration "MigrateTo24_0_0"  <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27780">#27780</a> Fixing downstream documentation build <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27797">#27797</a> User profile fields cannot be set empty once they have a non-empty value (in Login Theme) <code>user-profile</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27798">#27798</a> Performance problem with Amazon JDBC wrapper version 2.3.4 </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27820">#27820</a> Account console confusing with WebAuthn <code>account/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27824">#27824</a> Can't register webauthn passwordless key when RS1 signature algorithm is configured in policies <code>authentication/webauthn</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27837">#27837</a> Translation values not loaded for User Profile attributes <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27838">#27838</a> User Profile translations - value put in wrong field after search <code>user-profile</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27839">#27839</a> Incorrect Length Validation for Attribute <code>admin/cli</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27840">#27840</a> Race condition loading serverinfo in admin console <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27841">#27841</a> ES translation causes FreeMarker rendering issues <code>translations</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27846">#27846</a> Authenticator Example module compilation failure <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27852">#27852</a> VerifyUserProfile invalidates user cache on every login <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27854">#27854</a> Required action selection is broken <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27868">#27868</a> Documentation is referring to deprecated/unmaintained examples <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27875">#27875</a> SAMLIdentityProvider not honoring SamlAuthenticationPreprocessor <code>saml</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27877">#27877</a> Get Groups in admin/cli returns all groups and not the groups that meets the condition specified in -q option <code>admin/cli</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27878">#27878</a> Error when executing refresh grant, with scope param, without offline_access scope specified <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27882">#27882</a> Incorrect version of bctls-fips in the docs <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27890">#27890</a> Webauthn token stops working on migration to 24 <code>authentication/webauthn</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27892">#27892</a> Truststore handling for the Operator is not documented <code>operator</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27894">#27894</a> Multi datasource configuration does not work in Keycloak 24.0.1 <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27900">#27900</a> Performance impact in changed hashing measured wrong <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27917">#27917</a> User search field loses focus after first input in realms with user federation <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27925">#27925</a> Keycloak docs state that there are http metrics, but they are disabled <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27941">#27941</a> Entry 999.0.0 in MIGRATION_MODEL prevents future migrations of the database <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27944">#27944</a> Admin tests: Failing realm_settings_events_test test <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27954">#27954</a> Hibernate Dialect detection does not work anymore for Oracle DBs <code>storage</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27962">#27962</a> message of groups is wrong in messages_ja.properties <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27965">#27965</a> Groups help message is only "Groups" <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27966">#27966</a> 🍺 instead of dot: Attributes in account UI are not loaded <code>user-profile</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27967">#27967</a> ORA-01450 when updating keycloak 23 -> 24 <code>storage</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27981">#27981</a> User Profile: Inconsistent ordering of attributes between account and login themes <code>user-profile</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27984">#27984</a> Username LDAP attribute other than uid is difficult <code>ldap</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28001">#28001</a> MySQL connector artifact should be ignored <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28004">#28004</a> JWK key ignored due to missing required field 'use' despite matching KID <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28012">#28012</a> Keycloak CR Truststore should not have a name <code>operator</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28016">#28016</a> User Profile attribute translation saves wrong key to realm overrides <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28069">#28069</a> Token setting missing <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28079">#28079</a> Group search does not work in user view <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28080">#28080</a> Paging issue in groups via user view <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28090">#28090</a> kc.sh may leak credentials <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28100">#28100</a> Failed authentication: java.lang.NullPointerException: Cannot invoke "org.keycloak.models.UserModel.getFederationLink()" because "this.delegate" is null <code>identity-brokering</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28103">#28103</a> Deleting translations after attribute deletion <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28113">#28113</a> WebAuthN registration broken after upgrading to 24.0.1 <code>authentication/webauthn</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28143">#28143</a> Navigation broken on local development <code>account/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28174">#28174</a> HA guide erroneously refers to AWS Global Accelerator <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28187">#28187</a> Admin UI drag & drop in flow config seems to delete actions <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28201">#28201</a> Locale label missing on login page for Brazilian Portuguese, Greek and Persian <code>translations</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28207">#28207</a> JAVA_OPTS are not set under Windows <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28215">#28215</a> Inconsistent handling of product vs. community in HA guide table-of-contents <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28220">#28220</a> Admin API: User PUT operation clears firstname, lastname email fields <code>admin/api</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28231">#28231</a> username contains invalid characters <code>user-profile</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28248">#28248</a> Update user makes User ID changes when federationLink and LDAP_ID is not set properly <code>admin/api</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28284">#28284</a> scroll bar is missing inn clients view keycloak admin GUI <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28303">#28303</a> WARN - Event object wasn't available in remote cache after event was received <code>infinispan</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28330">#28330</a> org.keycloak.documentation.test.ExternalLinksTest fails with incorrect status code reported back in the results <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28335">#28335</a> The false option of the pkceMethod init parameter for the JavaScript adapter is ignored <code>adapter/javascript</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28341">#28341</a> ConditionalLoaAuthenticator documentation incorrect re: unauthenticated users. <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28370">#28370</a> PodTemplateTest assertions are ignored <code>testsuite</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28374">#28374</a> Syntax highlighting for log example is wrong in downsream <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28377">#28377</a> Broken lists in import/export server guide <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28381">#28381</a> Password denylist Doesn't Work As Expected <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28389">#28389</a> New username-password policy check is reversed <code>user-profile</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28409">#28409</a> Unclosed span bracket in register.ftl <code>login/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28416">#28416</a> Keycloak is not returning proper error message for PUT /users admin API <code>user-profile</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28431">#28431</a> Dedicated client scopes always show up when searching <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28443">#28443</a> Declarative User Profile: The use of the "select-radiobuttons" with options validation display is broken <code>user-profile</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28463">#28463</a> Error in refresh flow with scope parameter <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28465">#28465</a> Review cookie attributes and set SameSite for all cookies </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28479">#28479</a> Authentication flow diagram incorrect branching in some flows <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28484">#28484</a> inputOptionLabels is truncating text that is not wrapped for localization <code>account/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28486">#28486</a> Help text wrong in key provider <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28490">#28490</a> Missing help text for Brute Force Mode <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28495">#28495</a> IdP Linking: Usernames sometimes lowercase and sometimes uppercase <code>identity-brokering</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28509">#28509</a> Workflow failure: ManagementDistTest <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28514">#28514</a> Message for searchClientRegistration is missing <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28519">#28519</a> Cards in IDP and User federation are not shown to be clicable <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28523">#28523</a> [LDAPStorageProvider] NPE if user is cached but has been deleted in ldap <code>ldap</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28531">#28531</a> notBefore and setToNow untranslated <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28546">#28546</a> LDAP provider add has 3 lines on top of screen <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28555">#28555</a> Collision with base testsuite dependency </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28564">#28564</a> UserStorageSyncManager int overflow <code>storage</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28575">#28575</a> Flaky test: org.keycloak.testsuite.admin.IdentityProviderTest#testSamlImportWithAnyEncryptionMethod <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28576">#28576</a> Flaky test: org.keycloak.testsuite.admin.IdentityProviderTest#testSamlImportWithAnyEncryptionMethod <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28577">#28577</a> Flaky test: org.keycloak.testsuite.admin.IdentityProviderTest#testSamlImportWithAnyEncryptionMethod <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28579">#28579</a> Brute force detection fails with read-only LDAP users <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28606">#28606</a> OrganizationTest.testAttributes fails in GHA CI <code>testsuite</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28624">#28624</a> Incorrect user info in the head when using lightweight access token for account-console <code>account/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28628">#28628</a> Invalide objects comparison in Java <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28638">#28638</a> Missing permission to read configmaps in `keycloak-operator-role` <code>operator</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28640">#28640</a> Unable to see user's inherited role if user has no directly assigned roles <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28649">#28649</a> docker-v2 authentication fails with KC-SERVICES0097: Invalid request: java.lang.NullPointerException: Cannot invoke "org.keycloak.models.ClientModel.getClientScopes(boolean)" because "this.client" is null <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28666">#28666</a> Accessing a transient (lightweight) user through client session fails in admin-api/-ui <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28684">#28684</a> "Extend to children" button in authorization group policies is wrongly disabled <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28702">#28702</a> Unable to fetch realm names when contains special characters <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28704">#28704</a> Remove invalid "this." from keycloak-admin-client README <code>admin/client-js</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28725">#28725</a> Keycloak 24.0.2 - Enlisted connection used without active transaction <code>storage</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28744">#28744</a> Invalid label `validatingX509Certs` in new SAML identity provider screen <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28746">#28746</a> Translations missing for recovery codes in KC 24 <code>account/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28747">#28747</a> ID is shown prematurely on Identity Provider Mapper after Save <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28748">#28748</a> Webauthn Policy timeout accepts values > 8 hours <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28798">#28798</a> `passwordPoliciesHelp.notContainsUsername` missing in admin console <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28801">#28801</a> NPE when listing sessions in UI if associated user is gone <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28818">#28818</a> Child groups filtering returns all groups <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28821">#28821</a> Failure reset time is applied to Permanent Lockout <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28824">#28824</a> Inconsistent Group Ordering in Keycloak API Responses For Client Policies Causing Drift Detection Challenges <code>admin/fine-grained-permissions</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28825">#28825</a> Keycloak Operator 24.x - the keycloak custom image tag is being overwritten with nightly pull <code>operator</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28881">#28881</a> socketTimeoutUnits and establishConnectionTimeoutUnits in HttpClientBuilder are not used <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28896">#28896</a> Master realm can be deleted <code>admin/api</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28911">#28911</a> clients_saml_test.spec.ts fails in main <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28915">#28915</a> Possible NPE when exporting user policy <code>authorization-services</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28947">#28947</a> IndexWrapper warnings when starting Keycloak <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28948">#28948</a> Auto-build shouldn't warn about unavailable runtime options <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28949">#28949</a> Conditional cache options are not evaluated correctly <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28964">#28964</a> Compilation error in latest main (conflicting PRs for oid4vc and changes for EnvironmentDependentFactory) <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28968">#28968</a> Grant urn:ietf:params:oauth:grant-type:pre-authorized_code enabled even if oid4vc_vci feature is disabled <code>oid4vc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28979">#28979</a> MULTIVALUED_STRING_TYPE does not show in UI if empty <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28982">#28982</a> Flaky test: org.keycloak.testsuite.oid4vc.issuance.signing.OID4VCIssuerEndpointTest#testGetCredentialOfferUriUnsupportedCredential <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28983">#28983</a> Flaky test: org.keycloak.testsuite.oid4vc.issuance.signing.OID4VCIssuerEndpointTest#testGetCredentialOfferUriInvalidToken <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28984">#28984</a> Flaky test: org.keycloak.testsuite.oid4vc.issuance.signing.OID4VCIssuerEndpointTest#testRequestCredential <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28985">#28985</a> Flaky test: org.keycloak.testsuite.oid4vc.issuance.signing.OID4VCIssuerEndpointTest#testGetCredentialOfferUriUnauthorized <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28986">#28986</a> Flaky test: org.keycloak.testsuite.oid4vc.issuance.signing.OID4VCIssuerEndpointTest#testGetCredentialOfferUnauthorized <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28987">#28987</a> Flaky test: org.keycloak.testsuite.oid4vc.issuance.signing.OID4VCIssuerEndpointTest#testRequestCredentialInvalidToken <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28988">#28988</a> Flaky test: org.keycloak.testsuite.oid4vc.issuance.signing.OID4VCIssuerEndpointTest#testRequestCredentialUnauthorized <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28989">#28989</a> Flaky test: org.keycloak.testsuite.oid4vc.issuance.signing.OID4VCIssuerEndpointTest#testCredentialIssuance <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28990">#28990</a> Flaky test: org.keycloak.testsuite.oid4vc.issuance.signing.OID4VCIssuerEndpointTest#testGetCredentialOfferWithoutNonce <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28991">#28991</a> Flaky test: org.keycloak.testsuite.oid4vc.issuance.signing.OID4VCIssuerEndpointTest#testGetCredentialOffer <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28992">#28992</a> Flaky test: org.keycloak.testsuite.oid4vc.issuance.signing.OID4VCIssuerEndpointTest#testGetCredentialOfferWithABrokenNote <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28993">#28993</a> Flaky test: org.keycloak.testsuite.oid4vc.issuance.signing.OID4VCIssuerEndpointTest#testGetCredentialOfferURI <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28994">#28994</a> Flaky test: org.keycloak.testsuite.oid4vc.issuance.signing.OID4VCIssuerEndpointTest#testGetCredentialOfferWithoutAPreparedOffer <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28995">#28995</a> Flaky test: org.keycloak.testsuite.oid4vc.issuance.signing.OID4VCIssuerEndpointTest#testRequestCredentialUnsupportedFormat <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28996">#28996</a> Flaky test: org.keycloak.testsuite.oid4vc.issuance.signing.OID4VCIssuerEndpointTest#testRequestCredentialUnsupportedCredential <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29027">#29027</a> Creating client-scope without protocol causes GUI bug <code>admin/api</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29033">#29033</a> Argon2 password hashing leads to increased Major GC's in Keycloak's JVM during load tests <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29035">#29035</a> Admin console message bundle contains duplicate keys <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29039">#29039</a> Preflight request with OPTIONS method for token introspection endpoint not working. <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29057">#29057</a> not able to disable declarative_ui feature </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29072">#29072</a> Startup probe should check for existence of an Admin user before returning 200 <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29129">#29129</a> JGroups creates log messages as it switched internally to "trace" <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29132">#29132</a> Documentation cites wrong endpoint for Docker Registry v2 Authentication <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29133">#29133</a> DuplicateEmailValidator causes two DB queries on every login if a user has an email address <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29141">#29141</a> Fix waiting for change to take effect in SessionTimeoutsTest </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29142">#29142</a> LDAP - GroupToGroup Mapper throws "ENTRY_EXISTS" Error <code>ldap</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29147">#29147</a> local user login not possible after LDAP connection problem <code>ldap</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29154">#29154</a> Update docs to distinguish between product names and CR names <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29190">#29190</a> JS Admin Client does not support q query parameter on users.count() and clients.find() methods <code>admin/client-js</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29206">#29206</a> LDAP user creation reports error but user is created <code>ldap</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29213">#29213</a> Bad formatting of permissions error in admin console <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29233">#29233</a> Broken link in documentation <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29235">#29235</a> Tests for persistent sessions are not performed <code>infinispan</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29237">#29237</a> The select for a locale behaves as a multi-select in the admin and account UI when it should be single value <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29246">#29246</a> Flaky test: org.keycloak.testsuite.client.ClientTypesTest#testUpdateClientWithClientType <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29247">#29247</a> Flaky test: org.keycloak.testsuite.oauth.ClientTokenExchangeTest#testExchangeWithDynamicScopesEnabled <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29248">#29248</a> Flaky test: org.keycloak.testsuite.oauth.ClientTokenExchangeTest#testClientExchange <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29249">#29249</a> Flaky test: org.keycloak.testsuite.oauth.ClientTokenExchangeTest#testIntrospectTokenAfterImpersonation <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29250">#29250</a> Flaky test: org.keycloak.testsuite.oauth.ClientTokenExchangeTest#testPublicClientNotAllowed <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29251">#29251</a> Flaky test: org.keycloak.testsuite.oauth.ClientTokenExchangeTest#testExchangeUsingServiceAccount <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29252">#29252</a> Flaky test: org.keycloak.testsuite.oauth.ClientTokenExchangeTest#testImpersonation <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29253">#29253</a> Flaky test: org.keycloak.testsuite.oauth.ClientTokenExchangeTest#testImpersonationUsingPublicClient <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29259">#29259</a> `auth-server-feature` does not work for `auth-server-quarkus-embedded` <code>testsuite</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29263">#29263</a> Default value for MULTIVALUED_STRING_TYPE in authenticator config is ignored <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29266">#29266</a> Documentation Enhancements Admin Rest API Group to Client Role Mappings <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29287">#29287</a> Upgraded docker to 24, now unable to browse "authentication" page in one of my realms. <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29294">#29294</a> Listing of sessions is very slow when we have tens of thousands sessions (+ not able to know the exact number of sessions) <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29309">#29309</a> JWSBuilder when used directly with AsymmetricSignatureSignerContext produces non compliant ECDSA signed JWT <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29311">#29311</a> POST /{realm}/clients-initial-access is allowing invalid data like count = -1 and expiration date-time can be set earlier than the creation date-time <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29314">#29314</a> Clicking the "save" button multiple times in the Saml IDP configuration page corrupts the value of "AuthnContext ClassRefs" <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29336">#29336</a> Unlocking and saving the user's temporary lock will render the user disabled. <code>account/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29352">#29352</a> Fix user-facing typos in error messages <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29362">#29362</a> Custom user attributes are not shown for service account users in the Admin UI <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29376">#29376</a> kc export fails when using User Federation (LDAP) with SSL/TLS <code>import-export</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29385">#29385</a> Restart authentication event type is not generated <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29408">#29408</a> Need to show translation for attributes group on Registration form <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29426">#29426</a> Potential bug introduced to JavaKeystoreKeyProvider in #26936   <code>admin/api</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29429">#29429</a> NPE when Organization feature enabled <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29440">#29440</a> clients_tests is unstable <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29458">#29458</a> Empty CSP header value breaks security filter <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29471">#29471</a> Cypress tests store videos even for passing tests <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29495">#29495</a> Fixing realm removal when removing groups and brokers associated with an organization <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29507">#29507</a> realm_settings_user_profile_enabled fails randomly <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29525">#29525</a> Maven clean build doesn't clean admin client generated files <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29528">#29528</a> Failure: SessionTimeoutsTest <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29551">#29551</a> OAuth 2.0 Device Polling Interval - Setting in Realms settings/Token Plus-Minus to change value not working <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29554">#29554</a> Cypress failing on video recording <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29579">#29579</a> Increased augmentation time after Quarkus 3.8.4 upgrade <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29592">#29592</a> Remote caches and other site's caches might get out-of-sync when persistent sessions are used <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29599">#29599</a> Org domain removal from IDP is not properly propagated to the DB <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29602">#29602</a> SNYK-JAVA-ORGBOUNCYCASTLE-6277381 - Observable Timing Discrepancy in org.bouncycastle:bcprov-jdk18on <code>dependencies</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29607">#29607</a> CVE-2024-30172 - Infinite loop in org.bouncycastle:bcprov-jdk18on <code>dependencies</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29608">#29608</a> CVE-2024-30171 - Observable Discrepancy in org.bouncycastle:bcprov-jdk18on <code>dependencies</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29609">#29609</a> CVE-2024-29857 - Allocation of Resources Without Limits or Throttling in org.bouncycastle:bcprov-jdk18on <code>dependencies</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29620">#29620</a> Wrong Media Type / Format of SD JWT VC  <code>oid4vc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29625">#29625</a> Database driver install examples can lead to permission errors in some circumstances <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29630">#29630</a> Unable to import realms with organization feature enabled <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29640">#29640</a> Admin console development fail due to whoami endpoint <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29641">#29641</a> Admin Console uses a wrong URL type for auth server <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29644">#29644</a> Unmanaged Attributes drop down doesn't reflect the value <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29688">#29688</a> client_authorization_test fails <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29699">#29699</a> Snyk Report is not preventing duplicates <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29738">#29738</a> Broken translations for loa-condition-level and loa-max-age <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29756">#29756</a> MigrateTo25_0_0 does not complete within default transaction timeout <code>storage</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29788">#29788</a> OpenAPI: Missing content definition for authentication flow executions GET API <code>admin/api</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29802">#29802</a> Flaky test: org.keycloak.testsuite.model.session.UserSessionPersisterProviderTest#testMigrateSession <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29805">#29805</a> Supported Credential Type is not evaluated when applying the Protocol Mapper in OID4VCI <code>oid4vc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29808">#29808</a> LDAP User federation: LDAP: error code 49 - Invalid Credentials <code>ldap</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29814">#29814</a> package com.google.common.hash does not exist when building keycloak-api-docs-dist  <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29816">#29816</a> Aggregated javadoc generation fix + missing keycloak-operator javadoc <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29868">#29868</a> Missing Text for x509 <code>translations</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29869">#29869</a> Kubernetes resources point to non-existing Operator image <code>operator</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29875">#29875</a> Upgrade supported PostgreSQL to version 16 <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29885">#29885</a> Unable to create an  LD-Credentials/VCDM provider for OID4VC <code>oid4vc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29931">#29931</a> Cannot access the account console <code>account/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29939">#29939</a> Increased GC overhead in the continuous performance tests after G1GC compiler change <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29948">#29948</a> Reason not logged in event for invalid SAML request <code>saml</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29968">#29968</a> x509 SAN UPN other name is not handled in JDK 21 <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29976">#29976</a> CI for JS not running all the tasks <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29981">#29981</a> Enabling and disabling functions are not working properly in KC GUI <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29982">#29982</a> Revert editorconfig for properties files as trailing blanks are used <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29984">#29984</a> Nightly build for API docs is broken </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/30018">#30018</a> SessionTimeoutsTest failing even after retry, probably due to insufficient cleanup <code>testsuite</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/30023">#30023</a> Using {application.session.host} in backchannel logout url prevents from saving client <code>admin/api</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/30024">#30024</a> Sign out button in the account console has wrong Selenium locator <code>testsuite</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/30028">#30028</a> Typo in the upgrading guide for persistent sessions <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/30049">#30049</a> All roles are populated as inherited roles if a single role is added to a dedicated client scope <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/30068">#30068</a> Update RFC reference in subject: Likely typo RFC2553 -> RFC2253, Consider RFC4514 <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/30079">#30079</a> The OID4VC tests break automation <code>account/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/30086">#30086</a> Remove sources folder before invoking JakartaTransformer </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/30102">#30102</a> Updating client policies in JSON editor is buggy. Attempt to update global client policies should throw the error <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/30120">#30120</a> Option `cache-remote-tls-enabled` is missing the default <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/30126">#30126</a> Client scope names not shown in evaluate section in client-scopes tab <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/30134">#30134</a> Malformed dependency version causing the build failure <code>testsuite</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/30196">#30196</a> Test PoC does not run with Quarkus fork join worker </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/30201">#30201</a> Keycloak CI - failure in Store IT (aurora-postgres) <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/30206">#30206</a> Use forkjoin pool factory in testsuite for embedded Quarkus Auth Server <code>testsuite</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/30218">#30218</a> Locale dropdowns not working <code>account/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/30220">#30220</a> Base theme contains properties without default values <code>login/ui</code></li>
+</ul>
+
+</div>
