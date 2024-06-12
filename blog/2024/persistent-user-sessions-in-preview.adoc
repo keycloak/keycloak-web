@@ -1,0 +1,146 @@
+:title: Keeping users logged in with Keycloak 25
+:date: 2024-06-12
+:publish: true
+:author: Alexander Schwartz
+
+Previous versions of Keycloak would store regular user sessions (also called online user sessions) only in memory.
+Due to that, all users would be logged out when you shut down or restart the Keycloak cluster.
+
+With Keycloak 25, there is a preview feature "`persistent user sessions`", which stores the user sessions in its database.
+If a session is not found in memory, it is loaded from the database, and the user can continue to use their session without the need to re-authenticate.
+
+The preview feature is disabled by default, and you need to enable it with the persistent-user-sessions feature flag to try it out.
+
+You can help to make this feature fully supported by https://github.com/keycloak/keycloak/discussions/28271[providing feedback in this GitHub discussion thread].
+For June 24th, we are planning an https://www.meetup.com/keycloak-hour-of-code/events/301593398[ask-me-anything session for persistent sessions].
+
+== Changed runtime behavior of Keycloak and the Database
+
+With this feature enabled, Keycloak's memory usage might be reduced and the database usage may increase.
+
+* Keycloak will default to a maximum of 10'000 entries for each of the caches sessions, clientSessions, offlineSessions, and offlineClientSessions if no other maximum size is configured in Keycloak's cache configuration XML file.
+If you want to keep more sessions in memory, see https://www.keycloak.org/server/caching[Configuring distributed caches] on how to configure a different size.
+* The options `spi-user-sessions-infinispan-offline-session-cache-entry-lifespan-override` and `spi-user-sessions-infinispan-offline-client-session-cache-entry-lifespan-override` are ignored, as instead the maximum entry size is used.
+* External Infinispan instances are supported for multi-site setups of Keycloak.
+If you use such a setup and have enabled persistent user sessions, you can (and should) set a maximum number of sessions to be kept in the external Infinispan to limit the memory consumption of the external Infinispan.
+See https://infinispan.org/docs/stable/titles/configuring/configuring.html#eviction_configuring-memory-usage[Infinispan's docs on how to configure eviction] in the Infinispan caches.
+* If the number of concurrent user sessions exceeds the maximum cache size in Keycloak, you'll see an increased database activity to load sessions from the database when tokens are for example refreshed or the user info endpoint is called.
+Those requests will also incur an increased latency depending on the response time of your database for those read statements.
+Monitor the cache hit rate to see if your setup needs optimizations.
+* For each login, token refresh, and logout, the session tables in the database are updated, and will show as an increased database activity.
+Keycloak attempts to bundle concurrent session updates into a single transaction, still the utilization of both CPU and IOPS of your database will increase significantly.
+Those requests will also incur an increased latency depending on the response time of your database for those write statements.
+
+The impact on your environment will depend on your infrastructure and usage patterns.
+As an indicator, we've run a test with the following setup:
+
+* 150 logins and 150 logouts per second
+* Aurora PostgreSQL regional database 15.5
+* Type db.t4g.large server (2 ARM vCPU cores, 8 GB RAM)
+
+We've seen the following change in the runtime metrics:
+
+* On the database:
+** 300 additional commits per second
+** CPU usage increased by 1 to 1.5 CPU cores depending on the number of concurrent sessions
+** approximately 2500 additional WriteIOPS
+* On Keycloak:
+** CPU usage on Keycloak remained constant
+** Memory usage constant after 10'000 sessions had been created
+** 50th percentile response times for login and logout increased by 20 and 10 ms respectively for a single-AZ database, and 30 and 20 ms respectively for a two-AZ database.
+
+We recommend you to run benchmarks for your environment.
+Use the tools we provide in the https://github.com/keycloak/keycloak-benchmark[Keycloak Benchmark Project] as a tool box.
+
+See https://www.keycloak.org/server/configuration-metrics[Enabling Keycloak Metrics] on how to enable metrics for Keycloak to monitor information about your caches and HTTP response times.
+
+== Migrating from previous community solutions
+
+The community has been evaluating different configurations in the past, with some of them having drawbacks and which were not officially supported by Keycloak.
+With persistent sessions enabled, those setups can now be simplified.
+
+Using deployments with very large JVM head sizes: In the past, one would need a lot of JVM memory to keep all sessions in memory and avoid an out-of-memory situation.
+With persistent sessions being stored in the database and only a subset kept in memory for caching, you can now reduce the memory allocated to your Keycloak instances.
+
+Using offline sessions to keep users logged in:: One popular approach was to use offline sessions to keep users logged in, as those have been persisted in the database even before.
+Still, offline sessions are intended for a different purpose: The intended use is to allow an application to access resources on behalf of a user even when that user has logged out, and the regular online session logout would not log out those sessions.
+With persistent user sessions enabled, you should start using online sessions.
+The existing offline sessions can still be used, and would eventually expire.
+
+Connecting a JDBC store to Keycloak's embedded Infinispan:: In this setup the embedded Infinispan stored the sessions into a database and a custom created table.
+While this is a default set up for login and logout, it will do so only if all sessions are loaded at start-up as the code for non-persistent user sessions assumes to have all sessions in memory.
+All sessions would need to be loaded at startup, as otherwise the list of sessions for a client or a realm would be incomplete, and constraints to have for example only a single session for a given user could not be guaranteed.
+With persistent sessions as a preview feature in Keycloak 25, this new approach offers a reduced complexity in the setup, and a reduced memory footprint of both Keycloak and Infinispan.
+See below on how to migrate existing sessions.
+
+Connecting Keycloak to an external Infinispan for a single-site setup:: In this setup Keycloak would read and write sessions to an external Infinispan.
+Like above, all sessions would need to be loaded at startup, both into the embedded Infinispan and the external Infinispan, as otherwise the list of sessions for a client or a realm would be incomplete, and constraints to have for example only a single session for a given user could not be guaranteed.
+Such a setup was only supported for multi-site setups starting with Keycloak 24. With persistent sessions as a preview feature in Keycloak 25, this new approach offers a reduced complexity in the setup, and a reduced memory footprint for Keycloak, and no need to run an external Infinispan.
+See below on how to migrate existing sessions.
+
+== Migrating existing sessions
+
+If you have been using a JDBC store connected to the embedded Infinispan, or an external Infinispan to store Keycloak online sessions in Keycloak 24, you can migrate those sessions if (and only if) you enable persistent user sessions when you start Keycloak 25 for the first time.
+
+The https://www.keycloak.org/docs/latest/upgrading/index.html#persistent-user-sessions[Upgrading Guide for Keycloak 25 contains instructions on how to do this].
+
+Once the migration is complete, you should remove the configuration for any JDBC persistence for embedded session caches.
+You should also remove the connection to an external Infinispan if you have used it in a single-site setup.
+
+== Enabling Persistent User Sessions
+
+As this is a preview feature, it is not enabled by default.
+Once we consider this feature to be fully supported, we plan to enable it by default in a future release.
+
+If you have already migrated to Keycloak 25, we recommend you clear all existing online user sessions from your setup.
+
+Depending on if you are using it in a development environment, building your Keycloak distribution, or relying on automatic rebuilding of Keycloak on startup, your command would look like the following:
+
+----
+bin/kc.[sh|bat] [start-dev|build|start] --features="persistent-user-sessions"
+----
+
+If you're using environment variables to set options, set the following environment variable, or add the value if the environment variable already exists.
+
+----
+KC_FEATURES=persistent-user-sessions
+----
+
+If you are using the Keycloak Operator, add it to the enabled features in the Keycloak CR:
+
+----
+apiVersion: k8s.keycloak.org/v2alpha1
+kind: Keycloak
+metadata:
+  name: example-kc
+spec:
+  features:
+    enabled:
+      - persistent-user-sessions
+...
+----
+
+See https://www.keycloak.org/server/features[Enabling and disabling features] for more information on how to enable features.
+
+== Outlook
+
+While we're working to make this feature fully supported, we're also working on similar features.
+Some would make deployment of Keycloak simpler, and others would eventually enable a Keycloak multi-site active-active setup.
+
+* https://github.com/keycloak/keycloak/issues/29399[JDBC_PING as the default discovery protocol]
+
+* https://github.com/keycloak/keycloak/issues/29303[Active/Active XSite fencing for multi-site setups]
+
+* https://github.com/keycloak/keycloak/issues/28745[Simplified External Infinispan Deployments for multi-site setups]
+
+Join the discussion of these features and give them a thumbs up vote, so we'll know that you are interested.
+
+== Kudos, providing feedback and asking questions
+
+Thank you to the Keycloak team members Kamesh Akella, Michal Hajas, Pedro Ruivo, Anna Manukyan and Ryan Emerson who discussed ideas and edge cases, contributed code and performed tests of the intermediate pull requests and versions.
+Special thanks to the community members Tristan971, daviddelannoy and Thomas Darimont who joined the GitHub discussion and provided feedback.
+
+You can help to make this feature fully supported by trying out the preview feature and providing feedback in https://github.com/keycloak/keycloak/discussions/28271[this GitHub discussion thread].
+
+Use this thread also to ask questions about persistent user sessions.
+For June 24th, we are planning an https://www.meetup.com/keycloak-hour-of-code/events/301593398[ask-me-anything session for persistent sessions].
