@@ -1,0 +1,30 @@
+:title: Keycloak DevDay 2024 Videos published
+:date: 2024-06-14
+:publish: true
+:author: Niko Köbler
+
+Back in February this year, we (https://github.com/srose[Sebastian] and https://wwwn-k.de[me (Niko)]) hosted the very first edition of https://keycloak-day.dev[Keycloak DevDay] - _a one-day, community-driven conference_ - in Frankfurt/Main, Germany.
+The event was a blast and completely sold-out, plus many additional participants online in the two parallel live streams.
+We were able to welcome attendees from all over Europe.
+Thank you all for being part of this incredible event! 🙏
+
+For all of you who couldn't attend, we have published all the recorded and live streamed sessions online on https://www.youtube.com/@dasniko?sub_confirmation=1[my YouTube channel]:
+
+* https://youtu.be/lQH-yNrF_As?si=LLUFvTTjHckAXKbE[Keynote: What's Next in Keycloak (Alexander Schwartz, Red Hat)]
+* https://youtu.be/DNq51wWw3F4?si=O_Lc7heplGdVR33s[Multi-Tenancy in Keycloak (Garth Patil, Phase Two)]
+* https://youtu.be/O0quO2D2d-E?si=CcPOk4LnDMPTjvP-[Flexible Access Management with Keycloak & OPA (Thomas Darimont, codecentric)]
+* https://youtu.be/1IhcQjdjbsI?si=RUo-qL-sxiUjdrg9[Best Practices for Extension Development (Sven-Torben Janus, Conciso])
+* https://youtu.be/l2Lk2Z9mHBs?si=4vZfrXAZZFfJni1x[Extensions Development with Testcontainers (Niko Köbler, @dasniko)]
+* https://youtu.be/5WjIEj9HLk8?si=HdBLw2PNwyTCqqnb[A Look at Keycloak from the IAM Point of View (Robert Bauer, intension)]
+* https://youtu.be/Xqtd8EUxakk?si=IEcXZpYnLx_Y9Eby[Automating Keycloak Configuration (Sophie Tauchert, Relaxdays)]
+* https://youtu.be/mgarRWSQLUc?si=gemXaXJGfDsWD31q[Ask the Maintainers Session (A. Schwartz, T. Darimont, S. Schuster)]
+* https://youtu.be/w2T-NmnOaTE?si=K84dI5yu7n-uMHRm[IAM Doomsday Prepper (Maik Kingma)]
+* https://youtu.be/mGOrlC6ywNI?si=EaLFTo4ss4EYEq6r[Keycloak Cassandra Datastore (Dominik Schlosser)]
+
+The https://www.youtube.com/playlist?list=PLNn3plN7ZiaqXjiDSB1KDaF3bCDuQmDgw[complete
+playlist can be found here].
+
+We are currently preparing the next edition "`Keycloak DeveloperDay 2025`".
+If you want to contribute, please get in touch with mailto:info@keycloak-day.dev[us (Sebastian & Niko)]!
+Expect more information in the next weeks and months.
+Looking forward to have you and your colleagues & team members as attendees!
