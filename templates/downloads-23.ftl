@@ -50,6 +50,16 @@
             </a>
         </td>
     </tr>
+    <tr>
+        <td>Third-party licenses</td>
+        <td>License and source code information for third-party dependencies</td>
+        <td>
+            <a href="https://github.com/keycloak/keycloak/releases/download/${version.version}/third-party-notice-keycloak.html" target="_blank">
+                <i class="fa fa-file"></i>
+                HTML
+            </a>
+        </td>
+    </tr>
     </tbody>
 </table>
 
