@@ -1,0 +1,134 @@
+[ {
+  "number" : 19750,
+  "repository" : "keycloak",
+  "title" : "Use a proper FreeMarker template for the new consoles",
+  "kind" : "enhancement",
+  "area" : "account/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/19750"
+}, {
+  "number" : 25234,
+  "repository" : "keycloak",
+  "title" : "front channel logout to clients are not called at Identity Proxy when using front channel logout to Identity Provider(",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/25234"
+}, {
+  "number" : 28643,
+  "repository" : "keycloak",
+  "title" : "Encountering `NullPointerException` - `KeycloakIdentity.getUserFromToken()` when running `admin-ui` locally",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/28643"
+}, {
+  "number" : 30115,
+  "repository" : "keycloak",
+  "title" : "Admin v2 theme - theme.properties Custom theme scripts not loading",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/30115"
+}, {
+  "number" : 30201,
+  "repository" : "keycloak",
+  "title" : "Keycloak CI - failure in Store IT (aurora-postgres)",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/30201"
+}, {
+  "number" : 30240,
+  "repository" : "keycloak",
+  "title" : "Custom attributes are removed during UPDATE PROFILE event",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/30240"
+}, {
+  "number" : 30300,
+  "repository" : "keycloak",
+  "title" : "Upgrade to Keycloak 25 - Table 'USER_CONSENT' is specified twice on MySQL/MariaDB database",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/30300"
+}, {
+  "number" : 30302,
+  "repository" : "keycloak",
+  "title" : "Methods of SimpleHttp are after change now too much protected",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/30302"
+}, {
+  "number" : 30306,
+  "repository" : "keycloak",
+  "title" : "Upgrade to Keycloak 25 - Events bug in UI",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/30306"
+}, {
+  "number" : 30332,
+  "repository" : "keycloak",
+  "title" : "Operator fails to patch ingress after update to 25.0.0",
+  "kind" : "bug",
+  "area" : "operator",
+  "url" : "https://github.com/keycloak/keycloak/issues/30332"
+}, {
+  "number" : 30334,
+  "repository" : "keycloak",
+  "title" : "RESTART_AUTHENTICATION_ERROR when login in in private browser window after 25.0.0 update",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/30334"
+}, {
+  "number" : 30346,
+  "repository" : "keycloak",
+  "title" : "Enhance masking around config-keystore",
+  "kind" : "enhancement",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/30346"
+}, {
+  "number" : 30351,
+  "repository" : "keycloak",
+  "title" : "Migration of sessions in KC25 should run only on migration, not on imports",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/30351"
+}, {
+  "number" : 30368,
+  "repository" : "keycloak",
+  "title" : "Documentation : label error for persistent-user-sessions feature flag",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/30368"
+}, {
+  "number" : 30417,
+  "repository" : "keycloak",
+  "title" : "Keycloak 25 db guide shows unevaluated \"ifeval",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/30417"
+}, {
+  "number" : 30432,
+  "repository" : "keycloak",
+  "title" : "keycloak hostname:v2 /admin used on \"hostname\" instead of \"hostname-admin\"",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/30432"
+}, {
+  "number" : 30434,
+  "repository" : "keycloak",
+  "title" : "Improvements for ldap test authentication",
+  "kind" : "bug",
+  "area" : "ldap",
+  "url" : "https://github.com/keycloak/keycloak/issues/30434"
+}, {
+  "number" : 30492,
+  "repository" : "keycloak",
+  "title" : "partial_import_test fails randomly",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/30492"
+}, {
+  "number" : 30557,
+  "repository" : "keycloak",
+  "title" : "Update to Infinispan 15.0.5.Final",
+  "kind" : "task",
+  "area" : "infinispan",
+  "url" : "https://github.com/keycloak/keycloak/issues/30557"
+} ]
