@@ -1,4 +1,4 @@
-:title: Announcement: Support for Customer Identity and Access Management (CIAM) and Multi-tenancy
+:title: Support for Customer Identity and Access Management (CIAM) and Multi-tenancy
 :date: 2024-06-20
 :publish: true
 :author: Pedro Igor
@@ -30,7 +30,7 @@ to make sure we are on the right path for solving real use cases around CIAM.
 Please, consider checking our nightly builds as well to check for the latest updates and what is coming in the next major release.
 
 For more details about the feature, consider reading the documentation available at
-https://www.keycloak.org/docs/latest/server_admin/#_managing_organizations_[the official documentation].
+https://www.keycloak.org/docs/latest/server_admin/#_managing_organizations[the official documentation].
 
 == Getting started
 
@@ -44,11 +44,12 @@ you are authenticating to a realm that has the *Organizations* setting enabled.
 
 The Keycloak Organization feature is a technology preview feature that needs to be enabled when starting (or building an optimized image of) the server:
 
-```bash
+[source,bash]
+----
 docker run --name kc-orgs -d -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin -p 8080:8080 quay.io/keycloak/keycloak start-dev --features organization
-```
+----
 
-Once you run the command above, make sure you can access the server at `http://localhost:8080/` and log in into the administration console using the following credentials:
+Once you run the command above, make sure you can access the server at `+http://localhost:8080/+` and log in into the administration console using the following credentials:
 
 * Username: `admin`
 * Password: `admin`
@@ -98,7 +99,7 @@ In regard to the `first broker login` flow, the main change there is to automati
 The decision to whether an identity-first login should happen is based on the availability of any organization in a realm.
 If no organizations exist yet, the user will follow the usual steps to authenticate using both username and password, or any other step configured to the `browser` flow.
 
-Try reaching `http://localhost:8080/realms/orgdemo/account` and you'll see the usual login page. From this page, you can authenticate
+Try reaching `+http://localhost:8080/realms/orgdemo/account+` and you'll see the usual login page. From this page, you can authenticate
 as usual to the realm using the following credentials:
 
 * Username: mjane
@@ -129,7 +130,7 @@ The first step will ask for the username or email only, and then provide the pas
 
 === Trying to authenticate as a user that does not exist using an email domain that matches an organization
 
-Try to log in again to `http://localhost:8080/realms/orgdemo/account/` and type `bob@orga.com`. There is no account associated with that email in the `orgdemo` realm.
+Try to log in again to `+http://localhost:8080/realms/orgdemo/account/+` and type `bob@orga.com`. There is no account associated with that email in the `orgdemo` realm.
 
 If a user that does not exist tries to authenticate using an email domain that matches an organization domain, the identity-first login page will be shown again and indicate
 that the username provided is not valid. At this point, there is no reason to ask the user for credentials in a second step.
@@ -146,11 +147,11 @@ Similar to the above, if the organization has an identity provider set with one 
 to authenticate and automatically create an account and join the `orga` organization once the flow is completed.
 
 Look at the
-https://www.keycloak.org/docs/latest/server_admin/#_managing_members_[official documentation] for more details.
+link:++https://www.keycloak.org/docs/latest/server_admin/#_managing_members_++[official documentation] for more details.
 
 === Authenticating as an existing user using an email domain that matches an organization
 
-Try to log in again to `http://localhost:8080/realms/orgdemo/account/` and type `alice@orga.com`.
+Try to log in again to `+http://localhost:8080/realms/orgdemo/account/+` and type `alice@orga.com`.
 
 Differently than before, the user is now presented with the second step to provide the credentials.
 Given that the user exists in the `orgdemo` realm, it should be possible to authenticate even though the user is not yet a member of the organization.
@@ -170,7 +171,7 @@ Once you create the `orga` realm, create a OpenID Connect client at this realm a
 * Client type: `OpenID Connect`
 * Client ID: `orgdemo-broker`
 * Client authentication: `ON`
-* Valid redirect URIs: `*` (using `*` for the sake of simplicity, don't use in production)
+* Valid redirect URIs: `+*+` (using `+*+` for the sake of simplicity, don't use in production)
 
 Create a user now so that we can federate this user later using an identity provider from the `orgdemo` realm:
 
@@ -185,7 +186,7 @@ Let us now create an OpenID Connect Identity Provider at the `orgdemo` realm as 
 
 * Alias: `orga-broker`
 * Display name: `OrgA Inc.`
-* Discovery endpoint: `http://localhost:8080/realms/orga/.well-known/openid-configuration`
+* Discovery endpoint: `+http://localhost:8080/realms/orga/.well-known/openid-configuration+`
 * Client ID: `orgdemo-broker`
 * Client Secret: <credentials generated when you created the orgdemo-broker client in orga realm>
 
@@ -197,7 +198,7 @@ click the `Link identity provider` button and provide the following settings:
 * Domain: `orga.com`
 * Redirect when email domain matches: `ON`
 
-Try to log in again to `http://localhost:8080/realms/orgdemo/account/` and type `jdoe@orga.com`.
+Try to log in again to `+http://localhost:8080/realms/orgdemo/account/+` and type `jdoe@orga.com`.
 The user is now automatically redirected to the `orga` realm to authenticate.
 
 When a user that does not exist yet in the realm tries to authenticate using an email domain that matches an organization domain,
@@ -205,7 +206,7 @@ and that domain is also set to the identity provider associated with the organiz
 
 By doing this, you can now authenticate at the `orga` realm using the following credentials:
 
-* Username: jdoe@orga.com
+* Username: `jdoe@orga.com`
 * Password: <password>
 
 Once the user completes the authentication, it will be automatically redirected back to the `orgdemo` realm to create an account and automatically join the `orga` organization.
@@ -222,11 +223,12 @@ To map organization-specific claims into tokens, a client needs to request the `
 
 As a result, the token will contain a claim as follows:
 
-```json
+[source,json]
+----
 "organization": {
     "orga": {}
 }
-```
+----
 
 The `organization` claim can be used by clients (e.g.: from ID Tokens) and resource servers (e.g.: from access tokens) to authorize access to protected resources based on the organization that a user belongs to.
 
