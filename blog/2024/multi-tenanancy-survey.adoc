@@ -1,0 +1,12 @@
+:title: Multi-Tenancy Survey
+:date: 2024-01-08
+:publish: true
+:author: Zachary Witter
+
+Multi-Tenancy is a common problem amongst larger companies that isn’t properly addressed with Keycloak’s existing feature set.
+
+Many Keycloak users have expressed interest in a single Realm which can house multiple "tenants" or organizations within the realm, allowing each organization to have its own users, or other capabilities.
+
+With this in mind we would like to learn more about how this type of feature set might benefit other consumers of Keycloak. Please consider helping us out with this by responding to our survey below.
+
+https://forms.gle/BjAdUkLvGfdPHgyB8
