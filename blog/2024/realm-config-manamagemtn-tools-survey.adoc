@@ -19,10 +19,12 @@ The options that exist on our radar are as follows:
 - https://www.keycloak.org/operator/advanced-configuration[Keycloak Operator Realm Import via Custom Resources]
 - Hand-made Realm Configuration Management
 
+We know that configuration as code is an essential topic for DevOps and that the Keycloak ecosystem 
+needs an excellent solution to make this possible.
+
 So that we in the Keycloak community have a representative picture of the configuration 
 options used, we would also like you to participate in the https://forms.gle/2PtNt9hruCwwDm5P8[following brief, anonymous survey]. 
 
 Feel free to join the related https://github.com/keycloak/keycloak/discussions/30643[discussion on github].
 
 Thank you very much for your support!
-
