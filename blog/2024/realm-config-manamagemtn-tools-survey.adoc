@@ -1,0 +1,28 @@
+:title: Survey on Keycloak Realm Configuration Management Tools
+:date: 2024-06-25
+:publish: true
+:author: Thomas Darimont
+
+Numerous options exist for managing Keycloak Realm configurations within the Keycloak ecosystem.
+We know that configuration as code is an essential topic for DevOps and that the Keycloak ecosystem needs an excellent solution to make this possible.
+
+As the Keycloak team, we want to understand better what works best for the community and how we can improve the support for Realm configuration Management tools.
+
+So that we in the Keycloak community have a representative picture of the configuration options used, we would also like you to participate in the https://forms.gle/2PtNt9hruCwwDm5P8[following brief, anonymous survey].
+
+The options that exist on our radar are as follows:
+
+- https://www.keycloak.org/docs/latest/server_admin/#admin-cli[Keycloak Admin CLI kcadm.sh]
+- https://github.com/adorsys/keycloak-config-cli[Keycloak-Config-CLI]
+- https://github.com/mrparkers/terraform-provider-keycloak[Terraform Provider for Keycloak]
+- https://github.com/ansible-middleware/keycloak[Keycloak Ansible]
+- https://www.pulumi.com/registry/packages/keycloak[Pulumi Keycloak Provider]
+- https://github.com/crossplane-contrib/provider-keycloak[Crossplane Keycloak Provider]
+- https://www.keycloak.org/server/importExport[Keycloak JSON Import / Export]
+- https://www.keycloak.org/operator/advanced-configuration[Keycloak Operator Realm Import via Custom Resources]
+- Hand-made Realm Configuration Management
+
+Join the related https://github.com/keycloak/keycloak/discussions/30643[discussion on GitHub] to discuss this in more details with the Keycloak community.
+And don't forget to fill out https://forms.gle/2PtNt9hruCwwDm5P8[the survey]!
+
+Thank you very much for your support!
