@@ -1,5 +1,5 @@
 :title: Survey on Keycloak Realm Configuration Management Tools
-:date: 2024-06-21
+:date: 2024-06-25
 :publish: false
 :author: Thomas Darimont
 
