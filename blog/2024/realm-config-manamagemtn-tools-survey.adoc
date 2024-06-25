@@ -1,6 +1,6 @@
 :title: Survey on Keycloak Realm Configuration Management Tools
 :date: 2024-06-25
-:publish: false
+:publish: true
 :author: Thomas Darimont
 
 Numerous options exist for managing Keycloak Realm configurations within the
