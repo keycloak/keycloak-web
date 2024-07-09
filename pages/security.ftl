@@ -19,7 +19,7 @@
 
     <h2>Security Scanners</h2>
 
-    <p>Reports from automated security scanners will <b>not<b> be accepted. These tools often report false positives, and can be disruptive to the project maintainers as it takes a long time to analyse these reports. If you believe you have found a security vulnerability using a security scanner, it is your responsiblity to provide a clear example of the vulnerability and how it could be exploited specifically for Keycloak as outlined above.</p>
+    <p>Reports from automated security scanners will <b>not</b> be accepted. These tools often report false positives, and can be disruptive to the project maintainers as it takes a long time to analyse these reports. If you believe you have found a security vulnerability using a security scanner, it is your responsiblity to provide a clear example of the vulnerability and how it could be exploited specifically for Keycloak as outlined above.</p>
 
     <h2>Supported Versions</h2>
 
