@@ -1,0 +1,302 @@
+[ {
+  "number" : 19070,
+  "repository" : "keycloak",
+  "title" : "authBaseUrl error on different hostname-admin-url, hostname-url",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/19070"
+}, {
+  "number" : 26042,
+  "repository" : "keycloak",
+  "title" : "Issue when start-dev in 23.0.1",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/26042"
+}, {
+  "number" : 28489,
+  "repository" : "keycloak",
+  "title" : "Missing help text on tokens tab",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/28489"
+}, {
+  "number" : 29407,
+  "repository" : "keycloak",
+  "title" : "Need refresh attributes group translations on Users > Details tab",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/29407"
+}, {
+  "number" : 29566,
+  "repository" : "keycloak",
+  "title" : "User Profile attributes/groups in Admin UI are not translated using Localization for non-master realm when signed in the master realm",
+  "kind" : "bug",
+  "area" : "account/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/29566"
+}, {
+  "number" : 29761,
+  "repository" : "keycloak",
+  "title" : "bug: disabling all default features no longer works",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/29761"
+}, {
+  "number" : 29784,
+  "repository" : "keycloak",
+  "title" : "Exception while trying to run a LDAP sync with a group importer and a batch size less then the actual number of groups",
+  "kind" : "bug",
+  "area" : "ldap",
+  "url" : "https://github.com/keycloak/keycloak/issues/29784"
+}, {
+  "number" : 30094,
+  "repository" : "keycloak",
+  "title" : "Do not inherit 'https-client-auth' property for the management interface",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/30094"
+}, {
+  "number" : 30329,
+  "repository" : "keycloak",
+  "title" : "Client secret rotation UI shows wrong rotated secret",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/30329"
+}, {
+  "number" : 30355,
+  "repository" : "keycloak",
+  "title" : "New operator failing on health checks",
+  "kind" : "bug",
+  "area" : "operator",
+  "url" : "https://github.com/keycloak/keycloak/issues/30355"
+}, {
+  "number" : 30383,
+  "repository" : "keycloak",
+  "title" : "Account Console (v3) no longer highlights the current page in the nav bar",
+  "kind" : "bug",
+  "area" : "account/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/30383"
+}, {
+  "number" : 30436,
+  "repository" : "keycloak",
+  "title" : "Client Roles are not shown when clientId property is set",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/30436"
+}, {
+  "number" : 30440,
+  "repository" : "keycloak",
+  "title" : "UI theme bug in KC 25.0.0",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/30440"
+}, {
+  "number" : 30444,
+  "repository" : "keycloak",
+  "title" : "Failed to evaluate permissions when fetchRoles is enabled on role policies",
+  "kind" : "bug",
+  "area" : "authorization-services",
+  "url" : "https://github.com/keycloak/keycloak/issues/30444"
+}, {
+  "number" : 30449,
+  "repository" : "keycloak",
+  "title" : "Migration stuck if versions incompatible",
+  "kind" : "bug",
+  "area" : "operator",
+  "url" : "https://github.com/keycloak/keycloak/issues/30449"
+}, {
+  "number" : 30521,
+  "repository" : "keycloak",
+  "title" : "\"Client Offline Session Max\" no longer available",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/30521"
+}, {
+  "number" : 30537,
+  "repository" : "keycloak",
+  "title" : "Document how Admin REST API endpoints work with Hostname config",
+  "kind" : "enhancement",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/30537"
+}, {
+  "number" : 30541,
+  "repository" : "keycloak",
+  "title" : "Account UI resources try to load from admin path instead of frontend path",
+  "kind" : "bug",
+  "area" : "account/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/30541"
+}, {
+  "number" : 30552,
+  "repository" : "keycloak",
+  "title" : "After migrating from 24 to 25, the signature algorithms names do not display in drop down menu",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/30552"
+}, {
+  "number" : 30591,
+  "repository" : "keycloak",
+  "title" : "Invalid character in spanish translation file for Identity Provider Link Template",
+  "kind" : "bug",
+  "area" : "translations",
+  "url" : "https://github.com/keycloak/keycloak/issues/30591"
+}, {
+  "number" : 30652,
+  "repository" : "keycloak",
+  "title" : "Default server port is used instead of the management interface port in the guide about running Keycloak in a container",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/30652"
+}, {
+  "number" : 30662,
+  "repository" : "keycloak",
+  "title" : "User policy -> select user shows user id instead of user name.",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/30662"
+}, {
+  "number" : 30712,
+  "repository" : "keycloak",
+  "title" : "Remove of Multivalued Attribute due to - Adding translations when a new attribute is created",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/30712"
+}, {
+  "number" : 30717,
+  "repository" : "keycloak",
+  "title" : "Broken external links",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/30717"
+}, {
+  "number" : 30821,
+  "repository" : "keycloak",
+  "title" : "Testing connection to ldap on the settings page does not work in 25.0.1",
+  "kind" : "bug",
+  "area" : "ldap",
+  "url" : "https://github.com/keycloak/keycloak/issues/30821"
+}, {
+  "number" : 30837,
+  "repository" : "keycloak",
+  "title" : "Cannot find requested client with clientId",
+  "kind" : "bug",
+  "area" : "ldap",
+  "url" : "https://github.com/keycloak/keycloak/issues/30837"
+}, {
+  "number" : 30856,
+  "repository" : "keycloak",
+  "title" : "Remove inclusive language foreword",
+  "kind" : "enhancement",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/30856"
+}, {
+  "number" : 30866,
+  "repository" : "keycloak",
+  "title" : "admin-cli invalid credentials",
+  "kind" : "bug",
+  "area" : "admin/cli",
+  "url" : "https://github.com/keycloak/keycloak/issues/30866"
+}, {
+  "number" : 30917,
+  "repository" : "keycloak",
+  "title" : "reCAPTCHA Enterprise v3 - Unrecognized field \"accountDefenderAssessment\"",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/30917"
+}, {
+  "number" : 30947,
+  "repository" : "keycloak",
+  "title" : "Error when trying to edit authentication sub-flow name / description",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/30947"
+}, {
+  "number" : 30992,
+  "repository" : "keycloak",
+  "title" : "Realm cannot be deleted if there are tons of consents",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/30992"
+}, {
+  "number" : 31014,
+  "repository" : "keycloak",
+  "title" : "\"Verify Email\" may cause other Required Actions to be ignored",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/31014"
+}, {
+  "number" : 31050,
+  "repository" : "keycloak",
+  "title" : "Caching docs should name parameter runtime parameters, not build parameters",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/31050"
+}, {
+  "number" : 31146,
+  "repository" : "keycloak",
+  "title" : "IDP SAML Certificate should be text-area not text",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/31146"
+}, {
+  "number" : 31167,
+  "repository" : "keycloak",
+  "title" : "After creating a new authentication flow and returning to the list, the \"Used by\" column displays \"flow.undefined\"",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/31167"
+}, {
+  "number" : 31171,
+  "repository" : "keycloak",
+  "title" : "Single use tokens, like action tokens,  has a claim `expiration`",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/31171"
+}, {
+  "number" : 31187,
+  "repository" : "keycloak",
+  "title" : "Recaptcha links changed in the Google Docs",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/31187"
+}, {
+  "number" : 31196,
+  "repository" : "keycloak",
+  "title" : "The check for userdn in test ldap should consider that AD proxy user can be in non DN format",
+  "kind" : "bug",
+  "area" : "ldap",
+  "url" : "https://github.com/keycloak/keycloak/issues/31196"
+}, {
+  "number" : 31218,
+  "repository" : "keycloak",
+  "title" : "Clarify if JGroups thread metrics can be shown with embedded Infinispan",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/31218"
+}, {
+  "number" : 31219,
+  "repository" : "keycloak",
+  "title" : "[Docs] Broken link in Server Admin guide for JWT_Auth wiki",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/31219"
+}, {
+  "number" : 31224,
+  "repository" : "keycloak",
+  "title" : "Offline tokens created in Keycloak 9 will not work on Keycloak 25",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/31224"
+}, {
+  "number" : 31244,
+  "repository" : "keycloak",
+  "title" : "IdP redirect URL shows hostname_admin",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/31244"
+}, {
+  "number" : 31267,
+  "repository" : "keycloak",
+  "title" : "multiple ldap url's not working on one realm",
+  "kind" : "bug",
+  "area" : "ldap",
+  "url" : "https://github.com/keycloak/keycloak/issues/31267"
+} ]

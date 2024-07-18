@@ -1,0 +1,61 @@
+<div>
+
+<h2>Upgrading</h2>
+<p>Before upgrading refer to <a href="file:/home/runner/work/keycloak-rel/keycloak-rel/target/web/docs/latest/upgrading/index.html#migration-changes">the migration guide</a> for a complete list of changes.</p>
+
+<h2>All resolved issues</h2>
+
+
+
+<h3>Enhancements</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/30094">#30094</a> Do not inherit 'https-client-auth' property for the management interface </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/30537">#30537</a> Document how Admin REST API endpoints work with Hostname config <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/30856">#30856</a> Remove inclusive language foreword <code>docs</code></li>
+</ul>
+
+<h3>Bugs</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/19070">#19070</a> authBaseUrl error on different hostname-admin-url, hostname-url <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/26042">#26042</a> Issue when start-dev in 23.0.1 <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/28489">#28489</a> Missing help text on tokens tab <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29407">#29407</a> Need refresh attributes group translations on Users > Details tab <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29566">#29566</a> User Profile attributes/groups in Admin UI are not translated using Localization for non-master realm when signed in the master realm <code>account/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29761">#29761</a> bug: disabling all default features no longer works <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/29784">#29784</a> Exception while trying to run a LDAP sync with a group importer and a batch size less then the actual number of groups <code>ldap</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/30329">#30329</a> Client secret rotation UI shows wrong rotated secret <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/30355">#30355</a> New operator failing on health checks <code>operator</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/30383">#30383</a> Account Console (v3) no longer highlights the current page in the nav bar <code>account/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/30436">#30436</a> Client Roles are not shown when clientId property is set <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/30440">#30440</a> UI theme bug in KC 25.0.0 <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/30444">#30444</a> Failed to evaluate permissions when fetchRoles is enabled on role policies <code>authorization-services</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/30449">#30449</a> Migration stuck if versions incompatible <code>operator</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/30521">#30521</a> "Client Offline Session Max" no longer available <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/30541">#30541</a> Account UI resources try to load from admin path instead of frontend path <code>account/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/30552">#30552</a> After migrating from 24 to 25, the signature algorithms names do not display in drop down menu <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/30591">#30591</a> Invalid character in spanish translation file for Identity Provider Link Template <code>translations</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/30652">#30652</a> Default server port is used instead of the management interface port in the guide about running Keycloak in a container </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/30662">#30662</a> User policy -> select user shows user id instead of user name. <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/30712">#30712</a> Remove of Multivalued Attribute due to - Adding translations when a new attribute is created <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/30717">#30717</a> Broken external links <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/30821">#30821</a> Testing connection to ldap on the settings page does not work in 25.0.1 <code>ldap</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/30837">#30837</a> Cannot find requested client with clientId <code>ldap</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/30866">#30866</a> admin-cli invalid credentials <code>admin/cli</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/30917">#30917</a> reCAPTCHA Enterprise v3 - Unrecognized field "accountDefenderAssessment" <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/30947">#30947</a> Error when trying to edit authentication sub-flow name / description <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/30992">#30992</a> Realm cannot be deleted if there are tons of consents <code>storage</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/31014">#31014</a> "Verify Email" may cause other Required Actions to be ignored <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/31050">#31050</a> Caching docs should name parameter runtime parameters, not build parameters <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/31146">#31146</a> IDP SAML Certificate should be text-area not text <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/31167">#31167</a> After creating a new authentication flow and returning to the list, the "Used by" column displays "flow.undefined" <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/31171">#31171</a> Single use tokens, like action tokens,  has a claim `expiration` <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/31187">#31187</a> Recaptcha links changed in the Google Docs <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/31196">#31196</a> The check for userdn in test ldap should consider that AD proxy user can be in non DN format <code>ldap</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/31218">#31218</a> Clarify if JGroups thread metrics can be shown with embedded Infinispan </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/31219">#31219</a> [Docs] Broken link in Server Admin guide for JWT_Auth wiki <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/31224">#31224</a> Offline tokens created in Keycloak 9 will not work on Keycloak 25 <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/31244">#31244</a> IdP redirect URL shows hostname_admin <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/31267">#31267</a> multiple ldap url's not working on one realm <code>ldap</code></li>
+</ul>
+
+</div>
