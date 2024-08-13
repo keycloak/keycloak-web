@@ -24,7 +24,7 @@
     <script src="${links.getResource('js/ga.js')}" type="text/javascript"></script>
     <script src="${links.getResource('bootstrap/dist/js/bootstrap.min.js')}" type="text/javascript"></script>
     <script src="${links.getResource('tocbot/dist/tocbot.min.js')}" type="text/javascript"></script>
-    <#if rss><link rel="alternate" type="application/rss+xml" title="Keycloak's Blog" href="${links.getRss()}"/></#if>
+    <#if rss><link rel="alternate" type="application/rss+xml" title="Keycloak's Blog" href="${links.getRss()}"></#if>
 </#compress>
 </head>
 <body>
