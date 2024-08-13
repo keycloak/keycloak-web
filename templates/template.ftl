@@ -1,7 +1,8 @@
-<#macro page current title noindex=false nocsp=false>
+<#macro page current title noindex=false nocsp=false rss=false>
 <!doctype html>
 <html lang="en">
 <head>
+<#compress>
     <meta charset="utf-8"/>
     <title><#if (title)?has_content>${title} - </#if>Keycloak</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,6 +24,8 @@
     <script src="${links.getResource('js/ga.js')}" type="text/javascript"></script>
     <script src="${links.getResource('bootstrap/dist/js/bootstrap.min.js')}" type="text/javascript"></script>
     <script src="${links.getResource('tocbot/dist/tocbot.min.js')}" type="text/javascript"></script>
+    <#if rss><link rel="alternate" type="application/rss+xml" title="Keycloak's Blog" href="${links.getRss()}"></#if>
+</#compress>
 </head>
 <body>
 

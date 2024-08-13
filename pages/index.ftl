@@ -1,6 +1,6 @@
 <#import "/templates/template.ftl" as tmpl>
 
-<@tmpl.page current="home" title="">
+<@tmpl.page current="home" title="" rss=true>
 
 <div class="jumbotron jumbotron-fluid bg-light kc-bg-triangles">
   <div class="container pt-4 pb-4">
