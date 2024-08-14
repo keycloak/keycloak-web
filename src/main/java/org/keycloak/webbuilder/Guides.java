@@ -30,7 +30,8 @@ public class Guides {
             loadGuides(asciiDoctor, d, category);
         }
 
-        Arrays.stream(tmpDir.getParentFile().listFiles((f, s) -> s.startsWith("keycloak-guides"))).findFirst().ifPresent(f -> {
+        Arrays.stream(tmpDir.getParentFile().listFiles((f, s) -> s.startsWith("keycloak-guides") || s.startsWith("keycloak-client-guides")))
+                .forEach(f -> {
             try {
                 loadGuides(asciiDoctor, new File(f, "generated-guides/server"), GuideCategory.SERVER);
                 loadGuides(asciiDoctor, new File(f, "generated-guides/operator"), GuideCategory.OPERATOR);
@@ -238,9 +239,9 @@ public class Guides {
         SECURING_APPS("securing-apps", "Securing applications"),
         HIGH_AVAILABILITY("high-availability", "High availability");
 
-        private String label;
+        private final String label;
 
-        private String id;
+        private final String id;
 
         GuideCategory(String id, String label) {
             this.id = id;
