@@ -8,7 +8,7 @@ We (https://github.com/srose[Sebastian] and https://www.n-k.de[me (Niko)]) are e
 == Save the Date
 
 DevDay is taking place in **Darmstadt, Germany** on **March, 6th 2025**.
-The location is about 30 minutes away from Frankfurt/Main Airport by public transport.
+The location is about 30 minutes away from Frankfurt/Main Airport by public transport, see https://keycloak-day.dev[website] for details.
 
 It will be again a 1-day conference with talks, panels, discussions and an OpenSpace/Unconference format, with lots of opportunities for networking and exchange among like-minded people.
 Of course, there will also be plenty of drinks 🥤🍹 and food 🍔🌮🥗, as well as an exclusive surprise gift 🎁 for all participants.
