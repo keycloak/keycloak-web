@@ -1,0 +1,28 @@
+:title: Keycloak DevDay 2025 Announcement and Call-for-Papers
+:date: 2024-08-18
+:publish: true
+:author: Niko Köbler
+
+We (https://github.com/srose[Sebastian] and https://www.n-k.de[me (Niko)]) are excited to announce the next edition of **Keycloak DevDay!**
+
+== Save the Date
+
+DevDay is taking place in **Darmstadt, Germany** on **March, 6th 2025**.
+The location is about 30 minutes away from Frankfurt/Main Airport by public transport, see https://keycloak-day.dev[website] for details.
+
+It will be again a 1-day conference with talks, panels, discussions and an OpenSpace/Unconference format, with lots of opportunities for networking and exchange among like-minded people.
+Of course, there will also be plenty of drinks 🥤🍹 and food 🍔🌮🥗, as well as an exclusive surprise gift 🎁 for all participants.
+
+== Call for Papers
+
+The https://keycloak-day.dev[call for papers 📝 is already open] (approx. until mid of October). If you would like to submit a talk proposal, you should not wait too long, as we will regularly review and publish the submitted proposals. So submitting early gives you the best chance of being part of the next DevDay!
+
+== Tickets
+
+Ticket sales 🎟️ will start in mid-September.
+This time, there will be more tickets available than at the first edition.
+
+Find all further information at https://keycloak-day.dev
+
+We are looking forward to welcoming as many of you as possible (again) at the upcoming event.
+If you have any further questions, get in touch via email: info@keycloak-day.dev
