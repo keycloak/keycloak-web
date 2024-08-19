@@ -1,0 +1,169 @@
+[ {
+  "number" : 31299,
+  "repository" : "keycloak",
+  "title" : "NPM library of account-ui is unusable (@keycloak/keycloak-account-ui version 25.0.1)",
+  "kind" : "bug",
+  "area" : "account/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/31299"
+}, {
+  "number" : 31304,
+  "repository" : "keycloak",
+  "title" : "Hide save / update buttons in account console for READ_ONLY federated accounts",
+  "kind" : "bug",
+  "area" : "account/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/31304"
+}, {
+  "number" : 31340,
+  "repository" : "keycloak",
+  "title" : "Hidden options shown in help all",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/31340"
+}, {
+  "number" : 31386,
+  "repository" : "keycloak",
+  "title" : "Joining group for user doesn't list correct number of groups",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/31386"
+}, {
+  "number" : 31466,
+  "repository" : "keycloak",
+  "title" : "Duplicate Key \"validatingX509CertsHelp\" in admin-ui messages",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/31466"
+}, {
+  "number" : 31519,
+  "repository" : "keycloak",
+  "title" : "Admin API extremely slow with service account and fine-grained authorization `view-users`",
+  "kind" : "bug",
+  "area" : "admin/fine-grained-permissions",
+  "url" : "https://github.com/keycloak/keycloak/issues/31519"
+}, {
+  "number" : 31545,
+  "repository" : "keycloak",
+  "title" : "Event tables have broken aria-labels",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/31545"
+}, {
+  "number" : 31558,
+  "repository" : "keycloak",
+  "title" : "MSSQL test container can't start",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/31558"
+}, {
+  "number" : 31598,
+  "repository" : "keycloak",
+  "title" : "CURL commands in build don't check the response code",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/31598"
+}, {
+  "number" : 31633,
+  "repository" : "keycloak",
+  "title" : "localization not work with user attribute display name in users add",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/31633"
+}, {
+  "number" : 31687,
+  "repository" : "keycloak",
+  "title" : "\"Use metadata descriptor URL\" switch is always set to \"On\"",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/31687"
+}, {
+  "number" : 31718,
+  "repository" : "keycloak",
+  "title" : "Documentation for `Delete Credential` action and related changes",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/31718"
+}, {
+  "number" : 31726,
+  "repository" : "keycloak",
+  "title" : "Improve brute force when handling parallel requests",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/31726"
+}, {
+  "number" : 31781,
+  "repository" : "keycloak",
+  "title" : "Keycloak 25 SAML IdP has made Single Logout URL mandatory.",
+  "kind" : "bug",
+  "area" : "saml",
+  "url" : "https://github.com/keycloak/keycloak/issues/31781"
+}, {
+  "number" : 31835,
+  "repository" : "keycloak",
+  "title" : "Windows builds fail too often due to problems with the download of Node",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/31835"
+}, {
+  "number" : 31918,
+  "repository" : "keycloak",
+  "title" : "Network error attempting to view events without permissions",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/31918"
+}, {
+  "number" : 31929,
+  "repository" : "keycloak",
+  "title" : "Network error attempting to view user registeration without permissions",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/31929"
+}, {
+  "number" : 31963,
+  "repository" : "keycloak",
+  "title" : "Upgrade to Infinispan 15.0.7.Final",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/31963"
+}, {
+  "number" : 32059,
+  "repository" : "keycloak",
+  "title" : "Look around window cannot be set to 0",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/32059"
+}, {
+  "number" : 32127,
+  "repository" : "keycloak",
+  "title" : "Offline session bug on 25.0.2",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/32127"
+}, {
+  "number" : 32150,
+  "repository" : "keycloak",
+  "title" : "Session list doesn't handle non-existing client gracefully",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/32150"
+}, {
+  "number" : 32178,
+  "repository" : "keycloak",
+  "title" : "Table names for persistent sessions upgrading guide is wrong",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/32178"
+}, {
+  "number" : 32180,
+  "repository" : "keycloak",
+  "title" : "Session list not appearing: SQL Error \"The incoming request has too many parameters\"",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/32180"
+}, {
+  "number" : 32195,
+  "repository" : "keycloak",
+  "title" : "Migration to persistent sessions fails from Keycloak version <22",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/32195"
+} ]
