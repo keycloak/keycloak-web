@@ -1,5 +1,0 @@
-{
-    "name": "Client Authorization",
-    "description": "Adds authorization capabilities to keycloak for a given client, whether the client itself has the capability to handle authorization or not.",
-    "website": "https://github.com/cloudtrust/keycloak-authorization"
-}
