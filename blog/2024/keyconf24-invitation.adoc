@@ -31,7 +31,7 @@ In the meantime, mark your calendars and prepare for an unforgettable experience
 
 === Want to get involved?
 
-You can register to attend to the event https://www.eventbrite.de/e/keyconf24-tickets-887467387847[here].
+You can register to attend to the event https://keyconf.dev/[here].
 
 We are actively seeking speakers and sponsors for KeyConf24. If you'd like to share your expertise or help support this community-driven event, please submit your ideas
 https://forms.office.com/e/pgBuPzbgqP[here].
