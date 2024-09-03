@@ -1,5 +1,5 @@
-:title: Introducing the SRE special interest group
-:date: 2024-09-02
+:title: Introducing the Keycloak SRE special interest group
+:date: 2024-09-03
 :publish: true
 :author: Michal Hajas, Alexander Schwartz
 
