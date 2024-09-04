@@ -30,3 +30,4 @@ We have yet to decide what our regular meetings and cadence will look like, and 
 To receive the latest information about what is happening in the SIG join us in our https://cloud-native.slack.com/channels/keycloak-sre-sig[CNCF #keycloak-sre-sig Slack channel].
 
 For sharing documents and following the activities of SIG proceed to the https://github.com/keycloak/keycloak-sre-sig[keycloak/keycloak-sre-sig GitHub repository].
+Use https://slack.cncf.io/ to join the CNCF Slack if you do not have an account yet.
