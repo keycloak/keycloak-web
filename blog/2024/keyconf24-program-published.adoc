@@ -3,7 +3,7 @@
 :publish: true
 :author: Alexander Schwartz
 
-KeyConf24, our 2024 Keycloak Identity Summit, will happen on September 19th, which is less than three weeks away! This year's event promises to be even bigger and better, with a program packed
+KeyConf24, our 2024 Keycloak Identity Summit, will happen on September 19th, which is just around the corner! This year's event promises to be even bigger and better, with a program packed
 full of relevant, cutting-edge topics.
 
 This year due to high demand and limited space on-site, we're offering for the first time a live stream, so the Keycloak community can join remotely.
@@ -25,7 +25,5 @@ Expect talks about:
 === Save the Date and join us in the live stream!
 
 You can register for the live stream at link:https://keyconf.dev/[].
-
-If you have any further questions, reach out to us on marketing@adorsys.com
 
 We're excited and are looking forward to meeting you at our event. Let's continue to shape the future of identity together!
