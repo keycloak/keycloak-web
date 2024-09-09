@@ -31,7 +31,7 @@ At the moment, the tool is only available for account consoles, but we are worki
 
 The keycloak server will connect to the development server and all the changes will be reflected in the browser.
 Just open your browser and go to http://localhost:8080/realms/master/account/personalInfo and login with admin/admin.
-This will open the keycloak account console, you will see that the example code has an extra page and some extra content above each page.
+This will open the keycloak account console. You will see that the example code has an extra page and some extra content above each page.
 
 == Key Benefits:
 
