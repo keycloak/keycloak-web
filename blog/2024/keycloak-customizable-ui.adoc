@@ -4,7 +4,7 @@
 :author: Erik Jan de Wit
 
 We're excited to announce the release of two new npm packages designed to supercharge your Keycloak customization efforts.
-These React component libraries, built on top of PatternFly, provide the essential building blocks for crafting account and admin consoles.
+These React component libraries, built on top of PatternFly, provide the essential building blocks for crafting Keycloak account and admin consoles.  The tool generates sample code for a custom console using our "Composable UI" technique.  Essentially, this means that you can build your console out of exported Keycloak components that we intend to support in future releases.
 
 The packages are:
 
