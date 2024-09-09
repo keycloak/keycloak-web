@@ -20,7 +20,7 @@ The packages are:
 
 Kickstart your project with our npm create keycloak-theme my-theme command.
 This streamlined tool generates a project structure, essential dependencies, and configuration, saving you precious time.
-At the moment, the tool is only available for account consoles, but we are working on adding support for admin consoles this will be available in the next release (26.0.0).
+At the moment, the tool is only available for account consoles, but we are working on adding support for admin consoles. This will be available in the next release (26.0.0).
 
 == Get Started:
 
