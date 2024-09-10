@@ -3,10 +3,9 @@
 :publish: true
 :author: Thomas Darimont
 
-Three months ago, the https://www.keycloak.org/2024/06/realm-config-manamagemtn-tools-survey[Keycloak project conducted a survey] to gather insights on realm configuration tooling within our community. We were overwhelmed by the
-number of responses, with *a total of 433 (!) submissions*, highlighting the diverse range of options our community uses for configuring realms.
+Three months ago, the https://www.keycloak.org/2024/06/realm-config-manamagemtn-tools-survey[Keycloak project conducted a survey] to gather insights on realm configuration tooling within our community. The number of responses overwhelmed us! With *a total of 433 (!) submissions*, it highlighted the diverse range of options our community uses for configuring realms.
 
-*Thank You for Your valuable Feedback!*
+*Thank You for your valuable feedback!*
 
 == Popular Tools in Use
 
@@ -49,17 +48,17 @@ These top five tools accounted for 84% of all responses.
 
 == Areas for Improvement
 
-While each tool has its strengths and weaknesses, several common challenges were highlighted:
+While each tool has its strengths and weaknesses, the survey highlighted several common challenges:
 
-- Using the Admin API can be awkward and inconsistent, e.g. with references using IDs versus aliases.
-- Recognizing changes in the configuration, such as when new roles are added to service accounts via the Admin UI, can be difficult or impossible.
+- Using the Admin API can be awkward and inconsistent, for example, with references using IDs versus aliases.
+- Recognizing changes in the configuration, such as when new roles are added to service accounts via the Admin UI, can be challenging or impossible.
 - Many tools depend heavily on the Keycloak version used and are often not compatible with new releases.
 - Managing components that are automatically created by Keycloak, like service accounts, is challenging with existing configuration tools.
 - Lack of support for configuration linting, validation and code completion
 
 == What's Next?
 
-Based on the feedback, here are some key lessons learned and next steps:
+Based on the feedback, here are some key lessons learned and the next steps:
 
 - *Tool Compatibility*: We aim at improving compatibility with newer Keycloak releases to ensure seamless integration.
 - *Admin API Enhancements*: We’ll address inconsistencies and usability issues in the Admin API to streamline configuration tasks.
