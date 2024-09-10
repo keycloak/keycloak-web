@@ -1,0 +1,15 @@
+[ {
+  "number" : 31882,
+  "repository" : "keycloak",
+  "title" : "Realm roles that do not exist are displayed in \"Default roles\" when \"Hide inherited roles\" is not checked",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/31882"
+}, {
+  "number" : 32084,
+  "repository" : "keycloak",
+  "title" : "SAML adapter IdMapperUpdaterSessionListener not executed when session ID changes",
+  "kind" : "bug",
+  "area" : "adapter/saml",
+  "url" : "https://github.com/keycloak/keycloak/issues/32084"
+} ]
