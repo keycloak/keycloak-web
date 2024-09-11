@@ -1,0 +1,71 @@
+:title: Keycloak Realm Configuration Management Tools Survey Results
+:date: 2024-09-11
+:publish: true
+:author: Thomas Darimont
+
+Three months ago, the https://www.keycloak.org/2024/06/realm-config-manamagemtn-tools-survey[Keycloak project conducted a survey] to gather insights on realm configuration tooling within our community. The number of responses overwhelmed us! With *a total of 433 (!) submissions*, it highlighted the diverse range of options our community uses for configuring realms.
+
+*Thank You for your valuable feedback!*
+
+== Popular Tools in Use
+
+--
+++++
+<div class="paragraph">
+<a href="${blogImages}/2024-keycloak-realm-configuration-survey-results.png"><img src="${blogImages}/2024-keycloak-realm-configuration-survey-results.png" alt="Keycloak Realm Configuration Management Tools Survey Results" style="width: 100%; max-width: 800px; height: auto;"></a>
+</div>
+++++
+--
+
+The survey revealed a variety of tools employed by the community for realm configuration, including:
+
+- https://github.com/mrparkers/terraform-provider-keycloak[Terraform Provider for Keycloak]
+- https://github.com/adorsys/keycloak-config-cli[Keycloak-Config-CLI]
+- Self-developed Realm Configuration Management
+- https://www.keycloak.org/server/importExport[Keycloak JSON Import/Export]
+- https://www.keycloak.org/docs/latest/server_admin/#admin-cli[Keycloak Admin CLI kcadm.sh]
+- https://github.com/epam/edp-keycloak-operator[EPAM Keycloak Operator]
+- https://github.com/ansible-middleware/keycloak[Keycloak Ansible]
+- https://www.pulumi.com/registry/packages/keycloak/[Keycloak Pulumi]
+- Custom Operator for Realm Import/Update and Client Provisioning
+- https://www.keycloak.org/operator/advanced-configuration[Keycloak Operator Realm Import via Custom Resources]
+- https://github.com/crossplane-contrib/provider-keycloak[Crossplane Provider for Keycloak]
+- https://github.com/mayope/keycloakmigration[KeycloakMigration]
+- https://github.com/CycriLabs/keycloak-configurator[keycloak-configurator]
+- https://github.com/malys/keycloak-groovy-helpers[Keycloak Groovy Helpers]
+
+== Tool Usage Distribution
+
+From the submissions, we observed the following distribution of tool usage among respondents:
+
+1. *Terraform Keycloak Provider* ~51% of the votes
+2. *Keycloak-Config-CLI* ~16% of the votes
+3. *Self-developed Realm Configuration Management* ~7% of the votes
+4. *Keycloak JSON Realm Import/Export* ~6% of the votes
+5. *Keycloak Admin CLI* ~4% of the votes
+
+These top five tools accounted for 84% of all responses.
+
+== Areas for Improvement
+
+While each tool has its strengths and weaknesses, the survey highlighted several common challenges:
+
+- Using the Admin API can be awkward and inconsistent, for example, with references using IDs versus aliases.
+- Recognizing changes in the configuration, such as when new roles are added to service accounts via the Admin UI, can be challenging or impossible.
+- Many tools depend heavily on the Keycloak version used and are often not compatible with new releases.
+- Managing components that are automatically created by Keycloak, like service accounts, is challenging with existing configuration tools.
+- Lack of support for configuration linting, validation and code completion
+
+== What's Next?
+
+Based on the feedback, here are some key lessons learned and the next steps:
+
+- *Tool Compatibility*: We aim at improving compatibility with newer Keycloak releases to ensure seamless integration.
+- *Admin API Enhancements*: We’ll address inconsistencies and usability issues in the Admin API to streamline configuration tasks.
+- *Ease Change Management*: Enhance tools and APIs to improve the recognition and change management of realm configurations.
+
+We are committed to addressing these areas and working closely with the community to enhance the realm configuration experience in Keycloak. Your continued feedback and support are invaluable as we move forward. Stay tuned for updates and improvements!
+
+If you have any further questions or suggestions about this blog post, please join the related https://github.com/keycloak/keycloak/discussions/32778[discussion on GitHub].
+
+Thank you very much for your support!
