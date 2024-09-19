@@ -1,0 +1,71 @@
+[ {
+  "number" : 30604,
+  "repository" : "keycloak",
+  "title" : "Network response was not OK.",
+  "kind" : "bug",
+  "area" : "saml",
+  "url" : "https://github.com/keycloak/keycloak/issues/30604"
+}, {
+  "number" : 31165,
+  "repository" : "keycloak",
+  "title" : "Re-enabling a temporarily locked user (brute-force) deletes all user properties and attributes",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/31165"
+}, {
+  "number" : 32100,
+  "repository" : "keycloak",
+  "title" : "Remember Me with External Infinispan is not works properly",
+  "kind" : "bug",
+  "area" : "infinispan",
+  "url" : "https://github.com/keycloak/keycloak/issues/32100"
+}, {
+  "number" : 32578,
+  "repository" : "keycloak",
+  "title" : "WebAuthn Flows Broken in login.v2",
+  "kind" : "bug",
+  "area" : "login/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/32578"
+}, {
+  "number" : 32643,
+  "repository" : "keycloak",
+  "title" : "Dots are not allowed in the path in Hostname v2",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/32643"
+}, {
+  "number" : 32731,
+  "repository" : "keycloak",
+  "title" : "KeyCloak Admin Client uses non-standard `@NoCache` annotation which is an issue for Quarkus",
+  "kind" : "bug",
+  "area" : "admin/client-java",
+  "url" : "https://github.com/keycloak/keycloak/issues/32731"
+}, {
+  "number" : 32799,
+  "repository" : "keycloak",
+  "title" : "Realm import fails when client configures default_acr values",
+  "kind" : "bug",
+  "area" : "import-export",
+  "url" : "https://github.com/keycloak/keycloak/issues/32799"
+}, {
+  "number" : 32870,
+  "repository" : "keycloak",
+  "title" : "Increased DB activity due to changes in LDAPStorageManager.searchForUserByUserAttributeStream",
+  "kind" : "bug",
+  "area" : "ldap",
+  "url" : "https://github.com/keycloak/keycloak/issues/32870"
+}, {
+  "number" : 33115,
+  "repository" : "keycloak",
+  "title" : "CVE-2024-8883 Vulnerable Redirect URI Validation Results in Open Redirect",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/33115"
+}, {
+  "number" : 33116,
+  "repository" : "keycloak",
+  "title" : "CVE-2024-8698 Improper Verification of SAML Responses Leading to Privilege Escalation in Keycloak",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/33116"
+} ]
