@@ -1,0 +1,67 @@
+:title: Introducing the Keycloak Test Framework
+:date: 2024-11-14
+:publish: true
+:author: Lukas Hanusovsky
+
+== How It All Started
+
+The idea to replace the current https://github.com/keycloak/keycloak/tree/main/testsuite[test suite] has been on the table for multiple years. Initially, it was meant to be only a refactoring of the current approach on how to write tests, but after a few internal discussions and refactor updates it turned out a new test suite, based on a https://github.com/keycloak/keycloak/tree/main/test-framework[new framework] would be a better solution.
+
+It would be good to mention a few drawbacks, that stand out when working with the current https://github.com/keycloak/keycloak/tree/main/testsuite[test suite]. First of all, is the complexity of various configurations and additions made on top of the https://arquillian.org/[_Arquillian framework_]. These changes make the test suite powerful, but the cons is that without proper documentation for beginners is almost unreadable. The second thing has the same importance, the _Arquillian framework_ is not fully supported anymore. Other things to mention are a complicated execution system, where you want to specify what exactly should be tested, then abstract classes with shared configurations and missing the option to add a custom extension.
+
+== Brighter Future?
+
+The Keycloak team began an effort to design a new test framework in May 2024. It started with a prototype to verify if our ideas were feasible. The prototype is a _JUnit5 Extension_ based on the https://junit.org/junit5/[_JUnit5_ testing framework], specifically to implement https://junit.org/junit5/docs/current/user-guide/#extensions-lifecycle-callbacks[_JUnit5_ callback classes] which extend the default test lifecycle functionality and provide custom inject annotations, like _@KeycloakIntegrationTest_, _@InjectWebDriver_ or _@InjectRealm_.
+
+After a successful test round, we've continued with a proof of concept extending features list to support multiple server modes, different databases and _WebDrivers_, clients and users setup, _SmallRye_ configuration support, _OAuthClient_ based on https://connect2id.com/products/nimbus-oauth-openid-connect-sdk[_Nimbus SDK_] (this feature is a preview only) etc. The full list of currently implemented features is:
+
+* https://github.com/keycloak/keycloak/blob/main/test-framework/bom/pom.xml[Maven BOM]
+* https://github.com/keycloak/keycloak/tree/main/test-framework/core[Core module]
+** Server lifecycle
+** Database lifecycle
+** Admin client injection
+** Realm, User, Client lifecycle and injection
+** Event and Admin event listener and injection
+** OAuth client injection
+* https://github.com/keycloak/keycloak/tree/main/test-framework/ui[UI module]
+** WebDriver lifecycle and injection
+** Page injection
+** Support for the Chrome, Firefox and HtmlUnit4 browsers
+* Database modules
+** https://github.com/keycloak/keycloak/tree/main/test-framework/db-postgres[Postgres]
+** https://github.com/keycloak/keycloak/tree/main/test-framework/db-mariadb[MariaDB]
+** https://github.com/keycloak/keycloak/tree/main/test-framework/db-mysql[MySQL]
+** https://github.com/keycloak/keycloak/tree/main/test-framework/db-mssql[MSSQL]
+** https://github.com/keycloak/keycloak/tree/main/test-framework/db-oracle[Oracle]
+
+It is already present in the main branch and _Keycloak_ nightly builds.
+
+== Are you curious about where to start?
+We suggest reading the https://github.com/keycloak/keycloak/blob/main/test-framework/README.md[user guide], which will provide a basic overview of how the framework works and should be used. If this is not enough, you can also check https://github.com/keycloak/keycloak/tree/main/test-framework/examples/tests/src/test/java/org/keycloak/test/examples[test examples].
+
+For extension developers we recommend to look into an example on how to start _Keycloak_ with their custom provider: https://github.com/keycloak/keycloak/tree/main/test-framework/examples/providers[provider example], https://github.com/keycloak/keycloak/blob/main/test-framework/examples/tests/pom.xml#L75-L80[pom.xml test dependency] and https://github.com/keycloak/keycloak/blob/main/test-framework/examples/tests/src/test/java/org/keycloak/test/examples/MyCustomProviderTest.java[test example].
+
+If you find a bug, want to discuss something, or propose a new enhancement, please follow this GitHub feedback https://github.com/keycloak/keycloak/discussions/34951[discussion link].
+
+== Next steps
+We already have enough capabilities in the new test framework to start migrating some tests from the old testsuite; and in fact already have our very first test migrated. We plan to migrate one package at a time from the old testsuite starting with the `admin` tests, then moving on to the `forms` and `oauth` packages. As we are doing this we will expand on the capabilities of the test framework.
+
+Some features we know will be coming soon included:
+
+* An easier way to deploy custom providers, not requiring a Maven build of the provider first
+* Improved logging, making it easy to configure logging from tests as well as Keycloak
+* Easy testing of OAuth and OpenID Connect, including a mock application
+* Extension to allow running code on the tested server when it's not possible to easily test through only remote interfaces
+
+We also have some more long term plans to deliver:
+
+* Provider tests that can be used to easily test a provider by invoking the provider directly
+* Parallel execution of tests, to take full advantage of multiple cores to reduce test execution time
+
+== Acknowledgement
+
+I would like to thank all the people who put the proof of concept together and made it real: Miquel, Simon, Filip, Moises, Jon, and Pedro. A special thank-you goes to Stian, who led the technical design and proposed very nifty things that raised the project to another level.
+
+Thank you for your feedback.
+
+Enjoy!
