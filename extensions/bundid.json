@@ -1,0 +1,5 @@
+{
+  "name": "BundID Integration",
+  "description": "Integrate German BundID identity provider (https://id.bund.de) including support for attribute requests and mapping of STORK QAA levels.",
+  "website": "https://github.com/opdt/keycloak-extension-bundid"
+}
