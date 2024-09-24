@@ -27,7 +27,7 @@
             <div class="row guide-category" id="${c.id}">
                 <h2>${c.title}</h2>
                 <#list guides.getGuides(c) as g>
-                <#if g.tileVisible && !g.snapshot>
+                <#if g.tileVisible && g.snapshot>
                     <div class="col-sm-4">
                         <div class="card shadow-sm mb-4">
                             <div class="card-body">

@@ -3,6 +3,7 @@ package org.keycloak.webbuilder;
 import org.keycloak.webbuilder.utils.AsciiDoctor;
 import org.keycloak.webbuilder.utils.FreeMarker;
 import org.keycloak.webbuilder.utils.JsonParser;
+import org.keycloak.webbuilder.utils.YamlParser;
 
 import java.io.File;
 
@@ -28,6 +29,7 @@ public class Context {
     private Extensions extensions;
     private Blogs blogs;
     private Guides guides;
+    private GuidesMetadata guidesMetadata;
     private News news;
 
     private FreeMarker freeMarker;
@@ -63,7 +65,8 @@ public class Context {
         versions = new Versions(versionsDir, jsonParser);
         extensions = new Extensions(extensionsDir, jsonParser);
         blogs = new Blogs(blogDir, versions, config, freeMarker, asciiDoctor);
-        guides = new Guides(tmpDir, guidesDir, asciiDoctor);
+        guidesMetadata = new YamlParser().read(new File(getWebSrcDir(),"/guides.yaml"), GuidesMetadata.class);
+        guides = new Guides(guidesMetadata, tmpDir, getWebSrcDir(), asciiDoctor);
         news = new News(newsDir, blogs, jsonParser, config);
 
         freeMarker.init(this);
@@ -156,6 +159,10 @@ public class Context {
 
     public File getBlogDir() {
         return blogDir;
+    }
+
+    public GuidesMetadata getGuidesMetadata() {
+        return guidesMetadata;
     }
 
     public File getGuidesDir() {

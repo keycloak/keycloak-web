@@ -37,7 +37,9 @@ public class AsciiDoctor {
     }
 
     public void writeFile(Map<String, Object> attr, File file, File targetDir, String output) throws Exception {
-        writeFile(file.getParentFile(), attr, new FileReader(file), new FileWriter(new File(targetDir, output)));
+        try (FileReader fr = new FileReader(file); FileWriter fw = new FileWriter(new File(targetDir, output))) {
+            writeFile(file.getParentFile(), attr, fr, fw);
+        }
     }
 
     private void writeFile(File baseDir, Map<String, Object> attr, Reader reader, Writer writer) throws Exception {

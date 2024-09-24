@@ -7,8 +7,8 @@
         <div class="col-md-9 col-xl-10 col-sm-12">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="${links.guides}">Guides</a></li>
-                    <li class="breadcrumb-item"><a href="${links.guides}#${guide.category.id}">${guide.category.label}</a></li>
+                    <li class="breadcrumb-item"><a href="${links.getGuides(guide.snapshot)}">Guides</a></li>
+                    <li class="breadcrumb-item"><a href="${links.getGuides(guide.snapshot)}#${guide.metadata.id}">${guide.metadata.title}</a></li>
                     <li class="breadcrumb-item active">${guide.title}</li>
                 </ol>
             </nav>
@@ -48,7 +48,7 @@
 
 
             <div class="kc-asciidoc" id="guide-body">
-                <#include "../target/tmp/${guide.template}" parse=false>
+                <#include "../target/tmp/guide.html" parse=false>
             </div>
         </div>
 

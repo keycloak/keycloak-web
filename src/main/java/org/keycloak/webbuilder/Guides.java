@@ -17,32 +17,26 @@ import java.util.stream.Collectors;
 
 public class Guides {
 
-    private List<GuideCategory> categories = new LinkedList<>();
+    private List<GuidesMetadata.GuideMetadata> categories = new LinkedList<>();
     private List<Guide> guides = new LinkedList<>();
 
-    public Guides(File tmpDir, File guidesDir, AsciiDoctor asciiDoctor) throws IOException {
-        for (File d : guidesDir.listFiles((file) -> file.isDirectory())) {
-            GuideCategory category = getCategory(d);
-            if (category == null) {
-                continue;
+    public Guides(GuidesMetadata guidesMetadata, File tmpDir, File webSrcDir, AsciiDoctor asciiDoctor) throws IOException {
+
+        for (GuidesMetadata.GuideSource guideSource : guidesMetadata.getSources()) {
+            final File d = new File(webSrcDir, guideSource.getDir());
+            File[] sourceDirs;
+            if (d.getName().contains("$$VERSION$$")) {
+                sourceDirs = d.getParentFile().listFiles(f -> f.getName().matches(d.getName().replace("$$VERSION$$", ".*")));
+            } else {
+                sourceDirs = new File[] { d };
             }
 
-            loadGuides(asciiDoctor, d, category);
+            for (GuidesMetadata.GuideMetadata guideMetadata : guidesMetadata.getGuides()) {
+                for (File sourceDir : sourceDirs) {
+                    loadGuides(asciiDoctor, sourceDir, guideSource, guideMetadata);
+                }
+            }
         }
-
-        Arrays.stream(tmpDir.getParentFile().listFiles((f, s) -> s.startsWith("keycloak-guides") || s.startsWith("keycloak-client-guides")))
-                .forEach(f -> {
-            try {
-                loadGuides(asciiDoctor, new File(f, "generated-guides/server"), GuideCategory.SERVER);
-                loadGuides(asciiDoctor, new File(f, "generated-guides/operator"), GuideCategory.OPERATOR);
-                loadGuides(asciiDoctor, new File(f, "generated-guides/migration"), GuideCategory.MIGRATION);
-                loadGuides(asciiDoctor, new File(f, "generated-guides/getting-started"), GuideCategory.GETTING_STARTED);
-                loadGuides(asciiDoctor, new File(f, "generated-guides/securing-apps"), GuideCategory.SECURING_APPS);
-                loadGuides(asciiDoctor, new File(f, "generated-guides/high-availability"), GuideCategory.HIGH_AVAILABILITY);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
 
         Collections.sort(guides, (o1, o2) -> {
             if (o1.getPriority() == o2.getPriority()) {
@@ -52,19 +46,31 @@ public class Guides {
             }
         });
 
-        for (GuideCategory c : GuideCategory.values()) {
-            if (getGuides(c).size() > 0) {
-                categories.add(c);
+        for (GuidesMetadata.GuideMetadata guideMetadata : guidesMetadata.getGuides()) {
+            if (getGuides(guideMetadata).size() > 0) {
+                categories.add(guideMetadata);
             }
         }
     }
 
     public Guide getGuide(String category, String name) {
-        Optional<Guide> o = guides.stream().filter(g -> g.getCategory().getId().equals(category) && g.getName().equals(name)).findFirst();
+        Optional<Guide> o = guides.stream().filter(g -> g.getMetadata().getId().equals(category) && g.getName().equals(name)).findFirst();
         return o.isPresent() ? o.get() : null;
     }
 
-    private void loadGuides(AsciiDoctor asciiDoctor, File d, GuideCategory category) throws IOException {
+    private void loadGuides(AsciiDoctor asciiDoctor, File d, GuidesMetadata.GuideSource guideSource, GuidesMetadata.GuideMetadata guideMetadata) throws IOException {
+        if (!d.isDirectory()) {
+            return;
+        }
+
+        boolean snapshot = d.getName().endsWith("-SNAPSHOT");
+
+        File generatedGuides = new File(d, "generated-guides");
+        if (generatedGuides.isDirectory()) {
+            d = generatedGuides;
+        }
+
+        d = new File(d, guideMetadata.getId());
         if (!d.isDirectory()) {
             return;
         }
@@ -82,8 +88,8 @@ public class Guides {
             Object isTileVisibileAttribute = attributes.get("guide-tile-visible");
             boolean isTileVisibile = isTileVisibileAttribute == null || "true".equals(isTileVisibileAttribute);
             try {
-                Guide g = new Guide(category, f, (String) attributes.get("guide-title"), (String) attributes.get("guide-summary"), (String) attributes.get("guide-tags"), (String) attributes.get("author"), community,
-                        (String) attributes.get("external-link"), isTileVisibile);
+                Guide g = new Guide(guideSource, guideMetadata, f, (String) attributes.get("guide-title"), (String) attributes.get("guide-summary"), (String) attributes.get("guide-tags"), (String) attributes.get("author"), community,
+                        (String) attributes.get("external-link"), isTileVisibile, snapshot);
 
                 if (guidePriorities != null) {
                     Integer priority = guidePriorities.get(g.getName());
@@ -118,35 +124,27 @@ public class Guides {
         }
     }
 
-    private GuideCategory getCategory(File d) {
-        String name = d.getName().toUpperCase().replaceAll("-", "_");
-        for (GuideCategory c : GuideCategory.values()) {
-            if (c.name().equals(name)) {
-                return c;
-            }
-        }
-        return null;
-    }
-
-    public List<Guide> getGuides(GuideCategory c) {
-        return guides.stream().filter(g -> g.category.equals(c)).collect(Collectors.toList());
+    public List<Guide> getGuides(GuidesMetadata.GuideMetadata c) {
+        return guides.stream().filter(g -> g.getMetadata().equals(c)).collect(Collectors.toList());
     }
 
     public List<Guide> getGuides() {
         return guides;
     }
 
-    public List<GuideCategory> getCategories() {
+    public List<GuidesMetadata.GuideMetadata> getCategories() {
         return categories;
     }
 
     public class Guide {
 
-        private GuideCategory category;
+        private GuidesMetadata.GuideSource guideSource;
+        private GuidesMetadata.GuideMetadata metadata;
         private String name;
         private String author;
         private boolean community;
         private File source;
+        private final boolean snapshot;
         private String template;
         private String title;
         private String summary;
@@ -156,19 +154,21 @@ public class Guides {
         private String externalLink;
         private boolean tileVisible;
 
-        public Guide(GuideCategory category, File source, String title, String summary, String tags, String author, boolean community, String externalLink, boolean tileVisible) {
-            this.category = category;
+        public Guide(GuidesMetadata.GuideSource guideSource, GuidesMetadata.GuideMetadata metadata, File source, String title, String summary, String tags, String author, boolean community, String externalLink, boolean tileVisible, boolean snapshot) {
+            this.guideSource = guideSource;
+            this.metadata = metadata;
             this.name = source.getName().replace(".adoc", "");
             this.author = author;
             this.community = community;
             this.source = source;
+            this.snapshot = snapshot;
             this.template = "guide-" + name + ".html";
             this.title = title;
             this.summary = summary;
             if (tags != null) {
                 this.tags = Arrays.stream(tags.split(",")).map(s -> s.toLowerCase().trim()).sorted().collect(Collectors.toList());
             }
-            this.path = category.getId() + "/" + name;
+            this.path = metadata.getId() + "/" + name;
             this.externalLink = externalLink;
             this.tileVisible = tileVisible;
         }
@@ -185,8 +185,12 @@ public class Guides {
             return community;
         }
 
-        public GuideCategory getCategory() {
-            return category;
+        public GuidesMetadata.GuideSource getGuideSource() {
+            return guideSource;
+        }
+
+        public GuidesMetadata.GuideMetadata getMetadata() {
+            return metadata;
         }
 
         public File getSource() {
@@ -228,32 +232,9 @@ public class Guides {
         public boolean isTileVisible() {
             return tileVisible;
         }
-    }
 
-    public enum GuideCategory {
-
-        MIGRATION("migration", "Migration"),
-        GETTING_STARTED("getting-started", "Getting started"),
-        SERVER("server", "Server"),
-        OPERATOR("operator", "Operator"),
-        SECURING_APPS("securing-apps", "Securing applications"),
-        HIGH_AVAILABILITY("high-availability", "High availability");
-
-        private final String label;
-
-        private final String id;
-
-        GuideCategory(String id, String label) {
-            this.id = id;
-            this.label = label;
-        }
-
-        public String getId() {
-            return id;
-        }
-
-        public String getLabel() {
-            return label;
+        public boolean isSnapshot() {
+            return snapshot;
         }
     }
 
