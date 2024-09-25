@@ -6,12 +6,14 @@ name: Publish
 on:
   push:
     branches: [ main ]
+  schedule:
+    - cron: '0 2 * * *'
   workflow_dispatch:
 
 jobs:
   build:
     concurrency: publish-to-website
-
+    if: github.repository == 'keycloak/keycloak-web
     runs-on: ubuntu-latest
 
     steps:
