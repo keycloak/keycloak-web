@@ -25,7 +25,4 @@ Server and Operator guide sources are located at `https://github.com/keycloak/ke
     cd keycloak
     mvn -pl docs clean install
 
-Then you can build the website with the `999.0.0-SNAPSHOT` version:
-
-    cd keycloak-web
-    mvn clean install -Dversion.keycloak=999.0.0-SNAPSHOT
+Then simply build the website locally with `mvn clean install`, and the locally built guides will be available in `target/web/nightly/guides.html`.
