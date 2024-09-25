@@ -23,15 +23,27 @@ public class GuideBuilder extends AbstractBuilder {
             return;
         }
         attributes.put("guide", guide);
+        if (guide.isSnapshot()) {
+            attributes.put("imagesdir", context.getLinks().getRoot() + "/resources/images/guides/nightly");
+        } else {
+            attributes.put("imagesdir", context.getLinks().getRoot() + "/resources/images/guides");
+        }
+
+        setGuideLinkAttributes(attributes, guide.isSnapshot());
 
         File dir = new File(context.getTargetDir(), "guides");
         dir.mkdirs();
 
         context.getTmpDir().mkdirs();
 
-        context.asciiDoctor().writeFile(attributes, guide.getSource(), context.getTmpDir(), guide.getTemplate());
+        context.asciiDoctor().writeFile(attributes, guide.getSource(), context.getTmpDir(), "guide.html");
 
-        File target = new File(context.getTargetDir(), guide.getCategory().getId());
+        File target;
+        if (guide.isSnapshot()) {
+            target = new File(context.getTargetDir(), "nightly/" + guide.getMetadata().getId());
+        } else {
+            target = new File(context.getTargetDir(), guide.getMetadata().getId());
+        }
         target.mkdirs();
 
         context.freeMarker().writeFile(attributes, "templates/guide-entry.ftl", target, guide.getName() + ".html");
@@ -39,20 +51,19 @@ public class GuideBuilder extends AbstractBuilder {
     }
 
     private void setCommonAttributes(Map<String, Object> attributes) {
-        attributes.put("imagesdir", context.getLinks().getRoot() + "/resources/images/guides");
         attributes.put("leveloffset", "0");
         attributes.put("fragment", "yes");
         attributes.put("notitle", "yes");
         attributes.put("icons", "font");
-
-        setGuideLinkAttributes(attributes);
     }
 
-    private void setGuideLinkAttributes(Map<String, Object> attributes) {
+    private void setGuideLinkAttributes(Map<String, Object> attributes, boolean snapshot) {
         for (Guides.Guide guide : context.guides().getGuides()) {
-            String linkKeyPrefix = "links_" + guide.getCategory().getId() + "_" + guide.getName();
-            attributes.put(linkKeyPrefix + "_name", guide.getTitle());
-            attributes.put(linkKeyPrefix + "_url", context.getLinks().get(guide));
+            if (guide.isSnapshot() == snapshot){
+                String linkKeyPrefix = "links_" + guide.getMetadata().getId() + "_" + guide.getName();
+                attributes.put(linkKeyPrefix + "_name", guide.getTitle());
+                attributes.put(linkKeyPrefix + "_url", context.getLinks().get(guide));
+            }
         }
     }
 

@@ -1,0 +1,24 @@
+guides:
+  - id: migration
+    title: Migration
+  - id: getting-started
+    title: Getting started
+  - id: server
+    title: Server
+  - id: operator
+    title: Operator
+  - id: securing-apps
+    title: Securing applications
+  - id: high-availability
+    title: High availability
+
+sources:
+  - id: keycloak
+    dir: target/keycloak-guides-$$VERSION$$
+    github: https://github.com/keycloak/keycloak/tree/main/docs/guides/
+  - id: keycloak-client
+    dir: target/keycloak-client-guides-$$VERSION$$
+    github: https://github.com/keycloak/keycloak-client/tree/main/docs/guides/
+  - id: keycloak-web
+    dir: guides
+    github: https://github.com/keycloak/keycloak-web/tree/main/guides/

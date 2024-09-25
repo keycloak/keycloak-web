@@ -1,14 +1,13 @@
 package org.keycloak.webbuilder.builders;
 
 import org.apache.commons.io.FileUtils;
+import org.keycloak.webbuilder.GuidesMetadata;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.Arrays;
-import java.util.Optional;
-import java.util.stream.Stream;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class ResourcesBuilder extends AbstractBuilder {
 
@@ -16,6 +15,7 @@ public class ResourcesBuilder extends AbstractBuilder {
     protected void build() throws Exception {
         File targetResourcesDir = new File(context.getTargetDir(), "resources");
         File guidesImageDir = new File(new File(targetResourcesDir, "images"), "guides");
+        File guidesNightlyImageDir = new File(new File(targetResourcesDir, "images"), "guides/nightly");
 
         FileUtils.copyDirectory(context.getResourcesDir(), targetResourcesDir);
 
@@ -23,15 +23,28 @@ public class ResourcesBuilder extends AbstractBuilder {
 
         FileUtils.copyDirectory(new File(context.getBlogDir(), "images"), new File(new File(targetResourcesDir, "images"), "blog"));
         FileUtils.copyDirectory(new File(context.getGuidesDir(), "images"), guidesImageDir);
-        Optional<File> genGuidesDir = Arrays.stream(context.getTmpDir().getParentFile().listFiles((f, s) -> s.startsWith("keycloak-guides"))).findFirst();
 
-        Optional<File> genGuidesImagesDir = genGuidesDir.flatMap( d -> Arrays.stream(new File(d, "generated-guides").listFiles(n -> n.getName().equals("images"))).findAny());
-        if (genGuidesImagesDir.isPresent()) {
-            for (File f : genGuidesImagesDir.get().listFiles()) {
-                if (f.isFile()) {
-                    FileUtils.copyFileToDirectory(f, guidesImageDir);
-                } else {
-                    FileUtils.copyDirectoryToDirectory(f, guidesImageDir);
+        for (GuidesMetadata.GuideSource guideSource : context.getGuidesMetadata().getSources()) {
+            final File d = new File(context.getWebSrcDir(), guideSource.getDir());
+            File[] sourceDirs;
+            if (d.getName().contains("$$VERSION$$")) {
+                sourceDirs = d.getParentFile().listFiles(f -> f.getName().matches(d.getName().replace("$$VERSION$$", ".*")));
+            } else {
+                sourceDirs = new File[] { d };
+            }
+
+            for (File sourceDir : sourceDirs) {
+                File imageDir = new File(sourceDir, "generated-guides/images");
+                if (imageDir.isDirectory()) {
+                    boolean snapshot = sourceDir.getName().endsWith("-SNAPSHOT");
+                    File targetDir = snapshot ? guidesNightlyImageDir : guidesImageDir;
+                    for (File f : imageDir.listFiles()) {
+                        if (f.isFile()) {
+                            FileUtils.copyFileToDirectory(f, targetDir);
+                        } else {
+                            FileUtils.copyDirectoryToDirectory(f, targetDir);
+                        }
+                    }
                 }
             }
         }

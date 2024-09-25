@@ -1,5 +1,6 @@
 package org.keycloak.webbuilder.utils;
 
+import freemarker.cache.NullCacheStorage;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateExceptionHandler;
@@ -27,6 +28,7 @@ public class FreeMarker {
         cfg.setDefaultEncoding("UTF-8");
         cfg.setTemplateExceptionHandler(TemplateExceptionHandler.RETHROW_HANDLER);
         cfg.setLogTemplateExceptions(false);
+        cfg.setCacheStorage(new NullCacheStorage());
     }
 
     public Map<String, Object> parseAttributes(File file) throws IOException {
