@@ -5,7 +5,7 @@
 <div class="container mt-5 kc-article">
     <h1>Security Policy</h1>
 
-    <p>The Keycloak team takes security very seriously, and aim to resolve issues as quickly as possible. Building secure software is a continuous process, and can always be improved. As such we welcome reports on potential security vulnerabilities, as well as suggestions around hardening the software and our process.</p>
+    <p>The Keycloak team takes security very seriously, and aim to resolve issues as quickly as possible. Building secure software is a continuous process, and can always be improved. As such we welcome reports on potential security vulnerabilities, as well as suggestions around hardening the software and our process as described in our <a href="https://www.keycloak.org/security-charter">security charter</a>.</p>
 
     <h2>Reporting a suspected vulnerability</h2>
 
