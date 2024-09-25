@@ -1,6 +1,6 @@
 <#import "/templates/template.ftl" as tmpl>
 
-<@tmpl.page current="guides" title="Guides">
+<@tmpl.page current="nightly-guides" title="Guides / Nightly Release">
 
 <script src="${links.getResource('js/guides.js')}" type="text/javascript"></script>
 
