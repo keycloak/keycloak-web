@@ -68,7 +68,7 @@ public class Links {
         return getLink(blog.getPath() + "/" + blog.getName());
     }
 
-    private String getLink(String path) {
+    public String getLink(String path) {
         if (!path.startsWith("/")) {
             path = "/" + path;
         }
