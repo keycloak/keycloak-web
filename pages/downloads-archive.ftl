@@ -14,7 +14,9 @@
 
     <ul>
     <#list versions as version>
-        <li><a href="archive/downloads-${version.versionShort}.html">${version.versionShort}</a></li>
+        <#if !version.latest>
+            <li><a href="archive/downloads-${version.versionShort}.html">${version.versionShort}</a></li>
+        </#if>
     </#list>
     </ul>
 </div>

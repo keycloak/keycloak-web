@@ -14,7 +14,9 @@
 
     <ul>
     <#list versionsMajorMinor as version>
-        <li><a href="archive/documentation-${version.versionShorter}.html">${version.versionShorter}</a></li>
+        <#if !version.latest>
+            <li><a href="archive/documentation-${version.versionShorter}.html">${version.versionShorter}</a></li>
+        </#if>
     </#list>
     </ul>
 </div>

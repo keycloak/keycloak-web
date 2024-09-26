@@ -16,6 +16,10 @@ public class Links {
         return getRoot() + (config.isPublish() ? "/" : "/index.html");
     }
 
+    public String getNightly() {
+        return getRoot() + (config.isPublish() ? "/nightly/" : "/nightly/index.html");
+    }
+
     public String getDocs() {
         return getLink("documentation");
     }
