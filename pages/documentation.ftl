@@ -7,7 +7,7 @@
 
     <#include "../templates/documentation-${version.documentationTemplate}.ftl">
 
-    <h4 class="mt-4">For previous releases go <a href="documentation-archive.html">here</a>.</h4>
+    <p><a href="documentation-archive.html">Archived releases</a></p>
 </div>
 
 </@tmpl.page>

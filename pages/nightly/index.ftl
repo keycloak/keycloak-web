@@ -5,6 +5,13 @@
 <div class="container mt-5">
     <h1>Nightly release</h1>
 
+    <div class="alert alert-warning" role="alert">
+      <h4>Do not use nightly releases in production environments.</h4>
+
+      Migration is not supported for nightly releases. Always use an empty database, or a copy of the database, when deploying a nightly release.
+      Nightly releases may also contain regressions or features that are not ready for usage.
+    </div>
+
     <p>
         We provide a nightly release of Keycloak that serves of a preview of what is coming in the next release. The aim
         is to get early feedback from the community on new features, on bug fixes, or other enhancements. We also
@@ -14,7 +21,6 @@
     <p>
         The nightly release is built every night from main branches, and will overwrite the previous nightly release.
     </p>
-
 
     <h2 class="mt-4">Server</h2>
 

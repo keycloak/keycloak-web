@@ -138,6 +138,10 @@ public class Versions extends LinkedList<Versions.Version> {
             this.migrationNotes = migrationNotes;
         }
 
+        public boolean isLatest() {
+            return latest;
+        }
+
         public ChangeLog getChanges() {
             return changes;
         }

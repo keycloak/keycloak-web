@@ -15,7 +15,7 @@
         <p>This is a <b>release candidate</b>. The latest final release is <a href="archive/downloads-${versions[1].versionShort}.html">${versions[1].versionShort}</a>.</p>
     </#if>
 
-    <h4 class="mt-4">For previous releases go <a href="downloads-archive.html">here</a>.</h4>
+    <p><a href="downloads-archive.html">Archived releases</a> | <a href="${links.nightly}">Nightly release</a></h4>
 </div>
 
 <script src="${root}resources/js/downloads.js" type="text/javascript"></script>

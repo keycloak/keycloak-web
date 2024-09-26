@@ -60,6 +60,13 @@
     </div>
 
     <div class="row mt-3">
+        <h2>Nightly release</h2>
+        <p>
+            For early feedback and extension developers there is a <a href="${links.nightly}">nightly release of Keycloak</a>.
+        </p>
+    </div>
+
+    <div class="row mt-3">
         <h2>Resources</h2>
         <ul class="ms-4">
             <li><a href="https://github.com/keycloak/keycloak">Source Code</a></li>
