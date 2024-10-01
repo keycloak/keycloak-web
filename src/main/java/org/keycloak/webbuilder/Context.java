@@ -34,10 +34,8 @@ public class Context {
 
     private FreeMarker freeMarker;
     private AsciiDoctor asciiDoctor;
-    private JsonParser jsonParser;
 
     public Context(File rootDir) throws Exception {
-        jsonParser = new JsonParser();
         freeMarker = new FreeMarker(rootDir);
         asciiDoctor = new AsciiDoctor(rootDir);
 
@@ -62,12 +60,12 @@ public class Context {
         config = loadConfig();
         links = new Links(config);
 
-        versions = new Versions(versionsDir, jsonParser);
-        extensions = new Extensions(extensionsDir, jsonParser);
+        versions = new Versions(versionsDir);
+        extensions = new Extensions(extensionsDir);
         blogs = new Blogs(blogDir, versions, config, freeMarker, asciiDoctor);
         guidesMetadata = new YamlParser().read(new File(getWebSrcDir(),"/guides.yaml"), GuidesMetadata.class);
         guides = new Guides(guidesMetadata, tmpDir, getWebSrcDir(), asciiDoctor);
-        news = new News(newsDir, blogs, jsonParser, config);
+        news = new News(newsDir, blogs, config);
 
         freeMarker.init(this);
         asciiDoctor.init(this);
@@ -78,7 +76,7 @@ public class Context {
     }
 
     private Config loadConfig() {
-        Config config = jsonParser.read(new File(getWebSrcDir(),"/config.json"), Config.class);
+        Config config = JsonParser.read(new File(getWebSrcDir(),"/config.json"), Config.class);
         config.setPublish(System.getProperties().containsKey("publish"));
 
         if (System.getenv().containsKey("KC_URL")) {
@@ -111,10 +109,6 @@ public class Context {
 
     public News news() {
         return news;
-    }
-
-    public JsonParser json() {
-        return jsonParser;
     }
 
     public FreeMarker freeMarker() {

@@ -4,7 +4,6 @@ import org.keycloak.webbuilder.misc.ChangeLogEntry;
 import org.keycloak.webbuilder.utils.JsonParser;
 
 import java.io.File;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
@@ -15,9 +14,9 @@ import java.util.stream.Collectors;
 
 public class Versions extends LinkedList<Versions.Version> {
 
-    public Versions(File versionsDir, JsonParser json) {
+    public Versions(File versionsDir) {
         for (File versionFile : versionsDir.listFiles((dir, name) -> name.endsWith(".json"))) {
-            add(json.read(versionFile, Version.class));
+            add(JsonParser.read(versionFile, Version.class));
         }
         Collections.sort(this);
 
@@ -72,6 +71,11 @@ public class Versions extends LinkedList<Versions.Version> {
         public String getVersionShorter() {
             String[] split = version.split("\\.");
             return split[0] + "." + split[1];
+        }
+
+        public int getMajorVersion() {
+            String[] split = version.split("\\.");
+            return Integer.parseInt(split[0]);
         }
 
         public Date getDate() {

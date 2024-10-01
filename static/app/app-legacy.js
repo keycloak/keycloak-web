@@ -1,5 +1,3 @@
-import Keycloak from './keycloak.js';
-
 function init() {
     document.getElementById('config-form').onsubmit = function() {
         updateConfig();
@@ -78,4 +76,4 @@ function loadConfig() {
 }
 
 window.onhashchange = init;
-init();
+window.onload = init;

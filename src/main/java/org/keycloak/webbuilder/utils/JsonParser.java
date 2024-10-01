@@ -9,9 +9,9 @@ import java.nio.charset.StandardCharsets;
 
 public class JsonParser {
 
-    private final ObjectMapper mapper = new ObjectMapper();
+    private static final ObjectMapper mapper = new ObjectMapper();
 
-    public <T> T read(File f, Class<T> t) {
+    public static <T> T read(File f, Class<T> t) {
         try {
             return mapper.readValue(f, t);
         } catch (Exception e) {
@@ -19,7 +19,7 @@ public class JsonParser {
         }
     }
 
-    public <T> T read(URL url, Class<T> t) {
+    public static <T> T read(URL url, Class<T> t) {
         try {
             return mapper.readValue(url, t);
         } catch (Exception e) {

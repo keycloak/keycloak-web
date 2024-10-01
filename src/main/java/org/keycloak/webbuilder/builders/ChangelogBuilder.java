@@ -3,6 +3,7 @@ package org.keycloak.webbuilder.builders;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.keycloak.webbuilder.Versions;
 import org.keycloak.webbuilder.misc.ChangeLogEntry;
+import org.keycloak.webbuilder.utils.JsonParser;
 import org.kohsuke.github.GHIssue;
 import org.kohsuke.github.GitHub;
 import org.kohsuke.github.GitHubBuilder;
@@ -49,7 +50,7 @@ public class ChangelogBuilder extends AbstractBuilder {
             File changeLogFile = new File(releaseCacheDir, "changelog.json");
 
             if (changeLogFile.exists()) {
-                Versions.ChangeLog changeLog = new Versions.ChangeLog(Arrays.asList(context.json().read(changeLogFile, ChangeLogEntry[].class)));
+                Versions.ChangeLog changeLog = new Versions.ChangeLog(Arrays.asList(JsonParser.read(changeLogFile, ChangeLogEntry[].class)));
 
                 if (v.getBlogTemplate() >= 3) {
                     for (ChangeLogEntry e : changeLog.getAll()) {
