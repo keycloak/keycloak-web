@@ -16,7 +16,7 @@ For these reasons, after Keycloak 26.0 is released there will be some changes to
 * Keycloak server will have 4 minor releases every year, and a major release every 2-3 years
 * Keycloak client libraries will be released separately. The latest client library release will support all currently supported Keycloak server releases
 
-We are certainly not going to stop bringing new features and enhancements to Keycloak, but we are committed to doing so
+We will continue to bring new features and enhancements to Keycloak in each release, and we are committed to doing so
 in a backwards compatible way, making it seamless and easy to upgrade.
 
 A minor release may come with breaking changes, but any such changes will be opt-in. This will be driven through versioning
