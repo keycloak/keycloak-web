@@ -19,11 +19,11 @@ For these reasons, after Keycloak 26.0 is released there will be some changes to
 We will continue to bring new features and enhancements to Keycloak in each release, and we are committed to doing so
 in a backwards compatible way, making it seamless and easy to upgrade.
 
-A minor release may come with breaking changes, but any such changes will be opt-in. This will be driven through versioning
-where the currently default version for a Feature or an API can not change in a minor release, but there can be a new
+When a minor comes with breaking changes, such changes will be opt-in. This will be driven through versioning
+where the currently default version for a Feature or an API can not change in a minor release, and there will be a new
 version that can be explicitly enabled. The current version of a Feature or API can be deprecated in a minor, but will
 not be removed until the next major version. This will allow you to gradually roll-out new Feature or API versions separately
-from upgrading, and you can choose if you want to get ready for the next major release early, or wait and do it in one
+from upgrading. You can choose to get ready for the next major release early, or wait and do it in one
 go.
 
 Backwards compatibility guarantees will only be given to Features and APIs that are fully supported. Preview features or APIs,
