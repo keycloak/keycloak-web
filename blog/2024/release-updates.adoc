@@ -26,5 +26,5 @@ not be removed until the next major version. This will allow you to gradually ro
 from upgrading. You can choose to get ready for the next major release early, or wait and do it in one
 go.
 
-Backwards compatibility guarantees will only be given to Features and APIs that are fully supported. Preview features or APIs,
+Backwards compatibility guarantees will only be given to Features and APIs that are fully supported. Preview features or preview APIs,
 as well as non-public APIs may change at any time.
