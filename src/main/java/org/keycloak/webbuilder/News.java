@@ -10,11 +10,11 @@ import java.util.LinkedList;
 
 public class News extends LinkedList<News.NewsItem> {
 
-    public News(File newsDir, Blogs blogs, JsonParser json, Config config) throws ParseException {
+    public News(File newsDir, Blogs blogs, Config config) throws ParseException {
         File[] newsFiles = newsDir.listFiles((dir, name) -> name.endsWith(".json"));
         if (newsFiles != null) {
             for (int i = 0; i < newsFiles.length && i < config.getMaxNews(); i++) {
-                NewsItem news = json.read(newsFiles[i], NewsItem.class);
+                NewsItem news = JsonParser.read(newsFiles[i], NewsItem.class);
                 news.setDate(Constants.DATE_IN.parse(newsFiles[i].getName()));
                 add(news);
             }

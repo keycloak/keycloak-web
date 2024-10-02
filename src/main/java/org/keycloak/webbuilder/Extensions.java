@@ -8,9 +8,9 @@ import java.util.LinkedList;
 
 public class Extensions extends LinkedList<Extensions.Extension> {
 
-    public Extensions(File extensionsDir, JsonParser json) {
+    public Extensions(File extensionsDir) {
         for (File extensionFile : extensionsDir.listFiles((dir, name) -> name.endsWith(".json"))) {
-            add(json.read(extensionFile, Extension.class));
+            add(JsonParser.read(extensionFile, Extension.class));
         }
         Collections.sort(this);
     }
