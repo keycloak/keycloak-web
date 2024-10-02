@@ -1,0 +1,41 @@
+:title: Meet Keycloak at KubeCon Salt Lake City, Utah in Nov 2024
+:date: 2024-04-10
+:publish: true
+:author: Kamesh Akella
+
+We are thrilled to announce that Keycloak will be at KubeCon Salt Lake City, Utah in Nov 2024. There are several Keycloak specific sessions lined up during this conference, and we will be hosting a Kiosk at the Project Pavilion at KubeCon.
+
+== What is KubeCon?
+
+Keycloak's presence in the previous KubeCons was a huge success,
+and we continue to have a lot of fun interacting with Keycloak enthusiasts, users, newcomers alike.
+KubeCon is a fast-growing Cloud Native tech conference expected to have up to 8,000 developers,
+architects, and technical leaders onsite as well as thousands of participants virtually.
+
+KubeCon Salt Lake City will be held from Nov. 12th, 2024 through Nov. 15th, 2024, with many of the co-located events happening on Tuesday, Nov 12th, 2024.
+
+== Keycloak community Meet & Greet at the Project Pavilion
+
+https://github.com/y-tabata[Yoshiyuki Tabata] from Hitachi, https://github.com/ryanemerson[Ryan Emerson], https://github.com/mabartos[Martin Bartos], https://github.com/kami619[Kamesh Akella] from Red Hat and other contributors will be at the Keycloak kiosk at the https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/program/project-engagement/#project-pavilion[Project Pavilion]. This is a great chance to meet people who use Keycloak, contribute to Keycloak, take our survey about new Keycloak features, and get some cool swag!
+
+*Keycloak Kiosk opening hours:*
+
+- Wednesday, November 13: 3:15pm-8:00pm
+- Thursday, November 14: 1:45pm–5:00pm
+- Friday, November 15: 12:30pm-2:30pm
+
+== OpenShift Commons Gathering
+
+The OpenShift Commons Gathering happens on Tuesday (Nov. 12th, 2024) and builds connections and collaboration across OpenShift communities, projects and stakeholders. Some maintainers from the Keycloak development team will be here during the afternoon. This gives a chance for more community Keycloak maintainers, contributors, and users to meet and share their ideas or just hang out. Access to the OpenShift Commons event is free and does not require a paid KubeCon ticket, https://commons.openshift.org/gatherings/kubecon-24-nov-12/[still you’ll need to register on their website in advance].
+
+== Keycloak specific events at KubeCon
+
+Below is the Keycloak specific event that the attendees both in-person and virtually can plan to attend and learn more about a Highly Available Keycloak deployed in a Multi-Site environment.
+
+- Friday, November 15, 4:55pm - 5:30pm MST(UTC-7) +
+https://kccncna2024.sched.com/event/1hoyn/running-a-highly-available-identity-and-access-management-with-keycloak-ryan-emerson-kameswararao-akella-red-hat?iframe=no[*Running a Highly Available Identity and Access Management with Keycloak*] +
+By Ryan Emerson & Kameswararao Akella, Red Hat.
+
+We're preparing for KubeCon SLC 2024 and can't wait to connect with our community. Mark your calendars and join us.
+
+See you in Salt Lake City, Utah!
