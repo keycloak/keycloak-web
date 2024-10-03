@@ -17,7 +17,7 @@
         <version.freemarker>2.3.31</version.freemarker>
         <version.asciidoctorj>2.5.2</version.asciidoctorj>
         <version.jackson-core>2.17.2</version.jackson-core>
-        <version.commons-io>2.11.0</version.commons-io>
+        <version.commons-io>2.14.0</version.commons-io>
         <version.commons-compress>1.26.0</version.commons-compress>
 
         <version.keycloak>25.0.6</version.keycloak>
