@@ -1,0 +1,412 @@
+<div class="sect2">
+<h3 id="_organizations_supported">Organizations supported</h3>
+<div class="paragraph">
+<p>Starting with Keycloak 26, the Organizations feature is fully supported.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_client_libraries_updates">Client libraries updates</h3>
+<div class="sect3">
+<h4 id="_dedicated_release_cycle_for_the_client_libraries">Dedicated release cycle for the client libraries</h4>
+<div class="paragraph">
+<p>From this release, some of the Keycloak client libraries will have release cycle independent of the Keycloak server release cycle. The 26.0.0 release may be the last one
+when the client libraries are released together with the Keycloak server. But from now on, the client libraries may be released at a different time than the Keycloak server.</p>
+</div>
+<div class="paragraph">
+<p>The client libraries are these artifacts:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Java admin client - Maven artifact <code>org.keycloak:keycloak-admin-client</code></p>
+</li>
+<li>
+<p>Java authorization client - Maven artifact <code>org.keycloak:keycloak-authz-client</code></p>
+</li>
+<li>
+<p>Java policy enforcer - Maven artifact <code>org.keycloak:keycloak-policy-enforcer</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>It is possible that in the future, some more libraries will be included.</p>
+</div>
+<div class="paragraph">
+<p>The client libraries are supported with Java 8, so it is possible to use them with the client applications deployed on the older application servers.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_compatibility_of_the_client_libraries_with_the_server">Compatibility of the client libraries with the server</h4>
+<div class="paragraph">
+<p>Beginning with this release, we are testing and supporting client libraries with the same server version and a few previous major server versions.</p>
+</div>
+<div class="paragraph">
+<p>For details about supported versions of client libraries with server versions, see the <a href="https://www.keycloak.org/docs/26.0.0/upgrading/#_upgrade_client_libraries">Upgrading Guide</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_user_sessions_persisted_by_default">User sessions persisted by default</h3>
+<div class="paragraph">
+<p>Keycloak 25 introduced the feature <code>persistent-user-sessions</code>. With this feature enabled all user sessions are persisted in the database as opposed to the previous behavior where only offline sessions were persisted.
+In Keycloak 26, this feature is enabled by default. This means that all user sessions are persisted in the database by default.</p>
+</div>
+<div class="paragraph">
+<p>It is possible to revert this behavior to the previous state by disabling the feature. Follow the <code>Volatile user sessions</code> section in <a href="https://www.keycloak.org/server/caching">Configuring distributed caches</a> guide for more details.</p>
+</div>
+<div class="paragraph">
+<p>For information on how to upgrade, see the <a href="https://www.keycloak.org/docs/26.0.0/upgrading/">Upgrading Guide</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_new_default_login_theme">New default login theme</h3>
+<div class="paragraph">
+<p>There is now a new version (<code>v2</code>) of the <code>keycloak</code> login theme, which provides an improved look and feel, including support for switching automatically to a dark theme based on user preferences.</p>
+</div>
+<div class="paragraph">
+<p>The previous version (<code>v1</code>) is now deprecated, and will be removed in a future release.</p>
+</div>
+<div class="paragraph">
+<p>For all new realms, <code>keycloak.v2</code> will be the default login theme.  Also, any existing realm that never explicitly set a login theme will be switched to <code>keycloak.v2</code>.
+= Highly available multi-site deployments</p>
+</div>
+<div class="paragraph">
+<p>Keycloak 26 introduces significant improvements to the recommended HA multi-site architecture, most notably:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Keycloak deployments are now able to handle user requests simultaneously in both sites.</p>
+</li>
+<li>
+<p>Active monitoring of the connectivity between the sites is now required to update the replication between the sites in case of a failure.</p>
+</li>
+<li>
+<p>The loadbalancer blueprint has been updated to use the AWS Global Accelerator as this avoids prolonged fail-over times caused by DNS caching by clients.</p>
+</li>
+<li>
+<p>Persistent user sessions are now a requirement of the architecture. Consequently, user sessions will be kept
+on Keycloak or Infinispan upgrades.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For information on how to migrate, see the <a href="https://www.keycloak.org/docs/26.0.0/upgrading/">Upgrading Guide</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_admin_bootstrapping_and_recovery">Admin Bootstrapping and Recovery</h3>
+<div class="paragraph">
+<p>In the past, regaining access to a Keycloak instance when all admin users were locked out was a challenging and complex process. Recognizing these challenges and aiming to significantly enhance the user experience, Keycloak now offers several straightforward methods to bootstrap a temporary admin account and recover lost admin access.</p>
+</div>
+<div class="paragraph">
+<p>It is now possible to run the <code>start</code> or <code>start-dev</code> commands with specific options to create a temporary admin account. Additionally, a new dedicated command has been introduced, which allows users to regain admin access without hassle.</p>
+</div>
+<div class="paragraph">
+<p>For detailed instructions and more information on this topic, refer to the <a href="https://www.keycloak.org/server/bootstrap-admin-recovery">Admin Bootstrap and Recovery</a> guide.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_opentelemetry_tracing_preview">OpenTelemetry Tracing preview</h3>
+<div class="paragraph">
+<p>The underlying Quarkus support for OpenTelemetry Tracing has been exposed to Keycloak and allows obtaining application traces for better observability.
+It helps to find performance bottlenecks, determine the cause of application failures, trace a request through the distributed system, and much more.
+The support is in preview mode, and we would be happy to obtain any feedback.</p>
+</div>
+<div class="paragraph">
+<p>For more information, see the <a href="https://www.keycloak.org/server/tracing">Enabling Tracing</a> guide.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_openid_for_verifiable_credential_issuance">OpenID for Verifiable Credential Issuance</h3>
+<div class="paragraph">
+<p>The OpenID for Verifiable Credential Issuance (OID4VCI) is still an experimental feature in Keycloak, but it was greatly improved in this release. You will find significant development and discussions
+in the <a href="https://github.com/keycloak/kc-sig-fapi">Keycloak OAuth SIG</a>. Anyone from the Keycloak community is welcome to join.</p>
+</div>
+<div class="paragraph">
+<p>Many thanks to all members of the OAuth SIG group for the participation on the development and discussions about this feature. Especially thanks to the
+<a href="https://github.com/francis-pouatcha">Francis Pouatcha</a>, <a href="https://github.com/Captain-P-Goldfish">Pascal Knüppel</a>, <a href="https://github.com/tnorimat">Takashi Norimatsu</a>,
+<a href="https://github.com/IngridPuppet">Ingrid Kamga</a>, <a href="https://github.com/wistefan">Stefan Wiedemann</a> and <a href="https://github.com/thomasdarimont">Thomas Darimont</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_dpop_improvements">DPoP improvements</h3>
+<div class="paragraph">
+<p>The DPoP (OAuth 2.0 Demonstrating Proof-of-Possession) preview feature has improvements. The DPoP is now supported for all grant types.
+With previous releases, this feature was supported only for the <code>authorization_code</code> grant type. Support also exists for the DPoP token type on the UserInfo endpoint.</p>
+</div>
+<div class="paragraph">
+<p>Many thanks to <a href="https://github.com/Captain-P-Goldfish">Pascal Knüppel</a> for the contribution.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_removal_of_gelf_logging_handler">Removal of GELF logging handler</h3>
+<div class="paragraph">
+<p>GELF support has been deprecated for a while now, and with this release it has been finally removed from Keycloak.
+Other log handlers are available and fully supported to be used as a replacement of GELF, for example Syslog. For details
+see the <a href="https://www.keycloak.org/server/logging">Logging guide</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_lightweight_access_tokens_for_admin_rest_api">Lightweight access tokens for Admin REST API</h3>
+<div class="paragraph">
+<p>Lightweight access tokens can now be used on the admin REST API. The <code>security-admin-console</code> and <code>admin-cli</code> clients are now using lightweight access tokens by default, so “Always Use Lightweight Access Token” and “Full Scope Allowed” are now enabled on these two clients. However, the behavior in the admin console should effectively remain the same. Be cautious if you have made changes to these two clients and if you are using them for other purposes.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_keycloak_javascript_adapter_now_standalone">Keycloak JavaScript adapter now standalone</h3>
+<div class="paragraph">
+<p>Keycloak JavaScript adapter is now a standalone library and is therefore no longer served statically from the Keycloak server. The goal is to de-couple the library from the Keycloak server, so that it can be refactored independently, simplifying the code and making it easier to maintain in the future. Additionally, the library is now free of third-party dependencies, which makes it more lightweight and easier to use in different environments.</p>
+</div>
+<div class="paragraph">
+<p>For a complete breakdown of the changes consult the <a href="https://www.keycloak.org/docs/26.0.0/upgrading/">Upgrading Guide</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_hostname_v1_feature_removed">Hostname v1 feature removed</h3>
+<div class="paragraph">
+<p>The deprecated hostname v1 feature was removed. This feature was deprecated in Keycloak 25 and replaced by hostname v2. If you are still using this feature, you must migrate to hostname v2. For more details, see the <a href="https://www.keycloak.org/server/hostname">Configuring the hostname (v2)</a> and <a href="https://www.keycloak.org/docs/latest/upgrading/#new-hostname-options">the initial migration guide</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_automatic_redirect_from_root_to_relative_path">Automatic redirect from root to relative path</h3>
+<div class="paragraph">
+<p>User is automatically redirected to the path where Keycloak is hosted when the <code>http-relative-path</code> property is specified.
+It means when the relative path is set to <code>/auth</code>, and the user access <code>localhost:8080/</code>, the page is redirected to <code>localhost:8080/auth</code>.</p>
+</div>
+<div class="paragraph">
+<p>The same applies to the management interface when the <code>http-management-relative-path</code> or <code>http-relative-path</code> property is specified.</p>
+</div>
+<div class="paragraph">
+<p>It improves user experience as users no longer need to set the relative path to the URL explicitly.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_persisting_revoked_access_tokens_across_restarts">Persisting revoked access tokens across restarts</h3>
+<div class="paragraph">
+<p>In this release, revoked access tokens are written to the database and reloaded when the cluster is restarted by default when using the embedded caches.</p>
+</div>
+<div class="paragraph">
+<p>For information on how to migrate, see the <a href="https://www.keycloak.org/docs/26.0.0/upgrading/">Upgrading Guide</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_client_attribute_condition_in_client_policies">Client Attribute condition in Client Policies</h3>
+<div class="paragraph">
+<p>The condition based on the client-attribute was added into Client Policies. You can use condition to specify for the clients
+with the specified client attribute having a specified value. It is possible to use either an AND or OR condition when evaluating this condition as mentioned in the documentation
+for client policies.</p>
+</div>
+<div class="paragraph">
+<p>Many thanks to <a href="https://github.com/y-tabata">Yoshiyuki Tabata</a> for the contribution.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_specify_different_log_levels_for_log_handlers">Specify different log levels for log handlers</h3>
+<div class="paragraph">
+<p>It is possible to specify log levels for all available log handlers, such as <code>console</code>, <code>file</code>, or <code>syslog</code>.
+The more fine-grained approach provides the ability to control logging over the whole application and be tailored to your needs.</p>
+</div>
+<div class="paragraph">
+<p>For more information, see the <a href="https://www.keycloak.org/server/logging">Logging guide</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_proxy_option_removed">Proxy option removed</h3>
+<div class="paragraph">
+<p>The deprecated <code>proxy</code> option was removed. This option was deprecated in Keycloak 24 and replaced by the <code>proxy-headers</code> option in combination with hostname options as needed. For more details, see <a href="https://www.keycloak.org/server/reverseproxy">using a reverse proxy</a> and <a href="https://www.keycloak.org/docs/latest/upgrading/index.html#deprecated-proxy-option">the initial migration guide</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_option_proxy_trusted_addresses_added">Option <code>proxy-trusted-addresses</code> added</h3>
+<div class="paragraph">
+<p>The <code>proxy-trusted-addresses</code> can be used when the <code>proxy-headers</code> option is set to specify a allowlist of trusted proxy addresses. If the proxy address for a given request is not trusted, then the respective proxy header values will not be used.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_option_proxy_protocol_enabled_added">Option <code>proxy-protocol-enabled</code> added</h3>
+<div class="paragraph">
+<p>The <code>proxy-protocol-enabled</code> option controls whether the server should use the HA PROXY protocol when serving requests from behind a proxy. When set to true, the remote address returned will be the one from the actual connecting client.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_option_to_reload_trust_and_key_material_added">Option to reload trust and key material added</h3>
+<div class="paragraph">
+<p>The <code>https-certificates-reload-period</code> option can be set to define the reloading period of key store, trust store, and certificate files referenced by https-* options. Use -1 to disable reloading. Defaults to 1h (one hour).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_options_to_configure_cache_max_count_added">Options to configure cache max-count added</h3>
+<div class="paragraph">
+<p>The <code>--cache-embedded-${CACHE_NAME}-max-count=</code> can be set to define an upper bound on the number of cache entries in the specified cache.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_the_https_trust_store_options_have_been_undeprecated">The <code>https-trust-store-*</code> options have been undeprecated</h3>
+<div class="paragraph">
+<p>Based on the community feedback, we decided to undeprecate <code>https-trust-store-*</code> options to allow better granularity in trusted certificates.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_the_java_keystore_key_provider_supports_more_algorithms_and_vault_secrets">The <code>java-keystore</code> key provider supports more algorithms and vault secrets</h3>
+<div class="paragraph">
+<p>The <code>java-keystore</code> key provider, which allows loading a realm key from an external java keystore file, has been modified to manage all Keycloak algorithms. Besides, the keystore and key secrets, needed to retrieve the actual key from the store, can be configured using the <a href="https://www.keycloak.org/docs/26.0.0/server_admin/#_vault-administration">vault</a>. Therefore a Keycloak realm can externalize any key to the encrypted file without sensitive data stored in the database.</p>
+</div>
+<div class="paragraph">
+<p>For more information about this subject, see <a href="https://www.keycloak.org/docs/26.0.0/server_admin/#realm_keys">Configuring realm keys</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_adding_support_for_ecdh_es_encryption_key_management_algorithms">Adding support for ECDH-ES encryption key management algorithms</h3>
+<div class="paragraph">
+<p>Now Keycloak allows configuring ECDH-ES, ECDH-ES+A128KW, ECDH-ES+A192KW or ECDH-ES+A256KW as the encryption key management algorithm for clients. The Key Agreement with Elliptic Curve Diffie-Hellman Ephemeral Static (ECDH-ES) specification introduces three new header parameters for the JWT: <code>epk</code>, <code>apu</code> and <code>apv</code>. Currently Keycloak implementation only manages the compulsory <code>epk</code> while the other two (which are optional) are never added to the header. For more information about those algorithms please refer to the <a href="https://datatracker.ietf.org/doc/html/rfc7518#section-4.6">JSON Web Algorithms (JWA)</a>.</p>
+</div>
+<div class="paragraph">
+<p>Also, a new key provider, <code>ecdh-generated</code>, is available to generate realm keys and support for ECDH algorithms is added into the Java KeyStore provider.</p>
+</div>
+<div class="paragraph">
+<p>Many thanks to <a href="https://github.com/justin-tay">Justin Tay</a> for the contribution.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_support_for_multiple_instances_of_a_social_broker_in_a_realm">Support for multiple instances of a social broker in a realm</h3>
+<div class="paragraph">
+<p>It is now possible to have multiple instances of the same social broker in a realm.</p>
+</div>
+<div class="paragraph">
+<p>Most of the time a realm does not need multiple instances of the same social broker. But due to the introduction
+of the <code>organization</code> feature, it should be possible to link different instances of the same social broker
+to different organizations.</p>
+</div>
+<div class="paragraph">
+<p>When creating a social broker, you should now provide an <code>Alias</code> and optionally a <code>Display name</code> just like any other
+broker.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_new_generalized_event_types_for_credentials">New generalized event types for credentials</h3>
+<div class="paragraph">
+<p>There are now generalized events for updating (<code>UPDATE_CREDENTIAL</code>) and removing (<code>REMOVE_CREDENTIAL</code>) a credential. The credential type is described in the <code>credential_type</code> attribute of the events. The new event types are supported by the Email Event Listener.</p>
+</div>
+<div class="paragraph">
+<p>The following event types are now deprecated and will be removed in a future version: <code>UPDATE_PASSWORD</code>, <code>UPDATE_PASSWORD_ERROR</code>, <code>UPDATE_TOTP</code>, <code>UPDATE_TOTP_ERROR</code>, <code>REMOVE_TOTP</code>, <code>REMOVE_TOTP_ERROR</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_customizable_footer_in_login_themes">Customizable Footer in login Themes</h3>
+<div class="paragraph">
+<p>The <code>template.ftl</code> file in the <code>base/login</code> and the <code>keycloak.v2/login</code> theme now allows to customize the footer
+of the login box. This can be used to show common links or include custom scripts at the end of the page.</p>
+</div>
+<div class="paragraph">
+<p>The new <code>footer.ftl</code> template provides a <code>content</code> macro that is rendered at the bottom of the "login box".</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_keycloak_cr_supports_standard_scheduling_options">Keycloak CR supports standard scheduling options</h3>
+<div class="paragraph">
+<p>The Keycloak CR now exposes first class properties for controlling the scheduling of your Keycloak Pods.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see the
+<a href="https://www.keycloak.org/operator/advanced-configuration">Operator Advanced Configuration</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_keycloakrealmimport_cr_supports_placeholder_replacement">KeycloakRealmImport CR supports placeholder replacement</h3>
+<div class="paragraph">
+<p>The KeycloakRealmImport CR now exposes <code>spec.placeholders</code> to create environment variables for placeholder replacement in the import.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see the
+<a href="https://www.keycloak.org/operator/realm-import">Operator Realm Import</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_configuring_the_ldap_connection_pool">Configuring the LDAP Connection Pool</h3>
+<div class="paragraph">
+<p>In this release, the LDAP connection pool configuration relies solely on system properties.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see <a href="https://www.keycloak.org/docs/26.0.0/server_admin/#_ldap_connection_pool">Configuring the connection pool</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_infinispan_marshalling_changes_to_infinispan_protostream">Infinispan marshalling changes to Infinispan Protostream</h3>
+<div class="paragraph">
+<p>Marshalling is the process of converting Java objects into bytes to send them across the network between Keycloak servers.
+With Keycloak 26, we changed the marshalling format from JBoss Marshalling to Infinispan Protostream.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">
+JBoss Marshalling and Infinispan Protostream are not compatible with each other and incorrect usage may lead to data loss.
+Consequently, all caches are cleared when upgrading to this version.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Infinispan Protostream is based on <a href="https://protobuf.dev/programming-guides/proto3/">Protocol Buffers</a> (proto 3), which has the advantage of backwards/forwards compatibility.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_removal_of_osgi_metadata">Removal of OSGi metadata</h3>
+<div class="paragraph">
+<p>Since all of the Java adapters that used OSGi metadata have been removed we have stopped generating OSGi metadata for our jars.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_group_related_events_no_longer_fired_when_removing_a_realm">Group-related events no longer fired when removing a realm</h3>
+<div class="paragraph">
+<p>With the goal of improving the scalability of groups, they are now removed directly from the database when removing a realm.
+As a consequence, group-related events like the <code>GroupRemovedEvent</code> are no longer fired when removing a realm.</p>
+</div>
+<div class="paragraph">
+<p>For information on how to migrate, see the <a href="https://www.keycloak.org/docs/26.0.0/upgrading/">Upgrading Guide</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_identity_providers_no_longer_available_from_the_realm_representation">Identity Providers no longer available from the realm representation</h3>
+<div class="paragraph">
+<p>As part of the improvements around the scalability of realms and organizations when they have many identity providers, the realm representation
+no longer holds the list of identity providers. However, they are still available from the realm representation
+when exporting a realm.</p>
+</div>
+<div class="paragraph">
+<p>For information on how to migrate, see the <a href="https://www.keycloak.org/docs/26.0.0/upgrading/">Upgrading Guide</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_securing_applications_documentation_converted_into_the_guide_format">Securing Applications documentation converted into the guide format</h3>
+<div class="paragraph">
+<p>The <em>Securing Applications and Services</em> documentation was converted into the new format similar to the <em>Server Installation and Configuration</em> documentation converted in the previous releases.
+The documentation is now available under <a href="https://www.keycloak.org/guides">Keycloak Guides</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_removal_of_legacy_cookies">Removal of legacy cookies</h3>
+<div class="paragraph">
+<p>Keycloak no longer sends <code>_LEGACY</code> cookies, which where introduced as a work-around to older browsers not supporting
+the <code>SameSite</code> flag on cookies.</p>
+</div>
+<div class="paragraph">
+<p>The <code>_LEGACY</code> cookies also served another purpose, which was to allow login from an insecure context. Although, this is
+not recommended at all in production deployments of Keycloak, it is fairly frequent to access Keycloak over <code>http</code> outside
+of <code>localhost</code>. As an alternative to the <code>_LEGACY</code> cookies Keycloak now doesn&#8217;t set the <code>secure</code> flag and sets <code>SameSite=Lax</code>
+instead of <code>SameSite=None</code> when it detects an insecure context is used.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_property_origin_in_the_userrepresentation_is_deprecated">Property <code>origin</code> in the <code>UserRepresentation</code> is deprecated</h3>
+<div class="paragraph">
+<p>The <code>origin</code> property in the <code>UserRepresentation</code> is deprecated and planned to be removed in future releases.</p>
+</div>
+<div class="paragraph">
+<p>Instead, prefer using the <code>federationLink</code> property to obtain the provider to which a user is linked with.</p>
+</div>
+</div>

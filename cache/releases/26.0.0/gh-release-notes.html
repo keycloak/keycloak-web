@@ -1,0 +1,145 @@
+<div>
+    <h2>Highlights</h2>
+<div class="sect2">
+<h3 id="_organizations_supported">Organizations supported</h3>
+<div class="paragraph">
+<p>Starting with Keycloak 26, the Organizations feature is fully supported.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_client_libraries_updates">Client libraries updates</h3>
+<div class="sect3">
+<h4 id="_dedicated_release_cycle_for_the_client_libraries">Dedicated release cycle for the client libraries</h4>
+<div class="paragraph">
+<p>From this release, some of the Keycloak client libraries will have release cycle independent of the Keycloak server release cycle. The 26.0.0 release may be the last one
+when the client libraries are released together with the Keycloak server. But from now on, the client libraries may be released at a different time than the Keycloak server.</p>
+</div>
+<div class="paragraph">
+<p>The client libraries are these artifacts:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Java admin client - Maven artifact <code>org.keycloak:keycloak-admin-client</code></p>
+</li>
+<li>
+<p>Java authorization client - Maven artifact <code>org.keycloak:keycloak-authz-client</code></p>
+</li>
+<li>
+<p>Java policy enforcer - Maven artifact <code>org.keycloak:keycloak-policy-enforcer</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>It is possible that in the future, some more libraries will be included.</p>
+</div>
+<div class="paragraph">
+<p>The client libraries are supported with Java 8, so it is possible to use them with the client applications deployed on the older application servers.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_compatibility_of_the_client_libraries_with_the_server">Compatibility of the client libraries with the server</h4>
+<div class="paragraph">
+<p>Beginning with this release, we are testing and supporting client libraries with the same server version and a few previous major server versions.</p>
+</div>
+<div class="paragraph">
+<p>For details about supported versions of client libraries with server versions, see the <a href="https://www.keycloak.org/docs/26.0.0/upgrading/#_upgrade_client_libraries">Upgrading Guide</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_user_sessions_persisted_by_default">User sessions persisted by default</h3>
+<div class="paragraph">
+<p>Keycloak 25 introduced the feature <code>persistent-user-sessions</code>. With this feature enabled all user sessions are persisted in the database as opposed to the previous behavior where only offline sessions were persisted.
+In Keycloak 26, this feature is enabled by default. This means that all user sessions are persisted in the database by default.</p>
+</div>
+<div class="paragraph">
+<p>It is possible to revert this behavior to the previous state by disabling the feature. Follow the <code>Volatile user sessions</code> section in <a href="https://www.keycloak.org/server/caching">Configuring distributed caches</a> guide for more details.</p>
+</div>
+<div class="paragraph">
+<p>For information on how to upgrade, see the <a href="https://www.keycloak.org/docs/26.0.0/upgrading/">Upgrading Guide</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_new_default_login_theme">New default login theme</h3>
+<div class="paragraph">
+<p>There is now a new version (<code>v2</code>) of the <code>keycloak</code> login theme, which provides an improved look and feel, including support for switching automatically to a dark theme based on user preferences.</p>
+</div>
+<div class="paragraph">
+<p>The previous version (<code>v1</code>) is now deprecated, and will be removed in a future release.</p>
+</div>
+<div class="paragraph">
+<p>For all new realms, <code>keycloak.v2</code> will be the default login theme.  Also, any existing realm that never explicitly set a login theme will be switched to <code>keycloak.v2</code>.
+= Highly available multi-site deployments</p>
+</div>
+<div class="paragraph">
+<p>Keycloak 26 introduces significant improvements to the recommended HA multi-site architecture, most notably:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Keycloak deployments are now able to handle user requests simultaneously in both sites.</p>
+</li>
+<li>
+<p>Active monitoring of the connectivity between the sites is now required to update the replication between the sites in case of a failure.</p>
+</li>
+<li>
+<p>The loadbalancer blueprint has been updated to use the AWS Global Accelerator as this avoids prolonged fail-over times caused by DNS caching by clients.</p>
+</li>
+<li>
+<p>Persistent user sessions are now a requirement of the architecture. Consequently, user sessions will be kept
+on Keycloak or Infinispan upgrades.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For information on how to migrate, see the <a href="https://www.keycloak.org/docs/26.0.0/upgrading/">Upgrading Guide</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_admin_bootstrapping_and_recovery">Admin Bootstrapping and Recovery</h3>
+<div class="paragraph">
+<p>In the past, regaining access to a Keycloak instance when all admin users were locked out was a challenging and complex process. Recognizing these challenges and aiming to significantly enhance the user experience, Keycloak now offers several straightforward methods to bootstrap a temporary admin account and recover lost admin access.</p>
+</div>
+<div class="paragraph">
+<p>It is now possible to run the <code>start</code> or <code>start-dev</code> commands with specific options to create a temporary admin account. Additionally, a new dedicated command has been introduced, which allows users to regain admin access without hassle.</p>
+</div>
+<div class="paragraph">
+<p>For detailed instructions and more information on this topic, refer to the <a href="https://www.keycloak.org/server/bootstrap-admin-recovery">Admin Bootstrap and Recovery</a> guide.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_opentelemetry_tracing_preview">OpenTelemetry Tracing preview</h3>
+<div class="paragraph">
+<p>The underlying Quarkus support for OpenTelemetry Tracing has been exposed to Keycloak and allows obtaining application traces for better observability.
+It helps to find performance bottlenecks, determine the cause of application failures, trace a request through the distributed system, and much more.
+The support is in preview mode, and we would be happy to obtain any feedback.</p>
+</div>
+<div class="paragraph">
+<p>For more information, see the <a href="https://www.keycloak.org/server/tracing">Enabling Tracing</a> guide.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_openid_for_verifiable_credential_issuance">OpenID for Verifiable Credential Issuance</h3>
+<div class="paragraph">
+<p>The OpenID for Verifiable Credential Issuance (OID4VCI) is still an experimental feature in Keycloak, but it was greatly improved in this release. You will find significant development and discussions
+in the <a href="https://github.com/keycloak/kc-sig-fapi">Keycloak OAuth SIG</a>. Anyone from the Keycloak community is welcome to join.</p>
+</div>
+<div class="paragraph">
+<p>Many thanks to all members of the OAuth SIG group for the participation on the development and discussions about this feature. Especially thanks to the
+<a href="https://github.com/francis-pouatcha">Francis Pouatcha</a>, <a href="https://github.com/Captain-P-Goldfish">Pascal Knüppel</a>, <a href="https://github.com/tnorimat">Takashi Norimatsu</a>,
+<a href="https://github.com/IngridPuppet">Ingrid Kamga</a>, <a href="https://github.com/wistefan">Stefan Wiedemann</a> and <a href="https://github.com/thomasdarimont">Thomas Darimont</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_dpop_improvements">DPoP improvements</h3>
+<div class="paragraph">
+<p>The DPoP (OAuth 2.0 Demonstrating Proof-of-Possession) preview feature has improvements. The DPoP is now supported for all grant types.
+With previous releases, this feature was supported only for the <code>authorization_code</code> grant type. Support also exists for the DPoP token type on the UserInfo endpoint.</p>
+</div>
+<div class="paragraph">
+<p>Many thanks to <a href="https://github.com/Captain-P-Goldfish">Pascal Knüppel</a> for the contribution.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_removal_of_gelf_logging_handler">Removal of GELF lo
