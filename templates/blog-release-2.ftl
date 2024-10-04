@@ -2,7 +2,7 @@
 
 <#if version.releaseNotes??>
     <h2>Release notes</h2>
-    <#include "../${version.releaseNotes}">
+    <#include "../${version.releaseNotes}" parse=false>
 </#if>
 
 <h2>Upgrading</h2>
