@@ -244,15 +244,15 @@
                                             <overWrite>true</overWrite>
                                             <outputDirectory>${project.build.directory}</outputDirectory>
                                         </artifactItem>
-<!--                                        <artifactItem>-->
-<!--                                            <groupId>org.keycloak</groupId>-->
-<!--                                            <artifactId>keycloak-client-guides</artifactId>-->
-<!--                                            <version>${version.keycloak.client}</version>-->
-<!--                                            <classifier>asciidoc</classifier>-->
-<!--                                            <type>zip</type>-->
-<!--                                            <overWrite>true</overWrite>-->
-<!--                                            <outputDirectory>${project.build.directory}</outputDirectory>-->
-<!--                                        </artifactItem>-->
+                                        <artifactItem>
+                                            <groupId>org.keycloak</groupId>
+                                            <artifactId>keycloak-client-guides</artifactId>
+                                            <version>${version.keycloak.client}</version>
+                                            <classifier>asciidoc</classifier>
+                                            <type>zip</type>
+                                            <overWrite>true</overWrite>
+                                            <outputDirectory>${project.build.directory}</outputDirectory>
+                                        </artifactItem>
                                         <artifactItem>
                                             <groupId>org.keycloak</groupId>
                                             <artifactId>keycloak-client-guides</artifactId>
