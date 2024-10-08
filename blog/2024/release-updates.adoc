@@ -1,5 +1,5 @@
 :title: Backwards compatibility in Keycloak releases
-:date: 2024-08-19
+:date: 2024-10-08
 :publish: false
 :author: Stian Thorgersen
 
