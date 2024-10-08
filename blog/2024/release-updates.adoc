@@ -1,6 +1,6 @@
 :title: Backwards compatibility in Keycloak releases
 :date: 2024-10-08
-:publish: false
+:publish: true
 :author: Stian Thorgersen
 
 With four major releases of Keycloak every year it can be a daunting task to keep deployments up to date. Especially,
