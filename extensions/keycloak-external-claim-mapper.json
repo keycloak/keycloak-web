@@ -1,0 +1,5 @@
+{
+  "name": "Keycloak External Claim Mapper",
+  "description": "Implementation of the keycloak internal SPI protocol-mapper, that allows to fetch remote http json data, transform and include it into user JWT.",
+  "website": "https://github.com/zloom/keycloak-external-claim-mapper"
+}
