@@ -1,0 +1,50 @@
+<div>
+
+<h2>Upgrading</h2>
+<p>Before upgrading refer to <a href="file:/home/runner/work/keycloak-rel/keycloak-rel/target/web/docs/latest/upgrading/index.html#migration-changes">the migration guide</a> for a complete list of changes.</p>
+
+<h2>All resolved issues</h2>
+
+
+
+<h3>Enhancements</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/32152">#32152</a> Clarify the behaviour of multiple Operator versions installed in the same cluster <code>operator</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/33275">#33275</a> Better logging when error happens during transaction commit <code>storage</code></li>
+</ul>
+
+<h3>Bugs</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/8935">#8935</a> keycloak.js example from the documentation leads to error path <code>adapter/javascript</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/19358">#19358</a> Issue with concurrent user & group delete, unable to cleanup resource server user-policy & group-policy <code>authorization-services</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/31848">#31848</a> Repeated email verifications while logging in through IDP caused by email case sensitivity <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/32266">#32266</a> LDAP Import: KERBEROS_PRINCIPAL not updated when UserPrincipal changes and user already exists <code>ldap</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/32617">#32617</a> Nightly Cypress tests for the Admin Console are failing on Firefox <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/32844">#32844</a> Login V2: Missing "dir" attributes <code>login/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/32847">#32847</a> Admin UI defaults to master realm even without permissions to it <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/32962">#32962</a> Possible issue with unavailable CryptoIntegration when using keycloak-authz-client with private_key_jwt and ECDSA algorithm <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/33513">#33513</a> Can get authorization code on a non verified user with some specific kc_action (AIA) <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/33539">#33539</a> Keycloak In Docker: ERROR: Strict hostname resolution configured but no hostname setting provided <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/33549">#33549</a> Flaky test: org.keycloak.testsuite.broker.KcOidcBrokerTest#testPostBrokerLoginFlowWithOTP_bruteForceEnabled <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/33557">#33557</a> Unable to submit forms in Safari <code>account/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/33576">#33576</a> Broken links / anchors after KC26 release <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/33578">#33578</a> In imported realms, the ability to use environment variables has disappeared <code>import-export</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/33585">#33585</a> Fix runaway asterisk formatting in TLS documentation <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/33638">#33638</a> Non-optimized start command gives erroneous warnings for runtime spi options <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/33642">#33642</a> RTL not working on keycloak.v2 login template <code>login/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/33645">#33645</a>  keycloak-js register broken: createRegisterUrl not awaited <code>adapter/javascript</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/33699">#33699</a> Failure to redirect to organization IdP when the organization scope is included <code>organizations</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/33735">#33735</a> Organizations section is shown in account console if organizations is not enabled for a realm. <code>account/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/33776">#33776</a> [Regression] 26.0.0 return empty "access: []" JWT for Docker-v2 Auth provider, resulting in "access denied" <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/33777">#33777</a> Error when adding or removing a user from an organisation when there are 2 or more Keycloak servers in a cluster <code>organizations</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/33780">#33780</a> Upgrade to 26 fails with 'ERROR: index "idx_us_sess_id_on_cl_sess" does not exist' <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/33814">#33814</a> NPE when device representation cannot be parsed <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/33817">#33817</a> NEP when Default Role is not present on CachedRealm <code>infinispan</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/33874">#33874</a> [Keycloak CI] - AuroraDB IT - Error creating EC2 runner instance </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/33875">#33875</a> [Keycloak CI] - FIPS IT - Failed to fetch maven </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/33883">#33883</a> Auth not possible for auth session where user was enabled in the meantime <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/33907">#33907</a> NPE thrown in whoami endpoint <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/33967">#33967</a>  password is a required field <code>admin/ui</code></li>
+</ul>
+
+</div>

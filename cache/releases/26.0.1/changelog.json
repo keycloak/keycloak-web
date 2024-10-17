@@ -1,0 +1,253 @@
+[ {
+  "number" : 8935,
+  "repository" : "keycloak",
+  "title" : "keycloak.js example from the documentation leads to error path",
+  "kind" : "bug",
+  "area" : "adapter/javascript",
+  "url" : "https://github.com/keycloak/keycloak/issues/8935"
+}, {
+  "number" : 19358,
+  "repository" : "keycloak",
+  "title" : "Issue with concurrent user & group delete, unable to cleanup resource server user-policy & group-policy",
+  "kind" : "bug",
+  "area" : "authorization-services",
+  "url" : "https://github.com/keycloak/keycloak/issues/19358"
+}, {
+  "number" : 30684,
+  "repository" : "keycloak",
+  "title" : "Commit proto.lock files to release/26.0 branch",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/30684"
+}, {
+  "number" : 31848,
+  "repository" : "keycloak",
+  "title" : "Repeated email verifications while logging in through IDP caused by email case sensitivity",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/31848"
+}, {
+  "number" : 32152,
+  "repository" : "keycloak",
+  "title" : "Clarify the behaviour of multiple Operator versions installed in the same cluster",
+  "kind" : "enhancement",
+  "area" : "operator",
+  "url" : "https://github.com/keycloak/keycloak/issues/32152"
+}, {
+  "number" : 32266,
+  "repository" : "keycloak",
+  "title" : "LDAP Import: KERBEROS_PRINCIPAL not updated when UserPrincipal changes and user already exists",
+  "kind" : "bug",
+  "area" : "ldap",
+  "url" : "https://github.com/keycloak/keycloak/issues/32266"
+}, {
+  "number" : 32617,
+  "repository" : "keycloak",
+  "title" : "Nightly Cypress tests for the Admin Console are failing on Firefox",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/32617"
+}, {
+  "number" : 32844,
+  "repository" : "keycloak",
+  "title" : "Login V2: Missing \"dir\" attributes",
+  "kind" : "bug",
+  "area" : "login/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/32844"
+}, {
+  "number" : 32847,
+  "repository" : "keycloak",
+  "title" : "Admin UI defaults to master realm even without permissions to it",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/32847"
+}, {
+  "number" : 32962,
+  "repository" : "keycloak",
+  "title" : "Possible issue with unavailable CryptoIntegration when using keycloak-authz-client with private_key_jwt and ECDSA algorithm",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/32962"
+}, {
+  "number" : 33275,
+  "repository" : "keycloak",
+  "title" : "Better logging when error happens during transaction commit",
+  "kind" : "enhancement",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/33275"
+}, {
+  "number" : 33513,
+  "repository" : "keycloak",
+  "title" : "Can get authorization code on a non verified user with some specific kc_action (AIA)",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/33513"
+}, {
+  "number" : 33539,
+  "repository" : "keycloak",
+  "title" : "Keycloak In Docker: ERROR: Strict hostname resolution configured but no hostname setting provided",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/33539"
+}, {
+  "number" : 33549,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.broker.KcOidcBrokerTest#testPostBrokerLoginFlowWithOTP_bruteForceEnabled",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/33549"
+}, {
+  "number" : 33557,
+  "repository" : "keycloak",
+  "title" : "Unable to submit forms in Safari",
+  "kind" : "bug",
+  "area" : "account/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/33557"
+}, {
+  "number" : 33566,
+  "repository" : "keycloak",
+  "title" : "Add check to ensure that no unstaged `proto.lock` files exist on PRs issued against release/26.x branches",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/33566"
+}, {
+  "number" : 33576,
+  "repository" : "keycloak",
+  "title" : "Broken links / anchors after KC26 release",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/33576"
+}, {
+  "number" : 33578,
+  "repository" : "keycloak",
+  "title" : "In imported realms, the ability to use environment variables has disappeared",
+  "kind" : "bug",
+  "area" : "import-export",
+  "url" : "https://github.com/keycloak/keycloak/issues/33578"
+}, {
+  "number" : 33585,
+  "repository" : "keycloak",
+  "title" : "Fix runaway asterisk formatting in TLS documentation",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/33585"
+}, {
+  "number" : 33638,
+  "repository" : "keycloak",
+  "title" : "Non-optimized start command gives erroneous warnings for runtime spi options",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/33638"
+}, {
+  "number" : 33642,
+  "repository" : "keycloak",
+  "title" : "RTL not working on keycloak.v2 login template",
+  "kind" : "bug",
+  "area" : "login/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/33642"
+}, {
+  "number" : 33645,
+  "repository" : "keycloak",
+  "title" : " keycloak-js register broken: createRegisterUrl not awaited",
+  "kind" : "bug",
+  "area" : "adapter/javascript",
+  "url" : "https://github.com/keycloak/keycloak/issues/33645"
+}, {
+  "number" : 33692,
+  "repository" : "keycloak",
+  "title" : "Allow proto-schema-compatibility-maven-plugin to be skipped with property",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/33692"
+}, {
+  "number" : 33699,
+  "repository" : "keycloak",
+  "title" : "Failure to redirect to organization IdP when the organization scope is included",
+  "kind" : "bug",
+  "area" : "organizations",
+  "url" : "https://github.com/keycloak/keycloak/issues/33699"
+}, {
+  "number" : 33735,
+  "repository" : "keycloak",
+  "title" : "Organizations section is shown in account console if organizations is not enabled for a realm.",
+  "kind" : "bug",
+  "area" : "account/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/33735"
+}, {
+  "number" : 33776,
+  "repository" : "keycloak",
+  "title" : "[Regression] 26.0.0 return empty \"access: []\" JWT for Docker-v2 Auth provider, resulting in \"access denied\"",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/33776"
+}, {
+  "number" : 33777,
+  "repository" : "keycloak",
+  "title" : "Error when adding or removing a user from an organisation when there are 2 or more Keycloak servers in a cluster",
+  "kind" : "bug",
+  "area" : "organizations",
+  "url" : "https://github.com/keycloak/keycloak/issues/33777"
+}, {
+  "number" : 33780,
+  "repository" : "keycloak",
+  "title" : "Upgrade to 26 fails with 'ERROR: index \"idx_us_sess_id_on_cl_sess\" does not exist'",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/33780"
+}, {
+  "number" : 33814,
+  "repository" : "keycloak",
+  "title" : "NPE when device representation cannot be parsed",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/33814"
+}, {
+  "number" : 33817,
+  "repository" : "keycloak",
+  "title" : "NEP when Default Role is not present on CachedRealm",
+  "kind" : "bug",
+  "area" : "infinispan",
+  "url" : "https://github.com/keycloak/keycloak/issues/33817"
+}, {
+  "number" : 33874,
+  "repository" : "keycloak",
+  "title" : "[Keycloak CI] - AuroraDB IT - Error creating EC2 runner instance",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/33874"
+}, {
+  "number" : 33875,
+  "repository" : "keycloak",
+  "title" : "[Keycloak CI] - FIPS IT - Failed to fetch maven",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/33875"
+}, {
+  "number" : 33881,
+  "repository" : "keycloak",
+  "title" : "Add back FIPS IT builds",
+  "kind" : "task",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/33881"
+}, {
+  "number" : 33883,
+  "repository" : "keycloak",
+  "title" : "Auth not possible for auth session where user was enabled in the meantime",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/33883"
+}, {
+  "number" : 33907,
+  "repository" : "keycloak",
+  "title" : "NPE thrown in whoami endpoint",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/33907"
+}, {
+  "number" : 33967,
+  "repository" : "keycloak",
+  "title" : " password is a required field",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/33967"
+} ]
