@@ -35,7 +35,7 @@
     <div class="row mt-3">
         <h2>Reporting security vulnerabilities</h2>
         <p>
-            If you've found a security vulnerability, please look at the <a href="security.html">instructions on how to properly report it</a>.
+            If you've found a security vulnerability, please look at the <a href="security/policy.html">instructions on how to properly report it</a>.
         </p>
     </div>
 
