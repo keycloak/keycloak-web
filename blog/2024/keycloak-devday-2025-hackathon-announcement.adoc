@@ -1,0 +1,41 @@
+:title: Keycloak DevDay 2025 Pre-Conf Event Announcement
+:date: 2024-10-24
+:publish: true
+:author: Sebastian Rose
+
+https://keycloak-day.dev/[Keycloak DevDay 2025] is just around the corner, and we would like to invite you to a special pre-event: the Keycloak Hackathon!
+
+== Hackathon: actively help shape Keycloak
+On the day before DevDay, on March 5, our hackathon will give you the opportunity to actively contribute to the further development of Keycloak.
+Whether you write code, work on the documentation, improve translations or maintain issues in the issue tracker - everyone
+can take part. The hackathon offers you the opportunity to pitch new ideas and work together in small groups on exciting projects.
+
+== Schedule of the hackathon
+*10:00*: Start of the first iteration with a pitch round. Here you can present your ideas and topics, ranging from new features and bug fixes to documentation improvements. The teams start working on the pitched topics. Our goal is to achieve measurable results by the end of the day - be it through code contributions, documentation or other important improvements for the Keycloak community.
+
+*12:30*: Lunch-break
+
+*13:30*: Another start for everyone arriving later the day.
+
+*17:00*: Closing with presentation and honouring the results
+
+== Why should you participate?
+The hackathon is a great opportunity to network and actively participate with other members of the Keycloak community. It's the perfect chance for:
+
+- Participants arriving early
+who want to make good use of the previous day.
+
+- Experienced contributors and maintainers who want to advance their projects or work on new topics.
+
+- Newcomers who want to contribute for the first time and get involved in the community - whether through code, documentation or organisational tasks. Would you like to offer a topic or work on one?
+
+== Ideas and topics
+If you have an idea or a topic that you would like to work on at the hackathon, get in touch with us! We will be happy to support you with the preparation and help you present your topic successfully.
+
+If you would like to work on a topic but don't yet know exactly what you would like to take part in, please let us know. We try to organise teams and topics at an early stage so that you can get in touch with like-minded people in advance.
+
+== How can you take part?
+Participation is easy: Grab your free pre-event ticket on the https://keycloak-day.dev/[Keycloak DevDay website] and join us! The hackathon offers a great opportunity to contribute in a relaxed atmosphere and to talk to other participants.
+to get into conversation.
+
+We look forward to seeing you at the hackathon and working together on the future of Keycloak. Let's code, document, and contribute - together for Keycloak!
