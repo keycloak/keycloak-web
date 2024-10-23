@@ -14,31 +14,17 @@ import java.util.Map;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Version {
-    @JsonProperty("version")
-    private String version;
-
-    @JsonProperty("main")
-    private String main;
-
     @JsonProperty("exports")
     private Map<String, Export> exports;
 
     @JsonProperty("dist")
     private Dist dist;
 
-    public SemanticVersion getSemanticVersion() {
-        return SemanticVersion.fromString(version);
-    }
-
     public Dist getDist() {
         return dist;
     }
 
-    public String resolveEntryPoint(boolean useLegacy) {
-        if (useLegacy) {
-            return main;
-        }
-
+    public String resolveEntryPoint() {
         Export defaultExport = exports.get(".");
         return defaultExport != null ? defaultExport.getDefaultPath() : null;
     }
