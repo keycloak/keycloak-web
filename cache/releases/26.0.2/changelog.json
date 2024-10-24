@@ -1,0 +1,169 @@
+[ {
+  "number" : 15635,
+  "repository" : "keycloak",
+  "title" : "oidc - JavaScript-Adapter LocalStorage#clearExpired does not clear all possible items",
+  "kind" : "bug",
+  "area" : "adapter/javascript",
+  "url" : "https://github.com/keycloak/keycloak/issues/15635"
+}, {
+  "number" : 19101,
+  "repository" : "keycloak",
+  "title" : "Uncaught (in promise): QuotaExceededError",
+  "kind" : "bug",
+  "area" : "adapter/javascript",
+  "url" : "https://github.com/keycloak/keycloak/issues/19101"
+}, {
+  "number" : 20287,
+  "repository" : "keycloak",
+  "title" : "When using `oidcProvider`  config url  (.well-known) it's not possible to use `silentCheckSsoRedirectUri`",
+  "kind" : "bug",
+  "area" : "adapter/javascript",
+  "url" : "https://github.com/keycloak/keycloak/issues/20287"
+}, {
+  "number" : 28978,
+  "repository" : "keycloak",
+  "title" : "some GUI validation check missing ",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/28978"
+}, {
+  "number" : 30832,
+  "repository" : "keycloak",
+  "title" : "Organization API not available from OpenAPI documentation",
+  "kind" : "bug",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/30832"
+}, {
+  "number" : 31724,
+  "repository" : "keycloak",
+  "title" : "Logout not working after removing Identity Provider of user",
+  "kind" : "bug",
+  "area" : "identity-brokering",
+  "url" : "https://github.com/keycloak/keycloak/issues/31724"
+}, {
+  "number" : 32110,
+  "repository" : "keycloak",
+  "title" : "[Documentation] - Configuring trusted certificates - Fully specify truststore path",
+  "kind" : "enhancement",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/32110"
+}, {
+  "number" : 33072,
+  "repository" : "keycloak",
+  "title" : "Passkeys: Infinite (re-)loading loop on browsers with WebAuthn Conditional UI disabled",
+  "kind" : "bug",
+  "area" : "authentication/webauthn",
+  "url" : "https://github.com/keycloak/keycloak/issues/33072"
+}, {
+  "number" : 33844,
+  "repository" : "keycloak",
+  "title" : "Wrong documentation link in keycloak-js readme",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/33844"
+}, {
+  "number" : 33902,
+  "repository" : "keycloak",
+  "title" : "Not persisted config settings prevent server start",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/33902"
+}, {
+  "number" : 33948,
+  "repository" : "keycloak",
+  "title" : "[PERF] OpenTelemetry is initialized even when disabled",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/33948"
+}, {
+  "number" : 33968,
+  "repository" : "keycloak",
+  "title" : "Not possible to close dialog boxes when clicking buttons or the close icon",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/33968"
+}, {
+  "number" : 33991,
+  "repository" : "keycloak",
+  "title" : "Doc CI - broken links error",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/33991"
+}, {
+  "number" : 34009,
+  "repository" : "keycloak",
+  "title" : "grammatical error in \"Managing Organizations\" documentation",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/34009"
+}, {
+  "number" : 34015,
+  "repository" : "keycloak",
+  "title" : "Home URL for security-admin-console is broken",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/34015"
+}, {
+  "number" : 34028,
+  "repository" : "keycloak",
+  "title" : "Custom keycloak login theme styles.css return error 404",
+  "kind" : "bug",
+  "area" : "login/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/34028"
+}, {
+  "number" : 34049,
+  "repository" : "keycloak",
+  "title" : "Org Invite: `linkExpiration` template variable represents 54 years in minutes",
+  "kind" : "bug",
+  "area" : "organizations",
+  "url" : "https://github.com/keycloak/keycloak/issues/34049"
+}, {
+  "number" : 34063,
+  "repository" : "keycloak",
+  "title" : "Respect the locale set to a user when redering verify email pages",
+  "kind" : "bug",
+  "area" : "user-profile",
+  "url" : "https://github.com/keycloak/keycloak/issues/34063"
+}, {
+  "number" : 34069,
+  "repository" : "keycloak",
+  "title" : "Do not show domain match message in the identity-first login when no login hint is provided",
+  "kind" : "bug",
+  "area" : "organizations",
+  "url" : "https://github.com/keycloak/keycloak/issues/34069"
+}, {
+  "number" : 34075,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.broker.KcOidcBrokerTest#testPostBrokerLoginFlowWithOTP_bruteForceEnabled",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/34075"
+}, {
+  "number" : 34095,
+  "repository" : "keycloak",
+  "title" : "Keycloak 26.0.0/26.0.1 Import Issue: Multiple Realms Not Imported, Duplicated Realm Imported Instead",
+  "kind" : "bug",
+  "area" : "import-export",
+  "url" : "https://github.com/keycloak/keycloak/issues/34095"
+}, {
+  "number" : 34151,
+  "repository" : "keycloak",
+  "title" : "JS password validation doesn't work as intended with uppercase and lowercase minimum requirements",
+  "kind" : "bug",
+  "area" : "login/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/34151"
+}, {
+  "number" : 34155,
+  "repository" : "keycloak",
+  "title" : "cli options starting or ending with ; or containing ;; mangle the cli handling",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/34155"
+}, {
+  "number" : 34224,
+  "repository" : "keycloak",
+  "title" : "Deleting a user leads to ISPN marshalling exception",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/34224"
+} ]
