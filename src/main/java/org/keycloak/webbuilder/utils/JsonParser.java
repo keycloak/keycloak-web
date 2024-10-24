@@ -27,4 +27,12 @@ public class JsonParser {
         }
     }
 
+    public static void write(File f, Object v) {
+        try {
+            mapper.writeValue(f, v);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }

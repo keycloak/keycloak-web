@@ -69,7 +69,7 @@ public class FreeMarker {
         downloadTemplate.process(attributes, out);
     }
 
-    public void init(Context context) {
+    public void init(Context context) throws Exception {
         globalAttributes = new HashMap<>();
 
         String root = context.config().isPublish() ? context.config().getUrls().getHome() : context.getTargetDir().toURI().toString();
@@ -96,6 +96,8 @@ public class FreeMarker {
         globalAttributes.put("archive", false);
 
         globalAttributes.put("links", context.getLinks());
+
+        globalAttributes.put("importMap", context.getImportMap());
 
         isPublish = context.config().isPublish();
         targetDir = context.getTargetDir();

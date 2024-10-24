@@ -31,6 +31,7 @@ public class Context {
     private Guides guides;
     private GuidesMetadata guidesMetadata;
     private News news;
+    private ImportMap importMap;
 
     private FreeMarker freeMarker;
     private AsciiDoctor asciiDoctor;
@@ -66,6 +67,7 @@ public class Context {
         guidesMetadata = new YamlParser().read(new File(getWebSrcDir(),"/guides.yaml"), GuidesMetadata.class);
         guides = new Guides(guidesMetadata, tmpDir, getWebSrcDir(), asciiDoctor);
         news = new News(newsDir, blogs, config);
+        importMap = new ImportMap(tmpDir.toPath());
 
         freeMarker.init(this);
         asciiDoctor.init(this);
@@ -121,6 +123,10 @@ public class Context {
 
     public Links getLinks() {
         return links;
+    }
+
+    public ImportMap getImportMap() {
+        return importMap;
     }
 
     public File getWebSrcDir() {

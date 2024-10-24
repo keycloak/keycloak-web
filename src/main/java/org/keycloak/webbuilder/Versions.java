@@ -73,11 +73,6 @@ public class Versions extends LinkedList<Versions.Version> {
             return split[0] + "." + split[1];
         }
 
-        public int getMajorVersion() {
-            String[] split = version.split("\\.");
-            return Integer.parseInt(split[0]);
-        }
-
         public Date getDate() {
             return date;
         }

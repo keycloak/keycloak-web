@@ -21,6 +21,7 @@
 
     <link rel="shortcut icon" href="${links.getResource('favicon.ico')}">
 
+    <script type="importmap">${importMap.getValue()}</script>
     <script src="${links.getResource('js/ga.js')}" type="text/javascript"></script>
     <script src="${links.getResource('bootstrap/dist/js/bootstrap.min.js')}" type="text/javascript"></script>
     <script src="${links.getResource('tocbot/dist/tocbot.min.js')}" type="text/javascript"></script>
