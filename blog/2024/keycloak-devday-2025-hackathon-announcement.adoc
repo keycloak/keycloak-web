@@ -1,5 +1,5 @@
 :title: Keycloak DevDay 2025 Pre-Conf Event Announcement
-:date: 2024-10-24
+:date: 2024-10-25
 :publish: true
 :author: Sebastian Rose
 
@@ -15,7 +15,7 @@ can take part. The hackathon offers you the opportunity to pitch new ideas and w
 
 *12:30*: Lunch-break
 
-*13:30*: Another start for everyone arriving later the day.
+*13:30*: Another start for everyone arriving later in the day.
 
 *17:00*: Closing with presentation and honouring the results
 
@@ -27,15 +27,14 @@ who want to make good use of the previous day.
 
 - Experienced contributors and maintainers who want to advance their projects or work on new topics.
 
-- Newcomers who want to contribute for the first time and get involved in the community - whether through code, documentation or organisational tasks. Would you like to offer a topic or work on one?
+- Newcomers who want to contribute for the first time and get involved in the community - whether through code, documentation or organisational tasks.
 
 == Ideas and topics
 If you have an idea or a topic that you would like to work on at the hackathon, get in touch with us! We will be happy to support you with the preparation and help you present your topic successfully.
 
-If you would like to work on a topic but don't yet know exactly what you would like to take part in, please let us know. We try to organise teams and topics at an early stage so that you can get in touch with like-minded people in advance.
+If you would like to work on a topic but don't yet know exactly what you would like to take part in, please let us know. We try to organize teams and topics at an early stage so that you can get in touch with like-minded people in advance.
 
 == How can you take part?
 Participation is easy: Grab your free pre-event ticket on the https://keycloak-day.dev/[Keycloak DevDay website] and join us! The hackathon offers a great opportunity to contribute in a relaxed atmosphere and to talk to other participants.
-to get into conversation.
 
 We look forward to seeing you at the hackathon and working together on the future of Keycloak. Let's code, document, and contribute - together for Keycloak!
