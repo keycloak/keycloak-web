@@ -139,11 +139,16 @@
                                 <td></td>
                                 <td>
                                     <span class="me-4">
-                                    <a href="https://www.npmjs.com/package/keycloak-js/v/${version.version}" target="_blank">
-                                        <i class="fa fa-link"></i> NPM
-                                    </a>
+                                        <a href="https://www.npmjs.com/package/keycloak-js/v/${version.version}" target="_blank">
+                                            <i class="fa fa-link"></i> NPM
+                                        </a>
                                     </span>
-                                    <@download category="adapter" label="js" file="keycloak-oidc-js-adapter-${version.version}" tar=true />
+                                    <span>
+                                        <a onclick="dl('adapter', 'js');" href="https://github.com/keycloak/keycloak/releases/download/${version.version}/keycloak-js-${version.version}.tgz" target="_blank">
+                                            <i class="fa fa-download" aria-hidden="true"></i>
+                                            TAR.GZ
+                                        </a>
+                                    </span>
                                 </td>
                             </tr>
                         </table>
