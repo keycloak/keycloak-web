@@ -1,6 +1,6 @@
 <#import "/templates/template.ftl" as tmpl>
 
-<@tmpl.page current="nightly-guides" title="Guides / Nightly Release">
+<@tmpl.page current="nightly-guides" title="Guides / Nightly Release" noindex=true>
 
 <script src="${links.getResource('js/guides.js')}" type="text/javascript"></script>
 
@@ -22,7 +22,14 @@
 </nav>
 
 <div class="jumbotron jumbotron-fluid bg-light kc-bg-triangles pt-4">
+
     <div class="container">
+        <div class="alert alert-warning" role="alert">
+          <h4>Nightly release</h4>
+
+          These guides are for the unstable nightly release, for the latest release go <a href="${links.guides}">here</a>.
+        </div>
+
         <#list guides.categories as c>
             <div class="row guide-category" id="${c.id}">
                 <h2>${c.title}</h2>

@@ -1,6 +1,6 @@
 <#import "/templates/template.ftl" as tmpl>
 
-<@tmpl.page current="nightly" title="Nightly Release">
+<@tmpl.page current="nightly" title="Nightly Release" noindex=true>
 
 <div class="container mt-5">
     <h1>Nightly release</h1>
