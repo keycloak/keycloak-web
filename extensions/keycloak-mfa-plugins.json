@@ -1,0 +1,5 @@
+{
+  "name": "MFA Plugin collection",
+  "description": "A collection of MFA plugins: SMS authenticator, Enforce MFA, Native App MFA integration.",
+  "website": "https://github.com/netzbegruenung/keycloak-mfa-plugins"
+}
