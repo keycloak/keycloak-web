@@ -1,6 +1,6 @@
 <#import "/templates/template.ftl" as tmpl>
 
-<@tmpl.page current="search" title="${guide.title}">
+<@tmpl.page current="search" title="${guide.title}" noindex=guide.snapshot>
 
 <div class="container mt-5 kc-article">
     <div class="row">
@@ -12,6 +12,14 @@
                     <li class="breadcrumb-item active">${guide.title}</li>
                 </ol>
             </nav>
+
+            <#if guide.snapshot>
+                <div class="mb-4 alert alert-warning" role="alert">
+                  <h4 class="no-top-margin">Nightly release</h4>
+
+                  This guide is for the unstable nightly release, for the latest release go <a href="${links.guides}">here</a>.
+                </div>
+            </#if>
 
             <div class="mb-4">
                 <h1>${guide.title}</h1>

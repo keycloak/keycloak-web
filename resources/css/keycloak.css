@@ -4,6 +4,10 @@
     --bs-primary-rgb: 66, 139, 202;
 }
 
+.no-top-margin {
+    margin-top: 0 !important;
+}
+
 .fs-xlarge {
     font-size: 3.5rem;
 }
