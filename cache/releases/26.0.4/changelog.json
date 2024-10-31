@@ -1,0 +1,92 @@
+[ {
+  "number" : 14562,
+  "repository" : "keycloak",
+  "title" : "Broken Promise implementation for AuthZ JS",
+  "kind" : "bug",
+  "area" : "adapter/javascript",
+  "url" : "https://github.com/keycloak/keycloak/issues/14562"
+}, {
+  "number" : 25917,
+  "repository" : "keycloak",
+  "title" : "Allow increasing wait time on each failure after the max number of failures is reached",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/25917"
+}, {
+  "number" : 33627,
+  "repository" : "keycloak",
+  "title" : "ClassNotFoundException OracleXADataSource/OracleDataSource using IDELauncher with Keycloak 26.0.0",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/33627"
+}, {
+  "number" : 33731,
+  "repository" : "keycloak",
+  "title" : "Client Scope updates are not replicated on a distributed keycloak setup in kubernetes",
+  "kind" : "bug",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/33731"
+}, {
+  "number" : 33798,
+  "repository" : "keycloak",
+  "title" : "CVE-2021-44549 - org.eclipse.angus/angus-mail: Enabling Secure Server Identity Checks for Safer SMTPS Communication",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/33798"
+}, {
+  "number" : 33987,
+  "repository" : "keycloak",
+  "title" : "keycloak.v2 registration: Password policy validation error \"errorList is null\"",
+  "kind" : "bug",
+  "area" : "login/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/33987"
+}, {
+  "number" : 34042,
+  "repository" : "keycloak",
+  "title" : "LDAP Pagination not working for role membership in GET_ROLES_FROM_USER_MEMBEROF_ATTRIBUTE strategy",
+  "kind" : "bug",
+  "area" : "ldap",
+  "url" : "https://github.com/keycloak/keycloak/issues/34042"
+}, {
+  "number" : 34050,
+  "repository" : "keycloak",
+  "title" : "Listing federated LDAP users is very slow with import enabled",
+  "kind" : "bug",
+  "area" : "ldap",
+  "url" : "https://github.com/keycloak/keycloak/issues/34050"
+}, {
+  "number" : 34093,
+  "repository" : "keycloak",
+  "title" : "java.util.ConcurrentModificationException when process user sessions update",
+  "kind" : "bug",
+  "area" : "infinispan",
+  "url" : "https://github.com/keycloak/keycloak/issues/34093"
+}, {
+  "number" : 34219,
+  "repository" : "keycloak",
+  "title" : "Refine KeycloakSession provider caching",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/34219"
+}, {
+  "number" : 34284,
+  "repository" : "keycloak",
+  "title" : "Keycloak-admin-client should work with the future versions of Keycloak server",
+  "kind" : "enhancement",
+  "area" : "admin/client-java",
+  "url" : "https://github.com/keycloak/keycloak/issues/34284"
+}, {
+  "number" : 34382,
+  "repository" : "keycloak",
+  "title" : "Make the organization chapter of Server Admin guide available on downstream",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/34382"
+}, {
+  "number" : 34412,
+  "repository" : "keycloak",
+  "title" : "LDAP: searching users with import disabled is slower since fix for 34050",
+  "kind" : "bug",
+  "area" : "ldap",
+  "url" : "https://github.com/keycloak/keycloak/issues/34412"
+} ]
