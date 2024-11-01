@@ -1,0 +1,33 @@
+<div>
+    <h2>Highlights</h2>
+<div class="sect2">
+<h3 id="_ldap_users_are_created_as_enabled_by_default_when_using_microsoft_active_directory">LDAP users are created as enabled by default when using Microsoft Active Directory</h3>
+<div class="paragraph">
+<p>If you are using Microsoft AD and creating users through the administrative interfaces, the user will created as enabled by default.</p>
+</div>
+<div class="paragraph">
+<p>In previous versions, it was only possible to update the user status after setting a (non-temporary) password to the user.
+This behavior was not consistent with other built-in user storages as well as not consistent with others LDAP vendors supported
+by the LDAP provider.</p>
+</div>
+</div>
+<h2>Upgrading</h2>
+<p>Before upgrading refer to <a href="file:/home/runner/work/keycloak-rel/keycloak-rel/target/web/docs/latest/upgrading/index.html#migration-changes">the migration guide</a> for a complete list of changes.</p>
+
+<h2>All resolved issues</h2>
+
+
+
+
+<h3>Bugs</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/31415">#31415</a> Selection list does not close after outside click <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/33607">#33607</a> Fix v2 login layout <code>login/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/33618">#33618</a> No message for `policyGroupsHelp` <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/33640">#33640</a> Customizable footer (Keycloak 26) not displaying in keycloak.v2 login theme <code>login/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/34301">#34301</a> Remove inaccurate statement about master realm imports <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/34450">#34450</a> [26.0.2] Migration from 25.0.1 Identity Provider Errors <code>identity-brokering</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/34467">#34467</a> Do not rely on the `pwdLastSet` attribute when updating AD entries <code>ldap</code></li>
+</ul>
+
+</div>

@@ -1,0 +1,57 @@
+[ {
+  "number" : 31415,
+  "repository" : "keycloak",
+  "title" : "Selection list does not close after outside click",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/31415"
+}, {
+  "number" : 33607,
+  "repository" : "keycloak",
+  "title" : "Fix v2 login layout",
+  "kind" : "bug",
+  "area" : "login/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/33607"
+}, {
+  "number" : 33618,
+  "repository" : "keycloak",
+  "title" : "No message for `policyGroupsHelp`",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/33618"
+}, {
+  "number" : 33640,
+  "repository" : "keycloak",
+  "title" : "Customizable footer (Keycloak 26) not displaying in keycloak.v2 login theme",
+  "kind" : "bug",
+  "area" : "login/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/33640"
+}, {
+  "number" : 34301,
+  "repository" : "keycloak",
+  "title" : "Remove inaccurate statement about master realm imports",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/34301"
+}, {
+  "number" : 34308,
+  "repository" : "keycloak",
+  "title" : "Remove not needed Quarkus dependencies related to Dev UI services",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/34308"
+}, {
+  "number" : 34450,
+  "repository" : "keycloak",
+  "title" : "[26.0.2] Migration from 25.0.1 Identity Provider Errors",
+  "kind" : "bug",
+  "area" : "identity-brokering",
+  "url" : "https://github.com/keycloak/keycloak/issues/34450"
+}, {
+  "number" : 34467,
+  "repository" : "keycloak",
+  "title" : "Do not rely on the `pwdLastSet` attribute when updating AD entries",
+  "kind" : "bug",
+  "area" : "ldap",
+  "url" : "https://github.com/keycloak/keycloak/issues/34467"
+} ]
