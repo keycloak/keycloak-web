@@ -91,6 +91,6 @@ public class AppBuilder extends AbstractBuilder {
 
     @Override
     protected String getTitle() {
-        return "Vendor";
+        return "App";
     }
 }
