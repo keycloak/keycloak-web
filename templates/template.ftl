@@ -1,4 +1,4 @@
-<#macro page current title noindex=false nocsp=false rss=false>
+<#macro page current title importMap="" noindex=false nocsp=false rss=false>
 <!doctype html>
 <html lang="en">
 <head>
@@ -21,6 +21,7 @@
 
     <link rel="shortcut icon" href="${links.getResource('favicon.ico')}">
 
+    <#if importMap?has_content><script type="importmap">${importMap}</script></#if>
     <script src="${links.getResource('js/ga.js')}" type="text/javascript"></script>
     <script src="${links.getResource('bootstrap/dist/js/bootstrap.min.js')}" type="text/javascript"></script>
     <script src="${links.getResource('tocbot/dist/tocbot.min.js')}" type="text/javascript"></script>

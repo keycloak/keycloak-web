@@ -1,11 +1,9 @@
 package org.keycloak.webbuilder.utils;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.apache.commons.io.IOUtils;
 
 import java.io.File;
 import java.net.URL;
-import java.nio.charset.StandardCharsets;
 
 public class JsonParser {
 
@@ -22,6 +20,14 @@ public class JsonParser {
     public static <T> T read(URL url, Class<T> t) {
         try {
             return mapper.readValue(url, t);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static String writeValueAsString(Object value) {
+        try {
+            return mapper.writeValueAsString(value);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

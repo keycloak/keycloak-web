@@ -1,13 +1,8 @@
 <#import "/templates/template.ftl" as tmpl>
 
-<@tmpl.page current="test-app" title="Test application" noindex=true nocsp=true>
+<@tmpl.page current="test-app" title="Test application" noindex=true nocsp=true importMap=importMap>
 
-<#if version.majorVersion < 26>
-    <script src="keycloak.js" type="text/javascript"></script>
-    <script src="app-legacy.js" type="text/javascript"></script>
-<#else>
-    <script src="app.js" type="module"></script>
-</#if>
+<script src="app.js" type="module"></script>
 
 <div class="jumbotron jumbotron-fluid bg-light kc-bg-triangles py-5 kc-app">
     <div class="container">

@@ -1,4 +1,4 @@
-import Keycloak from './keycloak.js';
+import Keycloak from 'keycloak-js';
 
 function init() {
     document.getElementById('config-form').onsubmit = function() {
