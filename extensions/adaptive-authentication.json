@@ -1,0 +1,5 @@
+{
+    "name": "Adaptive Authentication",
+    "description": "Leverage Authentication policies, Risk-based authentication, and AI as part of an Adaptive authentication initiative.",
+    "website": "https://github.com/mabartos/keycloak-adaptive-authn"
+  }
