@@ -1,0 +1,45 @@
+:title: KeyConf24 recordings available
+:date: 2024-11-10
+:publish: true
+:author: Alexander Schwartz
+
+KeyConf24, our 2024 Keycloak Identity Summit, happened in Vienna in September this year. We were excited to have a full room on site, and 150+ people watching online.
+
+Thanks to our event sponsor adorsys, all recorded videos are now available online at the event's website:
+link:https://keyconf.dev/[].
+Re-watch the talks and learn from practitioners, developers and maintainers.
+
+Thanks to all our sponsors adorsys, Banfico, Hitachi and Red Hat who made this event possible!
+
+* https://youtu.be/P2gk3wMbHC4?si=JLyPIK-WB8bP82eL[*Wallets are Key - the state of play from Bangalore to Brussels*] +
+Daniel Goldschneider (The OpenWallet Foundation)
+
+* https://youtu.be/i0O-Y5ySUZs?si=_P7pRSZo8lKIddGR[*The Journey, Achievements, and Significance of the Keycloak SIG Community*] +
+Vinod Anandan (JPMorgan Chase & Co.)
+
+* https://youtu.be/DE8Y4yVNmjA?si=QYEucKoTb7LOESrq[*Streamlining Keycloak Configuration Management: Exploring keycloak-config-cli*] +
+Francis Pouatcha (adorsys)
+
+* https://youtu.be/aJ8Eo8Uysnk?si=vLs8O8ZXrCtuYSJX[*Keycloak's Updates on Emerging Paradigm of Identity and Compliance with Security Specifications*] +
+Takashi Norimatsu (Hitachi, Ltd.)
+
+* https://youtu.be/RsMx5XOySq0?si=N0H8tOip-m-Qj0mw[*Building declaratively configured Keycloak*] +
+Václav Muzikář (Red Hat)
+
+* https://youtu.be/qlone__CIOo?si=51Bg7PQus8OPV7OK[*Core Keycloak features developed in past 12 months*] +
+Marek Posolda (Red Hat)
+
+* https://youtu.be/Ida6hvICUsw?si=F7hh3a2Iw9h-zTER[*Integrating Keycloak with Openresty as a resource server in Open Banking*] +
+Pritish Joshi (Banfico)
+
+* https://youtu.be/0zWlc08CPuo?si=Od-opD4AG0V1lQto[*Unlocking adaptive authentication with Keycloak*] +
+Martin Bartoš (Red Hat)
+
+* https://youtu.be/b1KCW-btqXA?si=JYRK_jkjnQAXvK7f[*New and Noteworthy in the OAuth World*] +
+Dmitry Telegin (Backbase UK)
+
+* https://youtu.be/t8u-QO02Qn8?si=QOAPnjAoL4i6AQ2G[*Extending Keycloak for All Your Identity Use Cases*] +
+GR Patil (Phase Two)
+
+* https://youtu.be/fY1sJ8AX1fg?si=gorWGDkoTL98d5DF[*Enhancing User Experience with Native Authentication and Passkeys in Keycloak*] +
+Martin Besozzi (TwoGenIdentity)
