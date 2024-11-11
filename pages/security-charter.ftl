@@ -50,7 +50,7 @@
     </ul>
 
     <h3>Keycloak Security Resolution Team</h3>
-    <p>Dynamic teams formed by individuals actively involved in triaging or resolving open CVEs. Members are added when they engage with a vulnerability and removed once their involvement concludes.</p>
+    <p>Teams are composed of permanent members who coordinate fixes and temporary members who actively triage or resolve open CVEs. Temporary members are added when they engage with a vulnerability and removed once their involvement concludes. This setup allows experienced coordinators to oversee the resolution process while bringing in the right people whenever needed.</p>
 
     <h4>Scope</h4>
     <ul>
@@ -65,6 +65,7 @@
             <tr>
                 <th>Resource</th>
                 <th>Response Team</th>
+                <th>Fix Coordinators</th>
                 <th>Resolution Team</th>
             </tr>
         </thead>
@@ -72,20 +73,24 @@
             <tr>
                 <td><a href="https://groups.google.com/g/keycloak-security">Mailing list</a></td>
                 <td>Full access</td>
+                <td>Full access</td>
                 <td>Added in CC to specific threads</td>
             </tr>
             <tr>
                 <td><a href="https://github.com/keycloak/keycloak-private/">Private GitHub repository</a></td>
+                <td>Full access</td>
                 <td>Full access</td>
                 <td>Temporary access</td>
             </tr>
             <tr>
                 <td><a href="https://github.com/keycloak/keycloak/security">Security advisories and alerts</a></td>
                 <td>Full access</td>
+                <td>Full access</td>
                 <td>No access</td>
             </tr>
             <tr>
                 <td>Slack channel (#alerts-keycloak-cve)</td>
+                <td>Full access</td>
                 <td>Full access</td>
                 <td>Temporary access</td>
             </tr>
