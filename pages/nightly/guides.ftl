@@ -7,7 +7,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
         <ul class="nav navbar-nav">
-            <#list guides.categories as c>
+            <#list guides.getCategories(true) as c>
             <li>
                 <a class="nav-link" href="#${c.id}">${c.title}</a>
             </li>
@@ -30,7 +30,7 @@
           These guides are for the unstable nightly release, for the latest release go <a href="${links.guides}">here</a>.
         </div>
 
-        <#list guides.categories as c>
+        <#list guides.getCategories(true) as c>
             <div class="row guide-category" id="${c.id}">
                 <h2>${c.title}</h2>
                 <#list guides.getGuides(c) as g>

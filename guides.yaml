@@ -7,6 +7,8 @@ guides:
     title: Server
   - id: operator
     title: Operator
+  - id: observability
+    title: Observability
   - id: securing-apps
     title: Securing applications
   - id: high-availability
