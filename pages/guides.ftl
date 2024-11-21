@@ -7,7 +7,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
         <ul class="nav navbar-nav">
-            <#list guides.categories as c>
+            <#list guides.getCategories(false) as c>
             <li>
                 <a class="nav-link" href="#${c.id}">${c.title}</a>
             </li>
@@ -23,7 +23,7 @@
 
 <div class="jumbotron jumbotron-fluid bg-light kc-bg-triangles pt-4">
     <div class="container">
-        <#list guides.categories as c>
+        <#list guides.getCategories(false) as c>
             <div class="row guide-category" id="${c.id}">
                 <h2>${c.title}</h2>
                 <#list guides.getGuides(c) as g>

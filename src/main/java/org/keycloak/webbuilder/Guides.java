@@ -13,6 +13,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class Guides {
@@ -132,8 +133,12 @@ public class Guides {
         return guides;
     }
 
-    public List<GuidesMetadata.GuideMetadata> getCategories() {
-        return categories;
+    public List<GuidesMetadata.GuideMetadata> getCategories(boolean wantSnapshots) {
+        return categories.stream().filter(filterEmptyCategories(wantSnapshots)).collect(Collectors.toList());
+    }
+
+    private Predicate<GuidesMetadata.GuideMetadata> filterEmptyCategories(boolean wantSnapshots) {
+        return cat -> getGuides(cat).stream().anyMatch(guide-> guide.isSnapshot() == wantSnapshots);
     }
 
     public class Guide {
