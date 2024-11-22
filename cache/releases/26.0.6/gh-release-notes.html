@@ -1,0 +1,70 @@
+<div>
+    <h2>Highlights</h2>
+<div class="sect2">
+<h3 id="_admin_events_might_include_now_additional_details_about_the_context_when_the_event_is_fired">Admin events might include now additional details about the context when the event is fired</h3>
+<div class="paragraph">
+<p>In this release, admin events might hold additional details about the context when the event is fired. When upgrading you should
+expect the database schema being updated to add a new column <code>DETAILS_JSON</code> to the <code>ADMIN_EVENT_ENTITY</code> table.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_updates_to_documentation_of_x_509_client_certificate_lookup_via_proxy">Updates to documentation of X.509 client certificate lookup via proxy</h3>
+<div class="paragraph">
+<p>Potential vulnerable configurations have been identified in the X.509 client certificate lookup when using a reverse proxy.
+Additional configuration steps might be required depending on your current configuration. Make sure to review the updated
+<a href="https://www.keycloak.org/server/reverseproxy#_enabling_client_certificate_lookup">reverse proxy guide</a> if you have configured
+the client certificate lookup via a proxy header.</p>
+</div>
+</div>
+<h2>Upgrading</h2>
+<p>Before upgrading refer to <a href="file:/home/runner/work/keycloak-rel/keycloak-rel/target/web/docs/latest/upgrading/index.html#migration-changes">the migration guide</a> for a complete list of changes.</p>
+
+<h2>All resolved issues</h2>
+
+
+
+<h3>Enhancements</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/34315">#34315</a> Update the Keycloak CPU and Memory sizing guide to reflect the new ec2 workder nodes </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/34386">#34386</a> Some dynamic imported functions are also statically imported making bundling them in-efficient </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/34570">#34570</a> Make documentation more clear that keycloak javascript adapter and node.js adapter are OIDC <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/34855">#34855</a> Add conditional text to Installation Locations </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/34873">#34873</a> Update Leveraging JaKarta EE in Server Development guide </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/34887">#34887</a> Apply QE edits to High Availability guide </li>
+</ul>
+
+<h3>Bugs</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak-quickstarts/issues/609">#609</a> Workflow failure - Jakarta - SAMLServiceProviderTest.testAccessAccountManagement </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/11008">#11008</a> Incorrect get the members of a group imported from LDAP <code>ldap</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/17593">#17593</a> Incorrect ldap-group-mapper chosen to sync changes to ActiveDirectory when several mappers with varying group paths used  <code>ldap</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/19652">#19652</a> Members are inhereted from LDAP group with the same name <code>ldap</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/23732">#23732</a> JavascriptAdapterTest errors when running with strict cookies on Firefox <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/27856">#27856</a> Social login - Stack Overflow test fails <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/31456">#31456</a> Enabling/Disabling user does not work with Microsoft AD LDAP via Admin API/UI <code>ldap</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/32786">#32786</a> Organization Domain not marked as a required field in the Admin UI <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/33531">#33531</a> Previously entered translations should persist in the translation dialog for the attribute groups <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/34013">#34013</a> Add More Info to Organization Events <code>organizations</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/34065">#34065</a> Users without `view-realm` can't see user lockout state in Admin UI  <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/34201">#34201</a> OIDC IdP Unable to validate signatures using validatingPublicKey certificate <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/34335">#34335</a> NPE in Organization(s)Resource when using Quarkus Rest Client <code>admin/api</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/34401">#34401</a> Incorrect Content-Type Expectation for POST /admin/realms/{realm}/organizations/{id}/members in Keycloak API <code>admin/api</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/34465">#34465</a> Missing help icons in Webauthn Policy and Webauthn Passwordless Policy missing in admin ui <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/34519">#34519</a> Clicking on link to Keycloak documentation from Keycloak admin UI does nothing instead of opening documentation <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/34549">#34549</a> Quarkus dev mode does not work <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/34572">#34572</a> Text in "Choose a policy type" is not wrapping <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/34603">#34603</a> NPE in InfinispanOrganizationProvider if userCache is disabled <code>infinispan</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/34624">#34624</a> Securing apps guide breaks downstream <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/34634">#34634</a> Missing downstream explicit name for anchors <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/34644">#34644</a> KC_CACHE_EMBEDDED_MTLS_ENABLED is ignored <code>infinispan</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/34671">#34671</a> `ClientConnection.getRemoteAddr` can return a hostname when behind a reverse proxy <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/34687">#34687</a> New credential templates broken in KC26 <code>login/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/34905">#34905</a> [Keycloak CI] Outdated surefire artifacts names - Quarkus IT and UT <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/35213">#35213</a> CVE-2024-10451 Sensitive Data Exposure in Keycloak Build Process </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/35214">#35214</a> CVE-2024-10270 Potential Denial of Service </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/35215">#35215</a> CVE-2024-10492 Keycloak path trasversal </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/35216">#35216</a> CVE-2024-9666 Keycloak proxy header handling Denial-of-Service (DoS) vulnerability </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/35217">#35217</a> CVE-2024-10039 Bypassing mTLS validation </li>
+</ul>
+
+</div>
