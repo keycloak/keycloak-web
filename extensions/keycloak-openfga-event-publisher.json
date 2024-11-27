@@ -1,0 +1,5 @@
+{
+    "name": "OpenFGA Event Publisher",
+    "description": "Keycloak extension enables event integration between Keycloak and OpenFGA for Fine-Grained Authorization (FGA).",
+    "website": "https://github.com/embesozzi/keycloak-openfga-event-publisher"
+  }
