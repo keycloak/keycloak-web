@@ -1,0 +1,40 @@
+:title: Keycloak Adopts Terraform Provider
+:date: 2024-12-02
+:publish: false
+:author: Thomas Darimont
+
+# New Repository
+
+We're excited to announce that the Keycloak Terraform Provider has officially moved under the Keycloak organization! 
+You can find the new repository https://github.com/keycloak/terraform-provider-keycloak[here].
+
+# The Journey So Far
+
+Thanks to https://www.keycloak.org/2024/09/realm-config-management-tools-survey-results.html[our community survey], we confirmed that the Keycloak Terraform Provider by mrparkers is the most widely used tool 
+for realm configuration management. The move to the Keycloak organization is a natural next step in making this essential 
+tool a core part of the Keycloak ecosystem.
+
+## Gratitude and Transition
+
+A huge thank-you to https://github.com/mrparkers[mrparkers] for creating and maintaining the provider. Your contributions have been invaluable to the community. 
+The new maintainers, https://github.com/sschu[Sebastian Schuster] and https://github.com/thomasdarimont[Thomas Darimont], will ensure the project continues to thrive.
+
+# Migration Notes
+
+You'll need to update your configurations to migrate to the Keycloak-hosted Terraform Provider. Check out https://github.com/keycloak/terraform-provider-keycloak#migration-to-the-new-provider[our migration guide], 
+especially the replace-provider instructions, to make the process smooth.
+
+## Updates and Changes
+
+License Change: The project now uses the *Apache 2.0 license*, ensuring broader adoption and clarity for contributors.
+
+Next releases:
+
+- 4.5 Maintenance Release: Includes CVE fixes, Go upgrade, and license change.
+- 5.0 Release (Upcoming): Adds support for Keycloak 24/26, new features, and improvements.
+
+# Join the Community
+
+We're grateful for all contributors who've helped make the Terraform Provider what it is today. 
+We welcome new contributions, issue reports, feature suggestions, and fixes. Let's work together to make it even better!
+Explore the https://github.com/keycloak/terraform-provider-keycloak[new repository], join https://github.com/keycloak/terraform-provider-keycloak/discussions[the discussions], and help shape the future of the Keycloak Terraform Provider.
