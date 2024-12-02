@@ -6,7 +6,7 @@
 # New Repository
 
 We're excited to announce that the Keycloak Terraform Provider has officially moved under the Keycloak organization! 
-You can find the new repository https://github.com/keycloak/terraform-provider-keycloak[here].
+You can find the new repository location https://github.com/keycloak/terraform-provider-keycloak[here].
 
 # The Journey So Far
 
@@ -37,4 +37,4 @@ Next releases:
 
 We're grateful for all contributors who've helped make the Terraform Provider what it is today. 
 We welcome new contributions, issue reports, feature suggestions, and fixes. Let's work together to make it even better!
-Explore the https://github.com/keycloak/terraform-provider-keycloak[new repository], join https://github.com/keycloak/terraform-provider-keycloak/discussions[the discussions], and help shape the future of the Keycloak Terraform Provider.
+Explore the https://github.com/keycloak/terraform-provider-keycloak[new repository location], join https://github.com/keycloak/terraform-provider-keycloak/discussions[the discussions], and help shape the future of the Keycloak Terraform Provider.
