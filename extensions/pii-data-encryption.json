@@ -1,0 +1,5 @@
+{
+    "name": "PII Data Encryption",
+    "description": "Enables database-level encryption of PII user data such as username, email, first name, last name and custom user attributes.",
+    "website": "https://github.com/MLukman/Keycloak-PII-Data-Encryption-Provider"
+}
