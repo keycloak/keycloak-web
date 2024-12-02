@@ -1,0 +1,106 @@
+:title: Storing sessions in Keycloak 26
+:date: 2024-12-03
+:publish: true
+:author: Michal Hajas
+
+As you may know, Keycloak 26 now uses by default the Persistent user sessions feature.
+In this blog post I would like to uncover a little bit more background on why we introduced this feature, what are the alternatives and what is the future.
+
+== Evolution of storing sessions
+In the old Keycloak days, all sessions were stored only in embedded Infinispan - in memory of each Keycloak node in a distributed cache (each Keycloak node storing some portion of sessions where each session is present in at least 2 nodes).
+This worked well in a single site with a small to medium amount of sessions, and the setup was resilient to one Keycloak node without losing any data.
+This could be extended to more than one node if we increase the number of nodes storing each session.
+
+=== What about whole site disasters?
+The problem occurred when more nodes failed or when a whole site failed.
+Users asked for more resilient setups.
+For this, we introduced a technical preview of the cross-site feature.
+The impact on the session data was that we replicated all of them across 4 locations - 2 Keycloak clusters and 2 Infinispan clusters.
+With each of these locations needing to store all of the sessions in order to be able to search/query them.
+
+In the beginning, this setup didn't perform very well, one of the reasons was that we needed to synchronously replicate the data 4 times to keep the system in the correct state.
+As a consequence of this bad performance we initially wanted to drop the feature, however due to significant community interest we decided to evolve the feature instead.
+After several optimisations and performance tuning, we were able to release this in Keycloak 24 under the name `multi-site`, which allowed active-passive setups.
+This architecture replicated some data asynchronously to the second Keycloak cluster and therefore, we could not use this setup in an active-active way.
+
+=== I want my sessions to survive!
+Even though we were more resilient with this setup, we are still losing sessions when the whole deployment goes down, which happens, for example, during updates.
+We received a lot of complaints about this.
+
+That is where persistent sessions came into consideration as a rescue to both of these problems - asynchronous updates replication to the other site and losing sessions.
+The idea is to store sessions in the database - the source of truth for sessions.
+We already stored offline sessions in the database so we reused the concept and introduced a new feature named Persistent user sessions which is now enabled by default in Keycloak 26.
+
+=== Is the database the correct place for such write-heavy objects?
+Almost each request coming to Keycloak needs to check whether a session exists, whether it is valid and usually also update its validity period.
+This makes sessions read and write heavy objects and the question whether the database is the correct place to store them is appropriate.
+
+At the moment of writing this blog post, we have no reports that would show performance problems with persistent sessions and it seems the advantages overcome the disadvantages.
+Still, we have an additional feature in experimental mode that you can evaluate.
+As explained above, some of the problems with the multiple sites setup in Keycloak 24 were that we needed to have sessions replicated in 4 locations and the second Keycloak cluster was receiving some updates asynchronously.
+This can be also solved by storing sessions only in the external Infinispan as sessions are replicated only twice instead of four times.
+Also, the asynchronous replication is not used anymore as we do not need to replicate changes to Keycloak nodes.
+Infinispan also provides query and indexing capabilities for searching sessions which avoids sequential scans needed with the sessions stored in embedded Infinispan.
+Note this is an experimental feature and therefore it is not yet fully finished and performance optimised.
+We are eager to hear your feedback to understand where persistent sessions fail and where the pure Infinispan storage for sessions could shine.
+
+== What options do I have and which of them should I consider?
+Since we could not remove any of the options from the list above without a proper deprecation period, all of them can still be used in Keycloak 26, however, some of them are more blessed than others.
+
+=== Single site with sessions stored in the database and cached in memory
+This is the default setup in Keycloak 26.
+
+=== Single site with sessions stored in memory
+This is the default setup used in Keycloak versions prior to 26 and at the moment probably the most commonly used among all of them.
+The recommendation is to switch to persistent sessions and with no additional configuration with Keycloak 26 the switch will be done automatically.
+However, if you have some problems with persistent sessions (eager to hear your feedback https://github.com/keycloak/keycloak/discussions/28271[here]) and you don’t mind losing your sessions on restarts you can enable this setup by disabling the `persistent-user-sessions` feature.
+----
+bin/kc.[sh|bat] build --features-disabled="persistent-user-sessions"
+----
+
+=== Single site with sessions stored in external Infinispan
+This is the experimental setup mentioned above.
+To configure this, disable `persistent-user-sessions` and enable `clusterless` features.
+----
+bin/kc.[sh|bat] build --features="clusterless" --features-disabled="persistent-user-sessions"
+----
+
+=== Single site with sessions stored in memory and external Infinispan
+This setup uses the functionality aimed for multi-site, however, this was often used in a single site as well, because of its benefit of not losing sessions on Keycloak restarts.
+We believe persistent sessions make this setup obsolete and Keycloak will refuse to start with this setup complaining with this message: `Remote stores are not supported for embedded caches….`.
+This functionality is deprecated and will be removed in the next Keycloak major release.
+To run this configuration, disable `persistent-user-sessions`, enable `cache-embedded-remote-store` features and configure embedded Infinispan accordingly.
+----
+bin/kc.[sh|bat] build --features="cache-embedded-remote-store" --features-disabled="persistent-user-sessions"
+----
+
+=== Options for multiple sites
+Running Keycloak in multiple sites requires two building blocks to make data available and synchronized in both sites.
+A synchronously replicated database and an external Infinispan in each site with cross-site replication enabled.
+The whole setup is described https://www.keycloak.org/high-availability/introduction[here].
+From the point of view of storing sessions the setup is always forcing usage of the Persistent user sessions feature and they are stored only in the database with no caching in the Keycloak’s memory.
+To configure this enable the `multi-site` feature.
+----
+bin/kc.[sh|bat] build --features="multi-site"
+----
+
+It is possible to evaluate the experimental `clusterless` feature described for the single site also with the multiple sites.
+In this setup the sessions are not stored in the database but in the external Infinispan.
+Note this is an experimental feature and as such it is not yet fully documented and performance optimised.
+To configure this, disable `persistent-user-sessions` and enable `multi-site` and `clusterless` features.
+----
+bin/kc.[sh|bat] build --features="multi-site,clusterless" --features-disabled="persistent-user-sessions"
+----
+
+== Feedback welcomed
+If you have any questions or feedback on this proceed to the following GitHub discussions:
+
+* https://github.com/keycloak/keycloak/discussions/28271[Persistent user sessions discussion]
+* https://github.com/keycloak/keycloak/discussions/33745[Multi-Site: volatile sessions in Infinispan cluster discussion]
+* https://github.com/keycloak/keycloak/discussions/35523[Any other question related to this blog post]
+
+== Frequently asked questions
+
+=== Why do we need external Infinispan in a multi-site setup with persistent sessions
+In this case external Infinispan is not used for storing sessions, however, we still need it for communication between two Keycloak sites, for example, for invalidation messages, for synchronization of background tasks and also for storing some objects, usually short-lived, like authentication sessions, login failures or action tokens.
+
