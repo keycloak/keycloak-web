@@ -1,0 +1,64 @@
+
+:title: Recap Keycloak at KubeCon NA 2024
+:date: 2024-12-03
+:publish: true
+:author: Ryan Emerson
+
+Keycloak had a very active presence at this year's KubeCon NA in Salt Lake City, Utah. This blog presents a few of the
+highlights as well as ways you can contribute to Keycloak’s CNCF journey.
+
+== Project Pavillion
+
+Keycloak hosted a project pavilion stand during Wednesday, Thursday and Friday afternoon slots. Attending the booth were
+Keycloak contributors https://github.com/y-tabata[Yoshiyuki Tabata] from Hitachi and https://github.com/ryanemerson[Ryan Emerson],
+https://github.com/mabartos[Martin Bartos] and https://github.com/kami619[Kamesh Akella] from Red Hat.
+
+During these sessions we discussed all things Keycloak with existing and prospective users, as well as provided the much
+requested Keycloak stickers plus additional swag for particularly enthusiastic users. It was great to hear war stories
+from the trenches with regards to both the good and bad of Keycloak. This feedback is essential for us to continue to
+evolve the project and plan the future roadmap. A special thanks to all of those who filled out our survey forms, we
+really appreciate your time. If you were unable to attend the pavilion, please consider filling out the
+http://bit.ly/keycloak-community[online version of the form].
+
+--
+++++
+<div class="paragraph">
+<a href="${blogImages}/kubecon_na_2024_kiosk.png"><img src="${blogImages}/kubecon_na_2024_kiosk.png" alt="Four Keycloak contributors hosting the project pavilion booth" style="width: 100%; max-width: 700px; height: auto;"></a>
+</div>
+++++
+--
+
+== Keycloak Talk
+
+https://github.com/ryanemerson[Ryan Emerson] and https://github.com/kami619[Kamesh Akella] presented a talk titled
+“Running a Highly Available Identity and Access Management with Keycloak”. https://www.youtube.com/watch?v=gDFWBQO31M4[Watch the recording]
+to hear about the recent developments in Keycloak’s HA story, including an overview of the architecture recommended in
+the Keycloak guides, the lessons learned during the development of said guides and the CNCF technologies used as part of
+our stack. A video of the talk is linked below:
+
+--
+++++
+<div class="paragraph">
+<iframe src="https://www.youtube-nocookie.com/embed/gDFWBQO31M4?si=HIUtJEQZFnRQ5yyd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width: 100%; max-width: 700px; height: auto; aspect-ratio: 560 / 315;"></iframe>
+</div>
+++++
+--
+
+Thank you to all who attended and asked questions, there were good follow up conservations that continued well after our
+time was up.
+
+== Keycloak Survey
+
+Are you a Keycloak user who is deploying in production or just considering starting with Keycloak? We would love to hear
+more from you about your success stories, what is crucial to your deployments and what can be done better. Please fill
+out the http://bit.ly/keycloak-communityorm[online Keycloak Survey], so we can better understand your use cases.
+
+Your story maybe a candidate for a https://www.cncf.io/case-studies[CNCF Case Study]. If you would like to share your
+success story with our community answer yes to the “Would you be interested to share your story with our broader community?”
+and we will be in touch shortly.
+
+== KubeCon EU
+
+In 2025 https://events.linuxfoundation.org/kubecon-cloudnativecon-europe[KubeCon EU] will be held in London on April 1-4th,
+we hope to see you there and hear your latest Keycloak stories. As it’s still very much early days, we cannot provide any
+specifics, but be assured that we’ll publish more information in the near future.
