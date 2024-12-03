@@ -51,7 +51,9 @@ public class GuideBuilder extends AbstractBuilder {
     }
 
     private void setCommonAttributes(Map<String, Object> attributes) {
-        attributes.put("leveloffset", "0");
+        // making this soft-set allows using level offsets when including content in the guides
+        attributes.put("leveloffset", "0@");
+
         attributes.put("fragment", "yes");
         attributes.put("notitle", "yes");
         attributes.put("icons", "font");
