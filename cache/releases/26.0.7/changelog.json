@@ -1,0 +1,246 @@
+[ {
+  "number" : 10233,
+  "repository" : "keycloak",
+  "title" : "Locale Setting for Update Password Mail",
+  "kind" : "bug",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/10233"
+}, {
+  "number" : 17233,
+  "repository" : "keycloak",
+  "title" : "the InfoPage after an ExecuteActionsEmail is not localized based on the user's locale",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/17233"
+}, {
+  "number" : 30631,
+  "repository" : "keycloak",
+  "title" : "Upgrade to 25 throws: Statement violates GTID consistency",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/30631"
+}, {
+  "number" : 32143,
+  "repository" : "keycloak",
+  "title" : "UserId too long to add Security Key WebauthN",
+  "kind" : "bug",
+  "area" : "authentication/webauthn",
+  "url" : "https://github.com/keycloak/keycloak/issues/32143"
+}, {
+  "number" : 32648,
+  "repository" : "keycloak",
+  "title" : "RP-Initiated logout using `POST` method fails in cross-origin setup",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/32648"
+}, {
+  "number" : 32676,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.forms.BrowserButtonsTest#appInitiatedRegistrationWithBackButton",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/32676"
+}, {
+  "number" : 33071,
+  "repository" : "keycloak",
+  "title" : "RESTART_AUTHENTICATION_ERROR in Iphone devices (using safari and chrome browser)",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/33071"
+}, {
+  "number" : 33195,
+  "repository" : "keycloak",
+  "title" : "Any one Client role mapping to user/group generating two events on admin events tab.",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/33195"
+}, {
+  "number" : 33810,
+  "repository" : "keycloak",
+  "title" : "Stabilise my-resources.spec test ",
+  "kind" : "bug",
+  "area" : "account/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/33810"
+}, {
+  "number" : 34233,
+  "repository" : "keycloak",
+  "title" : "Service accounts visible under user search in Admin console",
+  "kind" : "bug",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/34233"
+}, {
+  "number" : 34391,
+  "repository" : "keycloak",
+  "title" : "Error on \"check a11y\" tests on Cypress",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/34391"
+}, {
+  "number" : 34560,
+  "repository" : "keycloak",
+  "title" : "Switching 'Email as Username' alters existing custom usernames to email addresses, causing LDAP sync issues",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/34560"
+}, {
+  "number" : 34572,
+  "repository" : "keycloak",
+  "title" : "Text in \"Choose a policy type\" is not wrapping",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/34572"
+}, {
+  "number" : 34590,
+  "repository" : "keycloak",
+  "title" : "Attributes missing in OrganizationRepresentation when using Admin REST API in Keycloak 26",
+  "kind" : "bug",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/34590"
+}, {
+  "number" : 34678,
+  "repository" : "keycloak",
+  "title" : "[Admin UI] [Create resource-based permission] Resource input is disabled",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/34678"
+}, {
+  "number" : 34858,
+  "repository" : "keycloak",
+  "title" : "Deprecated CLI options and new options are not stable in their sorting",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/34858"
+}, {
+  "number" : 34864,
+  "repository" : "keycloak",
+  "title" : "On logout from admin console, a serverinfo call with 401 response in the logs",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/34864"
+}, {
+  "number" : 34882,
+  "repository" : "keycloak",
+  "title" : "Edits to Authorization Services guide",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/34882"
+}, {
+  "number" : 34888,
+  "repository" : "keycloak",
+  "title" : "Authentication Link and IDP Fails with 400 Bad Request After Migrating to Version 26 and Delete Authentification",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/34888"
+}, {
+  "number" : 34899,
+  "repository" : "keycloak",
+  "title" : "Upgrade 24 to 25 fails because db jpa changes drop nonexisting indexes.",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/34899"
+}, {
+  "number" : 34916,
+  "repository" : "keycloak",
+  "title" : "Addresse QE comments on Server Administration guide",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/34916"
+}, {
+  "number" : 34930,
+  "repository" : "keycloak",
+  "title" : "Update Email doesn't update username when Email as Username and Attributes are enabled",
+  "kind" : "bug",
+  "area" : "user-profile",
+  "url" : "https://github.com/keycloak/keycloak/issues/34930"
+}, {
+  "number" : 34931,
+  "repository" : "keycloak",
+  "title" : "Upgrade to ISPN 15.0.11.Final",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/34931"
+}, {
+  "number" : 34944,
+  "repository" : "keycloak",
+  "title" : "Adding \"sub\" claim to lightweight access token causes HTTP 403 Forbidden Error in Keycloak 26.0.5",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/34944"
+}, {
+  "number" : 34975,
+  "repository" : "keycloak",
+  "title" : "getAll() organization members only returns the first 10 members",
+  "kind" : "bug",
+  "area" : "organizations",
+  "url" : "https://github.com/keycloak/keycloak/issues/34975"
+}, {
+  "number" : 34987,
+  "repository" : "keycloak",
+  "title" : "KC25 Migration guide for caching options needs clarification",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/34987"
+}, {
+  "number" : 35006,
+  "repository" : "keycloak",
+  "title" : "Mis-formatted unordered list in the caching docs",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/35006"
+}, {
+  "number" : 35015,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.model.session.AuthenticationSessionTest#testConcurrentAuthenticationSessionsRemoval",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/35015"
+}, {
+  "number" : 35087,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.model.session.AuthenticationSessionTest#testConcurrentAuthenticationSessionsCreation",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/35087"
+}, {
+  "number" : 35229,
+  "repository" : "keycloak",
+  "title" : "Fix typo in v24 changelog: \"longer\" -> \"no longer\"",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/35229"
+}, {
+  "number" : 35232,
+  "repository" : "keycloak",
+  "title" : "reCAPTCHA v3 not working",
+  "kind" : "bug",
+  "area" : "login/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/35232"
+}, {
+  "number" : 35276,
+  "repository" : "keycloak",
+  "title" : "Your login attempt timed out",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/35276"
+}, {
+  "number" : 35282,
+  "repository" : "keycloak",
+  "title" : "[Keycloak CI] - Test PoC failing on Keycloak 26.0 branch",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/35282"
+}, {
+  "number" : 35288,
+  "repository" : "keycloak",
+  "title" : "Upgrade 26.0.5 -> 26.0.6 completely breaks admin events in the admin UI",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/35288"
+}, {
+  "number" : 35328,
+  "repository" : "keycloak",
+  "title" : "Error when creating a permission ticket when there are 2 or more Keycloak servers in a cluster",
+  "kind" : "bug",
+  "area" : "authorization-services",
+  "url" : "https://github.com/keycloak/keycloak/issues/35328"
+} ]
