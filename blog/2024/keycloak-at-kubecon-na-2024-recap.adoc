@@ -51,7 +51,7 @@ time was up.
 
 Are you a Keycloak user who is deploying in production or just considering starting with Keycloak? We would love to hear
 more from you about your success stories, what is crucial to your deployments and what can be done better. Please fill
-out the http://bit.ly/keycloak-communityorm[online Keycloak Survey], so we can better understand your use cases.
+out the http://bit.ly/keycloak-community[online Keycloak Survey], so we can better understand your use cases.
 
 Your story maybe a candidate for a https://www.cncf.io/case-studies[CNCF Case Study]. If you would like to share your
 success story with our community, answer _yes_ to the "`Would you be interested to share your story with our broader community?`"
