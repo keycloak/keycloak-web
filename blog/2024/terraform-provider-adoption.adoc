@@ -10,7 +10,7 @@ You can find the new repository location https://github.com/keycloak/terraform-p
 
 # The Journey So Far
 
-Thanks to https://www.keycloak.org/2024/09/realm-config-management-tools-survey-results.html[our community survey], we confirmed that the Keycloak Terraform Provider by mrparkers is the most widely used tool 
+Thanks to https://www.keycloak.org/2024/09/realm-config-management-tools-survey-results.html[our community survey], we confirmed that the Keycloak Terraform Provider by [mrparkers](https://github.com/mrparkers) is the most widely used tool 
 for realm configuration management. The move to the Keycloak organization is a natural next step in making this essential 
 tool a core part of the Keycloak ecosystem.
 
