@@ -1,5 +1,5 @@
 :title: Keycloak Adopts Terraform Provider
-:date: 2024-12-02
+:date: 2024-12-06
 :publish: false
 :author: Thomas Darimont
 
