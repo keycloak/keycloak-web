@@ -1,4 +1,4 @@
-<#macro download category label file tar=true zip=true>
+<#macro download category label file tar=true zip=true tgz=false>
 <#if zip>
 <span class="me-4">
 <a onclick="dl('${category}', '${label}');" href="https://github.com/keycloak/keycloak/releases/download/${version.version}/${file}.zip" target="_blank">
@@ -15,6 +15,14 @@
     TAR.GZ
 </a>
 (<a href="https://github.com/keycloak/keycloak/releases/download/${version.version}/${file}.tar.gz.sha1" target="_blank">sha1</a>)
+</span>
+</#if>
+<#if tgz>
+<span>
+<a onclick="dl('${category}', '${label}');" href="https://github.com/keycloak/keycloak/releases/download/${version.version}/${file}.tgz" target="_blank">
+    <i class="fa fa-download" aria-hidden="true"></i>
+    TGZ
+</a>
 </span>
 </#if>
 </#macro>
@@ -117,7 +125,7 @@
                                         <i class="fa fa-link"></i> NPM
                                     </a>
                                     </span>
-                                    <@download category="adapter" label="js" file="keycloak-oidc-js-adapter-${version.version}" tar=true />
+                                    <@download category="adapter" label="js" file="keycloak-js-${version.version}" zip=false tar=false tgz=true />
                                 </td>
                             </tr>
                         </table>

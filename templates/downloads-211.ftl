@@ -18,7 +18,7 @@
 </span>
 </#if>
 <#if tgz>
-<span>
+        <span>
 <a onclick="dl('${category}', '${label}');" href="https://github.com/keycloak/keycloak/releases/download/${version.version}/${file}.tgz" target="_blank">
     <i class="fa fa-download" aria-hidden="true"></i>
     TGZ
@@ -114,6 +114,32 @@
         <div role="tabpanel" class="tab-pane active margin-top" id="oidc">
             <table class="table table-bordered table-striped">
                 <tr>
+                    <td>WildFly <b>[DEPRECATED]</b></td>
+                    <td>
+                        <table class="kc-table-downloads-inner">
+                            <tr>
+                                <td>&lt;= 23</td>
+                                <td>
+                                    <@download category="adapter" label="wildfly" file="keycloak-oidc-wildfly-adapter-${version.version}" tar=true />
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>JBoss EAP <b>[DEPRECATED]</b></td>
+                    <td>
+                        <table class="kc-table-downloads-inner">
+                            <tr>
+                                <td>7</td>
+                                <td>
+                                    <@download category="adapter" label="eap7" file="keycloak-oidc-wildfly-adapter-${version.version}" tar=true />
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
                     <td>JavaScript</td>
                     <td>
                         <table class="kc-table-downloads-inner">
@@ -179,6 +205,34 @@
         <div role="tabpanel" class="tab-pane margin-top" id="saml">
             <table class="table table-bordered table-striped">
                 <tbody>
+                <tr>
+                    <td>WildFly</td>
+                    <td>
+                        <table class="kc-table-downloads-inner">
+                            <tr>
+                                <td>
+                                    &lt;= 23
+                                </td>
+                                <td>
+                                    <@download category="adapter-saml" label="wildfly" file="keycloak-saml-wildfly-adapter-${version.version}" tar=true />
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>JBoss EAP</td>
+                    <td>
+                        <table class="kc-table-downloads-inner">
+                            <tr>
+                                <td>7</td>
+                                <td>
+                                    <@download category="adapter-saml" label="eap7" file="keycloak-saml-wildfly-adapter-${version.version}" tar=true />
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
                 <tr>
                     <td>Jetty <b>[DEPRECATED]</b></td>
                     <td>
