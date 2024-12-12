@@ -1,0 +1,59 @@
+:title: Videos for the holidays and meet us at FOSDEM!
+:date: 2024-12-12
+:publish: true
+:author: ALexander Schwartz
+
+== Videos to re-watch
+
+This year, the Keycloak project was present at multiple conferences. Here are the videos to watch for the holiday break if you haven't watched them yet: https://www.keycloak.org/2024/12/keycloak-at-kubecon-na-2024-recap.html[KubeCon NA], https://www.keycloak.org/2024/11/keyconf24-videos-available.html[KeyConf], https://www.keycloak.org/2024/06/keycloak-dev-day-videos.html[Keycloak DevDay], https://www.keycloak.org/2024/05/keycloak-at-devoxx-france-2024-recap.html[Devoxx France] and https://www.keycloak.org/2024/04/keycloak-at-kubecon-eu-2024-recap.html[KubeCon Europe].
+
+When going through the list, I found that at least two of the talks have not been published on the Keycloak blog yet.
+So here they are:
+
+* FOSDEM in February with the talk https://archive.fosdem.org/2024/schedule/event/fosdem-2024-2065-add-user-self-management-brokerage-and-federation-to-your-infrastructure-with-keycloak/[Add user self-management, brokerage and federation to your infrastructure with Keycloak],
+
+* FrOSCon in August with https://programm.froscon.org/2024/events/3066.html[What’s new in Keycloak, the open source IAM].
+
+Did we miss another video that we should have shared here? https://github.com/ahus1[Let me know!]
+
+== We are excited to connect with the community
+
+++++
+<style>
+@media (min-width:720px) {
+  .pull-right {
+    max-width: 250px; height: auto; aspect-ratio: 379 / 661;
+    margin-left: 10px;
+    float: right !important;
+  }
+}
+@media (min-width:992px) {
+  .pull-right {
+    max-width: 300px; height: auto; aspect-ratio: 379 / 661;
+    margin-left: 10px;
+    float: right !important;
+  }
+}
+</style>
+++++
+
+[.pull-right]
+image::${blogImages}/froscon-stand-2024.jpeg[Keycloak stand at FrOSCon with Niko in front of it and our signage in the background]
+
+All conferences were exciting for us: We met with the community to share the latest developments of Keycloak, engaged in discussions and heard interesting stories from people running Keycloak in their production environments.
+
+The FrOSCon and the KubeCon conferences were special as we had our own stand where we connected to both new and existing users of Keycloak.
+At FrOSCon, we had our own signage up as this photo proves!
+
+If you have not met us at a conference yet, please take this http://bit.ly/keycloak-community[online Keycloak Survey]:
+Let us know if you want to share your story with the broader community, and we will be in contact with you about the next steps.
+
+== Meet us next at FOSDEM!
+
+The good news is that we will back at https://fosdem.org/2025/[FOSDEM 2025 in Brussels in February this year]. We got some talks accepted and will share the details once the schedule is out.
+In the meantime, save the date to either join us in Brussels or live on the stream. If you want to connect on-site, https://github.com/ahus1[reach out to me using your preferred channel].
+
+Some of our team members will also be at the https://keycloak-day.dev/[Keycloak DevDay in March], which is unfortunately already sold out.
+
+We are already planning for other upcoming events in 2025, so return to this blog to read the latest news here!
+
