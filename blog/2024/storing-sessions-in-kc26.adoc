@@ -22,7 +22,8 @@ a|
 * Lower memory usage
 * Higher database usage
 a|
-* You want your sessions to survive restarts
+* Default and recommended for standard installations
+* You want your sessions to survive restarts and upgrades
 * Accept higher database usage
 |No additional configuration needed
 
@@ -33,7 +34,7 @@ a|
 * Higher memory usage (all sessions must be in memory)
 a|
 * Can't use persistent sessions feature
-* Please provide your feedback https://github.com/keycloak/keycloak/discussions/28271[here]
+* Please provide your feedback https://github.com/keycloak/keycloak/discussions/28271[here], as we want to understand why you can't use persistent sessions
 a|
 ----
 --features-disabled="persistent-user-sessions"
@@ -42,15 +43,17 @@ a|
 |Sessions stored in external Infinispan
 a|
 * Sessions stored only in external Infinispan
+* Reduced database usage
 * Using Hot Rod client for communication with external Infinispan
 * Experimental feature
 a|
 * Do not use in production as it is experimental
-* Evaluate and provide a feedback https://github.com/keycloak/keycloak/discussions/33745[here]
+* Evaluate and provide your feedback https://github.com/keycloak/keycloak/discussions/33745[here] if you are interested in this feature and want to help to make it supported.
 
 a|
 ----
---features="clusterless" --features-disabled="persistent-user-sessions"
+--features="clusterless"
+--features-disabled="persistent-user-sessions"
 ----
 
 |Sessions stored in memory and external Infinispan
@@ -58,19 +61,20 @@ a|
 * 4 copies of each session 2x in Keycloak memory and 2x in Infinispan memory
 * Sessions available after Keycloak cluster restarts
 * High memory usage
-* Deprecated and will be removed in next major release
+* Experimental and will be removed soon
 a|
 * When you used this setup with previous releases and cannot switch to persistent user sessions now
 a|
 ----
---features="cache-embedded-remote-store" --features-disabled="persistent-user-sessions"
+--features="cache-embedded-remote-store"
+--features-disabled="persistent-user-sessions"
 ----
 .2+.^|Multiple sites (https://www.keycloak.org/high-availability/introduction[guide])
 |Persistent user sessions
 a|
 * Sessions stored in the database without caching in Keycloak memory
 * Synchronously replicating sessions to second site (depending on database configuration)
-|
+a|
 * When resiliency to whole site outage is needed
 a|
 ----
@@ -80,13 +84,15 @@ a|
 a|
 * Sessions stored only in external Infinispan
 * Using Hot Rod client for communication with external Infinispan
+* Reduced database usage
 * Experimental feature
 a|
 * Do not use in production as it is experimental
-* Evaluate and provide a feedback https://github.com/keycloak/keycloak/discussions/33745[here]
+* Evaluate and provide your feedback https://github.com/keycloak/keycloak/discussions/33745[here] if you are interested in this feature and want to help to make it supported.
 a|
 ----
---features="multi-site,clusterless" --features-disabled="persistent-user-sessions"
+--features="multi-site,clusterless"
+--features-disabled="persistent-user-sessions"
 ----
 |===
 
