@@ -11,6 +11,10 @@ In this blog post I would like to uncover a little bit more background on why we
 This section provides a TLDR guidance on what sessions storages exist and when each of them should be used with Keycloak 26.
 The following sections provide more details on each storage type and reasoning behind introducing or dropping each of them.
 
+++++
+<div class="kc-asciidoc">
+++++
+
 |===
 |Number of sites |Sessions storage |Characteristics |When to use |Keycloak CLI options to enable
 
@@ -96,6 +100,9 @@ a|
 ----
 |===
 
+++++
+</div>
+++++
 
 == Evolution of storing sessions
 In the old Keycloak days, all sessions were stored only in embedded Infinispan - in memory of each Keycloak node in a distributed cache (each Keycloak node storing some portion of sessions where each session is present in at least 2 nodes).
