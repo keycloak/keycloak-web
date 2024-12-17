@@ -1,5 +1,5 @@
 :title: Storing sessions in Keycloak 26
-:date: 2024-12-03
+:date: 2024-12-17
 :publish: true
 :author: Michal Hajas
 
