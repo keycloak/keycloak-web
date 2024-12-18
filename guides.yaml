@@ -1,6 +1,4 @@
 guides:
-  - id: migration
-    title: Migration
   - id: getting-started
     title: Getting started
   - id: server
@@ -13,6 +11,8 @@ guides:
     title: Securing applications
   - id: high-availability
     title: High availability
+  - id: migration
+    title: Migration
 
 sources:
   - id: keycloak
