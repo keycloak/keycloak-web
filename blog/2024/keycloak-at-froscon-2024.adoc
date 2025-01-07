@@ -1,7 +1,7 @@
 :title: Videos for the holidays and meet us at FOSDEM!
 :date: 2024-12-12
 :publish: true
-:author: ALexander Schwartz
+:author: Alexander Schwartz
 
 == Videos to re-watch
 
@@ -50,7 +50,7 @@ Let us know if you want to share your story with the broader community, and we w
 
 == Meet us next at FOSDEM!
 
-The good news is that we will back at https://fosdem.org/2025/[FOSDEM 2025 in Brussels in February this year]. We got some talks accepted and will share the details once the schedule is out.
+The good news is that we will back at link:https://www.keycloak.org/2025/01/keycloak-at-fosdem-2025.html[FOSDEM 2025 in Brussels in February this year].
 In the meantime, save the date to either join us in Brussels or live on the stream. If you want to connect on-site, https://github.com/ahus1[reach out to me using your preferred channel].
 
 Some of our team members will also be at the https://keycloak-day.dev/[Keycloak DevDay in March], which is unfortunately already sold out.

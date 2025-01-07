@@ -1,0 +1,64 @@
+:title: Meet Keycloak at FOSDEM 2025 in February!
+:date: 2025-01-08
+:publish: true
+:author: Alexander Schwartz
+
+https://fosdem.org/[FOSDEM] is a free event for software developers to meet, share ideas and collaborate.
+Every year, thousands of developers of free and open source software from all over the world gather at the event.
+Those staying home will be able to watch the live stream of the talks and ask questions online.
+
+Members of the Keycloak project will be on-site like last year, and there will be talks from both the Keycloak community and the Keycloak team.
+See below for places to meet other Keycloak enthusiasts, and which talks will relate to Keycloak.
+
+We will update this post in the upcoming weeks are more details emerge.
+
+== Meet-and-greet
+
+While FOSDEM is organized around talks, it is also a great place to meet people in real life that you previously knew only from online, and make new friends.
+With thousands of people at the event, it is good to have a place to arrange a meet.
+
+Cloud Native Computing Foundation (CNCF) Stand::
+A lot of https://fosdem.org/2025/news/2024-11-16-stands-announced/[organizations and projects] will have a stand at FOSDEM.
+With Keycloak being a CNCF project, we will be sharing a time slot at their stand.
+You'll be able to meet Keycloak maintainers at the CNCF stand on Saturday, February 1st, from 16:00–17:30{nbsp}h.
+As our time slot might change, please come back here on the day of the event and double-check!
+
+Linux Foundation side event & drinks! (Sat Feb 01, 18:00–20:00 h)::
+As part of the events happening around FOSDEM, also called https://fosdem.org/2025/fringe/[FOSDEM Fringe], the Linux foundation invites you for a drink.
+https://linuxfoundation.regfox.com/linux-foundation-fosdem-side-event-2025[A free registration is required to join].
+
+== FOSDEM is all about devrooms!
+
+FOSDEM is a big event divided into smaller, single-track conferences with their own call for papers and organizers.
+Here a short list of those dev rooms that might be of interest for you if you are into Keycloak:
+
+https://fosdem.org/2025/schedule/track/iam/[Identity and Access Management Devroom] (Sun Feb 02, 09:00–17:00{nbsp}h)::
+Identity and Access Management Devroom is related to operating systems' identity and access management in the free software and open source world.
++
+Expect talks about identity federation, integrating identity management into the operating system, Kerberos, and last but not the least OpenID Connect.
+There are several Keycloak talks happening in this dev room, so make sure to tune in!
+
+https://fosdem.org/2025/schedule/track/security/[Security Devroom] (Sat Feb 01, 10:30–19:00{nbsp}h)::
+The Security Devroom covers everything that is relevant to security in the free software and open source world.
+Talks cover topics like cryptography, supply chain, secure development and hardening.
++
+There https://fosdem.org/2025/schedule/event/fosdem-2025-5370-using-dpop-to-use-access-tokens-securely-in-your-single-page-applications/[will be one talk covering DPoP with proof of possession for access tokens in single page applications]!
+
+https://fosdem.org/2025/schedule/track/wallets/[Digital Wallets and Verifiable Credentials Devroom] (Sun Feb 02, 10:30–12:30{nbsp}h)::
+The Digital Wallets and Verifiable Credentials DevRoom is about digital wallets, verifiable credentials and the ecosystems emerging from these subjects, especially in the EU.
++
+No talk is related to Keycloak itself, still interesting for those who are following the https://github.com/keycloak/kc-sig-fapi[Keycloak OIDC Special Interest Group]'s activities around verifiable credentials.
+
+== Keycloak related talks
+
+See below a list of all Keycloak related talks.
+When you watch them live, you will be able to ask questions in the chat.
+All talks will be recorded and will usually be available two or four days after the conference.
+
+* https://fosdem.org/2025/schedule/event/fosdem-2025-5370-using-dpop-to-use-access-tokens-securely-in-your-single-page-applications/[Using DPoP to use access tokens securely in your Single Page Applications]
+* https://fosdem.org/2025/schedule/event/fosdem-2025-5209-deep-dive-into-oidc-flows/[Deep Dive into OIDC flows]
+* https://fosdem.org/2025/schedule/event/fosdem-2025-5510-nubus-an-enterprise-open-source-iam-stack-in-kubernetes/[Nubus: An Enterprise Open Source IAM Stack in Kubernetes]
+* https://fosdem.org/2025/schedule/event/fosdem-2025-4756-sssd-and-idps/[SSSD and IdPs]
+* https://fosdem.org/2025/schedule/event/fosdem-2025-5673-delegating-the-chores-of-authenticating-users-to-keycloak/[Delegating the chores of authenticating users to Keycloak]
+
+We hope to see a lot of you either online or on site in Brussels at FOSDEM!
