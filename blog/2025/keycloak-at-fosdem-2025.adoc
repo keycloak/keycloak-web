@@ -10,12 +10,12 @@ Those staying home will be able to watch the live stream of the talks and ask qu
 Members of the Keycloak project will be on-site like last year, and there will be talks from both the Keycloak community and the Keycloak team.
 See below for places to meet other Keycloak enthusiasts, and which talks will relate to Keycloak.
 
-We will update this post in the upcoming weeks are more details emerge.
+We will update this post in the upcoming weeks when more details emerge.
 
 == Meet-and-greet
 
 While FOSDEM is organized around talks, it is also a great place to meet people in real life that you previously knew only from online, and make new friends.
-With thousands of people at the event, it is good to have a place to arrange a meet.
+With thousands of people at the event, it is good to have a place for a meet-and-greet.
 
 Cloud Native Computing Foundation (CNCF) Stand::
 A lot of https://fosdem.org/2025/news/2024-11-16-stands-announced/[organizations and projects] will have a stand at FOSDEM.
@@ -53,7 +53,7 @@ No talk is related to Keycloak itself, still interesting for those who are follo
 
 See below a list of all Keycloak related talks.
 When you watch them live, you will be able to ask questions in the chat.
-All talks will be recorded and will usually be available two or four days after the conference.
+All talks will be recorded and will usually be available two to four days after the conference.
 
 * https://fosdem.org/2025/schedule/event/fosdem-2025-5370-using-dpop-to-use-access-tokens-securely-in-your-single-page-applications/[Using DPoP to use access tokens securely in your Single Page Applications]
 * https://fosdem.org/2025/schedule/event/fosdem-2025-5209-deep-dive-into-oidc-flows/[Deep Dive into OIDC flows]
