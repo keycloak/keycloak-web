@@ -1,6 +1,6 @@
 :title: Keycloak Terraform Provider Release 5
 :date: 2025-01-10
-:publish: false
+:publish: true
 :author: Thomas Darimont
 
 == Keycloak Terraform Provider Releases
