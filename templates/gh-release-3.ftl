@@ -5,7 +5,7 @@
 </#if>
 
 <h2>Upgrading</h2>
-<p>Before upgrading refer to <a href="${home}/docs/latest/upgrading/index.html#migration-changes">the migration guide</a> for a complete list of changes.</p>
+<p>Before upgrading refer to <a href="${home}/${source.getMigrationGuidePath()}">the migration guide</a> for a complete list of changes.</p>
 
 <#if version.changes?? && version.changes.all?has_content>
 <h2>All resolved issues</h2>

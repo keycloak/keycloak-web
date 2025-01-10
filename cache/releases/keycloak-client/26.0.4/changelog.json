@@ -1,0 +1,50 @@
+[ {
+  "number" : 113,
+  "repository" : "keycloak-client",
+  "title" : "Wrong logger class",
+  "kind" : "enhancement",
+  "area" : "policy-enforcer",
+  "url" : "https://github.com/keycloak/keycloak-client/issues/113"
+}, {
+  "number" : 115,
+  "repository" : "keycloak-client",
+  "title" : "ProviderTest failing with latest nightly build",
+  "kind" : "bug",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak-client/issues/115"
+}, {
+  "number" : 117,
+  "repository" : "keycloak-client",
+  "title" : "Remove JEE from the title of GH actions",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak-client/issues/117"
+}, {
+  "number" : 124,
+  "repository" : "keycloak-client",
+  "title" : "The action \"Sync with Keycloak Server and send PR with changes\" sends PR, which does not have DCO on the commit",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak-client/issues/124"
+}, {
+  "number" : 127,
+  "repository" : "keycloak-client",
+  "title" : "Sync after Keycloak server 26.1.0 release",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak-client/issues/127"
+}, {
+  "number" : 129,
+  "repository" : "keycloak-client",
+  "title" : "The action \"Sync with Keycloak Server and send PR with changes\" takes only client-common-synced into consideration",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak-client/issues/129"
+}, {
+  "number" : 130,
+  "repository" : "keycloak-client",
+  "title" : "Test with keycloak server images 24.0, 26.0 and 26.1",
+  "kind" : "enhancement",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak-client/issues/130"
+} ]

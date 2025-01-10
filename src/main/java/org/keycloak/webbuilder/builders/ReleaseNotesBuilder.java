@@ -1,30 +1,39 @@
 package org.keycloak.webbuilder.builders;
 
+import freemarker.template.Configuration;
+import freemarker.template.Template;
+import org.keycloak.webbuilder.ReleasesMetadata;
 import org.keycloak.webbuilder.Versions;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.StringWriter;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class ReleaseNotesBuilder extends AbstractBuilder {
-
-    private static final String DOCUMENT_ATTRIBUTES_TAG_URL = "https://raw.githubusercontent.com/keycloak/keycloak/%s/docs/documentation/topics/templates/document-attributes.adoc";
-    private static final String DOCUMENT_ATTRIBUTES_BRANCH_URL = "https://raw.githubusercontent.com/keycloak/keycloak/release/%s/docs/documentation/topics/templates/document-attributes.adoc";
-
-    private static final String RELEASE_NOTES_URL = "https://raw.githubusercontent.com/keycloak/keycloak/release/%s/docs/documentation/release_notes/topics/%s.adoc";
 
     @Override
     protected String getTitle() {
         return "Release Notes";
     }
 
-    public void build() throws IOException {
-        File releasesCache = new File(context.getCacheDir(), "releases");
+    @Override
+    protected void build() throws Exception {
+        ReleasesMetadata metadata = context.getReleasesMetadata();
 
-        for (Versions.Version v : context.versions()) {
+        for (ReleasesMetadata.ReleaseSource source : metadata.getSources()) {
+            buildForSource(source);
+        }
+    }
+
+    private void buildForSource(ReleasesMetadata.ReleaseSource source) throws Exception {
+        File releasesCache = new File(context.getCacheDir(), "releases/" + source.getId());
+        List<Versions.Version> versions = context.versionsFor(source.getId());
+
+        for (Versions.Version v : versions) {
             try {
                 File releaseCacheDir = new File(releasesCache, v.getVersion());
                 releaseCacheDir.mkdirs();
@@ -33,9 +42,9 @@ public class ReleaseNotesBuilder extends AbstractBuilder {
                 File releaseNotesMissingFile = new File(releaseCacheDir, "release-notes.empty");
 
                 if (releaseNotesFile.isFile()) {
-                    printStep("exists", v.getVersion());
+                    printStep("exists", source.getId() + " " + v.getVersion());
                 } else if (releaseNotesMissingFile.isFile()) {
-                    printStep("missing",  v.getVersion());
+                    printStep("missing",  source.getId() + " " + v.getVersion());
                 } else {
                     Map<String, Object> attributes = new HashMap<>();
 
@@ -43,31 +52,47 @@ public class ReleaseNotesBuilder extends AbstractBuilder {
                     attributes.put("leveloffset", "2");
                     attributes.put("fragment", "yes");
 
-                    Map<String, Object> branchAttributes = context.asciiDoctor().parseAttributes(new URL(String.format(DOCUMENT_ATTRIBUTES_BRANCH_URL, v.getVersionShorter())), attributes);
-                    Map<String, Object> tagAttributes = context.asciiDoctor().parseAttributes(new URL(String.format(DOCUMENT_ATTRIBUTES_TAG_URL, v.getVersion())), attributes);
+                    List<String> attributeSources = source.getAttributeSources();
 
-                    attributes.putAll(branchAttributes);
-                    attributes.putAll(tagAttributes);
+                    if (attributeSources != null) {
+                        for (String attributeSource : source.getAttributeSources()) {
+                            URL templateUrl = buildTemplateUrl(source, v, attributeSource);
+                            Map<String, Object> templateAttributes = context.asciiDoctor().parseAttributes(templateUrl, attributes);
+                            attributes.putAll(templateAttributes);
+                        }
+                    }
 
-                    String releaseNotesUrl = String.format(RELEASE_NOTES_URL, v.getVersionShorter(), v.getVersion().replace(".", "_"));
-                    URL url = new URL(releaseNotesUrl);
+                    URL releaseNotesURL = buildTemplateUrl(source, v, source.getReleaseNotes());
 
                     try {
-                        context.asciiDoctor().writeFile(attributes, url, releaseNotesFile.getParentFile(), releaseNotesFile.getName());
-                        printStep("created", v.getVersion());
+                        context.asciiDoctor().writeFile(attributes, releaseNotesURL, releaseNotesFile.getParentFile(), releaseNotesFile.getName());
+                        printStep("created", source.getId() + " " + v.getVersion());
                     } catch (FileNotFoundException e) {
-                        printStep("notfound",  v.getVersion());
+                        printStep("notfound",  source.getId() + " " + v.getVersion());
                         releaseNotesMissingFile.createNewFile();
                     }
                 }
 
                 if (releaseNotesFile.isFile()) {
-                    v.setReleaseNotes("cache/releases/" + v.getVersion() + "/release-notes.html");
+                    v.setReleaseNotes("cache/releases/"  + source.getId() + "/" + v.getVersion() + "/release-notes.html");
                 }
             } catch (Exception e) {
-                printStep("error", v.getVersion() + " (" + e.getClass().getSimpleName() + ")");
+                printStep("error", source.getId() + " " + v.getVersion() + " (" + e.getClass().getSimpleName() + ")");
             }
         }
     }
 
+    private URL buildTemplateUrl(ReleasesMetadata.ReleaseSource source, Versions.Version version, String pathTemplate) throws Exception {
+        Configuration configuration = new Configuration(Configuration.VERSION_2_3_31);
+        Template template = new Template("template", pathTemplate, configuration);
+        StringWriter writer = new StringWriter();
+        Map<String, Object> attributes = new HashMap<>();
+
+        attributes.put("version", version);
+        template.process(attributes, writer);
+
+        String path = writer.toString();
+
+        return new URL(String.format("https://raw.githubusercontent.com/%s/%s", source.getRepo(), path));
+    }
 }

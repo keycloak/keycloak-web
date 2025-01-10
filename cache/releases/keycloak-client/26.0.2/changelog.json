@@ -1,0 +1,22 @@
+[ {
+  "number" : 92,
+  "repository" : "keycloak-client",
+  "title" : "Setup CI during nightly build",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak-client/issues/92"
+}, {
+  "number" : 94,
+  "repository" : "keycloak-client",
+  "title" : "Tests failing with latest Keycloak server nightly",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak-client/issues/94"
+}, {
+  "number" : 99,
+  "repository" : "keycloak-client",
+  "title" : "Sync with keycloak server 26.0.4",
+  "kind" : "enhancement",
+  "area" : "admin-client",
+  "url" : "https://github.com/keycloak/keycloak-client/issues/99"
+} ]

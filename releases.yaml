@@ -1,0 +1,15 @@
+sources:
+  - id: keycloak
+    productName: Keycloak
+    repo: keycloak/keycloak
+    githubReleaseNotesFrom: 23.0.0
+    releaseNotes: release/${version.getVersionShorter()}/docs/documentation/release_notes/topics/${version.getVersion()?replace(".", "_")}.adoc
+    attributeSources:
+      - release/${version.getVersionShorter()}/docs/documentation/topics/templates/document-attributes.adoc
+      - ${version.getVersion()}/docs/documentation/topics/templates/document-attributes.adoc
+    migrationGuidePath: docs/latest/upgrading/index.html#migration-changes
+  - id: keycloak-client
+    productName: Keycloak Client Libraries
+    repo: keycloak/keycloak-client
+    releaseNotes: main/docs/release-notes/${version.getVersion()?replace(".", "_")}.adoc
+    migrationGuidePath: securing-apps/upgrading

@@ -1,0 +1,36 @@
+[ {
+  "number" : 87,
+  "repository" : "keycloak-client",
+  "title" : "Setup nightly action to sync from keycloak server main",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak-client/issues/87"
+}, {
+  "number" : 90,
+  "repository" : "keycloak-client",
+  "title" : "Update MD files ",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak-client/issues/90"
+}, {
+  "number" : 93,
+  "repository" : "keycloak-client",
+  "title" : "Move upgrading guide for keycloak-client libraries to the client documentation",
+  "kind" : "enhancement",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak-client/issues/93"
+}, {
+  "number" : 101,
+  "repository" : "keycloak-client",
+  "title" : "Setup GH action (or script), which will send PR for automatically sync with keycloak server",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak-client/issues/101"
+}, {
+  "number" : 105,
+  "repository" : "keycloak-client",
+  "title" : "Unnecessary `httpclient` dependency in `keycloak-client-common-synced` module",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak-client/issues/105"
+} ]

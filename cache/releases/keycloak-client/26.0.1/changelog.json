@@ -1,0 +1,15 @@
+[ {
+  "number" : 89,
+  "repository" : "keycloak-client",
+  "title" : "ClientTest failing with latest Keycloak nightly",
+  "kind" : "bug",
+  "area" : "admin-client",
+  "url" : "https://github.com/keycloak/keycloak-client/issues/89"
+}, {
+  "number" : 92,
+  "repository" : "keycloak-client",
+  "title" : "Setup CI during nightly build",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak-client/issues/92"
+} ]
