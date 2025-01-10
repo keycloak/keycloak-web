@@ -6,6 +6,7 @@ import org.keycloak.webbuilder.utils.JsonParser;
 import org.keycloak.webbuilder.utils.YamlParser;
 
 import java.io.File;
+import java.util.LinkedList;
 
 public class Context {
 
@@ -16,6 +17,8 @@ public class Context {
     private final File resourcesDir;
     private final File staticDir;
     private final File versionsDir;
+    private final File keycloakVersionsDir;
+    private final File keycloakClientVersionsDir;
     private final File extensionsDir;
     private final File newsDir;
     private final File blogDir;
@@ -25,11 +28,13 @@ public class Context {
     private final File cacheDir;
 
     private Config config;
-    private Versions versions;
+    private Versions keycloakVersions;
+    private Versions keycloakClientVersions;
     private Extensions extensions;
     private Blogs blogs;
     private Guides guides;
     private GuidesMetadata guidesMetadata;
+    private ReleasesMetadata releasesMetadata;
     private News news;
 
     private FreeMarker freeMarker;
@@ -45,6 +50,8 @@ public class Context {
         resourcesDir = new File(webSrcDir, "resources");
         staticDir = new File(webSrcDir, "static");
         versionsDir = new File(webSrcDir, "versions");
+        keycloakVersionsDir = new File(versionsDir, "keycloak");
+        keycloakClientVersionsDir = new File(versionsDir, "keycloak-client");
         extensionsDir = new File(webSrcDir, "extensions");
         newsDir = new File(webSrcDir, "news");
         blogDir = new File(webSrcDir, "blog");
@@ -60,10 +67,12 @@ public class Context {
         config = loadConfig();
         links = new Links(config);
 
-        versions = new Versions(versionsDir);
-        extensions = new Extensions(extensionsDir);
-        blogs = new Blogs(blogDir, versions, config, freeMarker, asciiDoctor);
+        keycloakVersions = new Versions(keycloakVersionsDir);
+        keycloakClientVersions = new Versions(keycloakClientVersionsDir);
         guidesMetadata = new YamlParser().read(new File(getWebSrcDir(),"/guides.yaml"), GuidesMetadata.class);
+        releasesMetadata = new YamlParser().read(new File(getWebSrcDir(),"/releases.yaml"), ReleasesMetadata.class);
+        extensions = new Extensions(extensionsDir);
+        blogs = new Blogs(this);
         guides = new Guides(guidesMetadata, tmpDir, getWebSrcDir(), asciiDoctor);
         news = new News(newsDir, blogs, config);
 
@@ -92,7 +101,22 @@ public class Context {
     }
 
     public Versions versions() {
-        return versions;
+        return keycloakVersions;
+    }
+
+    public LinkedList<Versions.Version> versionsFor(String id) throws Exception {
+        switch (id) {
+            case "keycloak":
+                return versions();
+            case "keycloak-client":
+                return clientVersions();
+            default:
+                throw new Exception(String.format("No versions available for %s", id));
+        }
+    }
+
+    public Versions clientVersions() {
+        return keycloakClientVersions;
     }
 
     public Extensions extensions() {
@@ -157,6 +181,10 @@ public class Context {
 
     public GuidesMetadata getGuidesMetadata() {
         return guidesMetadata;
+    }
+
+    public ReleasesMetadata getReleasesMetadata() {
+        return releasesMetadata;
     }
 
     public File getGuidesDir() {

@@ -1,8 +1,5 @@
 package org.keycloak.webbuilder;
 
-import org.keycloak.webbuilder.utils.AsciiDoctor;
-import org.keycloak.webbuilder.utils.FreeMarker;
-
 import java.io.File;
 import java.util.*;
 
@@ -17,15 +14,9 @@ public class Blogs extends LinkedList<Blogs.Blog> {
         OLD_BLOG.add(Calendar.MONTH, -12);
     }
 
-    private FreeMarker freeMarker;
-    private AsciiDoctor asciiDoctor;
-
-    public Blogs(File blogDir, Versions versions, Config config, FreeMarker freeMarker, AsciiDoctor asciiDoctor) throws Exception {
-        this.freeMarker = freeMarker;
-        this.asciiDoctor = asciiDoctor;
-
+    public Blogs(Context context) throws Exception {
         List<File> blogFiles = new LinkedList<>();
-        for (File d : blogDir.listFiles((dir, name) -> name.matches("\\d{4}"))) {
+        for (File d : context.getBlogDir().listFiles((dir, name) -> name.matches("\\d{4}"))) {
             for (File f: d.listFiles((dir, name) -> name.endsWith(".ftl") || name.endsWith(".adoc"))) {
                 blogFiles.add(f);
             }
@@ -34,7 +25,7 @@ public class Blogs extends LinkedList<Blogs.Blog> {
         if (blogFiles != null) {
             for (File f : blogFiles) {
                 BlogFormat format = f.getName().endsWith(".ftl") ? BlogFormat.FREEMARKER : BlogFormat.ASCIIDOC;
-                Map<String, Object> attributes = BlogFormat.FREEMARKER.equals(format) ? freeMarker.parseAttributes(f) : asciiDoctor.parseAttributes(f);
+                Map<String, Object> attributes = BlogFormat.FREEMARKER.equals(format) ? context.freeMarker().parseAttributes(f) : context.asciiDoctor().parseAttributes(f);
 
                 Date date = attributes.containsKey("date") ? Constants.DATE_IN.parse(attributes.get("date").toString()) : null;
                 boolean publish = attributes.containsKey("publish") ? Boolean.parseBoolean((String) attributes.get("publish")) : false;
@@ -58,16 +49,32 @@ public class Blogs extends LinkedList<Blogs.Blog> {
                         false,
                         "blog/" + f.getParentFile().getName() + "/" + f.getName());
 
-                if (blog.isPublish() || !config.isPublish()) {
+                if (blog.isPublish() || !context.config().isPublish()) {
                     add(blog);
                 }
             }
         }
 
-        for (Versions.Version v : versions) {
-            Blog blog = new Blog(BlogFormat.FREEMARKER, v.getDate(), "keycloak-" + v.getVersion().replace(".", "") + "-released", "Keycloak " + v.getVersion() + " released", null, null, "Keycloak Release", true, true, "templates/blog-release-" + v.getBlogTemplate() + ".ftl");
-            blog.getMap().put("version", v);
-            add(blog);
+        ReleasesMetadata metadata = context.getReleasesMetadata();
+
+        for (ReleasesMetadata.ReleaseSource source : metadata.getSources()) {
+            for (Versions.Version v : context.versionsFor(source.getId())) {
+                Blog blog = new Blog(
+                        BlogFormat.FREEMARKER,
+                        v.getDate(),
+                        source.getId() + "-" + v.getVersion().replace(".", "") + "-released",
+                        source.getProductName() + " " + v.getVersion() + " released",
+                        null,
+                        null,
+                        source.getProductName() + " Release",
+                        true,
+                        true,
+                        "templates/blog-release-" + v.getBlogTemplate() + ".ftl"
+                );
+                blog.getMap().put("version", v);
+                blog.getMap().put("source", source);
+                add(blog);
+            }
         }
 
         sort(Comparator.comparing(Blog::getDate).reversed());

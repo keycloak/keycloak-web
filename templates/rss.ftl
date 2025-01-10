@@ -13,6 +13,9 @@
   <category>Keycloak/SSO/Identity and Access Management</category>
   <#list blogs as blog>
     <#assign description>
+        <#list blog.getMap() as key, value>
+            <@"<#assign ${key}=value>"?interpret />
+        </#list>
         <#include "../${blog.template}">
     </#assign>
       <item>

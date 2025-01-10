@@ -9,10 +9,10 @@ fi
 VERSION_NAME=`echo $VERSION | sed 's/.Final//' | sed 's/.CR[[:digit:]]//'`
 DATE=`date +%F`
 
-if [[ "$VERSION" == *".0" ]]; then 
+if [[ "$VERSION" == *".0" ]]; then
     TEMPLATE="version-template.json"
 else
-    TEMPLATE="versions/${VERSION%.*}.0.json"
+    TEMPLATE="versions/keycloak/${VERSION%.*}.0.json"
 fi
 
 if [ ! -f "$TEMPLATE" ]; then
@@ -20,11 +20,10 @@ if [ ! -f "$TEMPLATE" ]; then
     exit
 fi
 
-cat $TEMPLATE | sed "s/\"version\":.*/\"version\": \"$VERSION\",/" | sed 's/"date": ".*"/"date": "DATE"/' | sed "s/DATE/$DATE/" > versions/$VERSION_NAME.json
+cat $TEMPLATE | sed "s/\"version\":.*/\"version\": \"$VERSION\",/" | sed 's/"date": ".*"/"date": "DATE"/' | sed "s/DATE/$DATE/" > versions/keycloak/$VERSION_NAME.json
 
 CURRENT=`cat pom.xml | grep '<version.keycloak>' | cut -d '>' -f 2 | cut -d '<' -f 1`
 LATEST=`echo -e "$CURRENT\n$VERSION" | sort -V -r | head -n 1`
 
-sed -i "s|<version.keycloak>$CURRENT</version.keycloak>|<version.keycloak>$LATEST</version.keycloak>|g" pom.xml
-
+mvn versions:set-property -Dproperty=version.keycloak -DnewVersion=$LATEST -DgenerateBackupPoms=false
 mvn install
