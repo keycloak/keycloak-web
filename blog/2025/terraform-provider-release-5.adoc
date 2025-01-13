@@ -1,0 +1,40 @@
+:title: Keycloak Terraform Provider Release 5
+:date: 2025-01-13
+:publish: true
+:author: Thomas Darimont
+
+== Keycloak Terraform Provider Releases
+
+We're excited to announce the release of the Keycloak Terraform Provider 5.0 with support for Keycloak 24/26.
+You can find the repository https://github.com/keycloak/terraform-provider-keycloak[here].
+
+Following our https://www.keycloak.org/2024/12/terraform-provider-adoption.html[announcement in December 2024], we released Keycloak Terraform Provider 4.5 with a new license and dependency upgrades for Keycloak versions older than 23.0.0.
+
+If you are still using the old Keycloak Terraform Provider by https://github.com/mrparkers[mrparkers] you can take a look at the 
+https://github.com/keycloak/terraform-provider-keycloak#migration-to-the-new-provider[migration notes] to use the new https://github.com/keycloak/terraform-provider-keycloak[Keycloak Terraform Provider].
+
+== Changes
+
+=== 4.5 Maintenance Release 
+
+- CVE fixes
+- Go upgrade
+- Minor Dependency Upgrades
+- License change
+
+=== 5.0 Release 
+
+- Support for Keycloak 24
+- Support for Keycloak 26
+- Dependency Upgrades
+
+== Planned Next Releases
+
+- 5.1 with support for managing organizations
+- patch releases on demand
+
+== Join the Community
+
+We're grateful for all contributors who've helped make the Terraform Provider what it is today. 
+We welcome new contributions, issue reports, feature suggestions, and fixes. Let's work together to make it even better!
+Explore the https://github.com/keycloak/terraform-provider-keycloak[repository location], join https://github.com/keycloak/terraform-provider-keycloak/discussions[the discussions], and help shape the future of the Keycloak Terraform Provider.
