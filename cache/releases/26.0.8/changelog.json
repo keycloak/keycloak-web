@@ -1,0 +1,190 @@
+[ {
+  "number" : 33569,
+  "repository" : "keycloak",
+  "title" : "Show User Events on dedicated tab on Client-/User-Details",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/33569"
+}, {
+  "number" : 34072,
+  "repository" : "keycloak",
+  "title" : "The Realm Selection Dropdown Breaks After 50 Realms In Database",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/34072"
+}, {
+  "number" : 34091,
+  "repository" : "keycloak",
+  "title" : "Username Form should support autocomplete",
+  "kind" : "enhancement",
+  "area" : "login/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/34091"
+}, {
+  "number" : 34207,
+  "repository" : "keycloak",
+  "title" : "logout with client_id and/or post_logout_redirect_uri results in bad request on logout confirmation page",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/34207"
+}, {
+  "number" : 34402,
+  "repository" : "keycloak",
+  "title" : "[Keycloak 26.0.2] Getting \"Forbidden, permission needed: query-clients\" as temp-admin",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/34402"
+}, {
+  "number" : 34675,
+  "repository" : "keycloak",
+  "title" : "Keys tab showing disabled and inactive keys as active",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/34675"
+}, {
+  "number" : 34734,
+  "repository" : "keycloak",
+  "title" : "New event tabs shouldn't have non clear-able filters",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/34734"
+}, {
+  "number" : 34995,
+  "repository" : "keycloak",
+  "title" : "MySQL database migration issue",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/34995"
+}, {
+  "number" : 35048,
+  "repository" : "keycloak",
+  "title" : "Filter events by user id and client not working",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/35048"
+}, {
+  "number" : 35052,
+  "repository" : "keycloak",
+  "title" : "`organizationEnabled` and `verifiableCredentialsEnabled` attributes are present as attributes in an export",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/35052"
+}, {
+  "number" : 35273,
+  "repository" : "keycloak",
+  "title" : "Edit Help Mode descriptor for Roles in policy form",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/35273"
+}, {
+  "number" : 35290,
+  "repository" : "keycloak",
+  "title" : "Database migration fails after upgrading operator to v26.0.6",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/35290"
+}, {
+  "number" : 35317,
+  "repository" : "keycloak",
+  "title" : "Token issuer is null in executeActionsEmail and sendVerifyEmail if no clientId is passed",
+  "kind" : "bug",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/35317"
+}, {
+  "number" : 35324,
+  "repository" : "keycloak",
+  "title" : "Strange Random behavior - Intermittent missing organization claim in Keycloak JWT token",
+  "kind" : "bug",
+  "area" : "organizations",
+  "url" : "https://github.com/keycloak/keycloak/issues/35324"
+}, {
+  "number" : 35410,
+  "repository" : "keycloak",
+  "title" : "SAML Adapter Galleon Pack for EAP8 cannot use new metadata options for layers",
+  "kind" : "bug",
+  "area" : "adapter/saml",
+  "url" : "https://github.com/keycloak/keycloak/issues/35410"
+}, {
+  "number" : 35416,
+  "repository" : "keycloak",
+  "title" : "Mis-formatted definition list of hashing algorithms",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/35416"
+}, {
+  "number" : 35421,
+  "repository" : "keycloak",
+  "title" : "Showing LDAP error message when failing to reset password",
+  "kind" : "bug",
+  "area" : "ldap",
+  "url" : "https://github.com/keycloak/keycloak/issues/35421"
+}, {
+  "number" : 35475,
+  "repository" : "keycloak",
+  "title" : "Delete user confirm title is wrong",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/35475"
+}, {
+  "number" : 35481,
+  "repository" : "keycloak",
+  "title" : "Events: Wrong text for user id search",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/35481"
+}, {
+  "number" : 35488,
+  "repository" : "keycloak",
+  "title" : "[Jekins Keycloak CI] - RH-SSO EAP adapters remote saml tests",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/35488"
+}, {
+  "number" : 35526,
+  "repository" : "keycloak",
+  "title" : "Initial keycloak bootstrap suggestion is not correct.",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/35526"
+}, {
+  "number" : 35544,
+  "repository" : "keycloak",
+  "title" : "Upgrading guide 26.0.6 is missing in the built document",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/35544"
+}, {
+  "number" : 35634,
+  "repository" : "keycloak",
+  "title" : "Temporary password toggle in set password dialog is cut off in admin-console",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/35634"
+}, {
+  "number" : 35675,
+  "repository" : "keycloak",
+  "title" : "New install doesn't allow admin user creation",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/35675"
+}, {
+  "number" : 35822,
+  "repository" : "keycloak",
+  "title" : "Exact searches should be the default when querying user by attributes",
+  "kind" : "bug",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/35822"
+}, {
+  "number" : 36394,
+  "repository" : "keycloak",
+  "title" : "CVE-2024-11736 Unrestricted admin use of system and environment variables",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/36394"
+}, {
+  "number" : 36395,
+  "repository" : "keycloak",
+  "title" : "CVE-2024-11734 Denial of Service in Keycloak Server via Security Headers",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/36395"
+} ]
