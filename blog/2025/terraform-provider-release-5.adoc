@@ -1,5 +1,5 @@
 :title: Keycloak Terraform Provider Release 5
-:date: 2025-01-10
+:date: 2025-01-13
 :publish: true
 :author: Thomas Darimont
 
@@ -30,16 +30,8 @@ https://github.com/keycloak/terraform-provider-keycloak#migration-to-the-new-pro
 
 == Planned Next Releases
 
-=== 5.0.1 Maintenance Release (Q1)
-
-- Bugfixes
-- Minor Dependency Upgrades
-
-=== 5.1 Release (Q1)
-
-- Support for managing organizations
-- Bugfixes
-- Dependency Upgrades
+- 5.1 with support for managing organizations
+- patch releases on demand
 
 == Join the Community
 
