@@ -1,0 +1,292 @@
+<div class="sect2">
+<h3 id="_transport_stack_jdbc_ping_as_new_default">Transport stack <code>jdbc-ping</code> as new default</h3>
+<div class="paragraph">
+<p>Keycloak now uses by default its database to discover other nodes of the same cluster, which removes the need of additional network related configurations especially for cloud providers. It is also a default that will work out-of-the-box in cloud environments.</p>
+</div>
+<div class="paragraph">
+<p>Previous versions of Keycloak used as a default UDP multicast to discover other nodes to form a cluster and to synchronize the replicated caches of Keycloak.
+This required multicast to be available and to be configured correctly, which is usually not the case in cloud environments.</p>
+</div>
+<div class="paragraph">
+<p>Starting with this version, the default changes to the <code>jdbc-ping</code> configuration which uses Keycloak&#8217;s database to discover other nodes.
+As this removes the need for multicast network capabilities and UDP and no longer using dynamic ports for the TCP-based failure detection, this is a simplification and a drop-in replacement for environments which used the previous default.
+To enable the previous behavior, choose the transport stack <code>udp</code> which is now deprecated.</p>
+</div>
+<div class="paragraph">
+<p>The Keycloak Operator will continue to configure <code>kubernetes</code> as a transport stack.</p>
+</div>
+<div class="paragraph">
+<p>See the <a href="https://www.keycloak.org/server/caching">Configuring distributed caches</a> guide for more information.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_virtual_threads_enabled_for_infinispan_and_jgroups_thread_pools">Virtual Threads enabled for Infinispan and JGroups thread pools</h3>
+<div class="paragraph">
+<p>Starting from this release, Keycloak automatically enables the virtual thread pool support in both the embedded Infinispan and JGroups  when running on OpenJDK 21.
+This removes the need to configure the JGroups thread pool, the need to align the JGroups thread pool with the HTTP worker thread pool, and reduces the overall memory footprint.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_opentelemetry_tracing_supported">OpenTelemetry Tracing supported</h3>
+<div class="paragraph">
+<p>In the previous release, the OpenTelemetry Tracing feature was preview and is <strong>fully supported</strong> now.
+It means the <code>opentelemetry</code> feature is enabled by default.</p>
+</div>
+<div class="paragraph">
+<p>There were made multiple improvements to the tracing capabilities in Keycloak such as:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Configuration via Keycloak CR</strong> in Keycloak Operator</p>
+</li>
+<li>
+<p><strong>Custom spans</strong> for:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Incoming/outgoing HTTP requests including Identity Providers brokerage</p>
+</li>
+<li>
+<p>Database operations and connections</p>
+</li>
+<li>
+<p>LDAP requests</p>
+</li>
+<li>
+<p>Time-consuming operations (passwords hashing, persistent sessions operations, &#8230;&#8203;)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For more information, see the <a href="https://www.keycloak.org/server/tracing">Enabling Tracing</a> guide.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_infinispan_default_xml_configuration_location">Infinispan default XML configuration location</h3>
+<div class="paragraph">
+<p>Previous releases ignored any change  to <code>conf/cache-ispn.xml</code> if the <code>--cache-config-file</code> option was not provided.</p>
+</div>
+<div class="paragraph">
+<p>Starting from this release, when <code>--cache-config-file</code> is not set, the default Infinispan XML configuration file is <code>conf/cache-ispn.xml</code> as this is both the expected behavior and the implied behavior given the docs of the current and previous releases.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_individual_options_for_category_specific_log_levels">Individual options for category-specific log levels</h3>
+<div class="paragraph">
+<p>It is now possible to set category-specific log levels as individual <code>log-level-category</code> options.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see the <a href="https://www.keycloak.org/server/logging#_configuring_levels_as_individual_options">Logging guide</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_openid_for_verifiable_credential_issuance">OpenID for Verifiable Credential Issuance</h3>
+<div class="paragraph">
+<p>The OpenID for Verifiable Credential Issuance (OID4VCI) remains an experimental feature in Keycloak, but it has great improvements in this release.
+This feature benefits from much polishing of the existing configuration and making the feature more dynamic and customizable.</p>
+</div>
+<div class="paragraph">
+<p>You will find significant development and discussions in the <a href="https://github.com/keycloak/kc-sig-fapi">Keycloak OAuth SIG</a>. Anyone from the Keycloak community is welcome to join.</p>
+</div>
+<div class="paragraph">
+<p>Many thanks to all members of the OAuth SIG group for the participation in the development and discussions about this feature. Especially thanks to
+<a href="https://github.com/francis-pouatcha">Francis Pouatcha</a>, <a href="https://github.com/IngridPuppet">Ingrid Kamga</a>, <a href="https://github.com/Captain-P-Goldfish">Pascal Knüppel</a>,
+<a href="https://github.com/thomasdarimont">Thomas Darimont</a>, <a href="https://github.com/Ogenbertrand">Ogen Bertrand</a>, <a href="https://github.com/Awambeng">Awambeng Rodrick</a> and <a href="https://github.com/tnorimat">Takashi Norimatsu</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_minimum_acr_value_for_the_client">Minimum ACR Value for the client</h3>
+<div class="paragraph">
+<p>The option <strong>Minimum ACR value</strong> is added as a configuration option on the realm OIDC clients. This addition is an enhancement related to step-up authentication, which makes it possible
+to enforce minimum ACR level when logging in to the particular client.</p>
+</div>
+<div class="paragraph">
+<p>Many thanks to <a href="https://github.com/sonOfRa">Simon Levermann</a> for the contribution.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_support_for_promptcreate">Support for prompt=create</h3>
+<div class="paragraph">
+<p>Support now exists for the <a href="https://openid.net/specs/openid-connect-prompt-create-1_0.html">Initiating user registration standard</a>, which allows OIDC clients to initiate the login request with
+the parameter <code>prompt=create</code> to notify Keycloak that a new user should be registered rather than an existing user authenticated. Initiating user registration was already supported in Keycloak with the use of dedicated endpoint <code>/realms/&lt;realm&gt;/protocol/openid-connect/registrations</code>.
+However, this endpoint is now deprecated in favor of the standard way as it was a proprietary solution specific to Keycloak.</p>
+</div>
+<div class="paragraph">
+<p>Many thanks to <a href="https://github.com/thomasdarimont">Thomas Darimont</a> for the contribution.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_option_to_create_certificates_for_generated_ec_keys">Option to create certificates for generated EC keys</h3>
+<div class="paragraph">
+<p>A new option, <strong>Generate certificate</strong>, exists for EC-DSA and Ed-DSA key providers. When the generated key is created by a realm administrator, a
+certificate might be generated for this key. The certificate information is available in the Admin Console and in the JWK representation of this key, which is available
+from JWKS endpoint with the realm keys.</p>
+</div>
+<div class="paragraph">
+<p>Many thanks to <a href="https://github.com/Captain-P-Goldfish">Pascal Knüppel</a> for the contribution.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_authorization_code_binding_to_a_dpop_key">Authorization Code Binding to a DPoP Key</h3>
+<div class="paragraph">
+<p>Support now exists for <a href="https://datatracker.ietf.org/doc/html/rfc9449#section-10">Authorization Code Binding to a DPoP Key</a> including support for the DPoP with Pushed Authorization Requests.</p>
+</div>
+<div class="paragraph">
+<p>Many thanks to <a href="https://github.com/tnorimat">Takashi Norimatsu</a> for the contribution.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_maximum_count_and_length_for_additional_parameters_sent_to_oidc_authentication_request">Maximum count and length for additional parameters sent to OIDC authentication request</h3>
+<div class="paragraph">
+<p>The OIDC authentication request supports a limited number of additional custom parameters of maximum length. The additional parameters can be
+used for custom purposes (for example, adding the claims into the token with the use of the protocol mappers). In the previous versions, the maximum count of
+the parameters was hardcoded to 5 and the maximum length of the parameters was hardcoded to 2000. Now both values are configurable. Additionally it can be possible to configure
+if additional parameters cause a request to fail or if parameters are ignored.</p>
+</div>
+<div class="paragraph">
+<p>Many thanks to <a href="https://github.com/mschallar">Manuel Schallar</a> and <a href="https://github.com/patrick-primesign">Patrick Weiner</a> for the contribution.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_network_policy_support_added_to_the_keycloak_operator">Network Policy support added to the Keycloak Operator</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Preview feature.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>To improve the security of your Kubernetes deployment, <a href="https://kubernetes.io/docs/concepts/services-networking/network-policies/">Network Policies</a> can be specified in your Keycloak CR.
+The Keycloak Operator accepts the ingress rules, which define from where the traffic is allowed to come from, and automatically creates the necessary Network Policies.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ldap_users_are_created_as_enabled_by_default_when_using_microsoft_active_directory">LDAP users are created as enabled by default when using Microsoft Active Directory</h3>
+<div class="paragraph">
+<p>If you are using Microsoft AD and creating users through the administrative interfaces, the user will be created as enabled by default.</p>
+</div>
+<div class="paragraph">
+<p>In previous versions, it was only possible to update the user status after setting a (non-temporary) password to the user.
+This behavior was not consistent with other built-in user storages as well as not consistent with other LDAP vendors supported
+by the LDAP provider.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_new_conditional_authenticators_condition_sub_flow_executed_and_condition_client_scope">New conditional authenticators <code>Condition - sub-flow executed</code> and <code>Condition - client scope</code></h3>
+<div class="paragraph">
+<p>The <strong>Condition - sub-flow executed</strong> and <strong>Condition - client scope</strong> are new conditional authenticators in Keycloak. The condition <strong>Condition - sub-flow executed</strong> checks if a previous sub-flow was
+executed (or not executed) successfully during the authentication flow execution. The condition <strong>Condition - client scope</strong> checks if a configured client scope is present as a client scope of the
+client requesting authentication. For more details, see <a href="https://www.keycloak.org/docs/26.1.0/server_admin/#conditions-in-conditional-flows">Conditions in conditional flows</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_defining_dependencies_between_provider_factories">Defining dependencies between provider factories</h3>
+<div class="paragraph">
+<p>When developing extensions for Keycloak, developers can now specify dependencies between provider factories classes by implementing the method <code>dependsOn()</code> in the <code>ProviderFactory</code> interface.
+See the Javadoc for a detailed description.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_dark_mode_enabled_for_the_welcome_theme">Dark mode enabled for the welcome theme</h3>
+<div class="paragraph">
+<p>We&#8217;ve now enabled dark mode support for all the <code>keycloak</code> themes. This feature was previously present in the admin console, account console and login, and is now also available on the welcome page. If a user indicates their preference through an operating system setting (e.g. light or dark mode) or a user agent setting, the theme will automatically follow these preferences.</p>
+</div>
+<div class="paragraph">
+<p>If you are using a custom theme that extends any of the <code>keycloak</code> themes and are not yet ready to support dark mode, or have styling conflicts that prevent you from implementing dark mode, you can disable support by adding the following property to your theme:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-properties" data-lang="properties">darkMode=false</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Alternatively, you can disable dark mode support for the built-in Keycloak themes on a per-realm basis by turning off the <strong>Dark mode</strong> setting under the <strong>Theme</strong> tab in the realm settings.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_metrics_on_password_hashing">Metrics on password hashing</h3>
+<div class="paragraph">
+<p>There is a new metric available counting how many password validations were performed by Keycloak.
+This allows you to better assess where CPU resources are used, and can feed into your sizing calculations.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="https://www.keycloak.org/observability/metrics-for-troubleshooting-http">Keycloak metrics</a> and <a href="https://www.keycloak.org/high-availability/concepts-memory-and-cpu-sizing#_measuring_the_activity_of_a_running_keycloak_instance">Concepts for sizing CPU and memory resources</a> for more details.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sign_out_all_active_sessions_in_admin_console_now_effectively_removes_all_sessions">Sign out all active sessions in admin console now effectively removes all sessions</h3>
+<div class="paragraph">
+<p>In previous versions, clicking on <strong>Sign out all active sessions</strong> in the admin console resulted in the removal of regular sessions only. Offline sessions would still be displayed despite being effectively invalidated.</p>
+</div>
+<div class="paragraph">
+<p>This has been changed. Now all sessions, regular and offline, are removed when signing out of all active sessions.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_dedicated_release_cycle_for_the_node_js_adapter_and_javascript_adapter">Dedicated release cycle for the Node.js adapter and JavaScript adapter</h3>
+<div class="paragraph">
+<p>From this release onwards, the Keycloak JavaScript adapter and Keycloak Node.js adapter will have a release cycle independent of the Keycloak server release cycle. The 26.1.0 release may be the last one
+where these adapters are released together with the Keycloak server, but from now on, these adapters may be released at a different time than the Keycloak server.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_updates_in_quickstarts">Updates in quickstarts</h3>
+<div class="paragraph">
+<p>The Keycloak quickstarts are now using <code>main</code> as the base branch. The <code>latest</code>  branch, used previously, is removed. The <code>main</code> branch depends on the
+last released version of the Keycloak server, Keycloak client libraries, and adapters.  As a result, contributions to the quickstarts are immediately visible to quickstart
+consumers with no need to wait for the next Keycloak server release.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_updated_format_of_keycloak_session_cookie_and_auth_session_id_cookie">Updated format of KEYCLOAK_SESSION cookie and AUTH_SESSION_ID cookie</h3>
+<div class="paragraph">
+<p>The format of <code>KEYCLOAK_SESSION</code> cookie was slightly updated to not contain any private data in plain text. Until now, the format of the cookie was <code>realmName/userId/userSessionId</code>. Now the cookie contains user session ID, which is hashed by SHA-256 and URL encoded.</p>
+</div>
+<div class="paragraph">
+<p>The format of <code>AUTH_SESSION_ID</code> cookie was updated to include a signature of the auth session id to ensure its integrity through signature verification. The new format is <code>base64(auth_session_id.auth_session_id_signature)</code>. With this update, the old format will no longer be accepted, meaning that old auth sessions will no longer be valid. This change has no impact on user sessions.</p>
+</div>
+<div class="paragraph">
+<p>These changes can affect you just in case when implementing your own providers and relying on the format of internal Keycloak cookies.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_removal_of_robots_txt_file">Removal of robots.txt file</h3>
+<div class="paragraph">
+<p>The <code>robots.txt</code> file, previously included by default, is now removed. The default <code>robots.txt</code> file blocked all crawling, which prevented the <code>noindex</code>/<code>nofollow</code> directives from being followed. The desired default behaviour is for Keycloak pages to not show up in search engine results and this is accomplished by the existing <code>X-Robots-Tag</code> header, which is set to <code>none</code> by default. The value of this header can be overridden per-realm if a different behaviour is needed.</p>
+</div>
+<div class="paragraph">
+<p>If you previously added a rule in your reverse proxy configuration for this, you can now remove it.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_imported_key_providers_check_and_passivate_keys_with_an_expired_cetificate">Imported key providers check and passivate keys with an expired cetificate</h3>
+<div class="paragraph">
+<p>The key providers that allow to import externally generated keys (<code>rsa</code> and <code>java-keystore</code> factories) now check the validity of the associated certificate if present. Therefore a key with a certificate that is expired cannot be imported in Keycloak anymore. If the certificate expires at runtime, the key is converted into a passive key (enabled but not active). A passive key is not used for new tokens, but it is still valid for validating previous issued tokens.</p>
+</div>
+<div class="paragraph">
+<p>The default <code>generated</code> key providers generate a certificate valid for 10 years (the types that have or can have an associated certificate). Because of the long validity and the recommendation to rotate keys frequently, the generated providers do not perform this check.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_admin_events_might_include_now_additional_details_about_the_context_when_the_event_is_fired">Admin events might include now additional details about the context when the event is fired</h3>
+<div class="paragraph">
+<p>In this release, admin events might hold additional details about the context when the event is fired. When upgrading you should
+expect the database schema being updated to add a new column <code>DETAILS_JSON</code> to the <code>ADMIN_EVENT_ENTITY</code> table.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_openshift_v3_identity_brokering_removed">OpenShift v3 identity brokering removed</h3>
+<div class="paragraph">
+<p>As OpenShift v3 reached end-of-life a while back, support for identity brokering with OpenShift v3 has been removed from Keycloak.</p>
+</div>
+</div>
