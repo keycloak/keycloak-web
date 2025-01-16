@@ -3,6 +3,14 @@
 <html lang="en">
 <head>
 <#compress>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0J2P9316N6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-0J2P9316N6');
+    </script>
     <meta charset="utf-8"/>
     <title><#if (title)?has_content>${title} - </#if>Keycloak</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +30,6 @@
     <link rel="shortcut icon" href="${links.getResource('favicon.ico')}">
 
     <#if importMap?has_content><script type="importmap">${importMap}</script></#if>
-    <script src="${links.getResource('js/ga.js')}" type="text/javascript"></script>
     <script src="${links.getResource('bootstrap/dist/js/bootstrap.min.js')}" type="text/javascript"></script>
     <script src="${links.getResource('tocbot/dist/tocbot.min.js')}" type="text/javascript"></script>
     <#if rss><link rel="alternate" type="application/rss+xml" title="Keycloak's Blog" href="${links.getRss()}"></#if>

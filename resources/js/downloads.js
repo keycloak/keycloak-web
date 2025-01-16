@@ -1,4 +1,6 @@
 var version = '${version.version}';
 function dl(category, label) {
-    ga('send', 'event', category, category + '-' + label, category + '-' + label + '-' + version);
+    dataLayer.push({'event':category, 'version': version});
+    dataLayer.push({'event':category + '-' + label, 'version': version});
+    dataLayer.push({'event':category + '-' + label + '-' + version});
 }
