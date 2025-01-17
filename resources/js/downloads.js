@@ -1,6 +1,6 @@
-var version = '${version.version}';
+dataLayer.push({'kc_version': window.kc_version});
 function dl(category, label) {
-    dataLayer.push({'event':category, 'version': version});
-    dataLayer.push({'event':category + '-' + label, 'version': version});
-    dataLayer.push({'event':category + '-' + label + '-' + version});
+    dataLayer.push({'event':category});
+    dataLayer.push({'event':category + '-' + label});
+    dataLayer.push({'event':category + '-' + label + "-" + window.kc_version});
 }

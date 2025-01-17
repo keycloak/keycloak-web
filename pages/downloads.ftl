@@ -18,6 +18,9 @@
     <p><a href="downloads-archive.html">Archived releases</a> | <a href="${links.nightly}">Nightly release</a></p>
 </div>
 
+<script>
+    window.kc_version = '${version.version}';
+</script>
 <script src="${root}resources/js/downloads.js" type="text/javascript"></script>
 
 </@tmpl.page>
