@@ -1,0 +1,7 @@
+:title: Keycloak client 26.0.4 released
+:date: 2025-01-17
+:publish: true
+:author: Marek Posolda
+
+Keycloak client 26.0.4 is released. The corresponding artifacts are available in the public maven repository. This release is synced with Keycloak server 26.1.0 and allows to use
+latest APIs of that server version. For the details, see all the fixed issues https://github.com/keycloak/keycloak-client/issues?q=is%3Aissue%20state%3Aclosed%20label%3Arelease%2F26.0.4[here].
