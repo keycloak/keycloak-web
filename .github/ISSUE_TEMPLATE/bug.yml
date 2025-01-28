@@ -1,6 +1,6 @@
 name: Website Problem Report
 description: Report a problem on Keycloak's website
-labels: ["kind/bug", "status/triage", "area/docs"]
+labels: ["kind/bug", "status/triage"]
 body:
   - type: textarea
     id: description
