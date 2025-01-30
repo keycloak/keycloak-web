@@ -27,4 +27,6 @@
 
 </div>
 
+<script src="${links.getResource('js/redirect.js')}" type="text/javascript"></script>
+
 </@tmpl.page>
