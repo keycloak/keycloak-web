@@ -11,6 +11,7 @@ import org.keycloak.webbuilder.utils.JsonParser;
 import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -36,30 +37,31 @@ public class AppBuilder extends AbstractBuilder {
         // Get package contents as tarball stream.
         Package packageInfo = Registry.getPackage(name);
         Version latestVersion = packageInfo.getVersionByTag(version);
-        ArchiveInputStream<TarArchiveEntry> tarball = latestVersion.getDist().getTarballStream();
+        try (ArchiveInputStream<TarArchiveEntry> tarball = latestVersion.getDist().getTarballStream()) {
 
-        // Copy package contents to installation path.
-        ArchiveEntry entry;
-        while ((entry = tarball.getNextEntry()) != null) {
-            // Skip any files not part of the package contents.
-            String packagePrefix = "package";
-            if (!entry.getName().startsWith(packagePrefix)) {
-                continue;
+            // Copy package contents to installation path.
+            ArchiveEntry entry;
+            while ((entry = tarball.getNextEntry()) != null) {
+                // Skip any files not part of the package contents.
+                String packagePrefix = "package";
+                if (!entry.getName().startsWith(packagePrefix)) {
+                    continue;
+                }
+
+                // Resolve path without 'package' prefix.
+                Path entryPath = Path.of(packagePrefix).relativize(Path.of(entry.getName()));
+
+                // Skip file if it's extension is not permitted.
+                String extension = getFileExtension(entryPath.getFileName().toString());
+                if (!ALLOWED_EXTENSIONS.contains(extension)) {
+                    continue;
+                }
+
+                // Resolve target path and copy file.
+                Path targetPath = installationPath.resolve(entryPath);
+                Files.createDirectories(targetPath.getParent());
+                Files.copy(tarball, targetPath, StandardCopyOption.REPLACE_EXISTING);
             }
-
-            // Resolve path without 'package' prefix.
-            Path entryPath = Path.of(packagePrefix).relativize(Path.of(entry.getName()));
-
-            // Skip file if it's extension is not permitted.
-            String extension = getFileExtension(entryPath.getFileName().toString());
-            if(!ALLOWED_EXTENSIONS.contains(extension)) {
-                continue;
-            }
-
-            // Resolve target path and copy file.
-            Path targetPath = installationPath.resolve(entryPath);
-            Files.createDirectories(targetPath.getParent());
-            Files.copy(tarball, targetPath);
         }
 
         // Add package to the imports so it can be written to the import map later.
