@@ -20,12 +20,13 @@ With thousands of people at the event, it is good to have a place for a meet-and
 Cloud Native Computing Foundation (CNCF) Stand::
 A lot of https://fosdem.org/2025/news/2024-11-16-stands-announced/[organizations and projects] will have a stand at FOSDEM.
 With Keycloak being a CNCF project, we will be sharing a time slot at their stand.
-You'll be able to meet Keycloak maintainers at the CNCF stand on Saturday, February 1st, from 16:00–17:30{nbsp}h.
+*You'll be able to meet Keycloak maintainers at the CNCF stand on Saturday, February 1st, from 16:00–17:30{nbsp}h.*
 As our time slot might change, please come back here on the day of the event and double-check!
 
 Linux Foundation side event & drinks! (Sat Feb 01, 18:00–20:00 h)::
 As part of the events happening around FOSDEM, also called https://fosdem.org/2025/fringe/[FOSDEM Fringe], the Linux foundation invites you for a drink.
 https://linuxfoundation.regfox.com/linux-foundation-fosdem-side-event-2025[A free registration is required to join].
+*UPDATE:* It is currently fully booked and there is a waiting list.
 
 == FOSDEM is all about devrooms!
 
@@ -55,10 +56,24 @@ See below a list of all Keycloak related talks.
 When you watch them live, you will be able to ask questions in the chat.
 All talks will be recorded and will usually be available two to four days after the conference.
 
-* https://fosdem.org/2025/schedule/event/fosdem-2025-5370-using-dpop-to-use-access-tokens-securely-in-your-single-page-applications/[Using DPoP to use access tokens securely in your Single Page Applications]
-* https://fosdem.org/2025/schedule/event/fosdem-2025-5209-deep-dive-into-oidc-flows/[Deep Dive into OIDC flows]
-* https://fosdem.org/2025/schedule/event/fosdem-2025-5510-nubus-an-enterprise-open-source-iam-stack-in-kubernetes/[Nubus: An Enterprise Open Source IAM Stack in Kubernetes]
-* https://fosdem.org/2025/schedule/event/fosdem-2025-4756-sssd-and-idps/[SSSD and IdPs]
-* https://fosdem.org/2025/schedule/event/fosdem-2025-5673-delegating-the-chores-of-authenticating-users-to-keycloak/[Delegating the chores of authenticating users to Keycloak]
+* https://fosdem.org/2025/schedule/event/fosdem-2025-5370-using-dpop-to-use-access-tokens-securely-in-your-single-page-applications/[Using DPoP to use access tokens securely in your Single Page Applications] +
+Track: Security / Room: UB4.132 +
+Scheduled: Saturday 13:30 CET
+
+* https://fosdem.org/2025/schedule/event/fosdem-2025-5209-deep-dive-into-oidc-flows/[Deep Dive into OIDC flows] +
+Track: Identity and Access Management / Room UA2.118 (Henriot) +
+Scheduled: Sunday 10:05 CET
+
+* https://fosdem.org/2025/schedule/event/fosdem-2025-5510-nubus-an-enterprise-open-source-iam-stack-in-kubernetes/[Nubus: An Enterprise Open Source IAM Stack in Kubernetes] +
+Track: Identity and Access Management / Room UA2.118 (Henriot) +
+Scheduled: Sunday 10:35 CET
+
+* https://fosdem.org/2025/schedule/event/fosdem-2025-4756-sssd-and-idps/[SSSD and IdPs] +
+Track: Identity and Access Management / Room UA2.118 (Henriot) +
+Scheduled: Sunday 12:35 CET
+
+* https://fosdem.org/2025/schedule/event/fosdem-2025-5673-delegating-the-chores-of-authenticating-users-to-keycloak/[Delegating the chores of authenticating users to Keycloak] +
+Track: Identity and Access Management / Room UA2.118 (Henriot) +
+Scheduled: Sunday 16:00 CET
 
 We hope to see a lot of you either online or on site in Brussels at FOSDEM!
