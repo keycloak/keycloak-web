@@ -3,5 +3,11 @@
     "bootstrap": "5.1.x",
     "@fortawesome/fontawesome-free": "5.15.4",
     "tocbot": "4.18.0"
+  },
+  "scripts": {
+    "serve": "http-server target/web -c-1 -p 5000 -a 127.0.0.1 --cors"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
   }
 }
