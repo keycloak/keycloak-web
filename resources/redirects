@@ -1,2 +1,9 @@
-/docs/latest/security_apps=/guides#securing-apps
-/docs/latest/server_installation=/guides.html#server
+# Regex with with or without a anchor -> target path
+^/docs/(latest|[0-9.]+)/securing_apps=/guides.html#securing-apps
+^/docs/(latest|[0-9.]+)/server_installation=/guides.html#server
+^/docs/(latest|[0-9.]+)/getting_started=/guides.html#getting-started
+^/docs/([0-9.]+)/server-admin=/docs-api/latest/server-admin/index.html
+^/docs/([0-9.]+)/upgrading=/docs-api/latest/upgrading/index.html
+^/docs-api/[0-9.]+/rest-api=/docs-api/latest/rest-api/index.html
+^/[0-9]+/[0-9]+/keycloak-[0-9]+-released=/blog.html
+^/404=/
