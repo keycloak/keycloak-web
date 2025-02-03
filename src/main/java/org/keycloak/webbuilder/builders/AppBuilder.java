@@ -9,8 +9,10 @@ import org.keycloak.webbuilder.npm.Version;
 import org.keycloak.webbuilder.utils.JsonParser;
 
 import java.io.File;
+import java.nio.file.CopyOption;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -59,7 +61,7 @@ public class AppBuilder extends AbstractBuilder {
             // Resolve target path and copy file.
             Path targetPath = installationPath.resolve(entryPath);
             Files.createDirectories(targetPath.getParent());
-            Files.copy(tarball, targetPath);
+            Files.copy(tarball, targetPath, StandardCopyOption.REPLACE_EXISTING);
         }
 
         // Add package to the imports so it can be written to the import map later.
