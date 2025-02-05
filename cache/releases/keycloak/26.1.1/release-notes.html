@@ -1,0 +1,18 @@
+<div class="sect2">
+<h3 id="_new_option_in_x_509_authenticator_to_abort_authentication_if_crl_is_outdated">New option in X.509 authenticator to abort authentication if CRL is outdated</h3>
+<div class="paragraph">
+<p>The X.509 authenticator has a new option <code>x509-cert-auth-crl-abort-if-non-updated</code> (<strong>CRL abort if non updated</strong> in the Admin Console) to abort the login if a CRL is configured to validate the certificate and the CRL is not updated in the time specified in the next update field. The new option defaults to <code>true</code> in the Admin Console. For more details about the CRL next update field, see <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-5.1.2.5">RFC5280, Section-5.1.2.5</a>.</p>
+</div>
+<div class="paragraph">
+<p>The value <code>false</code> is maintained for compatibility with the previous behavior. Note that existing configurations will not have the new option and will act as if this option was set to <code>false</code>, but the Admin Console will add the default value <code>true</code> on edit.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_new_option_in_send_reset_email_to_force_a_login_after_reset_credentials">New option in Send Reset Email to force a login after reset credentials</h3>
+<div class="paragraph">
+<p>The <code>reset-credential-email</code> (<strong>Send Reset Email</strong>) is the authenticator used in the <strong>reset credentials</strong> flow (<strong>forgot password</strong> feature) for sending the email to the user with the reset credentials token link. This authenticator now has a new option <code>force-login</code> (<strong>Force login after reset</strong>). When this option is set to <code>true</code>, the authenticator terminates the session and forces a new login.</p>
+</div>
+<div class="paragraph">
+<p>For more details about this new option, see <a href="https://www.keycloak.org/docs/DEV/server_admin/#enabling-forgot-password">Enable forgot password</a>.</p>
+</div>
+</div>

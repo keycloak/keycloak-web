@@ -1,0 +1,66 @@
+<div>
+    <h2>Highlights</h2>
+<div class="sect2">
+<h3 id="_new_option_in_x_509_authenticator_to_abort_authentication_if_crl_is_outdated">New option in X.509 authenticator to abort authentication if CRL is outdated</h3>
+<div class="paragraph">
+<p>The X.509 authenticator has a new option <code>x509-cert-auth-crl-abort-if-non-updated</code> (<strong>CRL abort if non updated</strong> in the Admin Console) to abort the login if a CRL is configured to validate the certificate and the CRL is not updated in the time specified in the next update field. The new option defaults to <code>true</code> in the Admin Console. For more details about the CRL next update field, see <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-5.1.2.5">RFC5280, Section-5.1.2.5</a>.</p>
+</div>
+<div class="paragraph">
+<p>The value <code>false</code> is maintained for compatibility with the previous behavior. Note that existing configurations will not have the new option and will act as if this option was set to <code>false</code>, but the Admin Console will add the default value <code>true</code> on edit.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_new_option_in_send_reset_email_to_force_a_login_after_reset_credentials">New option in Send Reset Email to force a login after reset credentials</h3>
+<div class="paragraph">
+<p>The <code>reset-credential-email</code> (<strong>Send Reset Email</strong>) is the authenticator used in the <strong>reset credentials</strong> flow (<strong>forgot password</strong> feature) for sending the email to the user with the reset credentials token link. This authenticator now has a new option <code>force-login</code> (<strong>Force login after reset</strong>). When this option is set to <code>true</code>, the authenticator terminates the session and forces a new login.</p>
+</div>
+<div class="paragraph">
+<p>For more details about this new option, see <a href="https://www.keycloak.org/docs/DEV/server_admin/#enabling-forgot-password">Enable forgot password</a>.</p>
+</div>
+</div>
+<h2>Upgrading</h2>
+<p>Before upgrading refer to <a href="file:/home/runner/work/keycloak-rel/keycloak-rel/target/web/docs/latest/upgrading/index.html#migration-changes">the migration guide</a> for a complete list of changes.</p>
+
+<h2>All resolved issues</h2>
+
+
+
+<h3>Enhancements</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak-nodejs-connect/issues/552">#552</a> Clean up old release code from Node.js adapter repo </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/34275">#34275</a> Organizations: Allow Organization Selection <code>organizations</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/34343">#34343</a> CreatedResponseUtil.getCreatedId should expose the actual error message from the server <code>admin/client-java</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/36440">#36440</a> Remove Node.js adapter documentation from main repo <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/36456">#36456</a> Clarify IPv6 JGroups requirements in Keycloak documenation </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/36798">#36798</a> Add detail on dependencyManagement section for POM files </li>
+</ul>
+
+<h3>Bugs</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak-nodejs-connect/issues/558">#558</a> The draft nightly untagged release is created by "Release nightly" GH action </li>
+<li><a href="https://github.com/keycloak/keycloak-nodejs-connect/issues/562">#562</a> Incorrectly resolved {project_versionNpm} expression in the documentation </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/32766">#32766</a> Translation error in messages_fr.properties <code>translations</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/33477">#33477</a> LDAP groups not showing members in Groups when using memberOf attribute <code>ldap</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/36159">#36159</a> Realm not found while exists and works if entered directly in the URL <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/36460">#36460</a> Deployment artifacts for Quarkus extensions are not in deployment dir <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/36483">#36483</a> Wrong link for tracing in 26.1.0 release notes <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/36514">#36514</a> The organization claim does not appear if the Organization Membership Mapper is added through a custom client scope <code>organizations</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/36531">#36531</a> WebAuthN and dark mode: device icons are hardly readable <code>login/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/36559">#36559</a> keycloak.v2 forms are too small for mobile view <code>login/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/36629">#36629</a> All IDPs shown when reloading login page <code>login/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/36649">#36649</a> When organizations feature is turned on, login_hint doesn't prefill identity-first login's page email field <code>organizations</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/36669">#36669</a> --spi-connections-liquibase-default-index-creation-threshold does not work <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/36675">#36675</a> Links error for https://jwt.io in documentation <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/36728">#36728</a> Logging errors on DB transaction retries <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/36745">#36745</a> Conflict when Keycloak uses an OpenShift cluster ingress certificate <code>operator</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/36781">#36781</a> Flaky test: org.keycloak.testsuite.webauthn.account.WebAuthnTransportLocaleTest#localizationTransportInternal <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/36782">#36782</a> Flaky test: org.keycloak.testsuite.webauthn.account.WebAuthnSigningInTest#multipleSecurityKeys <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/36844">#36844</a> Provide an option to force login after reset credentials <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/36887">#36887</a> Outdated documentation about how to use reCAPTCHA in development with localhost  <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/36902">#36902</a> Flaky test: org.keycloak.testsuite.webauthn.account.WebAuthnErrorTest#errorPageWithTimeout <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/36945">#36945</a> Bad escape apostrophe character in messages_fr.properties <code>login/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/36988">#36988</a> Typos in English email message templates <code>translations</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/36998">#36998</a> UI tests failing <code>admin/ui</code></li>
+</ul>
+
+</div>

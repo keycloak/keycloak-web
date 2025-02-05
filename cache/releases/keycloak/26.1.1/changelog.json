@@ -1,0 +1,218 @@
+[ {
+  "number" : 552,
+  "repository" : "keycloak-nodejs-connect",
+  "title" : "Clean up old release code from Node.js adapter repo",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak-nodejs-connect/issues/552"
+}, {
+  "number" : 558,
+  "repository" : "keycloak-nodejs-connect",
+  "title" : "The draft nightly untagged release is created by \"Release nightly\" GH action",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak-nodejs-connect/issues/558"
+}, {
+  "number" : 562,
+  "repository" : "keycloak-nodejs-connect",
+  "title" : "Incorrectly resolved {project_versionNpm} expression in the documentation",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak-nodejs-connect/issues/562"
+}, {
+  "number" : 32766,
+  "repository" : "keycloak",
+  "title" : "Translation error in messages_fr.properties",
+  "kind" : "bug",
+  "area" : "translations",
+  "url" : "https://github.com/keycloak/keycloak/issues/32766"
+}, {
+  "number" : 33477,
+  "repository" : "keycloak",
+  "title" : "LDAP groups not showing members in Groups when using memberOf attribute",
+  "kind" : "bug",
+  "area" : "ldap",
+  "url" : "https://github.com/keycloak/keycloak/issues/33477"
+}, {
+  "number" : 34275,
+  "repository" : "keycloak",
+  "title" : "Organizations: Allow Organization Selection",
+  "kind" : "enhancement",
+  "area" : "organizations",
+  "url" : "https://github.com/keycloak/keycloak/issues/34275"
+}, {
+  "number" : 34343,
+  "repository" : "keycloak",
+  "title" : "CreatedResponseUtil.getCreatedId should expose the actual error message from the server",
+  "kind" : "enhancement",
+  "area" : "admin/client-java",
+  "url" : "https://github.com/keycloak/keycloak/issues/34343"
+}, {
+  "number" : 36159,
+  "repository" : "keycloak",
+  "title" : "Realm not found while exists and works if entered directly in the URL",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/36159"
+}, {
+  "number" : 36440,
+  "repository" : "keycloak",
+  "title" : "Remove Node.js adapter documentation from main repo",
+  "kind" : "enhancement",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/36440"
+}, {
+  "number" : 36450,
+  "repository" : "keycloak",
+  "title" : "Add SAML adapter zip distribution back to the sources",
+  "kind" : "task",
+  "area" : "adapter/saml",
+  "url" : "https://github.com/keycloak/keycloak/issues/36450"
+}, {
+  "number" : 36456,
+  "repository" : "keycloak",
+  "title" : "Clarify IPv6 JGroups requirements in Keycloak documenation",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/36456"
+}, {
+  "number" : 36460,
+  "repository" : "keycloak",
+  "title" : "Deployment artifacts for Quarkus extensions are not in deployment dir",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/36460"
+}, {
+  "number" : 36483,
+  "repository" : "keycloak",
+  "title" : "Wrong link for tracing in 26.1.0 release notes",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/36483"
+}, {
+  "number" : 36514,
+  "repository" : "keycloak",
+  "title" : "The organization claim does not appear if the Organization Membership Mapper is added through a custom client scope",
+  "kind" : "bug",
+  "area" : "organizations",
+  "url" : "https://github.com/keycloak/keycloak/issues/36514"
+}, {
+  "number" : 36531,
+  "repository" : "keycloak",
+  "title" : "WebAuthN and dark mode: device icons are hardly readable",
+  "kind" : "bug",
+  "area" : "login/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/36531"
+}, {
+  "number" : 36559,
+  "repository" : "keycloak",
+  "title" : "keycloak.v2 forms are too small for mobile view",
+  "kind" : "bug",
+  "area" : "login/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/36559"
+}, {
+  "number" : 36629,
+  "repository" : "keycloak",
+  "title" : "All IDPs shown when reloading login page",
+  "kind" : "bug",
+  "area" : "login/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/36629"
+}, {
+  "number" : 36649,
+  "repository" : "keycloak",
+  "title" : "When organizations feature is turned on, login_hint doesn't prefill identity-first login's page email field",
+  "kind" : "bug",
+  "area" : "organizations",
+  "url" : "https://github.com/keycloak/keycloak/issues/36649"
+}, {
+  "number" : 36669,
+  "repository" : "keycloak",
+  "title" : "--spi-connections-liquibase-default-index-creation-threshold does not work",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/36669"
+}, {
+  "number" : 36675,
+  "repository" : "keycloak",
+  "title" : "Links error for https://jwt.io in documentation",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/36675"
+}, {
+  "number" : 36728,
+  "repository" : "keycloak",
+  "title" : "Logging errors on DB transaction retries",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/36728"
+}, {
+  "number" : 36745,
+  "repository" : "keycloak",
+  "title" : "Conflict when Keycloak uses an OpenShift cluster ingress certificate",
+  "kind" : "bug",
+  "area" : "operator",
+  "url" : "https://github.com/keycloak/keycloak/issues/36745"
+}, {
+  "number" : 36781,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.webauthn.account.WebAuthnTransportLocaleTest#localizationTransportInternal",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/36781"
+}, {
+  "number" : 36782,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.webauthn.account.WebAuthnSigningInTest#multipleSecurityKeys",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/36782"
+}, {
+  "number" : 36798,
+  "repository" : "keycloak",
+  "title" : "Add detail on dependencyManagement section for POM files",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/36798"
+}, {
+  "number" : 36844,
+  "repository" : "keycloak",
+  "title" : "Provide an option to force login after reset credentials",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/36844"
+}, {
+  "number" : 36887,
+  "repository" : "keycloak",
+  "title" : "Outdated documentation about how to use reCAPTCHA in development with localhost ",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/36887"
+}, {
+  "number" : 36902,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.webauthn.account.WebAuthnErrorTest#errorPageWithTimeout",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/36902"
+}, {
+  "number" : 36945,
+  "repository" : "keycloak",
+  "title" : "Bad escape apostrophe character in messages_fr.properties",
+  "kind" : "bug",
+  "area" : "login/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/36945"
+}, {
+  "number" : 36988,
+  "repository" : "keycloak",
+  "title" : "Typos in English email message templates",
+  "kind" : "bug",
+  "area" : "translations",
+  "url" : "https://github.com/keycloak/keycloak/issues/36988"
+}, {
+  "number" : 36998,
+  "repository" : "keycloak",
+  "title" : "UI tests failing",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/36998"
+} ]
