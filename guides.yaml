@@ -27,3 +27,6 @@ sources:
   - id: keycloak-nodejs-connect-guides
     dir: target/keycloak-nodejs-connect-guides-$$VERSION$$
     github: https://github.com/keycloak/keycloak-nodejs-connect/tree/main/guides/
+  - id: keycloak-js-guides
+    dir: target/keycloak-js-guides-$$VERSION$$
+    github: https://github.com/keycloak/keycloak-js/tree/main/docs/guides/
