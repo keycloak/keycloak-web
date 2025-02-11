@@ -1,0 +1,71 @@
+[ {
+  "number" : 525,
+  "repository" : "keycloak-nodejs-connect",
+  "title" : "Drop support for end-of-life versions of Node.js",
+  "kind" : "deprecation",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak-nodejs-connect/issues/525"
+}, {
+  "number" : 567,
+  "repository" : "keycloak-nodejs-connect",
+  "title" : "Connections with an error code are not terminated",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak-nodejs-connect/issues/567"
+}, {
+  "number" : 571,
+  "repository" : "keycloak-nodejs-connect",
+  "title" : "CI status badge in README is incorrect",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak-nodejs-connect/issues/571"
+}, {
+  "number" : 573,
+  "repository" : "keycloak-nodejs-connect",
+  "title" : "Convert tests to standard modules to upgrade dependencies",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak-nodejs-connect/issues/573"
+}, {
+  "number" : 576,
+  "repository" : "keycloak-nodejs-connect",
+  "title" : "Upgrade `@keycloak/keycloak-admin-client` to latest version",
+  "kind" : "enhancement",
+  "area" : "dependencies",
+  "url" : "https://github.com/keycloak/keycloak-nodejs-connect/issues/576"
+}, {
+  "number" : 36686,
+  "repository" : "keycloak",
+  "title" : "Upgrade Infinispan to 15.0.12.Final",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/36686"
+}, {
+  "number" : 36858,
+  "repository" : "keycloak",
+  "title" : "JDBC Ping with Docker",
+  "kind" : "bug",
+  "area" : "infinispan",
+  "url" : "https://github.com/keycloak/keycloak/issues/36858"
+}, {
+  "number" : 36919,
+  "repository" : "keycloak",
+  "title" : "Latency issue after Keycloak version upgrade",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/36919"
+}, {
+  "number" : 36926,
+  "repository" : "keycloak",
+  "title" : "Invoking dynamic client registration with lightweight access token results in a 404",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/36926"
+}, {
+  "number" : 37162,
+  "repository" : "keycloak",
+  "title" : "Pods become unresponsive after upgrade to 26.1.0",
+  "kind" : "bug",
+  "area" : "infinispan",
+  "url" : "https://github.com/keycloak/keycloak/issues/37162"
+} ]
