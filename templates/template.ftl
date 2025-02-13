@@ -22,9 +22,9 @@
     </#if>
     <meta name="twitter:site" content="@keycloak">
     <meta property="og:site_name" content="Keycloak">
-    <meta property="og:title" content="${title!'Keycloak'}">
+    <meta property="og:title" content="<#if (title)?has_content>${title}<#else>Keycloak</#if>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" property="og:description" content="${summary!'Keycloak - the open source identity and access management solution. Add single-sign-on and authentication to applications and secure services with minimum effort.'}">
+    <meta name="description" property="og:description" content="<#if (summary)?has_content>${summary}<#else>Keycloak - the open source identity and access management solution. Add single-sign-on and authentication to applications and secure services with minimum effort.</#if>">
     <meta name="author" content="Keycloak Team">
     <meta name="keywords" content="sso,idm,openid connect,saml,kerberos,ldap">
 
