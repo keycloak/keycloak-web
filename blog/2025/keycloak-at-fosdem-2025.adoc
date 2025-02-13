@@ -2,12 +2,13 @@
 :date: 2025-01-08
 :publish: true
 :author: Alexander Schwartz
+:summary: Members of the Keycloak project will be on-site like last year, and there will be talks from both the Keycloak community and the Keycloak team.
 
 https://fosdem.org/[FOSDEM] is a free event for software developers to meet, share ideas and collaborate.
 Every year, thousands of developers of free and open source software from all over the world gather at the event.
 Those staying home will be able to watch the live stream of the talks and ask questions online.
 
-Members of the Keycloak project will be on-site like last year, and there will be talks from both the Keycloak community and the Keycloak team.
+{summary}
 See below for places to meet other Keycloak enthusiasts, and which talks will relate to Keycloak.
 
 We will update this post in the upcoming weeks when more details emerge.

@@ -14,7 +14,11 @@
     <meta charset="utf-8"/>
     <title><#if (title)?has_content>${title} - </#if>Keycloak</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Keycloak is an open source identity and access management solution">
+    <#if description??>
+        <meta name="description" content="${description}">
+    <#else>
+        <meta name="description" content="Keycloak is an open source identity and access management solution">
+    </#if>
     <meta name="author" content="Keycloak Team">
     <meta name="keywords" content="sso,idm,openid connect,saml,kerberos,ldap">
 

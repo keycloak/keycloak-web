@@ -15,6 +15,10 @@ public class BlogBuilder extends AbstractBuilder {
 
             attributes.putAll(blog.getMap());
             attributes.put("blog", blog);
+            if (blog.getSummary() != null) {
+                System.out.println("SUMMARY: " + blog.getSummary());
+                attributes.put("description", blog.getSummary());
+            }
 
             File dir = new File(context.getTargetDir(), blog.getPath());
             dir.mkdirs();

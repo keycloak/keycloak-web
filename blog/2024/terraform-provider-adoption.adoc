@@ -2,10 +2,11 @@
 :date: 2024-12-09
 :publish: true
 :author: Thomas Darimont
+:summary: Keycloak Terraform Provider has officially moved under the Keycloak organization!
 
 == New Repository Location
 
-We're excited to announce that the Keycloak Terraform Provider has officially moved under the Keycloak organization! 
+We're excited to announce that the {summary}
 You can find the new repository location https://github.com/keycloak/terraform-provider-keycloak[here].
 
 == The Journey So Far

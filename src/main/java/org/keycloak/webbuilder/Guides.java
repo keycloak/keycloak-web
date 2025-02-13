@@ -18,8 +18,8 @@ import java.util.stream.Collectors;
 
 public class Guides {
 
-    private List<GuidesMetadata.GuideMetadata> categories = new LinkedList<>();
-    private List<Guide> guides = new LinkedList<>();
+    private final List<GuidesMetadata.GuideMetadata> categories = new LinkedList<>();
+    private final List<Guide> guides = new LinkedList<>();
 
     public Guides(GuidesMetadata guidesMetadata, File tmpDir, File webSrcDir, AsciiDoctor asciiDoctor) throws IOException {
 
@@ -88,22 +88,19 @@ public class Guides {
 
             Object isTileVisibileAttribute = attributes.get("guide-tile-visible");
             boolean isTileVisibile = isTileVisibileAttribute == null || "true".equals(isTileVisibileAttribute);
-            try {
-                Guide g = new Guide(guideSource, guideMetadata, f, (String) attributes.get("guide-title"), (String) attributes.get("guide-summary"), (String) attributes.get("guide-tags"), (String) attributes.get("author"), community,
-                        (String) attributes.get("external-link"), isTileVisibile, snapshot);
+            Guide g = new Guide(guideSource, guideMetadata, f, (String) attributes.get("guide-title"), (String) attributes.get("guide-summary"), (String) attributes.get("guide-tags"), (String) attributes.get("author"), community,
+                    (String) attributes.get("external-link"), isTileVisibile, snapshot);
 
-                if (guidePriorities != null) {
-                    Integer priority = guidePriorities.get(g.getName());
-                    if (priority != null) {
-                        g.priority = priority;
-                    }
-                } else if (attributes.containsKey("guide-priority")) {
-                    g.priority = Integer.parseInt((String) attributes.get("guide-priority"));
+            if (guidePriorities != null) {
+                Integer priority = guidePriorities.get(g.getName());
+                if (priority != null) {
+                    g.priority = priority;
                 }
-
-                guides.add(g);
-            } catch (IllegalArgumentException e) {
+            } else if (attributes.containsKey("guide-priority")) {
+                g.priority = Integer.parseInt((String) attributes.get("guide-priority"));
             }
+
+            guides.add(g);
         }
     }
 
@@ -141,23 +138,23 @@ public class Guides {
         return cat -> getGuides(cat).stream().anyMatch(guide-> guide.isSnapshot() == wantSnapshots);
     }
 
-    public class Guide {
+    public static class Guide {
 
-        private GuidesMetadata.GuideSource guideSource;
-        private GuidesMetadata.GuideMetadata metadata;
-        private String name;
-        private String author;
-        private boolean community;
-        private File source;
+        private final GuidesMetadata.GuideSource guideSource;
+        private final GuidesMetadata.GuideMetadata metadata;
+        private final String name;
+        private final String author;
+        private final boolean community;
+        private final File source;
         private final boolean snapshot;
-        private String template;
-        private String title;
-        private String summary;
-        private String path;
+        private final String template;
+        private final String title;
+        private final String summary;
+        private final String path;
         private List<String> tags;
         private int priority = Integer.MAX_VALUE;
-        private String externalLink;
-        private boolean tileVisible;
+        private final String externalLink;
+        private final boolean tileVisible;
 
         public Guide(GuidesMetadata.GuideSource guideSource, GuidesMetadata.GuideMetadata metadata, File source, String title, String summary, String tags, String author, boolean community, String externalLink, boolean tileVisible, boolean snapshot) {
             this.guideSource = guideSource;

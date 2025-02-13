@@ -2,9 +2,10 @@
 :date: 2024-12-17
 :publish: true
 :author: Michal Hajas
+:summary: Keycloak 26 now uses by default the Persistent user sessions feature. \
+In this blog post, we uncover the background on why we introduced this feature, what are the alternatives and what is the future.
 
-As you may know, Keycloak 26 now uses by default the Persistent user sessions feature.
-In this blog post I would like to uncover a little bit more background on why we introduced this feature, what are the alternatives and what is the future.
+{summary}
 
 == Session storages in Keycloak 26 cheatsheet
 

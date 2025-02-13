@@ -2,6 +2,7 @@
 :date: 2025-01-13
 :publish: true
 :author: Thomas Darimont
+:summary: Keycloak Terraform Provider 5.0 with support for Keycloak 24/26 is out
 
 == Keycloak Terraform Provider Releases
 
