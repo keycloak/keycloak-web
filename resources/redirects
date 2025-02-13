@@ -1,9 +1,50 @@
 # Regex with with or without a anchor -> target path
+
+# KC 26.0: Updated chapters for active-active
+^/high-availability/deploy-aws-route53-failover-lambda=/high-availability/introduction
+^/high-availability/deploy-aws-route53-loadbalancer=/high-availability/introduction
+^/high-availability/operate-failover=/high-availability/introduction
+^/high-availability/operate-network-partition-recovery=/high-availability/introduction
+^/high-availability/operate-switch-back=/high-availability/introduction
+^/high-availability/operate-switch-over=/high-availability/introduction
+
+# KC 26.1: Moved to the new observability guide
+^/server/health=/observability/health
+^/server/tracing=/observability/tracing
+^/server/configuration-metrics=/observability/configuration-metrics
+
+# KC 26.0: Move of the securing applications guide
+^/docs/(latest|[0-9.]+)/securing_apps.*#planning-for-securing-applications-and-services=/securing-apps/overview
+^/docs/(latest|[0-9.]+)/securing_apps.*#_oidc=/securing-apps/oidc-layers
+^/docs/(latest|[0-9.]+)/securing_apps.*#configuring-a-docker-registry-to-use-keycloak=/securing-apps/docker-registry
+^/docs/(latest|[0-9.]+)/securing_apps.*#_client_registration=/securing-apps/client-registration
+^/docs/(latest|[0-9.]+)/securing_apps.*#keycloak-java-adapters-2=/securing-apps/saml-galleon-layers
+^/docs/(latest|[0-9.]+)/securing_apps.*#_saml-general-config=/securing-apps/saml-galleon-layers#_saml-general-config
+^/docs/(latest|[0-9.]+)/securing_apps.*#_saml=/securing-apps/overview#_saml
+^/docs/(latest|[0-9.]+)/securing_apps.*#_mod_auth_mellon=/securing-apps/mod-auth-mellon
+^/docs/(latest|[0-9.]+)/securing_apps.*#_client_registration_cli=/securing-apps/client-registration-cli
+^/docs/(latest|[0-9.]+)/securing_apps.*#_token-exchange=/securing-apps/token-exchange
+# Catch-all for all anchors not listed
 ^/docs/(latest|[0-9.]+)/securing_apps=/guides.html#securing-apps
+
+# Those guides have been moved in KC 24 or earlier
 ^/docs/(latest|[0-9.]+)/server_installation=/guides.html#server
 ^/docs/(latest|[0-9.]+)/getting_started=/guides.html#getting-started
-^/docs/([0-9.]+)/server-admin=/docs-api/latest/server-admin/index.html
+
+# Removed old docs should link to the latest guide
+^/docs/([0-9.]+)/server_admin=/docs-api/latest/server_admin/index.html
+^/docs/([0-9.]+)/server_development=/docs-api/latest/server_development/index.html
 ^/docs/([0-9.]+)/upgrading=/docs-api/latest/upgrading/index.html
-^/docs-api/[0-9.]+/rest-api=/docs-api/latest/rest-api/index.html
+^/docs/([0-9.]+)/release_notes=/docs-api/latest/release_notes/index.html
+^/docs-api/([0-9.])+/rest-api=/docs-api/latest/rest-api/index.html
+
+# Any removed old blog page should show the latest blog entries
 ^/[0-9]+/[0-9]+/keycloak-[0-9]+-released=/blog.html
+
+# Other redirects
+^/getting-started/?=/guides#getting-started
+^/securing-apps/?=/guides#getting-started
+^/server/?=/guides#securing-apps
+
+# This is here just to test a redirect locally, and to prevent people opening the 404 page
 ^/404=/

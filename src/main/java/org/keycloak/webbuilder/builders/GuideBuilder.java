@@ -31,9 +31,6 @@ public class GuideBuilder extends AbstractBuilder {
 
         setGuideLinkAttributes(attributes, guide.isSnapshot());
 
-        File dir = new File(context.getTargetDir(), "guides");
-        dir.mkdirs();
-
         context.getTmpDir().mkdirs();
 
         context.asciiDoctor().writeFile(attributes, guide.getSource(), context.getTmpDir(), "guide.html");
