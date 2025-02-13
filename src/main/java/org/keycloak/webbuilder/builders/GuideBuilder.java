@@ -57,6 +57,7 @@ public class GuideBuilder extends AbstractBuilder {
         attributes.put("fragment", "yes");
         attributes.put("notitle", "yes");
         attributes.put("icons", "font");
+        attributes.put("sectanchors", "yes");
     }
 
     private void setGuideLinkAttributes(Map<String, Object> attributes, boolean snapshot) {
