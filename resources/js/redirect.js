@@ -5,10 +5,14 @@ openRedirects.onreadystatechange = function() {
     if (this.readyState === 4 && this.status === 200) {
         var redirects = this.responseText.split(/\r?\n/);
         for (var i = 0; i < redirects.length; i++) {
-            var redirect = redirects[i].split("=");
             if (redirects[i].trim().startsWith("#")) {
                 // allow for line comments
                 continue;
+            }
+            var redirect = redirects[i].split("=");
+            if (redirect.length !== 2) {
+                // ignore empty lines
+                continue
             }
             var pattern = new RegExp(redirect[0])
             if (pattern.test(page) || pattern.test(pageWithHash)) {
