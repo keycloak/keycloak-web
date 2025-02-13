@@ -1,4 +1,4 @@
-<#macro page current title summary="" importMap="" noindex=false nocsp=false rss=false>
+<#macro page current title summary="" importMap="" previewImage="" noindex=false nocsp=false rss=false>
 <!doctype html>
 <html lang="en" prefix="og: https://ogp.me/ns#">
 <head>
@@ -13,16 +13,21 @@
     </script>
     <meta charset="utf-8"/>
     <title><#if (title)?has_content>${title} - </#if>Keycloak</title>
-    <meta name="twitter:card" content="summary_large_image">
+
+    <#if (previewImage)?has_content>
+        <meta name="twitter:card" content="summary_large_image">
+        <meta property="og:image" content="${links.getRoot() + '/preview/' + previewImage}">
+    <#else>
+        <meta name="twitter:card" content="summary_large">
+    </#if>
     <meta name="twitter:site" content="@keycloak">
-    <meta name="og:site_name" content="Keycloak">
+    <meta property="og:site_name" content="Keycloak">
     <#if (title)?has_content>
-        <meta name="og:title" content="${title}">
+        <meta property="og:title" content="${title}">
     </#if>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <#if (summary)?has_content>
-        <meta name="description" content="${summary}">
-        <meta name="og:description" content="${summary}">
+        <meta name="description" property="og:description" content="${summary}">
     <#else>
         <meta name="description" content="Keycloak is an open source identity and access management solution">
     </#if>
@@ -37,7 +42,7 @@
     <link href="${links.getResource('@fortawesome/fontawesome-free/css/all.min.css')}" rel="stylesheet">
     <link href="${links.getResource('css/keycloak.css')}" rel="stylesheet">
     <link rel="canonical" href="${canonical}">
-    <meta name="og:url" content="${canonical}">
+    <meta property="og:url" content="${canonical}">
 
     <link rel="shortcut icon" href="${links.getResource('favicon.ico')}">
 
