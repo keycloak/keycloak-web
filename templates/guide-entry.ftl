@@ -1,6 +1,6 @@
 <#import "/templates/template.ftl" as tmpl>
 
-<@tmpl.page current="search" title="${guide.title}" noindex=guide.snapshot>
+<@tmpl.page current="search" title="${guide.title}" summary="${guide.summary}" noindex=guide.snapshot>
 
 <div class="container mt-5 kc-article">
     <div class="row">

@@ -1,6 +1,6 @@
 <#import "/templates/template.ftl" as tmpl>
 
-<@tmpl.page current="search" title="${blog.title}" rss=true>
+<@tmpl.page current="search" title="${blog.title}" summary="${(blog.summary)!''}" rss=true>
 
 <div class="container mt-5 kc-article">
     <h1>${blog.title}</h1>
@@ -8,7 +8,7 @@
 
     <#if blog.old>
     <div class="alert alert-warning" role="alert">
-    This post is more than one year old. The contents within the blog is likely to be out of date.
+    This post is more than one year old. The content within the blog post is likely to be out of date.
     </div>
     </#if>
 

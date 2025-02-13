@@ -23,9 +23,6 @@ public class GuideBuilder extends AbstractBuilder {
             return;
         }
         attributes.put("guide", guide);
-        if (guide.getSummary() != null) {
-            attributes.put("description", guide.getSummary());
-        }
         if (guide.isSnapshot()) {
             attributes.put("imagesdir", context.getLinks().getRoot() + "/resources/images/guides/nightly");
         } else {
