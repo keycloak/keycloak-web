@@ -1,6 +1,6 @@
 <#import "/templates/template.ftl" as tmpl>
 
-<@tmpl.page current="home" title="" summary="Use Keycloak to add single-sign-on and authentication to applications and secure services with minimum effort." previewImage="index.png" rss=true>
+<@tmpl.page current="home" title="" previewImage="index.png" rss=true>
 
 <div class="jumbotron jumbotron-fluid bg-light kc-bg-triangles">
   <div class="container pt-4 pb-4">
