@@ -32,10 +32,10 @@
 ^/docs/(latest|[0-9.]+)/getting_started=/guides.html#getting-started
 
 # Removed old docs should link to the latest guide
-^/docs/([0-9.]+)/server_admin=/docs-api/latest/server_admin/index.html
-^/docs/([0-9.]+)/server_development=/docs-api/latest/server_development/index.html
-^/docs/([0-9.]+)/upgrading=/docs-api/latest/upgrading/index.html
-^/docs/([0-9.]+)/release_notes=/docs-api/latest/release_notes/index.html
+^/docs/([0-9.]+)/server_admin=/docs/latest/server_admin/index.html
+^/docs/([0-9.]+)/server_development=/docs/latest/server_development/index.html
+^/docs/([0-9.]+)/upgrading=/docs/latest/upgrading/index.html
+^/docs/([0-9.]+)/release_notes=/docs/latest/release_notes/index.html
 ^/docs-api/([0-9.])+/rest-api=/docs-api/latest/rest-api/index.html
 
 # Any removed old blog page should show the latest blog entries
