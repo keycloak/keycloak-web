@@ -1,6 +1,12 @@
 package org.keycloak.webbuilder;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
 import java.io.File;
+import java.io.IOException;
 import java.util.*;
 
 public class Blogs extends LinkedList<Blogs.Blog> {
@@ -59,12 +65,13 @@ public class Blogs extends LinkedList<Blogs.Blog> {
 
         for (ReleasesMetadata.ReleaseSource source : metadata.getSources()) {
             for (Versions.Version v : context.versionsFor(source.getId())) {
+                String summary = getSummary(source, v);
                 Blog blog = new Blog(
                         BlogFormat.FREEMARKER,
                         v.getDate(),
                         source.getId() + "-" + v.getVersion().replace(".", "") + "-released",
                         source.getProductName() + " " + v.getVersion() + " released",
-                        null,
+                        summary,
                         null,
                         source.getProductName() + " Release",
                         true,
@@ -78,6 +85,37 @@ public class Blogs extends LinkedList<Blogs.Blog> {
         }
 
         sort(Comparator.comparing(Blog::getDate).reversed());
+    }
+
+    /**
+     * Use the H3/H4 headings in the release notes to auto-generate a summary.
+     */
+    private String getSummary(ReleasesMetadata.ReleaseSource source, Versions.Version v) {
+        File file = new File("cache/releases/" + source.getId() + "/" + v.getVersion() + "/release-notes.html");
+        if (!file.exists()) {
+            return null;
+        }
+        try {
+            Document document = Jsoup.parse(file);
+            Elements headings = document.select("h3,h4");
+            StringBuilder sb = new StringBuilder();
+            int found = 0;
+            for (int i = 0; i < headings.size() && found < 4; i++) {
+                Element element = headings.get(i);
+                // if the heading has subheadings, ignore the heading
+                if (element.nameIs("h3") && element.nextElementSibling() != null && !element.nextElementSibling().select("h4").isEmpty()) {
+                    continue;
+                }
+                if (sb.length() > 0) {
+                    sb.append(" * ");
+                }
+                sb.append(element.text());
+                ++ found;
+            }
+            return sb.toString();
+        } catch (IOException e) {
+            throw new RuntimeException("Unable to read file " + file, e);
+        }
     }
 
     public static class Blog {
