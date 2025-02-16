@@ -30,6 +30,7 @@ public class BlogBuilder extends AbstractBuilder {
             }
 
             context.freeMarker().writeFile(attributes, "templates/blog-entry.ftl", dir, blog.getFilename());
+            context.sitemap().addFile(new File(dir, blog.getFilename()));
             printStep("created", blog.getFilename());
         }
     }

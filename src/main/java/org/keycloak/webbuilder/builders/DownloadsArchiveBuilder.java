@@ -19,8 +19,10 @@ public class DownloadsArchiveBuilder extends AbstractBuilder {
             attributes.put("archive", true);
             attributes.put("version", version);
 
-            context.freeMarker().writeFile(attributes, "templates/downloads-archive-version.ftl", archiveDir, "downloads-" + version.getVersionShort() + ".html");
-            printStep("created", "downloads-" + version.getVersionShort() + ".html");
+            String file = "downloads-" + version.getVersionShort() + ".html";
+            context.freeMarker().writeFile(attributes, "templates/downloads-archive-version.ftl", archiveDir, file);
+            context.sitemap().addFile(new File(archiveDir, file));
+            printStep("created", file);
         }
     }
 

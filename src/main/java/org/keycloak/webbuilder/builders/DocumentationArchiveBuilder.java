@@ -19,8 +19,10 @@ public class DocumentationArchiveBuilder extends AbstractBuilder {
             attributes.put("archive", true);
             attributes.put("version", version);
 
-            context.freeMarker().writeFile(attributes, "templates/documentation-archive-version.ftl", archiveDir, "documentation-" + version.getVersionShorter() + ".html");
-            printStep("created", "documentation-" + version.getVersionShorter() + ".html");
+            String file = "documentation-" + version.getVersionShorter() + ".html";
+            context.freeMarker().writeFile(attributes, "templates/documentation-archive-version.ftl", archiveDir, file);
+            context.sitemap().addFile(new File(archiveDir, file));
+            printStep("created", file);
         }
     }
 
