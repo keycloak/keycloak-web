@@ -32,6 +32,7 @@ import java.util.regex.Pattern;
 
 public class Sitemap {
     private XMLStreamWriter sitemap;
+    private XMLStreamWriter sitemapExtra;
     private Context context;
     private final Map<String, UrlEntry> oldSitemap = new HashMap<>();
     private String now;
@@ -60,7 +61,7 @@ public class Sitemap {
             documentBuilderFactory.setNamespaceAware(true);
             DocumentBuilder builder = documentBuilderFactory.newDocumentBuilder();
             // org.w3c.dom.Document doc = builder.parse(new File("sitemap.xml"));
-            org.w3c.dom.Document doc = builder.parse("https://www.keycloak.org/sitemap.xml");
+            org.w3c.dom.Document doc = builder.parse("https://www.keycloak.org/sitemap-extra.xml");
             NodeList url = doc.getElementsByTagName("url");
 
             for (int i = 0; i < url.getLength(); i++) {
@@ -112,6 +113,22 @@ public class Sitemap {
         } catch (XMLStreamException | FileNotFoundException e) {
             throw new RuntimeException(e);
         }
+
+        File sitemapExtraFile = new File(context.getTargetDir(), "sitemap-extra.xml");
+
+        try {
+            sitemapExtra = output.createXMLStreamWriter(
+                    new FileOutputStream(sitemapExtraFile));
+            sitemapExtra.setDefaultNamespace("http://www.sitemaps.org/schemas/sitemap/0.9");
+
+            sitemapExtra.writeStartDocument();
+
+            sitemapExtra.writeStartElement("urlset");
+        } catch (XMLStreamException | FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+
     }
 
     private void initCurrentDate() {
@@ -133,7 +150,8 @@ public class Sitemap {
 
             String lastmod = getLastmod(canonical, hash);
 
-            writeUrl(canonical, hash, lastmod);
+            writeUrl(sitemap, canonical, null, lastmod);
+            writeUrl(sitemapExtra, canonical, hash, lastmod);
         } catch (XMLStreamException | IOException | NoSuchAlgorithmException e) {
             throw new RuntimeException("When adding " + file.getAbsolutePath(), e);
         }
@@ -173,7 +191,7 @@ public class Sitemap {
         return date;
     }
 
-    private void writeUrl(String canonical, String hash, String lastmod) throws XMLStreamException {
+    private void writeUrl(XMLStreamWriter sitemap, String canonical, String hash, String lastmod) throws XMLStreamException {
         sitemap.writeStartElement("url");
 
         sitemap.writeStartElement("loc");
@@ -228,13 +246,18 @@ public class Sitemap {
 
     public void close() {
         try {
-            sitemap.writeEndElement();
-            sitemap.writeEndDocument();
-            sitemap.flush();
-            sitemap.close();
+            finalizeXmlFile(sitemap);
+            finalizeXmlFile(sitemapExtra);
         } catch (XMLStreamException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    private void finalizeXmlFile(XMLStreamWriter sitemap) throws XMLStreamException {
+        sitemap.writeEndElement();
+        sitemap.writeEndDocument();
+        sitemap.flush();
+        sitemap.close();
     }
 
     private static class UrlEntry {
