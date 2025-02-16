@@ -25,8 +25,10 @@ public class PageBuilder extends AbstractBuilder {
             String template = "pages/" + (root ? "" : d.getName() + "/") + pageFile.getName();
             File target = root ? context.getTargetDir() : new File(context.getTargetDir(), d.getName());
             target.mkdirs();
-            context.freeMarker().writeFile( template, target, pageFile.getName().replace(".ftl", ".html"));
-            printStep("created", pageFile.getName().replace(".ftl", ".html"));
+            String file = pageFile.getName().replace(".ftl", ".html");
+            context.freeMarker().writeFile( template, target, file);
+            context.sitemap().addFile(new File(target, file));
+            printStep("created", file);
         }
     }
 

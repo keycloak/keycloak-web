@@ -18,14 +18,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Set up JDK 1.8
+    - name: Set up JDK
       uses: actions/setup-java@v1
       with:
-        java-version: 11
+        java-version: 17
     - name: Build with Maven
       env:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      run: mvn -s mvn-rel-settings.xml package -Dpublish
+      run: ./mvnw -B -s mvn-rel-settings.xml package -Dpublish
     - name: Install SSH Client 🔑
       uses: webfactory/ssh-agent@v0.4.1
       with:

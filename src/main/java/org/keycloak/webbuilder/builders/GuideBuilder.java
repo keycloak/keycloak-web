@@ -43,7 +43,10 @@ public class GuideBuilder extends AbstractBuilder {
         }
         target.mkdirs();
 
-        context.freeMarker().writeFile(attributes, "templates/guide-entry.ftl", target, guide.getName() + ".html");
+        String file = guide.getName() + ".html";
+        context.freeMarker().writeFile(attributes, "templates/guide-entry.ftl", target, file);
+        context.sitemap().addFile(new File(target, file));
+
         printStep("created", guide.getTemplate());
     }
 

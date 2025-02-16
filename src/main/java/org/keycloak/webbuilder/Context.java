@@ -36,6 +36,7 @@ public class Context {
     private GuidesMetadata guidesMetadata;
     private ReleasesMetadata releasesMetadata;
     private News news;
+    private Sitemap sitemap;
 
     private FreeMarker freeMarker;
     private AsciiDoctor asciiDoctor;
@@ -59,6 +60,7 @@ public class Context {
         targetDir = new File(rootDir, "target/web").getAbsoluteFile();
         tmpDir = new File(rootDir, "target/tmp").getAbsoluteFile();
         cacheDir = new File(rootDir, "cache").getAbsoluteFile();
+        sitemap = new Sitemap(rootDir);
 
         init();
     }
@@ -78,10 +80,12 @@ public class Context {
 
         freeMarker.init(this);
         asciiDoctor.init(this);
+        sitemap.init(this);
     }
 
     public void close() {
         asciiDoctor.close();
+        sitemap.close();
     }
 
     private Config loadConfig() {
@@ -142,6 +146,8 @@ public class Context {
     public AsciiDoctor asciiDoctor() {
         return asciiDoctor;
     }
+
+    public Sitemap sitemap() { return sitemap; }
 
     public Links getLinks() {
         return links;
