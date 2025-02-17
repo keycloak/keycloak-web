@@ -1,0 +1,5 @@
+{
+  "name": "Quarkus/Quarkiverse extensions",
+  "description": "Easily add any Quarkus/Quarkiverse extensions to your Keycloak deployment.",
+  "website": "https://github.com/mabartos/keycloak-quarkus-extensions"
+}
