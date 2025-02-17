@@ -1,18 +1,91 @@
 package org.keycloak.webbuilder;
 
+import org.apache.commons.lang3.StringUtils;
+import org.keycloak.webbuilder.utils.GitHubApi;
 import org.keycloak.webbuilder.utils.JsonParser;
 
 import java.io.File;
-import java.util.Collections;
+import java.io.IOException;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.ZoneOffset;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.Date;
+import java.util.EnumMap;
 import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 
-public class Extensions extends LinkedList<Extensions.Extension> {
+public class Extensions {
+    private static final String GITHUB_URL = "https://github.com/";
+    private static final int LESS_ACTIVE_OLDER_THAN_MONTHS = 12;
+    private final Map<LivenessCategory, List<Extension>> extensionsMap = new EnumMap<>(LivenessCategory.class);
+
+    public enum LivenessCategory {
+        ACTIVE,
+        LESS_ACTIVE;
+    }
+
+    public List<LivenessCategory> getLivenessCategories() {
+        return Arrays.stream(LivenessCategory.values()).toList();
+    }
+
+    public List<Extension> getByLivenessCategory(LivenessCategory category) {
+        List<Extension> result = extensionsMap.get(category);
+        result.sort(Comparator.comparing(Extension::getName));
+        return result;
+    }
 
     public Extensions(File extensionsDir) {
-        for (File extensionFile : extensionsDir.listFiles((dir, name) -> name.endsWith(".json"))) {
-            add(JsonParser.read(extensionFile, Extension.class));
+        var lessActiveDayThreshold = Date.from(LocalDate.now(ZoneOffset.UTC)
+                .minusMonths(LESS_ACTIVE_OLDER_THAN_MONTHS)
+                .atStartOfDay(ZoneId.systemDefault())
+                .toInstant());
+
+        for (LivenessCategory category : LivenessCategory.values()) {
+            extensionsMap.put(category, new LinkedList<>());
         }
-        Collections.sort(this);
+
+        try (GitHubApi ghApi = GitHubApi.getInstance()) {
+            var gh = ghApi.get();
+            for (File extensionFile : extensionsDir.listFiles((dir, name) -> name.endsWith(".json"))) {
+                var extension = JsonParser.read(extensionFile, Extension.class);
+                var ghSource = Optional.ofNullable(extension.getSource())
+                        .or(() -> Optional.ofNullable(extension.getWebsite()))
+                        .filter(StringUtils::isNotEmpty)
+                        .filter(f -> f.startsWith(GITHUB_URL));
+
+                Date updatedAt = null;
+                if (ghSource.isPresent()) {
+                    String repoName = ghSource.get().replace(GITHUB_URL, "").split("\\?")[0];
+                    if (StringUtils.isNotEmpty(repoName)) {
+                        var repository = gh.getRepository(repoName);
+                        if (repository != null) {
+                            extension.setStars(getFormattedStarsCount(repository.getStargazersCount()));
+                            updatedAt = repository.getPushedAt();
+                        }
+                    }
+                }
+
+                if (updatedAt != null && updatedAt.before(lessActiveDayThreshold)) {
+                    extensionsMap.get(LivenessCategory.LESS_ACTIVE).add(extension);
+                } else {
+                    extensionsMap.get(LivenessCategory.ACTIVE).add(extension);
+                }
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private static String getFormattedStarsCount(int stars) {
+        if (stars >= 1000) {
+            return String.format("%.1fk", stars / 1000.0);
+        } else {
+            return String.valueOf(stars);
+        }
     }
 
     public static class Extension implements  Comparable<Extension> {
@@ -24,6 +97,8 @@ public class Extensions extends LinkedList<Extensions.Extension> {
         private String download;
         private String documentation;
         private String source;
+
+        private String stars;
 
         public String getName() {
             return name;
@@ -79,6 +154,14 @@ public class Extensions extends LinkedList<Extensions.Extension> {
 
         public void setSource(String source) {
             this.source = source;
+        }
+
+        public String getStars() {
+            return stars;
+        }
+
+        public void setStars(String stars) {
+            this.stars = stars;
         }
 
         @Override

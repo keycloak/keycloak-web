@@ -23,10 +23,13 @@ public abstract class AbstractBuilder {
     }
 
     protected void printStep(String type, String detail) {
-        System.out.println("  - [" + type + "] " + detail);
+        printBuilderStep(type, detail);
         lastPrintln = true;
     }
 
+    public static void printBuilderStep(String type, String detail) {
+        System.out.println("  - [" + type + "] " + detail);
+    }
     protected abstract void build() throws Exception;
 
     protected abstract String getTitle();
