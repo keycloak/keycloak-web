@@ -1,5 +1,6 @@
 {
     "name": "Japanese documentation translation",
     "description": "Japanese translation of the Keycloak documentation.",
-    "website": "https://keycloak-documentation.openstandia.jp"
+    "website": "https://keycloak-documentation.openstandia.jp",
+    "source": "https://github.com/openstandia/keycloak-documentation-i18n"
 }
