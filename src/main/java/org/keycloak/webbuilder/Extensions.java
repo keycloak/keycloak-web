@@ -50,6 +50,9 @@ public class Extensions {
 
         try (GitHubApi ghApi = GitHubApi.getInstance()) {
             var gh = ghApi.get();
+            if (gh == null) {
+                return;
+            }
             for (File extensionFile : extensionsDir.listFiles((dir, name) -> name.endsWith(".json"))) {
                 var extension = JsonParser.read(extensionFile, Extension.class);
                 var ghSource = Optional.ofNullable(extension.getSource())
