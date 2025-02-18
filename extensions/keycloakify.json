@@ -1,6 +1,7 @@
 {
     "name": "Keycloakify",
     "description": "A tool for creating Keycloak theme with React",
+    "source": "https://github.com/keycloakify/keycloakify",
     "website": "https://www.keycloakify.dev"
 }
   
