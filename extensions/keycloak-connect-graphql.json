@@ -1,5 +1,0 @@
-{
-  "name": "Express.js GraphQL",
-  "description": "Add Keyloak Authentication and Authorization to your GraphQL server.",
-  "website": "https://github.com/aerogear/keycloak-connect-graphql"
-}
