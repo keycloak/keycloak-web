@@ -1,0 +1,27 @@
+:title: Keycloak Extensions show GitHub stars
+:date: 2025-02-19
+:publish: true
+:author: Alexander Schwartz
+:summary: The Keycloak extensions page shows GitHub stars so you can better identify popular extensions.
+:preview: extensions.png
+
+The Keycloak homepage has an updated community extensions page!
+Thanks to https://github.com/mabartos[Martin Bartoš], each extension shows off with its GitHub stars.
+
+This should provide you with a better overview which extensions are popular with the community.
+
+If an extension you use is listed there, give a star!
+Are you missing an extension? https://github.com/keycloak/keycloak-web/issues[Create an issue in our GitHub issue tracker] to let uns know so we can add it.
+
+Click on image below to get the extensions page, or navigate via the link:${links.community}[Community page] and choose "`Extensions`" there.
+
+PS: Did you already give Keycloak a star?
+
+--
+++++
+<div class="paragraph">
+</style>
+<a href="${links.getLink('extensions')}"><img src="${blogImages}/extensions.png" alt="Preview of the extensions page" style="width: 100%; max-width: 863px; object-fit: cover; height: 250px; object-fit: none; object-position: 0 0"></a>
+</div>
+++++
+--

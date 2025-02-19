@@ -49,6 +49,7 @@ public class Blogs extends LinkedList<Blogs.Blog> {
                         name,
                         (String) attributes.get("title"),
                         (String) attributes.get("summary"),
+                        (String) attributes.get("preview"),
                         (String) attributes.get("author"),
                         (String) attributes.get("category"),
                         publish,
@@ -72,6 +73,7 @@ public class Blogs extends LinkedList<Blogs.Blog> {
                         source.getId() + "-" + v.getVersion().replace(".", "") + "-released",
                         source.getProductName() + " " + v.getVersion() + " released",
                         summary,
+                        null,
                         null,
                         source.getProductName() + " Release",
                         true,
@@ -130,6 +132,8 @@ public class Blogs extends LinkedList<Blogs.Blog> {
 
         private final String summary;
 
+        private final String preview;
+
         private final String author;
 
         private final String category;
@@ -142,12 +146,13 @@ public class Blogs extends LinkedList<Blogs.Blog> {
 
         private final Map<String, Object> map = new HashMap<>();
 
-        public Blog(BlogFormat format, Date date, String name, String title, String summary, String author, String category, boolean publish, boolean release, String template) {
+        public Blog(BlogFormat format, Date date, String name, String title, String summary, String preview, String author, String category, boolean publish, boolean release, String template) {
             this.format = format;
             this.date = date;
             this.name = name;
             this.title = title;
             this.summary = summary;
+            this.preview = preview;
             this.author = author;
             this.category = category;
             this.publish = publish;
@@ -173,6 +178,10 @@ public class Blogs extends LinkedList<Blogs.Blog> {
 
         public String getSummary() {
             return summary;
+        }
+
+        public String getPreview() {
+            return (preview == null) ? null : "blog/" + getPath()  + "/" + preview;
         }
 
         public String getAuthor() {
