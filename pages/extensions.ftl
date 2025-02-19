@@ -1,10 +1,16 @@
 <#import "/templates/template.ftl" as tmpl>
 
-<@tmpl.page current="extensions" title="Extensions">
+<@tmpl.page current="extensions" title="Extensions" previewImage="extensions.png" summary="Community maintained extensions to extend the functionality of Keycloak.">
 
 <div class="jumbotron jumbotron-fluid bg-light kc-bg-triangles pt-4">
     <div class="container">
         <h1 class="text-white">Extensions</h1>
+
+        <p class="text-white">
+            See below for a list of community maintained extensions for Keycloak.
+            To add an extension, <a href="https://github.com/keycloak/keycloak-web/issues">open an issue on GitHub</a>.
+        </p>
+
         <#list extensions.getLivenessCategories() as c>
             <#if c.name() == "LESS_ACTIVE">
                 <h2>Less active</h2>
