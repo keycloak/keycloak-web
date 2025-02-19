@@ -7,9 +7,14 @@ sources:
     attributeSources:
       - release/${version.getVersionShorter()}/docs/documentation/topics/templates/document-attributes.adoc
       - ${version.getVersion()}/docs/documentation/topics/templates/document-attributes.adoc
-    migrationGuidePath: docs/latest/upgrading/index.html#migration-changes
+    migrationGuidePath: docs/latest/upgrading/#migration-changes
   - id: keycloak-client
     productName: Keycloak Client Libraries
     repo: keycloak/keycloak-client
     releaseNotes: main/docs/release-notes/${version.getVersion()?replace(".", "_")}.adoc
     migrationGuidePath: securing-apps/upgrading
+  - id: keycloak-js
+    productName: Keycloak JS
+    repo: keycloak/keycloak-js
+    releaseNotes: main/docs/release-notes/${version.getVersion()?replace(".", "_")}.adoc
+    migrationGuidePath: docs/latest/upgrading/#_upgrade_js_adapter
