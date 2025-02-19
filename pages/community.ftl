@@ -1,4 +1,5 @@
 <#import "/templates/template.ftl" as tmpl>
+<#-- @ftlvariable name="links" type="org.keycloak.webbuilder.Links" -->
 
 <@tmpl.page current="community" title="Community">
 
@@ -29,13 +30,13 @@
 
     <div class="row mt-3">
         <h2>Extensions</h2>
-        <p>You can find a number of community maintained extensions to Keycloak <a href="extensions.html">here</a>
+        <p>You can find a number of community maintained extensions to Keycloak <a href="${links.getLink('extensions')}">here</a>
     </div>
 
     <div class="row mt-3">
         <h2>Reporting security vulnerabilities</h2>
         <p>
-            If you've found a security vulnerability, please look at the <a href="security.html">instructions on how to properly report it</a>.
+            If you've found a security vulnerability, please look at the <a href="${links.getLink('security')}">instructions on how to properly report it</a>.
         </p>
     </div>
 
@@ -45,7 +46,7 @@
             Before reporting a bug or feature request please:
         </p>
         <ul class="ms-4">
-            <li>Check if it is still an issue in the <a href="downloads.html">latest release</a></li>
+            <li>Check if it is still an issue in the <a href="${links.getLink('downloads')}">latest release</a></li>
             <li>Check if it has already been reported in the <a href="https://github.com/keycloak/keycloak/issues">GitHub Issues</a></li>
         </ul>
         <p>
@@ -82,7 +83,7 @@
         <h2>Resources</h2>
         <ul class="ms-4">
             <li><a href="https://github.com/keycloak/keycloak">Source Code</a></li>
-            <li><a href="documentation.html">Documentation</a></li>
+            <li><a href="${links.getLink('documentation')}">Documentation</a></li>
             <li><a href="https://github.com/keycloak/keycloak/issues">GitHub Issues</a></li>
             <li><a href="https://keycloak.discourse.group/">Forum</a> - for questions and help</li>
             <li><a href="https://groups.google.com/forum/#!forum/keycloak-user">User Mailing List</a> - for questions and help</li>

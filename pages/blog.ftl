@@ -1,4 +1,5 @@
 <#import "/templates/template.ftl" as tmpl>
+<#-- @ftlvariable name="links" type="org.keycloak.webbuilder.Links" -->
 
 <@tmpl.page current="blog" title="Blog" rss=true>
 
@@ -30,7 +31,7 @@
         </div>
         <div class="row">
             <div class="col">
-            <h4>For older entries go <a href="blog-archive.html">here</a></h4>
+            <h4>For older entries go <a href="${links.getLink('blog-archive')}">here</a></h4>
             </div>
             <div class="col">
             <h4><a class="float-end" href="${links.rss}"><i class="fas fa-rss text-dark"></i></a></h4>

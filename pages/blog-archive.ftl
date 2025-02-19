@@ -1,4 +1,6 @@
 <#import "/templates/template.ftl" as tmpl>
+<#-- @ftlvariable name="links" type="org.keycloak.webbuilder.Links" -->
+<#-- @ftlvariable name="blogs" type="org.keycloak.webbuilder.Blogs" -->
 
 <@tmpl.page current="blog" title="Blog archive" noindex=true rss=true>
 
@@ -7,7 +9,7 @@
 
     <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="blog.html">Blog</a></li>
+        <li class="breadcrumb-item"><a href="${links.getLink('blog')}">Blog</a></li>
         <li class="breadcrumb-item active">Archive</li>
     </ol>
     </nav>
@@ -27,7 +29,7 @@
         </#if>
 
         <ul>
-            <li><a href="${blog.path}/${blog.filename}">${blog.title}</a></li>
+            <li><a href="${links.get(blog)}">${blog.title}</a></li>
         </ul>
     </#list>
 </div>
