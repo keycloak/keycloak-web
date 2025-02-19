@@ -66,7 +66,7 @@ public class Extensions {
                     if (StringUtils.isNotEmpty(repoName)) {
                         var repository = gh.getRepository(repoName);
                         if (repository != null) {
-                            extension.setStars(getFormattedStarsCount(repository.getStargazersCount()));
+                            extension.setStars(repository.getStargazersCount());
                             updatedAt = repository.getPushedAt();
                         }
                     }
@@ -80,6 +80,21 @@ public class Extensions {
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
+        }
+
+        setTopExtensions();
+    }
+
+    private void setTopExtensions() {
+        List<Extension> topExtensions = extensionsMap.get(LivenessCategory.ACTIVE)
+                .stream()
+                .filter(f -> f.getStars() != null)
+                .sorted(Comparator.comparingInt(Extension::getStars).reversed())
+                .limit(3)
+                .toList();
+
+        for (int i = 0; i < topExtensions.size(); i++) {
+            topExtensions.get(i).setRank(i + 1);
         }
     }
 
@@ -101,7 +116,9 @@ public class Extensions {
         private String documentation;
         private String source;
 
-        private String stars;
+        private Integer stars;
+
+        private Integer rank;
 
         public String getName() {
             return name;
@@ -159,12 +176,24 @@ public class Extensions {
             this.source = source;
         }
 
-        public String getStars() {
+        public Integer getStars() {
             return stars;
         }
 
-        public void setStars(String stars) {
+        public String printStars() {
+            return getFormattedStarsCount(getStars());
+        }
+
+        public void setStars(Integer stars) {
             this.stars = stars;
+        }
+
+        public Integer getRank() {
+            return rank;
+        }
+
+        public void setRank(Integer rank) {
+            this.rank = rank;
         }
 
         @Override

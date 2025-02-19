@@ -28,12 +28,23 @@
                             </div>
 
                             <#if extension.stars??>
-                                <div class="card-footer text-muted">
+                                <div class="card-footer text-muted d-flex justify-content-between align-items-center">
                                     <div class="d-flex align-items-center">
                                         <img src="resources/images/github.png" width="16px" alt="GitHub logo"
                                              class="me-2"/>
-                                        <span>${extension.stars} stars</span>
+                                        <span>${extension.printStars()} stars</span>
                                     </div>
+                                    <#if extension.rank??>
+                                        <div style="font-size: 20px; line-height: 25px;">
+                                            <#if extension.rank == 1>
+                                                &#129351; <!-- Gold Medal -->
+                                            <#elseif extension.rank == 2>
+                                                &#129352; <!-- Silver Medal -->
+                                            <#elseif extension.rank == 3>
+                                                &#129353; <!-- Bronze Medal -->
+                                            </#if>
+                                        </div>
+                                    </#if>
                                 </div>
                             </#if>
                         </div>
