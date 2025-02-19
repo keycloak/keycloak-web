@@ -11,7 +11,7 @@ Thanks to https://github.com/mabartos[Martin Bartoš], each extension shows off 
 This should provide you with a better overview which extensions are popular with the community.
 
 If an extension you use is listed there, give a star!
-Are you missing an extension? https://github.com/keycloak/keycloak-web/issues[Create an issue in our GitHub issue tracker] to let uns know so we can add it.
+Are you missing an extension? https://github.com/keycloak/keycloak-web/issues[Create an issue in our GitHub issue tracker] to let us know so we can add it.
 
 Click on image below to get the extensions page, or navigate via the link:${links.community}[Community page] and choose "`Extensions`" there.
 
