@@ -1,0 +1,5 @@
+{
+    "name": "Terraform provider for Keycloak",
+    "description": "Use it configure realms, user, groups etc. from your Terraform scripts in a declarative way.",
+    "website": "https://github.com/keycloak/terraform-provider-keycloak"
+}

@@ -1,5 +1,5 @@
 {
-  "name": "Configuration as Code for Keycloak realms",
+  "name": "keycloak-config-cli: Configuration as Code for Keycloak realms",
   "description": "Utility to ensure the desired configuration state for a realm based on a JSON or YAML file.",
   "website": "https://github.com/adorsys/keycloak-config-cli/"
 }
