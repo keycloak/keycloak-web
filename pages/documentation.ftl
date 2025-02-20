@@ -1,4 +1,5 @@
 <#import "/templates/template.ftl" as tmpl>
+<#-- @ftlvariable name="version" type="org.keycloak.webbuilder.Versions.Version" -->
 
 <@tmpl.page current="docs" title="Documentation">
 

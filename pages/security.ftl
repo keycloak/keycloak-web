@@ -1,6 +1,6 @@
 <#import "/templates/template.ftl" as tmpl>
 
-<@tmpl.page current="security" title="Security Policy">
+<@tmpl.page current="security" title="Security Policy" summary="Learn how to report suspected vulnerabilities or other security related information to the Keycloak team.">
 
 <div class="container mt-5 kc-article">
     <h1>Security Policy</h1>

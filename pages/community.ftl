@@ -30,7 +30,7 @@
 
     <div class="row mt-3">
         <h2>Extensions</h2>
-        <p>You can find a number of community maintained extensions to Keycloak <a href="${links.getLink('extensions')}">here</a>
+        <p>You can find a number of community maintained extensions to Keycloak <a href="${links.extensions}">here</a>
     </div>
 
     <div class="row mt-3">

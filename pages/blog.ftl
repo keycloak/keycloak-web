@@ -1,7 +1,8 @@
 <#import "/templates/template.ftl" as tmpl>
 <#-- @ftlvariable name="links" type="org.keycloak.webbuilder.Links" -->
+<#-- @ftlvariable name="blogs" type="org.keycloak.webbuilder.Blogs" -->
 
-<@tmpl.page current="blog" title="Blog" rss=true>
+<@tmpl.page current="blog" title="Blog" rss=true summary="Read the latest news about Keycloak in this blog.">
 
 <div class="jumbotron jumbotron-fluid bg-light kc-bg-triangles pt-4 pb-2">
     <div class="container">

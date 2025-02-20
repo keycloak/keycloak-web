@@ -1,6 +1,6 @@
 <#import "/templates/template.ftl" as tmpl>
 
-<@tmpl.page current="charter" title="Security Charter">
+<@tmpl.page current="charter" title="Security Charter" summary="Learn how the Keycloak Security Taskforce handles security reports and proactively acts to keep Keycloak secure.">
 
 <div class="container mt-5 kc-article">
 

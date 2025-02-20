@@ -1,6 +1,6 @@
 <#import "/templates/template.ftl" as tmpl>
 
-<@tmpl.page current="guides" title="Guides">
+<@tmpl.page current="guides" title="Guides" summary="Find the guides to help you get started, install Keycloak, and configure it and your applications to match your needs.">
 
 <script src="${links.getResource('js/guides.js')}" type="text/javascript"></script>
 

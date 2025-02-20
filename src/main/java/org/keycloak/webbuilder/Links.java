@@ -20,6 +20,10 @@ public class Links {
         return getRoot() + (config.isPublish() ? "/nightly/" : "/nightly/index.html");
     }
 
+    public String getExtensions() {
+        return getLink("extensions");
+    }
+
     public String getDocs() {
         return getLink("documentation");
     }
