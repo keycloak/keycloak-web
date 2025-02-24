@@ -1,7 +1,7 @@
 <#import "/templates/template.ftl" as tmpl>
 <#-- @ftlvariable name="version" type="org.keycloak.webbuilder.Versions.Version" -->
 
-<@tmpl.page current="docs" title="Documentation">
+<@tmpl.page current="docs" title="Documentation" summary="Keycloak Documenation related to the most recent Keycloak release.">
 
 <div class="container mt-5">
     <h1>Documentation <span class="badge bg-primary">${version.version}</span></h1>

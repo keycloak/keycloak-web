@@ -1,6 +1,6 @@
 <#import "/templates/template.ftl" as tmpl>
 
-<@tmpl.page current="nightly-guides" title="Guides / Nightly Release" noindex=true>
+<@tmpl.page current="nightly-guides" title="Guides / Nightly Release" noindex=true summary="Guides for Keycloak's nightly release which contains the very latest developments. Use it for testing only.">
 
 <script src="${links.getResource('js/guides.js')}" type="text/javascript"></script>
 

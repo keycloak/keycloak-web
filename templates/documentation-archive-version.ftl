@@ -1,6 +1,6 @@
 <#import "/templates/template.ftl" as tmpl>
 
-<@tmpl.page current="docs" title="Documentation ${version.versionShorter}" noindex=true>
+<@tmpl.page current="docs" title="Documentation ${version.versionShorter}" noindex=true summary="Documentation for Keyclak ${version.versionShorter}">
 
 <div class="container mt-5">
     <h1>Documentation <span class="badge bg-primary">${version.versionShorter}</span></h1>

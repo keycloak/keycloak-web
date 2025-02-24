@@ -2,10 +2,15 @@
 <#-- @ftlvariable name="links" type="org.keycloak.webbuilder.Links" -->
 <#-- @ftlvariable name="blogs" type="org.keycloak.webbuilder.Blogs" -->
 
-<@tmpl.page current="blog" title="Blog archive" noindex=true rss=true>
+<@tmpl.page current="blog" title="Blog archive" noindex=true rss=true summary="This contains a list of all blog entries posted in the Keycloak blog.">
 
 <div class="container mt-5 kc-article">
     <h1>Blog Archive</h1>
+
+    <div>
+        <p>This contains a list of all blog entries posted in the Keycloak blog.</p>
+    </div>
+
 
     <nav aria-label="breadcrumb">
     <ol class="breadcrumb">

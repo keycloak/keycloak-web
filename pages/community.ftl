@@ -1,7 +1,7 @@
 <#import "/templates/template.ftl" as tmpl>
 <#-- @ftlvariable name="links" type="org.keycloak.webbuilder.Links" -->
 
-<@tmpl.page current="community" title="Community">
+<@tmpl.page current="community" title="Community" summary="Find activities and resources to engage with the Keycloak community.">
 
 <div class="container">
     <div class="row mt-5">

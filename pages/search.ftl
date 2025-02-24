@@ -1,6 +1,6 @@
 <#import "/templates/template.ftl" as tmpl>
 
-<@tmpl.page current="search" title="Search">
+<@tmpl.page current="search" title="Search" summary="Search the Keycloak website, documentation, blog and mailing lists.">
 
 <div class="container mt-5 kc-article">
     <h1>Search</h1>

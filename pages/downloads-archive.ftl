@@ -1,6 +1,6 @@
 <#import "/templates/template.ftl" as tmpl>
 
-<@tmpl.page current="downloads" title="Downloads archive" noindex=true>
+<@tmpl.page current="downloads" title="Downloads archive" noindex=true summary="Archive of Keycloak downloads for earlier releases.">
 
 <div class="container mt-5 kc-article">
     <h1>Downloads archive</h1>

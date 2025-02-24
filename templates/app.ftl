@@ -1,6 +1,6 @@
 <#import "/templates/template.ftl" as tmpl>
 
-<@tmpl.page current="test-app" title="Test application" noindex=true nocsp=true importMap=importMap>
+<@tmpl.page current="test-app" title="Test application" noindex=true nocsp=true importMap=importMap summary="Keycloak Test Application">
 
 <script src="app.js" type="module"></script>
 

@@ -1,6 +1,6 @@
 <#import "/templates/template.ftl" as tmpl>
 
-<@tmpl.page current="keys" title="Page not found" noindex=true>
+<@tmpl.page current="keys" title="Page not found" noindex=true summary="The page you’re looking for does not exist.">
 
 <div class="container mt-5">
     <h1 id="heading">Page not found</h1>

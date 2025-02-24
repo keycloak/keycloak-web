@@ -1,6 +1,6 @@
 <#import "/templates/template.ftl" as tmpl>
 
-<@tmpl.page current="nightly" title="Nightly Release" noindex=true>
+<@tmpl.page current="nightly" title="Nightly Release" noindex=true summary="Keycloak's nightly release which contains the very latest developments. Use it for testing only.">
 
 <div class="container mt-5">
     <h1>Nightly release</h1>
