@@ -49,7 +49,7 @@
 <body>
 
 <header class="navbar navbar-expand-md bg-light shadow-sm">
-<nav class="container-xxl flex-wrap flex-md-no-wrap navbar-light">
+<nav class="container-xxl flex-wrap flex-md-no-wrap navbar-light" data-nosnippet>
     <a class="navbar-brand me-3 me-md-4 me-lg-5" href="${links.home}">
         <img class="img-fluid" src="${links.getResource('images/logo.svg')}" width="240" alt="Keycloak"/>
     </a>
@@ -82,13 +82,13 @@
 
 <#nested>
 
-<div class="container mt-5">
+<div class="container mt-5" data-nosnippet>
     <footer class="py-3 my-4 border-top">
         <p class="text-center text-muted">Keycloak is a Cloud Native Computing Foundation incubation project</p>
         <div class="text-center">
             <img alt="Cloud Native Computing Foundation" src="${links.getResource('images/cncf_logo.png')}"/>
         </div>
-        <p class="mt-4 text-center small text-muted">&copy; Keycloak Authors 2024. &copy; 2024 The Linux Foundation. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage">Trademark Usage page</a>.</p>
+        <p class="mt-4 text-center small text-muted">&copy; Keycloak Authors 2025. &copy; 2025 The Linux Foundation. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage">Trademark Usage page</a>.</p>
     </footer>
 </div>
 
