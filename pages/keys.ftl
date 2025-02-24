@@ -1,6 +1,6 @@
 <#import "/templates/template.ftl" as tmpl>
 
-<@tmpl.page current="keys" title="Keycloak Signing Keys">
+<@tmpl.page current="keys" title="Keycloak Signing Keys" summary="Use these keys to verify the signatures of Keycloak's Maven artifacts and the Keycloak Terraform provider.">
 
 <div class="container mt-5">
     <h1>Keycloak Signing Keys</h1>
