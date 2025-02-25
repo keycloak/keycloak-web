@@ -2,7 +2,7 @@
 :date: 2025-02-25
 :publish: true
 :author: Alexander Schwartz
-:summary: Several talks regarding OpenID Connect and Keycloak and have been recorded, and are now available online to re-watch.
+:summary: Several talks regarding OpenID Connect and Keycloak have been recorded, and are now available online to re-watch.
 :preview: fosdem-2025-booth.jpg
 
 https://fosdem.org/[FOSDEM] is a free event for software developers to meet, share ideas and collaborate.
