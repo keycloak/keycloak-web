@@ -1,0 +1,92 @@
+:title: New videos about OpenID Connect and Keycloak from FOSDEM 2025
+:date: 2025-02-25
+:publish: true
+:author: Alexander Schwartz
+:summary: Several talks regarding OpenID Connect and Keycloak and have been recorded, and are now available online to re-watch.
+:preview: fosdem-2025-booth.jpg
+
+https://fosdem.org/[FOSDEM] is a free event for software developers to meet, share ideas and collaborate.
+Every year, thousands of developers of free and open source software from all over the world gather at the event.
+
+{summary}
+<<videos,See below>> for the links to the videos.
+
+== Meeting the Keycloak community on-site
+
+As an incubating project of the Cloud Native Computing Foundation (CNCF), we were happy to share the space of their stand.
+During the two days, we met with hundreds of existing Keycloak users on-site, as well as with people new to the IAM and identity space.
+It was fun and exciting to learn what people are doing.
+
+We would love to hear more from you about your success stories, what is crucial to your deployments and what can be done better. Fill
+out the http://bit.ly/keycloak-community[online Keycloak Survey], so we can better understand your use cases, and if you want to share your experience with the wider Keycloak community.
+
+--
+++++
+<div class="paragraph">
+</style>
+<a href="${blogImages}/keycloak-fosdem-2025.jpg"><img src="${blogImages}/keycloak-fosdem-2025.jpg" alt="CNCF stand at FOSDEM with a Keycloak banner and people visiting." style="width: 100%; max-width: 1158px; object-fit: cover; height: 350px; object-fit: none; object-position: 87% 20%"></a>
+</div>
+++++
+--
+
+[[videos]]
+== Videos to re-watch
+
+These four talks mentioned Keycloak in their talk and on their slides, or are related to OpenID Connect.
+Did we miss a talk that would be interesting to users of Keycloak? Let us know!
+
+https://fosdem.org/2025/schedule/event/fosdem-2025-5370-using-dpop-to-use-access-tokens-securely-in-your-single-page-applications/[Using DPoP to use access tokens securely in your Single Page Applications]::
+*Speakers*: Takashi Norimatsu, Alexander Schwartz +
+*Track:* Security +
++
+*Abstract:* OAuth 2.0 uses access tokens to grant access to secured resources. When using Single Page Applications, they are passed from browsers to the servers as bearer tokens using HTTP headers.
++
+While they are secured in transit using TLS, those tokens could be stolen from a browser, replayed, or mis-used by a malicious or vulnerable server. OAuth 2.0 Demonstrating Proof-of-Possession (DPoP) takes this one step further by equipping the client like your Single Page Application with a key pair so that it can show a proof when passing the access token, so no-one else can use the access token. DPoP is part of the FAPI 2.0 Security Profile by the OpenID Foundation. It promotes best practices on how to protect APIs exposing high-value and sensitive (personal and other) data, for example, in finance, e-health and e-government applications.
++
+This talk will explain the concepts and demos how this can be implemented using Keycloak and other open source components. We will also describe the current challenges, limitations and alternatives of the approach.
+
+https://fosdem.org/2025/schedule/event/fosdem-2025-5209-deep-dive-into-oidc-flows/[Deep Dive into OIDC flows]::
+*Speaker:* Milan Jakobi +
+*Track:* Identity and Access Management
++
+*Abstract:* Modern web applications strongly rely on Authentication/Authorization infrastructures. To address these needs, the OSS community has strongly endorsed open protocols such as OpenIdConnect and OAuth2, on top of JSON and REST. In turn, these protocols have been implemented in software products such as Keycloak, WSO2 or Lemonldap.
++
+OpenId Connect and OAuth2 are authorization protocols, closely aligned with authentication, as provided by Identity Providers. They have been designed within various standardization bodies such as the OpenId foundation or the Internet Engineering Task Force. Understanding these standards is demanding, but needed in order to implement feature-rich solutions, to understand the various options offered to implementers.
++
+This talk will therefore discuss in details OIDC and OAuth : the various flows that exist in order to obtain access tokens for standard clients, and some advanced features enabled by these protocols.
+
+https://fosdem.org/2025/schedule/event/fosdem-2025-4756-sssd-and-idps/[SSSD and IdPs]::
+*Track:* Identity and Access Management
++
+Identity Providers (IdP) based on OAuth 2.0/OIDC and other REST APIs like e.g. Keycloak or Entry ID play a dominant role in the identity management of web-based applications. But organizations which are using IdPs for their internal applications still have to use other services, typically LDAP based, to manage access and authentication to LINUX/POSIX user workstations.
++
+To help to avoid running two services for identity management SSSD started to use IdPs to lookup users and authenticate them against the IdPs. In contrast to LDAP there are no standards and conventions with respect to POSIX users and groups in the IdP world.
++
+This talk will focus on how SSSD is getting user and group information from IdPs, how information required by POSIX, e.g. the numeric user and group IDs, is created and what kind of limitations there are. Additionally it will be explained why the OAuth 2.0 Device Authorization Flow was chosen for authentication and demonstrated.
+
+https://fosdem.org/2025/schedule/event/fosdem-2025-5673-delegating-the-chores-of-authenticating-users-to-keycloak/[Delegating the chores of authenticating users to Keycloak]::
+*Speaker:* Alexander Schwartz +
+*Track:* Identity and Access Management
++
+*Abstract:* Authenticating users can start simple with a username and a password for each user. But you will also need to handle forgotten passwords and user registration. You might also want to validate email addresses, add second factors, have users update their profile information as needed, or even offer password-less authentication.
++
+A single-sign-on system like Keycloak can handle all that for you and will redirect users after they are authenticated to your applications using the industry standards like OpenID Connect and SAML.
++
+Join this talk to see how you can delegate all the tasks around authentication to Keycloak. We will start simple and enable more and more features in our demo to show the functionality and flexibility of Keycloak. We will also look at features of the latest release and the road map ahead.
+
+
+== FOSDEM is all about devrooms!
+
+FOSDEM is a big event divided into smaller, single-track conferences with their own call for papers and organizers.
+Here a short list of those dev rooms that might be of interest for you if you are into Keycloak:
+
+https://fosdem.org/2025/schedule/track/iam/[Identity and Access Management Devroom]::
+Identity and Access Management Devroom is related to operating systems' identity and access management in the free software and open source world.
+
+https://fosdem.org/2025/schedule/track/security/[Security Devroom]::
+The Security Devroom covers everything that is relevant to security in the free software and open source world.
+Talks cover topics like cryptography, supply chain, secure development and hardening.
+
+https://fosdem.org/2025/schedule/track/wallets/[Digital Wallets and Verifiable Credentials Devroom]::
+The Digital Wallets and Verifiable Credentials DevRoom is about digital wallets, verifiable credentials and the ecosystems emerging from these subjects, especially in the EU.
+

@@ -11,8 +11,6 @@ Those staying home will be able to watch the live stream of the talks and ask qu
 {summary}
 See below for places to meet other Keycloak enthusiasts, and which talks will relate to Keycloak.
 
-We will update this post in the upcoming weeks when more details emerge.
-
 == Meet-and-greet
 
 While FOSDEM is organized around talks, it is also a great place to meet people in real life that you previously knew only from online, and make new friends.
@@ -55,7 +53,7 @@ No talk is related to Keycloak itself, still interesting for those who are follo
 
 See below a list of all Keycloak related talks.
 When you watch them live, you will be able to ask questions in the chat.
-All talks will be recorded and will usually be available two to four days after the conference.
+All talks have been recorded are now available on-line to re-watch!
 
 * https://fosdem.org/2025/schedule/event/fosdem-2025-5370-using-dpop-to-use-access-tokens-securely-in-your-single-page-applications/[Using DPoP to use access tokens securely in your Single Page Applications] +
 Track: Security / Room: UB4.132 +
