@@ -226,7 +226,7 @@ public class Blogs extends LinkedList<Blogs.Blog> {
             return OLD_BLOG.getTime().after(date);
         }
 
-        private final static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        private final static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T08:00:00Z'");
 
         public String getJsonLd() {
             LinkedHashMap<String, Object> json = new LinkedHashMap<>();
@@ -241,6 +241,10 @@ public class Blogs extends LinkedList<Blogs.Blog> {
                 json.put("abstract", getSummary());
             }
             json.put("url", "https://www.keycloak.org/" + getPath() + "/" + getName());
+
+            if (getPreview() != null) {
+                json.put("image", "https://www.keycloak.org/preview/" + getPreview());
+            }
 
             LinkedHashMap<String, Object> publisher = new LinkedHashMap<>();
             publisher.put("@type", "Organization");
