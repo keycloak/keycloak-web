@@ -1,4 +1,4 @@
-<#macro page current title summary="" importMap="" previewImage="" noindex=false nocsp=false rss=false>
+<#macro page current title summary="" importMap="" previewImage="" noindex=false nocsp=false rss=false jsonLd="">
 <!doctype html>
 <html lang="en" prefix="og: https://ogp.me/ns#">
 <head>
@@ -44,6 +44,11 @@
     <script src="${links.getResource('bootstrap/dist/js/bootstrap.min.js')}" type="text/javascript"></script>
     <script src="${links.getResource('tocbot/dist/tocbot.min.js')}" type="text/javascript"></script>
     <#if rss><link rel="alternate" type="application/rss+xml" title="Keycloak's Blog" href="${links.getRss()}"></#if>
+    <#if jsonLd?has_content>
+    <script type="application/ld+json">
+        ${jsonLd}
+    </script>
+    </#if>
 </#compress>
 </head>
 <body>

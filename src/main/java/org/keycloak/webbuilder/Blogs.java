@@ -4,9 +4,11 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.keycloak.webbuilder.utils.JsonParser;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class Blogs extends LinkedList<Blogs.Blog> {
@@ -222,6 +224,45 @@ public class Blogs extends LinkedList<Blogs.Blog> {
 
         public boolean isOld() {
             return OLD_BLOG.getTime().after(date);
+        }
+
+        private final static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
+        public String getJsonLd() {
+            LinkedHashMap<String, Object> json = new LinkedHashMap<>();
+            json.put("@context", "https://schema.org/");
+            json.put("@type", "BlogPosting");
+            json.put("@id", "https://www.keycloak.org/" + getPath() + "/" + getName());
+            json.put("headline", getTitle());
+            json.put("name", getTitle());
+            json.put("datePublished", sdf.format(getDate()));
+            json.put("inLanguage", "en");
+            if (getSummary() != null) {
+                json.put("abstract", getSummary());
+            }
+            json.put("url", "https://www.keycloak.org/" + getPath() + "/" + getName());
+
+            LinkedHashMap<String, Object> publisher = new LinkedHashMap<>();
+            publisher.put("@type", "Organization");
+            publisher.put("@id", "https://keycloak.org");
+            publisher.put("name", "Keycloak");
+            json.put("publisher", publisher);
+
+            if (getAuthor() != null) {
+                ArrayList<Object> authors = new ArrayList<>();
+                for (String authorString : getAuthor().split("[,&]")) {
+                    authorString = authorString.trim();
+                    if (authorString.isEmpty()) {
+                        continue;
+                    }
+                    HashMap<String, Object> author = new HashMap<>();
+                    author.put("@type", "Person");
+                    author.put("name", authorString);
+                    authors.add(author);
+                }
+                json.put("author", authors);
+            }
+            return JsonParser.writeValueAsString(json);
         }
     }
 

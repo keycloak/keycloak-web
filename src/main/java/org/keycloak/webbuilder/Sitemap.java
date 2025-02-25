@@ -229,6 +229,12 @@ public class Sitemap {
         }
         String title = titleElement.text();
 
+        Element ldJsonElement = doc.selectFirst("head > script[type='application/ld+json']");
+        String ldJson = null;
+        if (ldJsonElement != null) {
+            ldJson = ldJsonElement.data().trim();
+        }
+
         Element descriptionElement = doc.selectFirst("head > meta[name=description]");
         String description = null;
         if (descriptionElement != null) {
@@ -238,7 +244,11 @@ public class Sitemap {
 
         if (contents != null) {
             MessageDigest digest = MessageDigest.getInstance("SHA-256");
-            byte[] encodedhash = digest.digest((title + "." + description + "." + contents.text()).getBytes(StandardCharsets.UTF_8));
+            String content = title + "." + description + "." + contents.text();
+            if (ldJson != null) {
+                content = content + "." + ldJson;
+            }
+            byte[] encodedhash = digest.digest(content.getBytes(StandardCharsets.UTF_8));
             hash = Base64.getEncoder().encodeToString(encodedhash);
         }
         return hash;
