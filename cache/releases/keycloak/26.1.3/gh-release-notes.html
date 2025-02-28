@@ -1,0 +1,46 @@
+<div>
+    <h2>Highlights</h2>
+<div class="sect2">
+<h3 id="_send_reset_email_force_login_again_for_federated_users_after_reset_credentials">Send Reset Email force login again for federated users after reset credentials</h3>
+<div class="paragraph">
+<p>In <a href="#keycloak-26-1-1">version 26.1.1</a> a new configuration option was added to the <code>reset-credential-email</code> (<strong>Send Reset Email</strong>) authenticator to allow changing the default behavior after the reset credentials flow. Now the option <code>force-login</code> (<strong>Force login after reset</strong>) is adding a third configuration value <code>only-federated</code>, which means that the force login is true for federated users and false for the internal database users. The new behavior is now the default. This way all users managed by user federation providers, whose implementation can be not so tightly integrated with Keycloak, are forced to login again after the reset credentials flow to avoid any issue. This change in behavior is due to the secure by default policy.</p>
+</div>
+<div class="paragraph">
+<p>For more information, see <a href="https://www.keycloak.org/docs/DEV/server_admin/#enabling-forgot-password">Enable forgot password</a>.</p>
+</div>
+</div>
+<h2>Upgrading</h2>
+<p>Before upgrading refer to <a href="file:/home/runner/work/keycloak-rel/keycloak-rel/target/web/docs/latest/upgrading/#migration-changes">the migration guide</a> for a complete list of changes.</p>
+
+<h2>All resolved issues</h2>
+
+
+
+
+<h3>Bugs</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/32535">#32535</a> Invalid migration export for empty database <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/36405">#36405</a> Redirect after linking account <code>account/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/36527">#36527</a> Viewing user events requires `view-realm`-role <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/36585">#36585</a> Keycloak user attribute key broken in Keycloak 26.1.0 <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/36703">#36703</a> When linking IDP to an organization hide on login sets as off <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/36709">#36709</a> SAML2 Client Signing Keys Config does not accept PEM import <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/36842">#36842</a> Comboxes do not display selected option after reset <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/36927">#36927</a> MeterFilter is configured after a Meter has been registered <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/36965">#36965</a> CVE-2025-0736 Error during JGroups channel creation may reveal secure information </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/36985">#36985</a> Admin console: unable to edit user profile attribute either on the form or the JSON editor. <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/37029">#37029</a> CI fails with "Problem creating zip: Execution exception: Java heap space" <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/37066">#37066</a> Error on import of a public key (pem) <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/37128">#37128</a> Customized quarkus.properties for MySQL cause "Unable to find the JDBC driver (org.h2.Driver)"，The server fails to start. <code>storage</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/37169">#37169</a> Wrong organization claim assignment in JWT access token <code>organizations</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/37207">#37207</a> Change default value for force-login option in reset-credential-email <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/37229">#37229</a> Login form can be used to determine which email addresses / usernames are in the system <code>login/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/37268">#37268</a> Problems changing pre-defined user profile attributes <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/37285">#37285</a> Upgrade to latest JGroups patch version </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/37360">#37360</a> CVE-2024-47072 - XStream is vulnerable to a Denial of Service attack due to stack overflow from a manipulated binary input stream </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/37431">#37431</a> Password policies like NoUsername consider case-sensitivity <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/37434">#37434</a> External Link Test failing <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/37577">#37577</a> Property Name Casing Mismatch in ProtocolMapperUtils <code>saml</code></li>
+</ul>
+
+</div>

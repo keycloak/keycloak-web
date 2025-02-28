@@ -1,0 +1,169 @@
+[ {
+  "number" : 32535,
+  "repository" : "keycloak",
+  "title" : "Invalid migration export for empty database",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/32535"
+}, {
+  "number" : 36405,
+  "repository" : "keycloak",
+  "title" : "Redirect after linking account",
+  "kind" : "bug",
+  "area" : "account/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/36405"
+}, {
+  "number" : 36527,
+  "repository" : "keycloak",
+  "title" : "Viewing user events requires `view-realm`-role",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/36527"
+}, {
+  "number" : 36585,
+  "repository" : "keycloak",
+  "title" : "Keycloak user attribute key broken in Keycloak 26.1.0",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/36585"
+}, {
+  "number" : 36659,
+  "repository" : "keycloak",
+  "title" : "Remove keycloak.js adapter documentation from main repo",
+  "kind" : "task",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/36659"
+}, {
+  "number" : 36703,
+  "repository" : "keycloak",
+  "title" : "When linking IDP to an organization hide on login sets as off",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/36703"
+}, {
+  "number" : 36709,
+  "repository" : "keycloak",
+  "title" : "SAML2 Client Signing Keys Config does not accept PEM import",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/36709"
+}, {
+  "number" : 36842,
+  "repository" : "keycloak",
+  "title" : "Comboxes do not display selected option after reset",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/36842"
+}, {
+  "number" : 36927,
+  "repository" : "keycloak",
+  "title" : "MeterFilter is configured after a Meter has been registered",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/36927"
+}, {
+  "number" : 36965,
+  "repository" : "keycloak",
+  "title" : "CVE-2025-0736 Error during JGroups channel creation may reveal secure information",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/36965"
+}, {
+  "number" : 36985,
+  "repository" : "keycloak",
+  "title" : "Admin console: unable to edit user profile attribute either on the form or the JSON editor.",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/36985"
+}, {
+  "number" : 37029,
+  "repository" : "keycloak",
+  "title" : "CI fails with \"Problem creating zip: Execution exception: Java heap space\"",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/37029"
+}, {
+  "number" : 37066,
+  "repository" : "keycloak",
+  "title" : "Error on import of a public key (pem)",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/37066"
+}, {
+  "number" : 37128,
+  "repository" : "keycloak",
+  "title" : "Customized quarkus.properties for MySQL cause \"Unable to find the JDBC driver (org.h2.Driver)\"，The server fails to start.",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/37128"
+}, {
+  "number" : 37169,
+  "repository" : "keycloak",
+  "title" : "Wrong organization claim assignment in JWT access token",
+  "kind" : "bug",
+  "area" : "organizations",
+  "url" : "https://github.com/keycloak/keycloak/issues/37169"
+}, {
+  "number" : 37207,
+  "repository" : "keycloak",
+  "title" : "Change default value for force-login option in reset-credential-email",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/37207"
+}, {
+  "number" : 37229,
+  "repository" : "keycloak",
+  "title" : "Login form can be used to determine which email addresses / usernames are in the system",
+  "kind" : "bug",
+  "area" : "login/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/37229"
+}, {
+  "number" : 37253,
+  "repository" : "keycloak",
+  "title" : "Upgrade to Infinispan 15.0.13.Final",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/37253"
+}, {
+  "number" : 37268,
+  "repository" : "keycloak",
+  "title" : "Problems changing pre-defined user profile attributes",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/37268"
+}, {
+  "number" : 37285,
+  "repository" : "keycloak",
+  "title" : "Upgrade to latest JGroups patch version",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/37285"
+}, {
+  "number" : 37360,
+  "repository" : "keycloak",
+  "title" : "CVE-2024-47072 - XStream is vulnerable to a Denial of Service attack due to stack overflow from a manipulated binary input stream",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/37360"
+}, {
+  "number" : 37431,
+  "repository" : "keycloak",
+  "title" : "Password policies like NoUsername consider case-sensitivity",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/37431"
+}, {
+  "number" : 37434,
+  "repository" : "keycloak",
+  "title" : "External Link Test failing",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/37434"
+}, {
+  "number" : 37577,
+  "repository" : "keycloak",
+  "title" : "Property Name Casing Mismatch in ProtocolMapperUtils",
+  "kind" : "bug",
+  "area" : "saml",
+  "url" : "https://github.com/keycloak/keycloak/issues/37577"
+} ]
