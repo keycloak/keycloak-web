@@ -1,0 +1,44 @@
+:title: Introducing the Keycloak Austria User Group
+:date: 2025-03-05
+:publish: true
+:author: Christoph Kofler, Stephan Kraft
+:summary: Join the event on March 11th to look behind the scenes of how the development of Keycloak is organized, and subscribe to the Meetup to get invitations for future events.
+:preview: keycloak-user-group-austria.jpg
+
+Join the event on March 11th to https://www.meetup.com/keycloak-user-group-austria/events/305127942[look behind the scenes of how the development of Keycloak is organized], and subscribe to the Meetup to get invitations for future events.
+Read on to find out about previous topics that have been recorded and upcoming events.
+
+'''
+
+It happened to me several times that I was sitting in a workshop about any topic and the term “Keycloak” was used. Not in a spectacular tone, but rather like “We have Keycloak for this and that, and it just works!” Christian Kofler, who is working for Gepardec, had similar experiences. Thus, we already discussed some years ago that Keycloak is somehow an unsung hero, a hidden star, very much appreciated, but not in the spotlight of any encountering or events.
+
+End of 2023, we concluded that we want to establish a local community in Austria, very informal, very technical - just for like-minded people to meet, give and take experiences and have a good time together. It was easy to set up the group in the meetup platform (https://www.meetup.com/keycloak-user-group-austria/[Keycloak User Group Austria]) and also announced the https://www.meetup.com/keycloak-user-group-austria/events/297881850/?eventOrigin=group_events_list[first event] in March 2024 at the Red Hat Office in Vienna. To our positive surprise, we almost immediately jumped to 100 members and had 40+ participants on-site. The meeting was framed by a very nice greeting note from the Keycloak founder https://www.linkedin.com/in/stian-thorgersen-4714983/[Stian Thorgersen]. We had two great sessions about https://youtu.be/xccz4_dy2gc?si=Xr7kIBu2RX69stCH[Keycloak Configuration with DevOps principles] and https://youtu.be/bjDf_IiQWDY?si=tEtjRKeJzPB7YZ_i[Keycloak in mission-critical environments] from the community and afterward beer and original Leberkäse from https://www.leberkaspepi.at/[Leberkäs-Pepi]. The feedback was overwhelmingly positive, participants talked, laughed and connected till 9 pm.
+
+++++
+<style>
+@media (min-width:720px) {
+  .pull-right {
+    max-width: 350px; height: auto; aspect-ratio: 512 / 1024;
+    margin-left: 10px;
+    float: right !important;
+  }
+}
+@media (min-width:992px) {
+  .pull-right {
+    max-width: 450px; height: auto; aspect-ratio: 512 / 1024;
+    margin-left: 10px;
+    float: right !important;
+  }
+}
+</style>
+++++
+
+[.pull-right]
+image::${blogImages}/keycloak-user-group-austria.jpg[Keycloak User Group Austria,link="https://www.meetup.com/keycloak-user-group-austria"]
+
+This has motivated us to have two more gatherings in 2024, one at Posedio and one at ÖBB (“Austrian Railway systems”) who kindly offered to provide location, food and beverages. Again, the talks lead to lots of questions and discussions which lasted till the late evening. Moreover, we also have established a https://www.youtube.com/@KeycloakUserGroupAustria[YouTube channel] with all recorded sessions and many members from the local Austrian Keycloak community have participated in https://keyconf.dev/[KeyConf] in September 2024, organized by https://adorsys.com/[adorsys].
+
+We are looking forward to another https://www.meetup.com/keycloak-user-group-austria/events/?type=upcoming[3 events in 2025] which are already planned. If you are interested to participate and/or contribute a talk, please get in touch with us:
+
+mailto:christoph.kofler@gepardec.com[Christoph Kofler], mailto:skraft@redhat.com[Stephan Kraft]
+

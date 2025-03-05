@@ -19,11 +19,15 @@
     <div class="row mt-3">
         <h2>Community meetings</h2>
         <ul class="ms-4">
-            <li>OAuth SIG Monthly meeting</li>
+            <li><b>OAuth SIG Monthly meeting</b></li>
             <ul>
                 <li>Time: Wed 12:00 PM - 01:00 PM London</li>
                 <li>Zoom Link: <a href="https://zoom.us/j/93447076633">https://zoom.us/j/93447076633</a></li>
-                <li>For more details about the meeting check out the <a href="https://github.com/keycloak/kc-sig-fapi">GitHub repository</a> and <a href="https://cloud-native.slack.com/archives/C05KR0TL4P8">Slack channel</a>.</li>
+                <li>For more details about the meeting, check out the <a href="https://github.com/keycloak/kc-sig-fapi">GitHub repository</a> and <a href="https://cloud-native.slack.com/archives/C05KR0TL4P8">Slack channel</a>.</li>
+            </ul>
+            <li><b>Keycloak User Group Austria</b></li>
+            <ul>
+                <li>For upcoming meetings, check out the page on <a href="https://www.meetup.com/keycloak-user-group-austria">Meetup</a>.</li>
             </ul>
         </ul>
     </div>
