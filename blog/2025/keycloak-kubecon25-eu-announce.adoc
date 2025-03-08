@@ -1,0 +1,38 @@
+:title: Meet Keycloak at KubeCon EU, London in April 2025
+:date: 2025-03-08
+:publish: true
+:author: Ryan Emerson
+:preview: keycloak-kubecon-london-2025.png
+:summary: We will be hosting a Kiosk in the Project Pavilion, as well as presenting a talk about Evolving OpenID Connect and Keycloak Observability. We are eager to meet Keycloak enthusiasts, users and newcomers alike.
+
+We are thrilled to announce that Keycloak will be at KubeCon Europe, London April 1-4th 2025.
+
+Keycloak's presence at previous KubeCons was a huge success, and we are always eager to meet Keycloak enthusiasts, users
+and newcomers alike. At this year's event we will be hosting a Kiosk in the Project Pavilion, as well as presenting
+a talk about Evolving OpenID Connect and Observability.
+
+== Keycloak community Meet & Greet at the Project Pavilion
+
+https://github.com/tnorimat[Takashi Norimatsu] from Hitachi, https://github.com/ryanemerson[Ryan Emerson] and https://github.com/mabartos[Martin Bartos]
+from Red Hat, and other contributors will be hosting a Keycloak kiosk at the
+https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/features-add-ons/project-engagement/#project-pavilion[Project Pavilion].
+This is a great chance to meet people who use Keycloak, contribute to Keycloak, take our survey about new Keycloak features, and get some cool swag!
+
+*Keycloak Kiosk opening hours:*
+
+- Wednesday, April 2: 15:30 - 19:45
+- Thursday, April 3: 14:00 - 17:00
+- Friday, April 4: 12:30 - 14:00
+
+== Presenting evolving OpenID Connect and Keycloak Observability
+
+https://github.com/tnorimat[Takashi Norimatsu] and https://github.com/ryanemerson[Ryan Emerson] will be presenting a talk
+on Evolving OpenID Connect and Observability in Keycloak.
+
+- Friday, April 4, 14:30 - 15:00pm +
+https://kccnceu2025.sched.com/event/1td1c/evolving-openid-connect-and-observability-in-keycloak-ryan-emerson-red-hat-takashi-norimatsu-hitachi?iframe=yes&w=100%&sidebar=yes&bg=no[*Evolving OpenID Connect and Observability in Keycloak*] +
+By Takashi Norimatsu, Hitachi & Ryan Emerson, Red Hat.
+
+We're preparing for KubeCon EU 2025 and can't wait to connect with our community. Mark your calendars and join us.
+
+See you in London!
