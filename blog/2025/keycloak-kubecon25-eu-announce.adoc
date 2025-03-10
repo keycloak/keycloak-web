@@ -33,6 +33,21 @@ on Evolving OpenID Connect and Observability in Keycloak.
 https://kccnceu2025.sched.com/event/1td1c/evolving-openid-connect-and-observability-in-keycloak-ryan-emerson-red-hat-takashi-norimatsu-hitachi?iframe=yes&w=100%&sidebar=yes&bg=no[*Evolving OpenID Connect and Observability in Keycloak*] +
 By Takashi Norimatsu, Hitachi & Ryan Emerson, Red Hat.
 
+== Open Source communities in Japan
+
+Keycloak has a powerful community in Japan, and we have received several contributions in the past. One of Keycloak's maintainers, Takashi Norimatsu, is based in Japan.
+There is also a quite popular Japanese book about https://www.amazon.co.jp/dp/4865944362[Keycloak Authentication and Authorization] by Yoshiyuki Tabata that will soon appear in its second edition.
+
+With our strong ties to Japan, we are already preparing for the first-ever https://events.linuxfoundation.org/kubecon-cloudnativecon-japan/[KubeCon Japan] on June 16-17, together with a https://community.cncf.io/events/details/cncf-cloud-native-security-japan-presents-keyconf-2025-japan/[full-day KeyConf event in Tokyo] on Jun 13. The call-for-papers for KeyConf Japan is already open, so please submit your talk, and mark it in your calendar to join us on-site!
+
+To learn more about the community activities in Japan, join the following talk:
+
+- Thursday April 3, 2025 14:15 - 14:45 +
+https://kccnceu2025.sched.com/event/1txGx/cloud-native-communities-in-action-how-japan-shaped-its-path-to-kubecon-ota-kohei-apple-shu-muto-nec-solution-innovators-ltd-yuichi-nakamura-hitachi-ltd-sunyanan-choochotkaew-ibm-research-noriaki-fukuyasu-the-linux-foundntion[*Cloud Native Communities in Action: How Japan Shaped Its Path To KubeCon*] +
+By Ota Kohei, Apple; Shu Muto, NEC Solution Innovators, Ltd.; Yuichi Nakamura, Hitachi, Ltd.; Sunyanan Choochotkaew, IBM Research; Noriaki Fukuyasu, The Linux Foundation
+
+== See you soon!
+
 We're preparing for KubeCon EU 2025 and can't wait to connect with our community. Mark your calendars and join us.
 
 See you in London!
