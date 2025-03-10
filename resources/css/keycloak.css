@@ -145,6 +145,19 @@ a:hover {
     margin-bottom: 0.3rem;
 }
 
+/* Add border radius to components */
+.card {
+    border-radius: 1rem !important;
+}
+
+.btn {
+    border-radius: 2rem !important;
+}
+
+.badge {
+    border-radius: 2rem !important;
+}
+
 /* Guide - Options */
 
 table.options {
