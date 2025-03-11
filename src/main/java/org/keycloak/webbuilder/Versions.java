@@ -18,8 +18,8 @@ public class Versions extends LinkedList<Versions.Version> {
         for (File versionFile : versionsDir.listFiles((dir, name) -> name.endsWith(".json"))) {
             add(JsonParser.read(versionFile, Version.class));
         }
-        Collections.sort(this);
-
+        sort((o1, o2) ->
+                -1 * Version.compareToVersions(o1.version, o2.version));
         get(0).setLatest(true);
     }
 
@@ -35,7 +35,8 @@ public class Versions extends LinkedList<Versions.Version> {
             }
         }
         LinkedList<Version> l = new LinkedList<>(map.values());
-        Collections.sort(l);
+        Collections.sort(l, (o1, o2) ->
+                -1 * Version.compareToVersions(o1.getVersion(), o2.getVersion()));
         return l;
     }
 
@@ -151,28 +152,28 @@ public class Versions extends LinkedList<Versions.Version> {
 
         @Override
         public int compareTo(Version o) {
-            return compareTo(o.getVersion());
+            return compareToVersions(this.version, o.getVersion());
         }
 
-        public int compareTo(String o) {
-            String[] v1 = version.split("\\.");
-            String[] v2 = o.split("\\.");
+        public static int compareToVersions(String version1, String version2) {
+            String[] v1 = version1.split("\\.");
+            String[] v2 = version2.split("\\.");
 
-            int r = stringNumberCompareTo(v2[0], v1[0]);
+            int r = stringNumberCompareTo(v1[0], v2[0]);
             if (r != 0) {
                 return r;
             }
 
-            r = stringNumberCompareTo(v2[1], v1[1]);
+            r = stringNumberCompareTo(v1[1], v2[1]);
             if (r != 0) {
                 return r;
             }
 
-            r = stringNumberCompareTo(v2[2], v1[2]);
+            r = stringNumberCompareTo(v1[2], v2[2]);
             return r;
         }
 
-        private int stringNumberCompareTo(String a, String b) {
+        private static int stringNumberCompareTo(String a, String b) {
             return Integer.valueOf(a).compareTo(Integer.valueOf(b));
         }
     }

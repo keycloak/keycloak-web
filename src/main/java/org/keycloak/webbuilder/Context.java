@@ -108,17 +108,17 @@ public class Context {
     }
 
     public Versions versions() {
-        return versionsBySource.get(ReleasesMetadata.MAIN_PROJECT_ID);
+        return versionsFor(ReleasesMetadata.MAIN_PROJECT_ID);
     }
 
-    public LinkedList<Versions.Version> versionsFor(String sourceId) throws Exception {
+    public Versions versionsFor(String sourceId) {
         Versions versions = versionsBySource.get(sourceId);
 
         if (versions != null) {
             return versions;
         }
 
-        throw new Exception(String.format("No versions available for %s", sourceId));
+        throw new IllegalArgumentException(String.format("No versions available for %s", sourceId));
     }
 
     public Extensions extensions() {

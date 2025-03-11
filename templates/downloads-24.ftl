@@ -105,30 +105,62 @@
 <h2 class="mt-4">Client Adapters</h2>
 
 <div>
-
     <div class="tab-content">
         <div role="tabpanel" class="tab-pane active margin-top" id="oidc">
             <table class="table table-bordered table-striped">
+                <#assign versionCompare=staticMethods['org.keycloak.webbuilder.Versions$Version']>
+                <#if versionCompare.compareToVersions(version.version, '26.2.0') lt 0 >
+                    <tr>
+                        <td>JavaScript</td>
+                        <td>
+                        </td>
+                        <td>
+                            <table class="kc-table-downloads-inner">
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <span class="me-4">
+                                        <a href="https://www.npmjs.com/package/keycloak-js/v/${version.version}" target="_blank">
+                                            <i class="fa fa-link"></i> NPM
+                                        </a>
+                                        </span>
+                                        <@download category="adapter" label="js" file="keycloak-js-${version.version}" zip=false tar=false tgz=true />
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </#if>
                 <tr>
-                    <td>JavaScript</td>
+                    <td>JavaScript[separate release] (${jsLatestVersion.version})</td>
+                    <td>
+                        <a href="downloads-js-archive.html">Archived releases</a>
+                    </td>
                     <td>
                         <table class="kc-table-downloads-inner">
                             <tr>
                                 <td></td>
                                 <td>
                                     <span class="me-4">
-                                    <a href="https://www.npmjs.com/package/keycloak-js/v/${version.version}" target="_blank">
+                                    <a href="https://www.npmjs.com/package/keycloak-js/v/${jsLatestVersion.version}" target="_blank">
                                         <i class="fa fa-link"></i> NPM
                                     </a>
                                     </span>
-                                    <@download category="adapter" label="js" file="keycloak-js-${version.version}" zip=false tar=false tgz=true />
+                                    <span>
+                                    <a onclick="dl('adapter', 'js');" href="https://github.com/keycloak/keycloak-js/releases/download/${jsLatestVersion.version}/keycloak-js-${jsLatestVersion.version}.tgz" target="_blank">
+                                        <i class="fa fa-download" aria-hidden="true"></i>
+                                        TGZ
+                                    </a>
+                                    </span>
                                 </td>
                             </tr>
                         </table>
                     </td>
                 </tr>
+
                 <tr>
                     <td>Node.js <b>[DEPRECATED]</b></td>
+                    <td></td>
                     <td>
                         <table class="kc-table-downloads-inner">
                             <tr>
@@ -142,7 +174,6 @@
                         </table>
                     </td>
                 </tr>
-                </tbody>
             </table>
         </div>
 
