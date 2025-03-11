@@ -36,7 +36,7 @@ By Takashi Norimatsu, Hitachi & Ryan Emerson, Red Hat.
 == Related Talks
 
 Keycloak has a powerful community in Japan, and we have received several contributions in the past. One of Keycloak's maintainers, Takashi Norimatsu, is based in Japan.
-There is also a quite popular Japanese book about https://www.amazon.co.jp/dp/4865944362[Keycloak Authentication and Authorization] by Yoshiyuki Tabata that will soon appear in its second edition.
+There is also a quite popular Japanese book about https://www.amazon.co.jp/dp/4865944362[Keycloak Authentication and Authorization]  by Yuichi Nakamura and Japanese community colleagues that will soon appear in its second edition.
 
 To learn more about community activities in Japan, join the following talk:
 
