@@ -31,7 +31,7 @@ public class ReleaseNotesBuilder extends AbstractBuilder {
 
     private void buildForSource(ReleasesMetadata.ReleaseSource source) throws Exception {
         File releasesCache = new File(context.getCacheDir(), "releases/" + source.getId());
-        List<Versions.Version> versions = context.versionsFor(source.getId());
+        Versions versions = context.versionsFor(source.getId());
 
         for (Versions.Version v : versions) {
             try {

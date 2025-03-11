@@ -25,12 +25,12 @@ public class GitHubReleaseNotesBuilder extends AbstractBuilder {
 
     private void buildForSource(ReleasesMetadata.ReleaseSource source) throws Exception {
         File releasesCache = new File(context.getCacheDir(), "releases/" + source.getId());
-        List<Versions.Version> versions = context.versionsFor(source.getId());
+        Versions versions = context.versionsFor(source.getId());
 
         for (Versions.Version v : versions) {
             String releaseNotesFrom = source.getGithubReleaseNotesFrom();
 
-            if (releaseNotesFrom == null || v.compareTo(releaseNotesFrom) <= 0) {
+            if (releaseNotesFrom == null || Versions.Version.compareToVersions(v.getVersion(), releaseNotesFrom) >= 0) {
                 File releaseCacheDir = new File(releasesCache, v.getVersion());
                 releaseCacheDir.mkdirs();
 

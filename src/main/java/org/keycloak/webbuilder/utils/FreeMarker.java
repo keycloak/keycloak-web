@@ -2,6 +2,7 @@ package org.keycloak.webbuilder.utils;
 
 import freemarker.cache.NullCacheStorage;
 import freemarker.template.Configuration;
+import freemarker.template.DefaultObjectWrapperBuilder;
 import freemarker.template.Template;
 import freemarker.template.TemplateExceptionHandler;
 import org.keycloak.webbuilder.Context;
@@ -83,6 +84,8 @@ public class FreeMarker {
 
         globalAttributes.put("versions", context.versions());
         globalAttributes.put("versionsMajorMinor", context.versions().getMajorMinor());
+        globalAttributes.put("jsVersions", context.versionsFor("keycloak-js"));
+        globalAttributes.put("jsLatestVersion", context.versionsFor("keycloak-js").getLatest());
 
         globalAttributes.put("extensions", context.extensions());
 
@@ -96,6 +99,7 @@ public class FreeMarker {
         globalAttributes.put("archive", false);
 
         globalAttributes.put("links", context.getLinks());
+        globalAttributes.put("staticMethods", new DefaultObjectWrapperBuilder(Configuration.VERSION_2_3_24).build().getStaticModels());
 
         isPublish = context.config().isPublish();
         targetDir = context.getTargetDir();

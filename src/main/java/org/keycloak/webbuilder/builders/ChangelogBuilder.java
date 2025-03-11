@@ -36,7 +36,7 @@ public class ChangelogBuilder extends AbstractBuilder {
             }
 
             File releasesCache = new File(context.getCacheDir(), "releases/" + source.getId());
-            List<Versions.Version> versions = context.versionsFor(source.getId());
+            Versions versions = context.versionsFor(source.getId());
 
             for (Versions.Version v : versions) {
                 File releaseCacheDir = new File(releasesCache, v.getVersion());
