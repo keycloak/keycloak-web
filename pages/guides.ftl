@@ -21,10 +21,10 @@
     </div>
 </nav>
 
-<div class="jumbotron jumbotron-fluid bg-light kc-bg-triangles pt-4">
+<div class="jumbotron jumbotron-fluid bg-light kc-bg-triangles kc-bg-fixed pt-4 pb-1">
     <div class="container">
         <#list guides.getCategories(false) as c>
-            <div class="row guide-category" id="${c.id}">
+            <div class="row guide-category mb-4" id="${c.id}">
                 <h2>${c.title}</h2>
                 <#list guides.getGuides(c) as g>
                 <#if g.tileVisible && !g.snapshot>

@@ -29,6 +29,10 @@
     background-size: cover;
 }
 
+.kc-bg-fixed {
+    background-attachment: fixed;
+}
+
 .btn-primary {
     color: #fff;
     background-color: #428bca;
@@ -146,6 +150,12 @@ a:hover {
 }
 
 /* Guide - Options */
+
+.guide-category {
+    border-radius: 0.5rem;
+    background-color: #EDEDED99;
+    padding: 1rem 0.5rem 0;
+}
 
 table.options {
     width: 100%;

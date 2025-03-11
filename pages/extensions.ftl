@@ -2,7 +2,7 @@
 
 <@tmpl.page current="extensions" title="Extensions" previewImage="extensions.png" summary="Use community maintained extensions to extend the functionality of your Keycloak setup.">
 
-<div class="jumbotron jumbotron-fluid bg-light kc-bg-triangles pt-4">
+<div class="jumbotron jumbotron-fluid bg-light kc-bg-triangles kc-bg-fixed pt-4">
     <div class="container">
         <h1 class="text-white">Extensions</h1>
 
