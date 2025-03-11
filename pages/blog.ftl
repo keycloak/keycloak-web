@@ -12,15 +12,19 @@
         <div class="col-sm-6">
             <div class="card shadow-sm mb-4">
                 <div class="card-body">
-                    <h4 class="card-title">${blog.title}</h4>
-                    <span class="card-subtitle fs-xsmall text-muted">
-                        ${blog.date?string["dd MMMM yyyy"]}
-                        <#if blog.author??>by ${blog.author}</#if>
-                    </span>
+                    <h4 class="card-title" <#if !blog.summary?has_content>style="margin-bottom:0"</#if>>
+                        ${blog.title}
+                    </h4>
                     <#if blog.summary??>
                     <div class="card-text">${blog.summary}</div>
                     </#if>
                     <a href="${links.get(blog)}" class="stretched-link link-dark"></a>
+                </div>
+                <div class="card-footer align-items-center d-flex">
+                    <span class="card-subtitle fs-xsmall text-muted">
+                        ${blog.date?string["dd MMMM yyyy"]}
+                        <#if blog.author??>by ${blog.author}</#if>
+                    </span>
                 </div>
             </div>
         </div>
