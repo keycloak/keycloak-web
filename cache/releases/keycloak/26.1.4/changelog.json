@@ -1,0 +1,57 @@
+[ {
+  "number" : 37320,
+  "repository" : "keycloak",
+  "title" : "Cannot fetch realm role that was renamed",
+  "kind" : "bug",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/37320"
+}, {
+  "number" : 37433,
+  "repository" : "keycloak",
+  "title" : "Allow admin to disable automatic refresh of event views",
+  "kind" : "enhancement",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/37433"
+}, {
+  "number" : 37621,
+  "repository" : "keycloak",
+  "title" : "When calling the token revoke endpoint multiple times with the same token, a database REVOKED-TOKEN constraint error is reported",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/37621"
+}, {
+  "number" : 37711,
+  "repository" : "keycloak",
+  "title" : "Upgrade to Infinispan 15.0.14",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/37711"
+}, {
+  "number" : 37843,
+  "repository" : "keycloak",
+  "title" : "Admin events: resource type filter does not work",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/37843"
+}, {
+  "number" : 37911,
+  "repository" : "keycloak",
+  "title" : "Unwanted placeholder texts in user profile fields",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/37911"
+}, {
+  "number" : 37944,
+  "repository" : "keycloak",
+  "title" : "KC_HTTPS_TRUST_STORE_TYPE not working",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/37944"
+}, {
+  "number" : 38038,
+  "repository" : "keycloak",
+  "title" : "The default setting of the client request object parameter is empty",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/38038"
+} ]
