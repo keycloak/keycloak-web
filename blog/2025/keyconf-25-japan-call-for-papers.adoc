@@ -1,0 +1,23 @@
+:title: Submit to KeyConf25 Japan Call-for-Papers!
+:date: 2025-03-17
+:publish: true
+:author: Alexander Schwartz
+:preview: keyconf25-japan-cfp.png
+:summary: Submit your talks to the first-ever KeyConf in Japan! It will happend shortly before KubeCon Japan, so you can join both.
+
+The call for papers for link:https://community.cncf.io/e/mvnu59/[KeyConf 2025 Japan] is now open! Submit your talks to the first-ever KeyConf in Japan.
+
+KeyConf 2025 Japan is a free half-day meetup in Tokyo, Japan on June 13 where the community of Keycloak gathers.
+It provides opportunities for technical lectures, growth, and networking with talks related Identity and Access Management (IAM) and Single Sign On (SSO).
+
+This event is designed to share insights from developers and maintainers, as well as the latest features, updates, and real-world use cases of Keycloak.
+Participants will have the valuable opportunity to interact directly with Keycloak experts and other users, deepening their knowledge.
+
+https://sessionize.com/keyconf-2025-japan/[Submit now!]
+
+== Related Events
+
+A few days later, on June 16-17, https://events.linuxfoundation.org/kubecon-cloudnativecon-japan/[KubeCon Japan 2025] takes place in Tokyo as well.
+The Keycloak team will be on-site for KubeCon Japan, so join us and a lot of other CNCF projects for this event as well.
+
+See you in Tokyo!
