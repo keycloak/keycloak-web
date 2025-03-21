@@ -18,7 +18,7 @@ from Red Hat, and other contributors will be hosting a Keycloak kiosk at the
 https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/features-add-ons/project-engagement/#project-pavilion[Project Pavilion].
 This is a great chance to meet people who use Keycloak, contribute to Keycloak, take our survey about new Keycloak features, and get some cool swag!
 
-*Keycloak Kiosk opening hours:*
+*Keycloak Kiosk (booth 17A) opening hours:*
 
 - Wednesday, April 2: 15:30 - 19:45
 - Thursday, April 3: 14:00 - 17:00
