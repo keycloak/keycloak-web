@@ -1,0 +1,40 @@
+:title: Register now for KubeCon Japan in June
+:date: 2025-03-24
+:publish: true
+:author: Alexander Schwartz
+:preview: keycloak-kubecon-tokyo-2025.png
+:summary: This year is the first time there is a KubeCon in Japan, and the Keycloak project is excited to be par of it! Register today to join us on June 16-17 2025 in Tokyo, Japan for this exciting event.
+
+This year is the first time there is a KubeCon in Japan, and the Keycloak project is excited to be par of it! Join us on June 16-17 2025 in Tokyo, Japan for this exciting event.
+
+https://events.linuxfoundation.org/kubecon-cloudnativecon-japan/register/[Register today to get tickets for the standard rate.]
+
+Keycloak has a powerful community in Japan, and we have received several contributions in the past. There will be two talks about Keycloak (see below).
+
+A few days before, we will be hosting https://www.keycloak.org/2025/03/keyconf-25-japan-call-for-papers[KeyConf Japan].
+Join us there either as a participant, or submit your talk and be a speaker!
+
+--
+++++
+<div class="paragraph">
+</style>
+<a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-japan/"><img src="${blogImages}/keycloak-kubecon26-japan-announce.png" alt="Banner for KubeCon Japan" style="width: 100%; max-width: 1200px; object-fit: cover; height: 250px; object-fit: none; object-position: 60% 50%"></a>
+</div>
+++++
+--
+
+== Talks at KubeCon
+
+The schedule of KubeCon + CloudNativeCon Japan 2025 has been released, see below talks about Keycloak:
+
+* https://kccncjpn2025.sched.com/event/1x6zG/add-single-sign-on-to-your-applications-with-keycloak-and-learn-about-its-latest-features-takashi-norimatsu-hitachi-marek-posolda-red-hat[*Add Single-sign-on To Your Applications With Keycloak and Learn About Its Latest Features*] +
+Monday June 16, 2025 11:30 - 12:00 JST +
+Takashi Norimatsu, Hitachi & Marek Posolda, Red Hat
+
+* https://kccncjpn2025.sched.com/event/1x71j/mastering-authorization-integrating-authentication-and-authorization-data-in-cloud-native-apps-yoshiyuki-tabata-hitachi-ltd[*Mastering Authorization: Integrating Authentication and Authorization Data in Cloud Native Apps*] +
+Tuesday June 17, 2025 14:50 - 15:20 JST +
+Yoshiyuki Tabata, Hitachi, Ltd.
+
+We're preparing for KubeCon Japan 2025 and can't wait to connect with our community. Mark your calendars and join us.
+
+See you in Tokyo!
