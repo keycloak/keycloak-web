@@ -3,7 +3,7 @@
 :publish: true
 :author: Alexander Schwartz
 :preview: keycloak-kubecon-tokyo-2025.png
-:summary: This year is the first time there is a KubeCon in Japan, and the Keycloak project is excited to be par of it! Register today to join us on June 16-17 2025 in Tokyo, Japan for this exciting event.
+:summary: This year is the first time there is a KubeCon in Japan, and the Keycloak project is excited to be part of it! Register today to join us on June 16-17 2025 in Tokyo, Japan for this exciting event.
 
 This year is the first time there is a KubeCon in Japan, and the Keycloak project is excited to be par of it! Join us on June 16-17 2025 in Tokyo, Japan for this exciting event.
 
