@@ -1,4 +1,4 @@
-<#macro page current title summary="" importMap="" previewImage="" noindex=false nocsp=false rss=false jsonLd="">
+<#macro page current title summary="" importMap="" previewImage="" author="" noindex=false nocsp=false rss=false jsonLd="">
 <!doctype html>
 <html lang="en" prefix="og: https://ogp.me/ns#">
 <head>
@@ -25,7 +25,7 @@
     <meta property="og:title" content="<#if (title)?has_content>${title}<#else>Keycloak</#if>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" property="og:description" content="<#if (summary)?has_content>${summary}<#else>Keycloak - the open source identity and access management solution. Add single-sign-on and authentication to applications and secure services with minimum effort.</#if>">
-    <meta name="author" content="Keycloak Team">
+    <meta name="author" content="<#if (author)?has_content>${author}<#else>Keycloak Team</#if>">
     <meta name="keywords" content="sso,idm,openid connect,saml,kerberos,ldap">
 
     <#if noindex?? && noindex><meta name="robots" content="noindex"></#if>
