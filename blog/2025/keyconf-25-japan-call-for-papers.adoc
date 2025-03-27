@@ -7,7 +7,7 @@
 
 The call for papers for link:https://community.cncf.io/e/mvnu59/[KeyConf 2025 Japan] is now open! Submit your talks to the first-ever KeyConf in Japan.
 
-KeyConf 2025 Japan is a free half-day meetup in Tokyo, Japan on June 13 where the community of Keycloak gathers.
+KeyConf 2025 Japan is a half-day meetup in Tokyo, Japan on June 13 where the community of Keycloak gathers.
 It provides opportunities for technical lectures, growth, and networking with talks related Identity and Access Management (IAM) and Single Sign On (SSO).
 
 This event is designed to share insights from developers and maintainers, as well as the latest features, updates, and real-world use cases of Keycloak.
