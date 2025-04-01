@@ -17,7 +17,6 @@
         <p>This is a <b>release candidate</b>. The latest final release is <a href="archive/downloads-${versions[1].versionShort}.html">${versions[1].versionShort}</a>.</p>
     </#if>
 
-    <p><a href="downloads-archive.html">Archived releases</a> | <a href="${links.nightly}">Nightly release</a> | <a href="${links.getLink('keys')}">Signing keys</a></p>
 </div>
 
 <script>
