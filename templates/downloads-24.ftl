@@ -1,6 +1,6 @@
 <#macro download category label file tar=true zip=true tgz=false>
 <#if zip>
-<span class="me-4">
+<span class="me-4" xmlns="http://www.w3.org/1999/html">
 <a onclick="dl('${category}', '${label}');" href="https://github.com/keycloak/keycloak/releases/download/${version.version}/${file}.zip" target="_blank">
     <i class="fa fa-download" aria-hidden="true"></i>
     ZIP
@@ -25,6 +25,15 @@
 </a>
 </span>
 </#if>
+</#macro>
+
+<#macro maven artifact version>
+<pre>
+&ltdependency&gt
+    &ltgroupId&gtorg.keycloak&lt/groupId&gt
+    &ltartifactId&gt${artifact}&lt/artifactId&gt
+    &ltversion&gt${version}&lt/version&gt
+&lt/dependency&gt</pre>
 </#macro>
 
 <h2 class="mt-4">Server</h2>
@@ -71,6 +80,9 @@
     </tbody>
 </table>
 
+<p><a href="${links.getLink('downloads-archive')}">Archived releases</a> | <a href="${links.nightly}">Nightly release</a> | <a href="${links.getLink('keys')}">Signing keys</a></p>
+
+
 <h2 class="mt-4">Quickstarts</h2>
 <table class="table table-bordered table-striped">
     <tbody>
@@ -100,7 +112,7 @@
     </tr>
     </tbody>
 </table>
-
+<p><a href="${links.getLink('keys')}">Signing keys</a></p>
 
 <h2 class="mt-4">Client Adapters</h2>
 
@@ -134,7 +146,7 @@
                 <tr>
                     <td>JavaScript[separate release] (${jsLatestVersion.version})</td>
                     <td>
-                        <a href="downloads-js-archive.html">Archived releases</a>
+                        <a href="${links.getLink('downloads-js-archive')}">Archived releases</a>
                     </td>
                     <td>
                         <table class="kc-table-downloads-inner">
@@ -175,7 +187,47 @@
                     </td>
                 </tr>
             </table>
+            <p><a href="${links.getLink('keys')}">Signing keys</a></p>
         </div>
-
     </div>
 </div>
+
+<h2 class="mt-4">Client Libraries</h2>
+<#assign keycloakClientGithub="https://github.com/keycloak/keycloak-client">
+<table class="table table-bordered table-striped">
+    <tbody>
+    <tr>
+        <td>Client libraries Source Code Repository</td>
+        <td>
+            <span class="me-4">
+            <a onclick="dl('examples', 'keycloak-client');" href="${keycloakClientGithub}" target="_blank">
+                <i class="fab fa-github" aria-hidden="true"></i>
+                GitHub
+            </a>
+            </span>
+            <span>
+            <a onclick="dl('examples', 'keycloak-client');" href="${keycloakClientGithub}/tree/${clientLatestVersion.version}" target="_blank">
+                <i class="fa fa-tag" aria-hidden="true"></i>
+                ${clientLatestVersion.version}
+            </a>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td>Admin Client</td>
+        <td><@maven artifact="keycloak-admin-client" version="${clientLatestVersion.version}"/></td>
+    <tr>
+        <td>Authorization Client</td>
+        <td><@maven artifact="keycloak-authz-client" version="${clientLatestVersion.version}"/></td>
+    </tr>
+    <tr>
+        <td>Policy Enforcer</td>
+        <td><@maven artifact="keycloak-policy-enforcer" version="${clientLatestVersion.version}"/></td>
+    </tr>
+    <tr>
+        <td>Common Module</td>
+        <td><@maven artifact="keycloak-client-common-synced" version="${clientLatestVersion.version}"/></td>
+    </tr>
+    </tbody>
+</table>
+<p><a href="${links.getLink('keys')}">Signing keys</a></p>
