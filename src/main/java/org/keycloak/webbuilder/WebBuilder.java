@@ -9,6 +9,7 @@ import org.keycloak.webbuilder.builders.DownloadsArchiveBuilder;
 import org.keycloak.webbuilder.builders.GitHubReleaseNotesBuilder;
 import org.keycloak.webbuilder.builders.GuideBuilder;
 import org.keycloak.webbuilder.builders.PageBuilder;
+import org.keycloak.webbuilder.builders.RedirectBuilder;
 import org.keycloak.webbuilder.builders.ReleaseNotesBuilder;
 import org.keycloak.webbuilder.builders.ResourcesBuilder;
 import org.keycloak.webbuilder.builders.RssFeedBuilder;
@@ -32,7 +33,8 @@ public class WebBuilder {
             new DocumentationArchiveBuilder(),
             new DownloadsArchiveBuilder(),
             new RssFeedBuilder(),
-            new AppBuilder()
+            new AppBuilder(),
+            new RedirectBuilder()
     };
 
     public static void main(String[] args) throws Exception {
