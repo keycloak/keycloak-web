@@ -1,0 +1,49 @@
+:title: Translating Keycloak with Weblate
+:date: 2025-04-07
+:publish: true
+:author: Alexander Schwartz
+:summary: Translating Keycloak is a collaborative effort. With Weblate this is now more effective than ever.
+:preview: weblate.png
+
+Keycloak runs in a lot of regions and countries.
+Translations help Keycloak to reach a wider audience by making the platform usable for speakers of various languages.
+
+For translations, https://hosted.weblate.org/projects/keycloak/#languages[Keycloak now integrates with Weblate] to simplify the process.
+The community can use a web-based frontend to contribute translations, and the language maintainers get automated notifications and review the translations.
+
+*Join us in the two upcoming episodes of Keycloak Hour of Code* (https://www.meetup.com/keycloak-hour-of-code/events/307123328[AMER/EMEA time zone on Apr 14] or https://www.meetup.com/keycloak-hour-of-code/events/307123354[APAC time zone on Apr 15]) to see it live and in action, and to ask your questions.
+
+Read on for more details on the process.
+
+== Translate using Weblate
+
+https://github.com/keycloak/keycloak/blob/main/docs/translation.md#using-weblate-to-to-update-translations[Weblate eliminates the need for Git skills;] and browsers suffice for translation contributions.
+
+Two language maintainers are needed to set up a translation for Keycloak in Weblate.
+They need to be native speakers of that language and will regularly review the contributions from the community.
+Today this is the case https://hosted.weblate.org/projects/keycloak/#languages[for languages like Catalan, German, Dutch, Italian, Japanese and Spanish].
+
+To have your language added to Weblate, https://github.com/keycloak/keycloak/discussions/9270[join the GitHub discussion on translations] and pair up with others.
+
+--
+++++
+<div class="paragraph">
+</style>
+<a href="https://hosted.weblate.org/projects/keycloak/#languages"><img src="${blogImages}/weblate.png" alt="Preview of Weblate translation tool" style="width: 100%; max-width: 1346px; object-fit: cover; height: 250px; object-fit: none; object-position: 0 0"></a>
+</div>
+++++
+--
+
+== Translate using GitHub pull requests
+
+Before Weblate, we used GitHub pull requests to contribute and maintain all translations,
+https://github.com/keycloak/keycloak/blob/main/docs/translation.md#using-github-pull-requests-to-update-translations[and you can still use them].
+
+Each pull request for a translation needs to be reviewed by a native speaker.
+You can either ask the community, a friend or a colleague for the review.
+
+== Join the discussion and read up on the process
+
+Read more about the https://github.com/keycloak/keycloak/blob/main/docs/translation.md[translation process] in our repository, or https://github.com/keycloak/keycloak/discussions/9270[join the GitHub discussion on translations] to ask questions or to contribute ideas.
+
+Let's make Keycloak's translations shine!
