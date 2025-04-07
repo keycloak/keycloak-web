@@ -62,15 +62,13 @@ public class RedirectBuilder extends AbstractBuilder {
                                 <head>
                                     <meta charset="utf-8">
                                     <meta http-equiv="refresh" content="0; url=%s">
-                                    <link rel="canonical" href="%s">
+                                    <title>Page Redirection</title>
                                 </head>
                                 <body>
-                                    <h1>
-                                        The page has been moved to <a href="%s">%s</a>
-                                    </h1>
+                                     If you are not redirected automatically, follow this <a href="%s">link</a>.
                                 </body>
                             </html>
-                            """, url, canonicalUrl, url, url);
+                            """, url, url);
                 }
 
                 printStep("created", file);
