@@ -1,0 +1,99 @@
+[ {
+  "number" : 36482,
+  "repository" : "keycloak",
+  "title" : "The root cause of error is suppressed in KC 26 at building",
+  "kind" : "bug",
+  "area" : "dependencies",
+  "url" : "https://github.com/keycloak/keycloak/issues/36482"
+}, {
+  "number" : 37792,
+  "repository" : "keycloak",
+  "title" : "Save Button Not Enabled When Switching OTP Type from \"Time Based\" to \"Counter Based\"",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/37792"
+}, {
+  "number" : 37869,
+  "repository" : "keycloak",
+  "title" : "ConditionalOtpFormAuthenticator fails to set CONFIGURE_TOTP required action for LDAP read-only users",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/37869"
+}, {
+  "number" : 38041,
+  "repository" : "keycloak",
+  "title" : "[Keycloak CI] - WebAuthn tests",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/38041"
+}, {
+  "number" : 38063,
+  "repository" : "keycloak",
+  "title" : "Issue in clearing offline sessions internally using ClearExpiredUserSessions Scheduled task",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/38063"
+}, {
+  "number" : 38152,
+  "repository" : "keycloak",
+  "title" : "Broken guides link on reverseproxy page",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/38152"
+}, {
+  "number" : 38353,
+  "repository" : "keycloak",
+  "title" : "Keycloak email message ID contains the local host name or IP address",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/38353"
+}, {
+  "number" : 38409,
+  "repository" : "keycloak",
+  "title" : "Upgrade to Quarkus 3.15.4",
+  "kind" : "enhancement",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/38409"
+}, {
+  "number" : 38454,
+  "repository" : "keycloak",
+  "title" : "Keycloak account console is missing the Keycloak logo",
+  "kind" : "bug",
+  "area" : "account/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/38454"
+}, {
+  "number" : 38576,
+  "repository" : "keycloak",
+  "title" : "Define a max expiration window for Signed JWT client authentication",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/38576"
+}, {
+  "number" : 38607,
+  "repository" : "keycloak",
+  "title" : "Recaptcha secret key configuration lost when migrating from 24.0.5 to 26.1.4",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/38607"
+}, {
+  "number" : 38740,
+  "repository" : "keycloak",
+  "title" : "OTelHttpClientFactory not configured properly when tracing enabled",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/38740"
+}, {
+  "number" : 38764,
+  "repository" : "keycloak",
+  "title" : "OTel: Unable to disable sampling at runtime; tracing-sampler-ratio validation prevents setting 0.0",
+  "kind" : "enhancement",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/38764"
+}, {
+  "number" : 38817,
+  "repository" : "keycloak",
+  "title" : "Add chrome install action in GHA to force a specific version of chrome",
+  "kind" : "task",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/38817"
+} ]
