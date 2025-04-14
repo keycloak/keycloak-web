@@ -6,7 +6,7 @@
 <p>In <a href="#keycloak-26-1-1">version 26.1.1</a> a new configuration option was added to the <code>reset-credential-email</code> (<strong>Send Reset Email</strong>) authenticator to allow changing the default behavior after the reset credentials flow. Now the option <code>force-login</code> (<strong>Force login after reset</strong>) is adding a third configuration value <code>only-federated</code>, which means that the force login is true for federated users and false for the internal database users. The new behavior is now the default. This way all users managed by user federation providers, whose implementation can be not so tightly integrated with Keycloak, are forced to login again after the reset credentials flow to avoid any issue. This change in behavior is due to the secure by default policy.</p>
 </div>
 <div class="paragraph">
-<p>For more information, see <a href="https://www.keycloak.org/docs/DEV/server_admin/#enabling-forgot-password">Enable forgot password</a>.</p>
+<p>For more information, see <a href="https://www.keycloak.org/docs/26.1.3/server_admin/#enabling-forgot-password">Enable forgot password</a>.</p>
 </div>
 </div>
 <h2>Upgrading</h2>
