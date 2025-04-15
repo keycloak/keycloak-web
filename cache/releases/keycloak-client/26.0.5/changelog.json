@@ -1,0 +1,43 @@
+[ {
+  "number" : 111,
+  "repository" : "keycloak-client",
+  "title" : "Close session when client is closed",
+  "kind" : "enhancement",
+  "area" : "admin-client",
+  "url" : "https://github.com/keycloak/keycloak-client/issues/111"
+}, {
+  "number" : 120,
+  "repository" : "keycloak-client",
+  "title" : "Add release notes so they can be pulled into the website",
+  "kind" : "feature",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak-client/issues/120"
+}, {
+  "number" : 135,
+  "repository" : "keycloak-client",
+  "title" : "Testing and document keycloak-client with Java 11",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak-client/issues/135"
+}, {
+  "number" : 147,
+  "repository" : "keycloak-client",
+  "title" : "Update PR-CHECKLIST",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak-client/issues/147"
+}, {
+  "number" : 150,
+  "repository" : "keycloak-client",
+  "title" : "POM contains invalid SCM URLs",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak-client/issues/150"
+}, {
+  "number" : 158,
+  "repository" : "keycloak-client",
+  "title" : "Sync with Keycloak server after Keycloak 26.2 release",
+  "kind" : "enhancement",
+  "area" : "admin-client",
+  "url" : "https://github.com/keycloak/keycloak-client/issues/158"
+} ]
