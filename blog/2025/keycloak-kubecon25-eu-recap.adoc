@@ -1,8 +1,9 @@
-
 :title: Keycloak at KubeCon EU 2025
 :date: 2025-04-16
 :publish: true
 :author: Ryan Emerson
+:preview: keycloak-kubecon-london-2025-recap.jpg
+:summary: Keycloak had a very active presence at this year's KubeCon EU in London. Watch the recorded talk, and learn about upcoming events.
 
 Keycloak had a very active presence at this year's KubeCon EU in London. This blog presents a few of the
 highlights as well as ways you can contribute to Keycloak’s CNCF journey.
@@ -56,10 +57,15 @@ Your story maybe a candidate for a https://www.cncf.io/case-studies[CNCF Case St
 success story with our community, answer _yes_ to the "`Would you be interested to share your story with our broader community?`"
 and we will be in touch shortly.
 
-== KubeCon Japan
+== KeycloakCon and KubeCon Japan
 
-In 2025, https://events.linuxfoundation.org/kubecon-cloudnativecon-japan[KubeCon Japan] will be held in Tokyo on June 16-17th,
-where https://github.com/mposolda[Marek Posolda] and
-https://github.com/tnorimat[Takashi Norimatsu] will be presenting the talk: https://sched.co/1x6zG[Add Single-sign-on To Your Applications With Keycloak and Learn About Its Latest Features].
-We hope to see you there and hear your latest Keycloak stories.
+The two events KeycloakCon Japan and KubeCon Japan will happen in Tokyo on June 13 and June 16-17 2025, respectively.
+
+KeycloakCon 2025 Japan is a half-day meetup on June 13 where the community of Keycloak gathers.
+It provides opportunities for technical lectures, growth, and networking with talks related Identity and Access Management (IAM) and Single Sign On (SSO).
+The call for papers and the registration for link:https://events.linuxfoundation.org/keycloakcon-japan/[KeycloakCon 2025 Japan] is now open! Submit your talks to the first-ever KeycloakCon in Japan.
+
+https://events.linuxfoundation.org/kubecon-cloudnativecon-japan[KubeCon 2025 Japan] will be held on June 16-17, where https://github.com/mposolda[Marek Posolda] and https://github.com/tnorimat[Takashi Norimatsu] will be presenting the talk: https://sched.co/1x6zG[Add Single-sign-on To Your Applications With Keycloak and Learn About Its Latest Features].
+
+We hope to see you there and hear your latest Keycloak stories!
 
