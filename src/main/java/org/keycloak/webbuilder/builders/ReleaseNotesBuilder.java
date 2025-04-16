@@ -12,6 +12,7 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 public class ReleaseNotesBuilder extends AbstractBuilder {
 
@@ -48,9 +49,7 @@ public class ReleaseNotesBuilder extends AbstractBuilder {
                 } else {
                     Map<String, Object> attributes = new HashMap<>();
 
-                    attributes.put("project_buildType", "latest");
-                    attributes.put("leveloffset", "2");
-                    attributes.put("fragment", "yes");
+                    setDocumentAttributes(attributes);
 
                     List<String> attributeSources = source.getAttributeSources();
 
@@ -58,9 +57,15 @@ public class ReleaseNotesBuilder extends AbstractBuilder {
                         for (String attributeSource : source.getAttributeSources()) {
                             URL templateUrl = buildTemplateUrl(source, v, attributeSource);
                             Map<String, Object> templateAttributes = context.asciiDoctor().parseAttributes(templateUrl, attributes);
-                            attributes.putAll(templateAttributes);
+                            templateAttributes.forEach((key, value) -> {
+                                // make all attributes soft-set, so the next attribute source can overwrite them
+                                attributes.put(key, value + "@");
+                            });
                         }
                     }
+
+                    // Set again to ensure the attributes are hard-set, and not soft-set to prevent overwriting them
+                    setDocumentAttributes(attributes);
 
                     URL releaseNotesURL = buildTemplateUrl(source, v, source.getReleaseNotes());
 
@@ -80,6 +85,12 @@ public class ReleaseNotesBuilder extends AbstractBuilder {
                 printStep("error", source.getId() + " " + v.getVersion() + " (" + e.getClass().getSimpleName() + ")");
             }
         }
+    }
+
+    private static void setDocumentAttributes(Map<String, Object> attributes) {
+        attributes.put("project_buildType", "latest");
+        attributes.put("leveloffset", "2");
+        attributes.put("fragment", "yes");
     }
 
     private URL buildTemplateUrl(ReleasesMetadata.ReleaseSource source, Versions.Version version, String pathTemplate) throws Exception {
