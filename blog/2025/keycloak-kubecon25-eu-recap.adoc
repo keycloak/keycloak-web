@@ -1,0 +1,71 @@
+:title: Keycloak at KubeCon EU 2025
+:date: 2025-04-16
+:publish: true
+:author: Ryan Emerson
+:preview: keycloak-kubecon-london-2025-recap.jpg
+:summary: Keycloak had a very active presence at this year's KubeCon EU in London. Watch the recorded talk, and learn about upcoming events.
+
+Keycloak had a very active presence at this year's KubeCon EU in London. This blog presents a few of the
+highlights as well as ways you can contribute to Keycloak’s CNCF journey.
+
+== Project Pavilion
+
+Keycloak hosted a project pavilion stand during Wednesday, Thursday and Friday afternoon slots. Attending the booth were
+Keycloak contributors https://github.com/tnorimat[Takashi Norimatsu] and https://github.com/y-tabata[Yoshiyuki Tabata] from Hitachi,
+alongside https://github.com/mabartos[Martin Bartos] and https://github.com/ryanemerson[Ryan Emerson] from Red Hat.
+
+During these sessions, we had the opportunity to connect with both existing and prospective Keycloak users to talk all
+things related to Identity and Access Management. Keycloak stickers were as popular as ever, with both the CNCF sticker
+wall and our own stash completely emptied! It was fantastic to hear firsthand feedback - what’s working well and where
+there’s room for improvement. Insights like these are invaluable as we continue to grow the project and shape the future
+roadmap. If you weren’t able to stop by the pavilion, we’d still love to hear from you, please feel free to share your
+thoughts via the http://bit.ly/keycloak-community[online feedback form].
+
+--
+++++
+<div class="paragraph">
+<a href="${blogImages}/kubecon_eu_2025_kiosk.jpg"><img src="${blogImages}/kubecon_eu_2025_kiosk.jpg" alt="Four Keycloak contributors hosting the project pavilion booth" style="width: 100%; max-width: 700px; height: auto;"></a>
+</div>
+++++
+--
+
+== Keycloak Talk
+
+https://github.com/tnorimat[Takashi Norimatsu] and https://github.com/ryanemerson[Ryan Emerson] presented a talk titled
+"`Evolving OpenID Connect and Observability in Keycloak`". https://www.youtube.com/watch?v=bC4xbBJs0CA[Watch the recording]
+to hear about how OpenID Connect and observability have evolved over the past year in the Keycloak project. A video of
+the talk is linked below.
+
+--
+++++
+<div class="paragraph">
+<iframe src="https://www.youtube-nocookie.com/embed/bC4xbBJs0CA?si=_aI5ahywt8Jxn_eB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width: 100%; max-width: 700px; height: auto; aspect-ratio: 560 / 315;"></iframe>
+</div>
+++++
+--
+
+Thank you to all who attended and asked questions, there were good follow-up conversations that continued well after our
+time was up.
+
+== Keycloak Survey
+
+Are you a Keycloak user who is deploying in production or just considering starting with Keycloak? We would love to hear
+more from you about your success stories, what is crucial to your deployments and what can be done better. Please fill
+out the http://bit.ly/keycloak-community[online Keycloak Survey] so we can better understand your use cases.
+
+Your story maybe a candidate for a https://www.cncf.io/case-studies[CNCF Case Study]. If you would like to share your
+success story with our community, answer _yes_ to the "`Would you be interested to share your story with our broader community?`"
+and we will be in touch shortly.
+
+== KeycloakCon and KubeCon Japan
+
+The two events KeycloakCon Japan and KubeCon Japan will happen in Tokyo on June 13 and June 16-17 2025, respectively.
+
+KeycloakCon 2025 Japan is a half-day meetup on June 13 where the community of Keycloak gathers.
+It provides opportunities for technical lectures, growth, and networking with talks related Identity and Access Management (IAM) and Single Sign On (SSO).
+The call for papers and the registration for link:https://events.linuxfoundation.org/keycloakcon-japan/[KeycloakCon 2025 Japan] is now open! Submit your talks to the first-ever KeycloakCon in Japan.
+
+https://events.linuxfoundation.org/kubecon-cloudnativecon-japan[KubeCon 2025 Japan] will be held on June 16-17, where https://github.com/mposolda[Marek Posolda] and https://github.com/tnorimat[Takashi Norimatsu] will be presenting the talk: https://sched.co/1x6zG[Add Single-sign-on To Your Applications With Keycloak and Learn About Its Latest Features].
+
+We hope to see you there and hear your latest Keycloak stories!
+
