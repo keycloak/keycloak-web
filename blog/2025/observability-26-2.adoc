@@ -1,0 +1,76 @@
+:title: Observability improvements in Keycloak 26.2
+:date: 2025-04-23
+:publish: true
+:author: Michal Hajas
+:summary: Various improvements of observability were added to Keycloak recently. Learn more on this topic and join online meetup session happening on 7th May 2025 at 4pm CEST.
+
+When running a service in production, it is essential to understand how the system performs and whether there are some service degradations.
+This can become a nightmare without proper monitoring stack in place.
+Moreover, when such system degradation is detected, it is crucial to identify which part of the system is causing the problem to be able to address it.
+
+In the latest Keycloak release, all of the above should be more straightforward and work out of the box without the need to deploy additional extensions as it previously used to be.
+
+==  Hey Keycloak! How are you?
+Misbehavior of the system can be detected using service level indicators.
+Each indicator represents some aspect of the system that plays an important role in determining whether the system is performing well.
+One of the indicators can be the availability of the system.
+The indicator for availability can be defined as: percentage of the time the system is able to answer requests.
+The lower the indicator is for your system, the less available it was in the observed period.
+
+Definition of some indicators for Keycloak and more details on this topic can be found in the https://www.keycloak.org/observability/keycloak-service-level-indicators[Monitoring performance with Service Level Indicators] guide.
+
+== Oh no! You are not doing well
+Now we know how to detect when Keycloak is not performing well.
+But what should I do when some of the service level indicators report a wrong number?
+This situation usually means some part of Keycloak does not perform well, however, from the indicator itself, it is hard to say what part of Keycloak it is.
+
+To identify the culprit of the problem, we provide the https://www.keycloak.org/observability/metrics-for-troubleshooting[Troubleshooting using metrics] guide that lists chosen metrics.
+Using these metrics, you can get some idea about what is happening in your deployment.
+
+Some examples of metrics from the guide are listed below.
+
+* Number of operations performed by Keycloak - password hashes, login flows, token refreshes, etc.
+* Memory usage
+* Database connection pool utilization
+* Number of HTTP requests per URL and outcome
+* Hit ratios for internal caches
+
+For environments with Prometheus for collecting metrics and Grafana for displaying them, we also provide Grafana dashboards to make troubleshooting smoother.
+Instructions on how to deploy our dashboards into your Grafana instance can be found in the https://www.keycloak.org/observability/grafana-dashboards[Visualizing activities in dashboards] guide.
+
+--
+++++
+<div class="paragraph">
+<a href="${blogImages}/grafana-dashboards-2025.png"><img src="${blogImages}/grafana-dashboards-2025.png" alt="Grafana dashboards with SLIs, password validations, database connections pool and http metrics." style="width: 100%; max-width: 1049px; height: auto; aspect-ratio: 1049 / 1269;"></a>
+</div>
+++++
+--
+
+== My Keycloak is still sick :( I need an in-depth examination
+Thanks to metrics we can observe certain aspects of the system and how they evolve over time.
+However, they may not provide a detailed picture of what is happening inside Keycloak for a specific request.
+For this you can leverage traces.
+Learn more in the https://www.keycloak.org/observability/tracing[Root cause analysis with tracing] guide.
+
+With tracing, you can observe steps that Keycloak was performing for a specific request including the respective timing for each of them.
+These steps include operations done by Keycloak but also waiting time for responses from third party services like database, LDAP, Infinispan, etc.
+This can lead to revealing where the bottleneck in your system is.
+
+In the example below, you can see steps Keycloak was performing when the username and password form was submitted.
+You can see the most time-consuming step was password hashing which took 30 milliseconds out of 48 milliseconds total request processing time.
+--
+++++
+<div class="paragraph">
+<a href="${blogImages}/tracing-2025.png"><img src="${blogImages}/tracing-2025.png" alt="Trace displayed in Jaeger for username password form submission." style="width: 100%; max-width: 2202px; height: auto; aspect-ratio: 2202 / 957;"></a>
+</div>
+++++
+--
+
+== Next steps
+If you have any questions or you are interested in seeing all of this in action, we are happy to invite you to the Keycloak hour of code online meetup held on 7th May 2025 at 4pm CEST dedicated to observability.
+
+If you are eager to see this in action and can't wait for the meetup, there was an observability demo presented by Ryan Emerson at KubeCon London 2025 and the recording can be found https://youtu.be/bC4xbBJs0CA?si=WfptsITHZvpYBM_8&t=769[here].
+
+To ask questions outside the meetup, please use the https://cloud-native.slack.com/channels/keycloak-sre-sig[CNCF #keycloak-sre-sig Slack channel].
+Use https://slack.cncf.io/ to join the CNCF Slack if you do not have an account yet.
+You can also create a new discussion thread in the https://github.com/keycloak/keycloak/discussions[Keycloak Github repository].
