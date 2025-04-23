@@ -12,14 +12,9 @@ In the latest Keycloak release, all of the above became more straightforward and
 
 == Hey Keycloak! How are you?
 
-// Adding this paragraph to make it more specific and connect it to some real world needs
 Users rely on Keycloak to log in to their applications, and the key metrics capturing that behavior are defined as service level indicators (SLIs).
 Misbehavior of the system can be detected by monitoring these SLIs.
 
-// I don't agree that an indicator represents "an aspect of the system", rather "an aspect of the observed behavior by the users". Given the sentence above, the sentence might be redundant, so I commented it out
-// Each indicator represents some aspect of the system that plays an important role in determining whether the system is performing well.
-
-// TODO: While the availability is one of the SLIs, it doesn't use metrics that are provided by Keycloak, so I'd rather use a different example, like latency
 One of the indicators can be the availability of the system.
 The indicator for availability can be defined as: percentage of the time the system is able to answer requests.
 The lower the indicator is for your system, the less available it was in the observed period.
@@ -84,5 +79,4 @@ As an appetizer, see a shorter version of https://youtu.be/bC4xbBJs0CA?si=WfptsI
 To ask questions outside the meetup, use the https://cloud-native.slack.com/channels/keycloak-sre-sig[CNCF #keycloak-sre-sig Slack channel].
 Use https://slack.cncf.io/ to join the CNCF Slack if you do not have an account yet.
 
-// TODO: Do you want to direct people to an existing discussion, or create a discussion just for this blog post? Otherwise we might not monitor that discussion
-You can also create a new discussion thread in the https://github.com/keycloak/keycloak/discussions[Keycloak Github repository].
+You can also leave the feedback in the https://github.com/keycloak/keycloak/discussions/39160[Keycloak Github discussion dedicated to this blog post].
