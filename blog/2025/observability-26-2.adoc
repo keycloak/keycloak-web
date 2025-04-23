@@ -1,5 +1,5 @@
 :title: Observability in Keycloak 26.2
-:date: 2025-04-23
+:date: 2025-04-24
 :publish: true
 :author: Michal Hajas
 :summary: Observability improved a lot in Keycloak's latest release. Learn what changed in this post and in our online meetup on 7th May 2025.
