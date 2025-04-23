@@ -1,0 +1,134 @@
+[ {
+  "number" : 38458,
+  "repository" : "keycloak",
+  "title" : "[FGAP] [UI] Permission search doesn't execute correct consequent search request",
+  "kind" : "bug",
+  "area" : "admin/fine-grained-permissions",
+  "url" : "https://github.com/keycloak/keycloak/issues/38458"
+}, {
+  "number" : 38692,
+  "repository" : "keycloak",
+  "title" : "Test coverage for count menthods when filtering",
+  "kind" : "bug",
+  "area" : "admin/fine-grained-permissions",
+  "url" : "https://github.com/keycloak/keycloak/issues/38692"
+}, {
+  "number" : 38767,
+  "repository" : "keycloak",
+  "title" : "Make group required when selecting a specific group creating a premission",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/38767"
+}, {
+  "number" : 38812,
+  "repository" : "keycloak",
+  "title" : "Test failures in CI in Chrome tests",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/38812"
+}, {
+  "number" : 38846,
+  "repository" : "keycloak",
+  "title" : "StatefulSet reconciliation infinitely looping",
+  "kind" : "bug",
+  "area" : "operator",
+  "url" : "https://github.com/keycloak/keycloak/issues/38846"
+}, {
+  "number" : 38913,
+  "repository" : "keycloak",
+  "title" : "[FGAP] AvailableRoleMappings do not consider all-clients permissions",
+  "kind" : "bug",
+  "area" : "admin/fine-grained-permissions",
+  "url" : "https://github.com/keycloak/keycloak/issues/38913"
+}, {
+  "number" : 38920,
+  "repository" : "keycloak",
+  "title" : "Downstream docs have duplicate ID on sampling",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/38920"
+}, {
+  "number" : 38925,
+  "repository" : "keycloak",
+  "title" : "Blocking issue with increasing JVM thread count after migrating from 26.0.8 to 26.1.4",
+  "kind" : "bug",
+  "area" : "infinispan",
+  "url" : "https://github.com/keycloak/keycloak/issues/38925"
+}, {
+  "number" : 38929,
+  "repository" : "keycloak",
+  "title" : "Permission details sometimes don't show the name of the client",
+  "kind" : "bug",
+  "area" : "admin/fine-grained-permissions",
+  "url" : "https://github.com/keycloak/keycloak/issues/38929"
+}, {
+  "number" : 38930,
+  "repository" : "keycloak",
+  "title" : "[Docs] Broken link in ExternalLinksTest for importmap",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/38930"
+}, {
+  "number" : 38937,
+  "repository" : "keycloak",
+  "title" : "Liquibase checksum mismatch when upgrading from Keycloak ≤ 22.0.4 directly to 26.2.x",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/38937"
+}, {
+  "number" : 38956,
+  "repository" : "keycloak",
+  "title" : "Clarify upgrade instructions",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/38956"
+}, {
+  "number" : 38976,
+  "repository" : "keycloak",
+  "title" : "Typo in the new token exchange documentation",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/38976"
+}, {
+  "number" : 38982,
+  "repository" : "keycloak",
+  "title" : "JpaRealmProvider getGroupByName return group duplicate due to change of comparison (like vs equal)",
+  "kind" : "bug",
+  "area" : "ldap",
+  "url" : "https://github.com/keycloak/keycloak/issues/38982"
+}, {
+  "number" : 39015,
+  "repository" : "keycloak",
+  "title" : "Keycloak operator with update strategy to Auto: missing imagePullSecrets",
+  "kind" : "bug",
+  "area" : "operator",
+  "url" : "https://github.com/keycloak/keycloak/issues/39015"
+}, {
+  "number" : 39027,
+  "repository" : "keycloak",
+  "title" : "Add new user event metrics to the release notes",
+  "kind" : "task",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/39027"
+}, {
+  "number" : 39057,
+  "repository" : "keycloak",
+  "title" : "Change the title for Grafana dashboards guide to plural",
+  "kind" : "enhancement",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/39057"
+}, {
+  "number" : 39059,
+  "repository" : "keycloak",
+  "title" : "Document operator `Auto` update strategy when used with `podTemplate`",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/39059"
+}, {
+  "number" : 39096,
+  "repository" : "keycloak",
+  "title" : "Release note 26.2.0 has broken link",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/39096"
+} ]
