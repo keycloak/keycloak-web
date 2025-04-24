@@ -1,0 +1,5 @@
+{
+    "name": "Extended SAML Identity Provider",
+    "description": "Facilitates direct (synchronous) SAML requests to external providers, like eHerkenning or DigiD.",
+    "website": "https://github.com/First8/Extended-SAML-IDP"
+}
