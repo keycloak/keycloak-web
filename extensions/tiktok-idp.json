@@ -1,0 +1,5 @@
+{
+  "name": "TikTok Identity Provider",
+  "description": "Keycloak extension to add TikTok as an identity provider.",
+  "website": "https://github.com/mpowr-it/keycloak-tiktok"
+}
