@@ -11,9 +11,9 @@ Translations help Keycloak to reach a wider audience by making the platform usab
 For translations, https://hosted.weblate.org/projects/keycloak/#languages[Keycloak now integrates with Weblate] to simplify the process.
 The community can use a web-based frontend to contribute translations, and the language maintainers get automated notifications and review the translations.
 
-*Join us in the two upcoming episodes of Keycloak Hour of Code* (https://www.meetup.com/keycloak-hour-of-code/events/307123328[AMER/EMEA time zone on Apr 14] or https://www.meetup.com/keycloak-hour-of-code/events/307123354[APAC time zone on Apr 15]) to see it live and in action, and to ask your questions.
-
 Read on for more details on the process.
+
+We had an online Q&A session for https://studio.youtube.com/video/d1W1BH8L57k/edit[AMER/EMEA] and https://youtube.com/live/5S0DYJcDDxA[APAC] where you can see this process live and in action.
 
 == Translate using Weblate
 

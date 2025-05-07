@@ -11,7 +11,7 @@ Moreover, when the system performance degrades, it is crucial to identify which 
 
 In the latest Keycloak release, all the above became more straightforward and works without additional extensions.
 
-Read on to learn more and https://www.meetup.com/keycloak-hour-of-code/events/307445176[join our online session on May 7th to ask live questions]!
+Read on to learn more and https://www.keycloak.org/2025/04/observability-26-2[watch the recording of our meetup on May 7th]!
 
 == Hey Keycloak! How are you?
 
