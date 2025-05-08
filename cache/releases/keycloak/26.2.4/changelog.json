@@ -1,0 +1,57 @@
+[ {
+  "number" : 35278,
+  "repository" : "keycloak",
+  "title" : "Double click on social provider link causes page has expired error",
+  "kind" : "bug",
+  "area" : "login/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/35278"
+}, {
+  "number" : 38918,
+  "repository" : "keycloak",
+  "title" : "IPv6 support: Broker tests failing with proxy configuration",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/38918"
+}, {
+  "number" : 39021,
+  "repository" : "keycloak",
+  "title" : "After migrating to newer Keycloak, token refreshes using inherited offline sessions return access tokens with invalid exp value",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/39021"
+}, {
+  "number" : 39023,
+  "repository" : "keycloak",
+  "title" : "Keycloak 26.2.0 UI Performance Degradation",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/39023"
+}, {
+  "number" : 39173,
+  "repository" : "keycloak",
+  "title" : "duplicate key value violates unique constraint \"constraint_offl_cl_ses_pk3\"",
+  "kind" : "bug",
+  "area" : "infinispan",
+  "url" : "https://github.com/keycloak/keycloak/issues/39173"
+}, {
+  "number" : 39418,
+  "repository" : "keycloak",
+  "title" : "Clarify when to use podman",
+  "kind" : "enhancement",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/39418"
+}, {
+  "number" : 39454,
+  "repository" : "keycloak",
+  "title" : "JGroups errors when running a containerized Keycloak in Strict FIPS mode and with Istio",
+  "kind" : "bug",
+  "area" : "infinispan",
+  "url" : "https://github.com/keycloak/keycloak/issues/39454"
+}, {
+  "number" : 39500,
+  "repository" : "keycloak",
+  "title" : "Update Job Pod is listed in the keycloak discovery service",
+  "kind" : "bug",
+  "area" : "operator",
+  "url" : "https://github.com/keycloak/keycloak/issues/39500"
+} ]
