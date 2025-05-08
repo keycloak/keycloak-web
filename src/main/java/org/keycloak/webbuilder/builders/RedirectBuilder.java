@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.PrintWriter;
+import java.nio.file.Files;
 import java.util.regex.Pattern;
 
 /**
@@ -54,6 +55,8 @@ public class RedirectBuilder extends AbstractBuilder {
                 String canonicalUrl = url;
                 // The canonical URL must not contain the anchor
                 canonicalUrl = canonicalUrl.replaceAll("#.*", "");
+
+                Files.createDirectories(new File(context.getTargetDir(), file).getParentFile().toPath());
 
                 try (PrintWriter writer = new PrintWriter(new File(context.getTargetDir(), file))) {
                     writer.printf("""
