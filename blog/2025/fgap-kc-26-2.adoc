@@ -1,5 +1,5 @@
 :title: Beyond Roles: Achieving Fine-Grained Authorization with Keycloak
-:date: 2025-05-06
+:date: 2025-05-14
 :publish: true
 :author: Vlasta Ramik
 :summary: Keycloak's latest release introduces new suported version of long-in-preview feature fine-grained admin permissions.
