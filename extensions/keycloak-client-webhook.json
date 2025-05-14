@@ -1,0 +1,5 @@
+{
+  "name": "Keycloak Client Webhook",
+  "description": "Enables per-client webhook setup in Keycloak for environment-specific configurations.",
+  "website": "https://github.com/chintanbuch/keycloak-client-webhook"
+}
