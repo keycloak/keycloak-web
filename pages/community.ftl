@@ -38,6 +38,11 @@
     </div>
 
     <div class="row mt-3">
+        <h2>Case Studies</h2>
+        <p>We collect a list of case studies of end users <a href="${links.casestudies}">here</a>
+    </div>
+
+    <div class="row mt-3">
         <h2>Reporting security vulnerabilities</h2>
         <p>
             If you've found a security vulnerability, please look at the <a href="${links.getLink('security')}">instructions on how to properly report it</a>.

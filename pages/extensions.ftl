@@ -1,6 +1,6 @@
 <#import "/templates/template.ftl" as tmpl>
 
-<@tmpl.page current="extensions" title="Extensions" previewImage="extensions.png" summary="Use community maintained extensions to extend the functionality of your Keycloak setup.">
+<@tmpl.page current="extensions" title="Extensions" previewImage="extensions.jpg" summary="Use community maintained extensions to extend the functionality of your Keycloak setup.">
 
 <div class="jumbotron jumbotron-fluid bg-light kc-bg-triangles kc-bg-fixed pt-4">
     <div class="container">

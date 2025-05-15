@@ -90,6 +90,7 @@ public class FreeMarker {
         globalAttributes.put("clientLatestVersion", context.versionsFor("keycloak-client").getLatest());
 
         globalAttributes.put("extensions", context.extensions());
+        globalAttributes.put("casestudies", context.casestudies());
 
         globalAttributes.put("version", context.versions().getLatest());
 
