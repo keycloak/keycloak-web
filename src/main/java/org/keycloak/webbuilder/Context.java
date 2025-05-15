@@ -83,7 +83,7 @@ public class Context {
         casestudies = new Casestudies(casestudiesDir);
         blogs = new Blogs(this);
         guides = new Guides(guidesMetadata, tmpDir, getWebSrcDir(), asciiDoctor);
-        news = new News(newsDir, blogs, config);
+        news = new News(newsDir, blogs, config, links);
 
         freeMarker.init(this);
         asciiDoctor.init(this);
