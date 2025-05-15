@@ -25,7 +25,7 @@ public class Links {
     }
 
     public String getCasestudies() {
-        return getLink("casestudies");
+        return getLink("case-studies");
     }
 
     public String getDocs() {

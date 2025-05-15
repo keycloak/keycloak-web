@@ -1,7 +1,7 @@
 <#import "/templates/template.ftl" as tmpl>
 <#-- @ftlvariable name="casestudies" type="org.keycloak.webbuilder.Casestudies" -->
 
-<@tmpl.page current="casestudies" title="Case Studies" previewImage="casestudies.jpg"  summary="Case studies show how Keycloak is used by end user companies in real life scenarios.">
+<@tmpl.page current="case-studies" title="Case Studies" previewImage="casestudies.jpg"  summary="Case studies show how Keycloak is used by end user companies in real life scenarios.">
 
 <div class="jumbotron jumbotron-fluid bg-light kc-bg-triangles kc-bg-fixed pt-4">
     <div class="container">
