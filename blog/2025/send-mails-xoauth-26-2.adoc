@@ -40,12 +40,15 @@ Once all the necessary settings for gathering an access token and the username t
 Testing Microsoft Azure, I found it supports fetching an XOAUTH2 token through a client credentials grant using a client secret.
 Several configuration changes in several places on Microsoft Azure are need to make it work, which is annoying, but eventually it all works in Keycloak 26.2.
 
-Google does not support the client credentials grant with a client secret, but requires sending a JWT token. Therefore, it does not work with Keycloak 26.2 yet, as that would need additional functionality and even more configuration options for Keycloak.
+Google does not support the client credentials grant with a client secret, but requires sending a JWT token.
+Therefore, it does not work with Keycloak 26.2 yet, as that would need additional functionality and even more configuration options for Keycloak.
 Please vote on https://github.com/keycloak/keycloak/issues/39610[this issue] to add Google with SMTP and XOAUTH2 to a future Keycloak release.
 
-When analyzing the Google APIs, we found that a Google Enterprise account seems to have no possibility to restrict the sender email address. So any email address, even the CEO's email address, could be used with Google and XOAUTH2 authentication as a sender, which feels wrong.
+When analyzing the Google APIs, we found that a Google Enterprise account seems to have no possibility to restrict the sender email address.
+So any email address, even the CEO's email address, could be used with Google and XOAUTH2 authentication as a sender, which feels wrong.
 
-Looking at the different capabilities of those two cloud providers, it raises the question of how to support additional scenarios: Should it show provider-specific configuration screens, or would we need to make the UI even more generic and complex?
+Looking at the different capabilities of those two cloud providers, it raises the question of how to support additional scenarios:
+Should it show provider-specific configuration screens, or would we need to make the UI even more generic and complex?
 
 == Re-thinking sending messages to users
 
@@ -58,7 +61,7 @@ This message could be any format and building a message could be separated from 
 Second, an identity could have all kinds of message handles and email just one of them.
 Also, the way to send an email in a cloud world might no longer be the Simple Mail Transfer Protocol (SMTP), but an HTTP- and JSON-based API.
 
-To me, working with SMTP and XOAUTH2 feels like fiddling with a fax-machine while everyone else just sends a photo using a mobile phone.
+To me, working with SMTP and XOAUTH2 feels like working on something quiet ancient.
 So what might be other steps for the bright future of Keycloak in regard to sending messages to identities?
 
 Providers offer HTTP-based messaging APIs which can be used to send someone an email without using SMTP.
