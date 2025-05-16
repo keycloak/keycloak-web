@@ -1,4 +1,4 @@
-:title: Beyond Roles: Achieving Fine-Grained Authorization with Keycloak
+:title: Beyond Roles: Achieving Fine-Grained Admin Permissions with Keycloak
 :date: 2025-05-14
 :publish: true
 :author: Vlasta Ramik
@@ -46,8 +46,8 @@ policies.
 
 ### ✂️ Explicit Operation Scoping
 
-Gone are the days of hidden dependencies between permissions. FGAP V2 makes every scope explicit—such as `view-users`, `manage-users`, 
-`map-roles`, or `configure-client`. This reduces confusion and gives you full visibility into what's granted and why.
+Gone are the days of hidden dependencies between permissions. FGAP V2 makes every scope explicit—such as `view-members`, `manage-members`, 
+`map-roles`, or `impersonate`. This reduces confusion and gives you full visibility into what's granted and why.
 
 ### 🛠️ Per-Realm Enablement
 
@@ -60,13 +60,13 @@ safely, and customize permission boundaries realm-by-realm.
 2. Go to *Realm Settings → Admin Permissions* and enable FGAP for the realm.
 3. Use the new *Permissions* section to define permissions and policies for users, clients, groups, and roles.
 
-For full configuration details, refer to the [Fine-Grained Admin Permissions documentation](https://www.keycloak.org/docs/latest/server_admin/#_fine_grained_permissions).
+For full configuration details, refer to the https://www.keycloak.org/docs/latest/server_admin/#_fine_grained_permissions[Fine-Grained Admin Permissions documentation].
 
 ## 🔄 Migration and Compatibility
 
 FGAP V2 provides the same level of access control over realm resources as the previous version, while improving manageability and 
 clarity. Automatic migration is not available, but if you're upgrading from an earlier Keycloak version, see the 
-[Upgrading Guide](https://www.keycloak.org/docs/latest/upgrading/index.html#migrating-to-26-2-0) for important key changes and migration notes.
+https://www.keycloak.org/docs/latest/upgrading/index.html#migrating-to-26-2-0[Upgrading Guide] for important key changes and migration notes.
 
 ## What’s Next?
 
