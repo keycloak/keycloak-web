@@ -1,4 +1,4 @@
-:title: Beyond Roles: Achieving Fine-Grained Admin Permissions with Keycloak
+:title: Achieving Fine-Grained Admin Permissions with Keycloak 26.2
 :date: 2025-05-14
 :publish: true
 :author: Vlasta Ramik
