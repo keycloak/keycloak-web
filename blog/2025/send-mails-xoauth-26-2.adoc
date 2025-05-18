@@ -1,4 +1,4 @@
-:title: XOAUTH2: Secure email delivery with OAuth2
+:title: Secure email delivery with XOAUTH2
 :date: 2025-05-18
 :publish: true
 :author: Sebastian Rose
