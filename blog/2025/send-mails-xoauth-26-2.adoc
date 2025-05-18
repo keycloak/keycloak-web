@@ -13,11 +13,13 @@ With Keycloak 26.2, the SMTP AUTH configuration now supports XOAUTH2.
 As Keycloak's role is that of an application, it uses the client credentials grant to fetch the token.
 The SMTP AUTH configuration in Keycloak now supports all required fields to fetch such a token with client id and client secret.
 
-When implementing this functionality, I found that while it can work with Microsoft Azure and Office365, it has its challenges with providers like Google.
+When implementing this functionality, I found that while it works with Microsoft Azure and Office365, it would need a different mechanism for providers like Google.
 
-So let's follow through this example, and then discuss alternatives if we need something different from SMTP altogether.
+So let's follow through this example, and then discuss if we need something different from SMTP altogether.
 
-== XOAUTH2 configuration in Keycloak
+== Configuring Keycloak to send emails with XOAUTH2
+
+The following assumes that you are working with Keycloak 26.2.
 
 In a realm, navigate to *Realm Settings* -> *Email* and fill in the fields.
 
@@ -45,14 +47,14 @@ Therefore, it does not work with Keycloak 26.2 yet, as that would need additiona
 Please vote on issue https://github.com/keycloak/keycloak/issues/39610[#39610] to add Google with SMTP and XOAUTH2 to a future Keycloak release.
 
 When analyzing the Google APIs, we found that a Google Enterprise account seems to have no possibility of restricting the sender email address.
-So any email address, even the CEO's email address, could be used with Google and XOAUTH2 authentication as a sender, which feels wrong.
+So any email address, even the CEO's email address, could be as a sender with Google and XOAUTH2 authentication, which feels wrong.
 
-Looking at the different capabilities of those two cloud providers, it raises the question of how to support additional scenarios:
-Should it show provider-specific configuration screens, or would we need to make the UI even more generic and complex?
+Looking at the different capabilities of those two cloud providers, it raises the question of how to support scenarios for additional providers:
+Should Keycloak show provider-specific configuration screens, or would we need to make the UI even more generic and complex?
 
 == Re-thinking sending messages to users
 
-While implementing XOAUTH2 I learned a lot more details on modern cloud-provider's perspective handle sending of emails.
+While implementing XOAUTH2, I learned a lot more details on a modern cloud-provider's perspective handle sending of emails.
 Another big impulse came from discussions during the link:https://www.keycloak-day.dev/[Keycloak DevDay 2025] Hackathon.
 
 Let's break apart what happens when we talk about the current email functionality of Keycloak:
