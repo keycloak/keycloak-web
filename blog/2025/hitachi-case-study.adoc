@@ -1,0 +1,16 @@
+:title: Hitachi Keycloak case study published
+:date: 2025-05-19
+:publish: true
+:author: Alexander Schwartz
+:summary: Hitachi is providing an API management cloud service for Japanese banks and used Keycloak to search the API.
+
+Hitachi Ltd. uses Keycloak to make financial grade security easier.
+
+They are providing an API management cloud service for Japanese banks. Banks can open their APIs (like accessing bank accounts) to third-party fintech companies securely by using the service. One of the biggest challenges in the development phase was authorizing APIs for financial grade security. For API authorization in the financial sector, Financial-grade API (FAPI) is specified by the OpenID Foundation and widely adopted.
+
+By using Keycloak as an authorization server of the API management cloud service, they can provide a fully FAPI conformant API authorization for their customers.
+
+Read more on their challenges and the solution in this https://www.cncf.io/case-studies/hitachi-ltd/[CNCF case study published for the Keycloak project]!
+
+We are now starting to collect all case studies at link:${links.casestudies}[our case studies page].
+If you want to share your case study with the Keycloak community, https://github.com/ahus1[contact me] to sort out the details.

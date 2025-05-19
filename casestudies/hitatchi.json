@@ -1,0 +1,9 @@
+{
+  "name": "Hitachi Ltd.",
+  "title": "Hitachi Ltd. used Keycloak to make financial grade security easier",
+  "description": "Hitachi is providing an API management cloud service for Japanese banks. Banks can open their APIs to third-party fintech companies securely by using the service. For API authorization in the financial sector, Financial-grade API (FAPI) is specified by the OpenID Foundation and widely adopted.",
+  "url": "https://www.cncf.io/case-studies/hitachi-ltd",
+  "logoUrl": "logos/hitachi.jpg",
+  "logoBackground": "#ffffff",
+  "published": "2025-04-14"
+}

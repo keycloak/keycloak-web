@@ -30,6 +30,21 @@
                 max-width: 90%;
                 display: block;
             }
+            .line-clamp-5 {
+                display: -webkit-box;
+                -webkit-line-clamp: 5;
+                line-clamp: 5;
+                height: 5.1lh;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+            .line-clamp-2 {
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                height: 2.1lh;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
         </style>
 
         <div class="row">
@@ -37,9 +52,10 @@
                 <div class="col-md-6 col-xl-4">
                     <div class="card mb-4 shadow-sm">
                         <div class="card-body">
-                            <h5 class="card-title">${casestudy.title}</h5>
-                            <span class="card-text">${casestudy.description}<br>
-                            <a href="${casestudy.url}" class="stretched-link">Read more...</a></span>
+                            <h5 class="card-title line-clamp-2">${casestudy.title}</h5>
+                            <span class="card-text">
+                                <div class="line-clamp-5">${casestudy.description}</div>
+                            <a href="${casestudy.url}" class="stretched-link">Continue reading...</a></span>
                             <div class="logo-container" style="background-color: ${casestudy.logoBackground}">
                                 <img src="${casestudy.logoUrl}" alt="Company Logo" class="logo">
                             </div>
