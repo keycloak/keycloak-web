@@ -3,8 +3,6 @@ guides:
     title: Getting started
   - id: server
     title: Server
-  - id: ui-customization
-    title: UI Customization
   - id: operator
     title: Operator
   - id: observability
