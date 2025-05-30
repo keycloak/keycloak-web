@@ -1,0 +1,5 @@
+{
+    "name": "Keycloak SCIM Server",
+    "description": "Adds SCIM v2.0 support to Keycloak for user and group provisioning using standard REST APIs. Supports bearer token authentication (e.g. Entra ID) and works at both realm and organization levels.",
+    "website": "https://github.com/Metatavu/keycloak-scim-server"
+}
