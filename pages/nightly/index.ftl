@@ -100,7 +100,7 @@
     &lt;repository&gt;
         &lt;id&gt;sonatype-snapshots&lt;/id&gt;
         &lt;name&gt;Sonatype Snapshots&lt;/name&gt;
-        &lt;url&gt;https://s01.oss.sonatype.org/content/repositories/snapshots/&lt;/url&gt;
+        &lt;url&gt;https://central.sonatype.com/repository/maven-snapshots/&lt;/url&gt;
         &lt;snapshots&gt;
             &lt;enabled&gt;true&lt;/enabled&gt;
             &lt;updatePolicy&gt;daily&lt;/updatePolicy&gt;
