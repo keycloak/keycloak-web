@@ -33,6 +33,19 @@ jobs:
       env:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       run: ./mvnw -B -s mvn-rel-settings.xml package -Dpublish
+    - name: Publish website contents as a release
+      # This way it can be consumed in a simple way in the keycloak.github.io repository
+      env:
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      run: >
+        if ( gh release view ${{ github.ref }}-contents &> /dev/null ); then
+          echo 'release exists'
+        else
+          gh release create ${{ github.ref }} --title "Website contents" --draft
+        fi
+        tar -cvzf contents.tar.gz target/web
+        gh release upload ${{ github.ref }}-contents contents.tar.gz --clobber
+        gh release edit ${{ github.ref }}-contents --draft=false
     - name: Install SSH Client 🔑
       uses: webfactory/ssh-agent@v0.4.1
       with:
