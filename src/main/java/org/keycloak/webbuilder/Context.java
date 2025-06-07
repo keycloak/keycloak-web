@@ -33,6 +33,7 @@ public class Context {
     private Map<String, Versions> versionsBySource;
     private Extensions extensions;
     private Casestudies casestudies;
+    private ProjectStars projectStars;
     private Blogs blogs;
     private Guides guides;
     private News news;
@@ -81,6 +82,7 @@ public class Context {
 
         extensions = new Extensions(extensionsDir);
         casestudies = new Casestudies(casestudiesDir);
+        projectStars = new ProjectStars();
         blogs = new Blogs(this);
         guides = new Guides(guidesMetadata, tmpDir, getWebSrcDir(), asciiDoctor);
         news = new News(newsDir, blogs, config, links);
@@ -88,6 +90,7 @@ public class Context {
         freeMarker.init(this);
         asciiDoctor.init(this);
         sitemap.init(this);
+        projectStars.init(this);
     }
 
     public void close() {
@@ -131,6 +134,10 @@ public class Context {
 
     public Casestudies casestudies() {
         return casestudies;
+    }
+
+    public ProjectStars projectStars() {
+        return projectStars;
     }
 
     public Blogs blogs() {

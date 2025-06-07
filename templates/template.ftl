@@ -1,4 +1,5 @@
 <#macro page current title summary="" importMap="" previewImage="" author="" noindex=false nocsp=false rss=false jsonLd="">
+<#-- @ftlvariable name="projectStars" type="org.keycloak.webbuilder.ProjectStars" -->
 <!doctype html>
 <html lang="en" prefix="og: https://ogp.me/ns#">
 <head>
@@ -41,8 +42,6 @@
     <link rel="shortcut icon" href="${links.getResource('favicon.ico')}">
 
     <#if importMap?has_content><script type="importmap">${importMap}</script></#if>
-    <script src="${links.getResource('bootstrap/dist/js/bootstrap.min.js')}" type="text/javascript"></script>
-    <script src="${links.getResource('tocbot/dist/tocbot.min.js')}" type="text/javascript"></script>
     <#if rss><link rel="alternate" type="application/rss+xml" title="Keycloak's Blog" href="${links.getRss()}"></#if>
     <#if jsonLd?has_content>
     <script type="application/ld+json">
@@ -56,10 +55,10 @@
 <header class="navbar navbar-expand-md bg-light shadow-sm">
 <nav class="container-xxl flex-wrap flex-md-no-wrap navbar-light" data-nosnippet>
     <a class="navbar-brand me-3 me-md-4 me-lg-5" href="${links.home}">
-        <img class="img-fluid" src="${links.getResource('images/logo.svg')}" width="240" alt="Keycloak"/>
+        <img style="aspect-ratio: 730/151" class="img-fluid" src="${links.getResource('images/logo.svg')}" width="240" alt="Keycloak"/>
     </a>
-    <a class="nav-link d-none d-sm-block d-md-none d-lg-block" href="https://github.com/keycloak/keycloak"><img src="https://img.shields.io/github/stars/keycloak/keycloak?label=GitHub%20Stars" style="height: 25px" alt="GitHub stars"/></a>
-    <a class="nav-link d-block d-sm-none d-md-block d-lg-none" href="https://github.com/keycloak/keycloak"><img src="https://img.shields.io/github/stars/keycloak/keycloak?label=" style="height: 25px" alt="GitHub stars"/></a>
+    <a class="nav-link d-none d-sm-block d-md-none d-lg-block" href="https://github.com/keycloak/keycloak"><img src="${links.getResource('images/stars-large.svg')}" style="height: 25px; aspect-ratio: ${projectStars.aspectRatioLarge}" alt="GitHub stars"/></a>
+    <a class="nav-link d-block d-sm-none d-md-block d-lg-none" href="https://github.com/keycloak/keycloak"><img src="${links.getResource('images/stars-small.svg')}" style="height: 25px; aspect-ratio: ${projectStars.aspectRatioSmall}" alt="GitHub stars"/></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="fa fa-bars fa-lg px-1 py-2"></span>
     </button>
@@ -91,12 +90,14 @@
     <footer class="py-3 my-4 border-top">
         <p class="text-center text-muted">Keycloak is a Cloud Native Computing Foundation incubation project</p>
         <div class="text-center">
-            <img alt="Cloud Native Computing Foundation" src="${links.getResource('images/cncf_logo.png')}"/>
+            <img style="aspect-ratio: 300/48" alt="Cloud Native Computing Foundation" src="${links.getResource('images/cncf_logo.png')}" loading="lazy"/>
         </div>
         <p class="mt-4 text-center small text-muted">&copy; Keycloak Authors 2025. &copy; 2025 The Linux Foundation. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage">Trademark Usage page</a>.</p>
     </footer>
 </div>
 
+<script src="${links.getResource('bootstrap/dist/js/bootstrap.min.js')}" type="text/javascript"></script>
+<script src="${links.getResource('tocbot/dist/tocbot.min.js')}" type="text/javascript"></script>
 </body>
 </html>
 </#macro>
