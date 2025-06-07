@@ -44,7 +44,7 @@ jobs:
         else
           gh release create website-contents --title "Website contents" --draft
         fi
-        tar -cvzf contents.tar.gz target/web
+        tar -cvzf contents.tar.gz -C target/web .
         gh release upload website-contents contents.tar.gz --clobber
         gh release edit website-contents --draft=false
     - name: Install SSH Client 🔑
