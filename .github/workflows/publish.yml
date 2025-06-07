@@ -37,7 +37,8 @@ jobs:
       # This way it can be consumed in a simple way in the keycloak.github.io repository
       env:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      run: >
+      # language=bash
+      run: |
         if ( gh release view ${{ github.ref }}-contents &> /dev/null ); then
           echo 'release exists'
         else
