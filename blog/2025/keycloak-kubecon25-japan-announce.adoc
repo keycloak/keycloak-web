@@ -15,7 +15,7 @@ Keycloak has a powerful community in Japan, and we have received several contrib
 ++++
 <div class="paragraph">
 </style>
-<a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-japan/"><img src="${blogImages}/keycloak-kubecon26-japan-announce.png" alt="Banner for KubeCon Japan" style="width: 100%; max-width: 1200px; object-fit: cover; height: 250px; object-fit: none; object-position: 60% 50%"></a>
+<a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-japan/"><img src="${blogImages}/keycloak-kubecon25-japan-announce.png" alt="Banner for KubeCon Japan" style="width: 100%; max-width: 1200px; object-fit: cover; height: 250px; object-fit: none; object-position: 60% 50%"></a>
 </div>
 ++++
 --
@@ -31,6 +31,19 @@ Takashi Norimatsu, Hitachi & Marek Posolda, Red Hat
 * https://kccncjpn2025.sched.com/event/1x71j/mastering-authorization-integrating-authentication-and-authorization-data-in-cloud-native-apps-yoshiyuki-tabata-hitachi-ltd[*Mastering Authorization: Integrating Authentication and Authorization Data in Cloud Native Apps*] +
 Tuesday June 17, 2025 14:50 - 15:20 JST +
 Yoshiyuki Tabata, Hitachi, Ltd.
+
+== Project Pavillion
+
+The Keycloak project table in the Project Pavillion is the place to meet the Keycloak maintainers, contributors and the larger community.
+
+We will be there in the afternoons, while other projects will be there during the mornings.
+See below for the location and the times.
+
+**Table: P-7 +
+Table Schedule: Monday 15:15 - 19:15, Tuesday 13:25 - 17:00 JST +
+Location: Level 1 | Pegasus A-B1**
+
+== See you there!
 
 We're preparing for KubeCon Japan 2025 and can't wait to connect with our community. Mark your calendars and join us.
 
