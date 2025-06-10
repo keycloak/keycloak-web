@@ -39,7 +39,7 @@
     <link rel="canonical" href="${canonical}">
     <meta property="og:url" content="${canonical}">
 
-    <link rel="shortcut icon" href="${links.getResource('favicon.ico')}">
+    <link rel="shortcut icon" href="${links.getResource('favicon.svg')}">
 
     <#if importMap?has_content><script type="importmap">${importMap}</script></#if>
     <#if rss><link rel="alternate" type="application/rss+xml" title="Keycloak's Blog" href="${links.getRss()}"></#if>
