@@ -1,0 +1,54 @@
+:title: Meet Keycloak at KubeCon India in August
+:date: 2025-06-12
+:publish: true
+:author: Alexander Schwartz
+:preview: kubecon-india-2025.jpg
+:summary: Keycloak will be at KubeCon India in Hyderabad! Join us for talks, and connect with maintainers and the community at the project pavillion!
+
+Last year's KubeCon India was a great success, and Keycloak will be part of this year's edition in Hyderabad on August 7-8.
+
+https://events.linuxfoundation.org/kubecon-cloudnativecon-india/register/[Register today to get tickets for the standard rate.]
+
+A lot of people use Keycloak and develop extensions in for Keycloak in India, so we are thrilled to connect with the community.
+
+Connect with me in https://github.com/keycloak/keycloak/discussions/40439[this GitHub discussion] to have your contributions or projects mentioned in the talk!
+
+--
+++++
+<div class="paragraph">
+</style>
+<a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-india/"><img src="${blogImages}/keycloak-kubecon25-india-announce.png" alt="Banner for KubeCon India" style="width: 100%; max-width: 1200px; object-fit: cover; height: 250px; object-fit: none; object-position: 95% 50%"></a>
+</div>
+++++
+--
+
+== Talks at KubeCon
+
+The schedule of KubeCon + CloudNativeCon India 2025 has been released, see below talks about Keycloak:
+
+* https://kccncind2025.sched.com/event/23VYD/project-lightning-talk-how-to-get-your-custom-access-tokens-from-keycloak-alexander-schwartz-maintainer[*Project Lightning Talk: How to get your custom access tokens from Keycloak*] +
+Wednesday August 6, 2025 11:37 IST +
+Alexander Schwartz, Red Hat
+
+* https://kccncind2025.sched.com/event/23EuW/delegate-authentication-and-a-lot-more-to-keycloak-with-openid-connect-alexander-schwartz-rishabh-singh-red-hat[*Delegate Authentication and a Lot More To Keycloak With OpenID Connect*] +
+Wednesday August 6, 2025 12:10 IST +
+Alexander Schwartz & Rishabh Singh, Red Hat
+
+== Project Pavillion
+
+The Keycloak project table in the Project Pavillion is the place to meet the Keycloak maintainers, contributors and the larger community.
+
+We will be there in the afternoons, while other projects will be there during the mornings.
+See below for the location and the times.
+
+*Wednesday, August 6:* 3:10 pm - 7:15 pm
+
+*Thursday, August 7:* 1:25 pm - 3:50 pm
+
+== See you there!
+
+We're preparing for KubeCon India 2025 and can't wait to connect with our community. Mark your calendars and join us.
+
+Let me know in https://github.com/keycloak/keycloak/discussions/40439[this GitHub discussion] to have your contributions or projects mentioned in the talk!
+
+See you in Hyderabad!
