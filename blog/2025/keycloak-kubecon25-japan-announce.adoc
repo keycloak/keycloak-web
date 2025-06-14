@@ -25,7 +25,7 @@ Keycloak has a powerful community in Japan, and we have received several contrib
 The schedule of KubeCon + CloudNativeCon Japan 2025 has been released, see below talks about Keycloak:
 
 * https://kccncjpn2025.sched.com/event/1x6zG/add-single-sign-on-to-your-applications-with-keycloak-and-learn-about-its-latest-features-takashi-norimatsu-hitachi-marek-posolda-red-hat[*Add Single-sign-on To Your Applications With Keycloak and Learn About Its Latest Features*] +
-Monday June 16, 2025 11:30 - 12:00 JST +
+Monday June 16, 2025 12:10 - 12:40 JST +
 Takashi Norimatsu, Hitachi & Marek Posolda, Red Hat
 
 * https://kccncjpn2025.sched.com/event/1x71j/mastering-authorization-integrating-authentication-and-authorization-data-in-cloud-native-apps-yoshiyuki-tabata-hitachi-ltd[*Mastering Authorization: Integrating Authentication and Authorization Data in Cloud Native Apps*] +
