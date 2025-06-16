@@ -1,0 +1,9 @@
+{
+  "name": "OpenTalk",
+  "title": "OpenTalk achieves compliant user authentication with Keycloak",
+  "description": "OpenTalk, a videoconferencing solution, needed a secure and scalable Identity and Access Management (IAM) solution to authenticate users across various services. Keycloak meets OpenTalk’s goals for security, user sovereignty, data privacy and regulatory requirements.",
+  "url": "https://www.cncf.io/case-studies/opentalk",
+  "logoUrl": "logos/opentalk.jpg",
+  "logoBackground": "#1f434f",
+  "published": "2025-04-29"
+}

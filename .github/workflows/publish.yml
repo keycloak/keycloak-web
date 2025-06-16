@@ -12,7 +12,7 @@ on:
 
 concurrency:
   # Only run once for latest commit per ref and cancel other (previous) runs.
-  group: ${{ github.workflow }}-${{ github.ref }}
+  group: ${{ github.workflow }}-website
   cancel-in-progress: true
 
 jobs:
@@ -33,6 +33,20 @@ jobs:
       env:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       run: ./mvnw -B -s mvn-rel-settings.xml package -Dpublish
+    - name: Publish website contents as a release
+      # This way it can be consumed in a simple way in the keycloak.github.io repository
+      env:
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      # language=bash
+      run: |
+        if ( gh release view website-contents &> /dev/null ); then
+          echo 'release exists'
+        else
+          gh release create website-contents --title "Website contents" --draft
+        fi
+        tar -cvzf contents.tar.gz -C target/web .
+        gh release upload website-contents contents.tar.gz --clobber
+        gh release edit website-contents --draft=false
     - name: Install SSH Client 🔑
       uses: webfactory/ssh-agent@v0.4.1
       with:

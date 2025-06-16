@@ -1,0 +1,79 @@
+:title: Achieving Fine-Grained Admin Permissions with Keycloak 26.2
+:date: 2025-05-14
+:publish: true
+:author: Vlasta Ramik
+:summary: Keycloak's latest release introduces new suported version of long-in-preview feature fine-grained admin permissions.
+
+For years, Role-Based Access Control (RBAC) has been the cornerstone of authorization in many applications. Assigning users to roles 
+provides a simple and effective way to manage access for common use cases. However, as applications become more complex and security 
+requirements more demanding, RBAC alone often falls short.
+
+Keycloak is leveling up administrative access control with the release of **Fine Grained Admin Permissions V2** a major step towards 
+introducing delegated administration to Keycloak so that server administrators can assign management privileges to other users 
+in a realm. By doing that, you should be able to reduce management costs and effort, and improve the overall efficiency and security 
+of your deployments by authorizing access to specific resources in a realm.
+
+## Why Fine-Grained Admin Permissions (FGAP) V2?
+
+In previous Keycloak versions, administrative access was largely driven by broad roles such as `realm-admin` or `manage-users`. 
+While effective for simple setups, these roles often granted more access than necessary and lacked clarity around which actions 
+they allowed.
+
+*FGAP V2* introduces a cleaner, more deliberate permission model that enables:
+
+- *Granular access control* over users, clients, groups, and roles
+- *Clear boundaries* between operations—no more implicit permissions
+- *Easier management* of the permissions and policies
+- *Better evaluation mechanism* to allow authorization administrators audit the model 
+
+## ✨ Key Highlights
+
+### 🧭 Centralized Permissions Management
+
+A new *Permissions* section in the Admin Console provides a single place to view and manage all fine-grained permissions for a realm. 
+This simplifies navigation and makes it easier to design and audit your permission model.
+
+### 🔍 Improved Manageability and Evaluation
+
+Permissions are now easier to discover, filter, and evaluate. You can inspect which scopes are assigned to which identities—making 
+it more transparent and manageable to build tailored administrative roles.
+
+### 🎯 Resource-Specific and Global Permissions
+
+Define permissions either at the individual resource level (e.g., a single or set of users or clients), or across all resources 
+of a given type (e.g., all groups). This dual mode offers flexibility for both tightly scoped delegation and broader administrative 
+policies.
+
+### ✂️ Explicit Operation Scoping
+
+Gone are the days of hidden dependencies between permissions. FGAP V2 makes every scope explicit—such as `view-members`, `manage-members`, 
+`map-roles`, or `impersonate`. This reduces confusion and gives you full visibility into what's granted and why.
+
+### 🛠️ Per-Realm Enablement
+
+FGAP V2 can be enabled independently for each realm. This allows administrators to adopt the new model incrementally, experiment 
+safely, and customize permission boundaries realm-by-realm.
+
+## 🔧 How to Enable It
+
+1. Start Keycloak. The feature is enabled by default.
+2. Go to *Realm Settings → Admin Permissions* and enable FGAP for the realm.
+3. Use the new *Permissions* section to define permissions and policies for users, clients, groups, and roles.
+
+For full configuration details, refer to the https://www.keycloak.org/docs/latest/server_admin/#_fine_grained_permissions[Fine-Grained Admin Permissions documentation].
+
+## 🔄 Migration and Compatibility
+
+FGAP V2 provides the same level of access control over realm resources as the previous version, while improving manageability and 
+clarity. Automatic migration is not available, but if you're upgrading from an earlier Keycloak version, see the 
+https://www.keycloak.org/docs/latest/upgrading/index.html#migrating-to-26-2-0[Upgrading Guide] for important key changes and migration notes.
+
+## What’s Next?
+
+This is just the beginning. Upcoming Keycloak releases will continue to expand FGAP support to additional resource types (such as 
+Organizations) and more fine grained actions for existing resources.
+
+---
+
+Try it out, experiment with permissions and policies and let us know what you think. Fine-Grained Admin Permissions V2 is here 
+to help you run Keycloak with confidence, clarity, and control. 

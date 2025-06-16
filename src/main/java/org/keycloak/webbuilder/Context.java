@@ -18,6 +18,7 @@ public class Context {
     private final File staticDir;
     private final File versionsDir;
     private final File extensionsDir;
+    private final File casestudiesDir;
     private final File newsDir;
     private final File blogDir;
     private final File guidesDir;
@@ -31,6 +32,8 @@ public class Context {
     private GuidesMetadata guidesMetadata;
     private Map<String, Versions> versionsBySource;
     private Extensions extensions;
+    private Casestudies casestudies;
+    private ProjectStars projectStars;
     private Blogs blogs;
     private Guides guides;
     private News news;
@@ -50,6 +53,7 @@ public class Context {
         staticDir = new File(webSrcDir, "static");
         versionsDir = new File(webSrcDir, "versions");
         extensionsDir = new File(webSrcDir, "extensions");
+        casestudiesDir = new File(webSrcDir, "casestudies");
         newsDir = new File(webSrcDir, "news");
         blogDir = new File(webSrcDir, "blog");
         guidesDir = new File(webSrcDir, "guides");
@@ -77,13 +81,16 @@ public class Context {
         }
 
         extensions = new Extensions(extensionsDir);
+        casestudies = new Casestudies(casestudiesDir);
+        projectStars = new ProjectStars();
         blogs = new Blogs(this);
         guides = new Guides(guidesMetadata, tmpDir, getWebSrcDir(), asciiDoctor);
-        news = new News(newsDir, blogs, config);
+        news = new News(newsDir, blogs, config, links);
 
         freeMarker.init(this);
         asciiDoctor.init(this);
         sitemap.init(this);
+        projectStars.init(this);
     }
 
     public void close() {
@@ -123,6 +130,14 @@ public class Context {
 
     public Extensions extensions() {
         return extensions;
+    }
+
+    public Casestudies casestudies() {
+        return casestudies;
+    }
+
+    public ProjectStars projectStars() {
+        return projectStars;
     }
 
     public Blogs blogs() {

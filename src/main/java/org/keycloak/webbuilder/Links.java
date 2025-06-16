@@ -24,6 +24,10 @@ public class Links {
         return getLink("extensions");
     }
 
+    public String getCasestudies() {
+        return getLink("case-studies");
+    }
+
     public String getDocs() {
         return getLink("documentation");
     }
