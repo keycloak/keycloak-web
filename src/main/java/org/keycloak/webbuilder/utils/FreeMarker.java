@@ -88,6 +88,8 @@ public class FreeMarker {
         globalAttributes.put("jsLatestVersion", context.versionsFor("keycloak-js").getLatest());
         globalAttributes.put("clientVersions", context.versionsFor("keycloak-client"));
         globalAttributes.put("clientLatestVersion", context.versionsFor("keycloak-client").getLatest());
+        globalAttributes.put("nodejsVersions", context.versionsFor("keycloak-nodejs-connect"));
+        globalAttributes.put("nodejsLatestVersion", context.versionsFor("keycloak-nodejs-connect").getLatest());
 
         globalAttributes.put("extensions", context.extensions());
         globalAttributes.put("casestudies", context.casestudies());

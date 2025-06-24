@@ -178,7 +178,7 @@
                             <tr>
                                 <td></td>
                                 <td>
-                                    <a href="https://www.npmjs.com/package/keycloak-connect/v/${version.version}" target="_blank">
+                                    <a href="https://www.npmjs.com/package/keycloak-connect/v/${nodejsLatestVersion.version}" target="_blank">
                                         <i class="fa fa-link"></i> NPM
                                     </a>
                                 </td>

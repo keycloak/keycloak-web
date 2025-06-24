@@ -12,13 +12,18 @@ VERSION_NAME=`echo $VERSION | sed 's/.Final//' | sed 's/.CR[[:digit:]]//'`
 DATE=`date +%F`
 
 if [[ "$VERSION" == *".0" ]]; then
-    TEMPLATE="version-template.json"
+    TEMPLATE="version-template-$ID.json"
 else
-    TEMPLATE="versions/$ID/${VERSION%.*}.0.json"
+    TEMPLATE_0="versions/$ID/${VERSION%.*}.0.json"
+    if [[ -f $TEMPLATE_0 ]]; then
+        TEMPLATE=$TEMPLATE_0
+    else
+        TEMPLATE="version-template-$ID.json"
+    fi
 fi
 
 if [ ! -f "$TEMPLATE" ]; then
-    echo "$TEMPLATE not found"
+    echo "Template $TEMPLATE not found"
     exit
 fi
 
