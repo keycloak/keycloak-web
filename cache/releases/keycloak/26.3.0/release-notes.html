@@ -1,0 +1,133 @@
+<div class="paragraph">
+<p>This release delivers advancements to optimize your system and improve the experience of users, developers and administrators:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Account recovery</strong> with 2FA recovery codes, protecting users from lockout.</p>
+</li>
+<li>
+<p>Simplified experiences for application developers with <strong>streamlined WebAuthn/Passkey registration</strong> and <strong>simplified account linking</strong> to identity providers via application initiated actions.</p>
+</li>
+<li>
+<p>Broader connectivity with the ability to <strong>broker with any OAuth 2.0 compliant authorization server</strong>, and enhanced <strong>trusted email verification</strong> for OpenID Connect providers.</p>
+</li>
+<li>
+<p><strong>Asynchronous logging</strong> for higher throughput and lower latency, ensuring more efficient deployments.</p>
+</li>
+<li>
+<p>For administrators, <strong>experimental rolling updates for patch releases</strong> mean minimized downtime and smoother upgrades.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Read on to learn more about each new feature, and <a href="https://www.keycloak.org/docs/latest/upgrading/index.html">find additional details in the upgrading guide</a> if you are upgrading from a previous release of Keycloak.</p>
+</div>
+<div class="sect2">
+<h3 id="_recovering_your_account_if_you_lose_your_2fa_credentials">Recovering your account if you lose your 2FA credentials</h3>
+<div class="paragraph">
+<p>When using for example a one-time-password (OTP) generators as a second factor for authenticating users (2FA), a user can get locked out of their account when they, for example, lose their phone that contains the OTP generator.
+To prepare for such a case, the recovery codes feature allows users to print a set of recovery codes as an additional second factor.
+If the recovery codes are then allowed as an alternative 2FA in the login flow, they can be used instead of the OTP generated passwords.</p>
+</div>
+<div class="paragraph">
+<p>With this release, the recovery codes feature is promoted from preview to a supported feature.
+For newly created realms, the browser flow now includes the Recovery Authentication Code Form as <em>Disabled</em>, and it can be switched to <em>Alternative</em> by admins if they want to use this feature.</p>
+</div>
+<div class="paragraph">
+<p>For more information about this 2FA method, see the <a href="https://www.keycloak.org/docs/26.3.0/server_admin/#_recovery-codes">Recovery Codes</a> chapter in the Server Administration Guide.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_performance_improvements_to_import_export_and_migration">Performance improvements to import, export and migration</h3>
+<div class="paragraph">
+<p>The time it takes to run imports, exports or migrations involving a large number of realms has been improved. There is no longer a cumulative performance degradation for each additional realm processed.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_simplified_registration_for_webauthn_and_passkeys">Simplified registration for WebAuthn and Passkeys</h3>
+<div class="paragraph">
+<p>Both WebAuthn Register actions (<code>webauthn-register</code> and <code>webauthn-register-passwordless</code>) which are also used for Passkeys now support a parameter <code>skip_if_exists</code> when initiated by the application (AIA).</p>
+</div>
+<div class="paragraph">
+<p>This should make it more convenient to use the AIA in scenarios where a user has already set up WebAuthn or Passkeys.
+The parameter allows skipping the action if the user already has a credential of that type.</p>
+</div>
+<div class="paragraph">
+<p>For more information, see the <a href="https://www.keycloak.org/docs/26.3.0/server_admin/#_webauthn_aia">Registering WebAuthn credentials using AIA</a> chapter in the Server Administration Guide.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_simplified_linking_of_the_user_account_to_an_identity_provider">Simplified linking of the user account to an identity provider</h3>
+<div class="paragraph">
+<p>Client-initiated linking a user account to the identity provider is now based on application-initiated action (AIA) implementation.
+This functionality aligns configuring this functionality and simplifies the error handling the calling of the client application,
+making it more useful for a broader audience.</p>
+</div>
+<div class="paragraph">
+<p>The custom protocol, which was previously used for client-initiated account linking, is now deprecated.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_brokering_with_oauth_v2_compliant_authorization_servers">Brokering with OAuth v2 compliant authorization servers</h3>
+<div class="paragraph">
+<p>In previous releases Keycloak already supported federation with other OpenID Connect and SAML providers, as well as with several Social Providers like GitHub and Google which are based on OAuth 2.0.</p>
+</div>
+<div class="paragraph">
+<p>The new OAuth 2.0 broker now closes the gap to federate with any OAuth 2.0 provider.
+This then allows you to federate, for example, with Amazon or other providers.
+As this is a generic provider, you will need to specify the different claims and a user info endpoint in the provider&#8217;s configuration.</p>
+</div>
+<div class="paragraph">
+<p>For more information, see the <a href="https://www.keycloak.org/docs/26.3.0/server_admin/#_identity_broker_oauth">OAuth v2 identity providers</a> chapter in the Server Administration Guide.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_trusted_email_verification_when_brokering_openid_connect_providers">Trusted email verification when brokering OpenID Connect Providers</h3>
+<div class="paragraph">
+<p>Until now, the OpenID Connect broker did not support the standard <code>email_verified</code> claim available from the ID Tokens issued by OpenID Connect Providers.</p>
+</div>
+<div class="paragraph">
+<p>Starting with this release, Keycloak supports this standard claim as defined by the <a href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">OpenID Connect Core Specification</a> for federation.</p>
+</div>
+<div class="paragraph">
+<p>Whenever users are federated for the first time or re-authenticating and if the <strong>Trust email</strong> setting is enabled, <strong>Sync Mode</strong> is set to <code>FORCE</code> and the provider sends the <code>email_verified</code> claim, the user account will have their email marked according to the <code>email_verified</code> claim.
+If the provider does not send the claim, it defaults to the original behavior and sets the email as verified.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_asynchronous_logging_for_higher_throughput_and_lower_latency">Asynchronous logging for higher throughput and lower latency</h3>
+<div class="paragraph">
+<p>All available log handlers now support asynchronous logging capabilities.
+Asynchronous logging helps deployments that require high throughput and low latency.</p>
+</div>
+<div class="paragraph">
+<p>For more details on this opt-in feature, see the <a href="https://www.keycloak.org/server/logging">Logging guide</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_rolling_updates_for_patch_releases_for_minimized_downtime_preview">Rolling updates for patch releases for minimized downtime (preview)</h3>
+<div class="paragraph">
+<p>In the previous release, the Keycloak Operator was enhanced to support performing rolling updates of the Keycloak image if both images contain the same version.
+This is useful, for example, when switching to an optimized image, changing a theme or a provider source code.</p>
+</div>
+<div class="paragraph">
+<p>In this release, we extended this to perform rolling update when the new image contains a future patch release from the same <code>major.minor</code> release stream as a preview feature.
+This can reduce the service&#8217;s downtime even further, as downtime is only needed when upgrading from a different minor or major version.</p>
+</div>
+<div class="paragraph">
+<p>Read more on how to enable this feature in <a href="https://www.keycloak.org/server/update-compatibility#rolling-updates-for-patch-releases">update compatibility command</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_passkeys_integrated_in_the_default_username_forms">Passkeys integrated in the default username forms</h3>
+<div class="paragraph">
+<p>In this release Keycloak integrates <strong>Passkeys</strong> in the default authentications forms. A new switch <strong>Enable Passkeys</strong> is available in the configuration, <strong>Authentication</strong> → <strong>Policies</strong> → <strong>Webauthn Passwordless Policy</strong>, that seamlessly incorporates passkeys support to the realm. With just one click, Keycloak offers conditional and modal user interfaces in the default login forms to allow users to authenticate with a passkey.</p>
+</div>
+<div class="paragraph">
+<p>The <strong>Passkeys</strong> feature is still in preview. Follow the <a href="https://www.keycloak.org/server/features">Enabling and disabling features</a> guide to enable it.</p>
+</div>
+<div class="paragraph">
+<p>For more information, see <a href="https://www.keycloak.org/docs/26.3.0/server_admin/#passkeys_server_administration_guide">Passkeys section in the Server Administration Guide</a>.</p>
+</div>
+</div>
