@@ -1,0 +1,43 @@
+[ {
+  "number" : 134,
+  "repository" : "keycloak-client",
+  "title" : "Can we create automatically GH Issue for the PR sent by \"\"Sync with Keycloak Server and send PR with changes\" ?",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak-client/issues/134"
+}, {
+  "number" : 165,
+  "repository" : "keycloak-client",
+  "title" : "Test failures in last Keycloak-client-ci",
+  "kind" : "bug",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak-client/issues/165"
+}, {
+  "number" : 166,
+  "repository" : "keycloak-client",
+  "title" : "Improve documentation of keycloak-admin-client and add compatibility section",
+  "kind" : "enhancement",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak-client/issues/166"
+}, {
+  "number" : 170,
+  "repository" : "keycloak-client",
+  "title" : "Sync with Keycloak server release/26.3 branch",
+  "kind" : "enhancement",
+  "area" : "admin-client",
+  "url" : "https://github.com/keycloak/keycloak-client/issues/170"
+}, {
+  "number" : 172,
+  "repository" : "keycloak-client",
+  "title" : "Test with supported keycloak server versions",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak-client/issues/172"
+}, {
+  "number" : 174,
+  "repository" : "keycloak-client",
+  "title" : "Backport fixes for release workflow using new Central Publishing Maven Plugin",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak-client/issues/174"
+} ]
