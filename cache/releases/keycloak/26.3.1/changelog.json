@@ -1,0 +1,64 @@
+[ {
+  "number" : 35932,
+  "repository" : "keycloak",
+  "title" : "Importing a realm takes more than 1 minute when multiple others exist.",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/35932"
+}, {
+  "number" : 40368,
+  "repository" : "keycloak",
+  "title" : "NPE during loading user groups with concurrent deletion",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/40368"
+}, {
+  "number" : 40713,
+  "repository" : "keycloak",
+  "title" : "Unable to configure TLS reloading in Keycloak version 26.2.0 or later",
+  "kind" : "bug",
+  "area" : "account/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/40713"
+}, {
+  "number" : 40838,
+  "repository" : "keycloak",
+  "title" : "Mark options for additional datasources as preview",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/40838"
+}, {
+  "number" : 40851,
+  "repository" : "keycloak",
+  "title" : "Upgrade to Infinispan 15.0.16.Final",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/40851"
+}, {
+  "number" : 40890,
+  "repository" : "keycloak",
+  "title" : "Keycloak Operator 26.3.0 fails to update to 26.3.0",
+  "kind" : "bug",
+  "area" : "operator",
+  "url" : "https://github.com/keycloak/keycloak/issues/40890"
+}, {
+  "number" : 40930,
+  "repository" : "keycloak",
+  "title" : "Docs: server_development/topics/themes.adoc",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/40930"
+}, {
+  "number" : 40954,
+  "repository" : "keycloak",
+  "title" : "Keycloak 26.3.0 Regression: Failed to login if web-authn is disabled",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/40954"
+}, {
+  "number" : 40962,
+  "repository" : "keycloak",
+  "title" : "Update limitations of the preview feature rolling updates for patch releases",
+  "kind" : "enhancement",
+  "area" : "infinispan",
+  "url" : "https://github.com/keycloak/keycloak/issues/40962"
+} ]
