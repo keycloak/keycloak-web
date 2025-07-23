@@ -33,4 +33,4 @@ CURRENT=`cat pom.xml | grep "<version.$ID>" | cut -d '>' -f 2 | cut -d '<' -f 1`
 LATEST=`echo -e "$CURRENT\n$VERSION" | sort -V -r | head -n 1`
 
 mvn versions:set-property -Dproperty=version.$ID -DnewVersion=$LATEST -DgenerateBackupPoms=false
-mvn install
+mvn install -Dpublish
