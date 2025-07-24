@@ -84,7 +84,7 @@ public class Context {
         casestudies = new Casestudies(casestudiesDir);
         projectStars = new ProjectStars();
         blogs = new Blogs(this);
-        guides = new Guides(guidesMetadata, tmpDir, getWebSrcDir(), asciiDoctor);
+        guides = new Guides(guidesMetadata, getWebSrcDir().toPath(), asciiDoctor);
         news = new News(newsDir, blogs, config, links);
 
         freeMarker.init(this);
