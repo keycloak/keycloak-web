@@ -9,6 +9,9 @@
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="${links.getGuides(guide.snapshot)}">Guides</a></li>
                     <li class="breadcrumb-item"><a href="${links.getGuides(guide.snapshot)}#${guide.metadata.id}">${guide.metadata.title}</a></li>
+                    <#if guide.parent?has_content>
+                      <li class="breadcrumb-item"><a href="${links.getParentLink(guide)}">${guide.parent?replace('-', ' ')?cap_first}</a></li>
+                    </#if>
                     <li class="breadcrumb-item active">${guide.title}</li>
                 </ol>
             </nav>
