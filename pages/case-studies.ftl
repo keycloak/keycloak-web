@@ -57,7 +57,7 @@
                                 <div class="line-clamp-5">${casestudy.description}</div>
                             <a href="${casestudy.url}" class="stretched-link">Continue reading...</a></span>
                             <div class="logo-container" style="background-color: ${casestudy.logoBackground}">
-                                <img src="${casestudy.logoUrl}" alt="Company Logo" class="logo">
+                                <img src="${casestudy.logoUrl}" alt="Company Logo" class="logo" style="${casestudy.logoStyle}">
                             </div>
                         </div>
                     </div>

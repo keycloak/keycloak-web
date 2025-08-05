@@ -1,0 +1,19 @@
+:title: BRZ Keycloak case study published
+:date: 2025-08-05
+:publish: true
+:author: Alexander Schwartz
+:summary: BRZ migrated the Austrian Business Service Portal with 2M+ users to Keycloak.
+:preview: opentalk.jpg
+
+BRZ migrated the Austrian Business Service Portal with 2M+ users to Keycloak.
+
+The Austrian Business Service Portal (USP) is the central online eGovernment platform for entrepreneurs and businesses. It connects businesses with various Austrian online government services, where businesses can access all digital services and information in one place.
+
+The USP was launched in 2010 by the https://www.brz.gv.at/en/[Austrian Federal Computing Center] (BRZ, abbreviated from the German name Bundesrechenzentrum). The BRZ is the market-leading eGovernment partner of the Austrian federal administration and is both developing and operating the portal.
+
+Authenticating and authorizing 2+ million users for 130+ public services is the most important key feature of the USP which now uses Keycloak, microservices and GitOps under the hood.
+
+https://www.cncf.io/case-studies/brz-migrated-the-austrian-business-service-portal-with-2m-users-to-keycloak/[Read on to learn why the team chose to migrate to this solution, how they managed the migration and the benefits of the new setup in this CNCF case study]!
+
+We are now starting to collect all case studies at link:${links.casestudies}[our case studies page].
+If you want to share your case study with the Keycloak community, https://github.com/ahus1[contact me] to sort out the details.
