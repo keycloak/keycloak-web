@@ -3,7 +3,7 @@
 :publish: true
 :author: Alexander Schwartz
 :summary: BRZ migrated the Austrian Business Service Portal with 2M+ users to Keycloak.
-:preview: opentalk.jpg
+:preview: brz.jpg
 
 BRZ migrated the Austrian Business Service Portal with 2M+ users to Keycloak.
 
