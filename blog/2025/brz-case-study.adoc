@@ -11,6 +11,15 @@ The Austrian Business Service Portal (USP) is the central online eGovernment pla
 
 The USP was launched in 2010 by the https://www.brz.gv.at/en/[Austrian Federal Computing Center] (BRZ, abbreviated from the German name Bundesrechenzentrum). The BRZ is the market-leading eGovernment partner of the Austrian federal administration and is both developing and operating the portal.
 
+--
+++++
+<div class="paragraph">
+</style>
+<a href="https://www.cncf.io/case-studies/brz-migrated-the-austrian-business-service-portal-with-2m-users-to-keycloak/"><img src="${blogImages}/brz-banner-usp.png" alt="Banner for BRZ Case Study" style="width: 100%; max-width: 917px; object-fit: cover; height: 240px; object-fit: none; object-position: 0% 0%"></a>
+</div>
+++++
+--
+
 Authenticating and authorizing 2+ million users for 130+ public services is the most important key feature of the USP which now uses Keycloak, microservices and GitOps under the hood.
 
 https://www.cncf.io/case-studies/brz-migrated-the-austrian-business-service-portal-with-2m-users-to-keycloak/[Read on to learn why the team chose to migrate to this solution, how they managed the migration and the benefits of the new setup in this CNCF case study]!
