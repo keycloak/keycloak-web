@@ -10,7 +10,7 @@ import java.util.LinkedList;
 
 public class News extends LinkedList<News.NewsItem> {
 
-    public News(File newsDir, Blogs blogs, Config config) throws ParseException {
+    public News(File newsDir, Blogs blogs, Config config, Links links) throws ParseException {
         File[] newsFiles = newsDir.listFiles((dir, name) -> name.endsWith(".json"));
         if (newsFiles != null) {
             for (int i = 0; i < newsFiles.length && i < config.getMaxNews(); i++) {
@@ -24,7 +24,7 @@ public class News extends LinkedList<News.NewsItem> {
             News.NewsItem news = new News.NewsItem();
             news.setDate(b.getDate());
             news.setTitle(b.getTitle());
-            news.setLink(b.getPath() + "/" + b.getFilename());
+            news.setLink(links.get(b));
             add(news);
         }
 

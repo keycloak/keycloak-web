@@ -11,6 +11,8 @@ guides:
     title: Securing applications
   - id: high-availability
     title: High availability
+  - id: ui-customization
+    title: UI Customization
   - id: migration
     title: Migration
 

@@ -1,0 +1,155 @@
+[ {
+  "number" : 39091,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.cluster.JGroupsCertificateRotationClusterTest#testCoordinatorHasScheduleTask",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/39091"
+}, {
+  "number" : 39634,
+  "repository" : "keycloak",
+  "title" : "Update MariaDB connector to 3.5.3",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/39634"
+}, {
+  "number" : 39854,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.cluster.PermissionTicketInvalidationClusterTest#crudWithFailover",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/39854"
+}, {
+  "number" : 40237,
+  "repository" : "keycloak",
+  "title" : "Add option \"Requires short state parameter\" to OIDC IDP",
+  "kind" : "feature",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/40237"
+}, {
+  "number" : 40553,
+  "repository" : "keycloak",
+  "title" : "Upgrade org.postgresql:postgresql to version 42.7.7 to address CVE-2025-49146",
+  "kind" : "bug",
+  "area" : "dependencies",
+  "url" : "https://github.com/keycloak/keycloak/issues/40553"
+}, {
+  "number" : 40736,
+  "repository" : "keycloak",
+  "title" : "CVE-2025-49574 - Exposure of Resource to Wrong Sphere vulnerability in io.vertx:vertx-core",
+  "kind" : "bug",
+  "area" : "dependencies",
+  "url" : "https://github.com/keycloak/keycloak/issues/40736"
+}, {
+  "number" : 40782,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.cluster.RealmInvalidationClusterTest#crudWithFailover",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/40782"
+}, {
+  "number" : 40784,
+  "repository" : "keycloak",
+  "title" : "Default jdbc-ping cluster setup for distributed caches fails in Oracle",
+  "kind" : "bug",
+  "area" : "infinispan",
+  "url" : "https://github.com/keycloak/keycloak/issues/40784"
+}, {
+  "number" : 40970,
+  "repository" : "keycloak",
+  "title" : "Run clustering compatibility tests on release/x.y branches",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/40970"
+}, {
+  "number" : 40977,
+  "repository" : "keycloak",
+  "title" : "Loglevel recorded from build phase",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/40977"
+}, {
+  "number" : 40980,
+  "repository" : "keycloak",
+  "title" : "Can't update security-admin-console via admin UI with volatile sessions",
+  "kind" : "bug",
+  "area" : "infinispan",
+  "url" : "https://github.com/keycloak/keycloak/issues/40980"
+}, {
+  "number" : 40995,
+  "repository" : "keycloak",
+  "title" : "LDAP /  ModelException: At least one condition should be provided to OR query",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/40995"
+}, {
+  "number" : 41018,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.cluster.ClientInvalidationClusterTest#crudWithFailover",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/41018"
+}, {
+  "number" : 41034,
+  "repository" : "keycloak",
+  "title" : "Improve logging for client sessions load",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/41034"
+}, {
+  "number" : 41038,
+  "repository" : "keycloak",
+  "title" : "FIPS errors in CI",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/41038"
+}, {
+  "number" : 41082,
+  "repository" : "keycloak",
+  "title" : "Multiple primary key defined when attempting to upgrade after 26.3.0",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/41082"
+}, {
+  "number" : 41103,
+  "repository" : "keycloak",
+  "title" : "Service Account users now showing in the User List",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/41103"
+}, {
+  "number" : 41105,
+  "repository" : "keycloak",
+  "title" : "Unknown relation when removing realm role with --db-schema configured",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/41105"
+}, {
+  "number" : 41152,
+  "repository" : "keycloak",
+  "title" : "Docs use em-dashes instead of double dashes for SPI options in regular text",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/41152"
+}, {
+  "number" : 41204,
+  "repository" : "keycloak",
+  "title" : "UpdateTest CI failures",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/41204"
+}, {
+  "number" : 41257,
+  "repository" : "keycloak",
+  "title" : "Upgrade to Infinispan 15.0.18.Final",
+  "kind" : "enhancement",
+  "area" : "infinispan",
+  "url" : "https://github.com/keycloak/keycloak/issues/41257"
+}, {
+  "number" : 41370,
+  "repository" : "keycloak",
+  "title" : "[26.3] MariaDB connector dependency is not properly overriden",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/41370"
+} ]

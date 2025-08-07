@@ -45,6 +45,10 @@
 # Any removed old blog page should show the latest blog entries
 ^/[0-9]+/[0-9]+/keycloak-[0-9]+-released=/blog.html
 
+# High-availability
+^/high-availability/single-cluster=/high-availability/single-cluster/introduction
+^/high-availability/multi-cluster=/high-availability/multi-cluster/introduction
+
 # Other redirects
 ^/getting-started/?=/guides#getting-started
 ^/securing-apps/?=/guides#getting-started
