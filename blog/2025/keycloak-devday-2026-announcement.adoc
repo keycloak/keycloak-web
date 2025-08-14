@@ -1,17 +1,18 @@
-= Keycloak DevDay 2026 Announcement and Call-for-Papers
-:date: 2025-08-07
-:modified: 2025-08-07
+:title: Keycloak DevDay 2026 Announcement and Call-for-Papers
+:date: 2025-08-14
 :publish: true
 :author: Sebastian Rose
+:summary: The next edition of Keycloak DevDay expands to a 2-day event taking place again in Darmstadt, Germany on March 5th and 6th, 2026.
+:preview: keycloak-dev-day-2026.png
 
-We (https://www.linkedin.com/in/dasniko/[Niko] and me (https://www.linkedin.com/in/seb7/[Sebastian])) are excited to announce the next edition of Keycloak DevDay!
-DevDay is expanding to a **2-day event** taking place again in Darmstadt, Germany on **March 5th and 6th, 2026**.
+We (https://www.linkedin.com/in/dasniko/[Niko] and https://www.linkedin.com/in/seb7/[Sebastian]) are excited to announce the next edition of Keycloak DevDay!
+DevDay is expanding to a **2-day event** taking place again in Darmstadt, Germany, on **March 5th and 6th, 2026**.
 
 The conference takes place again in Darmstadt, about 30 minutes away from Frankfurt/Main, see https://www.keycloak-day.dev[] for details.
 
 == What's New for 2026?
 
-Keycloak DevDay - **the Keycloak community conference** - expands to exciting two days:
+Keycloak DevDay - **the Keycloak community conference** - expands to an exciting two days:
 
 **Day 1 (February 5th)** - Traditional Conference Format::
 Full day of talks, presentations, and panels featuring maintainers, industry-leading speakers, and community experts.
@@ -20,14 +21,14 @@ Dive deep into Keycloak developments, best practices, real-world use cases, and 
 **Day 2 (February 6th)** - Unconference & Open Space::
 Interactive format shaped entirely by YOU, the participants! Join fellow Keycloakers in an Unconference/Open Space environment where you can:
 - Pitch your own topics and ideas
-- Lead discussions on challenges you're facing
+- Lead discussions about the challenges you're facing
 - Collaborate on solutions in small groups
 - Share knowledge through informal sessions
 - Network intensively with community members
 - Work on hands-on projects together
 
 This has been a successful pre-conf event in 2025.
-From the feedback of all DevDay participants we decided to make it an official part of the DevDay.
+From the feedback of all DevDay participants, we made it an official part of the DevDay.
 
 == What to Expect
 
@@ -76,13 +77,13 @@ Keep an eye on https://www.keycloak-day.dev[] for:
 
 == About KEYCLOAK DevDay
 
-KEYCLOAK DevDay is organized by active community members, for the community.
+KEYCLOAK DevDay is organized by active community members for the community.
 It's the premier gathering for anyone involved in using Keycloak to provide identity and access management value to customers and employees in digital products and services.
 
 Whether you're a seasoned Keycloak expert or just getting started with identity and access management, DevDay 2026 offers something for everyone.
 Join us for two days of learning, sharing, and building the future of the Keycloak ecosystem together!
 
----
+'''
 
 More details and updates will be published on https://www.keycloak-day.dev[].
 Follow us for the latest news and announcements!
