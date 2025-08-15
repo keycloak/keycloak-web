@@ -57,7 +57,7 @@
             </p>
         </div>
         <div class="col-5 text-end d-none d-md-block">
-            <img class="img-fluid" src="resources/images/screen-login.png" alt="Screenshot showing a user's login screen as presented by Keycloak"/>
+            <img class="img-fluid shadow" src="resources/images/screen-login.png" alt="Screenshot showing a user's login screen as presented by Keycloak"/>
         </div>
     </div>
 
@@ -109,7 +109,7 @@
             </p>
         </div>
         <div class="col-5 text-end d-none d-md-block">
-             <img class="img-fluid border" src="resources/images/screen-admin.png" alt="Screenshot of the admin console"/>
+             <img class="img-fluid shadow" src="resources/images/screen-admin.png" alt="Screenshot of the admin console"/>
         </div>
     </div>
 
@@ -129,7 +129,7 @@
             </p>
         </div>
         <div class="col-5 text-end d-none d-md-block">
-             <img class="img-fluid border" src="resources/images/screen-account.png" alt="Screenshot of the account management console"/>
+             <img class="img-fluid shadow" src="resources/images/screen-account.png" alt="Screenshot of the account management console"/>
         </div>
     </div>
 
