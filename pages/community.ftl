@@ -23,7 +23,7 @@
             <ul>
                 <li>Time: Wed 12:00 PM - 01:00 PM London</li>
                 <li>Zoom Link: <a href="https://zoom.us/j/93447076633">https://zoom.us/j/93447076633</a></li>
-                <li>For more details about the meeting, check out the <a href="https://github.com/keycloak/kc-sig-fapi">GitHub repository</a> and <a href="https://cloud-native.slack.com/archives/C05KR0TL4P8">Slack channel</a>.</li>
+                <li>For more details about the meeting, check out the <a href="https://github.com/keycloak/keycloak-oauth-sig">GitHub repository</a> and <a href="https://cloud-native.slack.com/archives/C05KR0TL4P8">Slack channel</a>.</li>
             </ul>
             <li><b>Keycloak User Group Austria</b></li>
             <ul>
