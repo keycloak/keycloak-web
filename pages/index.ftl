@@ -3,27 +3,22 @@
 <@tmpl.page current="home" title="" previewImage="index.png" rss=true>
 
 <div class="jumbotron jumbotron-fluid bg-light kc-bg-triangles">
-  <div class="container pt-4 pb-4">
+  <div class="container pt-5 pb-5 text-center">
     <div class="row">
         <div class="col">
-            <h1 class="fs-xlarge">Open Source Identity and Access Management</h1>
-            <p class="fs-4">
+            <h1 class="display-4 mb-0">Open Source</h1>
+            <h1 class="display-3 fw-bold">Identity and Access Management</h1>
+            <p class="fs-5 mt-4">
                 Add authentication to applications and secure services with minimum effort.<br/>
                 No need to deal with storing users or authenticating users.
             </p>
-            <p class="fs-4">
-                Keycloak provides user federation, strong authentication, user management, fine-grained authorization, and more.
-            </p>
-            <div class="mt-5">
+            <div class="mt-4">
                 <a class="btn btn-primary btn-lg" href="${links.guides}">Get Started</a>
                 <a class="btn btn-light btn-lg" href="${links.downloads}">Download</a>
             </div>
-            <div class="mt-1">
-                Latest release ${version.version}
-            </div>
         </div>
         <div class="col col-4 d-none d-lg-block">
-            <img class="img-fluid" src="${links.getResource('images/icon.svg')}" width="550" aria-hidden="true" alt="Keycloak"/>
+            <img class="img-fluid h-100" src="${links.getResource('images/icon.svg')}" width="550" aria-hidden="true" alt="Keycloak"/>
         </div>
     </div>
   </div>
@@ -32,9 +27,9 @@
 <div class="jumbotron jumbotron-fluid bg-dark text-white">
 <div class="container bg-dark p-3">
     <div class="row">
-        <div class="col-md-1 col-sm-12 fw-bold">News</div>
+        <div class="col-md-1 col-sm-12 fw-bold kc-news-item">News</div>
         <#list news as n>
-        <div class="col">
+        <div class="col kc-news-item">
             <span class="badge bg-secondary">${n.date?string["dd MMM"]}</span> <a href="${n.link}">${n.title}</a>
         </div>
         </#list>
