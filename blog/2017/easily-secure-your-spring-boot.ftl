@@ -369,7 +369,7 @@ Resources</h2>
 <li><a href="http://www.keycloak.org/">Keycloak website</a></li>
 <li><a href="https://keycloak.gitbooks.io/documentation/securing_apps/topics/oidc/java/spring-boot-adapter.html">Spring Boot Keycloak Adapter Documentation</a></li>
 <li><a href="https://keycloak.gitbooks.io/documentation/securing_apps/topics/oidc/java/spring-security-adapter.html">Spring Security Keycloak Adapter Documentation</a></li>
-<li><a href="https://start.spring.i/">Spring Initializr Site</a></li>
+<li><a href="https://start.spring.io/">Spring Initializr Site</a></li>
 </ul>
 &nbsp;
 
