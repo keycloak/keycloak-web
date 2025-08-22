@@ -69,10 +69,19 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: .4rem;
 }
 
-.kc-news-item a{
-    margin-left: .4rem;
+@media only screen and (max-width: 768px) {
+    .kc-news-item {
+        flex-direction: column;
+        justify-content: flex-start;
+        text-align: center;
+    }
+
+    .kc-news-item .badge {
+        margin-top: 10px;
+    }
 }
 
 /* Articles */
