@@ -26,8 +26,8 @@
 
 <div class="jumbotron jumbotron-fluid bg-dark text-white">
 <div class="container bg-dark p-3">
-    <div class="row">
-        <div class="col-md-1 col-sm-12 fw-bold kc-news-item">News</div>
+    <div class="row kc-news-section">
+        <div class="col-md-1 col-sm-12 fw-bold justify-content-center kc-news-item">News</div>
         <#list news as n>
         <div class="col kc-news-item">
             <span class="badge bg-secondary">${n.date?string["dd MMM"]}</span> <a href="${n.link}">${n.title}</a>
