@@ -58,7 +58,6 @@
         <img style="aspect-ratio: 730/151" class="img-fluid" src="${links.getResource('images/logo.svg')}" width="240" alt="Keycloak"/>
     </a>
     <a class="nav-link d-none d-sm-block d-md-none d-lg-block" href="https://github.com/keycloak/keycloak"><img src="${links.getResource('images/stars-large.svg')}" style="height: 25px; aspect-ratio: ${projectStars.aspectRatioLarge}" alt="GitHub stars"/></a>
-    <a class="nav-link d-block d-sm-none d-md-block d-lg-none" href="https://github.com/keycloak/keycloak"><img src="${links.getResource('images/stars-small.svg')}" style="height: 25px; aspect-ratio: ${projectStars.aspectRatioSmall}" alt="GitHub stars"/></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="fa fa-bars fa-lg px-1 py-2"></span>
     </button>
@@ -80,6 +79,7 @@
           <a class="nav-link <#if current = 'blog'>active</#if>" href="${links.blog}">Blog</a>
         </li>
       </ul>
+      <a class="nav-link d-block d-sm-none d-md-block d-lg-none text-center" href="https://github.com/keycloak/keycloak"><img src="${links.getResource('images/stars-large.svg')}" style="height: 25px; aspect-ratio: ${projectStars.aspectRatioLarge}" alt="GitHub stars"/></a>
     </div>
 </nav>
 </header>
