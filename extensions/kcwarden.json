@@ -1,0 +1,5 @@
+{
+  "name": "kcwarden - Keycloak Config Auditor",
+  "description": "Check your Keycloak realm configuration for common security issues.",
+  "website": "https://github.com/iteratec/kcwarden"
+}
