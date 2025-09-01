@@ -8,7 +8,7 @@
         <div class="col">
             <h1 class="display-4 mb-0">Open Source</h1>
             <h1 class="display-3 fw-bold">Identity and Access Management</h1>
-            <p class="fs-5 mt-4">
+            <p class="lead mt-4">
                 Add authentication to applications and secure services with minimum effort.<br/>
                 No need to deal with storing users or authenticating users.
             </p>
