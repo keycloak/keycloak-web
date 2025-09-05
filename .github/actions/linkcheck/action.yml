@@ -1,0 +1,63 @@
+name: Lychee link check
+description: Runs the website locally and checks for broken links
+
+inputs:
+  directory:
+    description: Directory containing keycloak-web files
+    required: true
+  token:
+    description: GitHub Token
+    required: true
+
+runs:
+  using: composite
+  steps:
+
+    - name: Get Node.js and PNPM versions
+      id: tooling-versions
+      shell: bash
+      run: |
+        echo "node=$(cat pom.xml | grep '<version.node>' | cut -d '>' -f 2 | cut -d '<' -f 1 | cut -c 2-)" >> $GITHUB_OUTPUT
+        echo "pnpm=$(cat pom.xml | grep '<version.pnpm>' | cut -d '>' -f 2 | cut -d '<' -f 1 | cut -c 1-)" >> $GITHUB_OUTPUT
+      working-directory: ${{ inputs.directory }}
+
+      # Downloading Node.js often fails due to network issues, therefore we cache the artifacts downloaded by the frontend plugin.
+    - uses: actions/cache@5a3ec84eff668545956fd18022155c47e93e2684 # v4.2.3
+      id: cache-binaries
+      name: Cache Node.js and PNPM binaries
+      with:
+        path: |
+          ~/.m2/repository/com/github/eirslett/node
+          ~/.m2/repository/com/github/eirslett/pnpm
+        key: ${{ runner.os }}-frontend-plugin-artifacts-${{ steps.tooling-versions.outputs.node }}-${{ steps.tooling-versions.outputs.pnpm }}
+
+    - name: Build with Maven
+      env:
+        GITHUB_TOKEN: ${{ inputs.token }}
+      run: ./mvnw -B -s mvn-rel-settings.xml package -Dpublish
+      shell: bash
+      working-directory: ${{ inputs.directory }}
+
+    - name: Serve Site
+      run: |
+        npm run serve &> server.log &
+        sleep 5
+        curl --head http://localhost:5000
+      shell: bash
+      working-directory: ${{ inputs.directory }}
+
+    - name: Lychee
+      id: lychee
+      uses: lycheeverse/lychee-action@885c65f3dc543b57c898c8099f4e08c8afd178a2 # v2.6.1
+      with:
+        args: --no-progress target/web
+        fail: true
+        failIfEmpty: true
+        workingDirectory: ${{ inputs.directory }}
+
+    - name: Upload Server Log
+      if: failure()
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+      with:
+        name: npm-server-log
+        path: "${{ inputs.directory }}/server.log"
