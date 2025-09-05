@@ -48,12 +48,11 @@ runs:
 
     - name: Lychee
       id: lychee
-      uses: lycheeverse/lychee-action@v2
+      uses: lycheeverse/lychee-action@885c65f3dc543b57c898c8099f4e08c8afd178a2 # v2.6.1
       with:
         args: --no-progress target/web
         fail: true
         failIfEmpty: true
-        token: ${{ inputs.token }}
         workingDirectory: ${{ inputs.directory }}
 
     - name: Upload Server Log
