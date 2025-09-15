@@ -1,0 +1,29 @@
+:title: Submit your talks to KeycloakCon EU Amsterdam
+:date: 2025-09-15
+:publish: true
+:author: Alexander Schwartz
+:preview: keycloak-keycloakcon-eu-2026.png
+:summary: KeycloakCon is a half-day single-track conference that brings together the Keycloak community at KubeCon EU in Amsterdam.
+
+KeycloakCon, the conference covering all-things-Keycloak at KubeCon, is scheduled for March 23, 2026. We can't wait to see you all there and hear your talks!
+
+The https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/co-located-events/keycloakcon/[call-for-proposals] is open as of today until November 2.
+Sponsing opportunities are available as well.
+
+We love to hear your talks to cover a wide range of topics from case studies, security best practices, IT automation, AI as well as audit and compliance.
+
+--
+++++
+<a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/co-located-events/keycloakcon/"><div class="paragraph">
+<img src="${blogImages}/keycloakcon-eu-2026.png" alt="KeycloakCon EU 2026" style="width: 100%; max-width: 835px; object-fit: cover; height: 179px; object-fit: none; object-position: 0% 0%">
+</div></a>
+++++
+--
+
+KeycloakCon is a half-day single-track conference that brings together the Keycloak community. The event offers a platform for technical talks, professional growth, and networking opportunities. Attendees will gain insights from Keycloak developers and maintainers, explore the latest features and updates, and learn from real-world use cases. This is a valuable opportunity to engage directly with Keycloak experts and fellow users, deepening your understanding and expanding your network.
+
+== See you soon!
+
+We're preparing for KeycloakCon and KubeCon EU 2026 and can't wait to connect with our community. Mark your calendars and join us.
+
+See you in Amsterdam!
