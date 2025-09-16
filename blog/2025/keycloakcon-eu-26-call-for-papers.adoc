@@ -8,7 +8,7 @@
 KeycloakCon, the conference covering all-things-Keycloak at KubeCon, is scheduled for March 23, 2026. We can't wait to see you all there and hear your talks!
 
 The https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/co-located-events/keycloakcon/[call-for-proposals] is open as of today until November 2.
-Sponsing opportunities are available as well.
+Sponsoring opportunities are available as well.
 
 We love to hear your talks to cover a wide range of topics from case studies, security best practices, IT automation, AI as well as audit and compliance.
 
