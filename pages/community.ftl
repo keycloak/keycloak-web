@@ -82,6 +82,13 @@
     </div>
 
     <div class="row mt-3">
+        <h2>Code of Conduct</h2>
+        <p>
+             To facilitate healthy and constructive community behavior, the Keycloak project uses the following <a href="https://github.com/keycloak/.github/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a>.
+        </p>
+    </div>
+
+    <div class="row mt-3">
         <h2>Nightly release</h2>
         <p>
             For early feedback and extension developers there is a <a href="${links.nightly}">nightly release of Keycloak</a>.
