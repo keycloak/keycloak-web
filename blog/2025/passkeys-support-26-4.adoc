@@ -1,0 +1,111 @@
+:title: Passkeys support in upcoming Keycloak release (26.4)
+:date: 2025-09-16
+:publish: true
+:author: Peter Skopek
+:summary: Keycloak 26.4 will bring passkeys as supported feature. There are seamlessly integrated to our build in browser flow and all forms containing username or password fields.
+
+Passkeys have been available in Keycloak since version 23.0.0 as a preview feature. We are happy to announce official support for passkeys in upcoming **Keycloak 26.4.0**.
+
+== What is passkey?
+
+Definition from https://fidoalliance.org[FIDO Alliance]
+====
+A passkey is a FIDO authentication credential based on FIDO standards, that allows a user to sign in to apps and websites with the same process that they use to unlock their device (biometrics, PIN, or pattern).
+Passkeys are FIDO cryptographic credentials that are tied to a user’s account on a website or application.
+
+https://www.passkeycentral.org/home[More info]
+====
+
+
+== What's new?
+
+Passkeys are now seamlessly integrated to Keycloak using both conditional and modal UI. There is no need to modify default browser flow to use passkeys. Passkeys support is not enabled by default. It needs to be enabled in the *WebAuthn Passwordless Policy* (*Authentication* → *Policies* → *Webauthn Passwordless Policy*).
+
+There is new *Conditional - credential* authenticator that checks if a specific credential type (passkey) has been used during
+the authentication process. It is added to the default *browser* flow to skip 2FA in case a passkey was used to log in as
+the primary credential.
+
+Further quite hidden passkey support is also in the re-authentication form, where users can choose passkey as well as password.
+
+For more information check https://www.keycloak.org/docs/latest/server_admin/index.html#_passkeys-conditional-ui[Keycloak Server Administration Guide].
+
+== A few examples
+
+Let's start form the fresh Keycloak database. The first steps are obvious ones.
+
+- create admin user
+- create one test user
+- enable passkey support in (*Authentication* → *Policies* → *Webauthn Passwordless Policy*)
+- set default required action in (*Authentication* → *Required actions* → *Webauthn Register Passwordless*) +
+(This step is not necessary, one can use Account Console to register a passkey.)
+
+No need for any other changes.
+
+=== Conditional UI
+
+Conditional UI is displayed when other components of the platform supports this UI style and username input field is present.
+It can be achieved for example on Linux using Google Chrome browser and 1password password manager with Chrome extension for 1password.
+
+==== Registering passkey stored in 1password manager
+--
+++++
+<div class="paragraph">
+</style>
+<img src="${blogImages}/passkeys/1pwd-register.png" alt="Registerering 1password passkey" style="width: 100%; max-width: 863px; height: 100%; object-fit: cover; object-fit: none; object-position: 0 0">
+</div>
+++++
+--
+==== Using passkey stored in 1password manager:
+--
+++++
+<div class="paragraph">
+</style>
+<img src="${blogImages}/passkeys/1pwd-use.png" alt="Using 1password passkey" style="width: 100%; max-width: 863px; object-fit: cover; object-fit: none; object-position: 0 0">
+</div>
+++++
+--
+
+=== Modal UI
+
+Modal UI is an older style and it is used mainly with hardware keys asking for PIN or biometric (such as Yubikeys). It is directly supported in all major browsers. This style of UI is displayed on browser screen when username input field is present (same situations than conditional) but also when the username is already selected and password is requested (re-authentication for example). The modal UI is initiated clicking the button labelled **Sign in with Passkey**.
+
+The modal UI can also be slightly different depending on data stored in your hardware key.
+
+==== Using hardware security key (Yubikey) in case of login (PIN entering)
+--
+++++
+<div class="paragraph">
+</style>
+<img src="${blogImages}/passkeys/hwkey-pin.png" alt="Enter the pin for the hardware key" style="width: 100%; max-width:565px; height: 100%; max-height: 790px; object-fit: cover; object-fit: none; object-position: 0 0">
+</div>
+++++
+--
+
+==== Using hardware security key (Yubikey) in case of login (touch the key to activate transfer)
+--
+++++
+<div class="paragraph">
+</style>
+<img src="${blogImages}/passkeys/hwkey-touch.png" alt="Touch the key to activate transfer" style="width: 100%; max-width:565px; height: 100%; max-height: 790px;  object-fit: cover; object-fit: none; object-position: 0 0">
+</div>
+++++
+--
+
+=== Re-authenticating using passkey
+
+Leave your window with no actions to pass timeout. Then you see re-authentication window with passkey button (conditional UI style and modal UI are supported) .
+--
+++++
+<div class="paragraph">
+</style>
+<img src="${blogImages}/passkeys/1pwd-re-authenticate.png" alt="Touch the key to activate transfer" style="width: 100%; max-width: 1037px;  object-fit: cover; object-fit: none; object-position: 0 0">
+</div>
+++++
+--
+
+== Conclusion
+
+All examples here show the passkeys usage with minimal configuration. There are much more options to change behavior of passkeys in Keycloak authentication. For more information see https://www.keycloak.org/docs/latest/server_admin/index.html#_passkeys-conditional-ui[Keycloak Server Administration Guide].
+
+Let us know of possible issues or what you like, please. We are looking for different combinations of operating systems, browsers, password managers and hardware keys. All issues should be reported at https://github.com/keycloak/keycloak/issues[our project]. Thank you in advance.
+
