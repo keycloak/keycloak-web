@@ -67,7 +67,7 @@ It can be achieved for example on Linux using Google Chrome browser and 1passwor
 
 === Modal UI
 
-Modal UI is an older style and it is used mainly with hardware keys asking for PIN or biometric (such as Yubikeys). It is directly supported in all major browsers. This style of UI is displayed on browser screen when username input field is present.
+Modal UI is an older style and it is used mainly with hardware keys asking for PIN or biometric (such as Yubikeys). It is directly supported in all major browsers. This style of UI is displayed on browser screen when username input field is present (same situations than conditional) but also when the username is already selected and password is requested (re-authentication for example). The modal UI is initiated clicking the button labelled **Sign in with Passkey**.
 
 The modal UI can also be slightly different depending on data stored in your hardware key.
 
