@@ -4,8 +4,7 @@
 :author: Bruno Oliveira
 
 Back in June, we decided to sunset Discourse as one of our communication
-channels, as outlined in our 
-https://www.keycloak.org/2023/06/sunsetting-discourse.html[previous announcement].
+channels.
 However, after careful consideration and understanding the impact this decision
 had on our community, we have chosen to revert it.
 
@@ -14,7 +13,7 @@ best for our community. While we strive to make the right decisions, we recogniz
 that we are not perfect. We apologize for any inconvenience our initial decision
 may have caused, and appreciate the feedback received from many of you.
 
-We are happy to announce that 
+We are happy to announce that
 https://keycloak.discourse.group/u/dasniko[Niko] and 
 https://keycloak.discourse.group/u/xgp[Garth] have kindly volunteered to moderate
 Discourse. Their commitment makes it possible for us to reactivate the forum.
