@@ -65,7 +65,7 @@ public class ChangelogBuilder extends AbstractBuilder {
 
                         if (source.isMainProject()) {
                             // Query all Keycloak projects only for the main project.
-                            queries.add("user:keycloak");
+                            queries.add("org:keycloak");
 
                             // For the main project query all repositories except the ones explicitly listed as separately versioned.
                             List<String> ignoredRepos = context.getReleasesMetadata().getSources()
@@ -82,7 +82,6 @@ public class ChangelogBuilder extends AbstractBuilder {
                         }
 
                         queries.add("is:issue");
-                        queries.add("is:closed");
 
                         String baseQuery = String.join(" ", queries);
 

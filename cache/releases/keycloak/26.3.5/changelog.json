@@ -1,4 +1,18 @@
 [ {
+  "number" : 41371,
+  "repository" : "keycloak",
+  "title" : "Upgrade to Quarkus 3.20.3 LTS",
+  "kind" : "enhancement",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/41371"
+}, {
+  "number" : 41373,
+  "repository" : "keycloak",
+  "title" : "Remove explicit MariaDB connector dependency",
+  "kind" : "enhancement",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/41373"
+}, {
   "number" : 41418,
   "repository" : "keycloak",
   "title" : "Access to user details for restricted admin fails after enabling organizationin realm",
@@ -12,6 +26,20 @@
   "kind" : "bug",
   "area" : "core",
   "url" : "https://github.com/keycloak/keycloak/issues/42405"
+}, {
+  "number" : 42491,
+  "repository" : "keycloak",
+  "title" : "CVE-2025-58057 - Netty BrotliDecoder / Data Amplification vulnerability",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/42491"
+}, {
+  "number" : 42492,
+  "repository" : "keycloak",
+  "title" : "CVE-2025-58056 - Netty HTTP Request Smuggling vulnerability",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/42492"
 }, {
   "number" : 42736,
   "repository" : "keycloak",
