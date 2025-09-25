@@ -1,0 +1,36 @@
+[ {
+  "number" : 41418,
+  "repository" : "keycloak",
+  "title" : "Access to user details for restricted admin fails after enabling organizationin realm",
+  "kind" : "bug",
+  "area" : "organizations",
+  "url" : "https://github.com/keycloak/keycloak/issues/41418"
+}, {
+  "number" : 42405,
+  "repository" : "keycloak",
+  "title" : "Old hmac-generated (32bit) is recreated when order is changed in realm keys ui",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/42405"
+}, {
+  "number" : 42736,
+  "repository" : "keycloak",
+  "title" : "Reset password in admin UI with 'not recently used' password policy leads to error 'Device already exists with the same name'",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/42736"
+}, {
+  "number" : 42769,
+  "repository" : "keycloak",
+  "title" : "Missing switch \"ID Token as detached signature\" in the admin console client settings",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/42769"
+}, {
+  "number" : 42922,
+  "repository" : "keycloak",
+  "title" : "Dynamic Client Registration invalidates the realm cache",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/42922"
+} ]
