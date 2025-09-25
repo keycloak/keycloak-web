@@ -1,0 +1,200 @@
+:title: Keycloak Performance Benchmarks
+:date: 2025-09-30
+:publish: true
+:author: Pedro Ruivo
+:summary: Keycloak demonstrates near-linear vertical scaling, performs well in low-latency environments, and effectively offloads database usage through proper caching.
+
+== Keycloak Performance Benchmarks: A Deep Dive into Scaling and Sizing
+
+When deploying a mission-critical component like Keycloak, performance is a top concern.
+Questions about resource requirements, high availability, and network latency are crucial for a successful and stable production environment.
+To provide a clear, data-driven perspective on these topics, we conducted a series of benchmarks on the upcoming Keycloak version.
+In this post, we'll share our findings on how Keycloak scales with increasing load, performs under artificial network latency, and leverages caching to optimize database usage.
+
+== Environment
+
+* An OpenShift 4.17 cluster was deployed across three availability zones in `eu-west-1`.
+** It was provisioned using https://www.redhat.com/en/technologies/cloud-computing/openshift/aws[Red Hat OpenShift Service on AWS] (ROSA), with ROSA HCP.
+
+** The cluster had at least one worker node in each availability zone.
+
+* An Amazon Aurora PostgreSQL 17.5 database was used.
+** This database was configured for high availability, with a primary DB instance in one availability zone and synchronously replicated readers in the other availability zones.
+** The database was populated with 100,000 users.
+
+* The https://github.com/keycloak/keycloak-benchmark[Keycloak Benchmark] was used as the load generator.
+** The benchmark ran on 20 to 50 `t4g.small` AWS instances.
+
+== Scaling Keycloak
+
+One of the most common questions when deploying Keycloak is: **how many resources do I need?**
+The answer, as you may have guessed, is that it depends on your specific use case.
+
+For this test, we scaled only the login and refresh token requests.
+Based on Keycloak's https://www.keycloak.org/high-availability/concepts-memory-and-cpu-sizing[Concepts for sizing CPU and memory resources] documentation, we determined that you need **1 vCPU to handle 15 logins per second** and an additional **1 vCPU to handle 120 refresh token requests per second**.
+
+After computing the total number of vCPUs required, we divided the value by the desired number of pods, which was three in this case (one for each availability zone).
+We allocated slightly more vCPU to each pod than the calculated value to account for JVM background tasks like compilations and garbage collection.
+
+[IMPORTANT]
+====
+Because our test used a constant load, we did not allocate as much CPU as we typically recommend.
+We **strongly recommend** leaving **150% extra headroom** for CPU usage to handle spikes in load, as mentioned in our documentation.
+====
+
+Memory was increased when we observed high CPU usage by the garbage collector (GC).
+It is difficult to formulate a precise memory requirement because it depends not only on the Keycloak data but also on the number of concurrent requests.
+
+The database instance type was chosen based on observation.
+If we observed failing requests or a 99th percentile response time above 100ms with database CPU usage exceeding 80%, we repeated the test using the next larger database instance type.
+
+A summary of the results can be observed in the table below.
+
+.Keycloak performance with load
+|===
+|OCP Instance Type | DB Instance Type | Pod CPU limit | Pod Memory Limit (GB) | # Pods | Logins/sec | Refreshes Token/sec| Response Time (ms, 99th pct)
+
+m|c8g.8xlarge
+m|db.r8g.2xlarge
+|24
+|4
+|3
+|500
+|2500
+|81
+
+m|c8g.8xlarge
+m|db.r8g.4xlarge
+|40
+|8
+|3
+|1000
+|5000
+|60
+
+m|c8g.24xlarge
+m|db.r8g.16xlarge
+|74
+|8
+|3
+|2000
+|10000
+|58
+
+m|c8g.24xlarge
+m|db.r8g.16xlarge
+|40
+|8
+|6
+|1000
+|20000
+|59
+
+|===
+
+Based on the overall results, we can confirm that Keycloak scales vertically almost linearly.
+
+We used the default Keycloak settings, with the exception of the last two tests.
+For those tests, we had to increase the number of threads (using the `http-pool-max-threads` option) to 330 for the 2,000 logins + 10,000 token refreshes scenario and to 200 for the 1,000 logins + 20,000 token refreshes scenario.
+
+It is also worth noting that we scaled up the OpenShift Ingress Routers because we were observing connection errors on the load generator.
+
+The following images illustrate how the requests correlated with the configured CPU and memory limits.
+
+.CPU limits
+image:${blogImages}/kc_perf_2025/kc_perf_1.png[requests vs cpu]
+
+.Memory limits
+image:${blogImages}/kc_perf_2025/kc_perf_4.png[requests vs memory]
+
+== Latency
+
+Now that we have an understanding of the resources needed, our focus shifts to achieving high availability.
+A key aspect of this is *deploying Keycloak across different availability zones*, which, by its nature, introduces additional latency between Keycloak pods.
+This leads us to a crucial question: *how does Keycloak behave under these conditions?*
+
+To find out, we used https://chaos-mesh.org/[Chaos Mesh] to introduce an artificial delay to all outgoing network packets.
+This means that each remote call is affected twice: once for the outgoing message and again for the incoming response.
+For instance, a 5ms delay applied to outgoing packets results in a *10ms round-trip time for any remote communication*.
+
+For this test, we used the 500 logins/second and 2,500 token refreshes/second setup.
+The table below summarizes the gathered data, where the 99th percentile of the response time is taken from the Gatling report.
+
+.Network latency
+|===
+| Delay(ms) | Response Time (ms, 99th pct)
+
+|0
+|81
+
+|5
+|101
+
+|10
+|139
+
+|15
+|1135
+|===
+
+As anticipated, Keycloak's performance degrades under high-latency network conditions.
+Delays of **5ms** already push response times into the three-digit millisecond range, while a 15ms delay places them into the second-range.
+
+For multi-availability zone deployments, Keycloak performs well because most cloud providers offer very low latency networks within the same region.
+However, we **do not recommend deploying Keycloak across different regions** as the increased latency and potential for network instability can significantly degrade performance and reliability.
+
+A visual representation of these results can be found below.
+
+.Latency impact on response time
+image:${blogImages}/kc_perf_2025/kc_perf_2.png[delay vs latency]
+
+== Caching
+
+== Caching
+
+Finally, let's look at the impact of caching.
+
+Have you ever wondered how large your Keycloak cache should be?
+While we don't have a clear answer on that, we can tell you that increasing the cache size did not lead to any visible improvements in request response times during our tests.
+
+However, it had a significant impact on something that is not directly visible to users: the **Aurora Database peak CPU usage**.
+The table below illustrates how the database's peak CPU usage changed as we varied the Keycloak cache size.
+
+For this benchmark, we used the 500 logins/second and 2,500 token refreshes/second setup.
+
+.Cache size impact in DB usage
+|===
+|Cache Size | Aurora CPU usage (%, peak)
+
+|10000
+|77.77
+
+|20000
+|76.92
+
+|50000
+|75.13
+
+|100000
+|66.12
+
+|200000
+|63.77
+|===
+
+Our tests show that increasing the Keycloak cache size significantly reduces the Aurora Database's peak CPU usage, which dropped from **77% to 63%**.
+
+While this change had a minimal impact on overall memory usage, increasing it from 1.30 GB to 1.45 GB, we did observe an expected rise in average Garbage Collection (GC) pauses, from 3.99ms to 4.91ms.
+Both of these behaviors are expected, as a larger cache naturally requires more memory, leading to slightly longer GC pauses.
+
+A visual representation of these results can be found in the chart below.
+
+.Cache size and Aurora peak CPU usage
+image:${blogImages}/kc_perf_2025/kc_perf_3.png[cache size vs db cpu]
+
+== Conclusion
+
+Our benchmark results confirm that Keycloak is a robust and highly scalable identity and access management solution.
+We have shown that with careful planning and proper resource allocation, Keycloak can handle significant loads while scaling almost linearly.
+The data also underscores the importance of a low-latency network for multi-zone deployments and the significant role of caching in reducing database strain.
+By taking these factors into account, you can confidently deploy and operate Keycloak to meet your most demanding performance requirements.
