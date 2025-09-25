@@ -1,4 +1,4 @@
-:title: Keycloak Performance Benchmarks
+:title: Keycloak 26.4 Performance Benchmarks
 :date: 2025-09-30
 :publish: true
 :author: Pedro Ruivo
@@ -8,22 +8,22 @@
 
 When deploying a mission-critical component like Keycloak, performance is a top concern.
 Questions about resource requirements, high availability, and network latency are crucial for a successful and stable production environment.
-To provide a clear, data-driven perspective on these topics, we conducted a series of benchmarks on the upcoming Keycloak version.
+To provide a clear, data-driven perspective on these topics, we conducted a series of benchmarks on Keycloak 26.4.
 In this post, we'll share our findings on how Keycloak scales with increasing load, performs under artificial network latency, and leverages caching to optimize database usage.
 
 == Environment
 
-* An OpenShift 4.17 cluster was deployed across three availability zones in `eu-west-1`.
-** It was provisioned using https://www.redhat.com/en/technologies/cloud-computing/openshift/aws[Red Hat OpenShift Service on AWS] (ROSA), with ROSA HCP.
+* OpenShift 4.17 deployed across three availability zones in `eu-west-1`.
+** Provisioned using https://www.redhat.com/en/technologies/cloud-computing/openshift/aws[Red Hat OpenShift Service on AWS] (ROSA), with ROSA HCP.
 
-** The cluster had at least one worker node in each availability zone.
+** At least one worker node in each availability zone.
 
-* An Amazon Aurora PostgreSQL 17.5 database was used.
-** This database was configured for high availability, with a primary DB instance in one availability zone and synchronously replicated readers in the other availability zones.
-** The database was populated with 100,000 users.
+* Amazon Aurora PostgreSQL 17.5 database.
+** Configured for high availability, with a primary DB instance in one availability zone and synchronously replicated readers in the other availability zones.
+** Database populated with 100,000 users.
 
-* The https://github.com/keycloak/keycloak-benchmark[Keycloak Benchmark] was used as the load generator.
-** The benchmark ran on 20 to 50 `t4g.small` AWS instances.
+* https://github.com/keycloak/keycloak-benchmark[Keycloak Benchmark] as the load generator.
+** The benchmark ran on 20 to 50 `t4g.small` AWS instances in the same region.
 
 == Scaling Keycloak
 
@@ -33,8 +33,8 @@ The answer, as you may have guessed, is that it depends on your specific use cas
 For this test, we scaled only the login and refresh token requests.
 Based on Keycloak's https://www.keycloak.org/high-availability/concepts-memory-and-cpu-sizing[Concepts for sizing CPU and memory resources] documentation, we determined that you need **1 vCPU to handle 15 logins per second** and an additional **1 vCPU to handle 120 refresh token requests per second**.
 
-After computing the total number of vCPUs required, we divided the value by the desired number of pods, which was three in this case (one for each availability zone).
-We allocated slightly more vCPU to each pod than the calculated value to account for JVM background tasks like compilations and garbage collection.
+After computing the total number of vCPUs required, we divided the value by the desired number of Pods, which was three in this case (one for each availability zone).
+We allocated slightly more vCPU to each Pod than the calculated value to account for JVM background tasks like compilations and garbage collection.
 
 [IMPORTANT]
 ====
@@ -110,7 +110,7 @@ image:${blogImages}/kc_perf_2025/kc_perf_4.png[requests vs memory]
 == Latency
 
 Now that we have an understanding of the resources needed, our focus shifts to achieving high availability.
-A key aspect of this is *deploying Keycloak across different availability zones*, which, by its nature, introduces additional latency between Keycloak pods.
+A key aspect of this is *deploying Keycloak across different availability zones*, which, by its nature, introduces additional latency between Keycloak Pods.
 This leads us to a crucial question: *how does Keycloak behave under these conditions?*
 
 To find out, we used https://chaos-mesh.org/[Chaos Mesh] to introduce an artificial delay to all outgoing network packets.
@@ -147,8 +147,6 @@ A visual representation of these results can be found below.
 
 .Latency impact on response time
 image:${blogImages}/kc_perf_2025/kc_perf_2.png[delay vs latency]
-
-== Caching
 
 == Caching
 
