@@ -1,14 +1,14 @@
-:title: Keycloak 26.4 Performance Benchmarks
+:title: Keycloak Performance Benchmarks
 :date: 2025-09-30
 :publish: true
 :author: Pedro Ruivo
-:summary: Keycloak demonstrates near-linear vertical scaling, performs well in low-latency environments, and effectively offloads database usage through proper caching.
+:summary: Keycloak demonstrates near-linear vertical scaling, performs well in low-latency environments, and effectively offloads database usage with caching.
 
 == Keycloak Performance Benchmarks: A Deep Dive into Scaling and Sizing
 
 When deploying a mission-critical component like Keycloak, performance is a top concern.
 Questions about resource requirements, high availability, and network latency are crucial for a successful and stable production environment.
-To provide a clear, data-driven perspective on these topics, we conducted a series of benchmarks on Keycloak 26.4.
+To provide a clear, data-driven perspective on these topics, we conducted a series of benchmarks on the upcoming Keycloak version.
 In this post, we'll share our findings on how Keycloak scales with increasing load, performs under artificial network latency, and leverages caching to optimize database usage.
 
 == Environment
@@ -81,21 +81,12 @@ m|db.r8g.16xlarge
 |10000
 |58
 
-m|c8g.24xlarge
-m|db.r8g.16xlarge
-|40
-|8
-|6
-|1000
-|20000
-|59
-
 |===
 
 Based on the overall results, we can confirm that Keycloak scales vertically almost linearly.
 
-We used the default Keycloak settings, with the exception of the last two tests.
-For those tests, we had to increase the number of threads (using the `http-pool-max-threads` option) to 330 for the 2,000 logins + 10,000 token refreshes scenario and to 200 for the 1,000 logins + 20,000 token refreshes scenario.
+With the exception of the last test, we used the default keycloak configuration.
+For the final test, we had to increase the number of threads (using the `http-pool-max-threads` option) to 330 for the 2,000 logins + 10,000 token refreshes scenario.
 
 It is also worth noting that we scaled up the OpenShift Ingress Routers because we were observing connection errors on the load generator.
 
@@ -132,13 +123,10 @@ The table below summarizes the gathered data, where the 99th percentile of the r
 
 |10
 |139
-
-|15
-|1135
 |===
 
 As anticipated, Keycloak's performance degrades under high-latency network conditions.
-Delays of **5ms** already push response times into the three-digit millisecond range, while a 15ms delay places them into the second-range.
+Delays of **5ms** already push response times into the three-digit millisecond range.
 
 For multi-availability zone deployments, Keycloak performs well because most cloud providers offer very low latency networks within the same region.
 However, we **do not recommend deploying Keycloak across different regions** as the increased latency and potential for network instability can significantly degrade performance and reliability.
