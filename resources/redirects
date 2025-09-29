@@ -48,6 +48,7 @@
 # High-availability
 ^/high-availability/single-cluster=/high-availability/single-cluster/introduction
 ^/high-availability/multi-cluster=/high-availability/multi-cluster/introduction
+^/high-availability/concepts-active-passive-sync=/high-availability/concepts-multi-site
 
 # Other redirects
 ^/getting-started/?=/guides#getting-started
