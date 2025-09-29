@@ -52,7 +52,7 @@ A summary of the results can be observed in the table below.
 
 .Keycloak performance with load
 |===
-|OCP Instance Type | DB Instance Type | Pod CPU limit | Pod Memory Limit (GB) | # Pods | Logins/sec | Refreshes Token/sec| Response Time (ms, 99th pct)
+|OCP Instance Type | DB Instance Type | Pod CPU limit | Pod Memory Limit (GB) | # Pods | Logins/sec | Refreshes Token/sec
 
 m|c8g.8xlarge
 m|db.r8g.2xlarge
@@ -61,7 +61,6 @@ m|db.r8g.2xlarge
 |3
 |500
 |2500
-|81
 
 m|c8g.8xlarge
 m|db.r8g.4xlarge
@@ -70,7 +69,6 @@ m|db.r8g.4xlarge
 |3
 |1000
 |5000
-|60
 
 m|c8g.24xlarge
 m|db.r8g.16xlarge
@@ -79,7 +77,6 @@ m|db.r8g.16xlarge
 |3
 |2000
 |10000
-|58
 
 |===
 
