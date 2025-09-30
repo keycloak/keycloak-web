@@ -1,0 +1,291 @@
+<div class="paragraph">
+<p>This release features new capabilities focused on security enhancements, deeper integration, and improved server administration. The highlights of this release are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Passkeys for seamless, passwordless authentication of users.</p>
+</li>
+<li>
+<p>Federated Client Authentication to use SPIFFE or Kubernetes service account tokens for client authentication.</p>
+</li>
+<li>
+<p>Simplified deployments across multiple availability zones to boost availability.</p>
+</li>
+<li>
+<p>FAPI 2 Final: Keycloak now supports the final specifications of FAPI 2.0 Security Profile and FAPI 2.0 Message Signing.</p>
+</li>
+<li>
+<p>DPoP: The OAuth 2.0 Demonstrating Proof-of-Possession at the Application Layer (DPoP) is now fully supported. Improvements include the ability to bind only refresh tokens for public clients, and securing all Keycloak endpoints with DPoP tokens.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Read on to learn more about each new feature. If you are upgrading from a previous release, <a href="https://www.keycloak.org/docs/latest/upgrading/index.html">review also the changes listed in the upgrading guide</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="_security_and_standards">Security and Standards</h3>
+<div class="sect3">
+<h4 id="_passkeys_integration_supported">Passkeys integration (supported)</h4>
+<div class="paragraph">
+<p>Passkeys are now seamlessly integrated in the Keycloak login forms using both conditional and modal UIs. To activate the integration in the realm, go to <strong>Authentication</strong>, <strong>Policies</strong>, <strong>Webauthn Passwordless Policy</strong> and switch <strong>Enable Passkeys</strong> to enabled.</p>
+</div>
+<div class="paragraph">
+<p>For more information, see <a href="https://www.keycloak.org/docs/26.4.0/server_admin/#passkeys_server_administration_guide">Passkeys</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_fapi_2_final_supported">FAPI 2 Final (supported)</h4>
+<div class="paragraph">
+<p>Keycloak has support for the latest versions of FAPI 2 specifications. Specifications <strong>FAPI 2.0 Security Profile</strong> and <strong>FAPI 2.0 Message Signing</strong> are already promoted to Final and Keycloak supports them.
+Keycloak client policies support
+the final versions and corresponding client profiles for FAPI 2 are passing the FAPI conformance test suite.</p>
+</div>
+<div class="paragraph">
+<p>Apart from some very minor polishing of existing policies, Keycloak has new client profiles (<code>fapi-2-dpop-security-profile</code> and <code>fapi-2-dpop-message-signing</code>) for the clients that use DPoP and are intended to be FAPI 2 compliant.</p>
+</div>
+<div class="paragraph">
+<p>Thank you to <a href="https://github.com/tnorimat">Takashi Norimatsu</a> for contributing this.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see the <a href="https://www.keycloak.org/securing-apps/oidc-layers#_fapi-support">Securing applications Guides</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_dpop_supported">DPoP (supported)</h4>
+<div class="paragraph">
+<p>Keycloak has support for OAuth 2.0 Demonstrating Proof-of-Possession at the Application Layer (DPoP), which was a preview feature since Keycloak 23. Also, the supported version includes some improvements and minor capabilities of the DPoP feature such as the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Possibility to make only refresh tokens of a public client to be DPoP bound and omit the binding of an access token.</p>
+</li>
+<li>
+<p>All Keycloak endpoints that are secured by bearer token can now handle DPoP tokens. This includes, for example, the Admin REST API and Account REST API.</p>
+</li>
+<li>
+<p>Possibility to require the <code>dpop_jkt</code> parameter in the OIDC authentication request.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Thanks to
+<a href="https://github.com/tnorimat">Takashi Norimatsu</a> and <a href="https://github.com/dteleguin">Dmitry Telegin</a> for their contributions to the DPoP feature.</p>
+</div>
+<div class="paragraph">
+<p>For more information, see the <a href="https://www.keycloak.org/docs/26.4.0/server_admin/#_dpop-bound-tokens">DPoP section</a> in the documentation.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_fips_140_2_mode_now_supports_eddsa">FIPS 140-2 mode now supports EdDSA</h4>
+<div class="paragraph">
+<p>With the upgrade to Bouncy Castle 2.1.x, the algorithm EdDSA can now be used.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_listing_supported_oauth_standards_on_one_page">Listing supported OAuth standards on one page</h4>
+<div class="paragraph">
+<p>A new guide lists <a href="https://www.keycloak.org/securing-apps/specifications">all implemented OpenID Connect related specifications</a>.
+Thank you to <a href="https://github.com/tnorimat">Takashi Norimatsu</a> for contributing this.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_integration">Integration</h3>
+<div class="sect3">
+<h4 id="_federated_client_authentication_preview">Federated client authentication (preview)</h4>
+<div class="paragraph">
+<p>Identity providers are now able to federate client authentication. This allows clients to authenticate with SPIFFE JWT SVIDs,
+Kubernetes service account tokens, or tokens issued by an OpenID Connect identity provider.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_automatic_certificate_management_for_saml_clients">Automatic certificate management for SAML clients</h4>
+<div class="paragraph">
+<p>The SAML clients can now be configured to automatically download the signing and encrypting certificates from the SP entity metadata descriptor endpoint. In order to use this new feature, in the client <strong>Settings</strong> tab, section <strong>Signature and Encryption</strong>, configure the <strong>Metadata descriptor URL</strong> option (the URL where the SP metadata information with the certificates is published) and activate <strong>Use metadata descriptor URL</strong>. The certificates will be automatically downloaded and cached in the <code>public-key-storage</code> SPI from that URL.
+This also allows for seamless rotation of certificates.</p>
+</div>
+<div class="paragraph">
+<p>For more information, see <a href="https://www.keycloak.org/docs/26.4.0/server_admin/#_client-saml-configuration">Creating a SAML client</a> in the Server Administration Guide.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_serving_as_an_authorization_server_in_mcp">Serving as an authorization server in MCP</h4>
+<div class="paragraph">
+<p>MCP (Model Context Protocol) is an open-source standard for connecting AI applications to external systems. Using MCP, AI applications can connect to data sources, tools and workflows enabling them to access key information and perform tasks.</p>
+</div>
+<div class="paragraph">
+<p>To comply with MCP specification, this version provides its OAuth 2.0 Server Metadata via a well-known URI whose format complies with RFC 8414 OAuth 2.0 Authorization Server Metadata specification. Therefore, Keycloak users can now use Keycloak as an authorization server for MCP.</p>
+</div>
+<div class="paragraph">
+<p>The latest MCP specification 2025-06-18 additionally requires support for resource indicators which are currently not implemented in Keycloak.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_administration">Administration</h3>
+<div class="sect3">
+<h4 id="_update_email_workflow_supported">Update Email Workflow (supported)</h4>
+<div class="paragraph">
+<p>Users can now update their email addresses in a more secure and consistent flow. Accounts are forced to both re-authenticate and verify their emails before any account updates.</p>
+</div>
+<div class="paragraph">
+<p>For more information, see <a href="https://www.keycloak.org/docs/26.4.0/server_admin/#_update-email-workflow">Update Email Workflow</a>.</p>
+</div>
+<div class="paragraph">
+<p>This feature is currently preview, and expected to become supported in 26.5.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_optional_email_domain_for_organizations">Optional email domain for organizations</h4>
+<div class="paragraph">
+<p>In earlier versions, each organization required at least one email domain, which was a limitation for some scenarios.
+Starting with this release, an email domain is optional.
+Thank you to <a href="https://github.com/SferaDev">Alexis Rico</a> for contributing this.</p>
+</div>
+<div class="paragraph">
+<p>When no domain is specified, organization members will not be validated against domain restrictions during authentication and profile validation.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_hiding_identity_providers_from_the_account_console">Hiding identity providers from the Account Console</h4>
+<div class="paragraph">
+<p>You can now control which identity providers appear in the Account Console based on different options using
+the <code>Show in Account console</code> setting. You can choose to show only those linked with a user or hide them completely.</p>
+</div>
+<div class="paragraph">
+<p>For more information, see <a href="https://www.keycloak.org/docs/26.4.0/server_admin/#_general-idp-config">General configuration</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_enforce_recovery_codes_setup_after_setting_up_otp">Enforce recovery codes setup after setting up OTP</h4>
+<div class="paragraph">
+<p>If you have enabled OTPs and recovery codes as a second factor for authentication, you can configure the OTP required action to ask users to set up recovery codes once they set up an OTP.
+Thank you to <a href="https://github.com/dasniko">Niko Köbler</a> for contributing this.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_new_conditional_authenticator">New conditional authenticator</h4>
+<div class="paragraph">
+<p>The <strong>Conditional - credential</strong> is a new authenticator that checks if a specific credential type has been used (or not used) during the authentication process. This condition is related to the Passkeys feature. It is added by Keycloak to the default browser flow to skip 2FA in case a passkey was used to log in as the primary credential.</p>
+</div>
+<div class="paragraph">
+<p>For more information about conditional flows, see <a href="https://www.keycloak.org/docs/26.4.0/server_admin/#conditions-in-conditional-flows">Conditions in conditional flows</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_translations_managed_by_weblate">Translations managed by Weblate</h4>
+<div class="paragraph">
+<p>The Keycloak distribution now includes 35 community translations, with Kazakh, Azerbaijani and Slovenian added in this release.
+Community volunteers now maintain some of the translations in <a href="https://hosted.weblate.org/projects/keycloak/">Weblate</a> to keep them up to date.</p>
+</div>
+<div class="paragraph">
+<p>If you want to volunteer to maintain an existing or a new translation via Weblate, you can find the necessary steps in the <a href="https://github.com/keycloak/keycloak/blob/main/docs/translation.md">translation guidelines</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_configuring_and_running">Configuring and Running</h3>
+<div class="sect3">
+<h4 id="_enhancements_for_single_cluster_and_multi_cluster_setups">Enhancements for single-cluster and multi-cluster setups</h4>
+<div class="paragraph">
+<p>This release renamed multi-site to multi-cluster.
+The updated documentation describes
+how Keycloak clusters can be optionally distributed across multiple availability-zones within a region for increased availability.
+The Keycloak Operator now deploys Keycloak across multiple availability zones within a Kubernetes cluster by default. Keycloak also detects split-brains within a cluster.</p>
+</div>
+<div class="paragraph">
+<p>This change should provide better availability for users who are running Keycloak in Kubernetes clusters that span multiple availability zones.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_support_for_additional_databases_and_versions">Support for additional databases and versions</h4>
+<div class="paragraph">
+<p>With this release, we added support for the following new database vendors:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>EnterpriseDB (EDB) Advanced 17.6</p>
+</li>
+<li>
+<p>Azure SQL Database and Azure SQL Managed Instance</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Where the previous documentation stated only tested database version, it now states all the supported database versions as well.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_expose_management_interface_via_http">Expose management interface via HTTP</h4>
+<div class="paragraph">
+<p>Previous versions exposed the management endpoint only via HTTPS when the main interface was using HTTPS.</p>
+</div>
+<div class="paragraph">
+<p>Set the new option <code>http-management-scheme</code> to <code>http</code> to have the management interface use HTTP rather than inheriting the HTTPS settings of the main interface.
+This allows monitoring those endpoints in environments where no TLS client is available.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_expose_health_endpoints_on_the_main_https_port">Expose health endpoints on the main HTTP(S) port</h4>
+<div class="paragraph">
+<p>With <code>health-enabled</code> set to true, you may set the <code>http-management-health-enabled</code> to <code>false</code> to indicate that health endpoints should be exposed on the main HTTP(s) port instead of the
+management port. When this option is <code>false</code> you should block unwanted external traffic to <code>/health</code> at your proxy.</p>
+</div>
+<div class="paragraph">
+<p>This allows using the health endpoints in environments where the load balancer might need access to those ports to direct traffic to the correct nodes.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_specify_a_tlssecret_on_the_keycloak_cr_ingress_spec">Specify a <code>tlsSecret</code> on the Keycloak CR <code>ingress</code> spec</h4>
+<div class="paragraph">
+<p>To support basic TLS termination (edge) deployments by the operator, you may now set the Keycloak CR <code>spec.ingress.tlsSecret</code> field to a TLS Secret name in the namespace.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_additional_datasources_configuration_supported">Additional datasources configuration (supported)</h4>
+<div class="paragraph">
+<p>Some Keycloak use cases like User Federation might require connecting to additional databases.
+This was possible only through specifying unsupported raw Quarkus properties in previous Keycloak versions. In this release, there are now dedicated server options for additional datasources. This allows users to leverage additional databases in their extensions in a supported and user-friendly way.</p>
+</div>
+<div class="paragraph">
+<p>Read more about it in the <a href="https://www.keycloak.org/server/db#configure-multiple-datasources">Configure multiple datasources</a> guide.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_observability">Observability</h3>
+<div class="sect3">
+<h4 id="_operator_creates_a_servicemonitor_automatically">Operator creates a ServiceMonitor automatically</h4>
+<div class="paragraph">
+<p>The Operator now provisions a <code>ServiceMonitor</code> for the management endpoint if metrics are enabled and the
+<code>monitoring.coreos.com/v1:ServiceMonitor</code> Custom Resource Definition is present on the Kubernetes cluster. The
+specification of the <code>ServiceMonitor</code> takes into account the various management endpoint configurations, to ensure that
+metrics can be scraped without any additional configuration. If you do not want a <code>ServiceMonitor</code> to be created, you can disable
+this by setting <code>spec.serviceMonitor.enabled: false</code>. For more details, see the <a href="https://www.keycloak.org/guides#operator">Operator  Guide</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_http_access_logging_of_incoming_http_requests">HTTP access logging of incoming HTTP requests</h4>
+<div class="paragraph">
+<p>Keycloak supports HTTP access logging to record details of incoming HTTP requests.
+While access logs are often used for debugging and traffic analysis, they are also important for security auditing and compliance monitoring.</p>
+</div>
+<div class="paragraph">
+<p>For more information, see <a href="https://www.keycloak.org/server/logging">Configuring logging</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_showing_context_information_in_log_messages_preview">Showing context information in log messages (preview)</h4>
+<div class="paragraph">
+<p>You can now add context information via the mapped diagnostic context (MDC) to each log message like the realm or the client that initiated the request.
+This helps you to track down a warning or error message in the log to a specific caller or environment
+Thank you to <a href="https://github.com/eicki">Björn Eickvonder</a> for contributing this.</p>
+</div>
+<div class="paragraph">
+<p>For more details on this opt-in feature, see <a href="https://www.keycloak.org/server/logging">Configuring logging</a>.</p>
+</div>
+</div>
+</div>
