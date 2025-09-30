@@ -104,6 +104,7 @@ This leads us to a crucial question: *how does Keycloak behave under these condi
 To find out, we used https://chaos-mesh.org/[Chaos Mesh] to introduce an artificial delay to all outgoing network packets.
 The table below specifies the round-trip delay increase, corresponding to the first column.
 Since Keycloak 26.4 includes performance improvements for high availability deployments across different availability zones, we compare the results with the previous release, Keycloak 26.3.5 (at the time of writing).
+For Keycloak 26.3, we set `spi-user-sessions--infinispan--use-batches` to `false` to achieve a better response time (this option is disabled by default in Keycloak 26.4).
 
 For this test, we used the 500 logins/second and 2,500 token refreshes/second setup.
 The table below summarizes the gathered data, where the 99th percentile of the response time is taken from the Gatling report.
