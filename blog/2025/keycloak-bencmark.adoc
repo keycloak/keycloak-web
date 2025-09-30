@@ -102,28 +102,31 @@ A key aspect of this is *deploying Keycloak across different availability zones*
 This leads us to a crucial question: *how does Keycloak behave under these conditions?*
 
 To find out, we used https://chaos-mesh.org/[Chaos Mesh] to introduce an artificial delay to all outgoing network packets.
-This means that each remote call is affected twice: once for the outgoing message and again for the incoming response.
-For instance, a 5ms delay applied to outgoing packets results in a *10ms round-trip time for any remote communication*.
+The table below specifies the round-trip delay increase, corresponding to the first column.
+Since Keycloak 26.4 includes performance improvements for high availability deployments across different availability zones, we compare the results with the previous release, Keycloak 26.3.5 (at the time of writing).
 
 For this test, we used the 500 logins/second and 2,500 token refreshes/second setup.
 The table below summarizes the gathered data, where the 99th percentile of the response time is taken from the Gatling report.
 
-.Network latency
+.Network latency - Response Time (ms, 99th pct)
 |===
-| Delay(ms) | Response Time (ms, 99th pct)
+| Round-Trip Delay (ms) | 26.3 | 26.4
 
 |0
-|81
-
-|5
-|101
+|51
+|47
 
 |10
-|139
+|116
+|84
+
+|20
+|1076
+|130
 |===
 
 As anticipated, Keycloak's performance degrades under high-latency network conditions.
-Delays of **5ms** already push response times into the three-digit millisecond range.
+Round-trip delays of **10ms** already push response times into the three-digit millisecond range.
 
 For multi-availability zone deployments, Keycloak performs well because most cloud providers offer very low latency networks within the same region.
 However, we **do not recommend deploying Keycloak across different regions** as the increased latency and potential for network instability can significantly degrade performance and reliability.
