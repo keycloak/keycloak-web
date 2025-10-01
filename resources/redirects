@@ -46,9 +46,22 @@
 ^/[0-9]+/[0-9]+/keycloak-[0-9]+-released=/blog.html
 
 # High-availability
-^/high-availability/single-cluster=/high-availability/single-cluster/introduction
-^/high-availability/multi-cluster=/high-availability/multi-cluster/introduction
-^/high-availability/concepts-active-passive-sync=/high-availability/concepts-multi-site
+^/high-availability/bblocks-multi-site=/high-availability/multi-cluster/building-blocks
+^/high-availability/concepts-infinispan-cli-batch=/high-availability/multi-cluster/concepts-infinispan-cli-batch
+^/high-availability/concepts-multi-site=/high-availability/multi-cluster/concepts
+^/high-availability/deploy-aurora-multi-az=/high-availability/multi-cluster/deploy-aurora
+^/high-availability/deploy-aws-accelerator-loadbalancer=/high-availability/multi-cluster/deploy-aws-accelerator-loadbalancer
+^/high-availability/deploy-keycloak-kubernetes=/high-availability/multi-cluster/deploy-keycloak-kubernetes
+^/high-availability/operate-site-offline=/high-availability/multi-cluster/operate-site-offline
+^/high-availability/operate-synchronize=/high-availability/multi-cluster/operate-synchronize
+^/high-availability/concepts-database-connections=/high-availability/multi-cluster/concepts-database-connections
+^/high-availability/concepts-memory-and-cpu-sizing=/high-availability/multi-cluster/concepts-memory-and-cpu-sizing
+^/high-availability/concepts-threads=/high-availability/multi-cluster/concepts-threads
+^/high-availability/deploy-aws-accelerator-fencing-lambda=/high-availability/multi-cluster/deploy-aws-accelerator-fencing-lambda
+^/high-availability/deploy-infinispan-kubernetes-crossdc=/high-availability/multi-cluster/deploy-infinispan-kubernetes-crossdc
+^/high-availability/health-checks-multi-site=/high-availability/multi-cluster/health-checks
+^/high-availability/operate-site-online=/high-availability/multi-cluster/operate-site-online
+^/high-availability/concepts-active-passive-sync=/high-availability/multi-cluster/concepts-multi-site
 
 # Other redirects
 ^/getting-started/?=/guides#getting-started
