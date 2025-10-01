@@ -54,7 +54,7 @@ A summary of the results can be observed in the table below.
 .Keycloak performance with load
 [%autowidth,cols="<,<,>,>,>,>,>"]
 |===
-|OCP Instance Type | DB Instance Type <| Pod CPU limit <| Pod Memory Limit (GB) <| # Pods <| Logins/sec <| Refreshes Token/sec
+|OCP Instance Type | DB Instance Type <| Pod CPU limit <| Pod Memory Limit (GB) <| # Pods <| Logins/sec <| Token Refreshes/sec
 
 m|c8g.8xlarge
 m|db.r8g.2xlarge
