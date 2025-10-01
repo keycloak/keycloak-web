@@ -2,7 +2,7 @@
 :date: 2025-10-01
 :publish: true
 :author: Stefan Guilhen
-:summary: Keycloak 26.4 introduces Workflows, an experimental feature that automates administrative tasks based on events, enhancing identity governance and reducing manual effort.
+:summary: Keycloak 26.4 introduces Workflows, an experimental feature that automates administrative tasks based on events, enhancing identity governance and reducing administrative costs.
 
 == What are Workflows and What Problems Do They Solve?
 At its core, the Workflows feature is an automation engine for administrative tasks. It empowers Keycloak administrators to define
