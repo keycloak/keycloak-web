@@ -1,0 +1,22 @@
+[ {
+  "number" : 176,
+  "repository" : "keycloak-client",
+  "title" : "Update RELEASE-CHECKLIST.md and README.md files",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak-client/issues/176"
+}, {
+  "number" : 184,
+  "repository" : "keycloak-client",
+  "title" : "EdECUtilsImpl is not included in keycloak-client-common-synced",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak-client/issues/184"
+}, {
+  "number" : 187,
+  "repository" : "keycloak-client",
+  "title" : "Sync after Keycloak server 26.4.0 release",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak-client/issues/187"
+} ]
