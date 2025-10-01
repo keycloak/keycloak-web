@@ -3,11 +3,14 @@
 :publish: true
 :author: Pedro Ruivo
 :summary: Keycloak demonstrates near-linear vertical scaling, performs well in low-latency environments, and effectively offloads database usage with caching.
+:preview: keycloak-performance-benchmarks-preview.jpg
 
 When deploying a mission-critical component like Keycloak, performance is a top concern.
 Questions about resource requirements, high availability, and network latency are crucial for a successful and stable production environment.
 To provide a clear, data-driven perspective on these topics, we conducted a series of benchmarks on the latest Keycloak version 26.4.
 In this post, we'll share our findings on how Keycloak scales with increasing load, performs under artificial network latency, and leverages caching to optimize database usage.
+
+Share your feedback about this blog post https://github.com/keycloak/keycloak/discussions/43133[in our forum]!
 
 == Environment
 
@@ -188,4 +191,8 @@ Our benchmark results confirm that Keycloak is a robust and highly scalable iden
 We have shown that with careful planning and proper resource allocation, Keycloak can handle significant loads while scaling almost linearly to 12,000 requests per second.
 
 The data also underscores the importance of a low-latency network for multi-zone deployments and the significant role of caching in reducing database strain.
-By taking these factors into account, you can confidently deploy and operate Keycloak to meet your most demanding performance requirements.
+By taking these factors into account, you can deploy and operate Keycloak with more confidence.
+
+The tools and scripts we used for this are available in the https://github.com/keycloak/keycloak-benchmark[Keycloak Benchmark GitHub repository], so you can use them to test your specific loads in your own environment.
+
+Share your feedback about this blog post https://github.com/keycloak/keycloak/discussions/43133[in our forum]!
