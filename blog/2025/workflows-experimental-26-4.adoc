@@ -84,9 +84,10 @@ scenario, you would likely use longer periods (e.g., 60 days, 90 days, etc).
 
 The first step is to enable the feature when starting Keycloak:
 
-```
+[source]
+----
 ./kc.sh start-dev --features=workflows --spi-events-listener--workflow-event-listener--step-runner-task-interval=1000 --log-level="INFO,org.keycloak.models.workflow:DEBUG"
-```
+----
 
 The `step-runner-task-interval` configuration is optional and is used to change the interval at which the background task that executes
 the scheduled steps runs. By default, it is set to 12 hours, but for demonstration purposes we are setting it to run every second.
@@ -97,15 +98,16 @@ The `log-level` was also adjusted so we can see what is happening during the exe
 
 As this is an experimental feature, it is recommended that you test it using a new realm in a non-production environment.
 
-1- Access the Admin Console, then create a new realm and add two users to it:
+. Access the Admin Console, then create a new realm and add two users to it:
 
 - User 1: `alice` (no special roles)
 
 - User 2: `bob` (assign the `realm-management/realm-admin` role to this user)
 
-2- Make sure to set up the email settings for the realm so the notification step can send emails.
+. Make sure to set up the email settings for the realm so the notification step can send emails.
 
-3- In the new realm, navigate to the *Workflows* section under the *Configure* menu:
+. In the new realm, navigate to the *Workflows* section under the *Configure* menu:
++
 --
 ++++
 <div class="paragraph">
@@ -114,7 +116,9 @@ As this is an experimental feature, it is recommended that you test it using a n
 </div>
 ++++
 --
-4- Click on *Create Workflow* to define a new workflow. At this moment the UI is very simple and takes a `JSON` representation of the workflow as input.
+
+. Click on *Create Workflow* to define a new workflow. At this moment the UI is very simple and takes a `JSON` representation of the workflow as input.
++
 --
 ++++
 <div class="paragraph">
@@ -123,8 +127,11 @@ As this is an experimental feature, it is recommended that you test it using a n
 </div>
 ++++
 --
-5- Paste the following `JSON` into the editor to create the test workflow:
-```JSON
+
+. Paste the following `JSON` into the editor to create the test workflow:
++
+[source,JSON]
+----
 {
   "name": "disable inactive users",
   "uses": "event-based-workflow",
@@ -152,60 +159,65 @@ As this is an experimental feature, it is recommended that you test it using a n
     }
   ]
 }
-```
-6- Click on *Save* to save the workflow.
+----
+
+. Click on *Save* to save the workflow.
 
 Most of the workflow definition is self-explanatory, but it is worth highlighting a few points:
 
-- the `reset-on` property is also set to `USER_LOGIN`, which means that if the user logs in again before the workflow completes, it will be reset and started over.
+- The `reset-on` property is also set to `USER_LOGIN`, which means that if the user logs in again before the workflow completes, it will be reset and started over.
 This is important when we track inactive users, as we want to reset the workflow if they become active again.
-- the condition is using an expression to check if the user does not have the `realm-admin` role. The expression can be used to
-combine multiple conditions using logical the operators AND, OR, !(NOT) and parentheses. So it is possible to do something like
+- The condition is using an expression to check if the user does not have the `realm-admin` role. The expression can be used to
+combine multiple conditions using the logical operators AND, OR, !(NOT) and parentheses. So it is possible to do something like
 `!has-role("admin") AND has-user-attribute("department","engineering")`.
-- the steps can have an `after` property that defines when the step should run. The value is always relative to the previous step,
+- The steps can have an `after` property that defines when the step should run. The value is always relative to the previous step,
 so in the example above, the `disable-user` step will run 30 seconds after the `notify-user` step completes.
-- additional properties of steps can be specified in the `with` section. In the example above, we are customizing the notification email message.
+- Additional properties of steps can be specified in the `with` section. In the example above, we are customizing the notification email message.
 
 === Test the Workflow
 
-Go to the account console (`realms/{your-realm}/account`) and log in as `alice`. You should see the following in the server logs:
+Go to the account console (`+realms/{your-realm}/account+`) and log in as `alice`. You should see the following in the server logs:
 
-```
+[source]
+----
 2025-10-01 12:33:46,320 DEBUG [org.keycloak.models.workflow.WorkflowExecutionContext] (executor-thread-37) Started workflow 'disable inactive users' for resource 8bddd017-5e0d-493d-a8d5-a657721299e4 (execution id: ea42006c-b7e1-421a-b6dc-44ece45f4011)
 2025-10-01 12:33:46,320 DEBUG [org.keycloak.models.workflow.WorkflowsManager] (executor-thread-37) Scheduling step notify-user to run in 30000 ms for resource 8bddd017-5e0d-493d-a8d5-a657721299e4 (execution id: ea42006c-b7e1-421a-b6dc-44ece45f4011)
-```
+----
 
 This indicates the workflow was activated for alice when they logged in as they do not have the `realm-admin` role.
 
 If you wait 30 seconds, the notification email should be sent, and you should see the following in the logs:
 
-```
+[source]
+----
 2025-10-01 12:34:16,425 DEBUG [org.keycloak.models.workflow.WorkflowsManager] (Timer-0) Running step notify-user on resource 8bddd017-5e0d-493d-a8d5-a657721299e4 (execution id: ea42006c-b7e1-421a-b6dc-44ece45f4011)
 2025-10-01 12:34:16,433 DEBUG [org.keycloak.models.workflow.NotifyUserStepProvider] (Timer-0) Notification email sent to user alice (alice@keycloak.org)
 2025-10-01 12:34:16,433 DEBUG [org.keycloak.models.workflow.WorkflowExecutionContext] (Timer-0) Step notify-user completed successfully (execution id: ea42006c-b7e1-421a-b6dc-44ece45f4011)
 2025-10-01 12:34:16,433 DEBUG [org.keycloak.models.workflow.WorkflowsManager] (Timer-0) Scheduling step disable-user to run in 30000 ms for resource 8bddd017-5e0d-493d-a8d5-a657721299e4 (execution id: ea42006c-b7e1-421a-b6dc-44ece45f4011)
-```
+----
 
 At this point, the notification step was executed, and the disable step was scheduled to run in another 30 seconds. To simulate `alice`
 reacting to the e-mail, we will reload the account page to force a new login, which should reset the workflow as seen in the logs:
 
-```
+[source]
+----
 2025-10-01 12:34:46,997 DEBUG [org.keycloak.models.workflow.WorkflowExecutionContext] (executor-thread-39) Restarted workflow 'disable inactive users' for resource 8bddd017-5e0d-493d-a8d5-a657721299e4 (execution id: ea42006c-b7e1-421a-b6dc-44ece45f4011)
 2025-10-01 12:34:46,997 DEBUG [org.keycloak.models.workflow.WorkflowsManager] (executor-thread-39) Scheduling step notify-user to run in 30000 ms for resource 8bddd017-5e0d-493d-a8d5-a657721299e4 (execution id: ea42006c-b7e1-421a-b6dc-44ece45f4011)
-```
+----
 
 As can be seen, once `alice` became active again, the workflow was restarted, and the steps were rescheduled.
 
-If we now wait for a whole minute we should see the entire workflow executing:
+If we now wait for a whole minute, we should see the entire workflow executing:
 
-```
+[source]
+----
 2025-10-01 12:35:17,430 DEBUG [org.keycloak.models.workflow.WorkflowsManager] (Timer-0) Running step notify-user on resource 8bddd017-5e0d-493d-a8d5-a657721299e4 (execution id: ea42006c-b7e1-421a-b6dc-44ece45f4011)
 2025-10-01 12:35:17,441 DEBUG [org.keycloak.models.workflow.WorkflowExecutionContext] (Timer-0) Step notify-user completed successfully (execution id: ea42006c-b7e1-421a-b6dc-44ece45f4011)
 2025-10-01 12:35:17,442 DEBUG [org.keycloak.models.workflow.WorkflowsManager] (Timer-0) Scheduling step disable-user to run in 30000 ms for resource 8bddd017-5e0d-493d-a8d5-a657721299e4 (execution id: ea42006c-b7e1-421a-b6dc-44ece45f4011)
 2025-10-01 12:35:48,435 DEBUG [org.keycloak.models.workflow.WorkflowsManager] (Timer-0) Running step disable-user on resource 8bddd017-5e0d-493d-a8d5-a657721299e4 (execution id: ea42006c-b7e1-421a-b6dc-44ece45f4011)
 2025-10-01 12:35:48,436 DEBUG [org.keycloak.models.workflow.WorkflowExecutionContext] (Timer-0) Step disable-user completed successfully (execution id: ea42006c-b7e1-421a-b6dc-44ece45f4011)
 2025-10-01 12:35:48,436 DEBUG [org.keycloak.models.workflow.WorkflowExecutionContext] (Timer-0) Workflow 'disable inactive users' completed for resource 8bddd017-5e0d-493d-a8d5-a657721299e4 (execution id: ea42006c-b7e1-421a-b6dc-44ece45f4011)
-```
+----
 
 At this point, the workflow has completed, and `alice`'s account has been disabled.
 
@@ -217,9 +229,9 @@ The roadmap for the Workflows feature is to get it to supported status in Keyclo
 that some details shown in this blog post change before it becomes supported. Among the planned improvements are:
 
 - Additional built-in steps to cover more use cases, particularly around onboarding and offboarding users.
-- Additional events that can trigger workflows, such as USER_UPDATED, USER_GROUP_MEMBERSHIP_REMOVE, USER_ROLE_REMORE, USER_ORGANIZATION_ADD/REMOVE, etc.
+- Additional events that can trigger workflows, such as USER_UPDATED, USER_GROUP_MEMBERSHIP_REMOVE, USER_ROLE_REMOVE, USER_ORGANIZATION_ADD/REMOVE, etc.
 - Support for workflow templates to simplify the creation of common workflows.
-- Support fo workflows in YAML format in addition to JSON.
+- Support for workflows in YAML format in addition to JSON.
 - Allow admins to assign workflows to existing resources, not only have them triggered by events.
 - Improvements to the UI.
 - Quality of life improvements - e.g., ability to use `30d` or `12h` instead of the time in milliseconds, along with other simplifications
@@ -227,7 +239,7 @@ to the workflow definition.
 - Allow better control over the background task that runs the scheduled steps, going beyond just the time interval and allowing
 configuration of the exact time of day it runs, etc.
 
-You can follow the progress of the feature on Github: https://github.com/keycloak/keycloak/issues/39888.
+You can follow the progress of the feature on GitHub: https://github.com/keycloak/keycloak/issues/39888.
 
 == Join the discussion and development
 
