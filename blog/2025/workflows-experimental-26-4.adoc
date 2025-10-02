@@ -41,7 +41,8 @@ specific set of conditions (e.g. users not in the 'admin' role or users from a s
 like notifying users of impending account deactivation after a period of inactivity.
 
 The steps and conditions have their own SPIs, allowing for custom implementations to be plugged in if the built-in options do not meet your
-requirements.
+requirements. Implementations are referenced by their `providerId` in the respective `uses` property in the workflow definition - more on that in the
+example below.
 
 For the first iteration, the goal was to provide a set of capabilities to allow administrators to detect and act on inactive accounts. To achieve
 that, the following built-in steps can be configured within a workflow:
@@ -167,6 +168,7 @@ Most of the workflow definition is self-explanatory, but it is worth highlightin
 
 - The `reset-on` property is also set to `USER_LOGIN`, which means that if the user logs in again before the workflow completes, it will be reset and started over.
 This is important when we track inactive users, as we want to reset the workflow if they become active again.
+- As mentioned before, the `uses` property references the `providerId` of the step or condition implementation to be used.
 - The condition is using an expression to check if the user does not have the `realm-admin` role. The expression can be used to
 combine multiple conditions using the logical operators AND, OR, !(NOT) and parentheses. So it is possible to do something like
 `!has-role("admin") AND has-user-attribute("department","engineering")`.
@@ -243,6 +245,6 @@ You can follow the progress of the feature on GitHub: https://github.com/keycloa
 
 == Join the discussion and development
 
-We highly encourage our users to try out the feature and provide feedback. You can open new discussions or leave a comment
-in the Epic linked above or in any of the issues already tracked there. As usual, contributions and feedback are more than welcome!
+We highly encourage our users to try out the feature and provide feedback. We've opened a https://github.com/keycloak/keycloak/discussions/43171[dedicated discussion thread in Github],
+so feel free to comment/discuss the features there or even in the Epic linked above. As usual, contributions and feedback are more than welcome!
 Let's together make Keycloak even better with Workflows!
