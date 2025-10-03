@@ -1,5 +1,5 @@
 :title: Automating Administrative Tasks with Workflows in Keycloak 26.4 (experimental)
-:date: 2025-10-01
+:date: 2025-10-02
 :publish: true
 :author: Stefan Guilhen
 :summary: Keycloak 26.4 introduces Workflows, an experimental feature that automates administrative tasks based on events, enhancing identity governance and reducing administrative costs.
