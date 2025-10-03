@@ -1,0 +1,51 @@
+:title: Meet Keycloak at KubeCon NA in Atlanta, Georgia November 2025
+:date: 2025-10-03
+:publish: true
+:author: Ryan Emerson
+:preview: keycloak-kubecon-atlanta-2025.png
+:summary: We will be hosting a Kiosk in the Project Pavilion, as well as presenting a talk about our Journey to Zero-Downtime Upgrades with Keycloak. We are eager to meet Keycloak enthusiasts, users and newcomers alike.
+
+We are thrilled to announce that Keycloak will be at this year's KubeCon NA, November 10-13th 2025, in Atlanta, Georgia.
+
+Keycloak's presence at previous KubeCons was a huge success, and we are always eager to meet Keycloak enthusiasts, users
+and newcomers alike. At this year's event we will be hosting a Kiosk in the Project Pavilion, as well as presenting multiple
+Keycloak talks.
+
+== Keycloak community Meet & Greet at the Project Pavilion
+
+https://github.com/y-tabata[Yoshiyuki Tabata] from Hitachi, https://github.com/ryanemerson[Ryan Emerson] and https://github.com/mabartos[Martin Bartos]
+from IBM, and other contributors will be hosting a Keycloak kiosk at the
+https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/features-add-ons/project-engagement/#project-pavilion[Project Pavilion].
+This is a great chance to meet people who use Keycloak, contribute to Keycloak, take our survey about new Keycloak features, and get some cool swag!
+
+*Keycloak Kiosk (booth 11B) opening hours:*
+
+- Tuesday, November 11: 15:30 - 19:45
+- Wednesday, November 12: 14:00 - 17:00
+- Thursday, November 13: 12:30 - 14:00
+
+== Presentations
+
+=== A Journey to Zero-Downtime Upgrades with Keycloak
+
+https://github.com/mabartos[Martin Bartos] and https://github.com/ryanemerson[Ryan Emerson] will be presenting a talk
+on A Journey to Zero-Downtime Upgrades with Keycloak.
+
+- Wednesday, November 12, 16:00 - 16:30pm +
+https://kccncna2025.sched.com/event/27NoF/a-journey-to-zero-downtime-upgrades-with-keycloak-martin-bartos-ryan-emerson-ibm?iframe=yes&w=100%&sidebar=yes&bg=no[*A Journey to Zero-Downtime Upgrades with Keycloak*] +
+By Martin Bartos & Ryan Emerson from IBM.
+
+=== Modern PostgreSQL Authorization With Keycloak
+
+https://github.com/y-tabata[Yoshiyuki Tabata] and https://github.com/gbartolini[Gabriele Bartolini]
+will be preseneting a talk on Modern PostgreSQL Authorization With Keycloak: Cloud Native Identity Meets Database Security.
+
+- Tuesday, November 11, 17:45 - 18:15pm +
+https://kccncna2025.sched.com/event/27FXv/modern-postgresql-authorization-with-keycloak-cloud-native-identity-meets-database-security-yoshiyuki-tabata-hitachi-ltd-gabriele-bartolini-edb[*Modern PostgreSQL Authorization With Keycloak: Cloud Native Identity Meets Database Security*] +
+By Yoshiyuki Tabata, Hitachi & Gabriele Bartolini, EnterpriseDB
+
+== See you soon!
+
+We're preparing for KubeCon NA 2025 and can't wait to connect with our community. Mark your calendars and join us.
+
+See you in Atlanta!
