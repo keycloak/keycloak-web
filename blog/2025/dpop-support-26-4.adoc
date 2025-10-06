@@ -1,0 +1,40 @@
+:title: Official Support for DPoP in Keycloak 26.4
+:date: 2025-10-09
+:publish: true
+:author: Giuseppe Graziano
+:summary: With Keycloak 26.4 DPoP is now officially supported
+
+DPoP has been available in Keycloak since version 23.0.0, but only as a preview feature. With the release of
+**Keycloak 26.4**, we're happy to share that **OAuth 2.0 Demonstrating Proof-of-Possession (DPoP) is now officially supported**.
+
+== What is DPoP? 🔑
+https://datatracker.ietf.org/doc/html/rfc9449[DPoP] is a Proof-of-Possession mechanism that improves OAuth token security by binding a token (access or refresh) to a public/private key pair controlled by the client. By requiring a signed DPoP proof with each request,
+DPoP ensures that a stolen bearer token cannot be used without possession of the associated private key. This significantly improves token security in
+distributed systems.
+
+== What’s New for DPoP in 26.4 🆕
+
+DPoP is now a supported feature and includes some improvements and minor capabilities:
+
+- Support for all Keycloak endpoints that accept bearer tokens, including the Admin REST API and the Account API.
+- Option to bind *only refresh tokens* for public clients, while leaving access tokens as bearer if required.
+- Ability to request the `dpop_jkt` parameter in OIDC authorization requests.
+
+For full details, see the
+https://www.keycloak.org/docs/26.4.0/server_admin/#_dpop-bound-tokens[official documentation].
+
+== How to enable and use DPoP in Keycloak 🚀
+
+If you want to force a client to use DPoP, you need to enable the *Require DPoP bound tokens* switch in the Admin Console Settings tab under Capability config.
+
+If *Require DPoP bound tokens* is off, the client can still send a DPoP proof in the token request. In that case, Keycloak verifies it and adds the thumbprint to the token, but DPoP binding is not enforced.
+
+== Try It Out 🔍
+
+If you want to experiment with DPoP in practice, you can try it out using the
+https://github.com/keycloak/keycloak-playground/tree/main/fapi-playground[Keycloak FAPI Playground],
+which includes example client configurations and test flows that demonstrate how DPoP works end-to-end.
+
+'''
+
+We’d love to hear what you think about this feature and how we can improve it. Feedback and contributions from the community are always welcome.
