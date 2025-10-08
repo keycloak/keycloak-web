@@ -25,7 +25,11 @@
             </#if>
 
             <div class="mb-4">
-                <h1>${guide.title}</h1>
+                <h1>${guide.title} 
+                    <#if !guide.snapshot>
+                        <span class="badge bg-primary">${version.version}</span> 
+                    </#if>
+                </h1>
                 <#if guide.summary??>
                     <span class="text-muted">${guide.summary}</span>
                 </#if>
