@@ -51,7 +51,7 @@ that, the following built-in steps can be configured within a workflow:
 
 - *disable-user*: Disables the user account.
 
-- *remove user*: Automatically removes an account from the system.
+- *delete-user*: Automatically removes an account from the system.
 
 Future release will introduce other built-in steps to aid in onboarding and offboarding users, such as join/leave groups,
 assign/unassign roles, add/remove user attributes, join/leave organizations, etc.
