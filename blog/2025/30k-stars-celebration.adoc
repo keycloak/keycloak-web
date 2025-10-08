@@ -1,5 +1,5 @@
 :title: Keycloak celebrates 30k stars! 🎉
-:date: 2025-10-10
+:date: 2025-10-08
 :publish: true
 :author: Keycloak Team
 :summary: Keycloak has reached 30k stars on GitHub which is a huge milestone 🎉
