@@ -23,7 +23,7 @@
         <version.keycloak>26.4.0</version.keycloak>
         <version.keycloak-client>26.0.7</version.keycloak-client>
         <version.keycloak-nodejs-connect>26.1.1</version.keycloak-nodejs-connect>
-        <version.keycloak-js>26.2.0</version.keycloak-js>
+        <version.keycloak-js>26.2.1</version.keycloak-js>
 
         <version.frontend-maven-plugin>1.15.0</version.frontend-maven-plugin>
         <version.node>v22.18.0</version.node>
