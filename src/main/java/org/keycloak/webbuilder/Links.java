@@ -69,10 +69,15 @@ public class Links {
     }
 
     public String get(Guides.Guide guide) {
+        return get(guide, null);
+    }
+
+    public String get(Guides.Guide guide, Boolean snapshot) {
         if (guide.isExternal()) {
             return guide.getExternalLink();
         } else {
-            return getLink((guide.isSnapshot() ? "nightly/" : "") + guide.getPath());
+            boolean nightly = (guide.isSnapshot() && snapshot == null) || (snapshot != null && snapshot);
+            return getLink((nightly ? "nightly/" : "") + guide.getPath());
         }
     }
 

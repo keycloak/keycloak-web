@@ -20,15 +20,16 @@
                 <div class="mb-4 alert alert-warning" role="alert">
                   <h4 class="no-top-margin">Nightly release</h4>
 
-                  This guide is for the unstable nightly release, for the latest release go <a href="${links.guides}">here</a>.
+                  This guide is for the unstable nightly release, for the latest release go <a href="${links.get(guide, false)}">here</a>.
                 </div>
             </#if>
 
             <div class="mb-4">
-                <h1>${guide.title} 
-                    <#if !guide.snapshot>
-                        <span class="badge bg-primary">${version.version}</span> 
-                    </#if>
+                <h1>${guide.title}
+                    <select onchange="location = this.options[this.selectedIndex].value;">
+                        <option value="${links.get(guide, true)}" <#if guide.snapshot>selected="selected"</#if>>Nightly</option>
+                        <option value="${links.get(guide, false)}" <#if !guide.snapshot>selected="selected"</#if>>${version.version}</option>
+                    </select>
                 </h1>
                 <#if guide.summary??>
                     <span class="text-muted">${guide.summary}</span>
