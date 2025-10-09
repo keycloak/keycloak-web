@@ -6,6 +6,12 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
+        <div class="float-left">
+            <select onchange="location = this.options[this.selectedIndex].value;">
+                <option value="${links.getGuides(true)}" selected="selected">Nightly</option>
+                <option value="${links.getGuides(false)}">${version.version}</option>
+            </select>
+        </div>
         <ul class="nav navbar-nav">
             <#list guides.getCategories(true) as c>
             <li>
