@@ -26,7 +26,7 @@
 
             <div class="mb-4">
                 <h1>${guide.title}
-                    <select onchange="location = this.options[this.selectedIndex].value;">
+                    <select aria-label="Version" onchange="location = this.options[this.selectedIndex].value;">
                         <option value="${links.get(guide, true)}" <#if guide.snapshot>selected="selected"</#if>>Nightly</option>
                         <option value="${links.get(guide, false)}" <#if !guide.snapshot>selected="selected"</#if>>${version.version}</option>
                     </select>
