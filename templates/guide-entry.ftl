@@ -5,16 +5,24 @@
 <div class="container mt-5 kc-article">
     <div class="row">
         <div class="col-md-9 col-xl-10 col-sm-12">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="${links.getGuides(guide.snapshot)}">Guides</a></li>
-                    <li class="breadcrumb-item"><a href="${links.getGuides(guide.snapshot)}#${guide.metadata.id}">${guide.metadata.title}</a></li>
-                    <#if guide.parent?has_content>
-                      <li class="breadcrumb-item"><a href="${links.getParentLink(guide)}">${guide.parent?replace('-', ' ')?cap_first}</a></li>
-                    </#if>
-                    <li class="breadcrumb-item active">${guide.title}</li>
-                </ol>
-            </nav>
+            <div class="d-flex align-items-center mb-3">
+                <div class="me-3">
+                    <select aria-label="Version" onchange="location = this.options[this.selectedIndex].value;" class="form-select">
+                        <option value="${links.get(guide, true)}" <#if guide.snapshot>selected="selected"</#if>>Nightly</option>
+                        <option value="${links.get(guide, false)}" <#if !guide.snapshot>selected="selected"</#if>>${version.version}</option>
+                    </select>
+                </div>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item"><a href="${links.getGuides(guide.snapshot)}">Guides</a></li>
+                        <li class="breadcrumb-item"><a href="${links.getGuides(guide.snapshot)}#${guide.metadata.id}">${guide.metadata.title}</a></li>
+                        <#if guide.parent?has_content>
+                          <li class="breadcrumb-item"><a href="${links.getParentLink(guide)}">${guide.parent?replace('-', ' ')?cap_first}</a></li>
+                        </#if>
+                        <li class="breadcrumb-item active">${guide.title}</li>
+                    </ol>
+                </nav>
+            </div>
 
             <#if guide.snapshot>
                 <div class="mb-4 alert alert-warning" role="alert">
@@ -25,12 +33,7 @@
             </#if>
 
             <div class="mb-4">
-                <h1>${guide.title}
-                    <select aria-label="Version" onchange="location = this.options[this.selectedIndex].value;">
-                        <option value="${links.get(guide, true)}" <#if guide.snapshot>selected="selected"</#if>>Nightly</option>
-                        <option value="${links.get(guide, false)}" <#if !guide.snapshot>selected="selected"</#if>>${version.version}</option>
-                    </select>
-                </h1>
+                <h1>${guide.title}</h1>
                 <#if guide.summary??>
                     <span class="text-muted">${guide.summary}</span>
                 </#if>
