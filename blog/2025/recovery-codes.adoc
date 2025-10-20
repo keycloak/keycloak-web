@@ -1,5 +1,5 @@
 :title: Recovery Authentication Codes
-:date: 2025-10-17
+:date: 2025-10-20
 :publish: true
 :author: Ricardo Martin Camarero
 :summary: How to configure and use Recovery Authentication Codes as 2FA method.
