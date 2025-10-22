@@ -37,6 +37,7 @@
 ^/docs/([0-9.]+)/upgrading=/docs/latest/upgrading/index.html
 ^/docs/([0-9.]+)/release_notes=/docs/latest/release_notes/index.html
 ^/docs-api/([0-9.])+/rest-api=/docs-api/latest/rest-api/index.html
+^/docs-api/([0-9.])+/javadocs/index.html=/docs-api/latest/javadocs/index.html
 
 # Outdated blog posts
 ^/2019/08/keycloak-jdbc-ping=/server/caching#_transport_stacks
@@ -67,6 +68,11 @@
 ^/getting-started/?=/guides#getting-started
 ^/securing-apps/?=/guides#getting-started
 ^/server/?=/guides#securing-apps
+^/operator/?=/guides#operator
+^/server/?=/guides#server
+^/observability/?=/guides#observability
+^/ui-customization/?=/guides#ui-customization
+^/migration/?=/guides#migration
 
 # This is here just to test a redirect locally, and to prevent people opening the 404 page
 ^/404=/
