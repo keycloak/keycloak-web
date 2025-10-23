@@ -20,7 +20,7 @@
         <version.commons-io>2.14.0</version.commons-io>
         <version.commons-compress>1.26.0</version.commons-compress>
 
-        <version.keycloak>26.4.1</version.keycloak>
+        <version.keycloak>26.4.2</version.keycloak>
         <version.keycloak-client>26.0.7</version.keycloak-client>
         <version.keycloak-nodejs-connect>26.1.1</version.keycloak-nodejs-connect>
         <version.keycloak-js>26.2.1</version.keycloak-js>
