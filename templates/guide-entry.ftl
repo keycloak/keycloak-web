@@ -6,12 +6,6 @@
     <div class="row">
         <div class="col-md-9 col-xl-10 col-sm-12">
             <div class="d-flex align-items-center mb-3">
-                <div class="me-3">
-                    <select aria-label="Version" onchange="location = this.options[this.selectedIndex].value;" class="form-select">
-                        <option value="${links.get(guide, true)}" <#if guide.snapshot>selected="selected"</#if>>Nightly</option>
-                        <option value="${links.get(guide, false)}" <#if !guide.snapshot>selected="selected"</#if>>${version.version}</option>
-                    </select>
-                </div>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb mb-0">
                         <li class="breadcrumb-item"><a href="${links.getGuides(guide.snapshot)}">Guides</a></li>
@@ -33,6 +27,13 @@
             </#if>
 
             <div class="mb-4">
+                <div class="me-3 float-end">
+                    <select aria-label="Version" onchange="location = this.options[this.selectedIndex].value;" class="form-select">
+                        <option value="${links.get(guide, true)}" <#if guide.snapshot>selected="selected"</#if>>Nightly</option>
+                        <option value="${links.get(guide, false)}" <#if !guide.snapshot>selected="selected"</#if>>${version.version}</option>
+                    </select>
+                </div>
+
                 <h1>${guide.title}</h1>
                 <#if guide.summary??>
                     <span class="text-muted">${guide.summary}</span>
