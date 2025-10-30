@@ -1,5 +1,5 @@
-:title: Submit your talks to KeycloakCon EU Amsterdam
-:date: 2025-09-15
+:title: Submit your talks to KeycloakCon EU Amsterdam by Nov 02!
+:date: 2025-10-30
 :publish: true
 :author: Alexander Schwartz
 :preview: keycloak-keycloakcon-eu-2026.png

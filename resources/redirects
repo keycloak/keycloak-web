@@ -42,6 +42,7 @@
 # Outdated blog posts
 ^/2019/08/keycloak-jdbc-ping=/server/caching#_transport_stacks
 ^/2019/05/keycloak-cluster-setup=/server/caching#_transport_stacks
+^2025/09/keycloakcon-eu-26-call-for-papers=^2025/10/keycloakcon-eu-26-call-for-papers
 
 # Any removed old blog page should show the latest blog entries
 ^/[0-9]+/[0-9]+/keycloak-[0-9]+-released=/blog.html
