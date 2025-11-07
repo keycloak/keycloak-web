@@ -1,0 +1,204 @@
+[ {
+  "number" : 10388,
+  "repository" : "keycloak",
+  "title" : "Allow to hide client scopes from scopes_supported in discovery endpoint",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/10388"
+}, {
+  "number" : 41270,
+  "repository" : "keycloak",
+  "title" : "Cannot save new attribute group",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/41270"
+}, {
+  "number" : 41271,
+  "repository" : "keycloak",
+  "title" : "Changing user profile attribute results in an error everytime",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/41271"
+}, {
+  "number" : 43076,
+  "repository" : "keycloak",
+  "title" : "Add rate limiter for sending verification emails in context of update email",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/43076"
+}, {
+  "number" : 43082,
+  "repository" : "keycloak",
+  "title" : "ExternalLinksTest is broken due to missing path parameters",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/43082"
+}, {
+  "number" : 43091,
+  "repository" : "keycloak",
+  "title" : "Duplicate Email Fields on Temporarily Locked Out Sign In With Organization Identity-First Login",
+  "kind" : "bug",
+  "area" : "login/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/43091"
+}, {
+  "number" : 43160,
+  "repository" : "keycloak",
+  "title" : "Regression in DEBUG_PORT handling since 26.4.0 – host binding (*:port / 0.0.0.0:port) no longer works",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/43160"
+}, {
+  "number" : 43460,
+  "repository" : "keycloak",
+  "title" : "FGAP/UI: `reset-password` succeeds but UI shows 403 without Users:manage",
+  "kind" : "bug",
+  "area" : "admin/fine-grained-permissions",
+  "url" : "https://github.com/keycloak/keycloak/issues/43460"
+}, {
+  "number" : 43505,
+  "repository" : "keycloak",
+  "title" : "DPoP proof replay check doesn't consider clock skew",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/43505"
+}, {
+  "number" : 43509,
+  "repository" : "keycloak",
+  "title" : "Role authorization for workflows.",
+  "kind" : "enhancement",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/43509"
+}, {
+  "number" : 43516,
+  "repository" : "keycloak",
+  "title" : "Deleting Client is slow and fails when a lot of client sessions exist",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/43516"
+}, {
+  "number" : 43578,
+  "repository" : "keycloak",
+  "title" : "\"admin\" client role now requires server admin user",
+  "kind" : "bug",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/43578"
+}, {
+  "number" : 43579,
+  "repository" : "keycloak",
+  "title" : "403 Forbidden when assigning realm-management client roles with realm-admin despite FGAP disabled (regression in 26.4.0+)",
+  "kind" : "bug",
+  "area" : "admin/fine-grained-permissions",
+  "url" : "https://github.com/keycloak/keycloak/issues/43579"
+}, {
+  "number" : 43596,
+  "repository" : "keycloak",
+  "title" : "FGAP: user can no longer open account management page, broken by `reset-password`",
+  "kind" : "bug",
+  "area" : "admin/fine-grained-permissions",
+  "url" : "https://github.com/keycloak/keycloak/issues/43596"
+}, {
+  "number" : 43621,
+  "repository" : "keycloak",
+  "title" : "Version 26.4.1 breaks existing ldap users with capital letters in username",
+  "kind" : "bug",
+  "area" : "ldap",
+  "url" : "https://github.com/keycloak/keycloak/issues/43621"
+}, {
+  "number" : 43655,
+  "repository" : "keycloak",
+  "title" : "Document debug log settings required to show applied Infinispan configuration",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/43655"
+}, {
+  "number" : 43682,
+  "repository" : "keycloak",
+  "title" : "When syncing roles, the database layer can see deadlocks",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/43682"
+}, {
+  "number" : 43698,
+  "repository" : "keycloak",
+  "title" : "Role Mapper is updating the user every time on login",
+  "kind" : "bug",
+  "area" : "identity-brokering",
+  "url" : "https://github.com/keycloak/keycloak/issues/43698"
+}, {
+  "number" : 43723,
+  "repository" : "keycloak",
+  "title" : "Only add the none verifier when attestation conveyance preference is none (or default)",
+  "kind" : "bug",
+  "area" : "authentication/webauthn",
+  "url" : "https://github.com/keycloak/keycloak/issues/43723"
+}, {
+  "number" : 43734,
+  "repository" : "keycloak",
+  "title" : "Refresh token allowed for offline session even the related scope is removed",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/43734"
+}, {
+  "number" : 43736,
+  "repository" : "keycloak",
+  "title" : "FGAP V2: reset-password scope error when viewing users with Group permissions only",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/43736"
+}, {
+  "number" : 43744,
+  "repository" : "keycloak",
+  "title" : "Increased memory usage due to leaking KeycloakSession instances",
+  "kind" : "bug",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/43744"
+}, {
+  "number" : 43759,
+  "repository" : "keycloak",
+  "title" : "QuarkusKeycloakSession not garbage collected when running Liquibase",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/43759"
+}, {
+  "number" : 43761,
+  "repository" : "keycloak",
+  "title" : "QuarkusKeycloakSession kept in memory for each timer",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/43761"
+}, {
+  "number" : 43763,
+  "repository" : "keycloak",
+  "title" : "Normalizing of Keycloak URLs not documented",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/43763"
+}, {
+  "number" : 43774,
+  "repository" : "keycloak",
+  "title" : "Under OLMv1 service monitor check uses wrong namespace",
+  "kind" : "bug",
+  "area" : "operator",
+  "url" : "https://github.com/keycloak/keycloak/issues/43774"
+}, {
+  "number" : 43785,
+  "repository" : "keycloak",
+  "title" : "QuarkusKeycloakSession leak in DeclarativeUserProfileProvider",
+  "kind" : "bug",
+  "area" : "user-profile",
+  "url" : "https://github.com/keycloak/keycloak/issues/43785"
+}, {
+  "number" : 43853,
+  "repository" : "keycloak",
+  "title" : "Ensure the logout endpoint removes the authentication session",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/43853"
+}, {
+  "number" : 43863,
+  "repository" : "keycloak",
+  "title" : "JS CI failing after normalization",
+  "kind" : "bug",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/43863"
+} ]
