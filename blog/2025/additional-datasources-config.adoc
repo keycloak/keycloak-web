@@ -1,0 +1,49 @@
+:title: Easier Configuration for Additional Datasources 🛠️
+:date: 2025-09-30
+:publish: true
+:author: Martin Bartos
+:summary: Previously, configuring additional datasources was possible but unreliable, relying on unsupported Quarkus properties that made production setups fragile and hard to maintain.
+
+Many organizations run Keycloak alongside existing systems that already have their own user data.
+Imagine a scenario when a company has an HR system with its own PostgreSQL database of employees.
+
+Instead of duplicating that information in Keycloak’s main database, the ideal solution is to connect Keycloak directly to the external database and let extensions (like a custom User Federation provider) handle the integration.
+
+= 🕰️ The old reality: fragile workarounds
+
+In previous releases, you could connect Keycloak to additional datasources — but only by relying on raw Quarkus properties.
+
+It worked, but it wasn’t ideal:
+
+- ⚠️ The configuration was unsupported and could break across upgrades.
+- 🤔 It was confusing, because Keycloak technically allowed multiple datasources, but didn’t provide its own official way to configure them.
+
+For teams building production systems, this meant a lot of uncertainty and a configuration model that felt more like a workaround than a real solution.
+
+= 🌟 The new reality: first-class support
+
+With this release, Keycloak introduces dedicated server options for additional datasources. These options are now:
+
+- ✅ Fully supported
+- ✅ Consistent with the main datasource configuration
+- ✅ Much easier to read and maintain
+
+So, going back to our HR system example: instead of forcing user data into the main Keycloak DB or fiddling with raw Quarkus properties, you can now point Keycloak directly to the HR database using a supported configuration.
+
+= 💡 Why this matters
+
+This change gives organizations:
+
+- Confidence that their configuration won’t break on upgrade
+- Clarity in how multiple datasources are defined
+- Flexibility to connect Keycloak extensions to external databases without forcing data migration into the main Keycloak DB
+
+In our HR system scenario, this means you can seamlessly connect Keycloak to your existing user database, manage authentication and federation, and still keep the source of truth in your HR system.
+
+= 📚 Learn more
+
+- See the Configure multiple datasources guide
+for details and examples.
+- Check the Upgrading Guide for instructions on migrating from raw Quarkus properties to the new supported options.
+
+With this improvement, additional datasources in Keycloak are no longer a hidden trick — they’re a first-class, production-ready feature.
