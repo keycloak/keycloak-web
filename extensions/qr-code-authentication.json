@@ -1,0 +1,5 @@
+{
+    "name": "QR Code Authentication",
+    "description": "Sign with another device using QR Codes. This extension enables users to complete authentication with another device by scanning a QR code.",
+    "website": "https://github.com/HadleySo/keycloak-extension-qr-code-execution"
+}
