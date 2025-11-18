@@ -1,0 +1,63 @@
+:title: Submit your talks to FOSDEM 2026 by Nov 30!
+:date: 2025-11-18
+:publish: true
+:author: Alexander Schwartz
+:summary: Submit your talks now to present on January 31st and Februray 1st in Brussels. Don't miss out to meet the Keycloak team on-site at the Sovereign Identity stand.
+
+:preview: fosdem-2025-booth.jpg
+
+https://fosdem.org/[FOSDEM] is a free event for software developers to meet, share ideas and collaborate.
+Every year, thousands of developers of free and open source software from all over the world gather at the event.
+
+<<submit,Submit your talks now to present>> on January 31st and February 1st in Brussels, and <<meet,meet us and help out>> at the stand.
+To get the latest updates, https://github.com/keycloak/keycloak/discussions/44308[subscribe to our discussion on GitHub].
+
+[[meet]]
+== Meet the community at the Sovereign Identity stand
+
+On Saturday, January 31st 2026, the Keycloak project will co-host the "`Sovereign Identity for server, desktop, and a cloud`" stand together with the FreeIPA, SSSD and OpenWallet project.
+
+Visit this stand to interact with the teams of several popular solutions in this space.
+Contact us in advance if you want to help with the stand.
+
+https://www.keycloak.org[Keycloak]:: Extensible self-hosted Single-Sign-On for your applications. Supporting Passkeys, OpenID Connect, OAuth 2.0, SAML 2.0 and Kerberos. Integrating with other Identity Providers through brokerage via SAML or OpenID Connect, or via LDAP.
+
+https://www.freeipa.org[FreeIPA]:: Manage Linux users and client hosts in your realm from one central location, define Kerberos authentication and authorization policies for your identities, create mutual trust with other Identity Management systems. Issue certificates to your users and services.
+
+https://sssd.io/[SSSD]:: Open Source Client for Enterprise Identity Management. Enroll your Linux machine into an Active Directory, FreeIPA or LDAP domain. Use remote identities, policies and various authentication and authorization mechanisms to access your computer.
+
+https://openwallet.foundation/[OpenWallet Foundation]:: We drive global adoption of open, secure and interoperable digital wallet solutions. We set best practices for digital wallet technology through collaboration on standards-based OSS components that issuers, wallet providers and relying parties can use to bootstrap implementations that preserve user choice, security and privacy.
+
+[[submit]]
+== Submit your talk to a devroom
+
+FOSDEM is a big event divided into smaller, single-track conferences with their own call for papers and organizers. Submit by November 30th to be part it!
+
+Here a short list of those dev rooms that might be of interest for you if you are into Keycloak:
+
+https://iam-devroom.github.io/fosdem-2026/[Identity and Access Management Devroom]::
+We want to hear how
+you're solving the tough challenges in FOSS identity.
+Suggested topics include "`The future of authentication`",  "`Core infrastructure & security`", `"User experience & integration`", and "`Project showcases & case studies`".
+
+https://github.com/security-devroom/fosdem-2026?tab=readme-ov-file#readme[Security Devroom]::
+Everything that is relevant to security in the free software and open source world.
+Talks cover topics like cryptography, supply chain, secure development and hardening.
+
+https://softwarefreedom.net/fosdem-2026-cfp[Open Source & EU Policy Devroom]::
+Connecting developers and EU lawmakers from the European institutions to discuss the impact of past, ongoing, and upcoming EU laws affecting the Open Source community. The day will feature interventions from lawmakers from the European Commission and Parliament, as well as from the community, and will include presentations, workshops, short talks and Q&As.
+
+--
+++++
+<div class="paragraph">
+</style>
+<a href="${blogImages}/keycloak-fosdem-2025.jpg"><img src="${blogImages}/keycloak-fosdem-2025.jpg" alt="CNCF stand at FOSDEM in 2025 with a Keycloak banner and people visiting." style="width: 100%; max-width: 1158px; object-fit: cover; height: 350px; object-fit: none; object-position: 87% 20%"></a>
+</div>
+++++
+--
+
+== Stay in touch with our latest activities
+
+We hope to see a lot of you either online or on site in Brussels at FOSDEM!
+
+To get the latest updates, https://github.com/keycloak/keycloak/discussions/44308[subscribe to our discussion on GitHub].
