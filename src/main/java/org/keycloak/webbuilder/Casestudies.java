@@ -13,7 +13,7 @@ public class Casestudies {
     List<Casestudy> casestudies = new ArrayList<>();
 
     public List<Casestudy> getCaseStudies() {
-        casestudies.sort(Comparator.comparing(Casestudy::getName));
+        casestudies.sort(Comparator.comparing(Casestudy::getPublished).reversed());
         return casestudies;
     }
 
