@@ -1,0 +1,5 @@
+{
+  "name": "Client Certificate Lookup for Envoy",
+  "description": "Retrieves the client certificate from the x-forwarded-client-cert (XFCC) header set by Envoy Proxy.",
+  "website": "https://github.com/Nordix/keycloak-client-cert-lookup-for-envoy"
+}
