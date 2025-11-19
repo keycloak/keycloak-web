@@ -47,6 +47,14 @@ Talks cover topics like cryptography, supply chain, secure development and harde
 https://softwarefreedom.net/fosdem-2026-cfp[Open Source & EU Policy Devroom]::
 Connecting developers and EU lawmakers from the European institutions to discuss the impact of past, ongoing, and upcoming EU laws affecting the Open Source community. The day will feature interventions from lawmakers from the European Commission and Parliament, as well as from the community, and will include presentations, workshops, short talks and Q&As.
 
+https://lists.fosdem.org/pipermail/fosdem/2025q4/003688.html[Building Europe’s Public Digital Infrastructure]::
+The Building Europe’s Public Digital Infrastructure devroom is for
+discussing topics and issues related to full-stack digital sovereignty,
+from secure and interoperable digital workspaces to sovereign cloud
+infrastructure, including standards, technologies, and best practices
+for designing, deploying, and operating independent and resilient
+digital ecosystems for the public sector.
+
 --
 ++++
 <div class="paragraph">
