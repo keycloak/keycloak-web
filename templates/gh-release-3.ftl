@@ -1,3 +1,4 @@
+<#-- @ftlvariable name="version" type="org.keycloak.webbuilder.Versions.Version" -->
 <div>
 <#if version.releaseNotes??>
     <h2>Highlights</h2>
@@ -14,6 +15,15 @@
 <h3>Deprecated features</h3>
 <ul>
 <#list version.changes.deprecations as c>
+<li><a href="${c.url}">#${c.number?string("#####")}</a> ${c.title} <#if c.area?has_content><code>${c.area}</code></#if></li>
+</#list>
+</ul>
+</#if>
+
+<#if version.changes.removed?has_content>
+<h3>Removed features</h3>
+<ul>
+<#list version.changes.removed as c>
 <li><a href="${c.url}">#${c.number?string("#####")}</a> ${c.title} <#if c.area?has_content><code>${c.area}</code></#if></li>
 </#list>
 </ul>
