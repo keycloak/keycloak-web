@@ -1,0 +1,29 @@
+:title: Keycloak DevDay 2026: Schedule is ready! Grab the last tickets!
+:date: 2025-11-24
+:publish: true
+:author: Sebastian Rose
+:summary: We published Keycloak DevDays 2026 schedule and our tickets are nearly sold out.
+:preview: keycloak-dev-day-2026.png
+
+We (https://www.linkedin.com/in/dasniko/[Niko] and https://www.linkedin.com/in/seb7/[Sebastian]) want to give you the chance to grab one of the **last available tickets** for the Keycloak DevDay 2026!
+DevDay is taking place for the third time, on **March 5th and 6th, 2026**.
+Again, in Darmstadt, Germany, just 30 minutes away from Frankfurt/Main, see https://www.keycloak-day.dev[] for details.
+
+== Our schedule is ready!
+
+Check out the great talks lined up for the first day at https://www.keycloak-day.dev#schedule-section[the conference schedule]
+
+As already announced, the Keycloak DevDay -- **the Keycloak community conference** -- expands to an exciting two-day event.
+
+Composing the schedule was really hard work for us.
+We took our time — and rejecting proposals was one of the hardest parts. Thanks, everyone!
+And please submit your proposals again next year — we’d love to hear from you.
+The number and quality of submissions was **absolutely awesome**.
+
+== Limited amount of tickets left
+
+**Tickets**  are running out quickly, sales may end soon. **Be quick!** Unfortunately, the two-day ticket variant is already sold out.
+
+Follow us for the latest news and announcements!
+
+We can't wait to welcome you in Darmstadt in March 2026! 🚀
