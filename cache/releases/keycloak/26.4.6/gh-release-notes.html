@@ -1,0 +1,36 @@
+<div>
+    <h2>Highlights</h2>
+<div class="paragraph">
+<p>This release adds filtering of LDAP referrals by default.
+This change enhances security and aligns with best practices for LDAP configurations.</p>
+</div>
+<div class="paragraph">
+<p>If you can not upgrade to this release yet, we recommend disabling LDAP referrals in all LDAP providers in all of your realms.</p>
+</div>
+<div class="paragraph">
+<p>For detailed upgrade instructions, <a href="https://www.keycloak.org/docs/latest/upgrading/index.html">review the upgrading guide</a>.</p>
+</div>
+<h2>Upgrading</h2>
+<p>Before upgrading refer to <a href="https://www.keycloak.org/docs/latest/upgrading/#migration-changes">the migration guide</a> for a complete list of changes.</p>
+
+<h2>All resolved issues</h2>
+
+
+
+
+
+<h3>Bugs</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/43323">#43323</a> Sessions not removed when user is deleted <code>infinispan</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/43738">#43738</a> UPDATE_EMAIL action invalidates old email <code>login/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/43754">#43754</a> Flaky test: org.keycloak.testsuite.federation.ldap.LDAPProvidersIntegrationTest#updateLDAPUsernameTest <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/43812">#43812</a> Admin console sends non-JSON payload with content-type: application/json <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/44125">#44125</a> Double-encoding of query parameter values (e.g. acr_values) for version 26.4 <code>identity-brokering</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/44187">#44187</a> [Keycloak Docs CI] Broken links <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/44189">#44189</a> [jdbc-ping] SQLIntegrityConstraintViolationException: Duplicate entry <code>infinispan</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/44229">#44229</a> Unexpected FORMAT_FAILURE error when using cache-config-file with feature-disabled=persistent-user-sessions <code>infinispan</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/44269">#44269</a> Admin Client creates malformed paths for requests <code>admin/client-js</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/44287">#44287</a> Caching of static theme resources in dev mode is disabled <code>core</code></li>
+</ul>
+
+</div>
