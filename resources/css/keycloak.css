@@ -525,3 +525,5 @@ th.halign-center,td.halign-center{text-align:center}
 th.valign-top,td.valign-top{vertical-align:top}
 th.valign-bottom,td.valign-bottom{vertical-align:bottom}
 th.valign-middle,td.valign-middle{vertical-align:middle}
+
+.tableblock code{word-wrap:anywhere}
