@@ -11,7 +11,7 @@
             <li>Join <a href="https://cloud-native.slack.com/archives/C056HC17KK9">#keycloak</a>, or <a href="https://cloud-native.slack.com/archives/C056XU905S6">#keycloak-dev</a> on Slack for design discussions, or questions by creating an account at <a href="https://slack.cncf.io/">https://slack.cncf.io/</a></li>
             <li><a href="search.html">Search</a> for information in the documentation and mailing list</li>
             <li><a href="https://github.com/keycloak/keycloak/discussions">GitHub Discussions Forum</a> for discussions and asking questions</li>
-            <li><a href="https://keycloak.discourse.group/">Discourse Forum</a> where you can ask questions</li>
+            <li><a href="https://forum.keycloak.org/">Discourse Forum</a> where you can ask questions</li>
             <li><a href="https://groups.google.com/forum/#!forum/keycloak-user">Mailing list</a> where you can ask questions</li>
         </ul>
     </div>
@@ -101,7 +101,7 @@
             <li><a href="https://github.com/keycloak/keycloak">Source Code</a></li>
             <li><a href="${links.getLink('documentation')}">Documentation</a></li>
             <li><a href="https://github.com/keycloak/keycloak/issues">GitHub Issues</a></li>
-            <li><a href="https://keycloak.discourse.group/">Forum</a> - for questions and help</li>
+            <li><a href="https://forum.keycloak.org/">Forum</a> - for questions and help</li>
             <li><a href="https://groups.google.com/forum/#!forum/keycloak-user">User Mailing List</a> - for questions and help</li>
             <li><a href="https://groups.google.com/forum/#!forum/keycloak-dev">Developer Mailing List</a> - for discussions around design and contributing to Keycloak</li>
         </ul>

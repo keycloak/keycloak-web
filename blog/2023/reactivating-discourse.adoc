@@ -14,8 +14,8 @@ that we are not perfect. We apologize for any inconvenience our initial decision
 may have caused, and appreciate the feedback received from many of you.
 
 We are happy to announce that
-https://keycloak.discourse.group/u/dasniko[Niko] and 
-https://keycloak.discourse.group/u/xgp[Garth] have kindly volunteered to moderate
+https://forum.keycloak.org/u/dasniko[Niko] and
+https://forum.keycloak.org/u/xgp[Garth] have kindly volunteered to moderate
 Discourse. Their commitment makes it possible for us to reactivate the forum.
 Without their support, especially given the multiple communication channels we
 manage, this would not have been possible.
