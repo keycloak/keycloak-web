@@ -11,6 +11,15 @@
 <#if version.changes?? && version.changes.all?has_content>
 <h2>All resolved issues</h2>
 
+<#if version.changes.security?has_content>
+<h3>Security fixes</h3>
+<ul>
+<#list version.changes.security as c>
+<li><a href="${c.url}">#${c.number?string("#####")}</a> ${c.title} <#if c.area?has_content><code>${c.area}</code></#if></li>
+</#list>
+</ul>
+</#if>
+
 <#if version.changes.deprecations?has_content>
 <h3>Deprecated features</h3>
 <ul>
