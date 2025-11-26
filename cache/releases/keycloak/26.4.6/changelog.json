@@ -75,4 +75,11 @@
   "kind" : "task",
   "area" : null,
   "url" : "https://github.com/keycloak/keycloak/issues/44300"
+}, {
+  "number" : 44478,
+  "repository" : "keycloak",
+  "title" : "CVE-2025-13467 Deserialization of untrusted data in ldap user federation",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/44478"
 } ]
