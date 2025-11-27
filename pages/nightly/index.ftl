@@ -19,7 +19,10 @@
     </p>
 
     <p>
-        The nightly release is built every night from main branches, and will overwrite the previous nightly release.
+        The nightly release is built every night from main branches, and will overwrite the previous nightly release.<br>
+        <a href="https://github.com/keycloak-rel/keycloak-rel/actions/workflows/release-nightly.yml">
+            <img style="height: 1lh" alt="nightly release badge" src="https://github.com/keycloak-rel/keycloak-rel/actions/workflows/release-nightly.yml/badge.svg">
+        </a>
     </p>
 
     <h2 class="mt-4">Server</h2>
