@@ -30,12 +30,19 @@
 
     <h3>Supported Versions</h3>
     <p>Depending on the severity of a vulnerability the issue may be fixed in the current <code>major.minor</code> release of Keycloak, or for lower severity vulnerabilities or hardening in the following <code>major.minor</code> release. Refer to <a href="https://www.keycloak.org/downloads">https://www.keycloak.org/downloads</a> to find the latest release.</p>
-    <p>If you are unable to regularly upgrade Keycloak we encourage you to consider <a href="https://access.redhat.com/products/red-hat-build-of-keycloak/">Red Hat build of Keycloak</a>, which offers <a href="https://access.redhat.com/support/policy/updates/red_hat_build_of_keycloak_notes">long term support</a> of specific versions of Keycloak.</p>
+    <p>If you are unable to regularly upgrade Keycloak, we encourage you to consider <a href="https://access.redhat.com/products/red-hat-build-of-keycloak/">Red Hat build of Keycloak</a>, which offers <a href="https://access.redhat.com/support/policy/updates/red_hat_build_of_keycloak_notes">long term support</a> of specific versions of Keycloak.</p>
 
     <h3>Coordinated Vulnerability Disclosure</h3>
-    <p>To report a security vulnerability in the Keycloak codebase, send an email to <a href="mailto:keycloak-security@googlegroups.com">keycloak-security@googlegroups.com</a>. Security researchers who wish to participate in our dedicated vulnerability reward program should refer to <a href="https://yeswehack.com/programs/keycloak-bug-bounty-program"> the Bug Bounty Program's platform</a> for submissions and details. Please test against the <strong>latest version</strong> of Keycloak, include the affected version in your report, provide detailed instructions on how to reproduce the issue with a <a href="https://stackoverflow.com/help/minimal-reproducible-example">minimal and reproducible example</a>, and include your contact information for acknowledgements. If you are reporting known CVEs related to third-party libraries used in Keycloak, please <a href="https://github.com/keycloak/keycloak/issues/new/choose">create a new GitHub issue</a>.</p>
+    <p>To report a security vulnerability in the Keycloak codebase, send an email to <a href="mailto:keycloak-security@googlegroups.com">keycloak-security@googlegroups.com</a>. Please test against the <strong>latest version</strong> of Keycloak, include the affected version in your report, provide detailed instructions on how to reproduce the issue with a <a href="https://stackoverflow.com/help/minimal-reproducible-example">minimal and reproducible example</a>, and include your contact information for acknowledgements. If you are reporting known CVEs related to third-party libraries used in Keycloak, please <a href="https://github.com/keycloak/keycloak/issues/new/choose">create a new GitHub issue</a>.</p>
     <p>If you would like to collaborate on a fix for the security vulnerability, please include your GitHub username in the email, and we will provide you access to a temporary private fork where we can work together.</p>
     <p>If you discover any publicly disclosed security vulnerabilities, please notify us immediately through <a href="mailto:keycloak-security@googlegroups.com">keycloak-security@googlegroups.com</a>.</p>
+
+    <h3>Attribution Policy</h3>
+    <p>We will credit reporters who informed us in private about security vulnerabilities in security advisories.</p>
+
+    <h3>Bug Bounty</h3>
+    <p>We are currently offering a bug bounty program. It is both time- and budget restricted, and can change at any time.</p>
+    <p>Security researchers who wish to participate in our dedicated vulnerability reward program should refer to <a href="https://yeswehack.com/programs/keycloak-bug-bounty-program">the Bug Bounty Program's platform</a> for submissions and details.</p>
 
     <h2>Security Scanners</h2>
     <p>Reports from automated security scanners will <strong>not</strong> be accepted. These tools often report false positives, and can be disruptive to the project maintainers as it takes a long time to analyze these reports. If you believe you have found a security vulnerability using a security scanner, it is your responsibility to provide a clear example of the vulnerability and how it could be exploited specifically for Keycloak as outlined above.</p>
