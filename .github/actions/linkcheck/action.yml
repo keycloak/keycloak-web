@@ -41,8 +41,7 @@ runs:
     - name: Serve Site
       run: |
         npm run serve &> server.log &
-        sleep 5
-        curl --head http://localhost:5000
+        curl --head --retry 10 --retry-delay 5 --retry-connrefused http://localhost:5000
       shell: bash
       working-directory: ${{ inputs.directory }}
 
