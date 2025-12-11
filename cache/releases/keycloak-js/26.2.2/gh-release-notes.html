@@ -1,0 +1,57 @@
+<div>
+    <h2>Highlights</h2>
+<div class="paragraph">
+<p>This release of Keycloak JS focuses on addressing several regressions that were introduced by accident. We apologize for any inconvenience these issues may have caused and thank our community for reporting them quickly and helping to verify the fixes.</p>
+</div>
+<div class="sect3">
+<h4 id="_bug_fixes">Bug Fixes</h4>
+<div class="sect4">
+<h5 id="_destructuring_public_methods_now_works_correctly">Destructuring public methods now works correctly</h5>
+<div class="paragraph">
+<p>A regression was introduced that caused an error when destructuring public methods from a Keycloak instance. This pattern is commonly used in applications:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-javascript" data-lang="javascript">const { login, logout } = keycloak;
+login(); // Previously failed with "Cannot read properties of undefined"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This issue has been resolved by binding all public methods to the class instance using arrow functions, ensuring that <code>this</code> is always correctly scoped regardless of how the method is called.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/keycloak/keycloak-js/issues/202">keycloak/keycloak-js#202</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_hash_fragments_are_now_preserved_in_redirect_uris">Hash fragments are now preserved in redirect URIs</h5>
+<div class="paragraph">
+<p>A regression caused hash fragments in URLs to be stripped from redirect URIs, which broke navigation in applications that rely on fragment-based routing. For example, when logging in to the Keycloak Admin Console with a URL like <code><a href="http://localhost:8080/admin/master/console/#/demo/users/add-user" class="bare">http://localhost:8080/admin/master/console/#/demo/users/add-user</a></code>, the user would be redirected to the default page instead of the intended fragment after authentication.</p>
+</div>
+<div class="paragraph">
+<p>This also caused issues where redirect URIs would have a trailing slash added unexpectedly, breaking login flows for OIDC servers that perform strict URI matching.</p>
+</div>
+<div class="paragraph">
+<p>The next major of Keycloak JS will start re-enforcing this constraint, as it is not allowed to pass fragments according to <a href="https://datatracker.ietf.org/doc/html/rfc6749#section-3.1.2">the specification</a>.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/keycloak/keycloak-js/issues/151">keycloak/keycloak-js#151</a>, <a href="https://github.com/keycloak/keycloak-js/issues/205">keycloak/keycloak-js#205</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_redirect_urls_on_different_domains_now_work_correctly">Redirect URLs on different domains now work correctly</h5>
+<div class="paragraph">
+<p>A regression prevented redirect URLs from being on a different domain than the application origin the navigation to fail with a security error. This affected users who use redirect services that forward authentication requests from an intermediate domain back to the application.</p>
+</div>
+<div class="paragraph">
+<p>This behavior is likely to be changed in the future to only allow redirect URLs that are on the same origin as where Keycloak JS is initialized, in order to prevent possible open redirects. If this issue affects you please <a href="https://github.com/keycloak/keycloak-js/issues/235">join the discussion</a>.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/keycloak/keycloak-js/issues/189">keycloak/keycloak-js#189</a></p>
+</div>
+</div>
+</div>
+<h2>Upgrading</h2>
+<p>Before upgrading refer to <a href="https://www.keycloak.org/docs/latest/upgrading/#_upgrade_js_adapter">the migration guide</a> for a complete list of changes.</p>
+
+</div>
