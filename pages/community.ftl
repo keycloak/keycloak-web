@@ -34,12 +34,17 @@
 
     <div class="row mt-3">
         <h2>Extensions</h2>
-        <p>You can find a number of community maintained extensions to Keycloak <a href="${links.extensions}">here</a>
+        <p>You can find a number of community maintained extensions to Keycloak <a href="${links.extensions}">here</a>.
+    </div>
+
+    <div class="row mt-3">
+        <h2>Translations</h2>
+        <p>Translating Keycloak is a community effort. <a href="${links.translations}">Find out more on how to contribute.</a>
     </div>
 
     <div class="row mt-3">
         <h2>Case Studies</h2>
-        <p>We collect a list of case studies of end users <a href="${links.casestudies}">here</a>
+        <p>We collect a list of case studies of end users <a href="${links.casestudies}">here</a>.
     </div>
 
     <div class="row mt-3">

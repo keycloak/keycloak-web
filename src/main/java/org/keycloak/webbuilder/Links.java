@@ -28,6 +28,10 @@ public class Links {
         return getLink("case-studies");
     }
 
+    public String getTranslations() {
+        return getLink("translations");
+    }
+
     public String getDocs() {
         return getLink("documentation");
     }

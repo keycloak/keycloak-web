@@ -93,6 +93,7 @@ public class FreeMarker {
 
         globalAttributes.put("extensions", context.extensions());
         globalAttributes.put("casestudies", context.casestudies());
+        globalAttributes.put("translations", context.translations());
         globalAttributes.put("projectStars", context.projectStars());
 
         globalAttributes.put("version", context.versions().getLatest());
