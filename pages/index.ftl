@@ -1,3 +1,4 @@
+<#-- @ftlvariable name="links" type="org.keycloak.webbuilder.Links" -->
 <#import "/templates/template.ftl" as tmpl>
 
 <@tmpl.page current="home" title="" previewImage="index.png" rss=true>
@@ -28,7 +29,7 @@
 <div class="jumbotron jumbotron-fluid bg-dark text-white">
 <div class="container bg-dark p-3">
     <div class="row kc-news-section">
-        <div class="col-md-1 col-sm-12 fw-bold justify-content-center kc-news-item">News</div>
+        <div class="col-md-1 col-sm-12 fw-bold justify-content-center kc-news-item"><a href="${links.blog}">News</a></div>
         <#list news as n>
         <div class="col kc-news-item">
             <span class="badge bg-secondary">${n.date?string["dd MMM"]}</span> <a href="${n.link}">${n.title}</a>
