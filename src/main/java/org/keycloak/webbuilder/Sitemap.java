@@ -110,6 +110,7 @@ public class Sitemap {
             sitemap.writeStartDocument();
 
             sitemap.writeStartElement("urlset");
+            sitemap.writeCharacters("\n");
         } catch (XMLStreamException | FileNotFoundException e) {
             throw new RuntimeException(e);
         }
@@ -124,6 +125,7 @@ public class Sitemap {
             sitemapExtra.writeStartDocument();
 
             sitemapExtra.writeStartElement("urlset");
+            sitemapExtra.writeCharacters("\n");
         } catch (XMLStreamException | FileNotFoundException e) {
             throw new RuntimeException(e);
         }
@@ -210,6 +212,7 @@ public class Sitemap {
         }
 
         sitemap.writeEndElement();
+        sitemap.writeCharacters("\n");
     }
 
     private static String getContentHash(Document doc) throws NoSuchAlgorithmException {
