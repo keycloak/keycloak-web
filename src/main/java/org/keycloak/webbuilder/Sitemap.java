@@ -243,6 +243,9 @@ public class Sitemap {
         }
 
         if (contents != null) {
+            // Remove content that changes often, or is not relvant for the search
+            // https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag?hl=en#data-nosnippet-attr
+            contents.select("[data-nosnippet]").remove();
             MessageDigest digest = MessageDigest.getInstance("SHA-256");
             String content = title + "." + description + "." + contents.text();
             if (ldJson != null) {

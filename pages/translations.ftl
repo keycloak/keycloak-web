@@ -20,7 +20,7 @@
         Read more about the translation process and how to become a language maintainer in our <a href="https://github.com/keycloak/keycloak/blob/main/docs/translation.md">translation guidelines</a>.
     </p>
 
-    <table class="table" style="width: auto">
+    <table class="table" style="width: auto" data-nosnippet>
         <thead>
         <tr>
             <th scope="col"></th>
@@ -66,7 +66,7 @@
         </tbody>
     </table>
 
-    <p>(Statistics updated daily. Last update: ${.now?iso("UTC")})</p>
+    <p  data-nosnippet>(Statistics updated daily. Last update: ${.now?iso("UTC")})</p>
 
 </div>
 

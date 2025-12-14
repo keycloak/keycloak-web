@@ -32,7 +32,7 @@
                                     <div class="d-flex align-items-center">
                                         <img src="resources/images/github.png" width="16px" alt="GitHub logo"
                                              class="me-2"/>
-                                        <span>${extension.stars} stars</span>
+                                        <span data-nosnippet>${extension.stars} stars</span>
                                     </div>
                                 </div>
                             </#if>
