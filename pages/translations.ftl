@@ -26,7 +26,7 @@
             <th scope="col"></th>
             <#list translations.components as component>
                 <td>
-                    <a href="https://hosted.weblate.org/projects/keycloak/${component.slug()}/">
+                    <a rel="nofollow" href="https://hosted.weblate.org/projects/keycloak/${component.slug()}/">
                         ${component.name()}
                     </a>
                 </td>
@@ -38,7 +38,7 @@
         <#list translations.languages as language>
         <tr>
             <th scope="row">
-                <a href="https://hosted.weblate.org/projects/keycloak/-/${language.code()}/">
+                <a rel="nofollow" href="https://hosted.weblate.org/projects/keycloak/-/${language.code()}/">
                     ${language.name()}
                 </a>
             </th>
@@ -46,7 +46,7 @@
                 <td style="text-align: right">
                 <#assign tranlation = translations.getTranslation(component, language) >
                 <#if tranlation.total() != tranlation.translated()>
-                    <a href="https://hosted.weblate.org/translate/keycloak/${component.slug()}/${language.code()}/?q=state:%3Ctranslated">
+                    <a rel="nofollow" href="https://hosted.weblate.org/translate/keycloak/${component.slug()}/${language.code()}/?q=state:%3Ctranslated">
                         ${tranlation.completionRate()}
                     </a>
                 <#else>
@@ -56,7 +56,7 @@
             </#list>
             <td style="text-align: right">
                 <#if language.unapproved gt 0>
-                    <a href="https://hosted.weblate.org/translate/keycloak/-/${language.code()}/?q=state%3A%3Dtranslated&sort_by=-priority%2Cposition&checksum=">${language.unapproved}</a>
+                    <a rel="nofollow" href="https://hosted.weblate.org/translate/keycloak/-/${language.code()}/?q=state%3A%3Dtranslated&sort_by=-priority%2Cposition&checksum=">${language.unapproved}</a>
                 <#else>
                     &check;
                 </#if>
