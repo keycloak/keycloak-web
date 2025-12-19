@@ -1,0 +1,13 @@
+:title: Distribution Survey
+:date: 2025-12-19
+:publish: true
+:author: Keycloak Cloud Native Team
+:summary: Help us shape the cloud native future of Keycloak!
+
+The different ways of distribution – be it the Operator, container images, or plain ZIP file – play a pivotal role in all Keycloak deployments.
+It is the often the first touchpoint for users and sets the tone for their overall experience. The selected distribution method
+then affects the whole lifecycle of the deployment – upgrades, scaling, configuration, and more.
+
+As we continue to evolve Keycloak to better serve cloud native environments, we are seeking your valuable input to understand your
+preferences and requirements regarding Keycloak distribution and deployment methods. Help us shape the cloud native future of Keycloak
+by participating in our survey! You can find the survey https://forms.gle/su5jbfqWCNYNMCKb9[here].
