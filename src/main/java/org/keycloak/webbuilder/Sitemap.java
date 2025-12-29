@@ -4,6 +4,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Attribute;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
@@ -219,8 +220,15 @@ public class Sitemap {
         String hash = null;
 
         Element contents = doc.selectFirst(".kc-article");
-        if (contents == null) {
+        if (contents == null && doc.select(".jumbotron").size() == 1) {
             contents = doc.selectFirst(".jumbotron");
+        }
+        if (contents == null && doc.select(".jumbotron").size() > 1) {
+            contents = doc.selectFirst("body");
+            if (contents != null) {
+                contents.select("header").remove();
+                contents.select("nav").remove();
+            }
         }
         if (contents == null) {
             contents = doc.selectFirst(".container");
