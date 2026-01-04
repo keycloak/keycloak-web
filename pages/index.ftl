@@ -14,13 +14,12 @@
                 No need to deal with storing users or authenticating users.
             </p>
             <div class="mt-4">
-                <a class="btn btn-primary btn-lg m-1" href="${links.guides}">Get Started</a>
-                <a class="btn btn-light btn-lg m-1" href="${links.downloads}">Download</a>
-                <a class="kc-btn-30k-celebration btn btn-lg m-1" href="${links.getLink('2025/10/30k-stars-celebration')}">30k GitHub Stars 🎉</a>
+                <a class="btn btn-primary btn-lg" href="${links.guides}">Get Started</a>
+                <a class="btn btn-light btn-lg" href="${links.downloads}">Download</a>
             </div>
         </div>
         <div class="col col-4 d-none d-lg-block">
-            <img class="img-fluid h-100" src="${links.getResource('images/keycloak-logo-30k.png')}" width="550" aria-hidden="true" alt="Keycloak"/>
+            <img class="img-fluid h-100" src="${links.getResource('images/icon.svg')}" width="550" aria-hidden="true" alt="Keycloak"/>
         </div>
     </div>
   </div>

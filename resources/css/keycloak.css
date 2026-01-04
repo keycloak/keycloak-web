@@ -8,18 +8,6 @@
     border-radius: 0.7rem;
 }
 
-/* Remove after the 30k GH stars celebration BEGIN*/
-.kc-btn-30k-celebration {
-    background-color: #FDCE00;
-    border-color: #CF9633;
-    font-weight: 350;
-}
-
-.kc-btn-30k-celebration:hover {
-    background-color: #CF9633;
-}
-/* END */
-
 .badge {
     border-radius: 0.7rem;
 }
