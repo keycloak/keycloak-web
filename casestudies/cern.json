@@ -1,0 +1,10 @@
+{
+  "name": "CERN",
+  "title": "CERN uses Keycloak for the world's largest particle physics laboratory",
+  "description": "Single Sign-On is a core service at CERN with 300k users and 13k clients. The majority of laboratory staff and users access applications protected by Keycloak on a daily basis and its stability is paramount for us all to be able to work.",
+  "url": "https://auth.docs.cern.ch/documents/why-keycloak/",
+  "logoUrl": "logos/cern.svg",
+  "logoStyle": "",
+  "logoBackground": "#0033a0",
+  "published": "2025-06-01"
+}
