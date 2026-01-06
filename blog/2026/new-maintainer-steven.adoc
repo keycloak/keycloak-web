@@ -1,0 +1,15 @@
+:title: New Keycloak Maintainer: Steven Hawkins
+:date: 2026-01-06
+:publish: true
+:author: Stian Thorgersen
+:summary: Congratulations to Steven becoming an official Keycloak Maintainer
+
+Although https://github.com/shawkins[Steven] has only been on the Keycloak team for a relatively short period of time he's managed to get the
+https://github.com/keycloak/keycloak/graphs/contributors[#15 place as the top contributor overall]. Now, if you narrow
+that to the last two years he's in https://github.com/keycloak/keycloak/graphs/contributors?from=06%2F01%2F2024[#3rd
+place].
+
+Steven is the go-to guy when it comes to the Operator where his knowledge is above most. He's also regularly helping out
+the community, whether joining discussions, fixing bugs, or just generally making our distribution better for everyone.
+
+Congratulations to Steven becoming an official Keycloak Maintainer.
