@@ -1,0 +1,293 @@
+<div class="paragraph">
+<p>This release features new capabilities for users and administrators of Keycloak. The highlights of this release are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Workflows to automate administrative tasks and process within a realm.</p>
+</li>
+<li>
+<p>JWT Authorization Grants, our recommended alternative to external to internal token exchange.</p>
+</li>
+<li>
+<p>Guide for using Keycloak as an authorization server for Model Context Protocol (MCP) servers.</p>
+</li>
+<li>
+<p>Authenticating clients with Kubernetes service account tokens to avoid static client secrets.</p>
+</li>
+<li>
+<p>OpenTelemetry support for metrics and logging, combining all observability information in this popular standard.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Read on to learn more about each new feature. If you are upgrading from a previous release, <a href="https://www.keycloak.org/docs/latest/upgrading/index.html">review also the changes listed in the upgrading guide</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="_security_and_standards">Security and Standards</h3>
+<div class="sect3">
+<h4 id="_jwt_authorization_grant_preview">JWT Authorization Grant (preview)</h4>
+<div class="paragraph">
+<p>Keycloak 26.5 introduces a new feature called JWT Authorization Grant, which adds support for <a href="https://datatracker.ietf.org/doc/html/rfc7523">RFC 7523</a> to use external signed JWT assertions to request OAuth 2.0 access tokens.</p>
+</div>
+<div class="paragraph">
+<p>To accept signed JWT assertions, a trust relationship must be established between the external provider and Keycloak. This trust relationship can be configured through an identity provider in a dedicated section of the OpenID Connect v1.0 identity provider, or through the new JWT Authorization Grant identity provider.</p>
+</div>
+<div class="paragraph">
+<p>JWT Authorization Grant is recommended as an alternative to <a href="https://www.keycloak.org/securing-apps/token-exchange#_external-token-to-internal-token-exchange">External to internal token exchange V1</a>.
+This feature is in preview, and additional details are available in the <a href="https://www.keycloak.org/securing-apps/jwt-authorization-grant">dedicated documentation</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_using_keycloak_as_an_authorization_server_for_model_context_protocol_mcp_servers">Using Keycloak as an authorization server for Model Context Protocol (MCP) servers</h4>
+<div class="paragraph">
+<p>Using Keycloak as an authorization server for Model Context Protocol (MCP) servers is becoming popular, so this release ships additional documentation on how to do this.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="https://www.keycloak.org/securing-apps/mcp-authz-server">Integrating with Model Context Protocol (MCP)</a> for the new guide.</p>
+</div>
+<div class="paragraph">
+<p>Many thanks to <a href="https://github.com/tnorimat">Takashi Norimatsu</a> for the contribution.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_cors_enhancements">CORS enhancements</h4>
+<div class="paragraph">
+<p>CORS (Cross Origin Resource Sharing) is a browser security feature that controls how web pages on one domain can request resources from a different domain.</p>
+</div>
+<div class="paragraph">
+<p>For the OpenID Connect Dynamic Client Registration, you can now specify which CORS headers are allowed via the client registration access policies.</p>
+</div>
+<div class="paragraph">
+<p>For the overall CORS configuration, you can now allow environment specific headers to be allowed using the SPI option <code>spi-cors--default--allowed-headers</code>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_logout_confirmation_page">Logout confirmation page</h4>
+<div class="paragraph">
+<p>The client logout configuration now includes an option to show a logout confirmation page. When enabled, users will see a &#8220;You are logged out&#8221; confirmation page upon successful logout.</p>
+</div>
+<div class="paragraph">
+<p>Many thanks to <a href="https://github.com/slaskawi">Sebastian Łaskawiec</a> for the contribution.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_hiding_openid_connect_scopes_from_the_discovery_endpoint">Hiding OpenID Connect scopes from the discovery endpoint</h4>
+<div class="paragraph">
+<p>Previously, all scopes of an OpenID Connect client were advertised in the discovery endpoint.</p>
+</div>
+<div class="paragraph">
+<p>In some situation you might want to avoid it, as the calling client, for example, an MCP server might not support it, or you might want to hide some scopes for preventing their discovery via public APIs.</p>
+</div>
+<div class="paragraph">
+<p>You can now prevent this by disabling <strong>Include in OpenID Provider Metadata</strong>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_administration">Administration</h3>
+<div class="sect3">
+<h4 id="_workflows_preview">Workflows (preview)</h4>
+<div class="paragraph">
+<p>Keycloak introduces a new preview feature called Workflows, which allows administrators to
+automate administrative tasks and process within a realm, introducing a key capability for Identity Governance and Administration (IGA).</p>
+</div>
+<div class="paragraph">
+<p>For more details, see the <a href="https://www.keycloak.org/docs/26.5.0/server_admin/#_managing_workflows">Server Administration Guide</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_federated_client_authentication_preview">Federated client authentication (preview)</h4>
+<div class="paragraph">
+<p>Federated client authentication remains preview due to receiving a number of enhancements and fixes.</p>
+</div>
+<div class="paragraph">
+<p>There is now preview support to use Kubernetes service accounts tokens as credentials for clients, which avoids static secrets for OpenID Connect clients.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="https://www.keycloak.org/docs/latest/server_admin/index.html#_identity_broker_kubernetes">Kubernetes identity providers</a> in the Server Administration Guide for details.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_organization_invitation_management">Organization invitation management</h4>
+<div class="paragraph">
+<p>Organization administrators can now manage organization invitations through both the Admin Console and REST API:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>View all sent invitations with their current status (Pending, Expired)</p>
+</li>
+<li>
+<p>Resend pending invitations to recipients</p>
+</li>
+<li>
+<p>Delete invitation records from the system</p>
+</li>
+<li>
+<p>Filter invitations by status for easier management</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>All invitations are now persistently stored in the database, providing better tracking and management capabilities.</p>
+</div>
+<div class="paragraph">
+<p>The invitation management features are available in the <strong>Invitations</strong> tab when managing an organization in the Admin Console, and through the Organizations REST API endpoints under <code>/admin/realms/{realm}/orgs/{orgId}/invitations</code>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_new_event_user_session_deleted">New event <code>USER_SESSION_DELETED</code></h4>
+<div class="paragraph">
+<p>For each expired user session there is a new user event <code>USER_SESSION_DELETED</code> fired.
+This event is published approximately 3-10 minutes after the session has expired depending on job scheduling and load on the system.
+By default, this event is not persisted.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_configuring_and_running">Configuring and Running</h3>
+<div class="sect3">
+<h4 id="_containers_for_powerpc_64_bit_little_endian_architecture">Containers for PowerPC 64-bit Little Endian architecture</h4>
+<div class="paragraph">
+<p>The containers for both the Keycloak and its operator are not available as well for the PowerPC 64-bit Little Endian (ppc64le) architecture. This is in addition to the existing amd64 and arm64.</p>
+</div>
+<div class="paragraph">
+<p>We expect this to allow users to optimize their usage of open hardware and power consumption.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_improved_server_response_times">Improved server response times</h4>
+<div class="paragraph">
+<p>Authentication, user, and client sessions are now created on the respective Keycloak node and avoid extra remote calls to neighbors when reading or writing them to the embedded caches.
+When you have sticky sessions enabled in your loadbalancer, you will benefit from this feature automatically, and you should see reduced response times when authenticating users.</p>
+</div>
+<div class="paragraph">
+<p>Expired user sessions are now deleted from the database in small batches, instead of issuing a delete statements that affects the whole table.
+This should allow for better response times when there are a lot of sessions in the table.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_enhanced_http_performance_preview">Enhanced HTTP performance (preview)</h4>
+<div class="paragraph">
+<p>You can now enable a more efficient way to handle JSON data in the HTTP layer.
+This change increases throughput by ~5%, stabilizes response times, and reduces system resource usage.</p>
+</div>
+<div class="paragraph">
+<p>In order to apply it, you need to explicitly enable the feature <code>http-optimized-serializers</code>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+This feature is <strong>preview</strong>.
+We gather more feedback about potential issues in <a href="https://github.com/keycloak/keycloak/discussions/43484">this discussion</a>. We appreciate any feedback.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>For more details, see the <a href="https://www.keycloak.org/server/configuration-production">Configuring Keycloak for production</a> guide.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_configure_retry_behavior_for_outgoing_http_requests">Configure retry behavior for outgoing HTTP requests</h4>
+<div class="paragraph">
+<p>Keycloak has now more flexibility how to configure retrying of outgoing HTTP requests. This is useful for handling transient network errors or temporary unavailability
+of the service where Keycloak needs to send HTTP request. Retry behavior is disabled by default and must be explicitly enabled.
+More details are available in the <a href="https://www.keycloak.org/server/outgoinghttp">Outgoing HTTP requests documentation</a>.</p>
+</div>
+<div class="paragraph">
+<p>Many thanks to <a href="https://github.com/chance-coleman">Chance Coleman</a> for the contribution.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_enabledisable_features_via_a_single_option">Enable/disable features via a single option</h4>
+<div class="paragraph">
+<p>You can now enable or disable individual features using the <code>feature-&lt;name&gt;</code> option (like <code>feature-spiffe=enabled</code>).</p>
+</div>
+<div class="paragraph">
+<p>This provides a more fine-grained way to manage features and eliminates the need to maintain long lists of enabled or disabled features.</p>
+</div>
+<div class="paragraph">
+<p>The <code>feature-&lt;name&gt;</code> option takes precedence over both <code>features</code> and <code>features-disabled</code>.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see the <a href="https://www.keycloak.org/server/features">Enabling and disabling features</a> guide.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_client_certificate_lookup_compliant_with_rfc_9440">Client certificate lookup compliant with RFC 9440</h4>
+<div class="paragraph">
+<p>You can now use a new client certificate lookup provider that is compliant with <a href="https://datatracker.ietf.org/doc/html/rfc9440">RFC 9440</a>.
+This enables native support e.g. for Caddy and other reverse proxies that follow the RFC.
+For details, navigate to <a href="https://www.keycloak.org/server/reverseproxy#_enabling_client_certificate_lookup">Enabling Client Certificate Lookup</a> section of the documentation.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_running_keycloak_as_a_windows_service">Running Keycloak as a Windows service</h4>
+<div class="paragraph">
+<p>Keycloak can now be installed and run as a Windows service using Apache Commons Daemon (Procrun). The new <code>tools windows-service</code> CLI subcommand simplifies service installation and uninstallation.</p>
+</div>
+<div class="paragraph">
+<p>The service runs <code>kc.bat start</code> as an external process, ensuring all environment variables and configuration files are respected. This provides seamless integration with the Windows Services management console and enables automatic startup on system boot without requiring a user to be logged on.</p>
+</div>
+<div class="paragraph">
+<p>For more information, see the <a href="https://www.keycloak.org/server/windows-service">Running Keycloak as a Windows Service</a> guide.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_observability">Observability</h3>
+<div class="sect3">
+<h4 id="_opentelemetry_enhancements">OpenTelemetry enhancements</h4>
+<div class="sect4">
+<h5 id="_opentelemetry_logs_preview">OpenTelemetry Logs (preview)</h5>
+<div class="paragraph">
+<p>Keycloak now supports exporting logs to OpenTelemetry collectors, enabling centralized log management.
+This preview feature allows you to export Keycloak logs to any OpenTelemetry-compatible backend and use the same OpenTelemetry collector for logs, metrics and traces.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see the <a href="https://www.keycloak.org/observability/telemetry">Centralize your observability stack with OpenTelemetry</a> guide.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_opentelemetry_metrics_experimental">OpenTelemetry Metrics (experimental)</h5>
+<div class="paragraph">
+<p>Keycloak now provides the experimental support for exporting metrics to OpenTelemetry collectors by using the <a href="https://quarkus.io/guides/telemetry-micrometer-to-opentelemetry">Micrometer-to-OpenTelemetry bridge</a>.
+This experimental feature allows you to export Keycloak metrics to any OpenTelemetry-compatible backend and use the same OpenTelemetry collector for logs, metrics and traces.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see the <a href="https://www.keycloak.org/observability/telemetry">Centralize your observability stack with OpenTelemetry</a> guide.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_export_traces_with_custom_request_headers">Export traces with custom request headers</h5>
+<div class="paragraph">
+<p>It is now possible to set request headers for exporting traces via OpenTelemetry Protocol (OTLP).
+It is mainly useful for providing tokens in the request.</p>
+</div>
+<div class="paragraph">
+<p>You can specify these headers via the <code>tracing-header-&lt;header&gt;</code> wildcard option, accepting any custom header name.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see the  <a href="https://www.keycloak.org/observability/tracing">Root cause analysis with tracing</a> guide.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_mdc_logging_feature_supported">MDC Logging feature (supported)</h4>
+<div class="paragraph">
+<p>The <code>log-mdc:v1</code> feature has been promoted from a preview feature to a supported feature.</p>
+</div>
+<div class="paragraph">
+<p>MDC enables Keycloak to enrich log entries with contextual information such as realm, client, user ID and IP address, significantly improving debugging and observability.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see the <a href="https://www.keycloak.org/server/logging#_adding_context_for_log_messages">Adding context for log messages</a> guide.</p>
+</div>
+</div>
+</div>
