@@ -6,6 +6,12 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
+        <div class="float-left">
+            <select aria-label="Version" onchange="location = this.options[this.selectedIndex].value;" class="form-select">
+                <option value="${links.getGuides(true)}">Nightly</option>
+                <option value="${links.getGuides(false)}" selected="selected">${version.version}</option>
+            </select>
+        </div>
         <ul class="nav navbar-nav">
             <#list guides.getCategories(false) as c>
             <li>
