@@ -1,0 +1,37 @@
+<div>
+
+<h2>Upgrading</h2>
+<p>Before upgrading refer to <a href="https://www.keycloak.org/docs/latest/upgrading/#migration-changes">the migration guide</a> for a complete list of changes.</p>
+
+<h2>All resolved issues</h2>
+
+
+
+
+
+<h3>Enhancements</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/44863">#44863</a> x-robots HTTP header missing for static Keycloak resources, and REST endpoint responses </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/45009">#45009</a> Performance improvement: Missing indexes on BROKER_LINK table columns </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/45182">#45182</a> Allow full managing of realms from master realm without global admin role </li>
+</ul>
+
+<h3>Bugs</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/43975">#43975</a> Test Framework -> Embedded server -> Maven execution failure: Failed to read script file from: scripts/default-policy.js <code>test-framework</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/44371">#44371</a> 403 Forbidden when assigning realm-management client roles despite FGAP disabled (regression in 26.4.0+) <code>admin/fine-grained-permissions</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/44417">#44417</a> Security issue with Organization feature exposes and fills the account name automatically in user/password form <code>organizations</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/44783">#44783</a> Create Realm button is missing when user has create-realm role <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/44860">#44860</a> Admin UI: slow response time listing second user page <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/45003">#45003</a> Bug in JWTClientAuthenticator and JWTClientSecretAuthenticator causes NPE <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/45093">#45093</a> Enable visibility of Role Mapping tab for users with view-users role <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/45107">#45107</a> Failed upgrade to 26.4.7 - sql generated for manual database upgrade contains invalid statements <code>storage</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/45116">#45116</a> Realm-level admininistrators can no longer use Admin Console since 26.3.0 (UI fails to render) <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/45185">#45185</a> ExternalLinkTest fails due to missing _adding_context_for_log_messages anchor <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/45226">#45226</a> Failure when decrypting SAML Response since 26.5.0 <code>saml</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/45239">#45239</a> Upgrade to 26.5.0 failing due to FK_ORG_INVITATION_ORG constraint <code>organizations</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/45257">#45257</a> Creating IdentityProvider with latest java admin-client may fail against Keycloak server 26.4 or older <code>admin/client-java</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/45307">#45307</a> UI Bug: WebAuthn passkey list is broken in keycloak v2 theme <code>login/ui</code></li>
+</ul>
+
+</div>
