@@ -1,0 +1,32 @@
+:title: Keycloak's Bug Bounty Program on YesWeHack
+:date: 2026-01-16
+:publish: true
+:preview: keycloak-ywh-bugbounty.jpg
+:author: Alexander Schwartz
+:summary: We are proud to be part of this EU sponsored bug bounty program.
+
+As a Cloud Native Computing Foundation (CNCF) project, Keycloak is the open-source IAM backbone for countless applications.
+This is your chance to secure a core piece of the cloud-native ecosystem in this public bug bounty program!.
+
+We are proud to be part of this EU sponsored initiative.
+Projects like ours fuel a lot of public and private infrastructure in the EU and worldwide.
+Thank you for choosing our project for this initiative to help us to improve and provide secure services to our users!
+
+--
+++++
+<div class="paragraph">
+</style>
+<a href="https://yeswehack.com/programs/keycloak-bug-bounty-program"><img src="${blogImages}/keycloak-ywh-bugbounty.jpg" alt="Logo of Keycloak and Yes We Hack." style="width: 100%; max-width: 1047px; object-fit: cover; height: 300px; object-fit: none; object-position: 50% 50%"></a>
+</div>
+++++
+--
+
+Why you'll want to hunt on this program:
+
+* *High-Impact Target:* Make a real difference on a widely-used solution
+* *Full White-Box:* Get the deep access you need to find complex bugs
+* *Top Bounties:* Earn up to €&nbsp;5,000 for your findings
+
+We already has some very good submissions, and Keycloak improved due to this. Keep them coming!
+
+Ready to make your mark? https://yeswehack.com/programs/keycloak-bug-bounty-program[Explore the full program details]!
