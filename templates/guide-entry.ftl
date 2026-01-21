@@ -1,30 +1,42 @@
 <#import "/templates/template.ftl" as tmpl>
+<#-- @ftlvariable name="links" type="org.keycloak.webbuilder.Links" -->
+<#-- @ftlvariable name="version" type="org.keycloak.webbuilder.Versions.Version" -->
+<#-- @ftlvariable name="guide" type="org.keycloak.webbuilder.Guides.Guide" -->
 
 <@tmpl.page current="search" title="${guide.title}" summary="${guide.summary}" noindex=guide.snapshot>
 
 <div class="container mt-5 kc-article">
     <div class="row">
         <div class="col-md-9 col-xl-10 col-sm-12">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="${links.getGuides(guide.snapshot)}">Guides</a></li>
-                    <li class="breadcrumb-item"><a href="${links.getGuides(guide.snapshot)}#${guide.metadata.id}">${guide.metadata.title}</a></li>
-                    <#if guide.parent?has_content>
-                      <li class="breadcrumb-item"><a href="${links.getParentLink(guide)}">${guide.parent?replace('-', ' ')?cap_first}</a></li>
-                    </#if>
-                    <li class="breadcrumb-item active">${guide.title}</li>
-                </ol>
-            </nav>
+            <div class="d-flex align-items-center mb-3">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item"><a href="${links.getGuides(guide.snapshot)}">Guides</a></li>
+                        <li class="breadcrumb-item"><a href="${links.getGuides(guide.snapshot)}#${guide.metadata.id}">${guide.metadata.title}</a></li>
+                        <#if guide.parent?has_content>
+                          <li class="breadcrumb-item"><a href="${links.getParentLink(guide)}">${guide.parent?replace('-', ' ')?cap_first}</a></li>
+                        </#if>
+                        <li class="breadcrumb-item active">${guide.title}</li>
+                    </ol>
+                </nav>
+            </div>
 
             <#if guide.snapshot>
                 <div class="mb-4 alert alert-warning" role="alert">
                   <h4 class="no-top-margin">Nightly release</h4>
 
-                  This guide is for the unstable nightly release, for the latest release go <a href="${links.guides}">here</a>.
+                  This guide is for the unstable nightly release, for the latest release go <a href="${links.get(guide, false)}">here</a>.
                 </div>
             </#if>
 
             <div class="mb-4">
+                <div data-nosnippet class="me-3 float-end">
+                    <select aria-label="Version" onchange="location = this.options[this.selectedIndex].value;" class="form-select">
+                        <option value="${links.get(guide, true)}" <#if guide.snapshot>selected="selected"</#if>>Nightly</option>
+                        <option value="${links.get(guide, false)}" <#if !guide.snapshot>selected="selected"</#if>>${version.version}</option>
+                    </select>
+                </div>
+
                 <h1>${guide.title}</h1>
                 <#if guide.summary??>
                     <span class="text-muted">${guide.summary}</span>

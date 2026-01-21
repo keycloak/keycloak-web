@@ -1,4 +1,6 @@
 <#import "/templates/template.ftl" as tmpl>
+<#-- @ftlvariable name="links" type="org.keycloak.webbuilder.Links" -->
+<#-- @ftlvariable name="version" type="org.keycloak.webbuilder.Versions.Version" -->
 
 <@tmpl.page current="guides" title="Guides" summary="Find the guides to help you get started, install Keycloak, and configure it and your applications to match your needs.">
 
@@ -6,6 +8,12 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
+        <div class="float-left">
+            <select data-nosnippet aria-label="Version" onchange="location = this.options[this.selectedIndex].value;" class="form-select">
+                <option value="${links.getGuides(true)}">Nightly</option>
+                <option value="${links.getGuides(false)}" selected="selected">${version.version}</option>
+            </select>
+        </div>
         <ul class="nav navbar-nav">
             <#list guides.getCategories(false) as c>
             <li>
