@@ -1,4 +1,7 @@
 <#import "/templates/template.ftl" as tmpl>
+<#-- @ftlvariable name="links" type="org.keycloak.webbuilder.Links" -->
+<#-- @ftlvariable name="version" type="org.keycloak.webbuilder.Versions.Version" -->
+<#-- @ftlvariable name="guide" type="org.keycloak.webbuilder.Guides.Guide" -->
 
 <@tmpl.page current="search" title="${guide.title}" summary="${guide.summary}" noindex=guide.snapshot>
 
@@ -27,7 +30,7 @@
             </#if>
 
             <div class="mb-4">
-                <div class="me-3 float-end">
+                <div data-nosnippet class="me-3 float-end">
                     <select aria-label="Version" onchange="location = this.options[this.selectedIndex].value;" class="form-select">
                         <option value="${links.get(guide, true)}" <#if guide.snapshot>selected="selected"</#if>>Nightly</option>
                         <option value="${links.get(guide, false)}" <#if !guide.snapshot>selected="selected"</#if>>${version.version}</option>
