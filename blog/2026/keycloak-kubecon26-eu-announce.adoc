@@ -1,0 +1,72 @@
+:title: Meet Keycloak at KubeCon EU, Amsterdam in March 2026
+:date: 2026-02-07
+:publish: true
+:author: Alexander Schwartz
+:preview: keycloak-kubecon-amsterdam-2026.png
+:summary: We will be hosting a Kiosk in the Project Pavilion, and have lots of talks at KeycloakCon and in the main track. We are eager to meet Keycloak enthusiasts, users and newcomers alike!
+
+The Keycloak project is back at https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/[KubeCon EU Amsterdam] with all highlights: Talks, our kiosk in the Project Pavilion, and this time also with *KeycloakCon*, our very-own co-located event!
+If you are new to Keycloak, or already a user, join us for this exciting event to learn and connect.
+
+== Half-day KeycloakCon packed with all-things-Keycloak
+
+https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/co-located-events/keycloakcon/[KeycloakCon] is a co-located event happening on Monday, March 22 from 09:00 to 12:30. It brings together the Keycloak community with case studies and talks featuring the latest features. Join this event for technical talks, professional growth, and networking opportunities.
+
+https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/co-located-events/keycloakcon/[Book your ticket] as part of the All-Access In-Person KubeCon + CloudNativeCon pass.
+
+
+--
+++++
+<div class="paragraph">
+</style>
+<a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/"><img src="${blogImages}/kubecon-eu-26-amsterdam.png" alt="KubeCon EU Artwork" style="width: 100%; max-width: 1270px; object-fit: cover; height: 315px; object-fit: none; object-position: 10% 20%"></a>
+</div>
+++++
+--
+
+== Community Meet & Greet at the Project Pavilion
+
+This is the place to meet people who use Keycloak, contribute to Keycloak, take our survey about new Keycloak features, and get some cool swag!
+
+https://github.com/tnorimat[Takashi Norimatsu] from Hitachi, https://github.com/ahus1[Alexander Schwartz] from IBM, https://github.com/slaskawi[Sebastian Łaskawiec] from Defense Unicorns, and other contributors will host a Keycloak kiosk at the
+https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/features-add-ons/project-engagement/#project-pavilion[Project Pavilion].
+
+*Keycloak Kiosk (P-21A) in Halls 1-5 opening hours:*
+
+* Tuesday, March 23: 15:10 - 19:00
+* Wednesday, March 24: 14:00 - 17:00
+* Thursday, March 25: 12:30 - 14:00
+
+== Technical talks about Agents, Sovereign Identity, Securing Proxies, and SPIFFEE
+
+These talks are part of the main conference. Join the speakers on-site!
+
+https://kccnceu2026.sched.com/event/2EF6o/sovereign-identities-for-your-cloud-native-architecture-with-keycloak-alexander-schwartz-ibm-sebastian-laskawiec-defense-unicorns[Sovereign Identities for Your Cloud Native Architecture With Keycloak]::
+*Alexander Schwartz, IBM & Sebastian Łaskawiec, Defense Unicorns* +
+*Wednesday March 25, 2026 11:45 - 12:15 CET*
++
+Keycloak serves as a central hub for managing human and machine identities across sovereign cloud-native architectures using OpenID Connect, SAML, and trust brokering. This talk shows how to implement strong authentication, use the latest OpenTelemetry features, and leverage Kubernetes service accounts to authenticate clients.
+
+https://kccnceu2026.sched.com/event/2CW56/signed-sealed-delivered-why-reverse-proxies-outperform-vpns-peter-oneill-teleport-boris-kurktchiev-independent[Signed, Sealed, Delivered: Why Reverse Proxies Outperform VPNs]::
+*Peter ONeill, Teleport & Boris Kurktchiev, Independent* +
+*Wednesday March 25, 2026 17:30 - 18:00 CET*
++
+Traditional VPNs often grant excessive network access once a user is "inside," whereas reverse proxies provide a more secure, granular approach by verifying identity for every specific resource. This session will use a demo featuring Envoy and Keycloak to illustrate how reverse proxies enforce precise authorization and logging for modern, cloud-native systems.
+
+https://kccnceu2026.sched.com/event/2CW5g/spiffe-meets-oauth-federated-identity-for-cloud-native-workloads-yoshiyuki-tabata-hitachi-ltd[SPIFFE Meets OAuth: Federated Identity for Cloud Native Workloads]::
+*Yoshiyuki Tabata, Hitachi, Ltd.* +
+*Thursday March 26, 2026 11:00 - 11:30 CET*
++
+This session explores federated identity patterns designed to solve the complexity of propagating authorization across multi-cluster Kubernetes environments. By combining SPIFFE JWT SVIDs with emerging OAuth Identity Chaining and assertion frameworks, the talk shows how to achieve secure, multi-hop identity propagation without relying on static credentials. Attendees will see a practical integration of Keycloak and SPIRE that enhances interoperability and security in dynamic cloud-native architectures.
+
+https://kccnceu2026.sched.com/event/2CVxt/when-an-agent-acts-on-your-behalf-who-holds-the-keys-mariusz-sabath-maia-iyer-ibm-research[When an Agent Acts on Your Behalf, Who Holds the Keys?]::
+*Mariusz Sabath & Maia Iyer, IBM  Research* +
+*Tuesday March 24, 2026 11:15 - 11:45 CET*
++
+This session addresses the security risks of anonymous AI actions by introducing an architecture that cryptographically links agent identity with delegated user identity. By combining SPIRE for workload attestation, Keycloak for managing user context, and an MCP Gateway for policy enforcement, the framework ensures every action is fully traceable. Attendees will learn how to move beyond static API keys to create a verifiable audit trail for both the executing code and the authorizing user.
+
+== See you soon!
+
+We're preparing for https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/[KubeCon EU 2026] and can't wait to connect with our community. Mark your calendars and join us.
+
+See you in Amsterdam!
