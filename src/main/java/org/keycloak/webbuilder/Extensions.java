@@ -34,7 +34,7 @@ public class Extensions {
 
     public List<Extension> getByLivenessCategory(LivenessCategory category) {
         List<Extension> result = extensionsMap.get(category);
-        result.sort(Comparator.comparing(Extension::getName));
+        result.sort(Comparator.comparing(extension -> extension.getName().toLowerCase()));
         return result;
     }
 
