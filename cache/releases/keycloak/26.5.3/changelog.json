@@ -1,0 +1,92 @@
+[ {
+  "number" : 44379,
+  "repository" : "keycloak",
+  "title" : "Node.js admin client does not refresh tokens",
+  "kind" : "bug",
+  "area" : "admin/client-js",
+  "url" : "https://github.com/keycloak/keycloak/issues/44379"
+}, {
+  "number" : 45459,
+  "repository" : "keycloak",
+  "title" : "k8s multiple restart (oomkilled) in v26.5.0-0 during startup because of RAM",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/45459"
+}, {
+  "number" : 45662,
+  "repository" : "keycloak",
+  "title" : "Increase in startup memory consumption in post 26.5 versions",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/45662"
+}, {
+  "number" : 45677,
+  "repository" : "keycloak",
+  "title" : "Hibernate Validator is enabled by default when not used",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/45677"
+}, {
+  "number" : 45708,
+  "repository" : "keycloak",
+  "title" : "Unpexted value '' in mixed-cluster-compatibility-tests",
+  "kind" : "bug",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/45708"
+}, {
+  "number" : 45745,
+  "repository" : "keycloak",
+  "title" : "mixed-cluster-compatibility-tests fail due to incorrectly masked content in 26.5 branch",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/45745"
+}, {
+  "number" : 45755,
+  "repository" : "keycloak",
+  "title" : "Broken YAML indentation in operator rolling updates doc",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/45755"
+}, {
+  "number" : 45780,
+  "repository" : "keycloak",
+  "title" : "Remove fatal log messages from `ConsistentHash`",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/45780"
+}, {
+  "number" : 45892,
+  "repository" : "keycloak",
+  "title" : "Upgrade minikube for CI tests",
+  "kind" : "enhancement",
+  "area" : "operator",
+  "url" : "https://github.com/keycloak/keycloak/issues/45892"
+}, {
+  "number" : 46144,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-1609 Disabled users can still obtain tokens via JWT Authorization Grant",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/46144"
+}, {
+  "number" : 46145,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-1529 Forged invitation JWT enables cross-organization self-registration",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/46145"
+}, {
+  "number" : 46146,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-1486 Logic Bypass in JWT Authorization Grant Allows Authentication via Disabled Identity Providers",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/46146"
+}, {
+  "number" : 46147,
+  "repository" : "keycloak",
+  "title" : "CVE-2025-14778 Incorrect ownership checks in /uma-policy/",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/46147"
+} ]
