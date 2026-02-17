@@ -8,7 +8,11 @@
 
         <p class="text-white">
             See below for a list of community maintained extensions for Keycloak.
-            To add an extension, <a href="https://github.com/keycloak/keycloak-web/issues">open an issue on GitHub</a>.
+            Note that those extensions are not vetted by the Keycloak team, and are maintained independent third parties.
+            Only install extensions from parties that your trust, as these extensions will get access to sensitive data managed in Keycloak.
+        </p>
+        <p class="text-white">
+           To add an extension, <a href="https://github.com/keycloak/keycloak-web/issues">open an issue on GitHub</a>.
         </p>
 
         <#list extensions.getLivenessCategories() as c>
