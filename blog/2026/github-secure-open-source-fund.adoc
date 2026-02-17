@@ -1,0 +1,38 @@
+:title: Keycloak tightened its security with the GitHub Secure Open Source Fund
+:date: 2026-02-17
+:publish: true
+:preview: keycloak-secure-open-source-fund.png
+:author: Alexander Schwartz
+:summary: The Keycloak project participated in Session 3 and strengthened its secure development practices.
+
+Keycloak is the open-source IAM backbone for countless applications, and provides single sign-on, strong authentication and user federation across organizations.
+
+We were part of the https://github.com/open-source/github-secure-open-source-fund[GitHub Secure Open Source Fund] Session 3, participated in the three-week training and gained insights into how other projects handle incidents and implement security best practices.
+https://github.blog/open-source/maintainers/securing-the-ai-software-supply-chain-security-results-across-67-open-source-projects/[67 projects were part of the training], so we received a lot of feedback.
+
+== What we improved
+
+For Keycloak, we strengthened several aspects of our security posture.
+My personal highlights were:
+
+Tighter control with CodeQL::
+We already had CodeQL running for Java and JavaScript sources.
+The training gave us better insights into how it is working, and we cleaned up existing findings and enabled additional queries.
+A key takeaway for us: *CodeQL can scan your GitHub Actions*!
+
+Refreshing the incident response plan::
+An incident response plan (IRP) helps you to get things right when a vulnerability is reported, you suspect a leaked credential, or some other security incident happens.
+We already had an IRP, but got feedback what other steps we wanted to add to it.
+We might even *make parts of it public* in the future to better collaborate with security researchers.
+
+Asking GitHub Copilot:: When analyzing for example CodeQL reports, it was helpful for us to *ask GitHub Copilot to provide explanations* and tips how to mitigate it.
+
+If you are a software developer or a user of Keycloak: When was the last time you reviewed your incident response plan?
+
+== Looking forward
+
+This training helped us to prepare to host our very own https://www.keycloak.org/2026/01/bugbounty-yes-we-hack[Keycloak Bug Bounty]!
+
+Thank you to those who funded the training, and presented demos and tools.
+Special thanks to the GitHub security team that delivered several trainings and acted as security buddies during the program and answered individual questions!
+
