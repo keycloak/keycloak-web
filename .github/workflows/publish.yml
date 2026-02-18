@@ -48,7 +48,7 @@ jobs:
         gh release upload website-contents contents.tar.gz --clobber
         gh release edit website-contents --draft=false
     - name: Install SSH Client 🔑
-      uses: webfactory/ssh-agent@v0.4.1
+      uses: webfactory/ssh-agent@v0.9.1
       with:
         ssh-private-key: ${{ secrets.DEPLOY_KEY }}
     - name: Deploy 🚀
