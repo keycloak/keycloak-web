@@ -1,0 +1,134 @@
+[ {
+  "number" : 44488,
+  "repository" : "keycloak",
+  "title" : "\"Update email\" AIA: \"Back to Application\" URL invokes OIDC callback with missing parameters",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/44488"
+}, {
+  "number" : 45065,
+  "repository" : "keycloak",
+  "title" : "Client deletion timeout due to large number of client roles",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/45065"
+}, {
+  "number" : 45646,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-1190 - Keycloak SAML brokering: Response delay due to unchecked NotOnOrAfter in SubjectConfirmationData",
+  "kind" : "cve",
+  "area" : "saml",
+  "url" : "https://github.com/keycloak/keycloak/issues/45646"
+}, {
+  "number" : 45649,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-0707: Keycloak Authorization Header Parsing Leading to Potential Security Control Bypass",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/45649"
+}, {
+  "number" : 45680,
+  "repository" : "keycloak",
+  "title" : "auth_mellon (SAML) authentication fails after upgrade to 26.5.1 (from 26.4.6)",
+  "kind" : "bug",
+  "area" : "saml",
+  "url" : "https://github.com/keycloak/keycloak/issues/45680"
+}, {
+  "number" : 45728,
+  "repository" : "keycloak",
+  "title" : "Information Disclosure of Client Secret on Unauthenticated Config Endpoint",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/45728"
+}, {
+  "number" : 45776,
+  "repository" : "keycloak",
+  "title" : "CVE-2025-5416 keycloak-core: Keycloak Environment Information",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/45776"
+}, {
+  "number" : 45874,
+  "repository" : "keycloak",
+  "title" : "Disabled organizations still resolve in organization‑aware login flows",
+  "kind" : "bug",
+  "area" : "organizations",
+  "url" : "https://github.com/keycloak/keycloak/issues/45874"
+}, {
+  "number" : 45966,
+  "repository" : "keycloak",
+  "title" : "KeycloakRealmImport: Realm created in DB but not visible in Admin Console until restart",
+  "kind" : "bug",
+  "area" : "operator",
+  "url" : "https://github.com/keycloak/keycloak/issues/45966"
+}, {
+  "number" : 45980,
+  "repository" : "keycloak",
+  "title" : "Keycloak cluster with 3 nodes and jdbc-ping stack fails to rejoin after temporary network partition",
+  "kind" : "bug",
+  "area" : "infinispan",
+  "url" : "https://github.com/keycloak/keycloak/issues/45980"
+}, {
+  "number" : 46090,
+  "repository" : "keycloak",
+  "title" : "New key affinity for session ids",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/46090"
+}, {
+  "number" : 46100,
+  "repository" : "keycloak",
+  "title" : "Makes Database Query on Every Login Page Load Instead of Using Cache",
+  "kind" : "bug",
+  "area" : "infinispan",
+  "url" : "https://github.com/keycloak/keycloak/issues/46100"
+}, {
+  "number" : 46150,
+  "repository" : "keycloak",
+  "title" : "Move upgrading note for SAML to 26.5.4",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/46150"
+}, {
+  "number" : 46178,
+  "repository" : "keycloak",
+  "title" : "Regression: cannot authenticate in keycloak-admin-client",
+  "kind" : "bug",
+  "area" : "adapter/javascript",
+  "url" : "https://github.com/keycloak/keycloak/issues/46178"
+}, {
+  "number" : 46290,
+  "repository" : "keycloak",
+  "title" : "Incorrect code used error, leading to \"400 / Code already used\" during Infinispan state transfers",
+  "kind" : "bug",
+  "area" : "infinispan",
+  "url" : "https://github.com/keycloak/keycloak/issues/46290"
+}, {
+  "number" : 46303,
+  "repository" : "keycloak",
+  "title" : "JWT Authorization Grant: Always getting “Token was issued too far in the past to be used now” for EntraID issued tokens",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/46303"
+}, {
+  "number" : 46312,
+  "repository" : "keycloak",
+  "title" : "io.fabric8:docker-maven-plugin:0.40.3:start failed: Cannot invoke \"com.google.gson.JsonElement.isJsonNull()\" because the return value of \"com.google.gson.JsonObject.get(String)\" is null",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/46312"
+}, {
+  "number" : 46372,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-2575 - Denial of Service due to excessive SAMLRequest decompression",
+  "kind" : "cve",
+  "area" : "saml",
+  "url" : "https://github.com/keycloak/keycloak/issues/46372"
+}, {
+  "number" : 46462,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-2733 Missing Check on Disabled Client for Docker Registry Protocol",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/46462"
+} ]
