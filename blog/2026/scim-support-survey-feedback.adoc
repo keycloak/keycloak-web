@@ -1,0 +1,70 @@
+:title: Thanks for your feedback on SCIM support in Keycloak!
+:date: 2026-02-19
+:publish: true
+:author: Keycloak Core IAM Team
+:summary: Let us keep you updated on our progress and share your feedback on SCIM support in Keycloak.
+
+First of all, we want to thank everyone who took the time to fill out our survey on SCIM support in Keycloak.
+Your feedback is invaluable to us as we work on implementing this feature. We are currently in the early stages of
+development, and we are using your feedback to guide our efforts.
+
+The survey results have shown us that there is a strong demand for SCIM support in Keycloak, and one of the most common
+use case is to use Keycloak as a SCIM service provider to manage user provisioning and deprovisioning for external applications.
+We are prioritizing this use case and driving the design and implementation of SCIM support in Keycloak to meet core set
+of requirements for this use case.
+
+In parallel, we are also exploring other use cases and requirements for SCIM support in Keycloak, such as using Keycloak
+as a SCIM client to integrate with external identity providers. As a result of this initial work, we are implementing a
+SCIM client that will allow in the future to address use cases where Keycloak can act as a SCIM client to integrate
+external SCIM service providers.
+
+That said, we have identified the initial scope for SCIM support in Keycloak targeting the 26.6 release, which will include the following capabilities:
+
+* Expose realm users via the `/Users` endpoint with support for `POST`, `PUT`, `PATCH`, `GET`, and `DELETE` operations
+* Expose realm groups via the `/Groups` endpoint with support for `POST`, `PUT`, `PATCH`, `GET`, and `DELETE` operations
+* Support for a limited set of SCIM filters for querying resource types
+* Support for pagination of results when querying resource types
+* Support for fine-grained permissions to control access to SCIM resource types and operations based on realm admin roles and FGAP
+* Support for bearer-token authorization
+
+In regard to SCIM schemas, we are implementing support for the core SCIM schemas:
+
+* `urn:ietf:params:scim:schemas:core:2.0:User`
+* `urn:ietf:params:scim:schemas:core:2.0:Group`
+* `urn:ietf:params:scim:schemas:core:2.0:EnterpriseUser`
+
+In regard to the `User` resource type, we are leveraging the User Profile feature to allow for flexible mapping of
+realm user attributes to SCIM user attributes. It should be possible to support custom extensions to the `User` core schema
+by defining custom user attributes and mapping them to SCIM user attributes via annotations in the attribute configuration
+in the user profile.
+
+In terms of schema validation, for now we are not respecting the metadata attributes in the SCIM schemas,
+such as `required`, `mutability`, and `uniqueness`. However, for the `User` resource type, you should be able to leverage
+the validations provided by the User Profile feature to enforce constraints on user attributes that are mapped
+to SCIM user attributes.
+
+In terms of integration, the survey shown that one of the key integrations we should be considering is with Microsoft Entra ID.
+Sometimes is hard to us to test capabilities of Keycloak that rely on Entra ID, and we would also appreciate any early feedback
+on nightly builds to ensure that we are on the right track in terms of meeting the requirements for this integration.
+
+Last but not least, this work is also taking into account the amazing extensions (and their capabilities) that our
+community is using today to provide SCIM support in Keycloak, such as the ones provided by:
+
+* https://github.com/Captain-P-Goldfish/scim-for-keycloak
+* https://github.com/Metatavu/keycloak-scim-server
+
+With this in mind, we are delivering a `scim` module in the Keycloak codebase that should be flexible enough to allow
+for custom extensions to be implemented on top of it.
+
+For more details on the initial scope of SCIM support in Keycloak, please refer to the following issues:
+
+* https://github.com/keycloak/keycloak/issues/45711
+* https://github.com/keycloak/keycloak/issues/46227
+
+For additional comments and feedback, please comment on:
+
+* https://github.com/keycloak/keycloak/issues/46227
+
+Follow-ups, after Keycloak 26.6, will be tracked by the following issue:
+
+* https://github.com/keycloak/keycloak/issues/46229
