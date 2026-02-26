@@ -1,5 +1,5 @@
 :title: Thanks for your feedback on SCIM support in Keycloak!
-:date: 2026-02-24
+:date: 2026-02-26
 :publish: true
 :author: Keycloak Core IAM Team
 :summary: Let us keep you updated on our progress and share your feedback on SCIM support in Keycloak.
