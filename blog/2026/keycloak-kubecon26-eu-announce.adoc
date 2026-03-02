@@ -28,7 +28,7 @@ https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/co-located-even
 
 This is the place to meet people who use Keycloak, contribute to Keycloak, take our survey about new Keycloak features, and get some cool swag!
 
-https://github.com/tnorimat[Takashi Norimatsu] from Hitachi, https://github.com/ahus1[Alexander Schwartz] from IBM, https://github.com/slaskawi[Sebastian Łaskawiec] from Defense Unicorns, and other contributors will host a Keycloak kiosk at the
+https://github.com/tnorimat[Takashi Norimatsu] and https://github.com/y-tabata[Yoshiyuki Tabata] from Hitachi, https://github.com/ahus1[Alexander Schwartz] from IBM, https://github.com/slaskawi[Sebastian Łaskawiec] from Defense Unicorns, and other contributors will host a Keycloak kiosk at the
 https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/features-add-ons/project-engagement/#project-pavilion[Project Pavilion].
 
 *Keycloak Kiosk (P-21A) in Halls 1-5 opening hours:*
@@ -37,7 +37,7 @@ https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/features-add-on
 * Wednesday, March 24: 14:00 - 17:00
 * Thursday, March 25: 12:30 - 14:00
 
-== Technical talks about Agents, Sovereign Identity, Securing Proxies, and SPIFFEE
+== Technical talks about Agents, Sovereign Identity, Securing Proxies, and SPIFFE
 
 These talks are part of the main conference. Join the speakers on-site!
 
