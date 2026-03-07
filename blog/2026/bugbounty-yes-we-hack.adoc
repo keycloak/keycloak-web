@@ -12,6 +12,10 @@ We are proud to be part of this EU sponsored initiative.
 Projects like ours fuel a lot of public and private infrastructure in the EU and worldwide.
 Thank you for choosing our project for this initiative to help us to improve and provide secure services to our users!
 
+NOTE: We received a lot of good submissions to the program. While we sort out the submissions, the program is paused.
+
+////
+
 --
 ++++
 <div class="paragraph">
@@ -30,3 +34,4 @@ Why you'll want to hunt on this program:
 We already has some very good submissions, and Keycloak improved due to this. Keep them coming!
 
 Ready to make your mark? https://yeswehack.com/programs/keycloak-bug-bounty-program[Explore the full program details]!
+////

@@ -31,8 +31,6 @@ If you are a software developer or a user of Keycloak: When was the last time yo
 
 == Looking forward
 
-This training helped us to prepare to host our very own https://www.keycloak.org/2026/01/bugbounty-yes-we-hack[Keycloak Bug Bounty]!
-
 Thank you to those who funded the training, and presented demos and tools.
 Special thanks to the GitHub security team that delivered several trainings and acted as security buddies during the program and answered individual questions!
 

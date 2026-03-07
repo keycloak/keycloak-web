@@ -41,8 +41,11 @@
     <p>We will credit reporters who informed us in private about security vulnerabilities in security advisories.</p>
 
     <h3>Bug Bounty</h3>
+    <p>There is currently no active bug bounty.</p>
+    <!--
     <p>We are currently offering a bug bounty program. It is both time- and budget restricted, and can change at any time.</p>
     <p>Security researchers who wish to participate in our dedicated vulnerability reward program should refer to <a href="https://yeswehack.com/programs/keycloak-bug-bounty-program">the Bug Bounty Program's platform</a> for submissions and details.</p>
+    -->
 
     <h2>Security Scanners</h2>
     <p>Reports from automated security scanners will <strong>not</strong> be accepted. These tools often report false positives, and can be disruptive to the project maintainers as it takes a long time to analyze these reports. If you believe you have found a security vulnerability using a security scanner, it is your responsibility to provide a clear example of the vulnerability and how it could be exploited specifically for Keycloak as outlined above.</p>
