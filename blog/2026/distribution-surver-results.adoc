@@ -1,0 +1,32 @@
+:title: Distribution Survey: The Results are In!
+:date: 2026-03-13
+:publish: true
+:author: Keycloak Cloud Native team
+
+Earlier this year, we conducted a survey to better understand how the community deploys and manages Keycloak in the real world.
+
+With over **360 respondents** (!!), the results provide a better understanding of the community's needs and wishes.
+
+== What we learned
+
+The survey results highlight a community that is deeply invested in the containerized ecosystem but is facing specific challenges in day-to-day operations.
+
+=== Key Findings:
+
+* **The Helm Charts:** A significant portion of the community explicitly requested **official Helm Charts**, particularly for managing Keycloak installation and managing deployments via tools like ArgoCD.
+* **Operator:** Adoption of the Keycloak Operator is not very high in the community, which is mainly caused by the fact that the Operator setup is hard to grasp, and do not provide the required functionality.
+* **GitOps & Configuration:** There is a strong desire for more robust GitOps flows, especially when it comes to managing Keycloak resources like Realms and Clients.
+
+The whole Keycloak team is aware of these results and consider it during planning the next priorities.
+
+*Thank you to everyone who shared their feedback in this survey!*
+
+==== More details:
+
+You can browse the detailed breakdown of the survey results in the slides below:
+
+++++
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSwThr5C2srEOAjIsqirgcFST7CwLKGZqhYJvUxhxEc04RiEnIwX9anPAtJuGP3GaDmkRzIzZUnVtan/pubembed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+++++
+
+_If you cannot see the embed above, you can access these slides here in link:https://docs.google.com/presentation/d/1eQbKpnyP51yJ-rwJyHCRB4ncu8KPWusFYBORnQJaj30/edit?usp=sharing[Keycloak Distribution Survey Results]._
