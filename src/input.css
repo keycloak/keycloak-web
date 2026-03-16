@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Scroll reveal animations */
+.reveal-hidden {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Custom components layer - for reusable component styles */
+@layer components {
+  /* Buttons */
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-hover text-white font-semibold py-2 px-4 rounded-xl transition-colors duration-200;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded-xl transition-colors duration-200;
+  }
+
+  /* Cards */
+  .card {
+    @apply bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200;
+  }
+
+  /* Links */
+  .link {
+    @apply text-primary hover:text-primary-hover transition-colors duration-200 no-underline;
+  }
+
+  /* Navbar */
+  .nav-link {
+    @apply text-gray-600 hover:text-gray-900 transition-colors duration-200 px-3 py-2;
+  }
+
+  .nav-link-active {
+    @apply text-gray-900 font-semibold;
+  }
+
+  /* Dark navbar variant */
+  .nav-link-dark {
+    @apply text-gray-300 hover:text-white transition-colors duration-200 px-3 py-2;
+  }
+
+  .nav-link-dark-active {
+    @apply text-white font-semibold;
+  }
+}
+
+/* Import existing Keycloak styles for compatibility */
+/* You can gradually migrate these to Tailwind */

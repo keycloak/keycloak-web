@@ -124,6 +124,16 @@
                             <arguments>install</arguments>
                         </configuration>
                     </execution>
+                    <execution>
+                        <id>build tailwind</id>
+                        <goals>
+                            <goal>npm</goal>
+                        </goals>
+                        <phase>generate-resources</phase>
+                        <configuration>
+                            <arguments>run build:css</arguments>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
             <plugin>
@@ -142,8 +152,6 @@
                                 <resource>
                                     <directory>${basedir}/node_modules</directory>
                                     <includes>
-                                        <include>bootstrap/dist/css/bootstrap.min.css</include>
-                                        <include>bootstrap/dist/js/bootstrap.min.js</include>
                                         <include>@fortawesome/fontawesome-free/css/fontawesome.min.css</include>
                                         <include>@fortawesome/fontawesome-free/css/solid.min.css</include>
                                         <include>@fortawesome/fontawesome-free/css/brands.min.css</include>
@@ -151,6 +159,7 @@
                                         <include>@fortawesome/fontawesome-free/webfonts/*</include>
                                         <include>tocbot/dist/tocbot.css</include>
                                         <include>tocbot/dist/tocbot.min.js</include>
+                                        <include>alpinejs/dist/cdn.min.js</include>
                                     </includes>
                                 </resource>
                             </resources>
