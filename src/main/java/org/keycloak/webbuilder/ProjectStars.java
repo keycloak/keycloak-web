@@ -26,7 +26,7 @@ public class ProjectStars {
     public ProjectStars() {
     }
 
-    private static final Pattern ASPECT = Pattern.compile("<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"([0-9]*)\" height=\"([0-9]*)\">");
+    private static final Pattern ASPECT = Pattern.compile("<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"([0-9]*)\" height=\"([0-9]*)\"");
 
     private String retrieveAspectRatio(String logoLarge) {
         Matcher matcher = ASPECT.matcher(logoLarge);
@@ -34,7 +34,7 @@ public class ProjectStars {
             return matcher.group(1) + "/" + matcher.group(2);
         }
         else {
-            return null;
+            return "128/20";
         }
     }
 
@@ -44,7 +44,7 @@ public class ProjectStars {
 
     public void init(Context context) {
         try {
-            String logoLarge = fetch(new URL("https://img.shields.io/github/stars/keycloak/keycloak?label=GitHub%20Stars"));
+            String logoLarge = fetch(new URL("https://img.shields.io/github/stars/keycloak/keycloak?label=GitHub%09Stars"));
             FileUtils.write(new File(context.getTargetDir(), "resources/images/stars-large.svg"), logoLarge, StandardCharsets.UTF_8);
             aspectRatioLarge = retrieveAspectRatio(logoLarge);
             String logoSmall = fetch(new URL("https://img.shields.io/github/stars/keycloak/keycloak?label="));
