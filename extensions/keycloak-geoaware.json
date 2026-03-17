@@ -1,0 +1,5 @@
+{
+  "name": "Keycloak GeoAware",
+  "description": "Keycloak-GeoAware is an advanced feature extension for Keycloak that integrates geolocation and device monitoring into the authentication process. This extension utilizes IP-based location and device information to define custom access policies that provide more granular control and additional login security.",
+  "website": "https://github.com/B2-Code/Keycloak-GeoAware"
+}
