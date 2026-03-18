@@ -17,7 +17,7 @@ The survey results highlight a community that is deeply invested in the containe
 * **Operator:** Adoption of the Keycloak Operator is not very high in the community, which is mainly caused by the fact that the Operator setup is hard to grasp, and do not provide the required functionality.
 * **GitOps & Configuration:** There is a strong desire for more robust GitOps flows, especially when it comes to managing Keycloak resources like Realms and Clients.
 
-The whole Keycloak team is aware of these results and consider it during planning the next priorities.
+The whole Keycloak team is aware of these results and is discussing the next steps.
 
 *Thank you to everyone who shared their feedback in this survey!*
 
