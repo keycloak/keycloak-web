@@ -1,5 +1,5 @@
 :title: Distribution Survey: The Results are In!
-:date: 2026-03-13
+:date: 2026-03-18
 :publish: true
 :author: Keycloak Cloud Native team
 
@@ -26,7 +26,5 @@ The whole Keycloak team is aware of these results and consider it during plannin
 You can browse the detailed breakdown of the survey results in the slides below:
 
 ++++
-<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSwThr5C2srEOAjIsqirgcFST7CwLKGZqhYJvUxhxEc04RiEnIwX9anPAtJuGP3GaDmkRzIzZUnVtan/pubembed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+<iframe src="${blogImages}/distribution-survey-results.pdf" width="960" height="590" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 ++++
-
-_If you cannot see the embed above, you can access these slides here in link:https://docs.google.com/presentation/d/1eQbKpnyP51yJ-rwJyHCRB4ncu8KPWusFYBORnQJaj30/edit?usp=sharing[Keycloak Distribution Survey Results]._
