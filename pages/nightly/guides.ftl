@@ -9,18 +9,19 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
         <div class="float-left">
-            <select data-nosnippet aria-label="Version" onchange="location = this.options[this.selectedIndex].value;" class="form-select">
+            <select data-nosnippet aria-label="Version" onchange="location = this.options[this.selectedIndex].value + window.location.search;" class="form-select">
                 <option value="${links.getGuides(true)}" selected="selected">Nightly</option>
                 <option value="${links.getGuides(false)}">${version.version}</option>
             </select>
         </div>
-        <ul class="nav navbar-nav">
-            <#list guides.getCategories(true) as c>
-            <li>
-                <a class="nav-link" href="#${c.id}">${c.title}</a>
-            </li>
+        <div>
+            <select id="guide-category-search" aria-label="Category" class="form-select">
+            <option value="">Select Category:</option>
+            <#list guides.getCategories(false) as c>
+                <option value="${c.id}">${c.title}</option>
             </#list>
-        </ul>
+            </select>
+        </div>
         <div class="float-right">
             <form>
                 <input id="guide-search" class="form-control" type="text" placeholder="Search" aria-label="Search">
