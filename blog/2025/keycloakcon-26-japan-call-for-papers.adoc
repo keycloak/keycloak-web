@@ -23,7 +23,7 @@ https://events.linuxfoundation.org/kubecon-cloudnativecon-japan/co-located-event
 
 KeycloakCon is a co-located event at KubeCon + CloudNativeCon Japan and requires a separate https://events.linuxfoundation.org/kubecon-cloudnativecon-japan/register/[registration] in addition to a KubeCon + CloudNativeCon Japan ticket.
 
-Accepted speakers usually receive a full access pass to KubeCon + CloudNativeCon Japan and the co-located event. At the time of writing, we are about to confirm this with the CNCF.
+Accepted speakers receive a full access pass to KubeCon + CloudNativeCon Japan and the co-located event.
 
 == Related Events
 
