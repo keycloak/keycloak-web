@@ -33,8 +33,8 @@
     <p>If you are unable to regularly upgrade Keycloak, we encourage you to consider <a href="https://access.redhat.com/products/red-hat-build-of-keycloak/">Red Hat build of Keycloak</a>, which offers <a href="https://access.redhat.com/support/policy/updates/red_hat_build_of_keycloak_notes">long term support</a> of specific versions of Keycloak.</p>
 
     <h3>Experimental Features</h3>
-    <p>While we welcome bug repots against features that are not released yet or marked experimental, the security team usually does not issue CVEs for those items.</p>
-    <p>Instead, we will treat those items as regular bugs publicly. If in doubt, report your finding via email to the security team first to clarify if it is related to an experimental feature.</p>
+    <p>While we welcome bug reports against features that are not released yet, the security team usually does not issue CVEs for experimental features. The preview state marks that the feature is mature enough to start normal security handling.</p>
+    <p>Instead, those issues will be managed as regular bugs publicly. If in doubt, report your finding via email to the security team first to clarify if it is related to an experimental feature. </p>
 
     <h3>Coordinated Vulnerability Disclosure</h3>
     <p>To report a security vulnerability in the Keycloak codebase, send an email to <a href="mailto:keycloak-security@googlegroups.com">keycloak-security@googlegroups.com</a>. Please test against the <strong>latest version</strong> of Keycloak, include the affected version in your report, provide detailed instructions on how to reproduce the issue with a <a href="https://stackoverflow.com/help/minimal-reproducible-example">minimal and reproducible example</a>, and include your contact information for acknowledgements. If you are reporting known CVEs related to third-party libraries used in Keycloak, please <a href="https://github.com/keycloak/keycloak/issues/new/choose">create a new GitHub issue</a>.</p>
