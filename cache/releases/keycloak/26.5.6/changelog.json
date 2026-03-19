@@ -1,0 +1,141 @@
+[ {
+  "number" : 43811,
+  "repository" : "keycloak",
+  "title" : "Mask certain HTTP headers in the HTTP access log",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/43811"
+}, {
+  "number" : 45645,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-1180 - Blind Server-Side Request Forgery (SSRF) in Keycloak OIDC Dynamic Client Registration via jwks_uri",
+  "kind" : "cve",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/45645"
+}, {
+  "number" : 45647,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-1035 - Keycloak Refresh Token Reuse Bypass via TOCTOU Race Condition",
+  "kind" : "cve",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/45647"
+}, {
+  "number" : 45650,
+  "repository" : "keycloak",
+  "title" : "CVE-2025-14777 - Keycloak IDOR in realm client creating/deleting",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/45650"
+}, {
+  "number" : 45653,
+  "repository" : "keycloak",
+  "title" : "CVE-2025-14082 keycloak-server: Keycloak Admin REST API: Improper Access Control leads to sensitive role metadata information disclosure",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/45653"
+}, {
+  "number" : 45889,
+  "repository" : "keycloak",
+  "title" : "Federated user disabled when external DB unavailable, never re-enabled",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/45889"
+}, {
+  "number" : 46239,
+  "repository" : "keycloak",
+  "title" : "AUTH_SESSION_ID cookie reuse causes cross-user session contamination on re-authentication",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/46239"
+}, {
+  "number" : 46296,
+  "repository" : "keycloak",
+  "title" : "UsersResource.search briefRepresentation started to return user attributes",
+  "kind" : "bug",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/46296"
+}, {
+  "number" : 46379,
+  "repository" : "keycloak",
+  "title" : "Unexpected error when logging out with offline session and external IDP",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/46379"
+}, {
+  "number" : 46459,
+  "repository" : "keycloak",
+  "title" : "Operator-built DB config: targetServerType=primary not applied / connection validation not working after master-replica failover (26.5.0)",
+  "kind" : "bug",
+  "area" : "operator",
+  "url" : "https://github.com/keycloak/keycloak/issues/46459"
+}, {
+  "number" : 46588,
+  "repository" : "keycloak",
+  "title" : "Partial LDAP sync duration does not follow the defined value in user federation",
+  "kind" : "bug",
+  "area" : "ldap",
+  "url" : "https://github.com/keycloak/keycloak/issues/46588"
+}, {
+  "number" : 46605,
+  "repository" : "keycloak",
+  "title" : "26.5.4 startup regression with many realms: RealmCacheSession.prepareCachedRealm() scans master admin role composites per realm (O(N²))",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/46605"
+}, {
+  "number" : 46656,
+  "repository" : "keycloak",
+  "title" : "Em-Hyphens in SPI options on cache configuration page",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/46656"
+}, {
+  "number" : 46663,
+  "repository" : "keycloak",
+  "title" : " JGroups bind port configuration ignored when --cache-embedded-network-bind-port set",
+  "kind" : "bug",
+  "area" : "infinispan",
+  "url" : "https://github.com/keycloak/keycloak/issues/46663"
+}, {
+  "number" : 46669,
+  "repository" : "keycloak",
+  "title" : "SPIFFE Client assertion throws a NullPointerException if no client is found",
+  "kind" : "bug",
+  "area" : "token-exchange",
+  "url" : "https://github.com/keycloak/keycloak/issues/46669"
+}, {
+  "number" : 46719,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-3121 - Keycloak: Privilege escalation via manage-clients permission",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/46719"
+}, {
+  "number" : 46723,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-3190 - Information Disclosure via improper role enforcement in UMA 2.0 Protection API",
+  "kind" : "cve",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/46723"
+}, {
+  "number" : 46922,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-3911 Keycloak: Information disclosure of disabled user attributes via administrative endpoint",
+  "kind" : "cve",
+  "area" : "user-profile",
+  "url" : "https://github.com/keycloak/keycloak/issues/46922"
+}, {
+  "number" : 47062,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-2366 Authorization Bypass: Unprivileged tokens can enumerate user organization memberships",
+  "kind" : "cve",
+  "area" : "organizations",
+  "url" : "https://github.com/keycloak/keycloak/issues/47062"
+}, {
+  "number" : 47079,
+  "repository" : "keycloak",
+  "title" : "Do not allow fetching organizations of a member if not a member of the current organization",
+  "kind" : "bug",
+  "area" : "organizations",
+  "url" : "https://github.com/keycloak/keycloak/issues/47079"
+} ]
