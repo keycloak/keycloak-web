@@ -178,6 +178,35 @@ a:hover {
     padding: 1rem 0.5rem 0;
 }
 
+/* Guides navbar layout */
+.guides-navbar-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 1rem;
+}
+
+#guide-version-select {
+    min-width: 100px;
+}
+
+@media (min-width: 992px) {
+    .guides-navbar-content {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .guides-navbar-menu {
+        margin-right: auto;
+    }
+    
+    /* Guides navbar font size can be lower as in the Bootstrap examples for secondary navbar */
+    .guides-navbar-menu .nav-link,#guide-search,#guide-version-select {
+        font-size: .9rem;
+    }
+}
+
 table.options {
     width: 100%;
 }
