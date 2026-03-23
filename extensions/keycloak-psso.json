@@ -1,0 +1,5 @@
+{
+  "name": "Keycloak Platform SSO",
+  "description": "Allows device and user registration of Apple's Platform Single Sign-on for macOS computers.",
+  "website": "https://github.com/unioslo/keycloak-psso-extension"
+}
