@@ -27,7 +27,7 @@
 
         <version.frontend-maven-plugin>1.15.0</version.frontend-maven-plugin>
         <version.node>v22.18.0</version.node>
-        <version.npm>10.14.0</version.npm>
+        <version.pnpm>10.14.0</version.pnpm>
         <version.maven-resources-plugin>3.2.0</version.maven-resources-plugin>
         <version.maven-compiler-plugin>3.8.1</version.maven-compiler-plugin>
         <version.maven-jar-plugin>3.1.2</version.maven-jar-plugin>
@@ -105,19 +105,19 @@
                 <version>${version.frontend-maven-plugin}</version>
                 <executions>
                     <execution>
-                        <id>install node and npm</id>
+                        <id>install node and pnpm</id>
                         <goals>
-                            <goal>install-node-and-npm</goal>
+                            <goal>install-node-and-pnpm</goal>
                         </goals>
                         <configuration>
                             <nodeVersion>${version.node}</nodeVersion>
-                            <npmVersion>${version.npm}</npmVersion>
+                            <pnpmVersion>${version.pnpm}</pnpmVersion>
                         </configuration>
                     </execution>
                     <execution>
-                        <id>npm install</id>
+                        <id>pnpm install</id>
                         <goals>
-                            <goal>npm</goal>
+                            <goal>pnpm</goal>
                         </goals>
                         <phase>generate-resources</phase>
                         <configuration>
@@ -127,7 +127,7 @@
                     <execution>
                         <id>build tailwind css</id>
                         <goals>
-                            <goal>npm</goal>
+                            <goal>pnpm</goal>
                         </goals>
                         <phase>generate-resources</phase>
                         <configuration>

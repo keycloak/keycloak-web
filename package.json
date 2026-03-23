@@ -7,7 +7,7 @@
   },
   "scripts": {
     "serve": "serve target/web -p 5000 --cors",
-    "build:css": "npx @tailwindcss/cli -i ./resources/css/tailwind.css -o ./target/web/resources/css/styles.css"
+    "build:css": "pnpm exec tailwindcss -i ./resources/css/tailwind.css -o ./target/web/resources/css/styles.css"
   },
   "devDependencies": {
     "serve": "^14.2.4",
