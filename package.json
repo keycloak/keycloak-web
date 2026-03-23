@@ -1,13 +1,17 @@
 {
+  "type": "module",
   "dependencies": {
     "bootstrap": "5.1.x",
     "@fortawesome/fontawesome-free": "5.15.4",
     "tocbot": "4.18.0"
   },
   "scripts": {
-    "serve": "http-server target/web -c-1 -p 5000 -a 127.0.0.1 --cors"
+    "serve": "http-server target/web -c-1 -p 5000 -a 127.0.0.1 --cors",
+    "build:css": "npx @tailwindcss/cli -i ./resources/css/tailwind.css -o ./target/web/resources/css/styles.css"
   },
   "devDependencies": {
-    "http-server": "^14.1.1"
+    "http-server": "^14.1.1",
+    "tailwindcss": "^4.0.0",
+    "@tailwindcss/cli": "^4.0.0"
   }
 }

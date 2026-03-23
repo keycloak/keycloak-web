@@ -3,6 +3,21 @@
 <html lang="en" prefix="og: https://ogp.me/ns#">
 <head>
 <#compress>
+    <script>
+        (function() {
+            var theme = localStorage.getItem('theme');
+            var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            // If no explicit preference saved, follow system
+            if (!theme) {
+                if (prefersDark) {
+                    document.documentElement.classList.add('dark');
+                }
+            } else if (theme === 'dark') {
+                document.documentElement.classList.add('dark');
+            }
+            // theme === 'light' means user explicitly chose light, so don't add dark class
+        })();
+    </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0J2P9316N6"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -30,8 +45,13 @@
 
     <#if noindex?? && noindex><meta name="robots" content="noindex"></#if>
 
-    <#if !nocsp??><meta http-equiv='Content-Security-Policy' content="default-src 'none'; style-src 'self'; img-src 'self' https://www.google-analytics.com; font-src 'self'; script-src 'self' https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com; base-uri 'none'; form-action 'none';"></#if>
+    <#if !nocsp??><meta http-equiv='Content-Security-Policy' content="default-src 'none'; style-src 'self' https://fonts.googleapis.com; img-src 'self' https://www.google-analytics.com https://img.shields.io; font-src 'self' https://fonts.gstatic.com; script-src 'self' https://www.google-analytics.com https://www.googletagmanager.com; connect-src 'self' https://www.google-analytics.com; base-uri 'none'; form-action 'none';"></#if>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link href="${links.getResource('css/styles.css')}" rel="stylesheet">
     <link href="${links.getResource('bootstrap/dist/css/bootstrap.min.css')}" rel="stylesheet">
     <link href="${links.getResource('@fortawesome/fontawesome-free/css/all.min.css')}" rel="stylesheet">
     <link href="${links.getResource('css/keycloak.css')}" rel="stylesheet">
@@ -51,51 +71,119 @@
     </#if>
 </#compress>
 </head>
-<body>
+<body class="bg-background text-on-surface font-body antialiased">
 
-<header class="navbar navbar-expand-md bg-light shadow-sm">
-<nav class="container-xxl flex-wrap flex-md-no-wrap navbar-light" data-nosnippet>
-    <a class="navbar-brand me-3 me-md-4 me-lg-5" href="${links.home}">
-        <img class="img-fluid" src="${links.getResource('images/logo.svg')}" width="240" alt="Keycloak"/>
+<header class="fixed top-0 w-full z-50 glass border-b border-outline-variant/10">
+<nav class="flex justify-between items-center max-w-7xl mx-auto px-6 md:px-8 h-20" data-nosnippet>
+    <a class="text-2xl font-extrabold tracking-tighter text-primary font-headline" href="${links.home}">
+        Keycloak
     </a>
-    <a class="nav-link d-none d-sm-block d-md-none d-lg-block" href="https://github.com/keycloak/keycloak"><img src="https://img.shields.io/github/stars/keycloak/keycloak?label=GitHub%20Stars" style="height: 25px" alt="GitHub stars"/></a>
-    <a class="nav-link d-block d-sm-none d-md-block d-lg-none" href="https://github.com/keycloak/keycloak"><img src="https://img.shields.io/github/stars/keycloak/keycloak?label=" style="height: 25px" alt="GitHub stars"/></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="fa fa-bars fa-lg px-1 py-2"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav flex-row flex-wrap bd-navbar-nav pt-2 py-md-0">
-        <li class="nav-item col-6 col-md-auto">
-          <a class="nav-link <#if current = 'guides'>active</#if>" href="${links.guides}">Guides</a>
-        </li>
-        <li class="nav-item col-6 col-md-auto">
-          <a class="nav-link <#if current = 'docs'>active</#if>" href="${links.docs}">Docs</a>
-        </li>
-        <li class="nav-item col-6 col-md-auto">
-          <a class="nav-link <#if current = 'downloads'>active</#if>" href="${links.downloads}">Downloads</a>
-        </li>
-        <li class="nav-item col-6 col-md-auto">
-          <a class="nav-link <#if current = 'community'>active</#if>" href="${links.community}">Community</a>
-        </li>
-        <li class="nav-item col-6 col-md-auto">
-          <a class="nav-link <#if current = 'blog'>active</#if>" href="${links.blog}">Blog</a>
-        </li>
-      </ul>
+    <div class="hidden md:flex items-center gap-8 font-headline font-bold tracking-tight text-sm">
+        <a class="text-on-surface-variant hover:text-primary transition-colors <#if current = 'guides'>text-primary</#if>" href="${links.guides}">Guides</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors <#if current = 'docs'>text-primary</#if>" href="${links.docs}">Docs</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors <#if current = 'downloads'>text-primary</#if>" href="${links.downloads}">Downloads</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors <#if current = 'community'>text-primary</#if>" href="${links.community}">Community</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors <#if current = 'blog'>text-primary</#if>" href="${links.blog}">Blog</a>
+    </div>
+    <div class="flex items-center gap-4">
+        <a href="https://github.com/keycloak/keycloak" class="hidden sm:flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors">
+            <i class="fab fa-github text-xl"></i>
+            <span class="text-sm font-bold font-headline">GitHub</span>
+        </a>
+        <button id="theme-toggle" class="p-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-all active:scale-95 border border-outline-variant/10" aria-label="Toggle dark mode">
+            <i class="fas fa-sun icon-sun"></i>
+            <i class="fas fa-moon icon-moon"></i>
+        </button>
+        <a class="bg-primary text-on-primary px-5 py-2.5 rounded-xl font-bold text-sm hover:bg-primary-container transition-all" href="${links.guides}">Get Started</a>
+        <button class="navbar-toggler md:hidden p-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-all" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa fa-bars fa-lg"></i>
+        </button>
     </div>
 </nav>
+<div class="collapse md:hidden bg-surface-container-lowest/95 backdrop-blur-lg" id="navbarCollapse">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-2 font-headline font-bold text-sm">
+        <a class="py-2 text-on-surface-variant hover:text-primary transition-colors <#if current = 'guides'>text-primary</#if>" href="${links.guides}">Guides</a>
+        <a class="py-2 text-on-surface-variant hover:text-primary transition-colors <#if current = 'docs'>text-primary</#if>" href="${links.docs}">Docs</a>
+        <a class="py-2 text-on-surface-variant hover:text-primary transition-colors <#if current = 'downloads'>text-primary</#if>" href="${links.downloads}">Downloads</a>
+        <a class="py-2 text-on-surface-variant hover:text-primary transition-colors <#if current = 'community'>text-primary</#if>" href="${links.community}">Community</a>
+        <a class="py-2 text-on-surface-variant hover:text-primary transition-colors <#if current = 'blog'>text-primary</#if>" href="${links.blog}">Blog</a>
+    </div>
+</div>
 </header>
 
+<div class="pt-20">
 <#nested>
-
-<div class="container mt-5" data-nosnippet>
-    <footer class="py-3 my-4 border-top">
-        <p class="text-center text-muted">Keycloak is a Cloud Native Computing Foundation incubation project</p>
-        <div class="text-center">
-            <img alt="Cloud Native Computing Foundation" src="${links.getResource('images/cncf_logo.png')}"/>
-        </div>
-        <p class="mt-4 text-center small text-muted">&copy; Keycloak Authors 2025. &copy; 2025 The Linux Foundation. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage">Trademark Usage page</a>.</p>
-    </footer>
 </div>
+
+<footer class="w-full bg-[#0a0a0a] py-20" data-nosnippet>
+    <div class="max-w-7xl mx-auto px-6 md:px-8 flex flex-col gap-12">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-12">
+            <div class="flex flex-col gap-4 items-center md:items-start">
+                <div class="text-2xl font-extrabold text-white font-headline tracking-tighter">Keycloak</div>
+                <p class="text-white/60 text-sm">A Cloud Native Computing Foundation incubation project</p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-x-10 gap-y-6 font-headline text-xs font-bold uppercase tracking-widest">
+                <a class="text-white/50 hover:text-primary-fixed transition-colors duration-300 flex items-center gap-2" href="https://twitter.com/keycloak">
+                    <i class="fab fa-twitter"></i> Twitter
+                </a>
+                <a class="text-white/50 hover:text-primary-fixed transition-colors duration-300 flex items-center gap-2" href="https://github.com/keycloak/keycloak">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a class="text-white/50 hover:text-primary-fixed transition-colors duration-300 flex items-center gap-2" href="https://www.keycloak.org/community">
+                    <i class="fas fa-comments"></i> Community
+                </a>
+                <a class="text-white/50 hover:text-primary-fixed transition-colors duration-300 flex items-center gap-2" href="https://www.keycloak.org/security">
+                    <i class="fas fa-shield-alt"></i> Security
+                </a>
+            </div>
+        </div>
+        <div class="flex flex-col items-center gap-6 pt-8 border-t border-white/10">
+            <img alt="Cloud Native Computing Foundation" src="${links.getResource('images/cncf-white-logo.png')}" class="h-12"/>
+            <p class="text-center text-white/40 text-xs max-w-3xl">&copy; Keycloak Authors 2025. &copy; 2025 The Linux Foundation. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage" class="text-white/60 hover:text-primary-fixed transition-colors">Trademark Usage page</a>.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    (function() {
+        var toggle = document.getElementById('theme-toggle');
+        var html = document.documentElement;
+        
+        // Toggle theme on click
+        toggle.addEventListener('click', function() {
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+        
+        // Double-click to reset to system preference
+        toggle.addEventListener('dblclick', function(e) {
+            e.preventDefault();
+            localStorage.removeItem('theme');
+            var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (prefersDark) {
+                html.classList.add('dark');
+            } else {
+                html.classList.remove('dark');
+            }
+        });
+        
+        // Listen for system preference changes (when no explicit preference set)
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+            if (!localStorage.getItem('theme')) {
+                if (e.matches) {
+                    html.classList.add('dark');
+                } else {
+                    html.classList.remove('dark');
+                }
+            }
+        });
+    })();
+</script>
 
 </body>
 </html>

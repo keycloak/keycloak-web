@@ -1,0 +1,472 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap");
+@import "tailwindcss";
+@config "../../tailwind.config.js";
+
+@theme {
+  --font-headline: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* Design System Colors - Light (Default) */
+  --color-primary: #006194;
+  --color-primary-container: #007bba;
+  --color-on-primary: #ffffff;
+  --color-background: #f7f9ff;
+  --color-surface: #f7f9ff;
+  --color-surface-container-low: #f1f4fa;
+  --color-surface-container: #ebeef4;
+  --color-surface-container-high: #e5e8ee;
+  --color-surface-container-highest: #dfe3e9;
+  --color-surface-container-lowest: #ffffff;
+  --color-on-surface: #181c20;
+  --color-on-surface-variant: #3f4850;
+  --color-outline-variant: #bfc7d2;
+  --color-primary-fixed: #cde5ff;
+  --color-on-primary-fixed: #001d32;
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+  --color-tertiary: #894d00;
+  --color-secondary-container: #dce2f9;
+}
+
+/* Explicit class-based dark mode overrides */
+.dark {
+  --color-primary: #90ccff;
+  --color-primary-container: #004a75;
+  --color-on-primary: #003351;
+  --color-background: #0e1419;
+  --color-surface: #0e1419;
+  --color-surface-container-low: #1a2026;
+  --color-surface-container: #222a31;
+  --color-surface-container-high: #2d353c;
+  --color-surface-container-highest: #384047;
+  --color-surface-container-lowest: #0a0f14;
+  --color-on-surface: #e1e2e8;
+  --color-on-surface-variant: #c1c7ce;
+  --color-outline-variant: #43474e;
+  --color-primary-fixed: #cde5ff;
+  --color-on-primary-fixed: #001d32;
+  --color-error: #ffb4ab;
+  --color-tertiary: #ffb951;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-on-surface font-body antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-headline;
+  }
+}
+
+/* Glass effect for floating elements */
+.glass {
+  @apply bg-surface-container-lowest/85 backdrop-blur-[20px];
+}
+
+/* No-line boundary utility */
+.no-line-boundary {
+  @apply border-none;
+}
+
+/* Secure Chip component */
+.secure-chip {
+  @apply inline-flex items-center gap-2 px-4 py-1.5 bg-primary-fixed text-on-primary-fixed rounded-full text-xs font-bold tracking-wider uppercase;
+}
+
+/* Primary button */
+.btn-kc-primary {
+  @apply bg-primary text-on-primary px-10 py-4 rounded-2xl font-bold text-lg hover:bg-primary-container transition-all duration-200;
+}
+
+/* Secondary button */
+.btn-kc-secondary {
+  @apply bg-surface-container text-on-surface px-10 py-4 rounded-2xl font-bold text-lg hover:bg-surface-container-highest transition-all duration-200;
+}
+
+/* Feature card */
+.feature-card {
+  @apply bg-surface-container p-12 rounded-3xl transition-all duration-200 hover:bg-surface-container-high hover:-translate-y-2;
+}
+
+/* Icon container */
+.icon-container {
+  @apply w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary;
+}
+
+/* Editorial headline styles */
+.headline-display {
+  @apply text-6xl lg:text-8xl font-extrabold tracking-tighter text-on-surface leading-[0.85] font-headline;
+}
+
+.headline-section {
+  @apply font-headline text-4xl md:text-5xl font-bold text-on-surface tracking-tight;
+}
+
+/* Animated background gradient */
+.bg-gradient-animated {
+  background: radial-gradient(
+    ellipse 80% 50% at 50% -20%,
+    rgba(0, 97, 148, 0.15),
+    transparent
+  );
+}
+
+/* Grid pattern overlay */
+.grid-pattern {
+  background-image:
+    linear-gradient(to right, #80808012 1px, transparent 1px),
+    linear-gradient(to bottom, #80808012 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(
+    ellipse 60% 50% at 50% 0%,
+    #000 70%,
+    transparent 100%
+  );
+}
+
+/* Dark mode icon toggle - use !important to override Font Awesome defaults */
+.icon-sun {
+  display: none !important;
+}
+.icon-moon {
+  display: inline-block !important;
+}
+.dark .icon-sun {
+  display: inline-block !important;
+}
+.dark .icon-moon {
+  display: none !important;
+}
+
+/* Fix button text color - ensure white text on primary buttons */
+.text-on-primary {
+  color: #ffffff !important;
+}
+
+.bg-primary {
+  background-color: #006194 !important;
+}
+
+.dark .bg-primary {
+  background-color: #90ccff !important;
+}
+
+.dark .text-on-primary {
+  color: #003351 !important;
+}
+
+/* Dark mode text color fixes */
+.dark .text-on-surface {
+  color: #e1e2e8 !important;
+}
+
+.dark .text-on-surface-variant {
+  color: #c1c7ce !important;
+}
+
+.dark .text-primary {
+  color: #90ccff !important;
+}
+
+/* Feature card text in dark mode */
+.dark .feature-card h3,
+.dark .feature-card .font-bold {
+  color: #e1e2e8 !important;
+}
+
+.dark .feature-card p {
+  color: #c1c7ce !important;
+}
+
+/* Headlines in dark mode */
+.dark .headline-display,
+.dark .headline-section,
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4 {
+  color: #e1e2e8;
+}
+
+.dark .headline-display .text-primary,
+.dark .headline-section .text-primary {
+  color: #90ccff !important;
+}
+
+/* Dark mode overrides for Bootstrap components */
+.dark .bg-light {
+  background-color: #0f1318 !important;
+}
+
+.dark .bg-dark {
+  background-color: #080b0e !important;
+}
+
+.dark .card {
+  background-color: #151a1f !important;
+  border-color: #2a3038 !important;
+}
+
+.dark .card-title,
+.dark .card-text,
+.dark .card-body {
+  color: #e1e2e8 !important;
+}
+
+.dark .text-muted {
+  color: #9ca3af !important;
+}
+
+.dark .link-dark {
+  color: #90ccff !important;
+}
+
+.dark .badge.bg-light {
+  background-color: #1a1f25 !important;
+  color: #c1c7ce !important;
+}
+
+.dark .form-control {
+  background-color: #0c1014 !important;
+  border-color: #2a3038 !important;
+  color: #e1e2e8 !important;
+}
+
+.dark .form-control::placeholder {
+  color: #9ca3af !important;
+}
+
+.dark .guide-category h2 {
+  color: #e1e2e8 !important;
+}
+
+.dark .jumbotron.bg-light {
+  background-color: #1a2026 !important;
+}
+
+/* Hide background image in dark mode for better contrast */
+.dark .kc-bg-triangles {
+  background-image: none !important;
+}
+
+/* Dark mode for other common Bootstrap elements */
+.dark .border-top {
+  border-color: #2a3038 !important;
+}
+
+.dark .nav-link {
+  color: #c1c7ce !important;
+}
+
+.dark .nav-link:hover,
+.dark .nav-link.active {
+  color: #90ccff !important;
+}
+
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6 {
+  color: #e1e2e8 !important;
+}
+
+.dark p {
+  color: #c1c7ce !important;
+}
+
+.dark a {
+  color: #90ccff !important;
+}
+
+.dark a:hover {
+  color: #cde5ff !important;
+}
+
+/* Dark mode for blog and article pages */
+.dark .container {
+  color: #eee;
+}
+
+.dark .kc-article {
+  color: #c1c7ce !important;
+}
+
+.dark .kc-article h1,
+.dark .kc-article h2,
+.dark .kc-article h3,
+.dark .kc-article h4,
+.dark .kc-article h5 {
+  color: #e1e2e8 !important;
+}
+
+.dark .kc-article p,
+.dark .kc-article li,
+.dark .kc-article span {
+  color: #c1c7ce !important;
+}
+
+.dark .kc-article code {
+  background-color: #1a1f25 !important;
+  color: #e1e2e8 !important;
+}
+
+.dark .kc-article pre {
+  background-color: #0c1014 !important;
+  border-color: #2a3038 !important;
+  color: #e1e2e8 !important;
+}
+
+.dark .kc-article img {
+  border-color: #43474e !important;
+}
+
+.dark .card-footer {
+  background-color: #0c1014 !important;
+  border-color: #2a3038 !important;
+}
+
+.dark .card-subtitle {
+  color: #9ca3af !important;
+}
+
+.dark .alert-warning {
+  background-color: #4a3f2a !important;
+  border-color: #6b5a3a !important;
+  color: #fcd34d !important;
+}
+
+.dark .text-dark {
+  color: #90ccff !important;
+}
+
+/* AsciiDoc content in dark mode */
+.dark .kc-asciidoc,
+.dark .kc-asciidoc p,
+.dark .kc-asciidoc li {
+  color: #c1c7ce !important;
+}
+
+.dark .kc-asciidoc th {
+  background-color: #1a1f25 !important;
+  border-color: #2a3038 !important;
+  color: #e1e2e8 !important;
+}
+
+.dark .kc-asciidoc td {
+  border-color: #2a3038 !important;
+  color: #c1c7ce !important;
+}
+
+.dark .admonitionblock td.content {
+  border-color: #2a3038 !important;
+}
+
+.dark .exampleblock > .content {
+  background-color: #151a1f !important;
+  border-color: #2a3038 !important;
+}
+
+/* Comprehensive dark mode for all text elements */
+.dark body {
+  background-color: #0a0d10 !important;
+  color: #c1c7ce !important;
+}
+
+.dark .container,
+.dark .container-fluid,
+.dark .container p,
+.dark .container li,
+.dark .container span,
+.dark .container div {
+  color: #c1c7ce !important;
+}
+
+.dark .container h1,
+.dark .container h2,
+.dark .container h3,
+.dark .container h4,
+.dark .container h5,
+.dark .container h6 {
+  color: #e1e2e8 !important;
+}
+
+.dark .container b,
+.dark .container strong {
+  color: #e1e2e8 !important;
+}
+
+.dark .container ul,
+.dark .container ol {
+  color: #c1c7ce !important;
+}
+
+.dark .row {
+  color: #c1c7ce !important;
+}
+
+/* Dark mode for tables (downloads page) */
+.dark .table {
+  color: #c1c7ce !important;
+  background-color: transparent !important;
+}
+
+.dark .table-bordered {
+  border-color: #2a3038 !important;
+}
+
+.dark .table-bordered td,
+.dark .table-bordered th {
+  border-color: #2a3038 !important;
+}
+
+.dark .table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #0f1318 !important;
+  color: #c1c7ce !important;
+}
+
+.dark .table-striped > tbody > tr:nth-of-type(even) {
+  background-color: #151a1f !important;
+  color: #c1c7ce !important;
+}
+
+.dark .table td,
+.dark .table th {
+  color: #c1c7ce !important;
+  background-color: transparent !important;
+}
+
+.dark .table a {
+  color: #90ccff !important;
+}
+
+.dark .table a:hover {
+  color: #cde5ff !important;
+}
+
+.dark .table pre {
+  background-color: #0c1014 !important;
+  border-color: #2a3038 !important;
+  color: #e1e2e8 !important;
+}
+
+.dark .tab-content {
+  color: #c1c7ce !important;
+}
+
+.dark .tab-pane {
+  color: #c1c7ce !important;
+}
+
+/* Downloads page badge */
+.dark .badge.bg-primary {
+  background-color: #006194 !important;
+  color: #ffffff !important;
+}
