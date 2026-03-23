@@ -81,12 +81,54 @@
 
 /* Primary button */
 .btn-kc-primary {
-  @apply bg-primary text-on-primary px-10 py-4 rounded-2xl font-bold text-lg hover:bg-primary-container transition-all duration-200;
+  display: inline-block;
+  background-color: var(--color-primary) !important;
+  color: var(--color-on-primary) !important;
+  padding: 1rem 2.5rem;
+  border-radius: 1rem;
+  font-weight: 700;
+  font-size: 1.125rem;
+  transition: all 0.2s;
+  text-decoration: none !important;
+}
+.btn-kc-primary:hover {
+  background-color: var(--color-primary-container) !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+.dark .btn-kc-primary {
+  background-color: var(--color-primary) !important;
+  color: #001d32 !important;
+}
+.dark .btn-kc-primary:hover {
+  background-color: #a8d8ff !important;
+  color: #001d32 !important;
 }
 
 /* Secondary button */
 .btn-kc-secondary {
-  @apply bg-surface-container text-on-surface px-10 py-4 rounded-2xl font-bold text-lg hover:bg-surface-container-highest transition-all duration-200;
+  display: inline-block;
+  background-color: var(--color-surface-container) !important;
+  color: var(--color-on-surface) !important;
+  padding: 1rem 2.5rem;
+  border-radius: 1rem;
+  font-weight: 700;
+  font-size: 1.125rem;
+  transition: all 0.2s;
+  text-decoration: none !important;
+}
+.btn-kc-secondary:hover {
+  background-color: var(--color-surface-container-highest) !important;
+  color: var(--color-on-surface) !important;
+  text-decoration: none !important;
+}
+.dark .btn-kc-secondary {
+  background-color: var(--color-surface-container) !important;
+  color: var(--color-on-surface) !important;
+}
+.dark .btn-kc-secondary:hover {
+  background-color: var(--color-surface-container-highest) !important;
+  color: var(--color-on-surface) !important;
 }
 
 /* Feature card */
