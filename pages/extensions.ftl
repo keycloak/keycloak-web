@@ -1,6 +1,6 @@
 <#import "/templates/template.ftl" as tmpl>
 
-<@tmpl.page current="extensions" title="Extensions" previewImage="extensions.png" summary="Use community maintained extensions to extend the functionality of your Keycloak setup.">
+<@tmpl.page current="extensions" title="Extensions" previewImage="extensions.jpg" summary="Use community maintained extensions to extend the functionality of your Keycloak setup.">
 
 <div class="jumbotron jumbotron-fluid bg-light kc-bg-triangles kc-bg-fixed pt-4">
     <div class="container">
@@ -8,7 +8,11 @@
 
         <p class="text-white">
             See below for a list of community maintained extensions for Keycloak.
-            To add an extension, <a href="https://github.com/keycloak/keycloak-web/issues">open an issue on GitHub</a>.
+            Note that those extensions are not vetted by the Keycloak team, and are maintained independent third parties.
+            Only install extensions from parties that your trust, as these extensions will get access to sensitive data managed in Keycloak.
+        </p>
+        <p class="text-white">
+           To add an extension, <a href="https://github.com/keycloak/keycloak-web/issues">open an issue on GitHub</a>.
         </p>
 
         <#list extensions.getLivenessCategories() as c>
@@ -32,7 +36,7 @@
                                     <div class="d-flex align-items-center">
                                         <img src="resources/images/github.png" width="16px" alt="GitHub logo"
                                              class="me-2"/>
-                                        <span>${extension.stars} stars</span>
+                                        <span data-nosnippet>${extension.stars} stars</span>
                                     </div>
                                 </div>
                             </#if>

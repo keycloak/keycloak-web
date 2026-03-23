@@ -1,0 +1,134 @@
+[ {
+  "number" : 35825,
+  "repository" : "keycloak",
+  "title" : "Per client session idle time capped by realm level client idle timeout",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/35825"
+}, {
+  "number" : 40374,
+  "repository" : "keycloak",
+  "title" : "Random but frequent duplicate key value violates unique constraint \\\"constraint_offl_us_ses_pk2\\\" errors",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/40374"
+}, {
+  "number" : 40463,
+  "repository" : "keycloak",
+  "title" : "Login to Account Console produces two consecutive LOGIN events",
+  "kind" : "bug",
+  "area" : "account/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/40463"
+}, {
+  "number" : 40630,
+  "repository" : "keycloak",
+  "title" : "Double check when working with multithreading. SAST",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/40630"
+}, {
+  "number" : 40857,
+  "repository" : "keycloak",
+  "title" : "Unbounded login_hint Parameter Can Corrupt KC_RESTART Cookie and Break Login Flow",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/40857"
+}, {
+  "number" : 41427,
+  "repository" : "keycloak",
+  "title" : "Parallel token exchange fails if client session is expired",
+  "kind" : "bug",
+  "area" : "token-exchange",
+  "url" : "https://github.com/keycloak/keycloak/issues/41427"
+}, {
+  "number" : 41801,
+  "repository" : "keycloak",
+  "title" : "Lack of coordination in database creation in 26.3.0 causes deployment failures (Reopen)",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/41801"
+}, {
+  "number" : 41942,
+  "repository" : "keycloak",
+  "title" : "Uncaught server error: org.keycloak.models.ModelException: Database operation failed : Sync LDAP Groups to Keycloak (Custom Provider)",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/41942"
+}, {
+  "number" : 42012,
+  "repository" : "keycloak",
+  "title" : "Client session timestamp not updated in the database if running multiple nodes",
+  "kind" : "bug",
+  "area" : "infinispan",
+  "url" : "https://github.com/keycloak/keycloak/issues/42012"
+}, {
+  "number" : 42019,
+  "repository" : "keycloak",
+  "title" : "KeycloakRealmImport status is prone to not matching test expectations",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/42019"
+}, {
+  "number" : 42046,
+  "repository" : "keycloak",
+  "title" : "KeycloakRealmImport placeholder replacement provides access to sensitive environment variables.",
+  "kind" : "bug",
+  "area" : "operator",
+  "url" : "https://github.com/keycloak/keycloak/issues/42046"
+}, {
+  "number" : 42158,
+  "repository" : "keycloak",
+  "title" : "Bug in configuration keycoak via keycloak.conf",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/42158"
+}, {
+  "number" : 42164,
+  "repository" : "keycloak",
+  "title" : "[Keycloak CI - Docs] Broken links",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/42164"
+}, {
+  "number" : 42178,
+  "repository" : "keycloak",
+  "title" : "Integer validation error not shown for user profile fields",
+  "kind" : "bug",
+  "area" : "user-profile",
+  "url" : "https://github.com/keycloak/keycloak/issues/42178"
+}, {
+  "number" : 42182,
+  "repository" : "keycloak",
+  "title" : "Validation errors for required actions don't show translated messages",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/42182"
+}, {
+  "number" : 42245,
+  "repository" : "keycloak",
+  "title" : "Upgrade to Quarkus 3.20.2.2",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/42245"
+}, {
+  "number" : 42270,
+  "repository" : "keycloak",
+  "title" : "Missing double-dash in the events documentation",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/42270"
+}, {
+  "number" : 42339,
+  "repository" : "keycloak",
+  "title" : "Allowed Client Scopes add openid scope in scope list",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/42339"
+}, {
+  "number" : 42369,
+  "repository" : "keycloak",
+  "title" : "Missing client session offline settings on realm level in the admin UI",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/42369"
+} ]

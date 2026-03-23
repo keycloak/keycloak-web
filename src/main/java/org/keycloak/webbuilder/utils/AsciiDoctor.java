@@ -18,6 +18,8 @@ import java.io.Reader;
 import java.io.Writer;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -65,6 +67,14 @@ public class AsciiDoctor {
 
     public Map<String, Object> parseAttributes(File file, Map<String, Object> attributes) throws IOException {
         return parseAttributes(IOUtils.toString(new FileInputStream(file), StandardCharsets.UTF_8), attributes);
+    }
+
+    public Map<String, Object> parseAttributes(Path path) throws IOException {
+        return parseAttributes(path, null);
+    }
+
+    public Map<String, Object> parseAttributes(Path path, Map<String, Object> attributes) throws IOException {
+        return parseAttributes(Files.readString(path), attributes);
     }
 
     public Map<String, Object> parseAttributes(URL url, Map<String, Object> attributes) throws IOException {

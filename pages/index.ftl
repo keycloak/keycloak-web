@@ -1,3 +1,4 @@
+<#-- @ftlvariable name="links" type="org.keycloak.webbuilder.Links" -->
 <#import "/templates/template.ftl" as tmpl>
 
 <@tmpl.page current="home" title="" previewImage="index.png" rss=true>

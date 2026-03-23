@@ -1,0 +1,5 @@
+{
+    "name": "Crossplane provider for Keycloak",
+    "description": "Use it to configure realms, user, groups etc. via Kubernetes manifests in a declarative way.",
+    "website": "https://github.com/crossplane-contrib/provider-keycloak"
+}

@@ -1,0 +1,10 @@
+{
+  "name": "Infosys",
+  "title": "Keycloak on Azure for 200k Healthcare Users across Japan",
+  "description": "A major Japanese pharmaceutical company unified authentication across its 2M+ user application ecosystem and launched an e-pharmacy platform serving 750+ pharmacies nationwide. The platform onboarded 200,000+ users in four years with 30,000+ mobile app installations.",
+  "url": "https://www.cncf.io/case-studies/infosys-ltd-client-5/",
+  "logoUrl": "logos/infosys.svg",
+  "logoStyle": "padding: 0.75em",
+  "logoBackground": "#eeeeee",
+  "published": "2025-11-07"
+}

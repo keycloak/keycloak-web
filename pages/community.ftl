@@ -11,7 +11,7 @@
             <li>Join <a href="https://cloud-native.slack.com/archives/C056HC17KK9">#keycloak</a>, or <a href="https://cloud-native.slack.com/archives/C056XU905S6">#keycloak-dev</a> on Slack for design discussions, or questions by creating an account at <a href="https://slack.cncf.io/">https://slack.cncf.io/</a></li>
             <li><a href="search.html">Search</a> for information in the documentation and mailing list</li>
             <li><a href="https://github.com/keycloak/keycloak/discussions">GitHub Discussions Forum</a> for discussions and asking questions</li>
-            <li><a href="https://keycloak.discourse.group/">Discourse Forum</a> where you can ask questions</li>
+            <li><a href="https://forum.keycloak.org/">Discourse Forum</a> where you can ask questions</li>
             <li><a href="https://groups.google.com/forum/#!forum/keycloak-user">Mailing list</a> where you can ask questions</li>
         </ul>
     </div>
@@ -19,11 +19,11 @@
     <div class="row mt-3">
         <h2>Community meetings</h2>
         <ul class="ms-4">
-            <li><b>OAuth SIG Monthly meeting</b></li>
+            <li><b>OAuth SIG Weekly meeting</b></li>
             <ul>
                 <li>Time: Wed 12:00 PM - 01:00 PM London</li>
-                <li>Zoom Link: <a href="https://zoom.us/j/93447076633">https://zoom.us/j/93447076633</a></li>
-                <li>For more details about the meeting, check out the <a href="https://github.com/keycloak/kc-sig-fapi">GitHub repository</a> and <a href="https://cloud-native.slack.com/archives/C05KR0TL4P8">Slack channel</a>.</li>
+                <li>Zoom Link: <a href="https://zoom.us/j/96822989424?pwd=KRphDAIhr6jjoxC7oaF2z9qqn7WB4j.1">https://zoom.us/j/96822989424?pwd=KRphDAIhr6jjoxC7oaF2z9qqn7WB4j.1</a></li>
+                <li>For more details about the meeting, check out the <a href="https://github.com/keycloak/keycloak-oauth-sig">GitHub repository</a> and <a href="https://cloud-native.slack.com/archives/C05KR0TL4P8">Slack channel</a>.</li>
             </ul>
             <li><b>Keycloak User Group Austria</b></li>
             <ul>
@@ -34,7 +34,17 @@
 
     <div class="row mt-3">
         <h2>Extensions</h2>
-        <p>You can find a number of community maintained extensions to Keycloak <a href="${links.extensions}">here</a>
+        <p>You can find a number of community maintained extensions to Keycloak <a href="${links.extensions}">here</a>.
+    </div>
+
+    <div class="row mt-3">
+        <h2>Translations</h2>
+        <p>Translating Keycloak is a community effort. <a href="${links.translations}">Find out more on how to contribute.</a>
+    </div>
+
+    <div class="row mt-3">
+        <h2>Case Studies</h2>
+        <p>We collect a list of case studies of end users <a href="${links.casestudies}">here</a>.
     </div>
 
     <div class="row mt-3">
@@ -77,6 +87,13 @@
     </div>
 
     <div class="row mt-3">
+        <h2>Code of Conduct</h2>
+        <p>
+             To facilitate healthy and constructive community behavior, the Keycloak project uses the following <a href="https://github.com/keycloak/.github/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a>.
+        </p>
+    </div>
+
+    <div class="row mt-3">
         <h2>Nightly release</h2>
         <p>
             For early feedback and extension developers there is a <a href="${links.nightly}">nightly release of Keycloak</a>.
@@ -89,7 +106,7 @@
             <li><a href="https://github.com/keycloak/keycloak">Source Code</a></li>
             <li><a href="${links.getLink('documentation')}">Documentation</a></li>
             <li><a href="https://github.com/keycloak/keycloak/issues">GitHub Issues</a></li>
-            <li><a href="https://keycloak.discourse.group/">Forum</a> - for questions and help</li>
+            <li><a href="https://forum.keycloak.org/">Forum</a> - for questions and help</li>
             <li><a href="https://groups.google.com/forum/#!forum/keycloak-user">User Mailing List</a> - for questions and help</li>
             <li><a href="https://groups.google.com/forum/#!forum/keycloak-dev">Developer Mailing List</a> - for discussions around design and contributing to Keycloak</li>
         </ul>

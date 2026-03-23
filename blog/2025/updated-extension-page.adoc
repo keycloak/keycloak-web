@@ -3,7 +3,7 @@
 :publish: true
 :author: Alexander Schwartz
 :summary: The Keycloak extensions page shows GitHub stars so you can better identify popular extensions.
-:preview: extensions.png
+:preview: extensions.jpg
 
 The Keycloak homepage has an updated community extensions page!
 Thanks to https://github.com/mabartos[Martin Bartoš], each extension shows off with its GitHub stars.

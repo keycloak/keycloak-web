@@ -1,0 +1,33 @@
+:title: Submit to KeycloakCon Japan Call-for-Papers!
+:date: 2026-03-15
+:publish: true
+:author: Alexander Schwartz
+:preview: keycloakcon-jp-2026.png
+:summary: Submit your talks to KeycloakCon Japan 2026! It is a co-located event at KubeCon Japan in Yokohama, so you can join both.
+
+The call for papers and the registration for link:https://events.linuxfoundation.org/kubecon-cloudnativecon-japan/co-located-events/keycloakcon/[KeycloakCon Japan 2026] is now open! Submit your talks to KeycloakCon in Japan.
+
+KeycloakCon Japan 2026 is a half-day single-track conference in Yokohama, Japan on July 28 where the community of Keycloak gathers.
+It provides opportunities for technical presentations, growth, and networking with talks related to Identity and Access Management (IAM) and Single Sign On (SSO).
+
+This event is designed to share insights from developers and maintainers, as well as the latest features, updates, and real-world use cases of Keycloak.
+Participants will have the valuable opportunity to interact directly with Keycloak experts and other users, deepening their knowledge.
+
+Accepted session formats include presentations (25 min), panel discussions (35 min), and lightning talks (10 min).
+
+The call for papers deadline is *April 12, 2026 (23:59 JST)*.
+
+https://events.linuxfoundation.org/kubecon-cloudnativecon-japan/co-located-events/cfp/[Submit now!]
+
+== Registration
+
+KeycloakCon is a co-located event at KubeCon + CloudNativeCon Japan and requires a separate https://events.linuxfoundation.org/kubecon-cloudnativecon-japan/register/[registration] in addition to a KubeCon + CloudNativeCon Japan ticket.
+
+Accepted speakers receive a full access pass to KubeCon + CloudNativeCon Japan and the co-located event.
+
+== Related Events
+
+The next day, on July 29-30, https://events.linuxfoundation.org/kubecon-cloudnativecon-japan/[KubeCon Japan 2026] takes place in Yokohama as well.
+The Keycloak team will be on-site for KubeCon Japan, so join us and a lot of other CNCF projects for this event as well.
+
+See you in Yokohama!

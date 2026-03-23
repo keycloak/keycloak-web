@@ -1,0 +1,6 @@
+# This collects information according to https://datatracker.ietf.org/doc/rfc9116/
+# Please read the security policy before reporting.
+
+Contact: mailto:keycloak-security@googlegroups.com
+Preferred-Languages: en
+Policy: https://www.keycloak.org/security

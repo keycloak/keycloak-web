@@ -1,0 +1,21 @@
+:title: OpenTalk Keycloak case study published
+:date: 2025-05-15
+:publish: true
+:author: Alexander Schwartz
+:summary: OpenTalk, a videoconferencing solution, needed a secure and scalable Identity and Access Management (IAM) solution to authenticate users and chose Keycloak.
+:preview: opentalk.jpg
+
+https://opentalk.eu/[OpenTalk], a videoconferencing solution, needed a secure and scalable Identity and Access Management (IAM) solution to authenticate users across various services. Keycloak meets OpenTalk’s goals for security, user sovereignty, data privacy and regulatory requirements, so they use it in their architecture.
+
+Read more on their challenges and the solution in the first https://www.cncf.io/case-studies/opentalk/[CNCF case study published for the Keycloak project]!
+
+--
+++++
+<a href="https://www.cncf.io/case-studies/opentalk/"><div class="paragraph mb-4" style="height: 150px; background-color: #1f434f; display: flex">
+<img src="${blogImages}/opentalk.jpg" alt="OpenTalk logo" style="margin: auto; max-height: 90%; max-width: 90%; display: block; border: 0">
+</div></a>
+++++
+--
+
+We are now starting to collect all case studies at link:${links.casestudies}[our case studies page].
+If you want to share your case study with the Keycloak community, https://github.com/ahus1[contact me] to sort out the details.

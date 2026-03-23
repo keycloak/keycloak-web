@@ -1,0 +1,29 @@
+[ {
+  "number" : 43156,
+  "repository" : "keycloak",
+  "title" : "[Docs] Warn users about printing headers in HTTP access logs",
+  "kind" : "enhancement",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/43156"
+}, {
+  "number" : 43643,
+  "repository" : "keycloak",
+  "title" : "Upgrade to Quarkus 3.27.1",
+  "kind" : "enhancement",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/43643"
+}, {
+  "number" : 44438,
+  "repository" : "keycloak",
+  "title" : "Intermittent ConcurrentModificationException during SAML initialization causing status code 400 for clients",
+  "kind" : "bug",
+  "area" : "saml",
+  "url" : "https://github.com/keycloak/keycloak/issues/44438"
+}, {
+  "number" : 44480,
+  "repository" : "keycloak",
+  "title" : "Wrong persistent group permissions when multiple group membership changes happen in the same request",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/44480"
+} ]

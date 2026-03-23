@@ -1,0 +1,15 @@
+[ {
+  "number" : 190,
+  "repository" : "keycloak-client",
+  "title" : "The policy enforcer rejects the request the first time, but after the cache invalidation interval, it allows it.",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak-client/issues/190"
+}, {
+  "number" : 193,
+  "repository" : "keycloak-client",
+  "title" : "Sync keycloak-client after Keycloak server 26.5.0 release",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak-client/issues/193"
+} ]

@@ -16,18 +16,18 @@
         <version.github-api>1.300</version.github-api>
         <version.freemarker>2.3.31</version.freemarker>
         <version.asciidoctorj>2.5.2</version.asciidoctorj>
-        <version.jackson-core>2.17.2</version.jackson-core>
+        <version.jackson-core>2.18.6</version.jackson-core>
         <version.commons-io>2.14.0</version.commons-io>
         <version.commons-compress>1.26.0</version.commons-compress>
 
-        <version.keycloak>26.2.1</version.keycloak>
-        <version.keycloak-client>26.0.5</version.keycloak-client>
+        <version.keycloak>26.5.6</version.keycloak>
+        <version.keycloak-client>26.0.8</version.keycloak-client>
         <version.keycloak-nodejs-connect>26.1.1</version.keycloak-nodejs-connect>
-        <version.keycloak-js>26.2.0</version.keycloak-js>
+        <version.keycloak-js>26.2.3</version.keycloak-js>
 
         <version.frontend-maven-plugin>1.15.0</version.frontend-maven-plugin>
-        <version.node>v20.11.0</version.node>
-        <version.npm>10.2.4</version.npm>
+        <version.node>v22.18.0</version.node>
+        <version.npm>10.14.0</version.npm>
         <version.maven-resources-plugin>3.2.0</version.maven-resources-plugin>
         <version.maven-compiler-plugin>3.8.1</version.maven-compiler-plugin>
         <version.maven-jar-plugin>3.1.2</version.maven-jar-plugin>
@@ -41,7 +41,7 @@
         <repository>
             <id>sonatype-snapshots</id>
             <name>Sonatype Snapshots</name>
-            <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
+            <url>https://central.sonatype.com/repository/maven-snapshots/</url>
             <snapshots>
                 <enabled>true</enabled>
                 <updatePolicy>daily</updatePolicy>

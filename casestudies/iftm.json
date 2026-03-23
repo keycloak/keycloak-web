@@ -1,0 +1,10 @@
+{
+  "name": "ITFM",
+  "title": "IFTM modernizes authentication with Keycloak for SSO",
+  "description": "Brazil’s Instituto Federal do Triângulo Mineiro (IFTM) modernized its authentication and identity management ecosystem enabling secure Single Sign-On across systems, integration with Gov.br (Brazil’s national digital identity provider), and compatibility with modern cloud-native applications.",
+  "url": "https://www.cncf.io/case-studies/iftm/",
+  "logoUrl": "logos/iftm.png",
+  "logoStyle": "",
+  "logoBackground": "#eeeeee",
+  "published": "2025-11-18"
+}

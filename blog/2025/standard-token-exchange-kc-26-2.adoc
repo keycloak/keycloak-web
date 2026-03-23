@@ -1,0 +1,48 @@
+:title: Standard Token Exchange is now officially supported in Keycloak 26.2
+:date: 2025-05-26
+:publish: true
+:author: Giuseppe Graziano
+:summary: Keycloak 26.2 brings Token Exchange out of preview with an officially supported version compliant with OAuth 2.0 Token Exchange specification.
+
+The Token Exchange feature has been available in Keycloak for a long time, but only as a preview feature. With the release of
+**Keycloak 26.2**, we're happy to share that **Standard Token Exchange is now officially supported** and fully compliant with https://datatracker.ietf.org/doc/html/rfc8693[OAuth 2.0 Token Exchange (RFC 8693)].
+
+== What is Token Exchange? 🔄
+
+Token Exchange is a mechanism that allows a client to exchange one token for another. In the context of Keycloak, this means a client can exchange a token originally issued for another client and receive a new token issued specifically for itself.
+
+Token Exchange is especially helpful in these scenarios:
+
+=== 🎯 Different Audience
+When a token was issued for one service but needs to be used to access another, Token Exchange can issue a new token with the appropriate audience.
+
+=== 🔐 Scoped Permissions
+If a client needs to access a service with more limited permissions, it can exchange its token for one with reduced or more specific scopes.
+
+== What's new? 🆕
+
+- ✅ Official support (no longer a preview feature)
+- 📘 Compliance with RFC 8693 (OAuth 2.0 Token Exchange)
+- 🖱️ Simple configuration via the Admin Console (just a switch in client settings)
+- 🛡️ Integration with Client Policies to enforce custom rules. You can restrict exchanges to specific clients, or deny exchanges based on requested scopes.
+
+== How to get started 🚀
+
+If you're using Keycloak 26.2 or later, there's nothing extra to enable. Token Exchange is ready to use, just open the client settings in the admin console and enable the dedicated switch.
+
+If you're still using the preview feature of token exchange, check the https://www.keycloak.org/docs/latest/upgrading/index.html#supported-standard-token-exchange[migration guide] and the https://www.keycloak.org/securing-apps/token-exchange#_standard-token-exchange-comparison[comparison] to understand the differences and plan your migration.
+
+📄 For full setup instructions and configuration details, refer to the https://www.keycloak.org/securing-apps/token-exchange#_standard-token-exchange[official documentation].
+
+== What’s next? 🔍
+
+We’re continuing to expand Token Exchange support with future enhancements such as:
+
+- 🔄 Exchanging tokens issued by external identity providers
+- 👤 Using token exchange to impersonate users
+
+Stay tuned for updates in upcoming releases.
+
+---
+
+We’d love to hear what you think about this feature and how we can improve it. Feedback and contributions from the community are always welcome.

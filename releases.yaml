@@ -18,3 +18,8 @@ sources:
     repo: keycloak/keycloak-js
     releaseNotes: main/docs/release-notes/${version.getVersion()?replace(".", "_")}.adoc
     migrationGuidePath: docs/latest/upgrading/#_upgrade_js_adapter
+  - id: keycloak-nodejs-connect
+    productName: Keycloak Nodejs Connect
+    repo: keycloak/keycloak-nodejs-connect
+    releaseNotes: main/docs/release-notes/${version.getVersion()?replace(".", "_")}.adoc
+    migrationGuidePath: docs/latest/upgrading/##_upgrade_nodejs_adapter

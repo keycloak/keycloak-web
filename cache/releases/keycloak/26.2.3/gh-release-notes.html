@@ -1,0 +1,54 @@
+<div>
+
+<h2>Upgrading</h2>
+<p>Before upgrading refer to <a href="file:/home/runner/work/keycloak-rel/keycloak-rel/target/web/docs/latest/upgrading/#migration-changes">the migration guide</a> for a complete list of changes.</p>
+
+<h2>All resolved issues</h2>
+
+
+<h3>New features</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/38985">#38985</a> Possibility to log details and representation to the jboss-logging listener </li>
+</ul>
+
+<h3>Enhancements</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/39080">#39080</a> Standardize introductory text in Keycloak guides </li>
+</ul>
+
+<h3>Bugs</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/38104">#38104</a> Temporary failure in name resolution with nip.io <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/38145">#38145</a> Unknown error on authentication-flow delete action <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/38482">#38482</a> SAML client certificate not persisted <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/38487">#38487</a> [Keycloak Operator CI] - Test remote (slow) - UpdateTest.testExplicitStrategy <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/38660">#38660</a> Ldap federation seems to open and keep open a new thread/connection for each ldap request <code>ldap</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/38671">#38671</a> Duplicate Key Violation When Reauthenticating After Account Deletion via Google <code>identity-brokering</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/38703">#38703</a> Password Policy Changes get overwritten in the UI <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/38799">#38799</a> Kerberos principal attribute value "comes back" when cleared. <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/38873">#38873</a> Client Credentials tab : "Allow regex pattern comparison" toggle is always "On" on page load <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/38911">#38911</a> Filtering of user- and admin-events by dateTo always returns empty results <code>admin/api</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/38932">#38932</a> Home button always redirects to master realm when permission denied <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/38934">#38934</a> UI: Readonly/disabled profile form input fields are visually indistinguishable from active fields <code>account/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/38964">#38964</a> [26.2.0/26.1.5] Regression: ClientList value is empty in UI for Custom UserStorageProviderFactory <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/38970">#38970</a> Authentication request can fail with `unknown_error` <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/39026">#39026</a> Fine-grained-permssion v2 Display problem <code>admin/fine-grained-permissions</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/39037">#39037</a> UserInfo request fails by using an access token obtained in Hybrid flow with offline_access scope <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/39046">#39046</a> Keycloak 26.2.0 can't authenticate to the H2 database after the upgrade <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/39055">#39055</a> After import of keys an export doesn't include these values <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/39065">#39065</a> Issue with SSL and `CertificatereloadManager` in Keycloak 26.2 when using Istio <code>infinispan</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/39085">#39085</a> Redirects to admin endpoint 404s on hostname-admin / request scheme mismatch <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/39124">#39124</a> [Operator CI] - Test remote (slow) <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/39180">#39180</a> Groups view: Filter/search bar disappears and groups not shown after clearing empty search results <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/39182">#39182</a> Oracle driver problems in keycloak 26.2.1 <code>dependencies</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/39187">#39187</a> Account console: defaultLocale item in select locale field <code>account/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/39206">#39206</a> Wrong UDP jgroups metric name <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/39219">#39219</a> Serverinfo response grows over time <code>admin/api</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/39237">#39237</a> Deletion of a role is slow when when there are a lot of roles in the database <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/39246">#39246</a> Duplicate user entries when searching custom attributes <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/39274">#39274</a> Aurora DB should not update automatically to the latest minor version <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/39296">#39296</a> Inconsistent "grant_types" vs "grantTypes" Naming Causes GrantTypeCondition to Always Fail <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/39312">#39312</a> SLO measurement should mention a month as a period <code>docs</code></li>
+</ul>
+
+</div>

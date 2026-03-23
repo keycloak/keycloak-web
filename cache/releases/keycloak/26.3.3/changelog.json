@@ -1,0 +1,183 @@
+[ {
+  "number" : 39562,
+  "repository" : "keycloak",
+  "title" : "Breaking template change: Unknown `locale` input field added to user-profile registration page",
+  "kind" : "bug",
+  "area" : "user-profile",
+  "url" : "https://github.com/keycloak/keycloak/issues/39562"
+}, {
+  "number" : 40984,
+  "repository" : "keycloak",
+  "title" : "Backchannel logout token with an unexpected signature algorithm key",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/40984"
+}, {
+  "number" : 41023,
+  "repository" : "keycloak",
+  "title" : "Can't send e-mails to international e-mail addresses: bad UTF-8 syntax",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/41023"
+}, {
+  "number" : 41098,
+  "repository" : "keycloak",
+  "title" : "Locked out after upgrade to 26.3.1 due to missing sub in lightweight access token",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/41098"
+}, {
+  "number" : 41268,
+  "repository" : "keycloak",
+  "title" : "`--optimized` flag and providers jar are incompatible when used with tools changing `last-modify-date`",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/41268"
+}, {
+  "number" : 41290,
+  "repository" : "keycloak",
+  "title" : "Concurrent starts with JDBC_PING lead to a split cluster",
+  "kind" : "bug",
+  "area" : "infinispan",
+  "url" : "https://github.com/keycloak/keycloak/issues/41290"
+}, {
+  "number" : 41390,
+  "repository" : "keycloak",
+  "title" : "JDBC_PING2 doesn't merge split clusters after a while",
+  "kind" : "bug",
+  "area" : "infinispan",
+  "url" : "https://github.com/keycloak/keycloak/issues/41390"
+}, {
+  "number" : 41421,
+  "repository" : "keycloak",
+  "title" : "Broken link securing-cache-communication in caching docs",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/41421"
+}, {
+  "number" : 41423,
+  "repository" : "keycloak",
+  "title" : "Duplicate IDs in generated all configuration docs",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/41423"
+}, {
+  "number" : 41469,
+  "repository" : "keycloak",
+  "title" : "Uncaught exception cases unclosed spans in tracing",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/41469"
+}, {
+  "number" : 41488,
+  "repository" : "keycloak",
+  "title" : "Synchronize Maven surefire plugin with Quarkus",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/41488"
+}, {
+  "number" : 41491,
+  "repository" : "keycloak",
+  "title" : "ExternalLinks are broken in documentation",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/41491"
+}, {
+  "number" : 41520,
+  "repository" : "keycloak",
+  "title" : "LDAP Import: KERBEROS_PRINCIPAL not updated when UserPrincipal changes and KERBEROS_PRINCIPAL was null on creation",
+  "kind" : "bug",
+  "area" : "ldap",
+  "url" : "https://github.com/keycloak/keycloak/issues/41520"
+}, {
+  "number" : 41532,
+  "repository" : "keycloak",
+  "title" : "LDAP Sync all users takes unexpectedly long in 26.3 (> 30 min)",
+  "kind" : "bug",
+  "area" : "ldap",
+  "url" : "https://github.com/keycloak/keycloak/issues/41532"
+}, {
+  "number" : 41537,
+  "repository" : "keycloak",
+  "title" : "Getting error 405 \"Method Not Allowed\" when calling the \"certs\" endpoint with HEAD method",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/41537"
+}, {
+  "number" : 41545,
+  "repository" : "keycloak",
+  "title" : "Unstable test Account UI 2E2 / device-activity",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/41545"
+}, {
+  "number" : 41558,
+  "repository" : "keycloak",
+  "title" : "Ensure cache configuration has correct number of owners",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/41558"
+}, {
+  "number" : 41643,
+  "repository" : "keycloak",
+  "title" : "Test SMTP connection fails when no port is specified",
+  "kind" : "bug",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/41643"
+}, {
+  "number" : 41663,
+  "repository" : "keycloak",
+  "title" : "Typo in the caching doc",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/41663"
+}, {
+  "number" : 41677,
+  "repository" : "keycloak",
+  "title" : "Provider default regression",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/41677"
+}, {
+  "number" : 41808,
+  "repository" : "keycloak",
+  "title" : "CVE-2025-7962 In Jakarta Mail 2.0.2 it is possible to preform a SMTP Injection by utilizing the \\r and \\n UTF-8 characters to separate different messages",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/41808"
+}, {
+  "number" : 41842,
+  "repository" : "keycloak",
+  "title" : "memberOf attribute empty or values with a DN that does not match the role base DN fetches all roles",
+  "kind" : "bug",
+  "area" : "ldap",
+  "url" : "https://github.com/keycloak/keycloak/issues/41842"
+}, {
+  "number" : 41906,
+  "repository" : "keycloak",
+  "title" : "Backwards incompatible changes to 26.3.0 cause NullPoointerException when requesting /certificates/jwt.credential/generate-and-download",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/41906"
+}, {
+  "number" : 41934,
+  "repository" : "keycloak",
+  "title" : "Infinispan 15.0.19.Final",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/41934"
+}, {
+  "number" : 41945,
+  "repository" : "keycloak",
+  "title" : "After upgrade to 26.3: Not possible to use Credentials having not-unique label",
+  "kind" : "bug",
+  "area" : "login/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/41945"
+}, {
+  "number" : 41963,
+  "repository" : "keycloak",
+  "title" : "Upgrade to Quarkus 3.20.2.1",
+  "kind" : "enhancement",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/41963"
+} ]

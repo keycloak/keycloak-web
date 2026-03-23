@@ -1,54 +1,52 @@
 package org.keycloak.webbuilder;
 
-import org.keycloak.webbuilder.utils.AsciiDoctor;
-
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import org.keycloak.webbuilder.utils.AsciiDoctor;
 
 public class Guides {
 
-    private final List<GuidesMetadata.GuideMetadata> categories = new LinkedList<>();
-    private final List<Guide> guides = new LinkedList<>();
+    private final List<GuidesMetadata.GuideMetadata> categories = new ArrayList<>();
+    private final List<Guide> guides = new ArrayList<>();
 
-    public Guides(GuidesMetadata guidesMetadata, File tmpDir, File webSrcDir, AsciiDoctor asciiDoctor) throws IOException {
+    public Guides(GuidesMetadata guidesMetadata, Path webSrcDir, AsciiDoctor asciiDoctor) throws IOException {
 
         for (GuidesMetadata.GuideSource guideSource : guidesMetadata.getSources()) {
-            final File d = new File(webSrcDir, guideSource.getDir());
-            File[] sourceDirs;
-            if (d.getName().contains("$$VERSION$$")) {
-                sourceDirs = d.getParentFile().listFiles(f -> f.getName().matches(d.getName().replace("$$VERSION$$", ".*")));
+            Path srcPath = webSrcDir.resolve(guideSource.getDir());
+            String srcDirectoryName = srcPath.getFileName().toString();
+            List<Path> guidePaths;
+            if (srcDirectoryName.contains("$$VERSION$$")) {
+                try (Stream<Path> paths = Files.list(srcPath.getParent())) {
+                    guidePaths = paths
+                          .filter(p -> p.getFileName().toString().matches(srcDirectoryName.replace("$$VERSION$$", ".*")))
+                          .toList();
+                }
             } else {
-                sourceDirs = new File[] { d };
+                guidePaths = List.of(srcPath);
             }
 
             for (GuidesMetadata.GuideMetadata guideMetadata : guidesMetadata.getGuides()) {
-                for (File sourceDir : sourceDirs) {
-                    loadGuides(asciiDoctor, sourceDir, guideSource, guideMetadata);
-                }
+                for (Path guide : guidePaths)
+                    loadGuides(asciiDoctor, guide, guideSource, guideMetadata);
             }
         }
 
-        Collections.sort(guides, (o1, o2) -> {
-            if (o1.getPriority() == o2.getPriority()) {
-                return o1.getTitle().compareTo(o2.getTitle());
-            } else {
-                return Integer.compare(o1.getPriority(), o2.getPriority());
-            }
-        });
-
+        Collections.sort(guides);
         for (GuidesMetadata.GuideMetadata guideMetadata : guidesMetadata.getGuides()) {
-            if (getGuides(guideMetadata).size() > 0) {
+            if (!getGuides(guideMetadata).isEmpty()) {
                 categories.add(guideMetadata);
             }
         }
@@ -56,43 +54,58 @@ public class Guides {
 
     public Guide getGuide(String category, String name) {
         Optional<Guide> o = guides.stream().filter(g -> g.getMetadata().getId().equals(category) && g.getName().equals(name)).findFirst();
-        return o.isPresent() ? o.get() : null;
+        return o.orElse(null);
     }
 
-    private void loadGuides(AsciiDoctor asciiDoctor, File d, GuidesMetadata.GuideSource guideSource, GuidesMetadata.GuideMetadata guideMetadata) throws IOException {
-        if (!d.isDirectory()) {
+    private void loadGuides(AsciiDoctor asciiDoctor, Path root, GuidesMetadata.GuideSource guideSource, GuidesMetadata.GuideMetadata guideMetadata) throws IOException {
+        if (!Files.isDirectory(root)) {
             return;
         }
 
-        boolean snapshot = d.getName().endsWith("-SNAPSHOT");
-
-        File generatedGuides = new File(d, "generated-guides");
-        if (generatedGuides.isDirectory()) {
-            d = generatedGuides;
+        boolean snapshot = root.getFileName().toString().endsWith("-SNAPSHOT");
+        Path guideRoot = root;
+        Path generatedGuides = root.resolve("generated-guides");
+        if (Files.isDirectory(generatedGuides)) {
+            guideRoot = generatedGuides;
         }
 
-        d = new File(d, guideMetadata.getId());
-        if (!d.isDirectory()) {
+        Path sharedAttributesPath = guideRoot.resolve("attributes.adoc");
+        guideRoot = guideRoot.resolve(guideMetadata.getId());
+        if (!Files.isDirectory(guideRoot)) {
             return;
         }
 
-        Map<String, Integer> guidePriorities = loadPinnedGuides(new File(d, "pinned-guides"));
+        Map<String, Integer> guidePriorities = loadPinnedGuides(guideRoot);
+        Map<String, Object> sharedAttributes = Files.isRegularFile(sharedAttributesPath) ? asciiDoctor.parseAttributes(sharedAttributesPath) : Collections.emptyMap();
 
-        File sharedAttributesFile = new File(d.getParentFile(), "attributes.adoc");
-        Map<String, Object> sharedAttributes = sharedAttributesFile.isFile() ? asciiDoctor.parseAttributes(sharedAttributesFile) : Collections.emptyMap();
+        Path partials = guideRoot.resolve("partials");
+        Path templates = guideRoot.resolve("templates");
+        List<Path> guidePaths;
+        try (Stream<Path> files = Files.walk(guideRoot)) {
+            guidePaths = files
+                  .filter(Files::isRegularFile)
+                  .filter(p -> !p.startsWith(partials))
+                  .filter(p -> !p.startsWith(templates))
+                  .filter(p -> p.toString().endsWith(".adoc"))
+                  .filter(p -> !p.getFileName().toString().equals("index.adoc"))
+                  .toList();
+        } catch (IOException e) {
+            throw new RuntimeException("Failed to load guides from " + guideRoot, e);
+        }
 
-        for (File f: d.listFiles((dir, name) -> name.endsWith(".adoc") && !name.equals("index.adoc"))) {
-            Map<String, Object> attributes = asciiDoctor.parseAttributes(f, sharedAttributes);
+        for (Path path : guidePaths) {
+            Map<String, Object> attributes = asciiDoctor.parseAttributes(path, sharedAttributes);
 
             boolean community = "true".equals(attributes.get("community"));
 
             Object isTileVisibileAttribute = attributes.get("guide-tile-visible");
             boolean isTileVisibile = isTileVisibileAttribute == null || "true".equals(isTileVisibileAttribute);
-            Guide g = new Guide(guideSource, guideMetadata, f, (String) attributes.get("guide-title"), (String) attributes.get("guide-summary"), (String) attributes.get("guide-tags"), (String) attributes.get("author"), community,
-                    (String) attributes.get("external-link"), isTileVisibile, snapshot);
+            Guide g = new Guide(guideSource, guideMetadata, path, (String) attributes.get("guide-parent"),
+                  (String) attributes.get("guide-title"), (String) attributes.get("guide-summary"), (String) attributes.get("guide-tags"),
+                  (String) attributes.get("author"), community, (String) attributes.get("external-link"), isTileVisibile, snapshot);
 
             if (guidePriorities != null) {
-                Integer priority = guidePriorities.get(g.getName());
+                Integer priority = guidePriorities.get(g.getFQName());
                 if (priority != null) {
                     g.priority = priority;
                 }
@@ -104,12 +117,13 @@ public class Guides {
         }
     }
 
-    private Map<String, Integer> loadPinnedGuides(File pinnedGuides) throws IOException {
-        if (!pinnedGuides.isFile()) {
+    private Map<String, Integer> loadPinnedGuides(Path src) throws IOException {
+        Path pinnedGuides = src.resolve("pinned-guides");
+        if (Files.notExists(pinnedGuides) || Files.isDirectory(pinnedGuides)) {
             return null;
         }
         Map<String, Integer> priorities = new HashMap<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(pinnedGuides))) {
+        try (BufferedReader br = Files.newBufferedReader(pinnedGuides)) {
             int c = 1;
             for (String l = br.readLine(); l != null; l = br.readLine()) {
                 l = l.trim();
@@ -138,14 +152,16 @@ public class Guides {
         return cat -> getGuides(cat).stream().anyMatch(guide-> guide.isSnapshot() == wantSnapshots);
     }
 
-    public static class Guide {
+    public static class Guide implements Comparable<Guide> {
 
         private final GuidesMetadata.GuideSource guideSource;
         private final GuidesMetadata.GuideMetadata metadata;
         private final String name;
+        private final String parent;
+        private final String fqn;
         private final String author;
         private final boolean community;
-        private final File source;
+        private final Path source;
         private final boolean snapshot;
         private final String template;
         private final String title;
@@ -156,10 +172,12 @@ public class Guides {
         private final String externalLink;
         private final boolean tileVisible;
 
-        public Guide(GuidesMetadata.GuideSource guideSource, GuidesMetadata.GuideMetadata metadata, File source, String title, String summary, String tags, String author, boolean community, String externalLink, boolean tileVisible, boolean snapshot) {
+        public Guide(GuidesMetadata.GuideSource guideSource, GuidesMetadata.GuideMetadata metadata, Path source, String parent, String title, String summary, String tags, String author, boolean community, String externalLink, boolean tileVisible, boolean snapshot) {
             this.guideSource = guideSource;
             this.metadata = metadata;
-            this.name = source.getName().replace(".adoc", "");
+            this.name = source.getFileName().toString().replace(".adoc", "");
+            this.parent = parent;
+            this.fqn = hasParent() ? parent + "/" + name : name;
             this.author = author;
             this.community = community;
             this.source = source;
@@ -170,13 +188,25 @@ public class Guides {
             if (tags != null) {
                 this.tags = Arrays.stream(tags.split(",")).map(s -> s.toLowerCase().trim()).sorted().collect(Collectors.toList());
             }
-            this.path = metadata.getId() + "/" + name;
+            this.path = metadata.getId() + "/" + fqn;
             this.externalLink = externalLink;
             this.tileVisible = tileVisible;
         }
 
         public String getName() {
             return name;
+        }
+
+        public String getParent() {
+            return parent;
+        }
+
+        public boolean hasParent() {
+            return parent != null && !parent.isBlank();
+        }
+
+        public String getFQName() {
+            return fqn;
         }
 
         public String getAuthor() {
@@ -195,7 +225,7 @@ public class Guides {
             return metadata;
         }
 
-        public File getSource() {
+        public Path getSource() {
             return source;
         }
 
@@ -238,6 +268,12 @@ public class Guides {
         public boolean isSnapshot() {
             return snapshot;
         }
-    }
 
+        @Override
+        public int compareTo(Guide o2) {
+            return priority == o2.priority ?
+                  title.compareTo(o2.title) :
+                  Integer.compare(priority, o2.priority);
+        }
+    }
 }

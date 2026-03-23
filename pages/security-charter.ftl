@@ -50,7 +50,7 @@
     </ul>
 
     <h3>Keycloak Security Resolution Team</h3>
-    <p>Teams are composed of permanent members who coordinate fixes and temporary members who actively triage or resolve open CVEs. Temporary members are added when they engage with a vulnerability and removed once their involvement concludes. This setup allows experienced coordinators to oversee the resolution process while bringing in the right people whenever needed.</p>
+    <p>A permanent team of subject matter experts (SMEs) responsible for triaging security reports and fixing vulnerabilities in the codebase. The Resolution Team works closely with the Response Team to ensure that reported issues are assessed, prioritized, and resolved effectively.</p>
 
     <h4>Scope</h4>
     <ul>
@@ -74,35 +74,34 @@
                 <td><a href="https://groups.google.com/g/keycloak-security">Mailing list</a></td>
                 <td>Full access</td>
                 <td>Full access</td>
-                <td>Added in CC to specific threads</td>
+                <td>Full access</td>
             </tr>
             <tr>
                 <td><a href="https://github.com/keycloak/keycloak-private/">Private GitHub repository</a></td>
                 <td>Full access</td>
                 <td>Full access</td>
-                <td>Temporary access</td>
+                <td>Full access</td>
             </tr>
             <tr>
                 <td><a href="https://github.com/keycloak/keycloak/security">Security advisories and alerts</a></td>
                 <td>Full access</td>
                 <td>Full access</td>
-                <td>No access</td>
+                <td>Full access</td>
             </tr>
             <tr>
                 <td>Slack channel (#alerts-keycloak-cve)</td>
                 <td>Full access</td>
                 <td>Full access</td>
-                <td>Temporary access</td>
+                <td>Full access</td>
             </tr>
         </tbody>
     </table>
 
     <h2>Coordinating a Security Vulnerability Fix</h2>
     <ul>
-        <li>Identification: the Response Team identifies relevant engineers from affected areas and temporarily includes them in private communication channels (e.g., repositories, email threads), forming a temporary Resolution Team.</li>
-        <li>Efficiency: to prevent accidental disclosure, the Resolution Team remains as small as necessary.</li>
+        <li>Identification: the Response Team triages the reported vulnerability and assigns it to the Resolution Team for assessment and remediation.</li>
+        <li>Efficiency: to prevent accidental disclosure, communication about vulnerabilities is kept within the Response and Resolution Teams.</li>
         <li>Autonomy: the Resolution Team has the autonomy to involve additional parties such as release coordinators, QE, and documentation teams. Communication with the Response Team is advised when in doubt.</li>
-        <li>Access Revocation: post-release, access to sensitive communication channels is revoked to uphold the principle of least privilege.</li>
     </ul>
 
     <h2>Process Overview</h2>
@@ -115,7 +114,7 @@
         <li>Team A informs QE and releases coordinators about the forthcoming patch.</li>
         <li>The pull request is merged, and a new release is issued along with official advisories.</li>
     </ol>
-    <p>In the absence of CVEs to fix, all team members will have their access revoked to security-sensitive channels except for the Keycloak Security Response Team.</p>
+    <p>Both the Response Team and the Resolution Team maintain ongoing access to security-sensitive channels, enabling fast escalation and getting all SMEs across teams involved as quickly as possible.</p>
 
     <p>This charter outlines the approach the Keycloak project takes to manage and mitigate security vulnerabilities, ensuring the integrity and reliability of the project for all users.</p>
 

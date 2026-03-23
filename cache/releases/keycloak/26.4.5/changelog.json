@@ -1,0 +1,71 @@
+[ {
+  "number" : 42601,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.broker.KcOidcBrokerTest#testPostBrokerLoginFlowWithOTP",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/42601"
+}, {
+  "number" : 43212,
+  "repository" : "keycloak",
+  "title" : "Document missing artifact dependency for UserStoragePrivateUtil",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/43212"
+}, {
+  "number" : 43564,
+  "repository" : "keycloak",
+  "title" : "Invalid liquibase check sum for jpa-changelog-2.5.0.xml",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/43564"
+}, {
+  "number" : 43718,
+  "repository" : "keycloak",
+  "title" : "Email Not Persisted During Registration When \"Email as Username\" is Enabled and User Edit Permission is Disabled",
+  "kind" : "bug",
+  "area" : "user-profile",
+  "url" : "https://github.com/keycloak/keycloak/issues/43718"
+}, {
+  "number" : 43793,
+  "repository" : "keycloak",
+  "title" : "import does not seem to run db migration",
+  "kind" : "bug",
+  "area" : "import-export",
+  "url" : "https://github.com/keycloak/keycloak/issues/43793"
+}, {
+  "number" : 43883,
+  "repository" : "keycloak",
+  "title" : "Creating group policy on a client uses \"manage-clients\" role if FGAP V1 is disabled",
+  "kind" : "bug",
+  "area" : "authorization-services",
+  "url" : "https://github.com/keycloak/keycloak/issues/43883"
+}, {
+  "number" : 44010,
+  "repository" : "keycloak",
+  "title" : "Ordering attributes will unset the unmanaged attribute policy",
+  "kind" : "bug",
+  "area" : "user-profile",
+  "url" : "https://github.com/keycloak/keycloak/issues/44010"
+}, {
+  "number" : 44031,
+  "repository" : "keycloak",
+  "title" : "Can't build  keycloak 26.4.4 with quarkus.launch.rebuild=true",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/44031"
+}, {
+  "number" : 44056,
+  "repository" : "keycloak",
+  "title" : "Allow only normalized URLs in requests caused a regression in view authz permission details in Admin Consol",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/44056"
+}, {
+  "number" : 44117,
+  "repository" : "keycloak",
+  "title" : "DockerClientTest failure",
+  "kind" : "bug",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/44117"
+} ]

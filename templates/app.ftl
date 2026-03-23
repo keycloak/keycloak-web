@@ -12,7 +12,7 @@
                 <div id="config-view" class="hide my-3">
                     <a id="login" class="btn btn-primary hide">Sign in</a>
                     <a id="logout" class="btn btn-primary hide">Sign out</a>
-                    <a href="#" class="btn btn-secondary show">Clear config</a>
+                    <a id="clearConfig" class="btn btn-secondary show">Clear config</a>
                 </div>
                 <div id="config-edit" class="hide">
                     <form id="config-form">

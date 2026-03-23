@@ -33,7 +33,7 @@ public class GuideBuilder extends AbstractBuilder {
 
         context.getTmpDir().mkdirs();
 
-        context.asciiDoctor().writeFile(attributes, guide.getSource(), context.getTmpDir(), "guide.html");
+        context.asciiDoctor().writeFile(attributes, guide.getSource().toFile(), context.getTmpDir(), "guide.html");
 
         File target;
         if (guide.isSnapshot()) {
@@ -41,9 +41,13 @@ public class GuideBuilder extends AbstractBuilder {
         } else {
             target = new File(context.getTargetDir(), guide.getMetadata().getId());
         }
-        target.mkdirs();
 
         String file = guide.getName() + ".html";
+        if (guide.hasParent()) {
+            target = new File(target, guide.getParent());
+        }
+        target.mkdirs();
+
         context.freeMarker().writeFile(attributes, "templates/guide-entry.ftl", target, file);
         context.sitemap().addFile(new File(target, file));
 
@@ -63,7 +67,7 @@ public class GuideBuilder extends AbstractBuilder {
     private void setGuideLinkAttributes(Map<String, Object> attributes, boolean snapshot) {
         for (Guides.Guide guide : context.guides().getGuides()) {
             if (guide.isSnapshot() == snapshot){
-                String linkKeyPrefix = "links_" + guide.getMetadata().getId() + "_" + guide.getName();
+                String linkKeyPrefix = "links_" + guide.getMetadata().getId() + "_" + guide.getFQName().replaceAll("/", "-");
                 attributes.put(linkKeyPrefix + "_name", guide.getTitle());
                 attributes.put(linkKeyPrefix + "_url", context.getLinks().get(guide));
             }

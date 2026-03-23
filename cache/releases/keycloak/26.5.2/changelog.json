@@ -1,0 +1,134 @@
+[ {
+  "number" : 43443,
+  "repository" : "keycloak",
+  "title" : "Keycloak should warn when ISPN or JGROUPS is running in debug level logging",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/43443"
+}, {
+  "number" : 44785,
+  "repository" : "keycloak",
+  "title" : "Can not get through SSO login if using a custom attribute with default value",
+  "kind" : "bug",
+  "area" : "user-profile",
+  "url" : "https://github.com/keycloak/keycloak/issues/44785"
+}, {
+  "number" : 44994,
+  "repository" : "keycloak",
+  "title" : "CVE-2025-67735 - netty-codec-http: Request Smuggling via CRLF Injection",
+  "kind" : "cve",
+  "area" : "dependencies",
+  "url" : "https://github.com/keycloak/keycloak/issues/44994"
+}, {
+  "number" : 45015,
+  "repository" : "keycloak",
+  "title" : "Deadlock in Infinispan virtual threads",
+  "kind" : "bug",
+  "area" : "infinispan",
+  "url" : "https://github.com/keycloak/keycloak/issues/45015"
+}, {
+  "number" : 45250,
+  "repository" : "keycloak",
+  "title" : "IDToken contains duplicate address claims",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/45250"
+}, {
+  "number" : 45313,
+  "repository" : "keycloak",
+  "title" : "Upgrade to Quarkus 3.27.2",
+  "kind" : "task",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/45313"
+}, {
+  "number" : 45333,
+  "repository" : "keycloak",
+  "title" : "User admin events don't show role, group mapping, reset password like events",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/45333"
+}, {
+  "number" : 45396,
+  "repository" : "keycloak",
+  "title" : "Database Migration fails when updating to 26.5.0 on MS SQL",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/45396"
+}, {
+  "number" : 45415,
+  "repository" : "keycloak",
+  "title" : "cache-remote-host becomes mandatory at build time when using clusterless feature",
+  "kind" : "bug",
+  "area" : "infinispan",
+  "url" : "https://github.com/keycloak/keycloak/issues/45415"
+}, {
+  "number" : 45417,
+  "repository" : "keycloak",
+  "title" : "Unmanaged Attributes Type (Only administrators can view) allows admin API to set Unmanaged Attributes",
+  "kind" : "bug",
+  "area" : "user-profile",
+  "url" : "https://github.com/keycloak/keycloak/issues/45417"
+}, {
+  "number" : 45474,
+  "repository" : "keycloak",
+  "title" : "Admin REST API document is not up to date",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/45474"
+}, {
+  "number" : 45498,
+  "repository" : "keycloak",
+  "title" : "Ignore OpenAPI artifacts when disabled",
+  "kind" : "enhancement",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/45498"
+}, {
+  "number" : 45526,
+  "repository" : "keycloak",
+  "title" : "Regression (26.5.1): Organizations domain resolution fails on MariaDB/MySQL due to ORG/ORG_DOMAIN collation mismatch",
+  "kind" : "bug",
+  "area" : "organizations",
+  "url" : "https://github.com/keycloak/keycloak/issues/45526"
+}, {
+  "number" : 45533,
+  "repository" : "keycloak",
+  "title" : "Keycloak should not allow matrix parameters in URLs as we don't use them",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/45533"
+}, {
+  "number" : 45570,
+  "repository" : "keycloak",
+  "title" : "CVE-2025-66560 - io.quarkus/quarkus-rest: Quarkus REST Worker Thread Exhaustion Vulnerability",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/45570"
+}, {
+  "number" : 45584,
+  "repository" : "keycloak",
+  "title" : "Keycloak supported specs should list DPoP as supported",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/45584"
+}, {
+  "number" : 45590,
+  "repository" : "keycloak",
+  "title" : "OIDCIdentityProviderConfig issuer configuration",
+  "kind" : "bug",
+  "area" : "token-exchange",
+  "url" : "https://github.com/keycloak/keycloak/issues/45590"
+}, {
+  "number" : 45597,
+  "repository" : "keycloak",
+  "title" : "Possible mismatch of charset/collation between columns on mysql/mariadb",
+  "kind" : "bug",
+  "area" : "organizations",
+  "url" : "https://github.com/keycloak/keycloak/issues/45597"
+}, {
+  "number" : 45651,
+  "repository" : "keycloak",
+  "title" : "CVE-2025-14559 keycloak-services: Keycloak keycloak-services: Business logic flaw allows unauthorized token issuance for disabled users",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/45651"
+} ]

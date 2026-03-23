@@ -12,6 +12,7 @@ public class BlogBuilder extends AbstractBuilder {
     protected void build() throws Exception {
         for (Blogs.Blog blog : context.blogs()) {
             Map<String, Object> attributes = new HashMap<>();
+            setCommonAttributes(attributes);
 
             attributes.putAll(blog.getMap());
             attributes.put("blog", blog);
@@ -25,7 +26,7 @@ public class BlogBuilder extends AbstractBuilder {
                 attributes.put("blogInclude", blog.getTemplate());
             } else {
                 String blogInclude = "blog-" + blog.getFilename();
-                context.asciiDoctor().writeFile(blog.getMap(), new File(context.getWebSrcDir(), blog.getTemplate()), context.getTmpDir(), blogInclude);
+                context.asciiDoctor().writeFile(attributes, new File(context.getWebSrcDir(), blog.getTemplate()), context.getTmpDir(), blogInclude);
                 blog.setTemplate("target/tmp/" + blogInclude);
             }
 
@@ -33,6 +34,11 @@ public class BlogBuilder extends AbstractBuilder {
             context.sitemap().addFile(new File(dir, blog.getFilename()));
             printStep("created", blog.getFilename());
         }
+    }
+
+    private void setCommonAttributes(Map<String, Object> attributes) {
+        attributes.put("icons", "font");
+        attributes.put("sectanchors", "yes");
     }
 
     @Override

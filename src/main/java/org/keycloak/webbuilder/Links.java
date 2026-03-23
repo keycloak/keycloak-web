@@ -24,6 +24,14 @@ public class Links {
         return getLink("extensions");
     }
 
+    public String getCasestudies() {
+        return getLink("case-studies");
+    }
+
+    public String getTranslations() {
+        return getLink("translations");
+    }
+
     public String getDocs() {
         return getLink("documentation");
     }
@@ -61,15 +69,20 @@ public class Links {
     }
 
     public String get(Guides.Guide guide) {
+        return get(guide, null);
+    }
+
+    public String get(Guides.Guide guide, Boolean snapshot) {
         if (guide.isExternal()) {
             return guide.getExternalLink();
         } else {
-            return getLink((guide.isSnapshot() ? "nightly/" : "") + guide.getPath());
+            boolean nightly = (guide.isSnapshot() && snapshot == null) || (snapshot != null && snapshot);
+            return getLink((nightly ? "nightly/" : "") + guide.getPath());
         }
     }
 
     public String getGuideEdit(Guides.Guide guide) {
-        return guide.getGuideSource().getGithub() + guide.getMetadata().getId() + "/" + guide.getName() + ".adoc";
+        return guide.getGuideSource().getGithub() + guide.getMetadata().getId() + "/" + guide.getFQName() + ".adoc";
     }
 
     public String get(Blogs.Blog blog) {
@@ -83,4 +96,19 @@ public class Links {
         return getRoot() + path + (config.isPublish() ? "" : ".html");
     }
 
+    public String getParentLink(Guides.Guide guide) {
+        StringBuilder sb = new StringBuilder(getRoot()).append("/");
+        if (guide.isSnapshot()) {
+            sb.append("nightly/");
+        }
+        sb.append(guide.getMetadata().getId()).append("/");
+        if (guide.hasParent()) {
+            sb.append(guide.getParent()).append("/");
+        }
+        sb.append("introduction");
+        if (!config.isPublish()) {
+            sb.append(".html");
+        }
+        return sb.toString();
+    }
 }

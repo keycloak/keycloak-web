@@ -1,0 +1,5 @@
+{
+  "name": "EDP Keycloak Operator",
+  "description": "Kubernetes operator to configure realms, clients, users, groups, identity providers, and more via CRDs in a declarative way.",
+  "website": "https://github.com/epam/edp-keycloak-operator"
+}

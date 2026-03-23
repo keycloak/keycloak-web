@@ -1,0 +1,16 @@
+:title: SCIM Support Survey
+:date: 2026-01-19
+:publish: true
+:author: Keycloak Core IAM Team
+:summary: Help us understand your needs for SCIM support in Keycloak by participating in our survey!
+
+We are targeting Keycloak 26.6 to start supporting System for Cross-domain Identity Management (SCIM).
+
+The initial scope have been defined in this https://github.com/keycloak/keycloak/issues/13484[issue],
+but we want to ensure that we are addressing the most important use cases for our community.
+
+In order to better understand your needs and use cases around SCIM, we would greatly appreciate your participation
+in a brief survey. Your feedback will be invaluable in helping us to prioritize capabilities and ensure we are addressing
+the use cases that matter most to you.
+
+You can find the survey https://forms.gle/gq52TYHTQDyUQnDj8[here].

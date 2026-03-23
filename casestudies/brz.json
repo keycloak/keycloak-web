@@ -1,0 +1,10 @@
+{
+  "name": "BRZ",
+  "title": "BRZ migrated the Austrian Business Service Portal to Keycloak",
+  "description": "The Austrian Business Service Portal (USP) is the central online eGovernment platform for entrepreneurs and businesses. Authenticating and authorizing 2+ million users for 130+ public services is the most important key feature of the USP which now uses Keycloak.",
+  "url": "https://www.cncf.io/case-studies/brz-migrated-the-austrian-business-service-portal-with-2m-users-to-keycloak/",
+  "logoUrl": "logos/brz.svg",
+  "logoStyle": "padding: 1em",
+  "logoBackground": "#bb171d",
+  "published": "2025-08-04"
+}

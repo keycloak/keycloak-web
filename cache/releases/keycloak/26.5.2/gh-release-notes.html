@@ -1,0 +1,41 @@
+<div>
+
+<h2>Upgrading</h2>
+<p>Before upgrading refer to <a href="https://www.keycloak.org/docs/latest/upgrading/#migration-changes">the migration guide</a> for a complete list of changes.</p>
+
+<h2>All resolved issues</h2>
+
+<h3>Security fixes</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/44994">#44994</a> CVE-2025-67735 - netty-codec-http: Request Smuggling via CRLF Injection <code>dependencies</code></li>
+</ul>
+
+
+
+
+<h3>Enhancements</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/43443">#43443</a> Keycloak should warn when ISPN or JGROUPS is running in debug level logging </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/45498">#45498</a> Ignore OpenAPI artifacts when disabled <code>dist/quarkus</code></li>
+</ul>
+
+<h3>Bugs</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/44785">#44785</a> Can not get through SSO login if using a custom attribute with default value <code>user-profile</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/45015">#45015</a> Deadlock in Infinispan virtual threads <code>infinispan</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/45250">#45250</a> IDToken contains duplicate address claims <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/45333">#45333</a> User admin events don't show role, group mapping, reset password like events <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/45396">#45396</a> Database Migration fails when updating to 26.5.0 on MS SQL <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/45415">#45415</a> cache-remote-host becomes mandatory at build time when using clusterless feature <code>infinispan</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/45417">#45417</a> Unmanaged Attributes Type (Only administrators can view) allows admin API to set Unmanaged Attributes <code>user-profile</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/45474">#45474</a> Admin REST API document is not up to date <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/45526">#45526</a> Regression (26.5.1): Organizations domain resolution fails on MariaDB/MySQL due to ORG/ORG_DOMAIN collation mismatch <code>organizations</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/45533">#45533</a> Keycloak should not allow matrix parameters in URLs as we don't use them <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/45570">#45570</a> CVE-2025-66560 - io.quarkus/quarkus-rest: Quarkus REST Worker Thread Exhaustion Vulnerability </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/45584">#45584</a> Keycloak supported specs should list DPoP as supported <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/45590">#45590</a> OIDCIdentityProviderConfig issuer configuration <code>token-exchange</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/45597">#45597</a> Possible mismatch of charset/collation between columns on mysql/mariadb <code>organizations</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/45651">#45651</a> CVE-2025-14559 keycloak-services: Keycloak keycloak-services: Business logic flaw allows unauthorized token issuance for disabled users </li>
+</ul>
+
+</div>

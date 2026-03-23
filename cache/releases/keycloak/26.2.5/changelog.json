@@ -1,0 +1,218 @@
+[ {
+  "number" : 39130,
+  "repository" : "keycloak",
+  "title" : "Authorization Code Flow Fails Scope Validation After Credential Definition Migration to Realm Level",
+  "kind" : "bug",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/39130"
+}, {
+  "number" : 39157,
+  "repository" : "keycloak",
+  "title" : "[quarkus-next] TestEngine with ID 'junit-jupiter' failed to discover tests",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/39157"
+}, {
+  "number" : 39264,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Documentation Errors",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/39264"
+}, {
+  "number" : 39358,
+  "repository" : "keycloak",
+  "title" : "Aggregated policy: Cannot select policies that do not appear in the drop-down list",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/39358"
+}, {
+  "number" : 39450,
+  "repository" : "keycloak",
+  "title" : "quarkus runtime options are treated as buildtime options",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/39450"
+}, {
+  "number" : 39469,
+  "repository" : "keycloak",
+  "title" : "Fix Securing Apps links to adapters",
+  "kind" : "enhancement",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/39469"
+}, {
+  "number" : 39486,
+  "repository" : "keycloak",
+  "title" : "Email server credentials can be harvested through host/port manipulation",
+  "kind" : "enhancement",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/39486"
+}, {
+  "number" : 39496,
+  "repository" : "keycloak",
+  "title" : "[26.2.3/26.1.5] Regression: empty ClientList in UI for Custom UserStorageProvider",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/39496"
+}, {
+  "number" : 39499,
+  "repository" : "keycloak",
+  "title" : "UI does not show user's attributes after reentering the Attributes TAB",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/39499"
+}, {
+  "number" : 39502,
+  "repository" : "keycloak",
+  "title" : "Refreshed tokens are not persisted for IDP token exchange",
+  "kind" : "bug",
+  "area" : "token-exchange",
+  "url" : "https://github.com/keycloak/keycloak/issues/39502"
+}, {
+  "number" : 39509,
+  "repository" : "keycloak",
+  "title" : "UI does not show organization's attributes after reentering the Attributes TAB",
+  "kind" : "bug",
+  "area" : "account/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/39509"
+}, {
+  "number" : 39538,
+  "repository" : "keycloak",
+  "title" : "Autocomplete in Mapper type of user federation broken",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/39538"
+}, {
+  "number" : 39540,
+  "repository" : "keycloak",
+  "title" : "Forms IT tests breaks with Chrome 136.0.7103.59",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/39540"
+}, {
+  "number" : 39541,
+  "repository" : "keycloak",
+  "title" : "Fix doc link to FGAP v1",
+  "kind" : "enhancement",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/39541"
+}, {
+  "number" : 39543,
+  "repository" : "keycloak",
+  "title" : "Apply edits to Operators Guide",
+  "kind" : "enhancement",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/39543"
+}, {
+  "number" : 39572,
+  "repository" : "keycloak",
+  "title" : "Edit Observability Guide",
+  "kind" : "enhancement",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/39572"
+}, {
+  "number" : 39590,
+  "repository" : "keycloak",
+  "title" : "Fix callouts in Operator guide",
+  "kind" : "enhancement",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/39590"
+}, {
+  "number" : 39612,
+  "repository" : "keycloak",
+  "title" : "Unable to change the OTP hash algorithm",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/39612"
+}, {
+  "number" : 39614,
+  "repository" : "keycloak",
+  "title" : "Keycloak not using custom Infinispan config",
+  "kind" : "bug",
+  "area" : "infinispan",
+  "url" : "https://github.com/keycloak/keycloak/issues/39614"
+}, {
+  "number" : 39638,
+  "repository" : "keycloak",
+  "title" : "Sessions from Infinispan should be mapped lazily for the Admin UI",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/39638"
+}, {
+  "number" : 39651,
+  "repository" : "keycloak",
+  "title" : "Speed up Infinispan list of all sessions be more eagerly remove old client sessions",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/39651"
+}, {
+  "number" : 39663,
+  "repository" : "keycloak",
+  "title" : "Duplicate validation message “Please specify username.” shown on login form",
+  "kind" : "bug",
+  "area" : "login/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/39663"
+}, {
+  "number" : 39665,
+  "repository" : "keycloak",
+  "title" : "When logging in, all client sessions are loaded which is slow",
+  "kind" : "enhancement",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/39665"
+}, {
+  "number" : 39693,
+  "repository" : "keycloak",
+  "title" : "Clicking on the jump links removes the localization of the UI",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/39693"
+}, {
+  "number" : 39697,
+  "repository" : "keycloak",
+  "title" : "Authorization documentation shows the wrong view",
+  "kind" : "bug",
+  "area" : "authorization-services",
+  "url" : "https://github.com/keycloak/keycloak/issues/39697"
+}, {
+  "number" : 39710,
+  "repository" : "keycloak",
+  "title" : "Recreate update is not scaling down the statefulset to zero",
+  "kind" : "bug",
+  "area" : "operator",
+  "url" : "https://github.com/keycloak/keycloak/issues/39710"
+}, {
+  "number" : 39724,
+  "repository" : "keycloak",
+  "title" : "Hibernate LazyInitializationException when deleting client with CompositeRoles",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/39724"
+}, {
+  "number" : 39753,
+  "repository" : "keycloak",
+  "title" : "POST realm API returns 400 on conflict instead of 409 in version 26.2.4",
+  "kind" : "bug",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/39753"
+}, {
+  "number" : 39798,
+  "repository" : "keycloak",
+  "title" : "Documentation has outdated link to the \"latest\" branch of quickstarts",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/39798"
+}, {
+  "number" : 39800,
+  "repository" : "keycloak",
+  "title" : "[KEYCLOAK CI] - AuroraDB IT - Create EC2 runner instance",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/39800"
+}, {
+  "number" : 39838,
+  "repository" : "keycloak",
+  "title" : "Upgrade to Quarkus 3.20.1",
+  "kind" : "task",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/39838"
+} ]

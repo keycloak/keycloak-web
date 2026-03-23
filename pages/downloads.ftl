@@ -2,7 +2,7 @@
 <#-- @ftlvariable name="links" type="org.keycloak.webbuilder.Links" -->
 <#-- @ftlvariable name="version" type="org.keycloak.webbuilder.Versions.Version" -->
 
-<@tmpl.page current="downloads" title="downloads" summary="Download the latest release of Keycloak from this page.">
+<@tmpl.page current="downloads" title="Downloads" summary="Download the latest release of Keycloak from this page.">
 
 <div class="container mt-5">
     <h1>Downloads <span class="badge bg-primary">${version.version}</span></h1>

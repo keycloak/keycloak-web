@@ -1,0 +1,29 @@
+[ {
+  "number" : 39125,
+  "repository" : "keycloak",
+  "title" : "[Keycloak CI] - FIPS UT - Run crypto tests",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/39125"
+}, {
+  "number" : 39142,
+  "repository" : "keycloak",
+  "title" : "Make distribution startup timeout configurable",
+  "kind" : "enhancement",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/39142"
+}, {
+  "number" : 39349,
+  "repository" : "keycloak",
+  "title" : "CVE-2025-3910 Two factor authentication bypass",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/39349"
+}, {
+  "number" : 39350,
+  "repository" : "keycloak",
+  "title" : "CVE-2025-3501 Keycloak hostname verification",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/39350"
+} ]

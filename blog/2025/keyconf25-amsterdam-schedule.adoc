@@ -1,0 +1,57 @@
+:title: Talks announced for KEYCONF25 - get your tickets!
+:date: 2025-06-27
+:publish: true
+:author: Alexander Schwartz
+:preview: keyconf-social-media.jpg
+:summary: Join us in Amsterdam on August 28th, 2025 for an even bigger event than last year!
+
+The talks and speakers have now been announced for Keycloak's Identity Summit. Save your spot today!
+
+*📍 https://keyconf.dev/[KEYCONF25] – taking place in Amsterdam on August 28th, 2025!*
+
+This year’s edition of the Keycloak Identity Summit promises more content, more connections, and even more opportunities to engage with the people shaping the future of identity and access management.
+
+== Talk highlights
+
+Our talks highlight the broad spectrum of the Keycloak ecosystem: How to run it with confidence and securely, how extend it, and how to apply it in existing and new scenarios.
+
+See below for a short-list of topics we cover:
+
+* *Human and Workload Identities: Bridging the Gap with Keycloak*
+
+* *AI Meets Identity: Managing Keycloak with Natural Language via MCP*
+
+* *Observability in Keycloak: Where Does It Hurt?*
+
+* *The Event Sorcerer with the Keycloak: The Battle against Dynamic Configuration*
+
+* *Protectors of the Realm: Breaking and Fixing Keycloak Configurations*
+
+
+== A great place to network
+
+Networking lunch::
+Our extended lunch break is designed to help you meet fellow attendees, swap ideas, and build meaningful professional connections in a relaxed setting.
+
+Meet the maintainers::
+We will have a panel discussion with the maintainers. Ask your questions live and get a response from the experts!
+
+Business drinks::
+Stick around after the last session for informal networking over drinks. Want to sponsor this year’s Business Drink? Get in touch with us—we’d love to partner with you!
+
+== Get your ticket and join us!
+
+Whether you're a developer, architect, security specialist, or product owner, KEYCONF25 is your opportunity to gain knowledge, grow your network, and contribute to the future of the Keycloak community.
+
+📅 August 28th, 2025
+
+📍 Amsterdam, Netherlands
+
+*Tickets are now available at https://keyconf.dev/[keyconf.dev] – secure your spot!*
+
+== Want to get involved?
+
+Let’s continue building a stronger, smarter IAM community—together.
+
+We can’t wait to see you in Amsterdam!
+

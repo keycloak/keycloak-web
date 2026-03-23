@@ -20,7 +20,7 @@
 
     <div id="redirecting" style="display: none">
         <p>
-            You are being redirected to <a id="redirectlink" href="...">...</a>.
+            You are being redirected to <code><a id="redirectlink" href="...">...</a></code>.
         </p>
     </div>
 

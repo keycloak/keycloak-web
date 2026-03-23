@@ -1,0 +1,46 @@
+<div>
+
+<h2>Upgrading</h2>
+<p>Before upgrading refer to <a href="https://www.keycloak.org/docs/latest/upgrading/#migration-changes">the migration guide</a> for a complete list of changes.</p>
+
+<h2>All resolved issues</h2>
+
+
+
+<h3>Enhancements</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/10388">#10388</a> Allow to hide client scopes from scopes_supported in discovery endpoint </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/43076">#43076</a> Add rate limiter for sending verification emails in context of update email </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/43509">#43509</a> Role authorization for workflows. <code>admin/api</code></li>
+</ul>
+
+<h3>Bugs</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/41270">#41270</a> Cannot save new attribute group <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/41271">#41271</a> Changing user profile attribute results in an error everytime <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/43082">#43082</a> ExternalLinksTest is broken due to missing path parameters <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/43091">#43091</a> Duplicate Email Fields on Temporarily Locked Out Sign In With Organization Identity-First Login <code>login/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/43160">#43160</a> Regression in DEBUG_PORT handling since 26.4.0 – host binding (*:port / 0.0.0.0:port) no longer works <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/43460">#43460</a> FGAP/UI: `reset-password` succeeds but UI shows 403 without Users:manage <code>admin/fine-grained-permissions</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/43505">#43505</a> DPoP proof replay check doesn't consider clock skew <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/43516">#43516</a> Deleting Client is slow and fails when a lot of client sessions exist <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/43578">#43578</a> "admin" client role now requires server admin user <code>admin/api</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/43579">#43579</a> 403 Forbidden when assigning realm-management client roles with realm-admin despite FGAP disabled (regression in 26.4.0+) <code>admin/fine-grained-permissions</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/43596">#43596</a> FGAP: user can no longer open account management page, broken by `reset-password` <code>admin/fine-grained-permissions</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/43621">#43621</a> Version 26.4.1 breaks existing ldap users with capital letters in username <code>ldap</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/43682">#43682</a> When syncing roles, the database layer can see deadlocks </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/43698">#43698</a> Role Mapper is updating the user every time on login <code>identity-brokering</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/43723">#43723</a> Only add the none verifier when attestation conveyance preference is none (or default) <code>authentication/webauthn</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/43734">#43734</a> Refresh token allowed for offline session even the related scope is removed </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/43736">#43736</a> FGAP V2: reset-password scope error when viewing users with Group permissions only <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/43744">#43744</a> Increased memory usage due to leaking KeycloakSession instances <code>admin/api</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/43759">#43759</a> QuarkusKeycloakSession not garbage collected when running Liquibase <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/43761">#43761</a> QuarkusKeycloakSession kept in memory for each timer <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/43763">#43763</a> Normalizing of Keycloak URLs not documented <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/43774">#43774</a> Under OLMv1 service monitor check uses wrong namespace <code>operator</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/43785">#43785</a> QuarkusKeycloakSession leak in DeclarativeUserProfileProvider <code>user-profile</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/43853">#43853</a> Ensure the logout endpoint removes the authentication session <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/43863">#43863</a> JS CI failing after normalization <code>testsuite</code></li>
+</ul>
+
+</div>

@@ -1,0 +1,154 @@
+:title: Federated client authentication - no more secrets
+:date: 2026-01-26
+:publish: true
+:author: Stian Thorgersen
+:summary: Eliminate secrets for clients by leveraging federated client authentication
+
+Keycloak has from day one supported identity brokering, allowing users to authenticate via an
+external OpenID Connect or SAML 2.0 identity provider. With federated client authentication it is
+now possible to authenticate OpenID Connect clients through external identity providers as well.
+
+Depending on the environment the clients is running in this can eliminate the need for managing
+secrets for clients altogether.
+
+A number of cloud vendors for example support injecting tokens automatically for workloads,
+Kubernetes have support for service accounts, and last but not least there is SPIFFE that can be
+leveraged in most environments.
+
+== How does federated client authentication work?
+
+The first step to setting up federated client authentication is to define a trust relationship
+between Keycloak and the external identity providers. This is done by creating a new identity
+provider in the realm.
+
+Keycloak currently has three types of identity providers that support federated client authentication:
+
+* OpenID Connect
+* SPIFFE
+* Kubernetes
+
+
+
+Clients can retrieve a token from the external identity providers that the client can then use to authenticate with
+Keycloak. In many cases clients can retrieve these tokens automatically through workload identity capabilities enabled
+for particular environments.
+
+Let's look at an example decoded JWT that can be used to authenticate a client:
+
+```
+{
+  "iss" : "https://my-external-idp"
+  "aud" : [
+    "http://my-keycloak/realms/myrealm"
+  ],
+  "exp" : 1769149961,
+  "iat" : 1769149661,
+  "sub" : "client-id-in-my-external-idp"
+}
+```
+
+The most relevant claims are `iss`, `aud` and `sub`. Keycloak uses the `iss` claim to identity the external party
+that issued the token as well as retrieving the external parties signing keys to verify the token.  
+
+The `aud` claim is to make sure the token was issued to be used by Keycloak and not other applications. It is important
+that this contains a single audience that uniquely identifies Keycloak as the target audience, as leaking this token
+to other parties can then allow them to authenticate as the client.
+
+Finally, the `sub` claim is used to lookup the local client associated with this external identifier. When configuring
+a client in Keycloak it will have a local client id, as well as a reference to the external client id. 
+
+Once the client has obtained the token it can now send the token in the `client_assertion` parameter
+instead of using `client_id` and `client_secret` parameters.
+
+When Keycloak receives the token it verifies the signature using the registered identity providers
+public keys and looks-up the associated client.
+
+## OpenID Connect
+
+Leverage any identity provider supporting OpenID Connect for federated client authentication
+as long as it is able to issue signed json-web tokens with the following claims:
+
+* `iss` - Must uniquely identify the external identity provider.
+* `aud` - Must be set to the Keycloak Realm issuer URL; alternatively there's an option to allow the ID of the client in the external identity provider.
+* `sub` - Must uniquely identify the client in the external identity provider.
+* `exp` - Must contain a future time when the token expires.
+* `jti` - May contain a unique identifier for the token, which is used by Keycloak to prevent re-use of tokens.
+
+For more details on how to configure an OpenID Connect identity provider check out the https://www.keycloak.org/docs/latest/server_admin/index.html#_identity_broker_oidc[Keycloak Documentation].
+
+## SPIFFE
+
+Leverage any identity provider supporting SPIFFE APIs for federated client authentication
+as long as it can issue SPIFFE JWT SVIDs and provides a SPIFFE Bundle Endpoint accessible by
+Keycloak.
+
+One important distinction between SPIFFE and other providers is the lack of an `iss` claim. Instead the `sub` claim
+contains both the SPIFFE Trust Domain as well as the client ID. An example `sub` claim is
+`spiffe://my-trust-domain/my-client` where the first part is the trust-domain (`spiffe://my-trust-domain`) that is
+equivalent to the standard `iss` claim.
+
+If you want to try out using Keycloak and SPIFFE/SPIRE together check out the demo available in the https://github.com/keycloak/keycloak-playground/tree/main/federated-client-authentication/spiffe[Keycloak Playground].
+
+For more details on how to configure a SPIFFE identity provider check out the https://www.keycloak.org/docs/latest/server_admin/index.html#_identity_broker_spiffe[Keycloak Documentation].
+
+## Kubernetes Service Accounts
+
+For workloads running on Kubernetes, Kubernetes Service Accounts can be leveraged for federated
+client authentication. Applications can retrieve service account tokens through the TokenRequest API
+or Token Volume Projection.
+
+One requirement for using Kubernetes Service Accounts is Keycloak needs to be able to access
+the `<ISSUER URL>/.well-known/openid-configuration` endpoint to retrieve the public keys used to sign the
+service account tokens. By default, this endpoint requires authentication. If Keycloak is running
+in the same Kubernetes cluster as the client, Keycloak leverages its own Kubernetes Service Account to authenticate to this endpoint. When Keycloak is running externally the Kubernetes cluster must
+be configured with an `Issuer URL` accessible by Keycloak, and Keycloak needs to be able to
+reach the `.well-known/openid-configuration` endpoint without requiring authentication.
+
+When clients retrieve service account tokens they must request the Keycloak Realm Issuer URL as
+the audience, and additionally request short-lived tokens.
+
+If you want to try out using Keycloak and Kubernetes check out the demo available in the https://github.com/keycloak/keycloak-playground/tree/main/federated-client-authentication/kubernetes[Keycloak Playground].
+
+For more details on how to configure a Kubernetes identity provider check out the https://www.keycloak.org/docs/latest/server_admin/index.html#_identity_broker_kubernetes[Keycloak Documentation].
+
+## How secure is federated client authentication?
+
+There is an implicit trust relationship with the external identity provider. If the external
+identity provider is compromised attackers can potentially generate tokens to authenticate
+as any clients in Keycloak leveraging this provider for authentication.
+
+Tokens used as client assertions can potentially be leaked or intercepted. As tokens are
+short-lived the risk is reduced. For additional protection replay prevention can be leverage. However, bear in mind
+there is a performance penalty replay prevention. For every request the client sends to Keycloak it must then retrieve
+a new token from the external provider, additionally Keycloak has to keep track of previously used tokens until they
+expire.
+
+Neither SPIFFE or Kubernetes Service Accounts supports reuse protection. Both SPIFFE and Kubernetes limit how often a
+client can retrieve new tokens. In both cases this is configurable, but make sure token lifespans are configured to be
+shorted lived and not long lived. Recommendations here would be a maximum 10 minutes lifespan, which brings a good
+balance between security and performance.
+
+End-to-end encryption between the client, the external identity provider, and Keycloak provides a
+good level of protection against tokens being leaked. Combined with short-lived tokens and
+preventing clients from sharing or storing tokens insecurely, a high level of security can be
+achieved.
+
+In general federated client authentication eliminates the need for clients to manage secrets to authenticate with Keycloak, are short-lived, and cryptographically signed, which provides a high
+level of security compared to client secrets.
+
+Compared to self-signed client assertions, where a client signs client assertions using its own
+private keys it depends on the environment which is more secure. Federated client authentication
+introduces a third-party into the mix as well as additional points where tokens can be leaked. On the
+other hand how frequently are private keys for clients rotated and how securely are they stored?
+
+## What's next?
+
+We would love feedback on the preview federated client authentication feature, both the good
+and the bad. Let us know if you've successfully tried the feature out and with what environment,
+or if you failed to get it working let us know. We'll try to help and improve the feature for the future.
+
+To provide feedback go to the https://github.com/keycloak/keycloak/discussions/45705[GitHub Discussion] or https://github.com/keycloak/keycloak/issues[report a bug].
+
+Federated client authentication with OpenID Connect and Kubernetes Service Accounts is planned
+to be fully supported in Keycloak 26.6. However, SPIFFE will remain preview until the
+https://datatracker.ietf.org/doc/draft-schwenkschuster-oauth-spiffe-client-auth/[OAuth SPIFFE Client Authentication] is finalized.

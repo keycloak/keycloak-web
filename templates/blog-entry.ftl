@@ -3,7 +3,7 @@
 
 <@tmpl.page current="search" title="${blog.title}" summary="${(blog.summary)!''}" previewImage="${(blog.preview)!''}" author="${(blog.author)!''}" rss=true jsonLd="${blog.jsonLd}">
 
-<div class="container mt-5 kc-article">
+<div class="container mt-5 kc-article kc-asciidoc">
     <h1>${blog.title}</h1>
     <p class="blog-date text-muted">${blog.date?string["MMMM dd YYYY"]}<#if blog.author??> by ${blog.author}</#if></p>
 

@@ -15,11 +15,20 @@ function init() {
             clientId: conf.client
         });
 
+        function login() {
+            keycloak.login();
+        }
+
+        function logout() {
+            keycloak.logout();
+        }
+
         keycloak.init({
             checkLoginIframe: false
         }).then(function(auth) {
-            document.getElementById('login').onclick = keycloak.login;
-            document.getElementById('logout').onclick = keycloak.logout;
+            document.getElementById('login').onclick = login;
+            document.getElementById('logout').onclick = logout;
+            document.getElementById('clearConfig').onclick = clearConfig;
 
             show('config-view');
             hide('config-edit');
@@ -59,23 +68,34 @@ function hide(id) {
     document.getElementById(id).classList.remove('show');
 }
 
+function clearConfig() {
+    console.info("Clearing the configuration.");
+    if (window.location.href.includes('?')) {
+        window.location.href = window.location.href.split('?')[0];
+    }
+}
+
 function updateConfig() {
     var url = document.getElementById('url').value;
     var realm = document.getElementById('realm').value;
     var client = document.getElementById('client').value;
 
-    window.location.href = window.location.href.split('#')[0] + '#url=' + url + '&realm=' + realm + '&client=' + client;
+    window.location.href = window.location.href.split('?')[0] + '?url=' + url + '&realm=' + realm + '&client=' + client;
 }
 
 function loadConfig() {
-    var h = window.location.hash.substring(1).split('&');
+    var qstring = window.location.href.includes('?') ? window.location.href.split('?')[1] : '';
+    if (qstring.includes('#')) {
+        qstring = qstring.split('#')[0];
+    }
+    var h = qstring.split('&');
     var r = {};
     for (var i = 0; i < h.length; i++) {
         var t = h[i].split('=')
         r[t[0]] = t[1];
     }
+    console.info("Configuration loaded: " + JSON.stringify(r));
     return r;
 }
 
-window.onhashchange = init;
 init();

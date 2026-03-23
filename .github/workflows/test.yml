@@ -11,16 +11,21 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up JDK
-      uses: actions/setup-java@v4
+    - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+
+    - name: Setup JDK
+      uses: actions/setup-java@f2beeb24e141e01a676f977032f5a29d81c9e27e # v5.1.0
       with:
         distribution: temurin
         java-version: 17
         cache: maven
-    - name: Build with Maven
-      env:
-        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      run: ./mvnw -B -s mvn-rel-settings.xml package
+
+    - name: Check site links
+      uses: ./.github/actions/linkcheck
+      with:
+        directory: ${{ github.workspace }}
+        token: ${{ secrets.GITHUB_TOKEN }}

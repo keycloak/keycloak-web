@@ -1,4 +1,5 @@
 <#macro page current title summary="" importMap="" previewImage="" author="" noindex=false nocsp=false rss=false jsonLd="">
+<#-- @ftlvariable name="projectStars" type="org.keycloak.webbuilder.ProjectStars" -->
 <!doctype html>
 <html lang="en" prefix="og: https://ogp.me/ns#">
 <head>
@@ -58,11 +59,11 @@
     <link rel="canonical" href="${canonical}">
     <meta property="og:url" content="${canonical}">
 
-    <link rel="shortcut icon" href="${links.getResource('favicon.ico')}">
+    <link rel="icon" type="image/x-icon" href="${links.getResource('favicon.ico')}">
+    <link rel="icon" type="image/vnd.microsoft.icon" href="${links.getResource('favicon.ico')}">
+    <link rel="icon" type="image/svg+xml" href="${links.getResource('favicon.svg')}">
 
     <#if importMap?has_content><script type="importmap">${importMap}</script></#if>
-    <script src="${links.getResource('bootstrap/dist/js/bootstrap.min.js')}" type="text/javascript"></script>
-    <script src="${links.getResource('tocbot/dist/tocbot.min.js')}" type="text/javascript"></script>
     <#if rss><link rel="alternate" type="application/rss+xml" title="Keycloak's Blog" href="${links.getRss()}"></#if>
     <#if jsonLd?has_content>
     <script type="application/ld+json">
@@ -138,12 +139,14 @@
             </div>
         </div>
         <div class="flex flex-col items-center gap-6 pt-8 border-t border-white/10">
-            <img alt="Cloud Native Computing Foundation" src="${links.getResource('images/cncf-white-logo.png')}" class="h-12"/>
+            <img alt="Cloud Native Computing Foundation" src="${links.getResource('images/cncf-white-logo.png')}" class="h-12" loading="lazy"/>
             <p class="text-center text-white/40 text-xs max-w-3xl">&copy; Keycloak Authors 2025. &copy; 2025 The Linux Foundation. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage" class="text-white/60 hover:text-primary-fixed transition-colors">Trademark Usage page</a>.</p>
         </div>
     </div>
 </footer>
 
+<script src="${links.getResource('bootstrap/dist/js/bootstrap.min.js')}" type="text/javascript"></script>
+<script src="${links.getResource('tocbot/dist/tocbot.min.js')}" type="text/javascript"></script>
 <script>
     (function() {
         var toggle = document.getElementById('theme-toggle');

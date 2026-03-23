@@ -1,0 +1,10 @@
+{
+  "name": "Breuninger",
+  "title": "Breuninger authenticates all staff with Keycloak's strong authentication",
+  "description": "E. Breuninger GmbH & Co. (a major German fashion retailer) faced challenges with a legacy, monolithic authentication system. They chose Keycloak, an open-source identity provider, because of its flexibility, strong community support, and ability to run natively on OpenShift/Kubernetes.",
+  "url": "https://www.youtube.com/watch?v=ZhCGjxkVoMI",
+  "logoUrl": "logos/breuninger.svg",
+  "logoStyle": "",
+  "logoBackground": "#eeeeee",
+  "published": "2024-04-02"
+}

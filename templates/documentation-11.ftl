@@ -19,6 +19,7 @@
         <td>
         </td>
     </tr>
+<#if !archive>
     <tr>
         <td>
             <a href="${links.guides}#getting-started">
@@ -49,6 +50,7 @@
             Documentation specific to the server container image
         </td>
     </tr>
+</#if>
     <tr>
         <td>
             <a href="${docRoot}/securing_apps/index.html" target="_blank">

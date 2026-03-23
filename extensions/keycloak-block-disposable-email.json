@@ -1,0 +1,5 @@
+{
+  "name": "Block Disposable Email",
+  "description": "Prevent users from registering with a disposable email addresses.",
+  "website": "https://github.com/chintanbuch/keycloak-block-disposable-email"
+}
