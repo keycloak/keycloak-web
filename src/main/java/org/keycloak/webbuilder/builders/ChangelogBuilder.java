@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class ChangelogBuilder extends AbstractBuilder {
@@ -89,11 +90,15 @@ public class ChangelogBuilder extends AbstractBuilder {
                         gh.searchIssues().q(baseQuery + " label:release/" + v.getVersion()).list().forEach(i -> ghIssues.put(i.getNumber(), i));
 
                         List<ChangeLogEntry> changes = new LinkedList<>();
-
+                        // precompute list of versions that have been published before this version
+                        Set<String> previousVersions = versions.stream()
+                                .filter(version -> version.compareTo(v) < 0 && version.getDate().compareTo(v.getDate()) < 0)
+                                .map(Versions.Version::getVersion)
+                                .collect(Collectors.toSet());
                         for (GHIssue issue : ghIssues.values()) {
                             ChangeLogEntry change = new ChangeLogEntry();
                             change.setNumber(issue.getNumber());
-                            change.setRepository(issue.getRepository().getName());
+                            change.setRepository(getRepositoryName(issue));
                             change.setTitle(issue.getTitle());
                             change.setUrl(issue.getHtmlUrl().toString());
 
@@ -108,6 +113,15 @@ public class ChangelogBuilder extends AbstractBuilder {
                                     .filter(s -> s.startsWith("area/"))
                                     .map(s -> s.substring(5))
                                     .findFirst().ifPresent(s -> change.setArea(s));
+
+                            if (v.getVersion().endsWith(".0")) {
+                                // For a minor release, don't show items already backported to published patch releases in a previous version
+                                if (issue.getLabels().stream()
+                                    .filter(ghLabel -> ghLabel.getName().startsWith("release/"))
+                                    .anyMatch(ghLabel -> previousVersions.contains(ghLabel.getName().substring("release/".length())))) {
+                                    continue;
+                                }
+                            }
 
                             if (change.getKind() != null) {
                                 changes.add(change);
@@ -126,6 +140,16 @@ public class ChangelogBuilder extends AbstractBuilder {
                 }
             }
         }
+    }
+
+    /**
+     * Retrieve the repository name from the issue.
+     * This avoids `issue.getRepository().getName()` as it would issue a GitHub API call for each issue.
+     */
+    private static String getRepositoryName(GHIssue issue) {
+        String result = issue.getHtmlUrl().toString();
+        result = result.substring("https://github.com/".length());
+        return result.split("/")[1]; // 0 = org, 1 = repo
     }
 
     @Override
