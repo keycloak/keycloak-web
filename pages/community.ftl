@@ -19,10 +19,16 @@
     <div class="row mt-3">
         <h2>Community meetings</h2>
         <ul class="ms-4">
-            <li><b>OAuth SIG Weekly meeting</b></li>
+            <li><b>OID4VCI - OAuth SIG Weekly meeting</b></li>
             <ul>
-                <li>Time: Wed 12:00 PM - 01:00 PM London</li>
-                <li>Zoom Link: <a href="https://zoom.us/j/96822989424?pwd=KRphDAIhr6jjoxC7oaF2z9qqn7WB4j.1">https://zoom.us/j/96822989424?pwd=KRphDAIhr6jjoxC7oaF2z9qqn7WB4j.1</a></li>
+                <li>Time: Wed 12:00 PM - 01:00 PM GMT</li>
+                <li>Zoom Link: <a href="https://zoom-lfx.platform.linuxfoundation.org/meeting/97933174558?password=6965d59c-daea-4f7e-b6de-24790eddc957">https://zoom-lfx.platform.linuxfoundation.org/meeting/97933174558?password=6965d59c-daea-4f7e-b6de-24790eddc957</a></li>
+                <li>For more details about the meeting, check out the <a href="https://github.com/keycloak/keycloak-oauth-sig">GitHub repository</a> and <a href="https://cloud-native.slack.com/archives/C05KR0TL4P8">Slack channel</a>.</li>
+            </ul>
+            <li><b>OAuth SIG Monthly meeting</b></li>
+            <ul>
+                <li>Monthly on the first Monday, Time: 12:00 PM - 01:00 PM GMT</li>
+                <li>Zoom Link: <a href="https://zoom-lfx.platform.linuxfoundation.org/meeting/98291605594?password=d91ff281-70d0-4b60-9081-4457ebba30d8">https://zoom-lfx.platform.linuxfoundation.org/meeting/98291605594?password=d91ff281-70d0-4b60-9081-4457ebba30d8</a></li>
                 <li>For more details about the meeting, check out the <a href="https://github.com/keycloak/keycloak-oauth-sig">GitHub repository</a> and <a href="https://cloud-native.slack.com/archives/C05KR0TL4P8">Slack channel</a>.</li>
             </ul>
             <li><b>Keycloak User Group Austria</b></li>
