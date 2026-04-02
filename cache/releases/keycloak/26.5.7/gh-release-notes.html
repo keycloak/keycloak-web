@@ -1,0 +1,32 @@
+<div>
+
+<h2>Upgrading</h2>
+<p>Before upgrading refer to <a href="https://www.keycloak.org/docs/latest/upgrading/#migration-changes">the migration guide</a> for a complete list of changes.</p>
+
+<h2>All resolved issues</h2>
+
+<h3>Security fixes</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/45493">#45493</a> CVE-2025-14083 keycloak-server: Keycloak: Improper Access Control in Admin REST API leads to information disclosure <code>admin/api</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/45569">#45569</a> CVE-2026-1002 - io.vertx/vertx-core: static handler component cache can be manipulated to deny the access to static files </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/47069">#47069</a> CVE-2026-3429 Improper Access Control for LoA During Credential Deletion <code>account/api</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/47716">#47716</a> CVE-2026-4634 Keycloak Application-Level DoS via Scope Processing </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/47717">#47717</a> CVE-2026-4636 UMA Policy Resource Injection Allows Unauthorized Cross-User Permission Grants </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/47718">#47718</a> CVE-2026-3872 Redirect URI validation bypass via ..;/ path traversal in OIDC auth endpoint </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/47719">#47719</a> CVE-2026-4282 Privilege escalation via forged authorization codes due to SingleUseObjectProvider isolation flaw </li>
+</ul>
+
+
+
+
+<h3>Enhancements</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/46631">#46631</a> Upgrade to Quarkus 3.27.3 <code>dist/quarkus</code></li>
+</ul>
+
+<h3>Bugs</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/45204">#45204</a> Call without Host header throws uncaught error <code>core</code></li>
+</ul>
+
+</div>
