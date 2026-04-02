@@ -18,6 +18,7 @@ public class Translations {
     Map<TranslationTuple, Translation> translations = new HashMap<>();
 
     List<String> componentOrder = List.of("theme-baselogin", "theme-baseemail", "account-ui", "theme-baseaccount", "admin-ui", "theme-baseadmin");
+    List<String> ignoredComponents = List.of("keycloak-e-mail-theme", "keycloak-welcome-theme", "keycloak-login-theme", "keycloak-v2-login-theme");
 
     private ObjectMapper objectMapper = new ObjectMapper();
 
@@ -30,7 +31,11 @@ public class Translations {
     }
 
     public Translation getTranslation(Component component, Language language) {
-        return translations.get(new TranslationTuple(component, language));
+        Translation translation = translations.get(new TranslationTuple(component, language));
+        if (translation == null) {
+            translation = new Translation(0, 0);
+        }
+        return translation;
     }
 
     public Translations() {
@@ -122,7 +127,10 @@ public class Translations {
         }
         Map<String, Object> wlComponents = objectMapper.readValue(send.body(), Map.class);
         for (Map<String, Object> component : (ArrayList<Map<String, Object>>) wlComponents.get("results")) {
-            if ((boolean) component.get("is_glossary") == true) {
+            if ((boolean) component.get("is_glossary")) {
+                continue;
+            }
+            if (ignoredComponents.contains(component.get("slug").toString())) {
                 continue;
             }
             this.components.add(new Component(
