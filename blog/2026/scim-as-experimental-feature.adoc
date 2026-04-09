@@ -62,7 +62,7 @@ requests to the SCIM API:
 
 [source,bash]
 ----
-./kcadm.sh create clients -r myrealm -s clientId=scim-client -s serviceAccountsEnabled=true -s publicClient=false
+./kcadm.sh create clients -r myrealm -s clientId=scim-client -s serviceAccountsEnabled=true -s publicClient=false -s secret=secret
 ----
 
 To allow access to manage users and groups, grant the `manage-users` role to the service account of the client. You also
