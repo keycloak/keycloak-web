@@ -1,5 +1,5 @@
 :title: SCIM Realm API as an Experimental Feature
-:date: 2026-04-07
+:date: 2026-04-10
 :publish: true
 :author: Keycloak Core IAM Team
 :summary: The first step towards provisioning and deprovisioning users and groups in Keycloak via the SCIM protocol
@@ -238,9 +238,7 @@ create your own custom schemas and attributes.
 The feature's roadmap includes additional capabilities such as UIs for the administration console, support for custom
 schemas and attributes, support for organizations, and more.
 
-You can find the full roadmap in the following issue:
-
-* https://github.com/keycloak/keycloak/issues/45287
+You can find the full roadmap in GitHub issue https://github.com/keycloak/keycloak/issues/45287[#45287].
 
 == How does it map to other features?
 
