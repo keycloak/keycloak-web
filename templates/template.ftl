@@ -31,7 +31,15 @@
 
     <#if noindex?? && noindex><meta name="robots" content="noindex"></#if>
 
-    <#if !nocsp??><meta http-equiv='Content-Security-Policy' content="default-src 'none'; style-src 'self'; img-src 'self' https://www.google-analytics.com; font-src 'self'; script-src 'self' https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com; base-uri 'none'; form-action 'none';"></#if>
+    <#if !nocsp??><meta http-equiv='Content-Security-Policy' content="default-src 'none'; style-src 'self'; img-src 'self' https://www.google-analytics.com; font-src 'self'; script-src 'self' 'unsafe-inline' https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com; base-uri 'none'; form-action 'none';"></#if>
+    <script>
+        (function() {
+            var stored = null;
+            try { stored = localStorage.getItem('keycloak-theme-preference'); } catch(e) {}
+            var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
 
     <link href="${links.getResource('bootstrap/dist/css/bootstrap.min.css')}" rel="stylesheet">
     <link href="${links.getResource('@fortawesome/fontawesome-free/css/all.min.css')}" rel="stylesheet">
@@ -60,6 +68,9 @@
         <img style="aspect-ratio: 730/151" class="img-fluid" src="${links.getResource('images/logo.svg')}" width="240" alt="Keycloak"/>
     </a>
     <a class="nav-link d-none d-sm-block d-md-none d-lg-block" href="https://github.com/keycloak/keycloak"><img src="${links.getResource('images/stars-large.svg')}" style="height: 25px; aspect-ratio: ${projectStars.aspectRatioLarge}" alt="GitHub stars"/></a>
+    <button id="theme-toggle" class="btn btn-link nav-link d-none d-sm-block d-md-none d-lg-block" type="button" aria-label="Switch to dark mode">
+        <i class="fas fa-moon"></i>
+    </button>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="fa fa-bars fa-lg px-1 py-2"></span>
     </button>
@@ -80,6 +91,11 @@
         <li class="nav-item col-6 col-md-auto">
           <a class="nav-link <#if current = 'blog'>active</#if>" href="${links.blog}">Blog</a>
         </li>
+        <li class="nav-item col-6 col-md-auto d-block d-sm-none d-md-block d-lg-none">
+          <button id="theme-toggle-mobile" class="btn btn-link nav-link" type="button" aria-label="Switch to dark mode">
+            <i class="fas fa-moon"></i>
+          </button>
+        </li>
       </ul>
     </div>
     <div class="d-block d-sm-none d-md-block d-lg-none text-center vw-100">
@@ -94,7 +110,8 @@
     <footer class="py-3 my-4 border-top">
         <p class="text-center text-muted">Keycloak is a Cloud Native Computing Foundation incubation project</p>
         <div class="text-center">
-            <img style="aspect-ratio: 300/48" alt="Cloud Native Computing Foundation" src="${links.getResource('images/cncf_logo.png')}" loading="lazy"/>
+            <img class="cncf-logo-light" style="aspect-ratio: 300/48" alt="Cloud Native Computing Foundation" src="${links.getResource('images/cncf_logo.png')}" loading="lazy"/>
+            <img class="cncf-logo-dark" style="aspect-ratio: 300/48" alt="Cloud Native Computing Foundation" src="${links.getResource('images/cncf_logo_white.png')}" loading="lazy"/>
         </div>
         <p class="mt-4 text-center small text-muted">&copy; Keycloak Authors 2026. &copy; 2026 The Linux Foundation. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage">Trademark Usage page</a>.</p>
     </footer>
@@ -102,6 +119,7 @@
 
 <script src="${links.getResource('bootstrap/dist/js/bootstrap.min.js')}" type="text/javascript"></script>
 <script src="${links.getResource('tocbot/dist/tocbot.min.js')}" type="text/javascript"></script>
+<script src="${links.getResource('js/theme.js')}" type="module"></script>
 </body>
 </html>
 </#macro>
