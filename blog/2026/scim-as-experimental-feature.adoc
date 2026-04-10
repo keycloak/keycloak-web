@@ -260,6 +260,12 @@ SCIM Realm API and share your thoughts with us. While the feature remains experi
 monitoring the feedback and usage to understand how it is being used and what the most important
 capabilities and fixes to deliver are.
 
+Please, provide your feedback about the feature's roadmap on the following issue:
+
+* https://github.com/keycloak/keycloak/issues/45287
+
+Or open issues with the `area/scim` label if you encounter any problems or enhancements in the current set of capabilities.
+
 This is particularly important to help us prioritize the next capabilities to be added, and to ensure that we are
 delivering the features that are most important to you.
 
