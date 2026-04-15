@@ -1,0 +1,5 @@
+{
+  "name": "Push MFA",
+  "description": "Adds a push-based second factor to Keycloak that works in tandem with a mobile app implementing the custom protocol",
+  "website": "https://github.com/ba-itsys/keycloak-push-mfa-extension"
+}
