@@ -1,0 +1,40 @@
+<div>
+
+<h2>Upgrading</h2>
+<p>Before upgrading refer to <a href="https://www.keycloak.org/docs/latest/upgrading/#migration-changes">the migration guide</a> for a complete list of changes.</p>
+
+<h2>All resolved issues</h2>
+
+<h3>Security fixes</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/47276">#47276</a> CVE-2026-4366 Blind Server-Side Request Forgery (SSRF) via HTTP Redirect Handling <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/47619">#47619</a> CVE-2026-4633 Keycloak user enumeration via identity-first login <code>core</code></li>
+</ul>
+
+
+
+
+<h3>Enhancements</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/47839">#47839</a> Update CloudNativePG to 1.29 </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/47909">#47909</a> Database data at rest encryption </li>
+</ul>
+
+<h3>Bugs</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/47435">#47435</a> AuroraDB IT CI workflow not cleaning up databases <code>testsuite</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/47737">#47737</a> deploy-testsuite profile is incomplete, causing discrete testsuite execution to fail <code>testsuite</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/47776">#47776</a> False session type of access token in offline_access refresh token flow with scope parameter without offline_access scope <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/47827">#47827</a> az vm create fails with JSON parsing error <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/47872">#47872</a> v26.6.0 Operator flood logs with warnings <code>operator</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/47889">#47889</a> Not possible to sync latest keycloak-admin-client to keycloak-client <code>admin/client-java</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/47904">#47904</a> @keycloak/keycloak-admin-client fails to install in version 26.6.0 <code>admin/client-js</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/47905">#47905</a> invalid package reference in keycloak-admin-ui <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/47908">#47908</a> MigrateTo26_6_0 modifies custom browser flows, breaking existing realm authentication <code>organizations</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/47929">#47929</a> User profile multiselect options not highlighted as selected in dropdown <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/47955">#47955</a> IdentityProviderAuthenticator creates an infinite redirect loop when an IdP returns an error (e.g. access_denied) and the login was initiated with kc_idp_hint <code>identity-brokering</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/48015">#48015</a> Missing explicit docs anchor for organizations <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/48032">#48032</a> Endpoint Response Text during Bootstrap contains Typo: Boostrap <code>dist/quarkus</code></li>
+</ul>
+
+</div>
