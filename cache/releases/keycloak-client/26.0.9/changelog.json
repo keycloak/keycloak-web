@@ -1,0 +1,15 @@
+[ {
+  "number" : 203,
+  "repository" : "keycloak-client",
+  "title" : "Sync after Keycloak server 26.6.0 release",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak-client/issues/203"
+}, {
+  "number" : 205,
+  "repository" : "keycloak-client",
+  "title" : "Update dependencies",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak-client/issues/205"
+} ]
