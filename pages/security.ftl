@@ -43,6 +43,7 @@
 
     <h3>Attribution Policy</h3>
     <p>We will credit reporters who informed us in private about security vulnerabilities in security advisories.</p>
+    <p>The attribution can contain the name, alias, company and group affiliation of the reporter. For GitHub issues, it can also include the GitHub username. We will not include email addresses or links.</p>
 
     <h3>Bug Bounty</h3>
     <p>There is currently no active bug bounty.</p>
