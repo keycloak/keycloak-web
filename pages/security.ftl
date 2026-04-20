@@ -37,9 +37,28 @@
     <p>Instead, those issues will be managed as regular bugs publicly. If in doubt, report your finding via email to the security team first to clarify if it is related to an experimental feature. </p>
 
     <h3>Coordinated Vulnerability Disclosure</h3>
-    <p>To report a security vulnerability in the Keycloak codebase, send an email to <a href="mailto:keycloak-security@googlegroups.com">keycloak-security@googlegroups.com</a>. Please test against the <strong>latest version</strong> of Keycloak, include the affected version in your report, provide detailed instructions on how to reproduce the issue with a <a href="https://stackoverflow.com/help/minimal-reproducible-example">minimal and reproducible example</a>, and include your contact information for acknowledgements. If you are reporting known CVEs related to third-party libraries used in Keycloak, please <a href="https://github.com/keycloak/keycloak/issues/new/choose">create a new GitHub issue</a>.</p>
-    <p>Each finding <strong>must</strong> be submitted individually to help our team triage. Every finding <strong>must</strong> contain clear evidence of exploitation; we do not accept reports based on static scanners without a proof-of-concept.</p>
-    <p>If you discover any publicly disclosed security vulnerabilities, please notify us immediately through <a href="mailto:keycloak-security@googlegroups.com">keycloak-security@googlegroups.com</a>.</p>
+    <p>If you are reporting known CVEs related to third-party libraries used in Keycloak, <a href="https://github.com/keycloak/keycloak/issues/new/choose">create a new GitHub issue</a>.
+    <p>If you discover any publicly disclosed security vulnerabilities, notify us through <a href="mailto:keycloak-security@googlegroups.com">keycloak-security@googlegroups.com</a>.
+    <p>If you are a <b>security researcher</b> and want to report a security vulnerability in the Keycloak codebase, follow these steps:
+    <ol>
+        <li>Test against the <a href="${links.getLink('downloads')}">latest released version</a> of Keycloak and include the affected version in your report.</li>
+        <li>Provide detailed instructions on how to reproduce the issue with a <a href="https://stackoverflow.com/help/minimal-reproducible-example">minimal and reproducible example.</a></li>
+        <li>Show clear evidence of exploitation like log output or screenshots. We will reject reports based on static scanners without a proof-of-concept.</li>
+        <li>Include your contact information for acknowledgements. See "Attribution Policy" below for details.</li>
+        <li>Submit each finding individually to allow a separate discussion thread with our triage team.</li>
+        <li>Pick a descriptive subject for the mail matching the reported finding.</li>
+        <li>Email your report to <a href="mailto:keycloak-security@googlegroups.com">keycloak-security@googlegroups.com</a>.</li>
+    </ol>
+    <p>If you are a <b>user of Keycloak</b> and want to report a security concern, follow these steps:
+    <ol>
+        <li>Identify the Keycloak version affected. Ideally verify with the <a href="${links.getLink('downloads')}">latest released version</a> of Keycloak.</li>
+        <li>If available, provide detailed instructions on how to reproduce the issue with a <a href="https://stackoverflow.com/help/minimal-reproducible-example">minimal and reproducible example.</a></li>
+        <li>If available, provide log files or screenshots.</li>
+        <li>Include your contact information for acknowledgements. See "Attribution Policy" below for details.</li>
+        <li>Submit each finding individually to allow a separate discussion thread with our triage team.</li>
+        <li>Pick a descriptive subject for the mail matching the reported finding.</li>
+        <li>Email your report to <a href="mailto:keycloak-security@googlegroups.com">keycloak-security@googlegroups.com</a>.</li>
+    </ol>
 
     <h3>Attribution Policy</h3>
     <p>We will credit reporters who informed us in private about security vulnerabilities in security advisories.</p>
