@@ -51,7 +51,7 @@
     </ol>
     <p>If you are a <b>user of Keycloak</b> and want to report a security concern, follow these steps:
     <ol>
-        <li>Identify the Keycloak version affected. Ideally verify with the <a href="${links.getLink('downloads')}">latest released version</a> of Keycloak.</li>
+        <li>Identify the Keycloak version affected. Ideally, verify with the <a href="${links.getLink('downloads')}">latest released version</a> of Keycloak.</li>
         <li>If available, provide detailed instructions on how to reproduce the issue with a <a href="https://stackoverflow.com/help/minimal-reproducible-example">minimal and reproducible example.</a></li>
         <li>If available, provide log files or screenshots.</li>
         <li>Include your contact information for acknowledgements. See "Attribution Policy" below for details.</li>
