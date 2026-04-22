@@ -1,0 +1,450 @@
+:title: Keycloak experimental AuthZEN Support
+:date: 2026-05-08
+:publish: true
+:author: Ryan Emerson
+:summary: Keycloak can now act as an AuthZEN Policy Decision Point
+
+We are excited to announce that Keycloak now includes experimental support for the
+https://openid.net/specs/openid-authzen-authorization-api-1_0.html[OpenID AuthZEN Authorization API 1.0] specification.
+This feature allows Keycloak to act as a *Policy Decision Point (PDP)*, exposing its existing authorization capabilities
+through the AuthZEN Evaluation and Evaluations API that a *Policy Enforcement Point (PEP)* can consume.
+
+== What is AuthZEN?
+
+AuthZEN is a specification developed by the OpenID Foundation that defines a standard API for authorization decisions.
+The core idea is simple: an application (PEP) sends an authorization request to a PDP, asking "Can this subject perform
+this action on this resource?". The PDP evaluates the request against its configured policies and returns a decision.
+
+By implementing the AuthZEN Authorization API, Keycloak becomes interoperable with any application or framework that
+supports the AuthZEN specification, allowing you to centralize your authorization logic in Keycloak and query it from
+services in your architecture.
+
+== How to try it out?
+
+As this is an experimental feature, you need to enable it when starting the server:
+
+[source,bash]
+----
+docker run \
+  -e KEYCLOAK_ADMIN=admin \
+  -e KEYCLOAK_ADMIN_PASSWORD=admin \
+  -p 8080:8080 \
+  quay.io/keycloak/keycloak:nightly \
+  start-dev --features=authzen
+----
+
+=== Configuring the Realm
+
+For this walkthrough we will create a dedicated realm with a simple Todo application scenario using role-based access
+control. The realm includes two users (Rick as an admin, Jerry as a viewer), an `authzen-pdp` client with authorization
+services, and scope-based permissions so that admins can read and create todos while viewers can only read them.
+
+Save the following realm configuration to a file called `demo-realm.json`:
+
+[source,json]
+----
+{
+  "realm": "demo",
+  "enabled": true,
+  "roles": {
+    "realm": [
+      { "name": "admin" },
+      { "name": "viewer" }
+    ]
+  },
+  "users": [
+    {
+      "username": "rick",
+      "enabled": true,
+      "firstName": "Rick",
+      "lastName": "Sanchez",
+      "email": "rick@example.org",
+      "credentials": [{ "type": "password", "value": "password" }],
+      "realmRoles": ["admin"]
+    },
+    {
+      "username": "jerry",
+      "enabled": true,
+      "firstName": "Jerry",
+      "lastName": "Smith",
+      "email": "jerry@example.org",
+      "credentials": [{ "type": "password", "value": "password" }],
+      "realmRoles": ["viewer"]
+    }
+  ],
+  "clients": [
+    {
+      "clientId": "authzen-pdp",
+      "enabled": true,
+      "secret": "secret",
+      "serviceAccountsEnabled": true,
+      "directAccessGrantsEnabled": false,
+      "authorizationServicesEnabled": true,
+      "authorizationSettings": {
+        "scopes": [
+          { "name": "can_read_todos" },
+          { "name": "can_create_todo" }
+        ],
+        "resources": [
+          {
+            "name": "todo-1",
+            "type": "todo",
+            "scopes": [
+              { "name": "can_read_todos" },
+              { "name": "can_create_todo" }
+            ]
+          }
+        ],
+        "policies": [
+          {
+            "name": "admin-policy",
+            "type": "role",
+            "config": {
+              "roles": "[{\"id\":\"admin\"}]"
+            }
+          },
+          {
+            "name": "viewer-policy",
+            "type": "role",
+            "config": {
+              "roles": "[{\"id\":\"viewer\"}]"
+            }
+          },
+          {
+            "name": "read-todos-permission",
+            "type": "scope",
+            "decisionStrategy": "AFFIRMATIVE",
+            "config": {
+              "resources": "[\"todo-1\"]",
+              "scopes": "[\"can_read_todos\"]",
+              "applyPolicies": "[\"admin-policy\",\"viewer-policy\"]"
+            }
+          },
+          {
+            "name": "create-todo-permission",
+            "type": "scope",
+            "config": {
+              "resources": "[\"todo-1\"]",
+              "scopes": "[\"can_create_todo\"]",
+              "applyPolicies": "[\"admin-policy\"]"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
+----
+
+Then import the realm using the `kcadm.sh` script:
+
+[source,bash]
+----
+./kcadm.sh config credentials --server http://localhost:8080 --realm master --user admin --password admin
+./kcadm.sh create realms -f demo-realm.json
+----
+
+=== PDP Metadata Discovery
+
+Keycloak exposes AuthZEN PDP metadata via a `.well-known` path, allowing PEPs to dynamically discover the
+available authorization endpoints. Once the `authzen` feature is enabled and the realm is configured, you can query the
+metadata endpoint:
+
+[source,bash]
+----
+curl -s "http://localhost:8080/realms/demo/.well-known/authzen-configuration" | jq
+----
+
+Response:
+
+[source,json]
+----
+{
+  "policy_decision_point": "http://localhost:8080/realms/demo",
+  "access_evaluation_endpoint": "http://localhost:8080/realms/demo/authzen/access/v1/evaluation",
+  "access_evaluations_endpoint": "http://localhost:8080/realms/demo/authzen/access/v1/evaluations"
+}
+----
+
+PEPs can then use this metadata to locate the Evaluation and Evaluations API endpoints without hardcoding URLs.
+
+=== Individual requests with the Evaluation API
+
+The Evaluation API (`/realms/<realm>/authzen/access/v1/evaluation`) handles single authorization requests. You provide a
+subject, resource and action, and Keycloak returns a simple `{"decision": true}` or `{"decision": false}` response.
+
+To perform an evaluation, we first need obtain an access token for the `authzen-pdp` client:
+
+[source,bash]
+----
+ACCESS_TOKEN=$(curl -s -X POST "http://localhost:8080/realms/demo/protocol/openid-connect/token" \
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  -d 'grant_type=client_credentials&client_id=authzen-pdp&client_secret=secret' \
+  | jq -r .access_token)
+----
+
+Rick has the `admin` role, so he should be able to create todos:
+
+[source,bash]
+----
+curl -s -X POST "http://localhost:8080/realms/demo/authzen/access/v1/evaluation" \
+  -H "Authorization: Bearer $ACCESS_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "subject": {
+      "type": "user",
+      "id": "rick"
+    },
+    "resource": {
+      "type": "todo",
+      "id": "todo-1"
+    },
+    "action": {
+      "name": "can_create_todo"
+    }
+  }' | jq
+----
+
+Response:
+
+[source,json]
+----
+{
+  "decision": true
+}
+----
+
+Jerry only has the `viewer` role, so creating a todo should be denied:
+
+[source,bash]
+----
+curl -s -X POST "http://localhost:8080/realms/demo/authzen/access/v1/evaluation" \
+  -H "Authorization: Bearer $ACCESS_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "subject": {
+      "type": "user",
+      "id": "jerry"
+    },
+    "resource": {
+      "type": "todo",
+      "id": "todo-1"
+    },
+    "action": {
+      "name": "can_create_todo"
+    }
+  }' | jq
+----
+
+Response:
+
+[source,json]
+----
+{
+  "decision": false
+}
+----
+
+==== Subject Lookup Strategies
+
+Keycloak supports two `subject.type` values:
+
+* `client` - Evaluate whether the client is authorized to perform the specified action on a resource
+* `user` - Evaluate whether the specified user is authorized to perform the specified action on a resource
+
+When `subject.type` is set to `client`, clients are looked up by id based upon the `subject.id` value. The `subject.id`
+value must be the same as the `azp` value in the request token.
+
+When `subject.type` is set to `user`, the `subject.id` value is treated as a UUID if the value matches the UUID regex,
+otherwise the user is retrieved based upon their username. The lookup behavior can be configured by using explicit
+namespace prefixes in the `subject.id` value to control how the user is resolved:
+
+* `username:<username>` -- lookup via username
+* `id:<uuid>` -- lookup by UUID
+* `email:<email>` -- lookup by email address
+
+NOTE: Email-based lookups will return a `400 Bad Request` if the realm has duplicate emails enabled, as the lookup
+cannot guarantee a unique result.
+
+For example, to look up Jerry by his Keycloak UUID, first retrieve it via the Admin API or from the `sub` claim:
+
+[source,bash]
+----
+JERRY_ID=$(./kcadm.sh get users -r demo -q username=jerry -q exact=true --fields id --format csv --noquotes)
+----
+
+[source,bash]
+----
+curl -s -X POST "http://localhost:8080/realms/demo/authzen/access/v1/evaluation" \
+  -H "Authorization: Bearer $ACCESS_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "subject": {
+      "type": "user",
+      "id": "'$JERRY_ID'"
+    },
+    "resource": {
+      "type": "todo",
+      "id": "todo-1"
+    },
+    "action": {
+      "name": "can_read_todos"
+    }
+  }' | jq
+----
+
+As Jerry has the `viewer` role, reading todos is allowed:
+
+[source,json]
+----
+{
+  "decision": true
+}
+----
+
+Similarly, you can look up a user by email by using the `email:` prefix:
+
+[source,bash]
+----
+curl -s -X POST "http://localhost:8080/realms/demo/authzen/access/v1/evaluation" \
+  -H "Authorization: Bearer $ACCESS_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "subject": {
+      "type": "user",
+      "id": "email:jerry@example.org"
+    },
+    "resource": {
+      "type": "todo",
+      "id": "todo-1"
+    },
+    "action": {
+      "name": "can_read_todos"
+    }
+  }' | jq
+----
+
+Response:
+
+[source,json]
+----
+{
+  "decision": true
+}
+----
+
+=== Batch requests with the Evaluations API
+
+The Evaluations API (`/realms/<realm>/authzen/access/v1/evaluations`) allows you to batch multiple authorization checks into a single request.
+This is useful when you need to determine access for multiple subjects, resources or actions at once, reducing the number of
+round-trips to the PDP.
+
+[source,bash]
+----
+curl -s -X POST "http://localhost:8080/realms/demo/authzen/access/v1/evaluations" \
+  -H "Authorization: Bearer $ACCESS_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "subject": {
+      "type": "user",
+      "id": "username:rick"
+    },
+    "evaluations": [
+      {
+        "resource": {
+          "type": "todo",
+          "id": "todo-1"
+        },
+        "action": {
+          "name": "can_read_todos"
+        }
+      },
+      {
+        "resource": {
+          "type": "todo",
+          "id": "todo-1"
+        },
+        "action": {
+          "name": "can_create_todo"
+        }
+      }
+    ]
+  }' | jq
+----
+
+Response:
+
+[source,json]
+----
+{
+  "evaluations": [
+    {
+      "decision": true
+    },
+    {
+      "decision": true
+    }
+  ]
+}
+----
+
+If we make the same request for Jerry (a viewer), we see that reading is allowed but creating is denied:
+
+[source,bash]
+----
+curl -s -X POST "http://localhost:8080/realms/demo/authzen/access/v1/evaluations" \
+  -H "Authorization: Bearer $ACCESS_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "subject": {
+      "type": "user",
+      "id": "username:jerry"
+    },
+    "evaluations": [
+      {
+        "resource": {
+          "type": "todo",
+          "id": "todo-1"
+        },
+        "action": {
+          "name": "can_read_todos"
+        }
+      },
+      {
+        "resource": {
+          "type": "todo",
+          "id": "todo-1"
+        },
+        "action": {
+          "name": "can_create_todo"
+        }
+      }
+    ]
+  }' | jq
+----
+
+Response:
+
+[source,json]
+----
+{
+  "evaluations": [
+    {
+      "decision": true
+    },
+    {
+      "decision": false
+    }
+  ]
+}
+----
+
+== Feedback Welcome
+
+AuthZEN support in Keycloak is currently an *experimental feature*, and we would love to hear from the community as
+we shape its future.
+
+Please share your experiences, suggestions, and feature requests on the
+https://github.com/keycloak/keycloak/discussions/46012[AuthZEN GitHub discussion] or join the conversation on the
+https://groups.google.com/g/keycloak-dev[Keycloak mailing list]. Your input will directly influence how we evolve
+AuthZEN support in future releases.
