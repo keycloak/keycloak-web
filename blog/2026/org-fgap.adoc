@@ -1,0 +1,56 @@
+:title: Fine-Grained Admin Permissions for Organizations
+:date: 2026-05-04
+:publish: false
+:author: Vlasta Ramik
+:summary: Keycloak 26.7.0 introduces organization-scoped admin permissions, allowing administrators to be granted manage or view access to specific organizations rather than the entire realm.
+
+In Keycloak 26.7.0, Fine-Grained Admin Permissions (FGAP) will support Organizations as a resource type. This means you can grant an administrator permission to manage Org A while only allowing them to view Org B -- or restrict their access to a single organization entirely. No more realm-wide all-or-nothing admin access for organizations.
+
+== The Problem
+
+Before this release, administering organizations required the `manage-realm` role, which grants far broader access than just organizations -- it covers realm settings, authentication flows, and much more. There was no way to grant someone access to manage organizations without also giving them control over the entire realm. In multi-tenant deployments where different teams or partners own different organizations, this was a significant security and operational concern.
+
+== What's New
+
+Two changes in Keycloak 26.7.0 work together to solve this:
+
+=== Organization-Specific Admin Roles
+
+Organizations will support scoped admin roles that let you delegate day-to-day management tasks without granting realm-wide access. An organization administrator can:
+
+* Create, update, and delete organizations
+* Invite new members and revoke membership
+* Link and unlink identity providers
+* Manage organization groups
+
+These roles grant access to all organizations in the realm and can only be assigned by realm administrators, ensuring that privilege escalation stays under control.
+
+=== Organizations as a FGAP Resource Type
+
+Organizations will be a first-class resource type in the Fine-Grained Admin Permissions system, alongside Users, Groups, or Clients. This brings two permission scopes for organizations:
+
+* *manage* -- full administrative control over the organization
+* *view* -- read-only access to the organization and its configuration
+
+When FGAP is enabled, permissions can be set per organization. An administrator who is granted *manage* and *view* on Org A and *view* on Org B will see both organizations, but would be able to update (or make other managerial tasks) just Org A in the Admin Console and REST API -- all other organizations are hidden entirely.
+
+== Example: Scoped Organization Administration
+
+Consider a deployment with three organizations: *Acme Corp*, *Globex*, and *Initech*. You want:
+
+* Alice to fully manage Acme Corp and Globex
+* Bob to only view Initech
+
+With FGAP for Organizations, you create permissions and policies that grant Alice both *manage* and *view* on Acme Corp and Globex, and Bob just *view* on Initech. When Alice logs into the Admin Console, she sees only Acme Corp and Globex and can fully manage them. Bob sees only Initech in read-only mode. Neither has access to realm-wide settings or other organizations.
+
+== What's Not Included (Yet)
+
+This initial release focuses on organization-level manage and view permissions. Sub-resource permissions -- such as separate control over an organization's members, groups, or identity providers -- are not included in this milestone.
+
+== Getting Started
+
+Both Fine-Grained Admin Permissions and admin roles for Organizations will be available in Keycloak 26.7.0. If you don't want to wait for the release, you can try it out today using the https://www.keycloak.org/nightly[nightly builds]. We'd love to hear your feedback before the final release.
+
+To use the feature, enable both Organizations and Fine-Grained Admin Permissions in your realm settings, then configure permission policies for individual organizations through the Admin Console or the Admin REST API.
+
+For full details, see the https://www.keycloak.org/docs/nightly/server_admin/#understanding-the-realm-resource-types[Fine-Grained Admin Permissions documentation].
