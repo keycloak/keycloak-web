@@ -1,0 +1,65 @@
+:title: Announcing Keycloak's Identity Summit: KEYCONF26
+:date: 2026-05-02
+:publish: true
+:author: Nathalia Pinesi, Alexander Schwartz
+:preview: keyconf-social-media.png
+:summary: Join us in Prague on October 8th, 2026 for an interactive event to meet the community!
+
+Our annual conference dedicated to the Keycloak user community returns, with even more content and networking opportunities than last year. It’s the perfect place to interact, learn, share, and exchange insights and real-world use cases, network with fellow experts, users, and contributors.
+
+*📍 Introducing https://keyconf.dev/[KEYCONF26] – taking place in Prague on October 8th, 2026!*
+
+This year’s edition of the Keycloak Identity Summit features interactive sessions, and even more opportunities to engage with the people shaping the future of identity and access management.
+
+== Call for sessions
+
+The https://forms.office.com/pages/responsepage.aspx?id=hFQsXiLlnUeRylFdbgziKBgok6UO9mxHnShifZvG4ehUQUhMTlJZODZYMThENlVJVjhEU0lEWVRRWi4u[call for sessions] is open until *May 24th, 2026* — we'd love to hear from you!
+
+We're looking for sessions on topics such as:
+
+* Keycloak deployment and operations at scale
+* Human and non-human identities in the world of AI
+* OAuth2, OIDC, and evolving identity standards
+* Security best practices and hardening
+* EU Digital Identity Wallets and eIDAS
+* Migration stories and real-world use cases
+* Extending and customizing Keycloak
+
+https://forms.office.com/pages/responsepage.aspx?id=hFQsXiLlnUeRylFdbgziKBgok6UO9mxHnShifZvG4ehUQUhMTlJZODZYMThENlVJVjhEU0lEWVRRWi4u[Submit your proposal now]!
+
+== What to expect at KEYCONF26
+
+Inspiring Keynote Speaker::
+Hear from Hannah Short, Team Lead for Identity and Access Management at CERN, how they are using Keycloak as a highly performant and reliable SSO running on Kubernetes.
+
+Connect with like-minded professionals::
+From long-time contributors to those just starting their IAM journey, KEYCONF26 is the perfect place to meet others working with identity, OAuth2, OIDC, and more.
+
+Networking lunch::
+Our extended lunch break is designed to help you meet fellow attendees, swap ideas, and build meaningful professional connections in a relaxed setting.
+
+Business drinks::
+Stick around after the last session for informal networking over drinks. Want to sponsor this year’s Business Drink? Get in touch with us—we’d love to partner with you!
+
+Expert sessions and real-world use cases::
+Gain practical insights into Keycloak implementation, security improvements, OAuth2 best practices, and evolving identity standards.
+Learn how to use EU Digital Identity Wallets, and gather to tackle wicked Keycloak problems together.
+
+== Save the date and join us!
+
+Whether you're a developer, architect, security specialist, or product owner, KEYCONF26 is your opportunity to gain knowledge, grow your network, and contribute to the future of the Keycloak community.
+
+📅 October 8th, 2026
+
+📍 Prague, Czech Republic
+
+*Tickets are now available at https://keyconf.dev/[keyconf.dev] – secure your spot early!*
+
+== Want to get involved?
+
+We’re actively seeking sponsors and speakers for KEYCONF26. If you’d like to share your expertise or support this community-driven event, please get in touch at marketing@adorsys.com.
+
+Let’s continue building a stronger, smarter IAM community — together.
+
+We can’t wait to see you in Prague!
+
