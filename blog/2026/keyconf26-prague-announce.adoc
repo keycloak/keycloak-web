@@ -1,17 +1,31 @@
 :title: Announcing Keycloak's Identity Summit: KEYCONF26
-:date: 2026-04-20
+:date: 2026-05-02
 :publish: true
-:author: Nathalia Pinesi
+:author: Nathalia Pinesi, Alexander Schwartz
 :preview: keyconf-social-media.png
 :summary: Join us in Prague on October 8th, 2026 for an interactive event to meet the community!
 
-Our annual conference dedicated to the Keycloak user community returns, with even more content and networking opportunities than last year. It’s the perfect place to interact, learn, share, and exchange insights and real-world use cases network with fellow experts, users, and contributors.
+Our annual conference dedicated to the Keycloak user community returns, with even more content and networking opportunities than last year. It’s the perfect place to interact, learn, share, and exchange insights and real-world use cases, network with fellow experts, users, and contributors.
 
 *📍 Introducing https://keyconf.dev/[KEYCONF26] – taking place in Prague on October 8th, 2026!*
 
 This year’s edition of the Keycloak Identity Summit features interactive sessions, and even more opportunities to engage with the people shaping the future of identity and access management.
 
-The call for papers is open until May 24th, 2026, so get your voice heard!
+== Call for sessions
+
+The https://forms.office.com/pages/responsepage.aspx?id=hFQsXiLlnUeRylFdbgziKBgok6UO9mxHnShifZvG4ehUQUhMTlJZODZYMThENlVJVjhEU0lEWVRRWi4u[call for sessions] is open until *May 24th, 2026* — we'd love to hear from you!
+
+We're looking for sessions on topics such as:
+
+* Keycloak deployment and operations at scale
+* Human and non-human identities in the world of AI
+* OAuth2, OIDC, and evolving identity standards
+* Security best practices and hardening
+* EU Digital Identity Wallets and eIDAS
+* Migration stories and real-world use cases
+* Extending and customizing Keycloak
+
+https://forms.office.com/pages/responsepage.aspx?id=hFQsXiLlnUeRylFdbgziKBgok6UO9mxHnShifZvG4ehUQUhMTlJZODZYMThENlVJVjhEU0lEWVRRWi4u[Submit your proposal now]!
 
 == What to expect at KEYCONF26
 
@@ -29,7 +43,7 @@ Stick around after the last session for informal networking over drinks. Want to
 
 Expert sessions and real-world use cases::
 Gain practical insights into Keycloak implementation, security improvements, OAuth2 best practices, and evolving identity standards.
-Learn how to use EU Digital Identity Wallets, and gather to tackle wicked Keycloak problems.
+Learn how to use EU Digital Identity Wallets, and gather to tackle wicked Keycloak problems together.
 
 == Save the date and join us!
 
