@@ -1,6 +1,6 @@
 :title: Fine-Grained Admin Permissions for Organizations
-:date: 2026-05-04
-:publish: false
+:date: 2026-05-07
+:publish: true
 :author: Vlasta Ramik
 :summary: Keycloak 26.7.0 introduces organization-scoped admin permissions, allowing administrators to be granted manage or view access to specific organizations rather than the entire realm.
 
