@@ -1,0 +1,101 @@
+:title: JWT Authorization Grant and Identity Chaining in Keycloak 26.5
+:date: 2026-01-23
+:publish: true
+:author: Giuseppe Graziano
+:summary: Keycloak 26.5 introduces new preview feature: JWT Authorization Grant (RFC 7523), enabling the upcoming OAuth Identity Chaining specification
+
+Modern applications and AI agents increasingly operate across distributed trust domains, where each domain is protected by its own OAuth 2.0 Authorization Server. A single request may also traverse multiple resource servers to complete a task.
+
+This raises an important challenge: every protected resource must understand **who initiated the request**, which **authorization** was granted, and optionally which other resources were accessed before making an authorization decision. Preserving this information across domains is critical.
+
+**Keycloak 26.5** introduces *preview* support for the new feature **JWT Authorization Grant**, implementing https://datatracker.ietf.org/doc/html/rfc7523[RFC 7523]. This feature allows a client to present a signed JWT from an external issuer and obtain a Keycloak access token, providing a **standard and secure way to authorize requests based on external assertions**.
+
+However, exchanging a token alone does not fully solve the problem of propagating identity and authorization context across multiple trust domains.
+
+The IETF draft *OAuth Identity and Authorization Chaining Across Domains* defines a standardized flow that combines *JWT Authorization Grant (RFC 7523)* with *OAuth 2.0 Token Exchange (RFC 8693)*, *which Keycloak already supports*, to preserve the original user’s identity, claims, and authorization throughout the chain.
+
+== JWT Authorization Grant
+
+The JWT Authorization Grant feature allows a client to present a signed JWT assertion to the token endpoint and obtain an access token without an interactive authorization step. To initiate this flow, the client sends a request to the **token endpoint** with the `grant_type` set to **`urn:ietf:params:oauth:grant-type:jwt-bearer`** and the external token passed in the **`assertion`** parameter.
+
+It provides a standard and secure alternative to the preview feature External-to-Internal Token Exchange V1 which will be deprecated.
+
+Trust relationships in Keycloak are defined through Identity Providers. The JWT Authorization Grant can be enabled and configured in a dedicated section of the existing OpenID Connect v1.0 Identity Provider, or via a new dedicated JWT Authorization Grant Identity Provider.
+
+A confidential client can request a JWT Authorization Grant by enabling the dedicated option in the client settings and selecting the allowed identity providers.
+
+NOTE: The JWT Authorization Grant is a preview feature. Full configuration details are available in a dedicated guide:
+https://www.keycloak.org/securing-apps/jwt-authorization-grant[JWT Authorization Grant].
+
+== OAuth Identity and Authorization Chaining Across Domains
+
+Although the JWT Authorization Grant allows a client to obtain a Keycloak access token based on an external JWT, it does not by itself solve the broader problem of propagating identity and authorization context across multiple trust domains.
+
+To propagate identity across multiple trust domains, the https://www.keycloak.org/securing-apps/jwt-authorization-grant[*JWT Authorization Grant*] (RFC 7523) is combined with https://www.keycloak.org/securing-apps/token-exchange#_standard-token-exchange[*Standard Token Exchange*] (RFC 8693), already supported by Keycloak.
+
+This integration implements the flow defined in the IETF draft https://datatracker.ietf.org/doc/draft-ietf-oauth-identity-chaining[*OAuth Identity and Authorization Chaining Across Domains*].
+
+A typical scenario involves **Domain A** (an external IdP or Keycloak realm) and **Domain B** (an internal Keycloak realm). The goal is to allow a client in Domain A to access resources in Domain B while preserving the original user's identity.
+
+=== Step 1: Token Exchange in Domain A
+
+In this first step, the client requests a token for Domain B using a Token Exchange request.
+
+The client in Domain A must be configured to allow the target audience, typically by assigning a **Client Scope** with an **Audience Mapper** if you are using Keycloak for Domain A. The `audience` parameter in the request is then used to **restrict** the resulting token to that specific target, ensuring it contains the correct `aud` claim for Domain B.
+
+[source,bash]
+----
+# Request to Domain A
+POST /realms/domain-a/protocol/openid-connect/token
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=urn:ietf:params:oauth:grant-type:token-exchange
+&subject_token=$ORIGINAL_ACCESS_TOKEN
+&audience=http://localhost:8080/realms/domain-b
+----
+
+Domain A issues a new JWT access token, which acts as the assertion for Domain B.
+
+=== Step 2: JWT Authorization Grant in Domain B
+
+The client uses this token to authenticate with Domain B using the **JWT Authorization Grant**.
+
+[source,bash]
+----
+# Request to Domain B
+POST /realms/domain-b/protocol/openid-connect/token
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer
+&assertion=$TOKEN_FROM_STEP_1
+----
+
+Domain B validates the token and issues a local access token. Identity and authorization context are now securely propagated from Domain A to Domain B.
+
+NOTE: This flow can be fully configured with Keycloak. For more configuration details check the dedicated guide:
+https://www.keycloak.org/nightly/securing-apps/oauth-identity-authorization-chaining-across-domains[OAuth Identity and Authorization Chaining Across Domains].
+
+== Why this new feature?
+
+The JWT Authorization Grant solves an important problem in cross-domain OAuth flows. It lets an Authorization Server issue tokens based on a **signed JWT assertion**, making authorization decisions explicit and verifiable. Combined with Identity Chaining, it allows each domain to check and extend authorization context in a standards-based way.
+
+JWT Authorization Grant brings several advantages:
+
+* **Preserves user identity**. Cross-domain access often relies on generic service accounts to call APIs. With a signed JWT assertion, a service can request tokens on behalf of a user, keeping identity and intent clear when moving across domains.
+* **Standards-based cross-domain support**. The JWT Authorization Grant with the support of the RFC 7523 is part of ongoing OAuth work on cross-domain identity and authorization chaining, including
+https://datatracker.ietf.org/doc/draft-ietf-oauth-identity-chaining[OAuth Identity and Authorization Chaining Across Domains] and
+https://datatracker.ietf.org/doc/draft-ietf-oauth-identity-assertion-authz-grant[Identity Assertion Authorization Grant].
+This allows workflows that are traceable, constrained, and aligned with least-privilege principles, ideal for distributed systems and AI agents.
+
+== Next Steps
+
+* Promote JWT Authorization Grant from preview to a fully supported feature in the next Keycloak release
+* Deprecate Token Exchange version 1
+* Enable JWT Authorization Grant for social Identity Providers (e.g., Google)
+* Monitor and follow the evolution of the Identity Chaining draft to ensure full compliance
+
+== Try It Out
+
+As the **JWT Authorization Grant** is currently in **preview**, your feedback is helpful to help to refine the feature before it reaches full support.
+
+We encourage you to test this new feature and share your experience. Feedback and contributions from the community are always welcome.

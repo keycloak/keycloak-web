@@ -1,0 +1,5 @@
+{
+  "name": "Keycloak REST Claim Mapper",
+  "description": "Custom OIDC Protocol Mapper for Keycloak 26.x that enriches federated users with attributes fetched from one or more external REST APIs at token issuance time.",
+  "website": "https://github.com/jowe112/keycloak-rest-claim-mapper"
+}

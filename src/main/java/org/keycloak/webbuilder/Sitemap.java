@@ -4,6 +4,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Attribute;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
@@ -110,6 +111,7 @@ public class Sitemap {
             sitemap.writeStartDocument();
 
             sitemap.writeStartElement("urlset");
+            sitemap.writeCharacters("\n");
         } catch (XMLStreamException | FileNotFoundException e) {
             throw new RuntimeException(e);
         }
@@ -124,6 +126,7 @@ public class Sitemap {
             sitemapExtra.writeStartDocument();
 
             sitemapExtra.writeStartElement("urlset");
+            sitemapExtra.writeCharacters("\n");
         } catch (XMLStreamException | FileNotFoundException e) {
             throw new RuntimeException(e);
         }
@@ -210,14 +213,22 @@ public class Sitemap {
         }
 
         sitemap.writeEndElement();
+        sitemap.writeCharacters("\n");
     }
 
     private static String getContentHash(Document doc) throws NoSuchAlgorithmException {
         String hash = null;
 
         Element contents = doc.selectFirst(".kc-article");
-        if (contents == null) {
+        if (contents == null && doc.select(".jumbotron").size() == 1) {
             contents = doc.selectFirst(".jumbotron");
+        }
+        if (contents == null && doc.select(".jumbotron").size() > 1) {
+            contents = doc.selectFirst("body");
+            if (contents != null) {
+                contents.select("header").remove();
+                contents.select("nav").remove();
+            }
         }
         if (contents == null) {
             contents = doc.selectFirst(".container");
@@ -243,6 +254,9 @@ public class Sitemap {
         }
 
         if (contents != null) {
+            // Remove content that changes often, or is not relvant for the search
+            // https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag?hl=en#data-nosnippet-attr
+            contents.select("[data-nosnippet]").remove();
             MessageDigest digest = MessageDigest.getInstance("SHA-256");
             String content = title + "." + description + "." + contents.text();
             if (ldJson != null) {

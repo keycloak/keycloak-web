@@ -1,0 +1,22 @@
+[ {
+  "number" : 552,
+  "repository" : "keycloak-nodejs-connect",
+  "title" : "Clean up old release code from Node.js adapter repo",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak-nodejs-connect/issues/552"
+}, {
+  "number" : 558,
+  "repository" : "keycloak-nodejs-connect",
+  "title" : "The draft nightly untagged release is created by \"Release nightly\" GH action",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak-nodejs-connect/issues/558"
+}, {
+  "number" : 562,
+  "repository" : "keycloak-nodejs-connect",
+  "title" : "Incorrectly resolved {project_versionNpm} expression in the documentation",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak-nodejs-connect/issues/562"
+} ]

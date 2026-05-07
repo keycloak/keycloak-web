@@ -1,0 +1,29 @@
+[ {
+  "number" : 46909,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-3047 SAML broker: Authentication bypass due to disabled SAML client completing IdP-initiated login",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/46909"
+}, {
+  "number" : 46910,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-3009 Improper Enforcement of Disabled Identity Provider in IdentityBrokerService",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/46910"
+}, {
+  "number" : 46911,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-2603 Disabled SAML IdP still allows IdP-initiated broker login",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/46911"
+}, {
+  "number" : 46912,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-2092 saml broker encrypted assertion injection",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/46912"
+} ]

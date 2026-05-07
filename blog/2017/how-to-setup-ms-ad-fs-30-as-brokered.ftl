@@ -121,7 +121,7 @@ category = Active Directory
 <span style="font-family: &quot;arial&quot;;"><span style="font-size: 14.6667px; white-space: pre-wrap;"><b>A:</b> It is harmless. It seems that Windows 2016 version first checks for AD FS-like descriptor URL by adding <i>FederationMetadata/2007-06/FederationMetadata.xml</i> to the entered URL. Such resource does not exist in Keycloak, so it reports error. AD FS however seems to import using the entered URL when this happens. Please see also the <a href="http://lists.jboss.org/pipermail/keycloak-user/2017-March/010138.html">original email discussion</a> on this issue.&nbsp;</span></span></div>
 <h2>
 <span style="font-size: 16pt; white-space: pre-wrap;">Conclusion</span></h2>
-<p><span>If you get stuck, do not hesitate to write a question to </span><a href="https://keycloak.discourse.group/"><b>Keycloak user forum</b></a><span> mailing list.</span></p>
+<p><span>If you get stuck, do not hesitate to write a question to </span><a href="https://forum.keycloak.org/"><b>Keycloak user forum</b></a><span> mailing list.</span></p>
 <br />
 <p><span>As there is always room for improvement, if you find any issue or have any suggestion on this text, feel free to leave a comment!</span></p>
 <br />

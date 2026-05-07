@@ -1,0 +1,5 @@
+{
+    "name": "PostgreSQL OAuth Validator",
+    "description": "Delegate PostgreSQL authorization decisions to Keycloak using OAuth tokens, leveraging Keycloak Authorization Services for fine-grained, token-based access control.",
+    "website": "https://github.com/cloudnative-pg/postgres-keycloak-oauth-validator"
+}

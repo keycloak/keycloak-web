@@ -1,29 +1,25 @@
+<#-- @ftlvariable name="links" type="org.keycloak.webbuilder.Links" -->
 <#import "/templates/template.ftl" as tmpl>
 
 <@tmpl.page current="home" title="" previewImage="index.png" rss=true>
 
 <div class="jumbotron jumbotron-fluid bg-light kc-bg-triangles">
-  <div class="container pt-4 pb-4">
+  <div class="container pt-5 pb-5 text-center">
     <div class="row">
         <div class="col">
-            <h1 class="fs-xlarge">Open Source Identity and Access Management</h1>
-            <p class="fs-4">
+            <h1 class="display-4 mb-0">Open Source</h1>
+            <h1 class="display-3 fw-bold">Identity and Access Management</h1>
+            <p class="lead mt-4">
                 Add authentication to applications and secure services with minimum effort.<br/>
                 No need to deal with storing users or authenticating users.
             </p>
-            <p class="fs-4">
-                Keycloak provides user federation, strong authentication, user management, fine-grained authorization, and more.
-            </p>
-            <div class="mt-5">
+            <div class="mt-4">
                 <a class="btn btn-primary btn-lg" href="${links.guides}">Get Started</a>
                 <a class="btn btn-light btn-lg" href="${links.downloads}">Download</a>
             </div>
-            <div class="mt-1">
-                Latest release ${version.version}
-            </div>
         </div>
         <div class="col col-4 d-none d-lg-block">
-            <img class="img-fluid" src="${links.getResource('images/icon.svg')}" width="550" aria-hidden="true" alt="Keycloak"/>
+            <img class="img-fluid h-100" src="${links.getResource('images/icon.svg')}" width="550" aria-hidden="true" alt="Keycloak"/>
         </div>
     </div>
   </div>
@@ -31,10 +27,10 @@
 
 <div class="jumbotron jumbotron-fluid bg-dark text-white">
 <div class="container bg-dark p-3">
-    <div class="row">
-        <div class="col-md-1 col-sm-12 fw-bold">News</div>
+    <div class="row kc-news-section">
+        <div class="col-md-1 col-sm-12 fw-bold justify-content-center kc-news-item"><a href="${links.blog}">News</a></div>
         <#list news as n>
-        <div class="col">
+        <div class="col kc-news-item">
             <span class="badge bg-secondary">${n.date?string["dd MMM"]}</span> <a href="${n.link}">${n.title}</a>
         </div>
         </#list>
@@ -57,7 +53,7 @@
             </p>
         </div>
         <div class="col-5 text-end d-none d-md-block">
-            <img class="img-fluid" src="resources/images/screen-login.png" alt="Screenshot showing a user's login screen as presented by Keycloak"/>
+            <img class="img-fluid shadow" src="resources/images/screen-login.png" alt="Screenshot showing a user's login screen as presented by Keycloak"/>
         </div>
     </div>
 
@@ -109,7 +105,7 @@
             </p>
         </div>
         <div class="col-5 text-end d-none d-md-block">
-             <img class="img-fluid border" src="resources/images/screen-admin.png" alt="Screenshot of the admin console"/>
+             <img class="img-fluid shadow" src="resources/images/screen-admin.png" alt="Screenshot of the admin console"/>
         </div>
     </div>
 
@@ -129,7 +125,7 @@
             </p>
         </div>
         <div class="col-5 text-end d-none d-md-block">
-             <img class="img-fluid border" src="resources/images/screen-account.png" alt="Screenshot of the account management console"/>
+             <img class="img-fluid shadow" src="resources/images/screen-account.png" alt="Screenshot of the account management console"/>
         </div>
     </div>
 

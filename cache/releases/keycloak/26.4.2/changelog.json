@@ -1,0 +1,71 @@
+[ {
+  "number" : 26374,
+  "repository" : "keycloak",
+  "title" : "Workflow failure: Quarkus IT - FipsDistTest#testUnsupportedHttpsPkcs12KeyStoreInStrictMode",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/26374"
+}, {
+  "number" : 30939,
+  "repository" : "keycloak",
+  "title" : "Vulnerability in brute force detection settings",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/30939"
+}, {
+  "number" : 42991,
+  "repository" : "keycloak",
+  "title" : "Final review and update for UPDATE_EMAIL documentation",
+  "kind" : "enhancement",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/42991"
+}, {
+  "number" : 43022,
+  "repository" : "keycloak",
+  "title" : "Incorrect Basic Auth encoding for OIDC IDentity Provider when Client ID contains colon",
+  "kind" : "bug",
+  "area" : "identity-brokering",
+  "url" : "https://github.com/keycloak/keycloak/issues/43022"
+}, {
+  "number" : 43191,
+  "repository" : "keycloak",
+  "title" : "Upgrade guide for 26.4.0 should mention new minimal PostgreSQL server version 13 requirement",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/43191"
+}, {
+  "number" : 43244,
+  "repository" : "keycloak",
+  "title" : "UI crash on admin `/users/add-user` since 26.4.0",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/43244"
+}, {
+  "number" : 43351,
+  "repository" : "keycloak",
+  "title" : "Make pending email verification attribute removable by admin",
+  "kind" : "enhancement",
+  "area" : "user-profile",
+  "url" : "https://github.com/keycloak/keycloak/issues/43351"
+}, {
+  "number" : 43544,
+  "repository" : "keycloak",
+  "title" : "Intra-document links not rendered in downstream",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/43544"
+}, {
+  "number" : 43561,
+  "repository" : "keycloak",
+  "title" : "Server does not shutdown gracefully when started with --optimized",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/43561"
+}, {
+  "number" : 43650,
+  "repository" : "keycloak",
+  "title" : "SPIFFE should support OIDC JWK endpoint",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/43650"
+} ]

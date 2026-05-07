@@ -19,6 +19,7 @@
         <td>
         </td>
     </tr>
+<#if !archive>
     <tr>
         <td>
             <a href="${links.guides}#getting-started">
@@ -59,6 +60,7 @@
             How to secure applications and services with Keycloak
         </td>
     </tr>
+</#if>
     <tr>
         <td>
             <a href="${docRoot}/server_admin/index.html" target="_blank">

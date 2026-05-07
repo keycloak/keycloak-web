@@ -1,0 +1,141 @@
+[ {
+  "number" : 43975,
+  "repository" : "keycloak",
+  "title" : "Test Framework -> Embedded server -> Maven execution failure: Failed to read script file from: scripts/default-policy.js",
+  "kind" : "bug",
+  "area" : "test-framework",
+  "url" : "https://github.com/keycloak/keycloak/issues/43975"
+}, {
+  "number" : 44371,
+  "repository" : "keycloak",
+  "title" : "403 Forbidden when assigning realm-management client roles despite FGAP disabled (regression in 26.4.0+)",
+  "kind" : "bug",
+  "area" : "admin/fine-grained-permissions",
+  "url" : "https://github.com/keycloak/keycloak/issues/44371"
+}, {
+  "number" : 44417,
+  "repository" : "keycloak",
+  "title" : "Security issue with Organization feature exposes and fills the account name automatically in user/password form",
+  "kind" : "bug",
+  "area" : "organizations",
+  "url" : "https://github.com/keycloak/keycloak/issues/44417"
+}, {
+  "number" : 44783,
+  "repository" : "keycloak",
+  "title" : "Create Realm button is missing when user has create-realm role",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/44783"
+}, {
+  "number" : 44860,
+  "repository" : "keycloak",
+  "title" : "Admin UI: slow response time listing second user page",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/44860"
+}, {
+  "number" : 44863,
+  "repository" : "keycloak",
+  "title" : "x-robots HTTP header missing for static Keycloak resources, and REST endpoint responses",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/44863"
+}, {
+  "number" : 45003,
+  "repository" : "keycloak",
+  "title" : "Bug in JWTClientAuthenticator and JWTClientSecretAuthenticator causes NPE",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/45003"
+}, {
+  "number" : 45009,
+  "repository" : "keycloak",
+  "title" : "Performance improvement: Missing indexes on BROKER_LINK table columns",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/45009"
+}, {
+  "number" : 45093,
+  "repository" : "keycloak",
+  "title" : "Enable visibility of Role Mapping tab for users with view-users role",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/45093"
+}, {
+  "number" : 45107,
+  "repository" : "keycloak",
+  "title" : "Failed upgrade to 26.4.7 - sql generated for manual database upgrade contains invalid statements",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/45107"
+}, {
+  "number" : 45116,
+  "repository" : "keycloak",
+  "title" : "Realm-level admininistrators can no longer use Admin Console since 26.3.0 (UI fails to render)",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/45116"
+}, {
+  "number" : 45182,
+  "repository" : "keycloak",
+  "title" : "Allow full managing of realms from master realm without global admin role",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/45182"
+}, {
+  "number" : 45184,
+  "repository" : "keycloak",
+  "title" : "Fix section level in 26.5 migration guide",
+  "kind" : "task",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/45184"
+}, {
+  "number" : 45185,
+  "repository" : "keycloak",
+  "title" : "ExternalLinkTest fails due to missing _adding_context_for_log_messages anchor",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/45185"
+}, {
+  "number" : 45217,
+  "repository" : "keycloak",
+  "title" : "Javadoc of Keycloak-admin-client for Keycloak server 26.5 release",
+  "kind" : "task",
+  "area" : "admin/client-java",
+  "url" : "https://github.com/keycloak/keycloak/issues/45217"
+}, {
+  "number" : 45221,
+  "repository" : "keycloak",
+  "title" : "Fix Cluster Compatibility Tests",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/45221"
+}, {
+  "number" : 45226,
+  "repository" : "keycloak",
+  "title" : "Failure when decrypting SAML Response since 26.5.0",
+  "kind" : "bug",
+  "area" : "saml",
+  "url" : "https://github.com/keycloak/keycloak/issues/45226"
+}, {
+  "number" : 45239,
+  "repository" : "keycloak",
+  "title" : "Upgrade to 26.5.0 failing due to FK_ORG_INVITATION_ORG constraint",
+  "kind" : "bug",
+  "area" : "organizations",
+  "url" : "https://github.com/keycloak/keycloak/issues/45239"
+}, {
+  "number" : 45257,
+  "repository" : "keycloak",
+  "title" : "Creating IdentityProvider with latest java admin-client may fail against Keycloak server 26.4 or older",
+  "kind" : "bug",
+  "area" : "admin/client-java",
+  "url" : "https://github.com/keycloak/keycloak/issues/45257"
+}, {
+  "number" : 45307,
+  "repository" : "keycloak",
+  "title" : "UI Bug: WebAuthn passkey list is broken in keycloak v2 theme",
+  "kind" : "bug",
+  "area" : "login/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/45307"
+} ]

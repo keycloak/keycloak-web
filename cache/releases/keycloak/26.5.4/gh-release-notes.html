@@ -1,0 +1,42 @@
+<div>
+
+<h2>Upgrading</h2>
+<p>Before upgrading refer to <a href="https://www.keycloak.org/docs/latest/upgrading/#migration-changes">the migration guide</a> for a complete list of changes.</p>
+
+<h2>All resolved issues</h2>
+
+<h3>Security fixes</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/45646">#45646</a> CVE-2026-1190 - Keycloak SAML brokering: Response delay due to unchecked NotOnOrAfter in SubjectConfirmationData <code>saml</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/45649">#45649</a> CVE-2026-0707: Keycloak Authorization Header Parsing Leading to Potential Security Control Bypass </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/45776">#45776</a> CVE-2025-5416 keycloak-core: Keycloak Environment Information </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/46372">#46372</a> CVE-2026-2575 - Denial of Service due to excessive SAMLRequest decompression <code>saml</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/46462">#46462</a> CVE-2026-2733 Missing Check on Disabled Client for Docker Registry Protocol </li>
+</ul>
+
+
+
+
+<h3>Enhancements</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/46090">#46090</a> New key affinity for session ids </li>
+</ul>
+
+<h3>Bugs</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/44488">#44488</a> "Update email" AIA: "Back to Application" URL invokes OIDC callback with missing parameters <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/45065">#45065</a> Client deletion timeout due to large number of client roles <code>storage</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/45680">#45680</a> auth_mellon (SAML) authentication fails after upgrade to 26.5.1 (from 26.4.6) <code>saml</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/45728">#45728</a> Information Disclosure of Client Secret on Unauthenticated Config Endpoint <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/45874">#45874</a> Disabled organizations still resolve in organization‑aware login flows <code>organizations</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/45966">#45966</a> KeycloakRealmImport: Realm created in DB but not visible in Admin Console until restart <code>operator</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/45980">#45980</a> Keycloak cluster with 3 nodes and jdbc-ping stack fails to rejoin after temporary network partition <code>infinispan</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/46100">#46100</a> Makes Database Query on Every Login Page Load Instead of Using Cache <code>infinispan</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/46150">#46150</a> Move upgrading note for SAML to 26.5.4 <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/46178">#46178</a> Regression: cannot authenticate in keycloak-admin-client <code>adapter/javascript</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/46290">#46290</a> Incorrect code used error, leading to "400 / Code already used" during Infinispan state transfers <code>infinispan</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/46303">#46303</a> JWT Authorization Grant: Always getting “Token was issued too far in the past to be used now” for EntraID issued tokens <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/46312">#46312</a> io.fabric8:docker-maven-plugin:0.40.3:start failed: Cannot invoke "com.google.gson.JsonElement.isJsonNull()" because the return value of "com.google.gson.JsonObject.get(String)" is null <code>ci</code></li>
+</ul>
+
+</div>

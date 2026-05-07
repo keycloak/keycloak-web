@@ -1,0 +1,64 @@
+[ {
+  "number" : 45204,
+  "repository" : "keycloak",
+  "title" : "Call without Host header throws uncaught error",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/45204"
+}, {
+  "number" : 45493,
+  "repository" : "keycloak",
+  "title" : "CVE-2025-14083 keycloak-server: Keycloak: Improper Access Control in Admin REST API leads to information disclosure",
+  "kind" : "cve",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/45493"
+}, {
+  "number" : 45569,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-1002 - io.vertx/vertx-core: static handler component cache can be manipulated to deny the access to static files",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/45569"
+}, {
+  "number" : 46631,
+  "repository" : "keycloak",
+  "title" : "Upgrade to Quarkus 3.27.3",
+  "kind" : "enhancement",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/46631"
+}, {
+  "number" : 47069,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-3429 Improper Access Control for LoA During Credential Deletion",
+  "kind" : "cve",
+  "area" : "account/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/47069"
+}, {
+  "number" : 47716,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-4634 Keycloak Application-Level DoS via Scope Processing",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47716"
+}, {
+  "number" : 47717,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-4636 UMA Policy Resource Injection Allows Unauthorized Cross-User Permission Grants",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47717"
+}, {
+  "number" : 47718,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-3872 Redirect URI validation bypass via ..;/ path traversal in OIDC auth endpoint",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47718"
+}, {
+  "number" : 47719,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-4282 Privilege escalation via forged authorization codes due to SingleUseObjectProvider isolation flaw",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47719"
+} ]

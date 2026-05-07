@@ -1,0 +1,418 @@
+<div class="paragraph">
+<p>This release features new capabilities for users and administrators of Keycloak. The highlights of this release are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>JWT Authorization Grant</strong>, enabling external-to-internal token exchange using externally signed JWT assertions.</p>
+</li>
+<li>
+<p><strong>Federated client authentication</strong>, eliminating the need to manage individual client secrets in Keycloak.</p>
+</li>
+<li>
+<p><strong>Workflows</strong>, enabling administrators to automate realm administrative tasks such as user and client lifecycle management.</p>
+</li>
+<li>
+<p><strong>Zero-downtime patch releases</strong>, allowing rolling updates within a minor release stream without service downtime.</p>
+</li>
+<li>
+<p>The <strong>Keycloak Test Framework</strong>, replacing the previous Arquillian-based solution.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>All of these features are now fully supported and no longer in preview.
+Read on to learn more about each new feature.
+If you are upgrading from a previous release, <a href="https://www.keycloak.org/docs/latest/upgrading/index.html">also review the changes listed in the upgrading guide</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="_security_and_standards">Security and Standards</h3>
+<div class="sect3">
+<h4 id="_jwt_authorization_grant_supported">JWT Authorization Grant (supported)</h4>
+<div class="paragraph">
+<p>JWT Authorization Grant (<a href="https://datatracker.ietf.org/doc/html/rfc7523">RFC 7523</a>) is designed to implement external-to-internal token exchange use cases. This grant allows using externally signed JWT assertions to request OAuth 2.0 access tokens.</p>
+</div>
+<div class="paragraph">
+<p>In this release, JWT Authorization Grant is promoted from preview to supported. See the <a href="https://www.keycloak.org/securing-apps/jwt-authorization-grant">JWT Authorization Grant guide</a> for additional details.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_federated_client_authentication_supported">Federated client authentication (supported)</h4>
+<div class="paragraph">
+<p>Federated client authentication allows clients to leverage existing credentials once a trust relationship with another issuer exists. It eliminates the need to assign and manage individual secrets for each client in Keycloak.</p>
+</div>
+<div class="paragraph">
+<p>Federated client authentication is now promoted to supported, including support for client assertions issued by external OpenID Connect identity providers and Kubernetes Service Accounts.</p>
+</div>
+<div class="paragraph">
+<p>Since the OAuth SPIFFE Client Authentication specification is still in draft status, this feature remains a preview feature in Keycloak.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_new_guide_about_demonstrating_proof_of_possession_dpop">New guide about Demonstrating Proof-of-Possession (DPoP)</h4>
+<div class="paragraph">
+<p>A new guide for OAuth 2.0 Demonstrating Proof-of-Possession (DPoP) in the Securing applications Guides provides information on how to mitigate the risk of stolen tokens by making tokens sender-constrained.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="https://www.keycloak.org/nightly/securing-apps/dpop">Securing applications with DPoP</a> for more details.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_identity_brokering_apis_v2_preview">Identity Brokering APIs V2 (preview)</h4>
+<div class="paragraph">
+<p>A new preview version 2 for the Identity Brokering APIs is introduced in this release. When brokering is used during the authentication process, Keycloak allows you to store tokens and responses issued by the external Identity Provider. Applications can call a specific endpoint to retrieve those tokens, which, in turn, can be used to get extra user information or invoke endpoints in the external trust domain. The new version improves the token retrieval endpoint to substitute the internal to external Token Exchange (use case for the <a href="https://www.keycloak.org/securing-apps/token-exchange#_legacy-token-exchange">legacy Token Exchange V1</a>).</p>
+</div>
+<div class="paragraph">
+<p>For more information, see the chapter <a href="https://www.keycloak.org/docs/26.6.0/server_development/#_identity-brokering-apis">Identity Brokering APIs</a> in the Server Developer Guide.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_step_up_authentication_for_saml_preview">Step-up authentication for SAML (preview)</h4>
+<div class="paragraph">
+<p>The feature <code>step-up-authentication-saml</code> extends the step-up authentication to include the SAML protocol and clients. This feature is in preview mode. Additional information is available in the <a href="https://www.keycloak.org/docs/26.6.0/server_admin/#_step-up-authentication-saml">Server Administration Guide</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_oauth_client_id_metadata_document_experimental">OAuth Client ID Metadata Document (experimental)</h4>
+<div class="paragraph">
+<p><a href="https://www.ietf.org/archive/id/draft-ietf-oauth-client-id-metadata-document-01.html">OAuth Client ID Metadata Document (CIMD)</a> is an emerging standard that defines a JSON document format for describing OAuth 2.0 client metadata. Since version 2025-11-25, the Model Context Protocol (MCP) requires an authorization server to comply with CIMD. Keycloak now includes experimental support for CIMD, allowing it to serve as an authorization server for MCP version 2025-11-25 or later.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="https://www.keycloak.org/securing-apps/mcp-authz-server">Integrating with Model Context Protocol (MCP)</a> for the updated guide including CIMD.</p>
+</div>
+<div class="paragraph">
+<p>Many thanks to <a href="https://github.com/tnorimat">Takashi Norimatsu</a> for the contribution.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_administration">Administration</h3>
+<div class="sect3">
+<h4 id="_workflows_supported">Workflows (supported)</h4>
+<div class="paragraph">
+<p>Workflows allow administrators to automate and orchestrate realm administrative tasks, bringing key capabilities of Identity Governance and Administration (IGA) to Keycloak. By defining workflows in YAML format, you can automate the lifecycle of realm resources such as users and clients based on events, conditions, and schedules.</p>
+</div>
+<div class="paragraph">
+<p>In this release, Workflows is promoted from preview to supported. This release also includes new built-in steps, a troubleshooting guide, and various improvements to the workflow engine.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see the <a href="https://www.keycloak.org/docs/26.6.0/server_admin/#_managing_workflows">Managing workflows</a> chapter in the Server Administration Guide.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_organization_groups">Organization groups</h4>
+<div class="paragraph">
+<p>Organizations now support isolated group hierarchies, allowing each organization to manage its own teams and departments without naming conflicts across the realm. This update includes Identity Provider mappers to automatically assign federated users to organization groups based on external claims. Group membership is automatically included in OIDC tokens and SAML assertions when an organization context is requested.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see the <a href="https://www.keycloak.org/docs/26.6.0/server_admin/#_managing_groups_">Managing organization groups</a> guide.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_new_groups_scope_for_user_membership_changes">New Groups scope for user membership changes</h4>
+<div class="paragraph">
+<p>Fine-Grained Admin Permissions (FGAP) now includes a new <code>Groups</code> scope: <code>manage-membership-of-members</code>.</p>
+</div>
+<div class="paragraph">
+<p>This scope is now used as the group-side bridge for evaluating user-side <code>manage-group-membership</code> permissions based on a user&#8217;s current group memberships.
+The existing <code>manage-membership</code> scope keeps its current behavior for target group membership management operations.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_looking_up_client_secrets_via_the_vault_spi">Looking up client secrets via the Vault SPI</h4>
+<div class="paragraph">
+<p>Secrets for clients can now be managed and looked up by the Vault SPI.</p>
+</div>
+<div class="paragraph">
+<p>Thank you to <a href="https://github.com/tsaarni">Tero Saarni</a> for contributing this change.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_forcing_password_change_for_ldap_users">Forcing password change for LDAP users</h4>
+<div class="paragraph">
+<p>There is now initial support for LDAP password policy control.
+The support is limited to prompting users to update their password when the LDAP server indicates that the password must be changed.
+Previously, Keycloak let the user in and ignored the mandatory password reset.
+There is a new optional setting &#8220;Enable LDAP password policy&#8221; in the LDAP advanced settings to enable this.</p>
+</div>
+<div class="paragraph">
+<p>Thank you to <a href="https://github.com/tsaarni">Tero Saarni</a> for contributing this change.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_configuring_and_running">Configuring and Running</h3>
+<div class="sect3">
+<h4 id="_java_25_support">Java 25 support</h4>
+<div class="paragraph">
+<p>Keycloak now supports running with OpenJDK 25.
+The server container image continues to use OpenJDK 21 for now to support FIPS mode. For details, see the
+note in the FIPS guide.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_zero_downtime_patch_releases_supported">Zero-downtime patch releases (supported)</h4>
+<div class="paragraph">
+<p>Zero-downtime patch releases allow you to perform rolling updates when upgrading to a newer patch version within the same <code>major.minor</code> release stream without service downtime.</p>
+</div>
+<div class="paragraph">
+<p>In this release, zero-downtime patch releases are promoted to supported and enabled by default.
+When using the Keycloak Operator, set the update strategy to <code>Auto</code> to benefit from this functionality.</p>
+</div>
+<div class="paragraph">
+<p>For more details on the Operator configuration, see the <a href="https://www.keycloak.org/operator/rolling-updates">Avoiding downtime with rolling updates</a> guide.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_installation_instructions_for_cloudnativepg">Installation instructions for CloudNativePG</h4>
+<div class="paragraph">
+<p>For those running Keycloak on Kubernetes, there is now a guide on how to deploy a PostgreSQL database on Kubernetes by leveraging the CloudNativePG Operator and how to connect Keycloak to the database.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="https://www.keycloak.org/nightly/high-availability/single-cluster/deploy-cnpg">Deploying CloudNativePG in multiple availability zones</a> in the High Availability Guide for details.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_simplified_database_operations">Simplified database operations</h4>
+<div class="paragraph">
+<p>Several new command line options simplify the database operations for Keycloak and remove the need to use raw JDBC connection options:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Configure TLS for the database connection.</p>
+</li>
+<li>
+<p>Database connection timeouts.</p>
+</li>
+<li>
+<p>Transaction timeouts with production-ready defaults.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>It also verifies the correct UTF-8 character encoding of the database at startup and prints a warning if this is not the case.</p>
+</div>
+<div class="paragraph">
+<p>When running on orchestrators like Kubernetes, the startup and liveness probes return UP during database migrations, simplifying upgrades by removing the need to adjust the probes during upgrades.</p>
+</div>
+<div class="paragraph">
+<p>See the migration guide for additional details on each aspect.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_graceful_shutdown_of_http_stack">Graceful shutdown of HTTP stack</h4>
+<div class="paragraph">
+<p>To allow rolling updates for configuration changes or version updates, a graceful shutdown of Keycloak nodes prevents users from seeing error responses when logging in or refreshing their tokens when nodes shut down.</p>
+</div>
+<div class="paragraph">
+<p>Starting with this version, Keycloak supports a graceful shutdown of the HTTP stack.
+This includes delaying a shutdown after receiving a termination signal, connection draining for HTTP/1.1 and HTTP/2 connections during that period, and a shutdown timeout to finish ongoing requests.</p>
+</div>
+<div class="paragraph">
+<p>The defaults are a shutdown delay and a shutdown timeout of one second each.
+This should be a good fit for setups where the reverse proxy is using TLS edge termination or re-encryption and the reverse proxy is notified about the Keycloak node shutting down at the same time as the Keycloak node.
+This is a common setup, for example, in Kubernetes environments.</p>
+</div>
+<div class="paragraph">
+<p>Users should adjust those values depending on their proxy setup.
+See the section <a href="https://www.keycloak.org/server/reverseproxy#graceful-http-shutdown">Graceful HTTP shutdown</a> in the reverse proxy guide for more information.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_new_kcraw_prefix_for_environment_variables_to_preserve_literal_values">New <code>KCRAW_</code> prefix for environment variables to preserve literal values</h4>
+<div class="paragraph">
+<p>Keycloak now supports a <code>KCRAW_</code> prefix for environment variables to preserve values containing <code>$</code> characters exactly as written, without expression evaluation.</p>
+</div>
+<div class="paragraph">
+<p>When using the standard <code>KC_</code> prefix, Keycloak (via SmallRye Config) evaluates expressions in values (for example, <code>${some_key}</code> is resolved and <code>$$</code> is collapsed to <code>$</code>).
+This can silently modify passwords or secrets injected by a secrets manager or orchestration tool where manual escaping is not feasible.</p>
+</div>
+<div class="paragraph">
+<p>Setting <code>KCRAW_&lt;KEY&gt;</code> instead of <code>KC_&lt;KEY&gt;</code> preserves the value exactly as provided.</p>
+</div>
+<div class="paragraph">
+<p>See the <a href="https://www.keycloak.org/server/configuration#kcraw-prefix">Preserving literal values with the KCRAW_ prefix</a> section in the Server Configuration guide for details.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_automatic_reload_of_lists_with_disallowed_passwords">Automatic reload of lists with disallowed passwords</h4>
+<div class="paragraph">
+<p>When a list of disallowed passwords (also known as blacklist) changes, it is automatically reloaded. This avoids the need for a server restart when the list changes.</p>
+</div>
+<div class="paragraph">
+<p>Thank you to <a href="https://github.com/tsaarni">Tero Saarni</a> for contributing this change.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_automatic_truststore_initialization_on_kubernetes_and_openshift">Automatic truststore initialization on Kubernetes and OpenShift</h4>
+<div class="paragraph">
+<p>Keycloak now automatically discovers and trusts cluster certificate authorities when running on Kubernetes or OpenShift, without requiring the Operator to preconfigure the truststore.</p>
+</div>
+<div class="paragraph">
+<p>If present in the container filesystem, the following certificates are added to the system truststore at startup:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>/var/run/secrets/kubernetes.io/serviceaccount/ca.crt</code> (Kubernetes service account CA)</p>
+</li>
+<li>
+<p><code>/var/run/secrets/kubernetes.io/serviceaccount/service-ca.crt</code> (OpenShift service CA)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This behavior is enabled by default and can be controlled with the server option <code>--truststore-kubernetes-enabled=true|false</code> (default: <code>true</code>).</p>
+</div>
+<div class="paragraph">
+<p>Most deployments do not require any action. If you relied on the Operator to manage these truststore entries previously, the server now performs the same function directly.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_client_certificate_lookup_providers_for_traefik_and_envoy">Client certificate lookup providers for Traefik and Envoy</h4>
+<div class="paragraph">
+<p>You can now use new client certificate lookup providers for Traefik and Envoy proxies.
+For details, see the <a href="https://www.keycloak.org/server/reverseproxy#_enabling_client_certificate_lookup">Enabling Client Certificate Lookup</a> section of the documentation.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_configurable_kubernetes_service_name_and_port_in_the_keycloak_operator">Configurable Kubernetes Service name and port in the Keycloak Operator</h4>
+<div class="paragraph">
+<p>The Keycloak Operator now supports overriding the name and port of the Kubernetes Service it creates for a Keycloak deployment.</p>
+</div>
+<div class="paragraph">
+<p>Previously, the Service name was always derived as <code>&lt;cr-name&gt;-service</code> and the Service port always matched the container port.
+You can now use the <code>spec.http.serviceName</code>, <code>spec.http.serviceHttpsPort</code>, and <code>spec.http.serviceHttpPort</code> fields to
+configure these independently.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see the <a href="https://www.keycloak.org/operator/advanced-configuration">Advanced configuration</a> guide.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_sensitive_information_is_not_displayed_in_the_http_access_log">Sensitive information is not displayed in the HTTP Access log</h4>
+<div class="paragraph">
+<p>If you are using the HTTP Access logging capability, sensitive information is omitted.
+This means that tokens in the 'Authorization' HTTP header and specific sensitive cookies are not shown.</p>
+</div>
+<div class="paragraph">
+<p>For more information, see <a href="https://www.keycloak.org/server/logging#http-access-logging">Configuring HTTP access logging</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_configurable_log_file_rotation">Configurable log file rotation</h4>
+<div class="paragraph">
+<p>It is now possible to configure log file rotation when using Keycloak&#8217;s built-in file logging handler.
+This includes a simple option to fully disable log rotation, which is useful when using an external log rotation solution such as <code>logrotate</code>.</p>
+</div>
+<div class="paragraph">
+<p>To disable log file rotation:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">bin/kc.sh start --log="console,file" --log-file-rotation-enabled=false</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For more information, see the <a href="https://www.keycloak.org/server/logging/file">File logging</a> guide.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_http_access_logs_in_a_dedicated_file">HTTP access logs in a dedicated file</h4>
+<div class="paragraph">
+<p>HTTP access logs can now be written to a dedicated file, separate from the server logs.
+This makes it easier to process and archive access logs independently for security auditing and compliance monitoring.</p>
+</div>
+<div class="paragraph">
+<p>For more information, see <a href="https://www.keycloak.org/server/logging#http-access-logging">Configuring HTTP access logging</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_customizable_service_fields_in_json_log_output">Customizable service fields in JSON log output</h4>
+<div class="paragraph">
+<p>Keycloak now provides native options to customize the <code>service.name</code> and <code>service.environment</code> fields in JSON log output across all log handlers (console, file, and syslog).</p>
+</div>
+<div class="paragraph">
+<p>Previously, when using the ECS format, <code>service.name</code> and <code>service.environment</code> could not be overridden through Keycloak configuration.
+This made it difficult to align JSON log fields with OpenTelemetry resource attributes.</p>
+</div>
+<div class="paragraph">
+<p>You can now set these fields using <code>log-service-name</code> and <code>log-service-environment</code>.</p>
+</div>
+<div class="paragraph">
+<p>For more information, see the <a href="https://www.keycloak.org/server/logging#customize-service-fields">Configuring logging</a> guide.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_new_and_updated_translations">New and updated translations</h4>
+<div class="paragraph">
+<p>New translations for Indonesian and Armenian were added. A warm welcome to the new language maintainers for these languages!
+There are also new language maintainers for the Swedish translation, who translated all remaining message keys. Thank you so much!</p>
+</div>
+<div class="paragraph">
+<p>Follow the translation progress on the <a href="https://www.keycloak.org/translations">translation status page</a>, help translate, and read the translation guide on how to add additional languages.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_right_to_left_language_support_in_the_account_ui">Right-to-left language support in the Account UI</h4>
+<div class="paragraph">
+<p>Support for right-to-left (RTL) languages was added to the Login UI, Admin UI, and email templates several releases ago. This release adds initial RTL support to the Account UI, which completes this effort.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_observability">Observability</h3>
+<div class="sect3">
+<h4 id="_telemetry_configuration_via_the_keycloak_cr">Telemetry configuration via the Keycloak CR</h4>
+<div class="paragraph">
+<p>Keycloak now supports configuring the OpenTelemetry properties via the Keycloak CR when using the Operator.
+These properties are shared among the available OpenTelemetry components - logs, metrics, and traces.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see the <a href="https://www.keycloak.org/observability/telemetry">Centralize your observability stack with OpenTelemetry</a> guide.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_custom_request_headers_for_opentelemetry">Custom request headers for OpenTelemetry</h4>
+<div class="paragraph">
+<p>It is now possible to set request headers for exporting telemetry via OpenTelemetry Protocol (OTLP).
+This is mainly useful for providing tokens in the request.</p>
+</div>
+<div class="paragraph">
+<p>You can specify these headers via the <code>telemetry-header-&lt;header&gt;</code> wildcard option, which accepts any custom header name.
+Alternatively, use <code>telemetry-logs-header-&lt;header&gt;</code> for OpenTelemetry Logs or <code>telemetry-metrics-header-&lt;header&gt;</code> for OpenTelemetry Metrics.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see the <a href="https://www.keycloak.org/observability/telemetry">Centralize your observability stack with OpenTelemetry</a> guide.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_service_monitor_annotations_and_labels_via_the_keycloak_cr">Service Monitor annotations and labels via the Keycloak CR</h4>
+<div class="paragraph">
+<p>It is now possible to configure service monitor labels and annotations via the Keycloak CR when using the Operator.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see the <a href="https://www.keycloak.org/operator/advanced-configuration#_servicemonitor">Advanced Configuration Operator</a> guide.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_extension_development">Extension Development</h3>
+<div class="sect3">
+<h4 id="_keycloak_test_framework_supported">Keycloak Test Framework (supported)</h4>
+<div class="paragraph">
+<p>The Keycloak Test Framework, based on JUnit 6, is now fully supported.</p>
+</div>
+<div class="paragraph">
+<p>It replaces the previous solution built on top of Arquillian and JUnit 4.
+Behind the scenes, the framework handles the lifecycle of Keycloak, the database, and any injected resources such as realms and clients.</p>
+</div>
+<div class="paragraph">
+<p>Tests simply declare what they want, including specific configuration, and the framework takes care of the rest.</p>
+</div>
+<div class="paragraph">
+<p>For more information, see <a href="https://github.com/keycloak/keycloak/tree/main/test-framework#readme">Keycloak Test Framework</a>.</p>
+</div>
+</div>
+</div>

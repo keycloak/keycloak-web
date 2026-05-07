@@ -39,7 +39,9 @@
     <link rel="canonical" href="${canonical}">
     <meta property="og:url" content="${canonical}">
 
-    <link rel="shortcut icon" href="${links.getResource('favicon.svg')}">
+    <link rel="icon" type="image/x-icon" href="${links.getResource('favicon.ico')}">
+    <link rel="icon" type="image/vnd.microsoft.icon" href="${links.getResource('favicon.ico')}">
+    <link rel="icon" type="image/svg+xml" href="${links.getResource('favicon.svg')}">
 
     <#if importMap?has_content><script type="importmap">${importMap}</script></#if>
     <#if rss><link rel="alternate" type="application/rss+xml" title="Keycloak's Blog" href="${links.getRss()}"></#if>
@@ -58,7 +60,6 @@
         <img style="aspect-ratio: 730/151" class="img-fluid" src="${links.getResource('images/logo.svg')}" width="240" alt="Keycloak"/>
     </a>
     <a class="nav-link d-none d-sm-block d-md-none d-lg-block" href="https://github.com/keycloak/keycloak"><img src="${links.getResource('images/stars-large.svg')}" style="height: 25px; aspect-ratio: ${projectStars.aspectRatioLarge}" alt="GitHub stars"/></a>
-    <a class="nav-link d-block d-sm-none d-md-block d-lg-none" href="https://github.com/keycloak/keycloak"><img src="${links.getResource('images/stars-small.svg')}" style="height: 25px; aspect-ratio: ${projectStars.aspectRatioSmall}" alt="GitHub stars"/></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="fa fa-bars fa-lg px-1 py-2"></span>
     </button>
@@ -81,6 +82,9 @@
         </li>
       </ul>
     </div>
+    <div class="d-block d-sm-none d-md-block d-lg-none text-center vw-100">
+        <a class="nav-link d-inline p-0" href="https://github.com/keycloak/keycloak"><img src="${links.getResource('images/stars-large.svg')}" style="height: 25px; aspect-ratio: ${projectStars.aspectRatioLarge}" alt="GitHub stars"/></a>
+    </div>
 </nav>
 </header>
 
@@ -92,7 +96,7 @@
         <div class="text-center">
             <img style="aspect-ratio: 300/48" alt="Cloud Native Computing Foundation" src="${links.getResource('images/cncf_logo.png')}" loading="lazy"/>
         </div>
-        <p class="mt-4 text-center small text-muted">&copy; Keycloak Authors 2025. &copy; 2025 The Linux Foundation. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage">Trademark Usage page</a>.</p>
+        <p class="mt-4 text-center small text-muted">&copy; Keycloak Authors 2026. &copy; 2026 The Linux Foundation. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage">Trademark Usage page</a>.</p>
     </footer>
 </div>
 

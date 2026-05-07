@@ -1,4 +1,6 @@
 <#import "/templates/template.ftl" as tmpl>
+<#-- @ftlvariable name="links" type="org.keycloak.webbuilder.Links" -->
+<#-- @ftlvariable name="version" type="org.keycloak.webbuilder.Versions.Version" -->
 
 <@tmpl.page current="nightly-guides" title="Guides / Nightly Release" noindex=true summary="Guides for Keycloak's nightly release which contains the very latest developments. Use it for testing only.">
 
@@ -6,6 +8,12 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
+        <div class="float-left">
+            <select data-nosnippet aria-label="Version" onchange="location = this.options[this.selectedIndex].value;" class="form-select">
+                <option value="${links.getGuides(true)}" selected="selected">Nightly</option>
+                <option value="${links.getGuides(false)}">${version.version}</option>
+            </select>
+        </div>
         <ul class="nav navbar-nav">
             <#list guides.getCategories(true) as c>
             <li>
@@ -27,7 +35,7 @@
         <div class="alert alert-warning" role="alert">
           <h4>Nightly release</h4>
 
-          These guides are for the unstable nightly release, for the latest release go <a href="${links.guides}">here</a>.
+          These guides are for the unstable <a href="${links.nightly}">nightly release</a>. For the latest release go <a href="${links.guides}">here</a>.
         </div>
 
         <#list guides.getCategories(true) as c>

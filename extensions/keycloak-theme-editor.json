@@ -1,0 +1,6 @@
+{
+    "name": "Keycloak Theme Editor",
+    "description": "A visual editor for designing, previewing, and exporting Keycloak login themes.",
+    "website": "https://keycloak-theme-editor.org",
+    "source": "https://github.com/kathari00/keycloak-theme-editor"
+  }

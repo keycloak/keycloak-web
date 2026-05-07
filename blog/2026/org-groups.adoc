@@ -1,0 +1,113 @@
+:title: Organization Groups: Structure Your Organizations with Hierarchical Group Management
+:date: 2026-04-29
+:publish: true
+:author: Vlasta Ramik
+:summary: Keycloak 26.6.0 introduces Organization Groups, bringing isolated hierarchical group management to each organization for cleaner multi-tenant setups.
+
+Introduced in Keycloak 26.6.0, Organization Groups bring hierarchical group management to the Organizations feature. While Organizations already let you model Business-to-Business (B2B) relationships where external companies, partners, or departments each manage their own users, Organization Groups take this further by letting you organize members within each organization into logical teams, departments, or any structure that fits your needs.
+
+== Why Organization Groups?
+
+Before Organization Groups, structuring members within an organization required workarounds using realm-level groups, which are shared across the entire realm. This creates problems in multi-tenant scenarios: if Organization A and Organization B both need an "Engineering" group, they'd collide at the realm level.
+
+Organization Groups solve this by giving each organization its own isolated group hierarchy. Organization A's `/Engineering/Backend` and Organization B's `/Engineering/Backend` are completely separate groups with their own members, attributes, and identifiers. No naming conflicts, no cross-organization leakage.
+
+== Creating a Group Hierarchy
+
+Groups can be nested to mirror real-world organizational structures:
+
+[source]
+----
+/Engineering
+  /Engineering/Backend
+  /Engineering/Frontend
+/Sales
+  /Sales/APAC
+  /Sales/EMEA
+  /Sales/LATAM
+  /Sales/NA
+----
+
+Creating groups is straightforward: navigate to your organization, click the *Groups* tab, and click *Create group*. To build hierarchies, select a parent group before creating a child group, or use *Move to* to reorganize existing groups.
+
+== Automatic Group Assignment via Identity Providers
+
+One of the most powerful capabilities is automatic group assignment during federated authentication. When an identity provider is linked to an organization, two mapper types are available:
+
+* *Hardcoded Group* assigns every user authenticating through the IdP to a specific organization group. Useful for scenarios like "everyone from this corporate IdP goes into the Engineering team."
+
+* *Advanced Claim to Group* maps users to groups based on claim values from the external IdP. For example, you can map users with a `department=backend` claim to `/Engineering/Backend`.
+
+When selecting target groups in these mappers, Keycloak automatically shows both realm groups and groups from the organization linked to the IdP.
+
+== Groups in Tokens
+
+Organization group memberships can be included in both OIDC tokens and SAML assertions.
+
+=== OIDC
+
+Add the *Organization Group Membership* mapper to a scope that also contains the *Organization Membership* mapper (the built-in `organization` scope is the easiest choice). When a user authenticates and requests the `organization` scope, groups appear within the organization claim:
+
+[source,json]
+----
+{
+  "organization": {
+    "acme-corp": {
+      "id": "f8d3c4e1-...",
+      "groups": ["/Engineering/Backend"]
+    }
+  }
+}
+----
+
+Group paths are relative to the organization, and multiple organizations can be included using `scope=organization:*` or by specifying multiple aliases like `scope=organization:org-a organization:org-b`.
+
+=== SAML
+
+Add the *Organization Group Membership* mapper to the built-in `saml_organization` scope (which already includes the Organization Membership mapper). Groups are automatically included in assertions for all organizations the user is a member of:
+
+[source,xml]
+----
+<Attribute Name="organization.acme-corp.groups">
+  <AttributeValue>/Engineering/Backend</AttributeValue>
+</Attribute>
+----
+
+== Viewing a Member's Group Memberships
+
+To see which organization groups a specific member belongs to, use the kebab menu next to the member in the organization's *Members* tab and select *Show group memberships*. This provides a quick overview without navigating away from the member list.
+
+== How Organization Groups Differ from Realm Groups
+
+[cols="1,1,1", options="header"]
+|===
+|
+| Organization Groups
+| Realm Groups
+
+| Scope
+| Belong to a single organization
+| Shared across the entire realm
+
+| Isolation
+| Same paths can exist in different organizations
+| Paths must be unique within the realm
+
+| Authorization policies
+| Cannot be used in Keycloak authorization policies
+| Supported in authorization policies
+
+| Token mapping
+| Appear within the `organization` claim context
+| Available via standard group mappers
+|===
+
+== REST API
+
+Organization groups are fully manageable via the Admin REST API under `/admin/realms/\{realm}/organizations/\{orgId}/groups`. The API supports creating, listing, updating, moving, and deleting groups, as well as managing group members. This makes it straightforward to automate organization structure provisioning from external systems.
+
+== Getting Started
+
+Organization Groups are available starting with Keycloak 26.6.0 as part of the Organizations feature. Enable Organizations in your realm settings, create an organization, and start building your group hierarchy from the *Groups* tab.
+
+For full details, see the https://www.keycloak.org/docs/latest/server_admin/#assembly-managing-organizations_server_administration_guide[Organizations documentation].

@@ -6,13 +6,14 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Objects;
 
 public class Casestudies {
 
     List<Casestudy> casestudies = new ArrayList<>();
 
     public List<Casestudy> getCaseStudies() {
-        casestudies.sort(Comparator.comparing(Casestudy::getName));
+        casestudies.sort(Comparator.comparing(Casestudy::getPublished).reversed());
         return casestudies;
     }
 
@@ -29,6 +30,7 @@ public class Casestudies {
         private String description;
         private String url;
         private String logoUrl;
+        private String logoStyle;
         private String logoBackground;
         private String published;
 
@@ -91,6 +93,14 @@ public class Casestudies {
 
         public void setLogoBackground(String logoBackground) {
             this.logoBackground = logoBackground;
+        }
+
+        public String getLogoStyle() {
+            return Objects.requireNonNullElse(logoStyle, "");
+        }
+
+        public void setLogoStyle(String logoStyle) {
+            this.logoStyle = logoStyle;
         }
     }
 }

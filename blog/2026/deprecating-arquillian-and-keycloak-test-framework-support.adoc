@@ -1,0 +1,136 @@
+:title: Deprecating Arquillian Testsuite, Keycloak Test Framework Full Support
+:date: 2026-02-25
+:publish: true
+:author: Lukas Hanusovsky
+
+== What's changing?
+
+The https://github.com/keycloak/keycloak/tree/main/testsuite[_testsuite_] module, with all related dependents, like https://github.com/keycloak/keycloak/tree/main/testsuite/integration-arquillian[_Arquillian_] testsuite, is now officially https://github.com/keycloak/keycloak/blob/main/testsuite/DEPRECATED.md[deprecated].
+
+At the same time https://github.com/keycloak/keycloak/tree/main/test-framework[_Test Framework_] full support is starting from the upcoming *Keycloak 26.6.0* release.
+
+== The New Test Framework
+
+Based on JUnit 6, the Keycloak _Test Framework_ makes it easy to write tests for _Keycloak_ and extensions.
+Behind the scenes the framework handles the lifecycle of _Keycloak_, the database, and any injected resources such as realms and clients.
+
+Tests simply declare what they want, including specific configuration, and the framework takes care of the rest.
+
+Contributors are asked to start using new _Test Framework_ and write tests within the new https://github.com/keycloak/keycloak/tree/main/tests[_tests_] module.
+
+== What's new?
+
+Since the initial https://www.keycloak.org/2024/11/preview-keycloak-test-framework[announcement] these new features have been added:
+
+* Improved documentation
+* Improved registry with dependency graph
+* Hot deploy with external providers
+* Re-use support for distribution server, for faster execution times
+* Re-use support for H2 database, for faster execution times
+* Managed OAuth client
+* Managed Admin client factory
+* Support for conditional execution (e.g.disable tests for certain databases)
+* @TestSetup and @TestCleanup method annotation to configure a specific test class
+* TimeOffset support
+* Test framework unit and integration tests
+* Test framework injection validation
+* Run on Server functionality
+* TLS and mTLS with managed certificates
+* FIPS with managed crypto keys
+* Managed Infinispan server
+* Managed Email server
+* Managed HTTP client and HTTP server
+* Events and Admin Events assertions
+* Custom providers support
+* GitHub Actions summary report
+* Test suites support
+* Clustering support
+* WebAuthn support
+* Migration util
+
+On top of that, the whole https://github.com/keycloak/keycloak/tree/main/tests/base/src/test/java/org/keycloak/tests/admin[_admin tests_] package has been migrated.
+
+== My first test
+
+The following shows a very simply test that deploys a realm to Keycloak and creates a user within the realm.
+```
+@KeycloakIntegrationTest
+public class MyInitialTest {
+
+    @InjectRealm
+    ManagedRealm realm;
+
+    @InjectUser
+    ManagedUser user;
+
+    @Test
+    public void myFirstTest() {
+        Assertions.assertNotNull(realm.admin().users().get(user.getId()));
+    }
+}
+```
+
+== OAuth Access Token Request example
+
+This test shows on how to use the newly created user to get an access or refresh token, with checking the latest fired event.
+```
+@KeycloakIntegrationTest
+public class OAuthRefreshTokenTest {
+
+    @InjectRealm
+    ManagedRealm realm;
+
+    @InjectUser(config = OAuthUserConf.class)
+    ManagedUser user;
+
+    @InjectOAuthClient
+    OAuthClient oAuthClient;
+
+    @InjectEvents
+    Events events;
+
+    @Test
+    public void testTokenRefresh() {
+        AuthorizationEndpointResponse response = oAuthClient
+            .doLogin(user.getUsername(), user.getPassword());
+
+        AccessTokenResponse accessTokenResponse = oAuthClient
+            .doAccessTokenRequest(response.getCode());
+
+        EventAssertion.assertSuccess(events.poll()).userId(user.getId()).hasSessionId();
+
+        AccessTokenResponse refreshTokenResponse = oAuthClient
+            .doRefreshTokenRequest(accessTokenResponse.getRefreshToken());
+
+        EventAssertion.assertSuccess(events.poll()).userId(user.getId()).hasSessionId();
+
+        oAuthClient.doLogout(refreshTokenResponse.getRefreshToken());
+
+        EventAssertion.assertSuccess(events.poll()).userId(user.getId()).hasSessionId();
+    }
+
+    private static class OAuthUserConf implements UserConfig {
+
+        @Override
+        public UserConfigBuilder configure(UserConfigBuilder builder) {
+            return builder.username("oauth-user").name("OAuth", "User")
+                    .password("strong-password").email("oauth@user")
+                    .emailVerified(true);
+        }
+    }
+}
+```
+
+== Looking for help?
+Meet us on Slack or Email:
+
+* https://www.keycloak.org/community[Community]
+
+Github Discussion:
+
+* https://github.com/keycloak/keycloak/discussions/46604[Link]
+
+Guidelines:
+
+* https://github.com/keycloak/keycloak/tree/main/test-framework#readme[Test Framework]
+* https://github.com/keycloak/keycloak/blob/main/tests/MANUAL_MIGRATION.md[Migrating Tests]

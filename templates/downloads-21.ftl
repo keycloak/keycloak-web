@@ -83,7 +83,7 @@
             </a>
             </span>
             <span>
-            <a onclick="dl('examples', 'quickstarts');" href="https://github.com/keycloak/keycloak-quickstarts/archive/latest.zip" target="_blank">
+            <a onclick="dl('examples', 'quickstarts');" href="https://github.com/keycloak/keycloak-quickstarts/archive/main.zip" target="_blank">
                 <i class="fa fa-download" aria-hidden="true"></i>
                 ZIP
             </a>

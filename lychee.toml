@@ -1,0 +1,13 @@
+exclude = [
+    # Exclude example urls
+    "host:port",
+    "localhost:8080",
+    # Exclude redirects until 24.0.0 is released as new guide structure is only in place for nightlys
+    "http://localhost:5000/high-availability/multi-cluster/introduction",
+    "http://localhost:5000/high-availability/single-cluster/introduction",
+    # Exclude pages not served by npm
+    "localhost:5000/docs",
+    "localhost:5000/docs-api",
+    # Exclude external sites
+    "\\.(co|com|de|eu|gl|gle|io|net|org)"
+]

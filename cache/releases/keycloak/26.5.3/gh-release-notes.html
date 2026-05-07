@@ -1,0 +1,36 @@
+<div>
+
+<h2>Upgrading</h2>
+<p>Before upgrading refer to <a href="https://www.keycloak.org/docs/latest/upgrading/#migration-changes">the migration guide</a> for a complete list of changes.</p>
+
+<h2>All resolved issues</h2>
+
+<h3>Security fixes</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/46144">#46144</a> CVE-2026-1609 Disabled users can still obtain tokens via JWT Authorization Grant </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/46145">#46145</a> CVE-2026-1529 Forged invitation JWT enables cross-organization self-registration </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/46146">#46146</a> CVE-2026-1486 Logic Bypass in JWT Authorization Grant Allows Authentication via Disabled Identity Providers </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/46147">#46147</a> CVE-2025-14778 Incorrect ownership checks in /uma-policy/ </li>
+</ul>
+
+
+
+
+<h3>Enhancements</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/45892">#45892</a> Upgrade minikube for CI tests <code>operator</code></li>
+</ul>
+
+<h3>Bugs</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/44379">#44379</a> Node.js admin client does not refresh tokens <code>admin/client-js</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/45459">#45459</a> k8s multiple restart (oomkilled) in v26.5.0-0 during startup because of RAM <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/45662">#45662</a> Increase in startup memory consumption in post 26.5 versions <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/45677">#45677</a> Hibernate Validator is enabled by default when not used <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/45708">#45708</a> Unpexted value '' in mixed-cluster-compatibility-tests <code>testsuite</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/45745">#45745</a> mixed-cluster-compatibility-tests fail due to incorrectly masked content in 26.5 branch <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/45755">#45755</a> Broken YAML indentation in operator rolling updates doc <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/45780">#45780</a> Remove fatal log messages from `ConsistentHash` </li>
+</ul>
+
+</div>

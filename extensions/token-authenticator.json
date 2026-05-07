@@ -1,0 +1,5 @@
+{
+  "name": "Token Authenticator",
+  "description": "A Keycloak authenticator that enables login using an ID token or Access token.",
+  "website": "https://github.com/mkunz-it/keycloak-token-auth"
+}

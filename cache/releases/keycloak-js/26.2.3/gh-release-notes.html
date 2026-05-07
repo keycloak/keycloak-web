@@ -1,0 +1,21 @@
+<div>
+    <h2>Highlights</h2>
+<div class="paragraph">
+<p>This release of Keycloak JS addresses a regression that was introduced in version <code>26.2.2</code> affecting applications that use hash-based routing in combination with the <code>fragment</code> response mode.</p>
+</div>
+<div class="sect3">
+<h4 id="_bug_fixes">Bug Fixes</h4>
+<div class="sect4">
+<h5 id="_url_hash_fragments_are_now_preserved_correctly_with_fragment_response_mode">URL hash fragments are now preserved correctly with 'fragment' response mode</h5>
+<div class="paragraph">
+<p>A regression was introduced in version <code>26.2.2</code> that caused URL fragments with path-style routing (e.g., <code>#/admin/maintenance/scripts</code>) to be URL-encoded after the OAuth callback, breaking applications that use hash-based routing. This issue affected Angular, React, and other applications that rely on the hash portion of the URL for client-side routing.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/keycloak/keycloak-js/issues/241">keycloak/keycloak-js#241</a></p>
+</div>
+</div>
+</div>
+<h2>Upgrading</h2>
+<p>Before upgrading refer to <a href="https://www.keycloak.org/docs/latest/upgrading/#_upgrade_js_adapter">the migration guide</a> for a complete list of changes.</p>
+
+</div>

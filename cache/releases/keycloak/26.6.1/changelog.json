@@ -1,0 +1,134 @@
+[ {
+  "number" : 47276,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-4366 Blind Server-Side Request Forgery (SSRF) via HTTP Redirect Handling",
+  "kind" : "cve",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/47276"
+}, {
+  "number" : 47435,
+  "repository" : "keycloak",
+  "title" : "AuroraDB IT CI workflow not cleaning up databases",
+  "kind" : "bug",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/47435"
+}, {
+  "number" : 47619,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-4633 Keycloak user enumeration via identity-first login",
+  "kind" : "cve",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/47619"
+}, {
+  "number" : 47737,
+  "repository" : "keycloak",
+  "title" : "deploy-testsuite profile is incomplete, causing discrete testsuite execution to fail",
+  "kind" : "bug",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/47737"
+}, {
+  "number" : 47776,
+  "repository" : "keycloak",
+  "title" : "False session type of access token in offline_access refresh token flow with scope parameter without offline_access scope",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/47776"
+}, {
+  "number" : 47827,
+  "repository" : "keycloak",
+  "title" : "az vm create fails with JSON parsing error",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/47827"
+}, {
+  "number" : 47839,
+  "repository" : "keycloak",
+  "title" : "Update CloudNativePG to 1.29",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47839"
+}, {
+  "number" : 47860,
+  "repository" : "keycloak",
+  "title" : "Fix Cluster Compatibility Tests for 26.6",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47860"
+}, {
+  "number" : 47867,
+  "repository" : "keycloak",
+  "title" : "Fixing typo in the docs with extra $",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47867"
+}, {
+  "number" : 47872,
+  "repository" : "keycloak",
+  "title" : "v26.6.0 Operator flood logs with warnings",
+  "kind" : "bug",
+  "area" : "operator",
+  "url" : "https://github.com/keycloak/keycloak/issues/47872"
+}, {
+  "number" : 47889,
+  "repository" : "keycloak",
+  "title" : "Not possible to sync latest keycloak-admin-client to keycloak-client",
+  "kind" : "bug",
+  "area" : "admin/client-java",
+  "url" : "https://github.com/keycloak/keycloak/issues/47889"
+}, {
+  "number" : 47904,
+  "repository" : "keycloak",
+  "title" : "@keycloak/keycloak-admin-client fails to install in version 26.6.0",
+  "kind" : "bug",
+  "area" : "admin/client-js",
+  "url" : "https://github.com/keycloak/keycloak/issues/47904"
+}, {
+  "number" : 47905,
+  "repository" : "keycloak",
+  "title" : "invalid package reference in keycloak-admin-ui",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/47905"
+}, {
+  "number" : 47908,
+  "repository" : "keycloak",
+  "title" : "MigrateTo26_6_0 modifies custom browser flows, breaking existing realm authentication",
+  "kind" : "bug",
+  "area" : "organizations",
+  "url" : "https://github.com/keycloak/keycloak/issues/47908"
+}, {
+  "number" : 47909,
+  "repository" : "keycloak",
+  "title" : "Database data at rest encryption",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47909"
+}, {
+  "number" : 47929,
+  "repository" : "keycloak",
+  "title" : "User profile multiselect options not highlighted as selected in dropdown",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/47929"
+}, {
+  "number" : 47955,
+  "repository" : "keycloak",
+  "title" : "IdentityProviderAuthenticator creates an infinite redirect loop when an IdP returns an error (e.g. access_denied) and the login was initiated with kc_idp_hint",
+  "kind" : "bug",
+  "area" : "identity-brokering",
+  "url" : "https://github.com/keycloak/keycloak/issues/47955"
+}, {
+  "number" : 48015,
+  "repository" : "keycloak",
+  "title" : "Missing explicit docs anchor for organizations",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/48015"
+}, {
+  "number" : 48032,
+  "repository" : "keycloak",
+  "title" : "Endpoint Response Text during Bootstrap contains Typo: Boostrap",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/48032"
+} ]
