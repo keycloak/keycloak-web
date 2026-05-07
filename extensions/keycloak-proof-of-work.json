@@ -1,0 +1,5 @@
+{
+  "name": "Keycloak Proof of Work",
+  "description": "Adds computational PoW (proof-of-work) challenges to Keycloak flows. Protects against bot spam and brute-force attacks by requiring clients to solve a light cryptographic puzzle before authenticating.",
+  "website": "https://gitlab.com/mrbuch/keycloak/keycloak-pow"
+}
