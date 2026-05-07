@@ -9,7 +9,7 @@ Ricardo joined the Keycloak IBM team at the beginning of 2023 and became one of 
 Ricardo has very deep knowledge in many core Keycloak areas. He is the most knowledgeable person from the whole team in areas like for example SAML, Passkeys or FIPS. His expertise is not limited to just those areas, but rather he has deep knowledge
 around pretty much every aspect of protocols and authentication in Keycloak.
 
-Additionally, Ricard is very active in helping the community, joining discussions, fixing bugs, reviewing pull requests,
+Additionally, Ricardo is very active in helping the community, joining discussions, fixing bugs, reviewing pull requests,
 as well as an active participant in triaging and resolving security issues.
 
 Congratulations to Ricardo becoming an official Keycloak Maintainer.
