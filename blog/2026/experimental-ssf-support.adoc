@@ -1,0 +1,153 @@
+:title: Shared Signals Framework support in Keycloak
+:date: 2026-05-11
+:publish: false
+:author: Thomas Darimont
+:summary: Keycloak can now act as an OpenID Shared Signals Framework Transmitter, federating realm, user, session and credential events to downstream services as signed Security Event Tokens.
+
+Keycloak has long been excellent at issuing tokens. With the new Shared Signals Framework (SSF) support, it can also tell
+relying parties what happens to the *user behind* those tokens *after* they've been issued, e.g. sessions revoked, credentials changed, devices going out of compliance by pushing signed Security Event Tokens (SETs) to subscribers.
+
+This post is the first in a small series. It introduces SSF, explains why we think it matters for Keycloak deployments,
+walks through what's actually shipped in the experimental release, and outlines where we'd like to take it next. A
+follow-up will cover a concrete integration: using Keycloak as the identity provider for *Apple Business Manager* /
+*Apple School Manager* device fleets.
+
+== A short tour of Shared Signals
+
+The OpenID Foundation's https://openid.net/specs/openid-sharedsignals-framework-1_0.html[Shared Signals Framework 1.0]
+defines a standard way for one party (the *Transmitter*) to tell another party (the *Receiver*) about identity-relevant
+events as they happen. Each event is delivered as a signed JWT, a *Security Event Token* (https://www.rfc-editor.org/rfc/rfc8417[RFC 8417]) delivered over either an HTTP push channel (https://www.rfc-editor.org/rfc/rfc8935[RFC 8935]) or an HTTP poll channel (https://www.rfc-editor.org/rfc/rfc8936[RFC 8936]).
+
+Two profiles ride on top of that envelope:
+
+* https://openid.net/specs/openid-caep-1_0.html[CAEP 1.0] Continuous Access Evaluation Profile. Events like
+  `session-revoked`, `credential-change`, `device-compliance-change`. Roughly: "the conditions under which I issued
+  that token have changed".
+* https://openid.net/specs/openid-risc-profile-specification-1_0.html[RISC 1.0] Risk and Incident Sharing and
+  Coordination. Events like `account-disabled`, `account-credential-change-required`, `identifier-changed`. Roughly:
+  "something happened to this account that downstream parties should know about".
+
+In both cases the receiver decides what to do — sign the user out, prompt for re-auth, force a step-up, lock a device,
+log it. The framework moves the *signal*; policy stays with the receiver.
+
+== Why this is interesting for Keycloak
+
+Most Keycloak deployments have a long tail of downstream applications and SaaS services that hold their own session
+state. Today, when a user is disabled in Keycloak, or a session is revoked, or a credential is rotated, those
+downstream services find out the next time the user happens to come back through a token refresh, which can be a long
+time, and sometimes never.
+
+SSF closes that gap with three concrete benefits:
+
+* **Faster propagation of security-sensitive state**. A `session-revoked` event can reach subscribed receivers in seconds,
+  not minutes-to-hours.
+* **A single, standardised wire format**. No more per-vendor webhooks, polling endpoints, or Kafka topics each with
+  their own schema and auth model. SETs are JWTs, signing is JWS, transport is HTTP, and the event vocabulary is
+  defined by CAEP and RISC.
+* **Concrete enterprise integrations**. Apple's device fleet management products (*Apple Business Manager* and
+  *Apple School Manager*) consume SSF events from upstream IdPs to keep enrolled-device state in sync with user state.
+  The same model applies to a growing list of SaaS and security tooling vendors (Okta, Cisco Duo, Slack and others
+  have either shipped or announced SSF support).
+
+== What's in the experimental release
+
+SSF is shipped as an *experimental* feature, gated behind `Profile.Feature.SSF`. It's off by default, and you opt in
+per realm and per client. The current scope covers the *Transmitter* role — i.e. Keycloak emits SETs, downstream
+services receive them.
+
+Concretely:
+
+* **Standards conformance.** SSF 1.0 (Final), CAEP 1.0, RFC 8935 (push), RFC 8936 (poll, return-immediately
+  form), RFC 9493 (Subject Identifiers), RFC 8417 (SETs), and the CAEP Interoperability Profile 1.0.
+* **Stream management.** Full CRUD on streams, plus status, verification and stream-config endpoints.
+* **Subject management.** Per-user and per-organisation subscription, with an `ssf.notify.<clientId>` attribute, a
+  `defaultSubjects` policy of `ALL` or `NONE`, and an *ignore* state to explicitly exclude users from delivery.
+* **Receivers as OIDC clients.** SSF Receivers are configured as regular OIDC clients in the realm with client-credentials
+  or auth-code grant, with a per-client `ssf.enabled` toggle. Currently we only support one stream per client.
+* **Event mapping.** Native Keycloak events (login, logout, credential change, session revocation, …) are mapped to
+  the right CAEP / RISC events automatically. Custom event types can be added through an SPI.
+* **Transactional outbox.** Events are persisted into a durable outbox inside the same transaction that produced
+  them, then drained asynchronously by a cluster-aware drainer with exponential backoff. This decouples event
+  *generation* from *delivery*, a slow or failing receiver can never block the originating transaction or drop events.
+* **Delivery channels.** HTTP push (RFC 8935) and HTTP poll (RFC 8936, return-immediately).
+* **Synthetic event endpoint.** A REST endpoint to inject events that didn't originate inside Keycloak, for example,
+  a SOC/IAM tool reporting a compromised or changed credential. Useful for bridging an external IAM source.
+* **Per-receiver event filter.** An "emit-only-events" allowlist so a receiver only sees the event types it actually
+  cares about.
+* **Legacy SSE CAEP profile.** Shipped alongside CAEP 1.0 specifically for *Apple Business Manager* / *Apple School
+  Manager* interop, since Apple still consumes the older draft profile and changing that out from under deployed
+  fleets is not on the table.
+* **Admin UI + REST.** Per-realm SSF admin endpoints and Admin Console pages to manage SSF-enabled clients,
+  Receiver, Stream, Subjects and Events tabs.
+* **Observability.** Prometheus metrics under `keycloak_ssf_*` cover the dispatcher, drainer, poll endpoints,
+  verification flow, outbox depth and per-delivery counters / latencies.
+* **Test coverage.** Over 100 integration tests across the dispatch / outbox / push / poll pipeline.
+
+== A new capability: Keycloak as IdP for Apple Business Manager
+
+One of the strongest motivations for shipping the Transmitter first is *Apple device fleets*. Apple Business Manager
+(ABM) and Apple School Manager (ASM) want a *federated identity* relationship with the organisation's IdP, and they
+want to be told, in close to real time, when a user's status changes so that the corresponding enrolled devices can
+be locked, wiped or re-enrolled.
+
+Until now there has been no clean path to put Keycloak in that role. With the new SSF Transmitter, plus the legacy SSE
+CAEP profile bundled for ABM / ASM compatibility, Keycloak can be configured as the federated IdP for an Apple
+Business Manager tenant and signal `session-revoked`, `credential-change` and `device-compliance-change` events to
+Apple, which then propagates them onto the enrolled devices.
+
+This was verified end-to-end against ABM during development. A dedicated follow-up post will walk through the setup like
+realm configuration, client / stream registration on the ABM side, the legacy CAEP profile toggle, and how to test
+the event flow. This effectively allows to use Keycloak as the identity provider for federated Apple accounts.
+
+== Roadmap
+
+The Transmitter is the first half of the picture. Tracked separately:
+
+* **Documentation.** Describe the concepts, configuration and integration patterns in the official documentation. The Admin Console UI is designed to be discoverable without docs, but we want to provide more detailed guidance and examples.
+* **SSF Receiver role.** Keycloak ingesting SETs from upstream IdPs and risk engines (originally proposed in
+  https://github.com/keycloak/keycloak/issues/43614[#43614]). The hard problem is *action mapping*, e.g. how an incoming
+  `account-disabled` event from an upstream party should affect Keycloak's local state. We deliberately want to
+  validate the data plane via the Transmitter side first before settling that. Eventually an SSF event might just trigger a workflow.
+* **More events.** Broader coverage of CAEP / RISC events, and a richer set of synthetic events for integrations with
+  external IAM and SOC tooling.
+* **Dedicated SSF signing key.** Today SETs are signed with the realm's OIDC signing key. A separate SSF signing key
+  is on the roadmap so key rotation policies can diverge.
+* **Security review.** Required before promoting SSF out of experimental status.
+
+== Try it out
+
+SSF is experimental and off by default. Enable it on the server with:
+
+[source,bash]
+----
+kc.sh start-dev --features=ssf
+----
+
+Then, on a realm, set `ssf.transmitterEnabled=true`, and on a client that should receive events, set `ssf.enabled=true`
+plus the relevant stream config. The Admin Console exposes both. A more detailed walk-through with a `caep.dev`
+receiver is coming next, alongside the Apple Business Manager guide.
+
+We'd love feedback — particularly from anyone with concrete CAEP / RISC integrations they want to try against a
+Keycloak Transmitter.
+
+== Feedback
+
+SSF is shipping experimental specifically so we can shape it around real integration experience before it's promoted
+to a stable feature. We'd particularly like to hear from you if any of the following applies:
+
+* You have a concrete CAEP / RISC receiver (in-house or third-party) that you want to drive from a Keycloak realm.
+* You're already running SSF somewhere and have an opinion on the event vocabulary, stream-management ergonomics, or
+  the receiver authentication options.
+* Your use case isn't covered by the current event mapping and you'd like to see additional native Keycloak events
+  surfaced as CAEP / RISC events (or as custom event types via the SPI).
+* You hit a rough edge, e.g. a missing metric, confusing Admin UI label, an integration that didn't behave as you expected.
+
+Please share your feedback, integration reports and feature requests in the dedicated GitHub discussion:
+
+https://github.com/keycloak/keycloak/discussions/48840[*Shared Signals Framework support — discussion #48840*]
+
+Bug reports against the experimental implementation are best filed as regular issues against
+https://github.com/keycloak/keycloak[keycloak/keycloak] with the `area/ssf` label, so the discussion thread can stay
+focused on direction and integration experience rather than tracking individual fixes.
+
+// vim: set spell:
