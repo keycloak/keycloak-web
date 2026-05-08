@@ -95,7 +95,11 @@
     <div class="row mt-3">
         <h2>Code of Conduct</h2>
         <p>
-             To facilitate healthy and constructive community behavior, the Keycloak project uses the following <a href="https://github.com/keycloak/.github/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a>.
+            We are committed to providing a safe, welcoming, and constructive environment for all Keycloak contributors and users.<br />
+            To protect this space, we actively enforce our <a href="https://github.com/keycloak/.github/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a>.
+        </p>
+        <p>
+            If you wish to report an incident or appeal a moderation decision, please email <a href="mailto:keycloak-coc@googlegroups.com">keycloak-coc@googlegroups.com</a>.
         </p>
     </div>
 
