@@ -4,13 +4,21 @@
 :author: Thomas Darimont
 :summary: Keycloak can now act as an OpenID Shared Signals Framework Transmitter, federating realm, user, session and credential events to downstream services as signed Security Event Tokens.
 
-Keycloak has long been excellent at issuing tokens. With the new Shared Signals Framework (SSF) support, it can also tell
-relying parties what happens to the *user behind* those tokens *after* they've been issued, e.g. sessions revoked, credentials changed, devices going out of compliance by pushing signed Security Event Tokens (SETs) to subscribers.
+When you revoke a user's session in Keycloak, how long until the SaaS app they're logged into actually signs them out?
+Usually: until their next token refresh, which can be minutes, hours, or in some cases never. The same gap exists when
+an account is disabled, a credential is rotated, or a device is flagged as non-compliant. Keycloak knows; the relying
+parties don't, until they happen to ask again.
 
-This post is the first in a small series. It introduces SSF, explains why we think it matters for Keycloak deployments,
-walks through what's actually shipped in the experimental release, and outlines where we'd like to take it next. A
-follow-up will cover a concrete integration: using Keycloak as the identity provider for *Apple Business Manager* /
-*Apple School Manager* device fleets.
+The new *Shared Signals Framework* (SSF) support, shipping experimentally in Keycloak, closes that gap. Keycloak can
+now push signed Security Event Tokens (SETs) to subscribed receivers in seconds, using a standardised wire format
+defined by the OpenID Foundation. No per-vendor webhooks, no bespoke polling endpoints, no Kafka topic per integration.
+
+Concretely, this also unlocks an integration the Keycloak ecosystem has been missing: *Keycloak can now act as the
+federated IdP for Apple Business Manager*, signalling user-state changes back to Apple so
+enrolled devices can ask the user to reauthenticate.
+
+This post is the first in a small series. It introduces SSF, walks through what's actually shipped in the experimental
+release, and outlines where we'd like to take it next. Follow-up posts will cover how to define custom events, how to emit synthetic events, and an Apple Business Manager integration end to end.
 
 == A short tour of Shared Signals
 
@@ -30,21 +38,16 @@ Two profiles ride on top of that envelope:
 In both cases the receiver decides what to do — sign the user out, prompt for re-auth, force a step-up, lock a device,
 log it. The framework moves the *signal*; policy stays with the receiver.
 
-== Why this is interesting for Keycloak
+== Why this matters in practice
 
-Most Keycloak deployments have a long tail of downstream applications and SaaS services that hold their own session
-state. Today, when a user is disabled in Keycloak, or a session is revoked, or a credential is rotated, those
-downstream services find out the next time the user happens to come back through a token refresh, which can be a long
-time, and sometimes never.
-
-SSF closes that gap with three concrete benefits:
+Beyond the headline gap, SSF gives Keycloak operators three concrete benefits:
 
 * **Faster propagation of security-sensitive state**. A `session-revoked` event can reach subscribed receivers in seconds,
   not minutes-to-hours.
 * **A single, standardised wire format**. No more per-vendor webhooks, polling endpoints, or Kafka topics each with
   their own schema and auth model. SETs are JWTs, signing is JWS, transport is HTTP, and the event vocabulary is
   defined by CAEP and RISC.
-* **Concrete enterprise integrations**. Apple's device fleet management products (*Apple Business Manager* and
+* **A growing ecosystem of receivers**. Apple's device fleet management products (*Apple Business Manager* and
   *Apple School Manager*) consume SSF events from upstream IdPs to keep enrolled-device state in sync with user state.
   The same model applies to a growing list of SaaS and security tooling vendors (Okta, Cisco Duo, Slack and others
   have either shipped or announced SSF support).
