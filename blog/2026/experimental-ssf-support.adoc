@@ -1,17 +1,21 @@
-:title: Shared Signals Framework support in Keycloak
-:date: 2026-05-11
+:title: Experimental Shared Signals Framework support in Keycloak
+:date: 2026-05-12
 :publish: false
 :author: Thomas Darimont
 :summary: Keycloak can now act as an OpenID Shared Signals Framework Transmitter, federating realm, user, session and credential events to downstream services as signed Security Event Tokens.
 
-When you revoke a user's session in Keycloak, how long until the SaaS app they're logged into actually signs them out?
-Usually: until their next token refresh, which can be minutes, hours, or in some cases never. The same gap exists when
-an account is disabled, a credential is rotated, or a device is flagged as non-compliant. Keycloak knows; the relying
-parties don't, until they happen to ask again.
+We are excited to announce that Keycloak now provides experimental support for the
+https://openid.net/specs/openid-sharedsignals-framework-1_0.html[OpenID Shared Signals Framework 1.0] specification,
+available from today in the https://github.com/keycloak/keycloak/releases/tag/nightly[nightly release].
+This allows Keycloak to act as a *Shared Signals Transmitter*, pushing signed *Security Event Tokens (SETs)* about
+identity-relevant events to any subscribed *Receiver*, using a standardised wire format defined by the OpenID Foundation.
 
-The new *Shared Signals Framework* (SSF) support, shipping experimentally in Keycloak, closes that gap. Keycloak can
-now push signed Security Event Tokens (SETs) to subscribed receivers in seconds, using a standardised wire format
-defined by the OpenID Foundation. No per-vendor webhooks, no bespoke polling endpoints, no Kafka topic per integration.
+This closes a long-standing gap. When you revoke a user's session in Keycloak today, the SaaS app they're logged
+into usually doesn't sign them out until their next token refresh, which can be minutes, hours, or in some cases
+never. The same gap exists when an account is disabled, a credential is rotated, or a device is flagged as
+non-compliant. Keycloak knows; the relying parties don't, until they happen to ask again. With SSF, Keycloak can
+now push those signals to subscribed receivers in seconds — no per-vendor webhooks, no bespoke polling endpoints,
+no Kafka topic per integration.
 
 Concretely, this also unlocks an integration the Keycloak ecosystem has been missing: *Keycloak can now act as the
 federated IdP for Apple Business Manager*, signalling user-state changes back to Apple so
