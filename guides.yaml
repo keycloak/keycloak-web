@@ -13,6 +13,8 @@ guides:
     title: High availability
   - id: ui-customization
     title: UI Customization
+  - id: admin-api
+    title: Admin API
   - id: migration
     title: Migration
 
