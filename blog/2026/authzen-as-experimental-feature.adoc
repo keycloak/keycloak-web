@@ -40,9 +40,9 @@ The interaction between your application and Keycloak follows the standard PEP /
 
 image::${blogImages}/authzen-flow.png[alt="AuthZEN PEP/PDP interaction flow", align=center, width=800]
 
-1. Your application (the PEP) sends an authorization request to Keycloak over the AuthZEN Evaluation API, identifying a subject, an action, and a resource.
-2. Keycloak (the PDP) evaluates the request against its configured authorization policies and returns a simple decision: `true` or `false`.
-3. Your application enforces the decision -- granting or denying access accordingly.
+1. **Your application (the PEP)** sends an authorization request to Keycloak over the AuthZEN Evaluation API, identifying a subject, an action, and a resource.
+2. **Keycloak (the PDP)** evaluates the request against its configured authorization policies and returns a simple decision: `true` or `false`.
+3. **Your application** enforces the decision -- granting or denying access accordingly.
 
 Keycloak also supports the *Evaluations API* for batching multiple authorization checks into a single request, reducing
 round-trips when your application needs to check several permissions at once.
