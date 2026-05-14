@@ -188,6 +188,14 @@ From here you can experiment with subject management (per-user opt-in via `ssf.n
 state), swap delivery to push against a https://webhook.site[`webhook.site`] endpoint, or point a second receiver at
 the same realm.
 
+For a more application-oriented receiver, the
+https://github.com/quarkiverse/quarkus-openid-ssf[`quarkus-openid-ssf`] Quarkiverse extension turns any Quarkus
+application into an SSF Receiver, handling stream registration, SET verification and event dispatch so apps only
+need to react to the decoded events. The
+https://github.com/thomasdarimont/quarkus-openid-ssf-test[`quarkus-openid-ssf-test`] sample wires it end-to-end
+against a Keycloak Transmitter and is a good starting point if you want to consume CAEP / RISC events directly
+inside an application.
+
 We'd love feedback — particularly from anyone with concrete CAEP / RISC integrations they want to try against a
 Keycloak Transmitter.
 
