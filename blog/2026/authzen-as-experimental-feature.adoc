@@ -1,14 +1,15 @@
 :title: Keycloak experimental AuthZEN Support
-:date: 2026-05-08
+:date: 2026-05-14
 :publish: true
 :author: Ryan Emerson
 :summary: Keycloak now implements AuthZEN Evaluation and Evaluations APIs
 
-We are excited to announce that Keycloak now provides experimental support for the
-https://openid.net/specs/authorization-api-1_0.html[OpenID AuthZEN Authorization API 1.0] specification,
-available from today in the https://github.com/keycloak/keycloak/releases/tag/nightly[nightly release].
-This allows Keycloak to act as a *Policy Decision Point (PDP)*, exposing its authorization capabilities through
-a standardized API that any *Policy Enforcement Point (PEP)* can consume.
+We are excited to announce that from  26.7.0, Keycloak will include experimental support for the
+https://openid.net/specs/authorization-api-1_0.html[OpenID AuthZEN Authorization API 1.0] specification. This allows
+Keycloak to act as a *Policy Decision Point (PDP)*, exposing its authorization capabilities through a standardized API
+that any *Policy Enforcement Point (PEP)* can consume.
+
+You can try this now with the https://github.com/keycloak/keycloak/releases/tag/nightly[Keycloak nightly release].
 
 == Why AuthZEN?
 
