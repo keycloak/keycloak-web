@@ -62,10 +62,12 @@ Keycloak supports looking up subjects by username, UUID, or email, giving your P
 
 == Try it out
 
-We have prepared a hands-on playground that walks you through the full setup with working examples of both the Evaluation
+https://www.keycloak.org/nightly/securing-apps/authzen-authorization[Feature documentation is available in the nightly build of the docs].
+
+We have also prepared a hands-on playground that walks you through the full setup with working examples of both the Evaluation
 and Evaluations API:
 
-https://github.com/keycloak/keycloak-playground/tree/main/authzen[*Keycloak AuthZEN Playground on GitHub*]
+- https://github.com/keycloak/keycloak-playground/tree/main/authzen[*Keycloak AuthZEN Playground on GitHub*]
 
 == Feedback welcome
 
