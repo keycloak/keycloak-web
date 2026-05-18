@@ -1,0 +1,81 @@
+:title: Keycloak experimental AuthZEN Support
+:date: 2026-05-14
+:publish: true
+:author: Ryan Emerson
+:summary: Keycloak now implements AuthZEN Evaluation and Evaluations APIs
+
+We are excited to announce that from  26.7.0, Keycloak will include experimental support for the
+https://openid.net/specs/authorization-api-1_0.html[OpenID AuthZEN Authorization API 1.0] specification. This allows
+Keycloak to act as a *Policy Decision Point (PDP)*, exposing its authorization capabilities through a standardized API
+that any *Policy Enforcement Point (PEP)* can consume.
+
+You can try this now with the https://github.com/keycloak/keycloak/releases/tag/nightly[Keycloak nightly release].
+
+== Why AuthZEN?
+
+Authorization has long been fragmented, with competing systems defining their own protocols for answering the same
+fundamental question: _"Can this subject perform this action on this resource?"_.
+This means applications are tightly coupled to whichever authorization backend they choose, and swapping
+providers requires rewriting integration code.
+
+AuthZEN changes this by defining a single, vendor-neutral API between the component that _asks_ (the PEP) and the component
+that _decides_ (the PDP). It is, in many ways, what OpenID Connect did for authentication -- but for authorization.
+
+With AuthZEN:
+
+* *No more vendor lock-in* -- your application speaks one API regardless of the PDP behind it.
+* *RBAC, ABAC, and ReBAC under one roof* -- different policy models can answer the same request format, enabling true interoperability across authorization paradigms.
+* *Centralized, externalized authorization* -- policy logic lives in the PDP, not scattered across application code, making it easier to audit and update.
+* *Simpler integration* -- a clean REST API with a minimal request/response model replaces complex, implementation-specific SDKs.
+
+== A growing ecosystem
+
+https://authzen-interop.net[OpenID AuthZEN Interop] demonstrates that over a dozen independently-developed PDPs can be
+used interchangeably by the same PEP without changing a single line of application code. By adding AuthZEN support,
+Keycloak joins this ecosystem and lets you leverage your existing Keycloak policies through the same standardized API
+used by every other AuthZEN-compatible PDP.
+
+== How it works
+
+The interaction between your application and Keycloak follows the standard PEP / PDP pattern defined by AuthZEN:
+
+image::${blogImages}/authzen-flow.png[alt="AuthZEN PEP/PDP interaction flow", align=center, width=800]
+
+1. **Your application (the PEP)** sends an authorization request to Keycloak over the AuthZEN Evaluation API, identifying a subject, an action, and a resource.
+2. **Keycloak (the PDP)** evaluates the request against its configured authorization policies and returns a simple decision: `true` or `false`.
+3. **Your application** enforces the decision -- granting or denying access accordingly.
+
+Keycloak also supports the *Evaluations API* for batching multiple authorization checks into a single request, reducing
+round-trips when your application needs to check several permissions at once.
+
+== A quick walkthrough
+
+Getting started takes just a few steps:
+
+. *Start Keycloak* with the `authzen` feature enabled.
+. *Configure a realm* with users, roles, and an authorization-enabled client that defines your resources, scopes, and policies.
+. *Discover the endpoints* by querying the `.well-known/authzen-configuration` path for your realm -- this returns the Evaluation and Evaluations API URLs so your PEP does not need to hardcode them.
+. *Obtain an access token* for the authorization-enabled client using a standard OAuth2 client credentials grant.
+. *Send an evaluation request* with a subject, action, and resource -- Keycloak returns `{"decision": true}` or `{"decision": false}`.
+
+Keycloak supports looking up subjects by username, UUID, or email, giving your PEP flexibility in how it identifies users.
+
+== Try it out
+
+https://www.keycloak.org/nightly/securing-apps/authzen-authorization[Feature documentation is available in the nightly build of the docs].
+
+We have also prepared a hands-on playground that walks you through the full setup with working examples of both the Evaluation
+and Evaluations API:
+
+- https://github.com/keycloak/keycloak-playground/tree/main/authzen[*Keycloak AuthZEN Playground on GitHub*]
+
+== Feedback welcome
+
+AuthZEN support in Keycloak is currently an *experimental feature*, and we would love to hear from the community as
+we shape its future. Download the https://github.com/keycloak/keycloak/releases/tag/nightly[Keycloak nightly release] and
+try it out.
+
+Please share your experiences, suggestions, and feature requests on the
+https://github.com/keycloak/keycloak/discussions/46012[AuthZEN GitHub discussion] or join the conversation on the
+https://groups.google.com/g/keycloak-dev[Keycloak mailing list]. Your input will directly influence how we evolve
+AuthZEN support in future releases.
