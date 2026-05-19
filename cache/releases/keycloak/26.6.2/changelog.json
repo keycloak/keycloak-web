@@ -1,0 +1,344 @@
+[ {
+  "number" : 381,
+  "repository" : "keycloak-private",
+  "title" : "[CVE-2026-37981] Broken Access Control in Account Resources User Lookup allows PII enumeration / #YWH-PGM40475-168",
+  "kind" : "cve",
+  "area" : "authorization-services",
+  "url" : "https://github.com/keycloak/keycloak-private/issues/381"
+}, {
+  "number" : 392,
+  "repository" : "keycloak-private",
+  "title" : "[CVE-2026-4630] Keycloak Authorization Services Protection API IDOR (Cross-Resource Server Access) / #YWH-PGM40475-113",
+  "kind" : "cve",
+  "area" : "authorization-services",
+  "url" : "https://github.com/keycloak/keycloak-private/issues/392"
+}, {
+  "number" : 407,
+  "repository" : "keycloak-private",
+  "title" : "[CVE-2026-37978] Cross-role PII leakage via evaluate-scopes endpoints bypasses user view permission #YWH-PGM40475-171",
+  "kind" : "cve",
+  "area" : "admin/rbac",
+  "url" : "https://github.com/keycloak/keycloak-private/issues/407"
+}, {
+  "number" : 427,
+  "repository" : "keycloak-private",
+  "title" : "[CVE-2026-37979] OIDC Introspection endpoint does not enforce audience restriction, leaking claims from lightweight access tokens / #YWH-PGM40475-220",
+  "kind" : "cve",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak-private/issues/427"
+}, {
+  "number" : 453,
+  "repository" : "keycloak-private",
+  "title" : "[CVE-2026-37982] Execute-actions token replay allows unauthorized WebAuthn credential enrollment on victim account",
+  "kind" : "cve",
+  "area" : "authentication/webauthn",
+  "url" : "https://github.com/keycloak/keycloak-private/issues/453"
+}, {
+  "number" : 531,
+  "repository" : "keycloak-private",
+  "title" : "[CVE-2026-7507] [Vulnerability Report] Session fixation in OIDC login flow leading to account takeover",
+  "kind" : "cve",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak-private/issues/531"
+}, {
+  "number" : 573,
+  "repository" : "keycloak-private",
+  "title" : "[CVE-2026-7571] Access token disclosure and implicit flow bypass via forged client data",
+  "kind" : "cve",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak-private/issues/573"
+}, {
+  "number" : 578,
+  "repository" : "keycloak-private",
+  "title" : "[CVE-2026-7504] Security Vulnerability Report: Redirect URI Validation Bypass in Keycloak",
+  "kind" : "cve",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak-private/issues/578"
+}, {
+  "number" : 594,
+  "repository" : "keycloak-private",
+  "title" : "[CVE-2026-7307] Denial of service when sending a crafted request to the /saml endpoint",
+  "kind" : "cve",
+  "area" : "saml",
+  "url" : "https://github.com/keycloak/keycloak-private/issues/594"
+}, {
+  "number" : 685,
+  "repository" : "keycloak-private",
+  "title" : "[CVE-2026-7307]  Denial of service when sending a crafted request to the /saml endpoint",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak-private/issues/685"
+}, {
+  "number" : 37243,
+  "repository" : "keycloak",
+  "title" : "Ensure all resources in the permission is of the same type",
+  "kind" : "task",
+  "area" : "admin/fine-grained-permissions",
+  "url" : "https://github.com/keycloak/keycloak/issues/37243"
+}, {
+  "number" : 38526,
+  "repository" : "keycloak",
+  "title" : "Duplicate user attribute values cannot be removed",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/38526"
+}, {
+  "number" : 40602,
+  "repository" : "keycloak",
+  "title" : "Account UI reports \"Something went wrong\" when opening an unknown path",
+  "kind" : "bug",
+  "area" : "account/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/40602"
+}, {
+  "number" : 47485,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-33871 HTTP/2 CONTINUATION Frame Flood Denial of Service",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47485"
+}, {
+  "number" : 47486,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-33870 RFC violation: HTTP Request Smuggling primitive via Chunked Extension Quoted-String Parsing",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47486"
+}, {
+  "number" : 47728,
+  "repository" : "keycloak",
+  "title" : "Monitor backups for CNPG - describe how to monitor it in the CNPG for backups installation guide",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47728"
+}, {
+  "number" : 47734,
+  "repository" : "keycloak",
+  "title" : "Add dedicated \"Monitoring Standbys\" section to the general installation documentation",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47734"
+}, {
+  "number" : 47882,
+  "repository" : "keycloak",
+  "title" : "Broken link in deploy-cnpg",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/47882"
+}, {
+  "number" : 47901,
+  "repository" : "keycloak",
+  "title" : "Realm import with --import-realm fails with ModelValidationException when Admin Permissions is enabled",
+  "kind" : "bug",
+  "area" : "admin/fine-grained-permissions",
+  "url" : "https://github.com/keycloak/keycloak/issues/47901"
+}, {
+  "number" : 47915,
+  "repository" : "keycloak",
+  "title" : "FreeMarker templates allow instantiation of new objects and even running OS commands",
+  "kind" : "bug",
+  "area" : "login/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/47915"
+}, {
+  "number" : 47932,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-4628] Improper Access Control on Keycloak Server through UMA resource management endpoints via PUT parameters",
+  "kind" : "cve",
+  "area" : "authorization-services",
+  "url" : "https://github.com/keycloak/keycloak/issues/47932"
+}, {
+  "number" : 47987,
+  "repository" : "keycloak",
+  "title" : "FGAP v2 Specific Group permission has no scopes found in resource",
+  "kind" : "bug",
+  "area" : "admin/fine-grained-permissions",
+  "url" : "https://github.com/keycloak/keycloak/issues/47987"
+}, {
+  "number" : 48030,
+  "repository" : "keycloak",
+  "title" : "Update to operator version 26.6.0 needs deletion of all objects",
+  "kind" : "bug",
+  "area" : "operator",
+  "url" : "https://github.com/keycloak/keycloak/issues/48030"
+}, {
+  "number" : 48040,
+  "repository" : "keycloak",
+  "title" : "User session limit generates fatal error",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/48040"
+}, {
+  "number" : 48049,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-37980] Stored XSS in select-organization.ftl - FreeMarker HTML-escape insufficient in inline JS handler",
+  "kind" : "cve",
+  "area" : "organizations",
+  "url" : "https://github.com/keycloak/keycloak/issues/48049"
+}, {
+  "number" : 48094,
+  "repository" : "keycloak",
+  "title" : "Wrong referenced resource type in Workflow handling for clients",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/48094"
+}, {
+  "number" : 48123,
+  "repository" : "keycloak",
+  "title" : "Clarify canonicalization in X.509 authentication",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/48123"
+}, {
+  "number" : 48143,
+  "repository" : "keycloak",
+  "title" : "Ordering of permission and policy calls leads to exposure of a client ID",
+  "kind" : "bug",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/48143"
+}, {
+  "number" : 48185,
+  "repository" : "keycloak",
+  "title" : "Deleted workflow still attempting to run",
+  "kind" : "bug",
+  "area" : "workflows",
+  "url" : "https://github.com/keycloak/keycloak/issues/48185"
+}, {
+  "number" : 48241,
+  "repository" : "keycloak",
+  "title" : "JavaScript Injection in frontchannel-logout.ftl via frontchannel-logout.title",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/48241"
+}, {
+  "number" : 48259,
+  "repository" : "keycloak",
+  "title" : "Kubernetes identity providers docs still mention it to be a preview feature",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/48259"
+}, {
+  "number" : 48275,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-5588 Bouncy Castle Crypto Package For Java: Use of a Broken or Risky Cryptographic Algorithm vulnerability in bcpkix modules",
+  "kind" : "cve",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/48275"
+}, {
+  "number" : 48313,
+  "repository" : "keycloak",
+  "title" : "No escape approach for JS code inside the front channel logout FTL",
+  "kind" : "bug",
+  "area" : "login/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/48313"
+}, {
+  "number" : 48329,
+  "repository" : "keycloak",
+  "title" : "JDBC_PING in 26.6 should not fail with 26.7 schema changes",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48329"
+}, {
+  "number" : 48348,
+  "repository" : "keycloak",
+  "title" : "Escape expressions in JS blocks in FTL pages",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48348"
+}, {
+  "number" : 48388,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-6856] Acceptable AAGUID policy bypass via packed self-attestation in WebAuthn registration",
+  "kind" : "cve",
+  "area" : "authentication/webauthn",
+  "url" : "https://github.com/keycloak/keycloak/issues/48388"
+}, {
+  "number" : 48536,
+  "repository" : "keycloak",
+  "title" : "Review migration guide for rolling updates changes",
+  "kind" : "bug",
+  "area" : "workflows",
+  "url" : "https://github.com/keycloak/keycloak/issues/48536"
+}, {
+  "number" : 48570,
+  "repository" : "keycloak",
+  "title" : "[CVE‐2026‐0636, CVE‐2026‐3505, CVE‐2026‐5598] Multiple bouncycastle CVEs",
+  "kind" : "cve",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/48570"
+}, {
+  "number" : 48629,
+  "repository" : "keycloak",
+  "title" : "WindowsServiceDistTest.testServiceLifecycle fails on slower runners due to insufficient startup timeout",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/48629"
+}, {
+  "number" : 48687,
+  "repository" : "keycloak",
+  "title" : "Upgrade to Quarkus 3.33.1.1",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48687"
+}, {
+  "number" : 49108,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-7307]  Denial of service when sending a crafted request to the /saml endpoint",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49108"
+}, {
+  "number" : 49109,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-7504]  Security Vulnerability Report: Redirect URI Validation Bypass in Keycloak",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49109"
+}, {
+  "number" : 49110,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-7571]  Access token disclosure and implicit flow bypass via forged client data",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49110"
+}, {
+  "number" : 49111,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-7507] Session fixation in OIDC login flow leading to account takeover",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49111"
+}, {
+  "number" : 49112,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-37982]  Execute-actions token replay allows unauthorized WebAuthn credential enrollment on victim account",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49112"
+}, {
+  "number" : 49113,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-37979]  OIDC Introspection endpoint does not enforce audience restriction, leaking claims from lightweight access tokens",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49113"
+}, {
+  "number" : 49114,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-37978]  Cross-role PII leakage via evaluate-scopes endpoints bypasses user view permission",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49114"
+}, {
+  "number" : 49115,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-4630]  Keycloak Authorization Services Protection API IDOR (Cross-Resource Server Access)",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49115"
+}, {
+  "number" : 49116,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-37981]  Broken Access Control in Account Resources User Lookup allows PII enumeration",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49116"
+} ]

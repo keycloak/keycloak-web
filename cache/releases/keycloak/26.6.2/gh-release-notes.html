@@ -1,0 +1,71 @@
+<div>
+
+<h2>Upgrading</h2>
+<p>Before upgrading refer to <a href="https://www.keycloak.org/docs/latest/upgrading/#migration-changes">the migration guide</a> for a complete list of changes.</p>
+
+<h2>All resolved issues</h2>
+
+<h3>Security fixes</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak-private/issues/381">#381</a> [CVE-2026-37981] Broken Access Control in Account Resources User Lookup allows PII enumeration / #YWH-PGM40475-168 <code>authorization-services</code></li>
+<li><a href="https://github.com/keycloak/keycloak-private/issues/392">#392</a> [CVE-2026-4630] Keycloak Authorization Services Protection API IDOR (Cross-Resource Server Access) / #YWH-PGM40475-113 <code>authorization-services</code></li>
+<li><a href="https://github.com/keycloak/keycloak-private/issues/407">#407</a> [CVE-2026-37978] Cross-role PII leakage via evaluate-scopes endpoints bypasses user view permission #YWH-PGM40475-171 <code>admin/rbac</code></li>
+<li><a href="https://github.com/keycloak/keycloak-private/issues/427">#427</a> [CVE-2026-37979] OIDC Introspection endpoint does not enforce audience restriction, leaking claims from lightweight access tokens / #YWH-PGM40475-220 <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak-private/issues/453">#453</a> [CVE-2026-37982] Execute-actions token replay allows unauthorized WebAuthn credential enrollment on victim account <code>authentication/webauthn</code></li>
+<li><a href="https://github.com/keycloak/keycloak-private/issues/531">#531</a> [CVE-2026-7507] [Vulnerability Report] Session fixation in OIDC login flow leading to account takeover <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak-private/issues/573">#573</a> [CVE-2026-7571] Access token disclosure and implicit flow bypass via forged client data <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak-private/issues/578">#578</a> [CVE-2026-7504] Security Vulnerability Report: Redirect URI Validation Bypass in Keycloak <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak-private/issues/594">#594</a> [CVE-2026-7307] Denial of service when sending a crafted request to the /saml endpoint <code>saml</code></li>
+<li><a href="https://github.com/keycloak/keycloak-private/issues/685">#685</a> [CVE-2026-7307]  Denial of service when sending a crafted request to the /saml endpoint </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/47485">#47485</a> CVE-2026-33871 HTTP/2 CONTINUATION Frame Flood Denial of Service </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/47486">#47486</a> CVE-2026-33870 RFC violation: HTTP Request Smuggling primitive via Chunked Extension Quoted-String Parsing </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/47932">#47932</a> [CVE-2026-4628] Improper Access Control on Keycloak Server through UMA resource management endpoints via PUT parameters <code>authorization-services</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/48049">#48049</a> [CVE-2026-37980] Stored XSS in select-organization.ftl - FreeMarker HTML-escape insufficient in inline JS handler <code>organizations</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/48275">#48275</a> CVE-2026-5588 Bouncy Castle Crypto Package For Java: Use of a Broken or Risky Cryptographic Algorithm vulnerability in bcpkix modules <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/48388">#48388</a> [CVE-2026-6856] Acceptable AAGUID policy bypass via packed self-attestation in WebAuthn registration <code>authentication/webauthn</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/48570">#48570</a> [CVE‐2026‐0636, CVE‐2026‐3505, CVE‐2026‐5598] Multiple bouncycastle CVEs <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/49108">#49108</a> [CVE-2026-7307]  Denial of service when sending a crafted request to the /saml endpoint </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/49109">#49109</a> [CVE-2026-7504]  Security Vulnerability Report: Redirect URI Validation Bypass in Keycloak </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/49110">#49110</a> [CVE-2026-7571]  Access token disclosure and implicit flow bypass via forged client data </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/49111">#49111</a> [CVE-2026-7507] Session fixation in OIDC login flow leading to account takeover </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/49112">#49112</a> [CVE-2026-37982]  Execute-actions token replay allows unauthorized WebAuthn credential enrollment on victim account </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/49113">#49113</a> [CVE-2026-37979]  OIDC Introspection endpoint does not enforce audience restriction, leaking claims from lightweight access tokens </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/49114">#49114</a> [CVE-2026-37978]  Cross-role PII leakage via evaluate-scopes endpoints bypasses user view permission </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/49115">#49115</a> [CVE-2026-4630]  Keycloak Authorization Services Protection API IDOR (Cross-Resource Server Access) </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/49116">#49116</a> [CVE-2026-37981]  Broken Access Control in Account Resources User Lookup allows PII enumeration </li>
+</ul>
+
+
+
+
+<h3>Enhancements</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/47728">#47728</a> Monitor backups for CNPG - describe how to monitor it in the CNPG for backups installation guide </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/47734">#47734</a> Add dedicated "Monitoring Standbys" section to the general installation documentation </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/48329">#48329</a> JDBC_PING in 26.6 should not fail with 26.7 schema changes </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/48348">#48348</a> Escape expressions in JS blocks in FTL pages </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/48687">#48687</a> Upgrade to Quarkus 3.33.1.1 </li>
+</ul>
+
+<h3>Bugs</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/38526">#38526</a> Duplicate user attribute values cannot be removed <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/40602">#40602</a> Account UI reports "Something went wrong" when opening an unknown path <code>account/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/47882">#47882</a> Broken link in deploy-cnpg <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/47901">#47901</a> Realm import with --import-realm fails with ModelValidationException when Admin Permissions is enabled <code>admin/fine-grained-permissions</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/47915">#47915</a> FreeMarker templates allow instantiation of new objects and even running OS commands <code>login/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/47987">#47987</a> FGAP v2 Specific Group permission has no scopes found in resource <code>admin/fine-grained-permissions</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/48030">#48030</a> Update to operator version 26.6.0 needs deletion of all objects <code>operator</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/48040">#48040</a> User session limit generates fatal error <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/48094">#48094</a> Wrong referenced resource type in Workflow handling for clients <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/48123">#48123</a> Clarify canonicalization in X.509 authentication <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/48143">#48143</a> Ordering of permission and policy calls leads to exposure of a client ID <code>admin/api</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/48185">#48185</a> Deleted workflow still attempting to run <code>workflows</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/48241">#48241</a> JavaScript Injection in frontchannel-logout.ftl via frontchannel-logout.title <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/48259">#48259</a> Kubernetes identity providers docs still mention it to be a preview feature <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/48313">#48313</a> No escape approach for JS code inside the front channel logout FTL <code>login/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/48536">#48536</a> Review migration guide for rolling updates changes <code>workflows</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/48629">#48629</a> WindowsServiceDistTest.testServiceLifecycle fails on slower runners due to insufficient startup timeout <code>ci</code></li>
+</ul>
+
+</div>
