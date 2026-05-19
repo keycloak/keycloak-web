@@ -1,22 +1,12 @@
 <div>
 
 <h2>Upgrading</h2>
-<p>Before upgrading refer to <a href="https://www.keycloak.org/docs/latest/upgrading/#migration-changes">the migration guide</a> for a complete list of changes.</p>
+<p>Before upgrading refer to <a href="file:/home/st/dev/keycloak-web/target/web/docs/latest/upgrading/#migration-changes">the migration guide</a> for a complete list of changes.</p>
 
 <h2>All resolved issues</h2>
 
 <h3>Security fixes</h3>
 <ul>
-<li><a href="https://github.com/keycloak/keycloak-private/issues/381">#381</a> [CVE-2026-37981] Broken Access Control in Account Resources User Lookup allows PII enumeration / #YWH-PGM40475-168 <code>authorization-services</code></li>
-<li><a href="https://github.com/keycloak/keycloak-private/issues/392">#392</a> [CVE-2026-4630] Keycloak Authorization Services Protection API IDOR (Cross-Resource Server Access) / #YWH-PGM40475-113 <code>authorization-services</code></li>
-<li><a href="https://github.com/keycloak/keycloak-private/issues/407">#407</a> [CVE-2026-37978] Cross-role PII leakage via evaluate-scopes endpoints bypasses user view permission #YWH-PGM40475-171 <code>admin/rbac</code></li>
-<li><a href="https://github.com/keycloak/keycloak-private/issues/427">#427</a> [CVE-2026-37979] OIDC Introspection endpoint does not enforce audience restriction, leaking claims from lightweight access tokens / #YWH-PGM40475-220 <code>oidc</code></li>
-<li><a href="https://github.com/keycloak/keycloak-private/issues/453">#453</a> [CVE-2026-37982] Execute-actions token replay allows unauthorized WebAuthn credential enrollment on victim account <code>authentication/webauthn</code></li>
-<li><a href="https://github.com/keycloak/keycloak-private/issues/531">#531</a> [CVE-2026-7507] [Vulnerability Report] Session fixation in OIDC login flow leading to account takeover <code>authentication</code></li>
-<li><a href="https://github.com/keycloak/keycloak-private/issues/573">#573</a> [CVE-2026-7571] Access token disclosure and implicit flow bypass via forged client data <code>oidc</code></li>
-<li><a href="https://github.com/keycloak/keycloak-private/issues/578">#578</a> [CVE-2026-7504] Security Vulnerability Report: Redirect URI Validation Bypass in Keycloak <code>oidc</code></li>
-<li><a href="https://github.com/keycloak/keycloak-private/issues/594">#594</a> [CVE-2026-7307] Denial of service when sending a crafted request to the /saml endpoint <code>saml</code></li>
-<li><a href="https://github.com/keycloak/keycloak-private/issues/685">#685</a> [CVE-2026-7307]  Denial of service when sending a crafted request to the /saml endpoint </li>
 <li><a href="https://github.com/keycloak/keycloak/issues/47485">#47485</a> CVE-2026-33871 HTTP/2 CONTINUATION Frame Flood Denial of Service </li>
 <li><a href="https://github.com/keycloak/keycloak/issues/47486">#47486</a> CVE-2026-33870 RFC violation: HTTP Request Smuggling primitive via Chunked Extension Quoted-String Parsing </li>
 <li><a href="https://github.com/keycloak/keycloak/issues/47932">#47932</a> [CVE-2026-4628] Improper Access Control on Keycloak Server through UMA resource management endpoints via PUT parameters <code>authorization-services</code></li>
