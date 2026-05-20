@@ -1,5 +1,5 @@
 :title: Experimental Shared Signals Framework support in Keycloak
-:date: 2026-05-12
+:date: 2026-05-25
 :publish: false
 :author: Thomas Darimont
 :summary: Keycloak can now act as an OpenID Shared Signals Framework Transmitter, federating realm, user, session and credential events to downstream services as signed Security Event Tokens.
@@ -122,6 +122,8 @@ The Transmitter is the first half of the picture. Tracked separately:
 * **Security review.** Required before promoting SSF out of experimental status.
 
 == Getting started
+
+https://www.keycloak.org/nightly/securing-apps/ssf-support[Feature documentation is available in the nightly build of the docs].
 
 SSF is experimental and off by default. Enable it on the server with:
 
