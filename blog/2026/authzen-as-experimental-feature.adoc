@@ -1,5 +1,5 @@
 :title: Keycloak experimental AuthZEN Support
-:date: 2026-05-14
+:date: 2026-05-20
 :publish: true
 :author: Ryan Emerson
 :summary: Keycloak now implements AuthZEN Evaluation and Evaluations APIs
