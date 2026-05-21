@@ -1,5 +1,5 @@
 {
-  "name": "Keycloak Helm Chart",
+  "name": "codecentric Keycloak Helm Chart",
   "description": "This Helm Chart is a modern Kubernetes deployment package for Keycloak. It provides a highly performant and scalable setup that simplifies the configuration of external databases, custom themes, extensions, distributed caching and much more.",
   "website": "https://github.com/codecentric/helm-charts/tree/master/charts/keycloakx"
 }
