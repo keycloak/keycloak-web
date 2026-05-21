@@ -1,5 +1,5 @@
 {
-  "name": "HelmForge Keycloak Helm Chart",
+  "name": "Keycloak Helm Chart HelmForge",
   "description": "Production-ready Helm chart for Keycloak on Kubernetes with dev/production modes, external database support, and ingress configuration.",
   "website": "https://github.com/helmforgedev/charts/tree/main/charts/keycloak"
 }
