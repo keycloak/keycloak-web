@@ -1,0 +1,5 @@
+{
+    "name": "Keycloak shadcn Theme",
+    "description": "A Keycloakify-based Keycloak theme built with shadcn/ui where light/dark logo, favicon and theme colors are configurable at runtime from the admin console — no theme rebuild required. Ships a bundled Theme Config SPI (REST endpoint + Realm Settings UI tab)",
+    "website": "https://github.com/emirhannaneli/keycloak-shadcn"
+}
