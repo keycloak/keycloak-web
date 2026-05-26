@@ -1,0 +1,52 @@
+:title: Meet Keycloak at KubeCon India in June
+:date: 2026-05-26
+:publish: true
+:author: Alexander Schwartz
+:preview: kubecon-india-2026.jpg
+:summary: Keycloak will be at KubeCon India in Mumbai! Join us for talks, and connect with the community at the project pavillion!
+
+This year's KubeCon India is coming to Mumbai, and Keycloak will be part of this year's edition in June 18-19!
+
+https://events.linuxfoundation.org/kubecon-cloudnativecon-india/[Register today to get tickets!]
+
+A lot of people use Keycloak and develop extensions in for Keycloak in India, so we are thrilled to connect with the community.
+
+--
+++++
+<div class="paragraph">
+</style>
+<a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-india/"><img src="${blogImages}/keycloak-kubecon26-india-announce.png" alt="Banner for KubeCon India" style="width: 100%; max-width: 1250px; object-fit: cover; height: 250px; object-fit: none; object-position: 95% 50%"></a>
+</div>
+++++
+--
+
+== Talk at KubeCon
+
+The schedule of KubeCon + CloudNativeCon India 2026 has been released, see below talks about Keycloak:
+
+* https://kccncind2026.sched.com/event/2IljT/no-more-secrets-with-keycloaks-federated-client-authentication-rishabh-singh-red-hat[*No More Secrets With Keycloak's Federated Client Authentication*] +
+Thursday June 18, 2026 4:50pm - 5:20pm IST +
+Rishabh Singh, Red Hat
+
+== Project Pavillion
+
+The Keycloak project table in the Project Pavillion is the place to meet the Keycloak maintainers, contributors and the larger community.
+
+We will be there in the afternoons, while other projects will be there during the mornings.
+See below for the location and the times.
+
+*link:++https://github.com/keycloak/keycloak/discussions/49320[this GitHub discussion++[Get in touch to help us at the stand!]*
+
+*Thursday, 18 June:* 3:30 - 7:30pm
+
+*Friday, 19 June:* 2:05 - 4:10pm
+
+Meet us at Table P-5!
+
+== See you there!
+
+We're preparing for KubeCon India 2026 and can't wait to connect with our community. Mark your calendars and join us.
+
+Let me know in https://github.com/keycloak/keycloak/discussions/49320[this GitHub discussion] to have your contributions or projects mentioned in the talk!
+
+See you in Mumbai!
