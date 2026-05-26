@@ -23,7 +23,25 @@
     <p>Violation of these guidelines may result in the individual, or vendor, being added to a denied coordination list.</p>
 
     <h2>Scope</h2>
-    <p>This policy applies to all Keycloak components and projects. Research disclosed to the project will be limited to Response Team members; however, we will assist in coordinating the disclosure of research with upstream open-source communities as needed and requested.</p>
+    <p>This policy applies to the following Keycloak components in their latest stable release. For the current versions, refer to the <a href="${links.getLink('downloads')}">Keycloak Downloads</a> page.</p>
+    <ul>
+        <li><strong>Keycloak Server</strong>: The latest stable release of the Keycloak server (Quarkus distribution), whether downloaded as a ZIP/TAR.GZ or used via the official container image.</li>
+        <li><strong>Keycloak Operator</strong>: The latest stable release of the Keycloak Operator for Kubernetes and OpenShift.</li>
+        <li><strong>JavaScript Client Adapter</strong>: The latest stable release of the official JavaScript adapter.</li>
+    </ul>
+    <p>All features included in the latest stable version are in scope by default. Research disclosed to the project will be limited to Response Team members; however, we will assist in coordinating the disclosure of research with upstream open-source communities as needed and requested.</p>
+
+    <h2>Out of Scope</h2>
+    <p>The following vulnerability classes are considered out of scope. Reports in these categories will generally be closed without action. We encourage reporters to review this list before submitting to help us focus on actionable security issues.</p>
+    <ul>
+        <li>Malicious or compromised administrator: Keycloak's threat model considers realm administrators as trusted. Reports that rely on leveraging legitimate administrator access to abuse extended rights will not be considered, as this applies to any application granting administrative privileges.</li>
+        <li>Cross-role administrative access between built-in admin roles (e.g., <code>manage-realm</code>, <code>manage-clients</code>, <code>manage-users</code>, <code>view-users</code>, <code>view-clients</code>, <code>query-groups</code>) without proven privilege escalation to a non-administrative user or PII leakage to an unauthenticated party. Administrators with any <code>manage-*</code> or <code>view-*</code> role are considered privileged; accessing data or performing actions across these roles does not constitute a vulnerability.</li>
+        <li>Informational disclosures without security impact, such as software fingerprinting, generic error messages, basic version strings, directory listings on non-critical paths, or stack traces that do not leak secrets, PII, or internal network structure.</li>
+        <li>Denial of Service (DoS), including Regular Expression DoS (ReDoS), resource exhaustion via caching, API abuse, or unbounded computations.</li>
+        <li>Self-XSS or XSS that cannot impact other users (e.g., requires unlikely user interaction within the reporter's own session).</li>
+        <li>User or client enumeration. Confirming user existence is often intentional for usability or unavoidable; effective mitigations (MFA, brute-force protection) exist elsewhere.</li>
+        <li>Non-security-related bugs, feature requests, or code quality issues without security impact.</li>
+    </ul>
 
     <h2>Reporting a Suspected Vulnerability</h2>
     <p>Suspected vulnerabilities should be disclosed responsibly and not made public until after analysis and a fix are available. We will acknowledge your report within 7 business days and work with you to confirm the vulnerability's existence and impact. Our goal is to maintain open dialogue during the assessment and remediation process.</p>
