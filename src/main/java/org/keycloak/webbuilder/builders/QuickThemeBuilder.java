@@ -15,8 +15,8 @@ public class QuickThemeBuilder extends AbstractBuilder {
         File targetDir = new File(context.getTargetDir(), "quick-theme");
 
         if (!distDir.isDirectory() || !new File(distDir, "index.html").isFile()) {
-            runCommand(quickthemeDir, command("pnpm", "install", "--frozen-lockfile"));
-            runCommand(quickthemeDir, command("pnpm", "build"));
+            runCommand(quickthemeDir, command("npm", "ci"));
+            runCommand(quickthemeDir, command("npm", "run", "build"));
         } else {
             printStep("skipped", "quicktheme build (dist already present)");
         }

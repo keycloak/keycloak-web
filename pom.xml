@@ -27,7 +27,7 @@
 
         <version.frontend-maven-plugin>1.15.0</version.frontend-maven-plugin>
         <version.node>v22.18.0</version.node>
-        <version.pnpm>10.14.0</version.pnpm>
+        <version.npm>10.9.2</version.npm>
         <version.maven-resources-plugin>3.2.0</version.maven-resources-plugin>
         <version.maven-compiler-plugin>3.8.1</version.maven-compiler-plugin>
         <version.maven-jar-plugin>3.1.2</version.maven-jar-plugin>
@@ -111,7 +111,7 @@
                         </goals>
                         <configuration>
                             <nodeVersion>${version.node}</nodeVersion>
-                            <pnpmVersion>${version.npm}</pnpmVersion>
+                            <npmVersion>${version.npm}</npmVersion>
                         </configuration>
                     </execution>
                     <execution>
