@@ -15,7 +15,16 @@
 <h3>Security fixes</h3>
 <ul>
 <#list version.changes.security as c>
-<li><a href="${c.url}">#${c.number?string("#####")}</a> ${c.title} <#if c.area?has_content><code>${c.area}</code></#if></li>
+<li><a href="${c.url}">#${c.number?string("#####")}</a> ${c.title} <#if c.area?has_content><span class="badge bg-secondary">${c.area}</span></#if></li>
+</#list>
+</ul>
+</#if>
+
+<#if version.changes.weaknesses?has_content>
+<h3>Weaknesses</h3>
+<ul>
+<#list version.changes.weaknesses as c>
+<li><a href="${c.url}">#${c.number?string("#####")}</a> ${c.title} <#if c.area?has_content><span class="badge bg-secondary">${c.area}</span></#if></li>
 </#list>
 </ul>
 </#if>
@@ -33,7 +42,7 @@
 <h3>Removed features</h3>
 <ul>
 <#list version.changes.removed as c>
-<li><a href="${c.url}">#${c.number?string("#####")}</a> ${c.title} <#if c.area?has_content><code>${c.area}</code></#if></li>
+<li><a href="${c.url}">#${c.number?string("#####")}</a> ${c.title} <#if c.area?has_content><span class="badge bg-secondary">${c.area}</span></#if></li>
 </#list>
 </ul>
 </#if>

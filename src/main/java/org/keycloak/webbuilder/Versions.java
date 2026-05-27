@@ -213,6 +213,10 @@ public class Versions extends LinkedList<Versions.Version> {
         public List<ChangeLogEntry> getSecurity() {
             return entries.stream().filter(e -> e.getKind().equals("cve")).collect(Collectors.toList());
         }
+
+        public List<ChangeLogEntry> getWeaknesses() {
+            return entries.stream().filter(e -> e.getKind().equals("weakness")).collect(Collectors.toList());
+        }
     }
 
 }
