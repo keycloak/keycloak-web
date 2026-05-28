@@ -1,15 +1,20 @@
 /* Common */
 
 :root {
+    --bs-primary: #428bca;
     --bs-primary-rgb: 66, 139, 202;
+    --bs-link-color: #428bca;
+    --bs-link-color-rgb: 66, 139, 202;
+    --bs-link-hover-color: #326d9f;
+    --bs-link-hover-color-rgb: 50, 109, 159;
 }
 
 .btn {
-    border-radius: 0.7rem;
+    border-radius: 0.75rem;
 }
 
 .badge {
-    border-radius: 0.7rem;
+    border-radius: 0.75rem;
 }
 
 .no-top-margin {
@@ -22,6 +27,32 @@
 
 .fs-xsmall {
     font-size: 0.8rem;
+}
+
+.kc-table-docs {
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid #dee2e6;
+    border-radius: 0.75rem;
+    overflow: hidden;
+}
+
+.kc-table-docs td {
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.kc-table-docs tr:last-child td {
+    border-bottom: none;
+}
+
+table.kc-table-docs > tbody > tr:nth-of-type(odd) > * {
+    --bs-table-accent-bg: var(--bs-table-striped-bg);
+    color: var(--bs-table-striped-color);
+}
+
+.kc-table-docs td:first-child {
+    border-right: 1px solid #dee2e6;
 }
 
 .kc-table-downloads-inner {
@@ -60,8 +91,10 @@ a:hover {
     color: #326d9f;
 }
 
-.nav-link {
-    color: #428bca;
+header.navbar {
+    --bs-navbar-color: rgba(0, 0, 0, 0.55);
+    --bs-navbar-hover-color: rgba(0, 0, 0, 0.7);
+    --bs-navbar-active-color: rgba(0, 0, 0, 0.9);
 }
 
 /* News */
@@ -173,9 +206,35 @@ a:hover {
 /* Guide - Options */
 
 .guide-category {
-    border-radius: 0.5rem;
+    border-radius: 1rem;
     background-color: #EDEDED99;
-    padding: 1rem 0.5rem 0;
+    padding: 1.5rem 1.5rem 0.5rem;
+}
+
+.card {
+    border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
+    border-radius: var(--bs-border-radius-xl);
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
+    margin-bottom: 1.5rem;
+    width: 100%;
+    transition: box-shadow 0.2s ease;
+}
+
+.card:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-text {
+    color: var(--bs-secondary-color);
+}
+
+.card-footer a {
+    font-size: 0.875rem;
 }
 
 /* Guides navbar layout */

@@ -3,18 +3,23 @@
 
 <@tmpl.page current="case-studies" title="Case Studies" previewImage="casestudies.jpg"  summary="Case studies show how Keycloak is used by end user companies in real life scenarios.">
 
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+        <h4 class="mb-0 text-white w-100 text-center">Case Studies</h4>
+    </div>
+</nav>
+
 <div class="jumbotron jumbotron-fluid bg-light kc-bg-triangles kc-bg-fixed pt-4">
     <div class="container">
-        <h1 class="text-white">Case Studies</h1>
-
-        <p class="text-white">
-            Case studies show how Keycloak is used by end user companies in real life scenarios.
-            Click on each tile to read more about each case study.
-        </p>
-
-        <p class="text-white">
-            To have your success story listed here, <a href="https://github.com/keycloak/keycloak-web/issues">open an issue on GitHub</a>.
-        </p>
+        <div class="rounded-4 mb-4" style="background-color: rgba(255, 255, 255, 0.7); padding: 1.5rem;">
+            <p>
+                Case studies show how Keycloak is used by end user companies in real life scenarios.
+                Click on each tile to read more about each case study.
+            </p>
+            <p class="mb-0">
+                To have your success story listed here, <a href="https://github.com/keycloak/keycloak-web/issues">open an issue on GitHub</a>.
+            </p>
+        </div>
 
         <style>
             .logo-container {
@@ -22,8 +27,6 @@
                 justify-content: center;
                 align-items: center;
                 height: 120px;
-                margin: 1rem -1rem -1rem;
-                border-radius: 0 0 0.25rem 0.25rem;
             }
             .logo {
                 max-height: 90%;
@@ -49,16 +52,19 @@
 
         <div class="row">
             <#list casestudies.caseStudies as casestudy>
-                <div class="col-md-6 col-xl-4">
-                    <div class="card mb-4 shadow-sm">
+                <div class="col-md-6 col-xl-4 d-flex">
+                    <div class="card">
+                        <div class="logo-container rounded-top-4" style="background-color: ${casestudy.logoBackground}">
+                            <img src="${casestudy.logoUrl}" alt="Company Logo" class="logo" style="${casestudy.logoStyle}">
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title line-clamp-2">${casestudy.title}</h5>
                             <span class="card-text">
                                 <div class="line-clamp-5">${casestudy.description}</div>
-                            <a href="${casestudy.url}" class="stretched-link">Continue reading...</a></span>
-                            <div class="logo-container" style="background-color: ${casestudy.logoBackground}">
-                                <img src="${casestudy.logoUrl}" alt="Company Logo" class="logo" style="${casestudy.logoStyle}">
-                            </div>
+                            </span>
+                        </div>
+                        <div class="card-footer">
+                            <a href="${casestudy.url}" class="stretched-link">Continue reading &rarr;</a>
                         </div>
                     </div>
                 </div>
