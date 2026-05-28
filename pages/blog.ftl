@@ -4,27 +4,33 @@
 
 <@tmpl.page current="blog" title="Blog" rss=true summary="Read the latest news about Keycloak in this blog.">
 
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+        <h4 class="mb-0 text-white w-100 text-center">Blog</h4>
+    </div>
+</nav>
+
 <div class="jumbotron jumbotron-fluid bg-light kc-bg-triangles pt-4 pb-2">
     <div class="container">
         <div class="row">
         <#assign displayed = 0>
         <#list blogs as blog>
-        <div class="col-sm-6">
-            <div class="card shadow-sm mb-4">
+        <div class="col-sm-6 d-flex">
+            <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title" <#if !blog.summary?has_content>style="margin-bottom:0"</#if>>
+                    <h5 class="card-title" <#if !blog.summary?has_content>style="margin-bottom:0"</#if>>
                         ${blog.title}
-                    </h4>
+                    </h5>
                     <#if blog.summary??>
                     <div class="card-text">${blog.summary}</div>
                     </#if>
-                    <a href="${links.get(blog)}" class="stretched-link link-dark"></a>
                 </div>
-                <div class="card-footer align-items-center d-flex">
-                    <span class="card-subtitle fs-xsmall text-muted">
+                <div class="card-footer">
+                    <span class="card-subtitle fs-xsmall text-body-secondary">
                         ${blog.date?string["dd MMMM yyyy"]}
                         <#if blog.author??>by ${blog.author}</#if>
                     </span>
+                    <a href="${links.get(blog)}" class="stretched-link float-end">Read post &rarr;</a>
                 </div>
             </div>
         </div>

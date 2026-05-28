@@ -8,7 +8,7 @@
     <#assign docApiRoot = "${root}docs-api/latest">
 </#if>
 
-<table class="table table-bordered table-striped">
+<table class="table kc-table-docs">
     <tbody>
     <tr>
         <td>
@@ -106,7 +106,7 @@
 
 <h2 class="mt-4">API Documentation</h2>
 
-<table class="table table-bordered table-striped">
+<table class="table kc-table-docs">
     <tbody>
     <tr>
         <td>

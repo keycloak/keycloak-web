@@ -4,7 +4,7 @@
 
 <@tmpl.page current="downloads" title="Downloads" summary="Download the latest release of Keycloak from this page.">
 
-<div class="container mt-5">
+<div class="container mt-4">
     <h1>Downloads <span class="badge bg-primary">${version.version}</span></h1>
 
     <p>

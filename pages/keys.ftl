@@ -11,7 +11,7 @@
         in the future.
     </p>
 
-    <table class="table table-bordered table-striped">
+    <table class="table kc-table-docs">
         <tr>
             <th>ID</th>
             <th>UID</th>
