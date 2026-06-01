@@ -3,7 +3,7 @@
 :publish: true
 :author: Alexander Schwartz
 :preview: kubecon-india-2025.jpg
-:summary: Keycloak will be at KubeCon India in Hyderabad! Join us for talks, and connect with maintainers and the community at the project pavillion!
+:summary: Keycloak will be at KubeCon India in Hyderabad! Join us for talks, and connect with maintainers and the community at the project Pavilion!
 
 Last year's KubeCon India was a great success, and Keycloak will be part of this year's edition in Hyderabad on August 7-8.
 
@@ -34,9 +34,9 @@ Alexander Schwartz, Red Hat
 Wednesday August 6, 2025 12:10 IST +
 Alexander Schwartz & Rishabh Singh, Red Hat
 
-== Project Pavillion
+== Project Pavilion
 
-The Keycloak project table in the Project Pavillion is the place to meet the Keycloak maintainers, contributors and the larger community.
+The Keycloak project table in the Project Pavilion is the place to meet the Keycloak maintainers, contributors and the larger community.
 
 We will be there in the afternoons, while other projects will be there during the mornings.
 See below for the location and the times.

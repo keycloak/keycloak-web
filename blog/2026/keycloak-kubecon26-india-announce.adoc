@@ -3,9 +3,9 @@
 :publish: true
 :author: Alexander Schwartz
 :preview: kubecon-india-2026.jpg
-:summary: Keycloak will be at KubeCon India in Mumbai! Join us for talks, and connect with the community at the project pavillion!
+:summary: Keycloak will be at KubeCon India in Mumbai! Join us for talks, and connect with the community at the project Pavilion!
 
-This year's KubeCon India is coming to Mumbai, and Keycloak will be part of this year's edition in June 18-19!
+This year's KubeCon India is coming to Mumbai, and Keycloak will be part of this year's edition on June 18-19!
 
 https://events.linuxfoundation.org/kubecon-cloudnativecon-india/[Register today to get tickets!]
 
@@ -28,9 +28,9 @@ The schedule of KubeCon + CloudNativeCon India 2026 has been released, see below
 Thursday June 18, 2026 4:50pm - 5:20pm IST +
 Rishabh Singh, Red Hat
 
-== Project Pavillion
+== Project Pavilion
 
-The Keycloak project table in the Project Pavillion is the place to meet the Keycloak maintainers, contributors and the larger community.
+The Keycloak project table in the Project Pavilion is the place to meet the Keycloak maintainers, contributors and the larger community.
 
 We will be there in the afternoons, while other projects will be there during the mornings.
 See below for the location and the times.
