@@ -1,0 +1,84 @@
+<div>
+
+<h2>Upgrading</h2>
+<p>Before upgrading refer to <a href="https://www.keycloak.org/docs/latest/upgrading/#migration-changes">the migration guide</a> for a complete list of changes.</p>
+
+<h2>All resolved issues</h2>
+
+<h3>Security fixes</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/47707">#47707</a> CVE-2026-4800 lodash vulnerable to Code Injection via `_.template` imports key names <code>account/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/47935">#47935</a> [CVE-2026-4874] Server-Side Request Forgery via OIDC token endpoint manipulation <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/48036">#48036</a> [CVE-2026-37977] CORS Access-Control-Allow-Origin reflected from unverified JWT azp claim on UMA token endpoint <code>authorization-services</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/48709">#48709</a> [CVE-2026-7500] Improper Access Control on Keycloak Server when the account Account API feature is disabled <code>account/api</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/48805">#48805</a> CVE-2026-42581 Netty HTTP/1.0 TE+CL Coexistence Bypasses Smuggling Sanitization </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/49118">#49118</a> [CVE-2026-8922] OIDC token introspection ignores realm-level notBefore when client-level notBefore is set <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/49133">#49133</a> [CVE-2026-8830] Missing server-side WebAuthn validations during credential registration <code>authentication/webauthn</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/49174">#49174</a> [CVE-2026-9088] Group Members Endpoint Bypasses User Profile Permissions <code>admin/fine-grained-permissions</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/49175">#49175</a> [CVE-2026-9087] Cross-Session Email Verification Proof Not Bound to Upstream Identity in First-Broker-Login <code>identity-brokering</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/49426">#49426</a> [CVE-2026-9802] Server restart resets startupTime, allowing reuse of rotated refresh tokens when revokeRefreshToken=true <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/49428">#49428</a> [CVE-2026-9794] SAML ECP faultstring discloses client existence and configuration state <code>saml</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/49431">#49431</a> [CVE-2026-9791] Organization data exposed in tokens and account API when Organizations feature is disabled at realm level <code>organizations</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/49433">#49433</a> [CVE-2026-0707] ClientRegistrationAuth DoS via malformed Authorization header (CVE-2026-0707 incomplete fix) <code>admin/api</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/49434">#49434</a> [CVE-2026-9801] DoS in LDAP federation via malformed PasswordPolicyControl <code>ldap</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/49435">#49435</a> [CVE-2026-9704] Privilege escalation via silent subject_token removal in token exchange <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/49436">#49436</a> [CVE-2026-9792] ROPC grant bypass in client policy enforcement <code>oidc</code></li>
+</ul>
+
+<h3>Weaknesses</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/48978">#48978</a> UNSAFE_PATH_PATTERN regex to cover percent-encoded terminators and control characters <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/48986">#48986</a> Authorization Services: NullPointerException in UMA permission grant when stale permission ticket references removed scope <code>authorization-services</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/48987">#48987</a> Account API: Resource sharing endpoints ignore userManagedAccessAllowed realm setting <code>authorization-services</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/49086">#49086</a> Account resource sharing resolves recipient by username before email, granting access to wrong user <code>authorization-services</code></li>
+</ul>
+
+
+
+
+<h3>Enhancements</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/48311">#48311</a> Upgrade to Quarkus 3.33.2 <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/48695">#48695</a> Add startup check for missing database indexes </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/49148">#49148</a> Add SPI option to disable FD_SOCK2 failure detection </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/49526">#49526</a> Update to simple-git 3.36.0 </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/49530">#49530</a> Update to uuid >=13.0.1 </li>
+</ul>
+
+<h3>Bugs</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/45957">#45957</a> Handling of CORS requests in the Admin UI ineffective / open for CSRF <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/47036">#47036</a> Account ResourceService user endpoint returns excessive user data in UMA-enabled realms <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/48324">#48324</a> UMA IS_ADMIN filter breaks ticket finding <code>authorization-services</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/48430">#48430</a> Wildcard redirect URI matching does not enforce host boundary when * is placed directly after hostname <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/48432">#48432</a> ClientAdapter using wrong value for isFrontChannelLogout <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/48438">#48438</a> Keycloak 26.6.0/26.6.1 exits (code 1) ~100ms after async realm migration completes; migrations not persisted <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/48455">#48455</a> ContextNotActiveException during error handling <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/48464">#48464</a> Incomplete SCIM schema definition for objects <code>scim</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/48529">#48529</a> Broken downstream docs formatting on Kubernetes topic <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/48584">#48584</a> Updating Keycloak to 26.6.x fails on SQL Server with case sensitive collation <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/48628">#48628</a> Client registerNode and unregisterNode endpoints fail authenticating the client <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/48681">#48681</a> ExternalLinksTest: oasis-open.org/standard/saml/ returns 403 in CI causing flaky documentation check <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/48716">#48716</a> Missing index IDX_IDP_FOR_LOGIN and IDX_CLIENT_ATT_BY_NAME_VALUE for Microsoft SQL Server <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/48744">#48744</a> Input validation/ Unhandled NullPointerException on alg:none JWT in Bearer Authentication <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/48792">#48792</a> Virtual Thread checking is not working <code>infinispan</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/48806">#48806</a> NPE when accessing Account UI and the ACCOUNT feature is disabled <code>account/api</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/48877">#48877</a> Keycloak 26.6.1 does not persist UPDATE_PASSWORD for LDAP/AD federated users after temporary password reset <code>ldap</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/48904">#48904</a> Consistent 500 on DELETE of realms via non-browser clients calling REST API <code>admin/api</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/49058">#49058</a> Keycloak fails to run tests with embedded undertow <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/49140">#49140</a> Workflows documentation: offboarding example is incorrectly enclosing the list of revoked roles with double quotes <code>workflows</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/49149">#49149</a> Disable single thread sender in JGroups <code>infinispan</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/49151">#49151</a> FIPS jobs fail in CI because java-25-openjdk-devel package is missing <code>testsuite</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/49163">#49163</a> Enable JGroups message stats <code>infinispan</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/49194">#49194</a> Use Java 25 again for FIPS jobs <code>testsuite</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/49222">#49222</a> Incorrect link to Themes documentation <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/49224">#49224</a> Broken links in UI Customization Guide <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/49263">#49263</a> Use the PostgreSQL driver privacy option `logServerErrorDetail` <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/49265">#49265</a> Since Hibernate 7, the workaround to not log-and-throw Hibernate errors does not longer work <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/49274">#49274</a> JavaScript CI hangs when installing playwright <code>testsuite</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/49288">#49288</a> Link issue in the documentation for https://www.rfc-editor.org/rfc/rfc7662 <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/49356">#49356</a> SAML async processing leaves a dangling threadlocal transaction <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/49611">#49611</a> Realm extensions require Bearer or Drop authorisation <code>admin/api</code></li>
+</ul>
+
+</div>

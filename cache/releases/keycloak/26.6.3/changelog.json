@@ -1,0 +1,414 @@
+[ {
+  "number" : 45957,
+  "repository" : "keycloak",
+  "title" : "Handling of CORS requests in the Admin UI ineffective / open for CSRF",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/45957"
+}, {
+  "number" : 47036,
+  "repository" : "keycloak",
+  "title" : "Account ResourceService user endpoint returns excessive user data in UMA-enabled realms",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/47036"
+}, {
+  "number" : 47707,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-4800 lodash vulnerable to Code Injection via `_.template` imports key names",
+  "kind" : "cve",
+  "area" : "account/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/47707"
+}, {
+  "number" : 47935,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-4874] Server-Side Request Forgery via OIDC token endpoint manipulation",
+  "kind" : "cve",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/47935"
+}, {
+  "number" : 48036,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-37977] CORS Access-Control-Allow-Origin reflected from unverified JWT azp claim on UMA token endpoint",
+  "kind" : "cve",
+  "area" : "authorization-services",
+  "url" : "https://github.com/keycloak/keycloak/issues/48036"
+}, {
+  "number" : 48311,
+  "repository" : "keycloak",
+  "title" : "Upgrade to Quarkus 3.33.2",
+  "kind" : "enhancement",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/48311"
+}, {
+  "number" : 48324,
+  "repository" : "keycloak",
+  "title" : "UMA IS_ADMIN filter breaks ticket finding",
+  "kind" : "bug",
+  "area" : "authorization-services",
+  "url" : "https://github.com/keycloak/keycloak/issues/48324"
+}, {
+  "number" : 48430,
+  "repository" : "keycloak",
+  "title" : "Wildcard redirect URI matching does not enforce host boundary when * is placed directly after hostname",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/48430"
+}, {
+  "number" : 48432,
+  "repository" : "keycloak",
+  "title" : "ClientAdapter using wrong value for isFrontChannelLogout",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/48432"
+}, {
+  "number" : 48438,
+  "repository" : "keycloak",
+  "title" : "Keycloak 26.6.0/26.6.1 exits (code 1) ~100ms after async realm migration completes; migrations not persisted",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/48438"
+}, {
+  "number" : 48455,
+  "repository" : "keycloak",
+  "title" : "ContextNotActiveException during error handling",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/48455"
+}, {
+  "number" : 48464,
+  "repository" : "keycloak",
+  "title" : "Incomplete SCIM schema definition for objects",
+  "kind" : "bug",
+  "area" : "scim",
+  "url" : "https://github.com/keycloak/keycloak/issues/48464"
+}, {
+  "number" : 48529,
+  "repository" : "keycloak",
+  "title" : "Broken downstream docs formatting on Kubernetes topic",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/48529"
+}, {
+  "number" : 48584,
+  "repository" : "keycloak",
+  "title" : "Updating Keycloak to 26.6.x fails on SQL Server with case sensitive collation",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/48584"
+}, {
+  "number" : 48628,
+  "repository" : "keycloak",
+  "title" : "Client registerNode and unregisterNode endpoints fail authenticating the client",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/48628"
+}, {
+  "number" : 48681,
+  "repository" : "keycloak",
+  "title" : "ExternalLinksTest: oasis-open.org/standard/saml/ returns 403 in CI causing flaky documentation check",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/48681"
+}, {
+  "number" : 48695,
+  "repository" : "keycloak",
+  "title" : "Add startup check for missing database indexes",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48695"
+}, {
+  "number" : 48709,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-7500] Improper Access Control on Keycloak Server when the account Account API feature is disabled",
+  "kind" : "cve",
+  "area" : "account/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/48709"
+}, {
+  "number" : 48716,
+  "repository" : "keycloak",
+  "title" : "Missing index IDX_IDP_FOR_LOGIN and IDX_CLIENT_ATT_BY_NAME_VALUE for Microsoft SQL Server",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/48716"
+}, {
+  "number" : 48744,
+  "repository" : "keycloak",
+  "title" : "Input validation/ Unhandled NullPointerException on alg:none JWT in Bearer Authentication",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/48744"
+}, {
+  "number" : 48792,
+  "repository" : "keycloak",
+  "title" : "Virtual Thread checking is not working",
+  "kind" : "bug",
+  "area" : "infinispan",
+  "url" : "https://github.com/keycloak/keycloak/issues/48792"
+}, {
+  "number" : 48805,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-42581 Netty HTTP/1.0 TE+CL Coexistence Bypasses Smuggling Sanitization",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48805"
+}, {
+  "number" : 48806,
+  "repository" : "keycloak",
+  "title" : "NPE when accessing Account UI and the ACCOUNT feature is disabled",
+  "kind" : "bug",
+  "area" : "account/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/48806"
+}, {
+  "number" : 48877,
+  "repository" : "keycloak",
+  "title" : "Keycloak 26.6.1 does not persist UPDATE_PASSWORD for LDAP/AD federated users after temporary password reset",
+  "kind" : "bug",
+  "area" : "ldap",
+  "url" : "https://github.com/keycloak/keycloak/issues/48877"
+}, {
+  "number" : 48904,
+  "repository" : "keycloak",
+  "title" : "Consistent 500 on DELETE of realms via non-browser clients calling REST API",
+  "kind" : "bug",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/48904"
+}, {
+  "number" : 48952,
+  "repository" : "keycloak",
+  "title" : "Avoid transitive Kotlin deployment-only dependencies in Quarkus module we don't need",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48952"
+}, {
+  "number" : 48978,
+  "repository" : "keycloak",
+  "title" : "UNSAFE_PATH_PATTERN regex to cover percent-encoded terminators and control characters",
+  "kind" : "weakness",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/48978"
+}, {
+  "number" : 48986,
+  "repository" : "keycloak",
+  "title" : "Authorization Services: NullPointerException in UMA permission grant when stale permission ticket references removed scope",
+  "kind" : "weakness",
+  "area" : "authorization-services",
+  "url" : "https://github.com/keycloak/keycloak/issues/48986"
+}, {
+  "number" : 48987,
+  "repository" : "keycloak",
+  "title" : "Account API: Resource sharing endpoints ignore userManagedAccessAllowed realm setting",
+  "kind" : "weakness",
+  "area" : "authorization-services",
+  "url" : "https://github.com/keycloak/keycloak/issues/48987"
+}, {
+  "number" : 49058,
+  "repository" : "keycloak",
+  "title" : "Keycloak fails to run tests with embedded undertow",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/49058"
+}, {
+  "number" : 49086,
+  "repository" : "keycloak",
+  "title" : "Account resource sharing resolves recipient by username before email, granting access to wrong user",
+  "kind" : "weakness",
+  "area" : "authorization-services",
+  "url" : "https://github.com/keycloak/keycloak/issues/49086"
+}, {
+  "number" : 49118,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-8922] OIDC token introspection ignores realm-level notBefore when client-level notBefore is set",
+  "kind" : "cve",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/49118"
+}, {
+  "number" : 49133,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-8830] Missing server-side WebAuthn validations during credential registration",
+  "kind" : "cve",
+  "area" : "authentication/webauthn",
+  "url" : "https://github.com/keycloak/keycloak/issues/49133"
+}, {
+  "number" : 49140,
+  "repository" : "keycloak",
+  "title" : "Workflows documentation: offboarding example is incorrectly enclosing the list of revoked roles with double quotes",
+  "kind" : "bug",
+  "area" : "workflows",
+  "url" : "https://github.com/keycloak/keycloak/issues/49140"
+}, {
+  "number" : 49148,
+  "repository" : "keycloak",
+  "title" : "Add SPI option to disable FD_SOCK2 failure detection",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49148"
+}, {
+  "number" : 49149,
+  "repository" : "keycloak",
+  "title" : "Disable single thread sender in JGroups",
+  "kind" : "bug",
+  "area" : "infinispan",
+  "url" : "https://github.com/keycloak/keycloak/issues/49149"
+}, {
+  "number" : 49151,
+  "repository" : "keycloak",
+  "title" : "FIPS jobs fail in CI because java-25-openjdk-devel package is missing",
+  "kind" : "bug",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/49151"
+}, {
+  "number" : 49163,
+  "repository" : "keycloak",
+  "title" : "Enable JGroups message stats",
+  "kind" : "bug",
+  "area" : "infinispan",
+  "url" : "https://github.com/keycloak/keycloak/issues/49163"
+}, {
+  "number" : 49174,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-9088] Group Members Endpoint Bypasses User Profile Permissions",
+  "kind" : "cve",
+  "area" : "admin/fine-grained-permissions",
+  "url" : "https://github.com/keycloak/keycloak/issues/49174"
+}, {
+  "number" : 49175,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-9087] Cross-Session Email Verification Proof Not Bound to Upstream Identity in First-Broker-Login",
+  "kind" : "cve",
+  "area" : "identity-brokering",
+  "url" : "https://github.com/keycloak/keycloak/issues/49175"
+}, {
+  "number" : 49194,
+  "repository" : "keycloak",
+  "title" : "Use Java 25 again for FIPS jobs",
+  "kind" : "bug",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/49194"
+}, {
+  "number" : 49222,
+  "repository" : "keycloak",
+  "title" : "Incorrect link to Themes documentation",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/49222"
+}, {
+  "number" : 49224,
+  "repository" : "keycloak",
+  "title" : "Broken links in UI Customization Guide",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/49224"
+}, {
+  "number" : 49263,
+  "repository" : "keycloak",
+  "title" : "Use the PostgreSQL driver privacy option `logServerErrorDetail`",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/49263"
+}, {
+  "number" : 49265,
+  "repository" : "keycloak",
+  "title" : "Since Hibernate 7, the workaround to not log-and-throw Hibernate errors does not longer work",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/49265"
+}, {
+  "number" : 49274,
+  "repository" : "keycloak",
+  "title" : "JavaScript CI hangs when installing playwright",
+  "kind" : "bug",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/49274"
+}, {
+  "number" : 49288,
+  "repository" : "keycloak",
+  "title" : "Link issue in the documentation for https://www.rfc-editor.org/rfc/rfc7662",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/49288"
+}, {
+  "number" : 49356,
+  "repository" : "keycloak",
+  "title" : "SAML async processing leaves a dangling threadlocal transaction",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/49356"
+}, {
+  "number" : 49383,
+  "repository" : "keycloak",
+  "title" : "Operator KeycloakDeploymentTest.testConfigErrorLog fails without custom image",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49383"
+}, {
+  "number" : 49426,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-9802] Server restart resets startupTime, allowing reuse of rotated refresh tokens when revokeRefreshToken=true",
+  "kind" : "cve",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/49426"
+}, {
+  "number" : 49428,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-9794] SAML ECP faultstring discloses client existence and configuration state",
+  "kind" : "cve",
+  "area" : "saml",
+  "url" : "https://github.com/keycloak/keycloak/issues/49428"
+}, {
+  "number" : 49431,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-9791] Organization data exposed in tokens and account API when Organizations feature is disabled at realm level",
+  "kind" : "cve",
+  "area" : "organizations",
+  "url" : "https://github.com/keycloak/keycloak/issues/49431"
+}, {
+  "number" : 49433,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-0707] ClientRegistrationAuth DoS via malformed Authorization header (CVE-2026-0707 incomplete fix)",
+  "kind" : "cve",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/49433"
+}, {
+  "number" : 49434,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-9801] DoS in LDAP federation via malformed PasswordPolicyControl",
+  "kind" : "cve",
+  "area" : "ldap",
+  "url" : "https://github.com/keycloak/keycloak/issues/49434"
+}, {
+  "number" : 49435,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-9704] Privilege escalation via silent subject_token removal in token exchange",
+  "kind" : "cve",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/49435"
+}, {
+  "number" : 49436,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-9792] ROPC grant bypass in client policy enforcement",
+  "kind" : "cve",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/49436"
+}, {
+  "number" : 49526,
+  "repository" : "keycloak",
+  "title" : "Update to simple-git 3.36.0",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49526"
+}, {
+  "number" : 49530,
+  "repository" : "keycloak",
+  "title" : "Update to uuid >=13.0.1",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49530"
+}, {
+  "number" : 49611,
+  "repository" : "keycloak",
+  "title" : "Realm extensions require Bearer or Drop authorisation",
+  "kind" : "bug",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/49611"
+} ]
