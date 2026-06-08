@@ -1,0 +1,5 @@
+{
+  "name": "Filtered Group Membership Mapper",
+  "description": "A Keycloak Protocol Mapper that extends the built-in Group Membership Mapper by allowing regex-based exclusion of groups before they are included in tokens.",
+  "website": "https://github.com/byteworks-ch/keycloak-filtered-group-membership-mapper"
+}
