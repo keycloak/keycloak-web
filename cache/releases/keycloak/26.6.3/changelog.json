@@ -365,7 +365,7 @@
 }, {
   "number" : 49433,
   "repository" : "keycloak",
-  "title" : "[CVE-2026-0707] ClientRegistrationAuth DoS via malformed Authorization header (CVE-2026-0707 incomplete fix)",
+  "title" : "[CVE-2026-9803] ClientRegistrationAuth DoS via malformed Authorization header (CVE-2026-0707 incomplete fix)",
   "kind" : "cve",
   "area" : "admin/api",
   "url" : "https://github.com/keycloak/keycloak/issues/49433"
