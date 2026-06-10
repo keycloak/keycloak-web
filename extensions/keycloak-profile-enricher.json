@@ -1,0 +1,5 @@
+{
+  "name": "Keycloak Profile Enricher",
+  "description": "A webhook-driven extension that dynamically fetches and populates custom user attributes from an external API during user creation across all Keycloak authentication flows.",
+  "website": "https://github.com/z0devs/keycloak-profile-enricher"
+}
