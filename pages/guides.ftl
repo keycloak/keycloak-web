@@ -35,11 +35,11 @@
     <div class="container">
         <#list guides.getCategories(false) as c>
             <div class="row guide-category mb-4" id="${c.id}">
-                <h2>${c.title}</h2>
+                <h3>${c.title}</h3>
                 <#list guides.getGuides(c) as g>
                 <#if g.tileVisible && !g.snapshot>
-                    <div class="col-sm-4">
-                        <div class="card shadow-sm mb-4">
+                    <div class="col-sm-4 d-flex">
+                        <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">
                                     ${g.title}
@@ -49,14 +49,16 @@
                                 <#if g.summary??>
                                 <span class="card-text">${g.summary}</span>
                                 </#if>
-                                <div>
-                                    <#if g.tags??>
+                                <#if g.tags??>
+                                <div class="mt-2">
                                     <#list g.tags as tag>
-                                    <span class="badge bg-light text-muted fs-xsmall mt-3">${tag}</span>
+                                    <span class="badge bg-light text-body-secondary fs-xsmall">${tag}</span>
                                     </#list>
-                                    </#if>
                                 </div>
-                                <a href="${links.get(g)}" <#if g.external>target="_blank"</#if> class="stretched-link link-dark"></a>
+                                </#if>
+                            </div>
+                            <div class="card-footer">
+                                <a href="${links.get(g)}" <#if g.external>target="_blank"</#if> class="stretched-link">Read guide &rarr;</a>
                             </div>
                         </div>
                     </div>

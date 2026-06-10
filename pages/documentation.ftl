@@ -3,7 +3,7 @@
 
 <@tmpl.page current="docs" title="Documentation" summary="Keycloak Documenation related to the most recent Keycloak release.">
 
-<div class="container mt-5">
+<div class="container mt-4">
     <h1>Documentation <span class="badge bg-primary">${version.version}</span></h1>
 
     <#include "../templates/documentation-${version.documentationTemplate}.ftl">
