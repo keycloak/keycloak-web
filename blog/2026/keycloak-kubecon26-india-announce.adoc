@@ -35,13 +35,13 @@ The Keycloak project table in the Project Pavilion is the place to meet the Keyc
 We will be there in the afternoons, while other projects will be there during the mornings.
 See below for the location and the times.
 
-*link:++https://github.com/keycloak/keycloak/discussions/49320[this GitHub discussion++[Get in touch to help us at the stand!]*
+*link:https://github.com/keycloak/keycloak/discussions/49320[Get in touch to help us at the stand!]*
 
 *Thursday, 18 June:* 3:30 - 7:30pm
 
 *Friday, 19 June:* 2:05 - 4:10pm
 
-Meet us at Table P-5!
+Meet us at Table P-5 in Jasmine Hall 1!
 
 == See you there!
 
