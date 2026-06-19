@@ -51,9 +51,7 @@
                     <h4 class="card-title">⚡ Extensions</h4>
                     <span class="card-text">Community maintained extensions to extend the functionality of your Keycloak setup.</span>
                 </div>
-                <div class="card-footer">
-                    <a href="${links.extensions}" class="stretched-link">Browse extensions →</a>
-                </div>
+                <a href="${links.extensions}" class="stretched-link"></a>
             </div>
         </div>
 
@@ -63,9 +61,7 @@
                     <h4 class="card-title">🌍 Translations</h4>
                     <span class="card-text">Translating Keycloak is a community effort. Find out how you can contribute translations.</span>
                 </div>
-                <div class="card-footer">
-                    <a href="${links.translations}" class="stretched-link">Help translate →</a>
-                </div>
+                <a href="${links.translations}" class="stretched-link"></a>
             </div>
         </div>
 
@@ -75,9 +71,7 @@
                     <h4 class="card-title">🏢 Case Studies</h4>
                     <span class="card-text">See how Keycloak is used by end user companies in real life scenarios.</span>
                 </div>
-                <div class="card-footer">
-                    <a href="${links.casestudies}" class="stretched-link">Read case studies →</a>
-                </div>
+                <a href="${links.casestudies}" class="stretched-link"></a>
             </div>
         </div>
 
@@ -87,9 +81,7 @@
                     <h4 class="card-title">🛡️ Security vulnerabilities</h4>
                     <span class="card-text">Found a security vulnerability? Follow the instructions on how to properly report it.</span>
                 </div>
-                <div class="card-footer">
-                    <a href="${links.getLink('security')}" class="stretched-link">Report vulnerability →</a>
-                </div>
+                <a href="${links.getLink('security')}" class="stretched-link"></a>
             </div>
         </div>
 
@@ -99,9 +91,7 @@
                     <h4 class="card-title">🐛 Report bugs</h4>
                     <span class="card-text">Check if it's still an issue in the latest release and hasn't been reported yet before opening a new issue.</span>
                 </div>
-                <div class="card-footer">
-                    <a href="https://github.com/keycloak/keycloak/issues" class="stretched-link">Open an issue →</a>
-                </div>
+                <a href="https://github.com/keycloak/keycloak/issues" class="stretched-link"></a>
             </div>
         </div>
 
@@ -111,9 +101,7 @@
                     <h4 class="card-title">💡 Feature requests</h4>
                     <span class="card-text">Have an idea for Keycloak? Open a feature request or contribute the feature yourself.</span>
                 </div>
-                <div class="card-footer">
-                    <a href="https://github.com/keycloak/keycloak/issues" class="stretched-link">Request a feature →</a>
-                </div>
+                <a href="https://github.com/keycloak/keycloak/issues" class="stretched-link"></a>
             </div>
         </div>
 
@@ -123,9 +111,7 @@
                     <h4 class="card-title">🤝 Contributors</h4>
                     <span class="card-text">Want to contribute to Keycloak? Check out our contributors guide to get started.</span>
                 </div>
-                <div class="card-footer">
-                    <a href="https://github.com/keycloak/keycloak/blob/main/CONTRIBUTING.md" class="stretched-link">Start contributing →</a>
-                </div>
+                <a href="https://github.com/keycloak/keycloak/blob/main/CONTRIBUTING.md" class="stretched-link"></a>
             </div>
         </div>
 
@@ -135,9 +121,7 @@
                     <h4 class="card-title">📜 Code of Conduct</h4>
                     <span class="card-text">We are committed to providing a safe, welcoming, and constructive environment for everyone.</span>
                 </div>
-                <div class="card-footer">
-                    <a href="https://github.com/keycloak/.github/blob/main/CODE_OF_CONDUCT.md" class="stretched-link">Read our CoC →</a>
-                </div>
+                <a href="https://github.com/keycloak/.github/blob/main/CODE_OF_CONDUCT.md" class="stretched-link"></a>
             </div>
         </div>
 
@@ -147,9 +131,7 @@
                     <h4 class="card-title">🌙 Nightly release</h4>
                     <span class="card-text">For early feedback and extension developers, try the latest nightly build of Keycloak.</span>
                 </div>
-                <div class="card-footer">
-                    <a href="${links.nightly}" class="stretched-link">Try nightly →</a>
-                </div>
+                <a href="${links.nightly}" class="stretched-link"></a>
             </div>
         </div>
     </div>

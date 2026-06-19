@@ -30,8 +30,8 @@
                         ${blog.date?string["dd MMMM yyyy"]}
                         <#if blog.author??>by ${blog.author}</#if>
                     </span>
-                    <a href="${links.get(blog)}" class="stretched-link float-end">Read post &rarr;</a>
                 </div>
+                <a href="${links.get(blog)}" class="stretched-link"></a>
             </div>
         </div>
         <#assign displayed = displayed + 1>
