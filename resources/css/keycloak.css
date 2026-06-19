@@ -211,6 +211,10 @@ header.navbar {
     padding: 1.5rem 1.5rem 0.5rem;
 }
 
+.alert {
+    border-radius: var(--bs-border-radius-xl);
+}
+
 .card {
     border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
     border-radius: var(--bs-border-radius-xl);
@@ -264,6 +268,7 @@ header.navbar {
     .guides-navbar-menu .nav-link,#guide-search,#guide-version-select {
         font-size: .9rem;
     }
+
 }
 
 table.options {
