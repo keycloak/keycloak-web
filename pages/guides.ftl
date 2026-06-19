@@ -57,9 +57,7 @@
                                 </div>
                                 </#if>
                             </div>
-                            <div class="card-footer">
-                                <a href="${links.get(g)}" <#if g.external>target="_blank"</#if> class="stretched-link">Read guide &rarr;</a>
-                            </div>
+                            <a href="${links.get(g)}" <#if g.external>target="_blank"</#if> class="stretched-link"></a>
                         </div>
                     </div>
                 </#if>

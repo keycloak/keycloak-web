@@ -63,9 +63,7 @@
                                 <div class="line-clamp-5">${casestudy.description}</div>
                             </span>
                         </div>
-                        <div class="card-footer">
-                            <a href="${casestudy.url}" class="stretched-link">Continue reading &rarr;</a>
-                        </div>
+                        <a href="${casestudy.url}" class="stretched-link"></a>
                     </div>
                 </div>
             </#list>
