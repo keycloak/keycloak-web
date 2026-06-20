@@ -1,0 +1,74 @@
+:title: Meet Keycloak at KubeCon Japan in July
+:date: 2026-06-20
+:publish: true
+:author: Alexander Schwartz
+:preview: keycloak-kubecon-yokohama-2026.png
+:summary: We will be hosting a Kiosk in the Project Table, and have lots of talks at KeycloakCon and in the main track. We are eager to meet Keycloak enthusiasts, users and newcomers alike!
+
+The Keycloak project is back at https://events.linuxfoundation.org/kubecon-cloudnativecon-japan/co-located-events/keycloakcon/[KubeCon Japan Yokohama] with all highlights: Talks, our kiosk in the Project Table, and this time also with *KeycloakCon*, our very-own co-located event!
+If you are new to Keycloak, or already a user, join us for this exciting event to learn and connect.
+
+== Half-day KeycloakCon packed with all-things-Keycloak
+
+https://events.linuxfoundation.org/kubecon-cloudnativecon-japan/co-located-events/keycloakcon/[KeycloakCon] is a co-located event happening on Tuesday, July 28 from 09:00 to 12:30. It brings together the Keycloak community with case studies and talks featuring the latest features. Join this event for technical talks, professional growth, and networking opportunities.
+
+https://events.linuxfoundation.org/kubecon-cloudnativecon-japan/co-located-events/keycloakcon/[Book your ticket] as an add-on to the KubeCon + CloudNativeCon pass.
+
+--
+++++
+<div class="paragraph">
+</style>
+<a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-japan/co-located-events/keycloakcon/"><img src="${blogImages}/keycloak-kubecon26-japan-announce.png" alt="KubeCon Japan Artwork" style="width: 100%; max-width: 952px; object-fit: cover; height: 264px; object-fit: none; object-position: 10% 20%"></a>
+</div>
+++++
+--
+
+== Community Meet & Greet at the Project Table
+
+This is the place to meet people who use Keycloak, contribute to Keycloak, take our survey about new Keycloak features, and get some cool swag!
+
+https://github.com/tnorimat[Takashi Norimatsu] and https://github.com/y-tabata[Yoshiyuki Tabata] from Hitachi, https://github.com/ahus1[Alexander Schwartz] from IBM, and other contributors will host a Keycloak kiosk at the
+https://events.linuxfoundation.org/kubecon-cloudnativecon-japan/features-add-ons/project-engagement/#project-tables[Project Tables].
+
+*Keycloak Kiosk (T-3) at Level 3 | 301-304 opening hours:*
+
+* Wednesday 15:15 - 19:15
+* Thursday 13:30 - 15:50
+
+== Technical talks about Agents, Cloud Native infrastructure and authorization
+
+These talks are part of the main conference. Join the speakers on-site!
+
+https://events.linuxfoundation.org/kubecon-cloudnativecon-japan/program/schedule/?id=1228194[Identities and Authentication for your Agents with Keycloak]::
+*Takashi Norimatsu, Hitachi, Ltd. & Alexander Schwartz, IBM* +
+*Wednesday, Jul 29 2026, 15:50-16:20*
++
+AI agents and agentic workflows revolutionize the way we build applications, and the market is expanding rapidly. One of the developing standards of this integration is MCP.
++
+Keycloak supports the authorization part of MCP. In this session, we will introduce the different versions of MCP, the capabilities of Keycloak, and show you how to configure Keycloak for using is as an authorization server for agents.
+
+https://events.linuxfoundation.org/kubecon-cloudnativecon-japan/program/schedule/?id=1228193[Behind the CNCF IAM Whitepaper: AuthN & AuthZ in Cloud Native Systems]::
+*Yoshiyuki Tabata, Hitachi, Ltd. & Hiroyuki Wada, Nomura Research Institute, Ltd.* +
+*Thursday, Jul 30 2026, 14:10-14:40*
++
+In March 2026, CNCF TAG Security and Compliance published the CNCF Identity and Access Management (IAM) Whitepaper, providing practical guidance on how authentication and authorization should be designed and implemented in cloud native systems.
++
+Presented by the authors of the whitepaper, this session explains the intent, scope, and architectural decisions behind the document. Rather than introducing IAM products or implementation details, the talk focuses on how the TAG structured authentication and authorization requirements into two reusable reference patterns, Basic and Advanced, and how each pattern defines its trust boundaries and enforcement responsibilities.
++
+By sharing the reasoning behind these design choices, this session aims to help architects and developers apply the IAM Whitepaper as a shared architectural baseline when designing, reviewing, and evolving authentication and authorization mechanisms in cloud native systems.
+
+https://events.linuxfoundation.org/kubecon-cloudnativecon-japan/program/schedule/?id=1194198[AuthZEN in Practice: Standardizing Authorization for Cloud Native Platforms and Agents]::
+*Yoshiyuki Tabata, Hitachi, Ltd.* +
+*Thursday Jul 30 2026, 16:30-17:00*
++
+As AI agents gain broader access to APIs and infrastructure, "authorization" is becoming central to both security and governance. Agentic AI systems highlight fine grained, real time authorization challenges that are shared more broadly by cloud native platforms.
++
+In January 2026, the OpenID Foundation finalized the AuthZEN Authorization API 1.0, defining a standard interface for authorization interactions. This specification has attracted strong interest, and multiple projects are now working toward supporting AuthZEN, including Keycloak, an open source IAM project.
++
+In this session, Yoshiyuki Tabata introduces the core concepts of AuthZEN and presents an end to end demo using Keycloak. The demo walks through token issuance, authorization evaluation, and policy decision enforcement, using a simple agent driven scenario to show how AuthZEN can be applied in cloud native ecosystems.
+
+== See you soon!
+
+We're preparing for https://events.linuxfoundation.org/kubecon-cloudnativecon-japan/co-located-events/keycloakcon/[KubeCon Japan 2026] and can't wait to connect with our community. Mark your calendars and join us!
+
+See you in Yokohama!
