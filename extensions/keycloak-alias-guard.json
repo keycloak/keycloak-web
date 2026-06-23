@@ -1,6 +1,6 @@
 {
   "name": "Alias Guard",
   "description": "User Profile validator and event listener that canonicalizes email addresses (Gmail dots, +tags) and blocks registration or email change when the mailbox is already taken. One inbox — one account.",
-  "website": "https://github.com/dnwsilver/keycloak-alias-guard"
+  "website": "https://github.com/it-perspectives/keycloak-alias-guard"
 }
 
