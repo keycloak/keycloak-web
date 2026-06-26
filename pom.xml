@@ -13,7 +13,7 @@
 
         <version.java>17</version.java>
 
-        <version.github-api>1.300</version.github-api>
+        <version.github-api>1.330</version.github-api>
         <version.freemarker>2.3.31</version.freemarker>
         <version.asciidoctorj>2.5.2</version.asciidoctorj>
         <version.jackson-core>2.22.0</version.jackson-core>

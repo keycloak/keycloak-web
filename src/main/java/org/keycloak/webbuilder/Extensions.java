@@ -67,10 +67,14 @@ public class Extensions {
                 if (ghSource.isPresent()) {
                     String repoName = ghSource.get().replace(GITHUB_URL, "").split("\\?")[0];
                     if (StringUtils.isNotEmpty(repoName)) {
-                        var repository = gh.getRepository(repoName);
-                        if (repository != null) {
-                            extension.setStars(getFormattedStarsCount(repository.getStargazersCount()));
-                            updatedAt = repository.getPushedAt();
+                        try {
+                            var repository = gh.getRepository(repoName);
+                            if (repository != null) {
+                                extension.setStars(getFormattedStarsCount(repository.getStargazersCount()));
+                                updatedAt = repository.getPushedAt();
+                            }
+                        }  catch (IllegalArgumentException e) {
+                            System.out.printf("Extension defined in %s has wrong format of Github repository '%s'. Expected is owner/repo.\n", extensionFile.getName(), repoName);
                         }
                     }
                 }
