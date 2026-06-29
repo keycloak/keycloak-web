@@ -1,5 +1,5 @@
 :title: Save the Date: Keycloak DevDay 2027
-:date: 2026-06-26
+:date: 2026-06-29
 :publish: true
 :author: Niko Köbler, Sebastian Rose
 :preview: keycloak-devday-2027.jpg
