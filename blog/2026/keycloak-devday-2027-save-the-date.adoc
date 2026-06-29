@@ -1,0 +1,38 @@
+:title: Save the Date: Keycloak DevDay 2027
+:date: 2026-06-29
+:publish: true
+:author: Niko Köbler, Sebastian Rose
+:preview: keycloak-devday-2027.jpg
+:summary: Join us in Darmstadt on April 8th & 9th, 2027 for the world's largest Keycloak community event!
+
+
+‼️ Mark your calendars! *Keycloak DevDay 2027* is coming back to *Darmstadt, Germany*, on *April 8–9, 2027* ‼️
+
+Like the previous edition, DevDay 2027 will span two days with the same overall structure – though with a few notable changes participants will notice:
+
+* 📅 *Thursday, April 8, 2027 – Conference Day*:
+talks and deep dives from the Keycloak community and contributors.
+* 📅 *Friday, April 9, 2027 – Community Day*:
+a more informal, hands-on day featuring a *Hackathon* and an *OpenSpace* with multiple breakout sessions, where attendees shape the agenda together.
+
+== Stay in the loop
+
+Ticket sales haven't started yet, and we don't want you to miss your chance to grab one of the strictly limited seats.
+If you haven't already, subscribe to the newsletter on https://keycloak-day.dev[keycloak-day.dev] to be the first to know the moment tickets go live.
+
+== Call for Papers
+
+We're planning to open the *Call for Papers around the end of August*.
+Keep an eye on the newsletter and this blog for the exact date and submission details.
+
+== Something to watch in the meantime
+
+While you wait, why not revisit the talks from past years editions?
+The full playlists of Keycloak DevDay videos are available on YouTube:
+
+* https://www.youtube.com/watch?v=TWiBDnq6vmU&list=PLNn3plN7Ziarp_NFKNUzA_XmXe2M3cEAi&pp=sAgC[Keycloak DevDay 2026 video playlist]
+* https://www.youtube.com/watch?v=aygf3cEY8wU&list=PLNn3plN7ZiaqzeFBBTRRC8sDWee3bmwcy&pp=sAgC[Keycloak DevDay 2025 video playlist]
+* https://www.youtube.com/watch?v=lQH-yNrF_As&list=PLNn3plN7ZiaqXjiDSB1KDaF3bCDuQmDgw&pp=sAgC[Keycloak DevDay 2024 video playlist]
+
+We can't wait to see you in Darmstadt next April! +
+_Niko & Sebastian_
