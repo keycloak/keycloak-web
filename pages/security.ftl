@@ -22,6 +22,16 @@
     </ul>
     <p>Violation of these guidelines may result in the individual, or vendor, being added to a denied coordination list.</p>
 
+    <h2>AI-Assisted Reports</h2>
+    <p>We recognize AI as a valuable tool for security research and welcome reports where AI was used to help identify vulnerabilities. However, AI-assisted reports must meet the following requirements:</p>
+    <ul>
+        <li><strong>Validate before submitting.</strong> You are responsible for verifying that the vulnerability is real and reproducible. Unvalidated AI output submitted as-is will be rejected.</li>
+        <li><strong>Disclose AI usage.</strong> Clearly state in your report that AI tools were used in the discovery or writing of the report.</li>
+        <li><strong>Understand your findings.</strong> You must be able to explain the vulnerability, its impact, and the reproduction steps in your own words. If we follow up with questions, we expect informed answers — not further AI-generated responses pasted without review.</li>
+        <li><strong>One finding per report.</strong> Do not submit bulk or batch reports containing multiple unrelated findings. Each vulnerability must be reported individually as outlined in the reporting steps above.</li>
+    </ul>
+    <p>Reports that are clearly unreviewed AI output — such as those containing generic descriptions, hallucinated endpoints, or findings that do not apply to Keycloak — will be rejected without further analysis.</p>
+
     <h2>Scope</h2>
     <p>This policy applies to all Keycloak components and projects. Research disclosed to the project will be limited to Response Team members; however, we will assist in coordinating the disclosure of research with upstream open-source communities as needed and requested.</p>
 
@@ -43,9 +53,10 @@
     <ol>
         <li>Test against the <a href="${links.getLink('downloads')}">latest released version</a> of Keycloak and include the affected version in your report.</li>
         <li>Provide detailed instructions on how to reproduce the issue with a <a href="https://stackoverflow.com/help/minimal-reproducible-example">minimal and reproducible example.</a></li>
-        <li>Show clear evidence of exploitation like log output or screenshots. We will reject reports based on static scanners without a proof-of-concept.</li>
+        <li>Show clear evidence of exploitation like log output or screenshots. We will reject reports based on static scanners or AI without a proof-of-concept.</li>
         <li>Include your contact information for acknowledgements. See "Attribution Policy" below for details.</li>
         <li>Submit each finding individually to allow a separate discussion thread with our triage team.</li>
+        <li>Submit your report as plain text in the email body. Do not attach files — only screenshots, videos, or reproducers (e.g., scripts or configuration files) are accepted as attachments. Other attachments delay our triage process and may be returned.</li>
         <li>Pick a descriptive subject for the mail matching the reported finding.</li>
         <li>Email your report to <a href="mailto:keycloak-security@googlegroups.com">keycloak-security@googlegroups.com</a>.</li>
     </ol>
@@ -56,6 +67,7 @@
         <li>If available, provide log files or screenshots.</li>
         <li>Include your contact information for acknowledgements. See "Attribution Policy" below for details.</li>
         <li>Submit each finding individually to allow a separate discussion thread with our triage team.</li>
+        <li>Submit your report as plain text in the email body. Do not attach files — only screenshots, videos, or reproducers (e.g., scripts or configuration files) are accepted as attachments. Other attachments delay our triage process and may be returned.</li>
         <li>Pick a descriptive subject for the mail matching the reported finding.</li>
         <li>Email your report to <a href="mailto:keycloak-security@googlegroups.com">keycloak-security@googlegroups.com</a>.</li>
     </ol>
@@ -73,6 +85,7 @@
 
     <h2>Security Scanners</h2>
     <p>Reports from automated security scanners will <strong>not</strong> be accepted. These tools often report false positives, and can be disruptive to the project maintainers as it takes a long time to analyze these reports. If you believe you have found a security vulnerability using a security scanner, it is your responsibility to provide a clear example of the vulnerability and how it could be exploited specifically for Keycloak as outlined above.</p>
+
 </div>
 
 </@tmpl.page>
