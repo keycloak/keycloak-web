@@ -1,0 +1,150 @@
+:title: Bridging Keycloak and the MCP Authorization World
+:date: 2026-06-02
+:publish: true
+:author: Vlastimil Elias
+:summary: Keycloak has been adding MCP auth features, but shared realms and older versions still hit friction. mcp-auth-adapter bridges the remaining gaps without changing your IdP configuration.
+
+The https://modelcontextprotocol.io/[Model Context Protocol (MCP)] is quickly becoming the standard way AI assistants interact with external tools and data sources. If you run Keycloak as your identity provider, you might expect MCP auth integration to be straightforward - after all, MCP uses OAuth 2.0 and Keycloak has been https://www.keycloak.org/securing-apps/mcp-authz-server[adding MCP-oriented features] in recent releases.
+
+For simple, dedicated setups - a fresh realm serving only MCP clients - Keycloak can work directly. But in real-world deployments where the same realm also serves web apps, mobile clients, or legacy services, several friction points remain. This post introduces https://github.com/velias/mcp-auth-adapter[mcp-auth-adapter], a lightweight open-source adapter that bridges those gaps without changing your existing Keycloak configuration.
+
+== Where Keycloak and MCP Clients Still Clash
+
+Keycloak's MCP support has been evolving rapidly. The https://www.keycloak.org/securing-apps/mcp-authz-server[official MCP integration guide] covers standards compliance and setup in detail, and recent releases have closed several gaps. However, friction remains in multi-use-case realms and with older Keycloak versions. Here are the common pain points:
+
+=== Dynamic Client Registration Is Not Zero-Config
+
+Keycloak supports RFC 7591 Dynamic Client Registration, but anonymous (unauthenticated) registration - which MCP clients expect - requires explicit configuration: you must enable Anonymous Access Policies, configure Trusted Hosts, set up Allowed Client Scopes, and (since Keycloak 26.6) configure Allowed Registration Web Origins for browser-based MCP clients like the MCP Inspector.
+
+In production, the https://www.keycloak.org/securing-apps/client-registration[Keycloak documentation] recommends using Initial Access Tokens rather than open anonymous registration. This is sound security practice, but MCP clients don't support passing Initial Access Tokens - they expect open DCR or https://datatracker.ietf.org/doc/draft-ietf-oauth-client-id-metadata-document/[Client ID Metadata Documents (CIMD)].
+
+If your realm already has restrictive registration policies for existing applications, loosening them for MCP introduces security tradeoffs that need careful evaluation.
+
+=== Scope Explosion on Shared Realms
+
+This is not a Keycloak limitation per se, but a practical problem in multi-use-case deployments. MCP clients (Claude Code, Cursor, Gemini CLI, and others) typically read `scopes_supported` from discovery and request _all of them_. This behavior is not required by the MCP spec - it is just how most clients work today.
+
+If your Keycloak realm announces 15+ scopes (including internal ones for other applications), users see an overwhelming consent screen, or the authorization request gets rejected because the dynamically registered client isn't pre-approved for some announced scopes. Keycloak has no built-in mechanism to present a filtered subset of scopes specifically for MCP clients while keeping the full set available for other applications on the same realm.
+
+Similarly, many MCP clients add `offline_access` unconditionally to ensure they get refresh tokens. This becomes a problem when your realm restricts long-lived refresh tokens or requires explicit client approval for that scope.
+
+=== Discovery Metadata Noise
+
+Keycloak's OpenID Configuration exposes dozens of fields - CIBA endpoints, device flow, logout URIs, and more - that are irrelevant for MCP and can confuse simpler clients. There is no built-in way to serve a filtered view of the discovery document for a particular class of clients.
+
+=== CIMD Is Emerging but Not Yet Widely Adopted
+
+The https://modelcontextprotocol.io/specification/2025-11-25/basic/authorization[MCP 2025-11-25 spec] establishes https://datatracker.ietf.org/doc/draft-ietf-oauth-client-id-metadata-document/[Client ID Metadata Documents (CIMD)] as the preferred client identification mechanism, and the MCP TypeScript and Python SDKs already implement it. In practice though, most major MCP clients still rely on DCR - VS Code is a notable exception with full CIMD support, but Claude Code, Cursor, and others still use Dynamic Client Registration as their primary flow.
+
+On the server side, Keycloak 26.6.0 shipped experimental CIMD support behind the `--features=cimd` flag, which is a significant step forward. However, it requires setting up client policies (profiles with `client-id-metadata-document` executors and `client-id-uri` conditions), configuring trusted domains, and is still marked as experimental with possible breaking changes ahead. Older Keycloak versions have no CIMD support at all.
+
+=== Resource Indicators Not Yet Supported
+
+The MCP spec (2025-06-18 and 2025-11-25 versions) requires that clients include the `resource` parameter per RFC 8707 to bind tokens to specific MCP servers. Keycloak does not yet recognize the `resource` parameter - the community is https://www.keycloak.org/securing-apps/mcp-authz-server[planning to add RFC 8707 support], but today the workaround involves manually configuring Audience protocol mappers tied to client scopes.
+
+=== The Bottom Line
+
+You _can_ make Keycloak work as an MCP authorization server directly, and for greenfield deployments with a dedicated realm the https://www.keycloak.org/securing-apps/mcp-authz-server[official guide] is the right starting point. But if your realm serves multiple use cases, runs an older Keycloak version, or you want a simpler operational path, an adapter can save considerable configuration effort.
+
+== Enter mcp-auth-adapter
+
+https://github.com/velias/mcp-auth-adapter[mcp-auth-adapter] is a thin, stateless Node.js service that sits between MCP clients and Keycloak. It does not issue tokens or handle authentication - all the real auth work stays on Keycloak. It simply makes the OAuth exchange MCP-compatible.
+
+=== Filtered Discovery
+
+Serves `/.well-known/` metadata with only the fields MCP clients actually need, sourced from your Keycloak realm's OpenID Configuration. It injects safe defaults (PKCE S256, `authorization_code` grant) when Keycloak's metadata is incomplete for MCP purposes, and advertises its own DCR and authorization endpoints where needed. When `MCP_WELL_KNOWN_SCOPES_SUPPORTED` is set, only those scopes appear in `scopes_supported` - so MCP clients only see and request the scopes you explicitly allow, rather than everything your Keycloak realm announces.
+
+=== Open DCR Endpoint
+
+`POST /register` returns a fixed, pre-configured `client_id` so MCP clients can self-register without requiring Keycloak-side DCR setup. You pre-create a single public client in Keycloak and the adapter hands that `client_id` to any MCP client that asks.
+
+=== Scope Filtering
+
+Controls what scopes reach Keycloak. Strip `offline_access`, remove internal scopes, or use an explicit allowlist:
+
+[source,bash]
+----
+# Only these scopes will ever reach Keycloak
+MCP_PROXY_AUTH_SCOPES_PRESERVED=openid,api.read,api.write
+----
+
+This controls both sides: what clients _see_ in discovery and what actually _reaches_ Keycloak.
+
+=== CIMD Support (Experimental)
+
+The MCP spec defaults to https://datatracker.ietf.org/doc/draft-ietf-oauth-client-id-metadata-document/[Client ID Metadata Documents (CIMD)] for client identification. While Keycloak 26.6.0 introduced experimental CIMD support, it requires enabling a feature flag, configuring client policies, and is subject to breaking changes. For older Keycloak versions or deployments where enabling experimental features is not an option, the adapter bridges the gap: it accepts CIMD-style `client_id` URLs from MCP clients, validates the metadata documents, and maps them to real upstream client IDs that Keycloak understands.
+
+=== Built-in Observability
+
+Prometheus metrics at `/metrics`, structured key=value logging, and health probes (`/health/live`, `/health/ready`) for Kubernetes deployments.
+
+== Deploy It in 30 Seconds
+
+Grab the container image and point it at your Keycloak realm:
+
+[source,bash]
+----
+docker run -d --name mcp-auth-adapter \
+  -p 3000:3000 \
+  -e MCP_BASE_URL=https://mcp-auth.example.com \
+  -e MCP_UPSTREAM_SSO_URL=https://keycloak.example.com/realms/myrealm \
+  -e MCP_PROXY_DCR_CLIENT_ID=mcp-client \
+  ghcr.io/velias/mcp-auth-adapter:latest
+----
+
+Three environment variables for a basic setup:
+
+* `MCP_BASE_URL` - the public URL where the adapter is reachable
+* `MCP_UPSTREAM_SSO_URL` - your Keycloak realm's issuer URL
+* `MCP_PROXY_DCR_CLIENT_ID` - a public client pre-registered in Keycloak
+
+Then point your MCP server's `authorization_servers` to `MCP_BASE_URL` and clients will discover everything via `.well-known`.
+
+=== Typical Production Config
+
+For a production deployment you'll likely want scope control too:
+
+[source,bash]
+----
+MCP_BASE_URL=https://mcp-auth.example.com
+MCP_UPSTREAM_SSO_URL=https://keycloak.example.com/realms/myrealm
+MCP_PROXY_DCR_CLIENT_ID=mcp-client
+MCP_WELL_KNOWN_SCOPES_SUPPORTED=openid,api.read,api.write
+MCP_PROXY_AUTH_SCOPES_REMOVED=offline_access
+----
+
+== What It Does Not Do
+
+The adapter is intentionally minimal:
+
+* *No token issuing* - tokens always come from Keycloak
+* *No user database* - stateless, nothing to back up
+* *No rate limiting* - put it behind your existing reverse proxy or WAF
+* *No CORS* - designed for redirect-based OAuth flows, not browser fetch calls
+
+== Works with Other IdPs Too
+
+While this post focuses on Keycloak, mcp-auth-adapter works with any OIDC-compliant provider -- Auth0, Okta, Azure AD/Entra, Google Identity, and others. The upstream URL just needs to serve standard OpenID Connect discovery metadata.
+
+== Tested MCP Clients
+
+The adapter has been tested with Claude Code, Claude Desktop, Cursor IDE, Cursor Background Agent, Gemini CLI, VS Code, and others.
+
+== When Do You Need This Adapter?
+
+The adapter is most useful when:
+
+* Your Keycloak realm serves both MCP and non-MCP clients and you don't want to change its configuration for MCP compatibility.
+* You're running an older Keycloak version without CIMD support or the latest MCP-oriented features.
+* You want scope filtering, discovery cleanup, or simplified DCR without configuring multiple Keycloak policies.
+* You need a quick, zero-Keycloak-changes path to get MCP auth working while evaluating a more integrated setup.
+
+If you're starting fresh with a dedicated realm on Keycloak 26.6+, check the https://www.keycloak.org/securing-apps/mcp-authz-server[official MCP integration guide] first - it may cover your needs directly.
+
+== What's Next?
+
+MCP is moving fast, and Keycloak is actively closing the gaps. Native RFC 8707 (Resource Indicators) support is on the roadmap, CIMD is already available experimentally, and each release improves MCP compatibility. In the meantime, for real-world deployments where the IdP serves multiple use cases, a lightweight adapter can save significant configuration effort and let you focus on building the actual MCP tools your users care about.
+
+The project is Apache 2.0 licensed and PRs are welcome. If you hit rough edges or have ideas, https://github.com/velias/mcp-auth-adapter/issues[open an issue] - feedback shapes the roadmap.
+
+https://github.com/velias/mcp-auth-adapter[github.com/velias/mcp-auth-adapter]
