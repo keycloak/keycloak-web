@@ -14,7 +14,7 @@
     <ul>
         <li>Research shared with any Keycloak representatives/individual will be reported to and managed by the Keycloak Security Response Team in order to be officially protected and coordinated.</li>
         <li>Access and visibility to research and all CVE related data will follow the principle of least privilege by all vendors involved.</li>
-        <li>All parties involved must establish a reasonable amount of time to resolve the issue before a vulnerability is disclosed publicly; agree and coordinate on public disclosure dates when possible.</li>
+        <li>All parties involved must establish a reasonable amount of time to resolve the issue before a vulnerability is disclosed publicly and, when possible, agree on and coordinate public disclosure dates.</li>
         <li>Public disclosure should be prioritized on the need to keep company, government, and individual data confidential and the general public safe.</li>
         <li>All vendors will honor disclosure/embargo requests in good faith as long as all guidelines are met.</li>
         <li>NDA signatures are not required.</li>
