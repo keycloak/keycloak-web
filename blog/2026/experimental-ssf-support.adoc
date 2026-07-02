@@ -1,5 +1,5 @@
 :title: Experimental Shared Signals Framework support in Keycloak
-:date: 2026-06-30
+:date: 2026-07-03
 :publish: false
 :author: Thomas Darimont
 :summary: Keycloak can now act as an OpenID Shared Signals Framework Transmitter, federating realm, user, session and credential events to downstream services as signed Security Event Tokens.
