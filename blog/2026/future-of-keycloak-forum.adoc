@@ -1,0 +1,108 @@
+:title: The future of the Keycloak Discourse forum
+:date: 2026-07-20
+:publish: true
+:author: GR Patil, Niko Köbler
+
+The Keycloak project has always relied on open, searchable, community-owned discussion. Over the years, the Keycloak Discourse forum has been an important part of that: a place where users could ask configuration questions, share migration experiences, debug integrations, and find answers from people who had solved similar problems before.
+
+After a lot of consideration, we have decided to wind down the Keycloak Discourse forum.
+
+This is not a decision we are taking lightly. The forum contains many years of useful community knowledge, and we recognize the role it has played for Keycloak users. We also recognize that previous changes to the forum caused disruption. For that reason, we want to explain why we are making this change, how it will happen, when it will happen, and where the community should go next.
+
+== Why we are making this change
+
+In June 2023, the Keycloak maintainers decided to sunset Discourse as one of the project’s communication channels. That decision was met with strong feedback from the community. Many users explained that Discourse filled an important role that was not fully covered by mailing lists, GitHub Discussions, or chat.
+
+After listening to that feedback, we reactivated Discourse in October 2023.
+
+Unfortunately, the period when the forum was offline had a lasting impact. Search engines changed how they indexed the content, and traffic from search effectively dropped to zero. We spent months trying to recover the situation: requesting reindexing, improving discoverability, and working to bring search traffic back. Despite those efforts, the forum never recovered its previous visibility.
+
+Later, we moved the forum to `forum.keycloak.org`. That fixed the indexing problem, and the content became discoverable again. However, the traffic and engagement that had previously made the forum valuable did not return.
+
+At the same time, the way developers seek help has changed. More and more Keycloak users now turn first to AI coding assistants and search-like developer tools when they need help configuring Keycloak, troubleshooting integrations, or understanding errors. Those tools have almost certainly learned from many of the public sources the community has created over the years, including the Discourse forum, GitHub Discussions, mailing lists, documentation, blog posts, and issue trackers.
+
+That shift has changed the role of a community forum. The old model depended on a steady flow of new questions, answers, corrections, and follow-up discussion. Without that activity, the forum risks becoming a stale support archive rather than a healthy community space.
+
+Keeping a forum open also has a cost. It requires moderation, spam control, maintenance, upgrades, security attention, and community energy. Given the current level of engagement, we believe that effort is better focused on the places where Keycloak development and community discussion are now more active.
+
+== What will happen
+
+We will wind down the Discourse forum in two stages.
+
+First, there will be a two-month grace period. During this time, the forum will remain available for new posts and replies. We encourage users to review any topics they rely on, copy information they need, and move ongoing discussions to the appropriate alternative channels.
+
+After the grace period, the forum will become archive-only. Existing content will remain readable, but users will no longer be able to create new topics or replies.
+
+After a further three months, the forum will be shut down.
+
+We plan to preserve the most useful content where practical. Where forum topics contain broadly useful information, we encourage the community to help move that knowledge into longer-lived places such as the Keycloak documentation, GitHub Discussions, guides, examples, or other project-maintained resources.
+
+== Timeline
+
+The planned timeline is:
+
+* July 2026: announcement published and grace period begins
+* September 2026: forum becomes archive-only
+* December 2026: forum is shut down
+
+If the publication date changes, the same structure will apply: two months of normal operation, followed by two months in archive-only mode, followed by shutdown.
+
+== Where to ask questions instead
+
+The Keycloak community is not going away. We are consolidating discussion into channels that are more actively used and easier for maintainers and contributors to follow.
+
+=== GitHub Discussions
+
+Use GitHub Discussions for general questions, ideas, design discussion, and community support. This is the best replacement for most topics that would previously have gone to Discourse.
+
+GitHub Discussions is also closer to the project’s development workflow. It makes it easier to connect a question to related issues, pull requests, releases, and design work.
+
+=== GitHub Issues
+
+Use GitHub Issues for confirmed bugs and actionable feature requests.
+
+Before opening an issue, please use the documentation and existing discussions to check whether the behavior is expected or already reported. If you are not sure whether something is a bug, start with GitHub Discussions first.
+
+=== Mailing lists
+
+The mailing lists remain available for users and contributors who prefer email-based discussion. They are especially useful for longer-form technical discussion and project development topics.
+
+=== CNCF Slack
+
+For quick questions and real-time community discussion, join the CNCF Slack and use the Keycloak channels. Slack is useful for lightweight help and coordination, but it is not a good long-term knowledge base. When a discussion produces information that others will need later, please consider moving the conclusion to GitHub Discussions or documentation.
+
+=== Documentation and guides
+
+For durable answers, documentation is still the best destination. If a forum answer helped you understand a common Keycloak configuration, migration, extension point, or troubleshooting pattern, consider contributing an improvement to the documentation.
+
+This helps future users more than another forum reply would, because documentation is versioned, reviewed, and easier to maintain as Keycloak evolves.
+
+== What this means for existing forum content
+
+The Discourse forum contains a large amount of historical information. Some of it is still useful. Some of it is outdated. Keycloak has changed significantly over the years, and older answers may no longer apply to current versions.
+
+For that reason, we encourage users to treat forum content as historical context rather than authoritative documentation. The Keycloak documentation, release notes, GitHub Discussions, and current project channels should be used for up-to-date guidance.
+
+During the grace period and archive-only period, we encourage the community to identify valuable forum topics and help move the durable knowledge into better-maintained locations.
+
+Good candidates include:
+
+* common configuration patterns
+* migration notes between Keycloak versions
+* troubleshooting steps for frequent errors
+* extension examples
+* deployment and clustering guidance
+* identity brokering and protocol integration examples
+* answers that are still valid for current Keycloak releases
+
+== A note of thanks
+
+We want to thank everyone who contributed to the Discourse forum over the years.
+
+Every question, answer, correction, workaround, and explanation helped someone. In many cases, it helped far more people than the original poster, because the content was discoverable by search and reused by the wider community.
+
+The forum was valuable because the community made it valuable.
+
+This change is not a rejection of that history. It is a recognition that the way people find help, contribute knowledge, and participate in open source communities has changed. We want to focus our energy on channels that are active, sustainable, and better connected to the future of the project.
+
+Thank you for helping make Keycloak better, and thank you for helping us carry the best of the forum’s knowledge into the next phase of the community.
