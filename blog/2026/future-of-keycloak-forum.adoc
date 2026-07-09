@@ -53,27 +53,27 @@ The Keycloak community is not going away. We are consolidating discussion into c
 
 === GitHub Discussions
 
-Use GitHub Discussions for general questions, ideas, design discussion, and community support. This is the best replacement for most topics that would previously have gone to Discourse.
+Use link:https://github.com/keycloak/keycloak/discussions[GitHub Discussions] for general questions, ideas, design discussion, and community support. This is the best replacement for most topics that would previously have gone to Discourse.
 
 GitHub Discussions is also closer to the project’s development workflow. It makes it easier to connect a question to related issues, pull requests, releases, and design work.
 
 === GitHub Issues
 
-Use GitHub Issues for confirmed bugs and actionable feature requests.
+Use link:https://github.com/keycloak/keycloak/issues[GitHub Issues] for confirmed bugs and actionable feature requests.
 
 Before opening an issue, please use the documentation and existing discussions to check whether the behavior is expected or already reported. If you are not sure whether something is a bug, start with GitHub Discussions first.
 
 === Mailing lists
 
-The mailing lists remain available for users and contributors who prefer email-based discussion. They are especially useful for longer-form technical discussion and project development topics.
+The mailing lists remain available for link:https://groups.google.com/g/keycloak-user[users] and link:https://groups.google.com/g/keycloak-dev[contributors] who prefer email-based discussion. They are especially useful for longer-form technical discussion and project development topics.
 
 === CNCF Slack
 
-For quick questions and real-time community discussion, join the CNCF Slack and use the Keycloak channels. Slack is useful for lightweight help and coordination, but it is not a good long-term knowledge base. When a discussion produces information that others will need later, please consider moving the conclusion to GitHub Discussions or documentation.
+For quick questions and real-time community discussion, join the CNCF Slack and use the Keycloak channels (link:https://cloud-native.slack.com/archives/C056HC17KK9[#keycloak], link:https://cloud-native.slack.com/archives/C056XU905S6[#keycloak-dev]). Slack is useful for lightweight help and coordination, but it is not a good long-term knowledge base. When a discussion produces information that others will need later, please consider moving the conclusion to GitHub Discussions or documentation.
 
 === Documentation and guides
 
-For durable answers, documentation is still the best destination. If a forum answer helped you understand a common Keycloak configuration, migration, extension point, or troubleshooting pattern, consider contributing an improvement to the documentation.
+For durable answers, link:https://www.keycloak.org/guides[guides] and link:https://www.keycloak.org/documentation[documentation] are still the best destinations. If a forum answer helped you understand a common Keycloak configuration, migration, extension point, or troubleshooting pattern, consider contributing an improvement to the documentation.
 
 This helps future users more than another forum reply would, because documentation is versioned, reviewed, and easier to maintain as Keycloak evolves.
 
