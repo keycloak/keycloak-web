@@ -1,4 +1,4 @@
-:title: Experimental Shared Signals Framework support in Keycloak
+:title: Experimental Shared Signals Framework support
 :date: 2026-07-03
 :publish: true
 :author: Thomas Darimont
@@ -17,12 +17,12 @@ non-compliant. Keycloak knows; the relying parties don't, until they happen to a
 now push those signals to subscribed receivers in seconds — no per-vendor webhooks, no bespoke polling endpoints,
 no Kafka topic per integration.
 
-Concretely, this also unlocks an integration the Keycloak ecosystem has been missing: *Keycloak can now act as the
-federated IdP for Apple Business Manager*, signalling user-state changes back to Apple so
+Concretely, this also unlocks an integration the Keycloak ecosystem has been missing: Keycloak can now act as the
+federated IdP for *Apple Business* and *Apple School Manager*, signalling user-state changes back to Apple so
 enrolled devices can ask the user to reauthenticate.
 
 This post is the first in a small series. It introduces SSF, walks through what's actually shipped in the experimental
-release, and outlines where we'd like to take it next. Follow-up posts will cover how to define custom events, how to emit synthetic events, and an Apple Business Manager integration end to end.
+release, and outlines where we'd like to take it next. Follow-up posts will cover how to define custom events, how to emit synthetic events, and an Apple Business and Apple School Manager integration end to end.
 
 == A short tour of Shared Signals
 
@@ -90,20 +90,20 @@ Concretely:
   verification flow, outbox depth and per-delivery counters / latencies.
 * **Test coverage.** Over 100 integration tests across the dispatch / outbox / push / poll pipeline.
 
-== A new capability: Keycloak as IdP for Apple Business Manager
+== A new capability: Keycloak as IdP for Apple Business
 
-One of the strongest motivations for shipping the Transmitter first is *Apple device fleets*. Apple Business Manager
-(ABM) and Apple School Manager (ASM) want a *federated identity* relationship with the organisation's IdP, and they
+One of the strongest motivations for shipping the Transmitter first is *Apple device fleets*. Apple Business
+(AB) and Apple School Manager (ASM) want a *federated identity* relationship with the organisation's IdP, and they
 want to be told, in close to real time, when a user's status changes so that the corresponding enrolled devices can
 be locked, wiped or re-enrolled.
 
 Until now there has been no clean path to put Keycloak in that role. With the new SSF Transmitter, plus the legacy SSE
-CAEP profile bundled for ABM / ASM compatibility, Keycloak can be configured as the federated IdP for an Apple
-Business Manager tenant and signal `session-revoked`, `credential-change` and `device-compliance-change` events to
+CAEP profile bundled for AB / ASM compatibility, Keycloak can be configured as the federated IdP for an Apple
+Business tenant and signal `session-revoked`, `credential-change` and `device-compliance-change` events to
 Apple, which then propagates them onto the enrolled devices.
 
-This was verified end-to-end against ABM during development. A dedicated follow-up post will walk through the setup like
-realm configuration, client / stream registration on the ABM side, the legacy CAEP profile toggle, and how to test
+This was verified end-to-end against AB and ASM during development. A dedicated follow-up post will walk through the setup like
+realm configuration, client / stream registration on the AB side, the legacy CAEP profile toggle, and how to test
 the event flow. This effectively allows to use Keycloak as the identity provider for federated Apple accounts.
 
 == Roadmap
