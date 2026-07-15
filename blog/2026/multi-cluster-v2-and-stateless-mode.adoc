@@ -10,7 +10,7 @@ Starting with Keycloak 26.7, the `stateless` feature is available as a preview. 
 
 A multi-cluster setup becomes necessary when no transparent networking between two sites is available for Keycloak's embedded Infinispan to form a single cluster — for example, when sites are in different availability zones or data centers without a shared network layer.
 
-Running Keycloak in such a multi-cluster setup today requires significant infrastructure beyond Keycloak itself. The v1 architecture depends on an external Infinispan cluster with cross-datacenter replication channels, dedicated monitoring to detect and handle Infinispan failover, and operational procedures for failback. This blueprint is tied to specific environments like Kubernetes and AWS, and using it in other environments would require significant work to adapt it to other environments.
+Running Keycloak in such a multi-cluster setup today requires significant infrastructure beyond Keycloak itself. The v1 architecture depends on an external Infinispan cluster with cross-datacenter replication channels, dedicated monitoring to detect and handle Infinispan failover, and operational procedures for failback. This blueprint is tied to specific environments like Kubernetes and AWS, and using it in other environments would require significant work to adapt it.
 
 Even in single-cluster deployments, Infinispan clustering introduces operational overhead: rebalancing data in distributed caches when a node is lost or restarted, and transient failures in login flows if a node unexpectedly disappears. In large installations, the login failure cache can grow significantly, consuming substantial memory and causing long rebalancing times when nodes join or leave the cluster. While distributed caches replicate data across at least two nodes — so individual node failures do not lose data — a full cluster restart during minor upgrades resets volatile state such as in-progress authentication sessions and brute-force counters.
 
@@ -34,7 +34,7 @@ Stateless mode benefits both single-cluster and multi-cluster deployments.
 
 * *Durable sessions*: Volatile data survives full cluster restarts during minor upgrades.
 * *Simpler operations*: No more large in-memory caches, rebalancing delays, or transient failures when nodes are added or removed.
-* *Trade-off:* Approximately 8-10 milliseconds of additional latency per authentication interaction, negligible for interactive login flows. An increase in database CPU load and IOPS by the factor of two.
+* *Trade-off:* Approximately 8-10 milliseconds of additional latency per authentication interaction, negligible for interactive login flows. Database CPU load and IOPS can increase by roughly a factor of two.
 
 === Multi-cluster
 
@@ -73,7 +73,7 @@ Moving volatile data to the database roughly doubles database utilization compar
 If you are running a v1 multi-site deployment, migrating to v2 is straightforward: enable the `stateless` feature flag, then remove the external Infinispan cluster, its configuration, the AWS Lambda, and the Prometheus monitoring and alerts.
 
 As all user sessions are stored in the database already in v1, users will still be logged in after the migration to v2.
-Information for in-progress logins and login failure counters is lost during the upgrade.
+Information about in-progress logins and login failure counters is lost during the upgrade.
 
 == Getting started
 
