@@ -1,0 +1,15 @@
+[ {
+  "number" : 222,
+  "repository" : "keycloak-client",
+  "title" : "keycloak-client CI is failing",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak-client/issues/222"
+}, {
+  "number" : 226,
+  "repository" : "keycloak-client",
+  "title" : "Sync after Keycloak server 26.7.0 release",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak-client/issues/226"
+} ]
