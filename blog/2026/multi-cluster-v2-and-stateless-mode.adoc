@@ -1,0 +1,108 @@
+:title: Multi-Cluster v2 and Stateless Mode now in Preview
+:date: 2026-07-16
+:publish: true
+:author: Alexander Schwartz
+:summary: Keycloak's new stateless feature eliminates the need for an external Infinispan cluster, enabling simpler multi-cluster deployments backed only by a synchronously replicated database.
+
+Starting with Keycloak 26.7, the `stateless` feature is available as a preview. It fundamentally simplifies how Keycloak handles volatile data — authentication sessions, action tokens, and brute-force counters move from embedded or external Infinispan caches to the database. The result: Keycloak deployments that are easier to operate, more resilient, and ready for multi-cluster setups without an external Infinispan cluster.
+
+== The problem with the current approach
+
+A multi-cluster setup becomes necessary when no transparent networking between two sites is available for Keycloak's embedded Infinispan to form a single cluster — for example, when sites are in different availability zones or data centers without a shared network layer.
+
+Running Keycloak in such a multi-cluster setup today requires significant infrastructure beyond Keycloak itself. The v1 architecture depends on an external Infinispan cluster with cross-datacenter replication channels, dedicated monitoring to detect and handle Infinispan failover, and operational procedures for failback. This blueprint is tied to specific environments like Kubernetes and AWS, and using it in other environments would require significant work to adapt it to other environments.
+
+Even in single-cluster deployments, Infinispan clustering introduces operational overhead: rebalancing data in distributed caches when a node is lost or restarted, and transient failures in login flows if a node unexpectedly disappears. In large installations, the login failure cache can grow significantly, consuming substantial memory and causing long rebalancing times when nodes join or leave the cluster. While distributed caches replicate data across at least two nodes — so individual node failures do not lose data — a full cluster restart during minor upgrades resets volatile state such as in-progress authentication sessions and brute-force counters.
+
+== What changes with stateless mode
+
+When you enable the `stateless` feature, Keycloak stores volatile data in the database instead of distributed Infinispan caches:
+
+* *Authentication sessions* — users mid-login no longer lose progress during full cluster restarts on minor upgrades.
+* *Action tokens* — email verification links, password reset tokens, and OAuth codes persist across cluster restarts.
+* *Login failure counters* — brute-force detection remains effective even when the entire cluster is restarted.
+
+Realm and authorization data continues to be cached locally in each Keycloak node for fast reads. Within a cluster, JGroups handles immediate cache invalidation when realm data changes. Between clusters, a database outbox pattern propagates invalidation messages via polling, with a default interval of 100 milliseconds.
+
+No Infinispan traffic is involved during OIDC or SAML request processing, eliminating transient failures if a node fails unexpectedly. JGroups is still used for intra-cluster realm cache coordination, but it is not touched during authentication flows.
+
+== When to use stateless mode
+
+Stateless mode benefits both single-cluster and multi-cluster deployments.
+
+=== Single cluster
+
+* *Durable sessions*: Volatile data survives full cluster restarts during minor upgrades.
+* *Simpler operations*: No more large in-memory caches, rebalancing delays, or transient failures when nodes are added or removed.
+* *Trade-off:* Approximately 8-10 milliseconds of additional latency per authentication interaction, negligible for interactive login flows. An increase in database CPU load and IOPS by the factor of two.
+
+=== Multi-cluster
+
+All single-cluster benefits apply, plus:
+
+* *No external Infinispan cluster*: Eliminates a separate Infinispan deployment, its monitoring, and failover/failback procedures.
+* *Session failover*: Because sessions are stored in the synchronously replicated database, users stay logged in when traffic fails over to a surviving site.
+* *Environment-agnostic*: The architecture is not tied to Kubernetes or a specific cloud provider.
+* *Prerequisite:* A synchronously replicated database and a low-latency network between sites.
+
+== Architecture at a glance
+
+.Multi-cluster v2: Two independent Keycloak clusters connected only through a synchronously replicated database
+image::${blogImages}/multi-cluster-v2-architecture.svg[alt="Multi-cluster v2 architecture: two independent Keycloak clusters connected only through a synchronously replicated database", align=center, width=800]
+
+A multi-cluster v2 deployment consists of:
+
+* Two or more independent Keycloak cluster deployments, each running in a different site
+* A highly available, synchronously replicated database (tested with Amazon Aurora PostgreSQL)
+* An external load balancer distributing traffic across clusters (tested with AWS Global Accelerator)
+
+All entities — users, realms, clients, user sessions, and now also authentication sessions and login failures — are stored in the database. Realm data is cached locally in each Keycloak node. Cross-cluster cache invalidation is handled through a database queuing table, not through direct network connections between clusters.
+
+=== Database impact
+
+Moving volatile data to the database roughly doubles database utilization compared to a setup where only persistent data is stored. Plan database capacity accordingly — both for connection pool sizing and storage I/O.
+
+== Current limitations
+
+* *Single-region only*: Synchronously replicated databases are generally not available across multiple regions.
+* *Database latency matters*: Because synchronous replication defers responses until data reaches the other site, latency between database nodes directly affects Keycloak response times. Multiple database interactions per request amplify this effect.
+* *Planned outages*: The setup is designed for environments that can tolerate planned maintenance windows for minor and major upgrades of Keycloak.
+
+== Migrating from v1
+
+If you are running a v1 multi-site deployment, migrating to v2 is straightforward: enable the `stateless` feature flag, then remove the external Infinispan cluster, its configuration, the AWS Lambda, and the Prometheus monitoring and alerts.
+
+As all user sessions are stored in the database already in v1, users will still be logged in after the migration to v2.
+Information for in-progress logins and login failure counters is lost during the upgrade.
+
+== Getting started
+
+Start Keycloak with the `stateless` feature enabled:
+
+[source,bash]
+----
+bin/kc.sh start \
+  --features=stateless \
+  --spi-cache-embedded--default--cluster-name=CLUSTER1 \
+  --db postgres --db-url jdbc:postgresql://db-host/keycloak \
+  --db-username keycloak --db-password <password>
+----
+
+For a second cluster, use a different `cluster-name`:
+
+[source,bash]
+----
+bin/kc.sh start \
+  --features=stateless \
+  --spi-cache-embedded--default--cluster-name=CLUSTER2 \
+  --db postgres --db-url jdbc:postgresql://db-host/keycloak \
+  --db-username keycloak --db-password <password>
+----
+
+Full documentation is available in the https://www.keycloak.org/nightly/high-availability/multi-cluster-v2/introduction[multi-cluster v2 guide].
+
+== Feedback welcome
+
+Stateless mode is currently a *preview feature*, and we would love to hear from the community as we shape its future. Try it with Keycloak 26.7.
+
+Please share your experiences, suggestions, and feature requests on the https://github.com/keycloak/keycloak/discussions/50640[GitHub discussion]. Your input will directly influence how we evolve this feature toward supported status.
