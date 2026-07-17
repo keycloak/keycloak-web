@@ -43,7 +43,8 @@ All single-cluster benefits apply, plus:
 * *No external Infinispan cluster*: Eliminates a separate Infinispan deployment, its monitoring, and failover/failback procedures.
 * *Session failover*: Because sessions are stored in the synchronously replicated database, users stay logged in when traffic fails over to a surviving site.
 * *Environment-agnostic*: The architecture is not tied to Kubernetes or a specific cloud provider.
-* *Prerequisite:* A synchronously replicated database and a low-latency network between sites.
+* *Automatic failover*: During a site failure, the load balancer redirects traffic to the surviving site with no data loss, assuming the setup was not degraded from previous failures.
+* *Prerequisite:* A synchronously replicated database and a low-latency network between sites (less than 5 ms suggested, below 10 ms required for database round-trip).
 
 == Architecture at a glance
 
@@ -66,7 +67,7 @@ Moving volatile data to the database roughly doubles database utilization compar
 
 * *Single-region only*: Synchronously replicated databases are generally not available across multiple regions.
 * *Database latency matters*: Because synchronous replication defers responses until data reaches the other site, latency between database nodes directly affects Keycloak response times. Multiple database interactions per request amplify this effect.
-* *Planned outages*: The setup is designed for environments that can tolerate planned maintenance windows for minor and major upgrades of Keycloak.
+* *Planned outages*: Patch upgrades are zero-downtime. Minor and major upgrades require shutting down all sites except one, upgrading that site, then deploying the new version to the remaining sites.
 
 == Migrating from v1
 
