@@ -1,16 +1,18 @@
 :title: Multi-Cluster v2 and Stateless Mode now in Preview
-:date: 2026-07-16
+:date: 2026-07-17
 :publish: true
 :author: Alexander Schwartz
 :summary: Keycloak's new stateless feature eliminates the need for an external Infinispan cluster, enabling simpler multi-cluster deployments backed only by a synchronously replicated database.
 
 Starting with Keycloak 26.7, the `stateless` feature is available as a preview. It fundamentally simplifies how Keycloak handles volatile data — authentication sessions, action tokens, and brute-force counters move from embedded or external Infinispan caches to the database. The result: Keycloak deployments that are easier to operate, more resilient, and ready for multi-cluster setups without an external Infinispan cluster.
 
+Read on to learn more, and https://www.youtube.com/watch?v=_htgZ1bSinA[ask questions in our upcoming live Q&A event on Jul 21!]
+
 == The problem with the current approach
 
 A multi-cluster setup becomes necessary when no transparent networking between two sites is available for Keycloak's embedded Infinispan to form a single cluster — for example, when sites are in different availability zones or data centers without a shared network layer.
 
-Running Keycloak in such a multi-cluster setup today requires significant infrastructure beyond Keycloak itself. The v1 architecture depends on an external Infinispan cluster with cross-datacenter replication channels, dedicated monitoring to detect and handle Infinispan failover, and operational procedures for failback. This blueprint is tied to specific environments like Kubernetes and AWS, and using it in other environments would require significant work to adapt it.
+Running Keycloak in such a multi-cluster setup today requires significant infrastructure beyond Keycloak itself. Without the `stateless` feature, the architecture depends on an external Infinispan cluster with cross-datacenter replication channels, dedicated monitoring to detect and handle Infinispan failover, and operational procedures for failback. It was tied to specific environments like Kubernetes and AWS, and using it in other environments would require significant work to adapt it.
 
 Even in single-cluster deployments, Infinispan clustering introduces operational overhead: rebalancing data in distributed caches when a node is lost or restarted, and transient failures in login flows if a node unexpectedly disappears. In large installations, the login failure cache can grow significantly, consuming substantial memory and causing long rebalancing times when nodes join or leave the cluster. While distributed caches replicate data across at least two nodes — so individual node failures do not lose data — a full cluster restart during minor upgrades resets volatile state such as in-progress authentication sessions and brute-force counters.
 
@@ -46,6 +48,8 @@ All single-cluster benefits apply, plus:
 * *Automatic failover*: During a site failure, the load balancer redirects traffic to the surviving site with no data loss, assuming the setup was not degraded from previous failures.
 * *Prerequisite:* A synchronously replicated database and a low-latency network between sites (less than 5 ms suggested, below 10 ms required for database round-trip).
 
+The new `stateless` feature prioritizes consistency over availability. Every write is synchronously replicated, so no data is lost during failover at the cost of requiring a low-latency network between sites.
+
 == Architecture at a glance
 
 .Multi-cluster v2: Two independent Keycloak clusters connected only through a synchronously replicated database
@@ -69,9 +73,9 @@ Moving volatile data to the database roughly doubles database utilization compar
 * *Database latency matters*: Because synchronous replication defers responses until data reaches the other site, latency between database nodes directly affects Keycloak response times. Multiple database interactions per request amplify this effect.
 * *Planned outages*: Patch upgrades are zero-downtime. Minor and major upgrades require shutting down all sites except one, upgrading that site, then deploying the new version to the remaining sites.
 
-== Migrating from v1
+== Migrating existing installations
 
-If you are running a v1 multi-site deployment, migrating to v2 is straightforward: enable the `stateless` feature flag, then remove the external Infinispan cluster, its configuration, the AWS Lambda, and the Prometheus monitoring and alerts.
+If you are running a multi-site v1 deployment, migrating to v2 is straightforward: enable the `stateless` feature flag, then remove the external Infinispan cluster, its configuration, the AWS Lambda, and the Prometheus monitoring and alerts.
 
 As all user sessions are stored in the database already in v1, users will still be logged in after the migration to v2.
 Information about in-progress logins and login failure counters is lost during the upgrade.
@@ -85,8 +89,8 @@ Start Keycloak with the `stateless` feature enabled:
 bin/kc.sh start \
   --features=stateless \
   --spi-cache-embedded--default--cluster-name=CLUSTER1 \
-  --db postgres --db-url jdbc:postgresql://db-host/keycloak \
-  --db-username keycloak --db-password <password>
+  --db=postgres --db-url=jdbc:postgresql://db-host/keycloak \
+  --db-username=keycloak --db-password=<password>
 ----
 
 For a second cluster, use a different `cluster-name`:
@@ -96,8 +100,8 @@ For a second cluster, use a different `cluster-name`:
 bin/kc.sh start \
   --features=stateless \
   --spi-cache-embedded--default--cluster-name=CLUSTER2 \
-  --db postgres --db-url jdbc:postgresql://db-host/keycloak \
-  --db-username keycloak --db-password <password>
+  --db=postgres --db-url=jdbc:postgresql://db-host/keycloak \
+  --db-username=keycloak --db-password=<password>
 ----
 
 Full documentation is available in the https://www.keycloak.org/nightly/high-availability/multi-cluster-v2/introduction[multi-cluster v2 guide].
