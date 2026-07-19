@@ -15,11 +15,7 @@ In June 2023, the Keycloak maintainers decided to sunset Discourse as one of the
 
 After listening to that feedback, we reactivated Discourse in October 2023.
 
-Unfortunately, the period when the forum was offline had a lasting impact. Search engines changed how they indexed the content, and traffic from search effectively dropped to zero. We spent months trying to recover the situation: requesting reindexing, improving discoverability, and working to bring search traffic back. Despite those efforts, the forum never recovered its previous visibility.
-
-Later, we moved the forum to `forum.keycloak.org`. That fixed the indexing problem, and the content became discoverable again. However, the traffic and engagement that had previously made the forum valuable did not return.
-
-At the same time, the way developers seek help has changed. More and more Keycloak users now turn first to AI coding assistants and search-like developer tools when they need help configuring Keycloak, troubleshooting integrations, or understanding errors. Those tools have almost certainly learned from many of the public sources the community has created over the years, including the Discourse forum, GitHub Discussions, mailing lists, documentation, blog posts, and issue trackers.
+In the years since, the way developers seek help has changed. More and more Keycloak users now turn first to AI coding assistants and search-like developer tools when they need help configuring Keycloak, troubleshooting integrations, or understanding errors. Those tools have almost certainly learned from many of the public sources the community has created over the years, including the Discourse forum, GitHub Discussions, mailing lists, documentation, blog posts, and issue trackers.
 
 That shift has changed the role of a community forum. The old model depended on a steady flow of new questions, answers, corrections, and follow-up discussion. Without that activity, the forum risks becoming a stale support archive rather than a healthy community space.
 
