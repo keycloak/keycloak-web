@@ -65,7 +65,7 @@ The mailing lists remain available for link:https://groups.google.com/g/keycloak
 
 === CNCF Slack
 
-For quick questions and real-time community discussion, join the CNCF Slack and use the Keycloak channels (link:https://cloud-native.slack.com/archives/C056HC17KK9[#keycloak], link:https://cloud-native.slack.com/archives/C056XU905S6[#keycloak-dev]). Slack is useful for lightweight help and coordination, but it is not a good long-term knowledge base. When a discussion produces information that others will need later, please consider moving the conclusion to GitHub Discussions or documentation.
+For quick questions and real-time community discussion, https://slack.cncf.io/[join the CNCF Slack] and use the Keycloak channels (link:https://cloud-native.slack.com/archives/C056HC17KK9[#keycloak], link:https://cloud-native.slack.com/archives/C056XU905S6[#keycloak-dev]). Slack is useful for lightweight help and coordination, but it is not a good long-term knowledge base. When a discussion produces information that others will need later, please consider moving the conclusion to GitHub Discussions or documentation.
 
 === Documentation and guides
 
