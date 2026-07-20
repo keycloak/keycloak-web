@@ -1,0 +1,5 @@
+{
+  "name": "Keycloak Event Enrichment",
+  "description": "Enriches authentication events with GeoIP location and parsed User-Agent details (MaxMind GeoLite2) before persistence.",
+  "website": "https://github.com/AdrianIAna/keycloak-event-enrichment"
+}
