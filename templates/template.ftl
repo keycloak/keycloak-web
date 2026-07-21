@@ -55,8 +55,8 @@
 <body>
 
 <div class="bg-primary text-center py-2 px-3" data-nosnippet>
-    <a class="link-light text-decoration-none small" href="https://www.youtube.com/watch?v=_htgZ1bSinA">
-        Keycloak 26.7 block party - Celebrating our summer release! &middot; July 21 &middot; <span class="fw-semibold text-decoration-underline">Join us live &rarr;</span>
+    <a class="link-light text-decoration-none small" href="https://events.linuxfoundation.org/kubecon-cloudnativecon-japan/co-located-events/keycloakcon/">
+        Join us at KeycloakCon Japan 2026, colocated with KubeCon Japan 2026 &middot; July 28 &middot; <span class="fw-semibold text-decoration-underline">Register Today &rarr;</span>
     </a>
 </div>
 
