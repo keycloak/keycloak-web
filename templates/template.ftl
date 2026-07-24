@@ -56,7 +56,7 @@
 
 <div class="bg-primary text-center py-2 px-3" data-nosnippet>
     <a class="link-light text-decoration-none small" href="https://events.linuxfoundation.org/kubecon-cloudnativecon-japan/co-located-events/keycloakcon/">
-        Join us at KeycloakCon Japan 2026, colocated with KubeCon Japan 2026 &middot; July 28 &middot; <span class="fw-semibold text-decoration-underline">Register Today &rarr;</span>
+        Join us at KeycloakCon Japan 2026, colocated with KubeCon Japan 2026 with discount code KCJP26STKEYCC &middot; July 28 &middot; <span class="fw-semibold text-decoration-underline">Register Today &rarr;</span>
     </a>
 </div>
 

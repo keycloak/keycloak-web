@@ -13,6 +13,7 @@ If you are new to Keycloak, or already a user, join us for this exciting event t
 https://events.linuxfoundation.org/kubecon-cloudnativecon-japan/co-located-events/keycloakcon/[KeycloakCon] is a co-located event happening on Tuesday, July 28 from 09:00 to 12:30. It brings together the Keycloak community with case studies and talks featuring the latest features. Join this event for technical talks, professional growth, and networking opportunities.
 
 https://events.linuxfoundation.org/kubecon-cloudnativecon-japan/co-located-events/keycloakcon/[Book your ticket] as an add-on to the KubeCon + CloudNativeCon pass.
+Use the discount code KCJP26STKEYCC and save 280 USD on the combined offer of KeycloakCon and KubeCon!
 
 --
 ++++
