@@ -1,0 +1,15 @@
+[ {
+  "number" : 231,
+  "repository" : "keycloak-client",
+  "title" : "AuthenticationManagementResource changed behavior causes test failures",
+  "kind" : "bug",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak-client/issues/231"
+}, {
+  "number" : 234,
+  "repository" : "keycloak-client",
+  "title" : "Normalize URIs in PathConfigMatcher to ensure mutated URIs share the same cache key as their canonical form",
+  "kind" : "cve",
+  "area" : "policy-enforcer",
+  "url" : "https://github.com/keycloak/keycloak-client/issues/234"
+} ]
