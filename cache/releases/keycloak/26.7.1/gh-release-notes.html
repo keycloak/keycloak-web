@@ -1,0 +1,32 @@
+<div>
+
+<h2>Upgrading</h2>
+<p>Before upgrading refer to <a href="https://www.keycloak.org/docs/latest/upgrading/#migration-changes">the migration guide</a> for a complete list of changes.</p>
+
+<h2>All resolved issues</h2>
+
+<h3>Security fixes</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/49429">#49429</a> [CVE-2026-9793] JWE request object bypasses requestObjectSignatureAlg enforcement <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/50445">#50445</a> [CVE-2026-4629] Privilege escalation via hardcoded role mapper injection in manage-clients <code>admin/api</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/50569">#50569</a> [CVE-2026-14209] Keycloak Admin UI Extension `brute-force-user` User Disclosure via `search=id:` under FGAP v2 <code>admin/fine-grained-permissions</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/50615">#50615</a> [CVE-2026-14614] Keycloak 26.6.3 Fine-Grained Admin Permissions Bypass in Client Scope Assignment <code>admin/fine-grained-permissions</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/50617">#50617</a> [CVE-2026-14615] FGAP v2 parent group children endpoint bypasses per-child view permission filter <code>admin/fine-grained-permissions</code></li>
+</ul>
+
+
+
+
+
+
+<h3>Bugs</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/50719">#50719</a> WebAuthn authenticator attachment policy is bypassed when the client omits the attachment field <code>authentication/webauthn</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/50750">#50750</a> Clustering test broken in 26.7 release branch <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/50836">#50836</a> Kustomize cluster-wide faulty Role&RoleBinding <code>operator</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/50850">#50850</a> New Password is commited when multiple Password Reset is detected <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/50882">#50882</a> 500 when client requests `organization` scope with it already set to `Default` <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/50928">#50928</a> IllegalFormatConversionException in LiquibaseDBLockProviderFactory and wrong time conversion <code>core</code></li>
+</ul>
+
+</div>

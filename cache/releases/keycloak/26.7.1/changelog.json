@@ -1,0 +1,92 @@
+[ {
+  "number" : 49429,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-9793] JWE request object bypasses requestObjectSignatureAlg enforcement",
+  "kind" : "cve",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/49429"
+}, {
+  "number" : 50445,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-4629] Privilege escalation via hardcoded role mapper injection in manage-clients",
+  "kind" : "cve",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/50445"
+}, {
+  "number" : 50569,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-14209] Keycloak Admin UI Extension `brute-force-user` User Disclosure via `search=id:` under FGAP v2",
+  "kind" : "cve",
+  "area" : "admin/fine-grained-permissions",
+  "url" : "https://github.com/keycloak/keycloak/issues/50569"
+}, {
+  "number" : 50615,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-14614] Keycloak 26.6.3 Fine-Grained Admin Permissions Bypass in Client Scope Assignment",
+  "kind" : "cve",
+  "area" : "admin/fine-grained-permissions",
+  "url" : "https://github.com/keycloak/keycloak/issues/50615"
+}, {
+  "number" : 50617,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-14615] FGAP v2 parent group children endpoint bypasses per-child view permission filter",
+  "kind" : "cve",
+  "area" : "admin/fine-grained-permissions",
+  "url" : "https://github.com/keycloak/keycloak/issues/50617"
+}, {
+  "number" : 50619,
+  "repository" : "keycloak",
+  "title" : "Rename and make `cacheless` feature Preview",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50619"
+}, {
+  "number" : 50719,
+  "repository" : "keycloak",
+  "title" : "WebAuthn authenticator attachment policy is bypassed when the client omits the attachment field",
+  "kind" : "bug",
+  "area" : "authentication/webauthn",
+  "url" : "https://github.com/keycloak/keycloak/issues/50719"
+}, {
+  "number" : 50735,
+  "repository" : "keycloak",
+  "title" : "Testsuite deprecation check should only run for main",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50735"
+}, {
+  "number" : 50750,
+  "repository" : "keycloak",
+  "title" : "Clustering test broken in 26.7 release branch",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/50750"
+}, {
+  "number" : 50836,
+  "repository" : "keycloak",
+  "title" : "Kustomize cluster-wide faulty Role&RoleBinding",
+  "kind" : "bug",
+  "area" : "operator",
+  "url" : "https://github.com/keycloak/keycloak/issues/50836"
+}, {
+  "number" : 50850,
+  "repository" : "keycloak",
+  "title" : "New Password is commited when multiple Password Reset is detected",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/50850"
+}, {
+  "number" : 50882,
+  "repository" : "keycloak",
+  "title" : "500 when client requests `organization` scope with it already set to `Default`",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/50882"
+}, {
+  "number" : 50928,
+  "repository" : "keycloak",
+  "title" : "IllegalFormatConversionException in LiquibaseDBLockProviderFactory and wrong time conversion",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/50928"
+} ]
