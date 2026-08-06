@@ -20,6 +20,13 @@ import java.util.stream.Collectors;
 
 public class ChangelogBuilder extends AbstractBuilder {
 
+    // A release keeps accruing issues for a while after it ships. Backported fixes
+    // and security advisories are frequently labeled release/<version> a day or two
+    // after the announcement, once any embargo lifts. Re-query the changelog for
+    // releases published within this window so those late entries still appear.
+    // Releases older than the window keep their cached changelog untouched.
+    private static final long CHANGELOG_REFRESH_WINDOW_MILLIS = 30L * 24 * 60 * 60 * 1000;
+
     @Override
     protected void build() throws Exception {
         ReleasesMetadata metadata = context.getReleasesMetadata();
@@ -44,8 +51,77 @@ public class ChangelogBuilder extends AbstractBuilder {
                 releaseCacheDir.mkdirs();
 
                 File changeLogFile = new File(releaseCacheDir, "changelog.json");
+                boolean cached = changeLogFile.exists();
 
-                if (changeLogFile.exists()) {
+                boolean recentRelease = v.getDate() != null
+                        && (System.currentTimeMillis() - v.getDate().getTime()) < CHANGELOG_REFRESH_WINDOW_MILLIS;
+
+                // Refresh when there is no cache yet, or when the release is recent enough
+                // that it may still gain issues. Older cached releases are read as is.
+                boolean refresh = v.getBlogTemplate() >= 2 && (!cached || recentRelease);
+
+                if (refresh) {
+                    Map<Integer, GHIssue> ghIssues = new HashMap<>();
+                    List<String> queries = new LinkedList<>();
+
+
+                    queries.add("repo:" + source.getRepo());
+
+                    queries.add("is:issue");
+
+                    String baseQuery = String.join(" ", queries);
+
+                    gh.searchIssues().q(baseQuery + " milestone:" + v.getVersion()).list().forEach(i -> ghIssues.put(i.getNumber(), i));
+                    gh.searchIssues().q(baseQuery + " label:release/" + v.getVersion()).list().forEach(i -> ghIssues.put(i.getNumber(), i));
+
+                    List<ChangeLogEntry> changes = new LinkedList<>();
+                    // precompute list of versions that have been published before this version
+                    Set<String> previousVersions = versions.stream()
+                            .filter(version -> version.compareTo(v) < 0 && version.getDate().compareTo(v.getDate()) < 0)
+                            .map(Versions.Version::getVersion)
+                            .collect(Collectors.toSet());
+                    for (GHIssue issue : ghIssues.values()) {
+                        ChangeLogEntry change = new ChangeLogEntry();
+                        change.setNumber(issue.getNumber());
+                        change.setRepository(getRepositoryName(issue));
+                        change.setTitle(issue.getTitle());
+                        change.setUrl(issue.getHtmlUrl().toString());
+
+                        issue.getLabels().stream()
+                                .map(l -> l.getName())
+                                .filter(s -> s.startsWith("kind/"))
+                                .map(s -> s.substring(5))
+                                .findFirst().ifPresent(s -> change.setKind(s));
+
+                        issue.getLabels().stream()
+                                .map(l -> l.getName())
+                                .filter(s -> s.startsWith("area/"))
+                                .map(s -> s.substring(5))
+                                .findFirst().ifPresent(s -> change.setArea(s));
+
+                        if (v.getVersion().endsWith(".0")) {
+                            // For a minor release, don't show items already backported to published patch releases in a previous version
+                            if (issue.getLabels().stream()
+                                .filter(ghLabel -> ghLabel.getName().startsWith("release/"))
+                                .anyMatch(ghLabel -> previousVersions.contains(ghLabel.getName().substring("release/".length())))) {
+                                continue;
+                            }
+                        }
+
+                        if (change.getKind() != null) {
+                            changes.add(change);
+                        }
+                    }
+
+                    changes.sort(Comparator.comparingInt(ChangeLogEntry::getNumber));
+
+                    Versions.ChangeLog changeLog = new Versions.ChangeLog(changes);
+                    v.setChanges(changeLog);
+
+                    new ObjectMapper().writerWithDefaultPrettyPrinter().writeValue(changeLogFile, changes);
+
+                    printStep(cached ? "refreshed" : "loaded", source.getId() + " " + v.getVersion());
+                } else if (cached) {
                     Versions.ChangeLog changeLog = new Versions.ChangeLog(Arrays.asList(JsonParser.read(changeLogFile, ChangeLogEntry[].class)));
 
                     if (v.getBlogTemplate() >= 3) {
@@ -59,69 +135,6 @@ public class ChangelogBuilder extends AbstractBuilder {
 
                     v.setChanges(changeLog);
                     printStep("exists", source.getId() + " " + v.getVersion());
-                } else {
-                    if (v.getBlogTemplate() >= 2) {
-                        Map<Integer, GHIssue> ghIssues = new HashMap<>();
-                        List<String> queries = new LinkedList<>();
-
-
-                        queries.add("repo:" + source.getRepo());
-
-                        queries.add("is:issue");
-
-                        String baseQuery = String.join(" ", queries);
-
-                        gh.searchIssues().q(baseQuery + " milestone:" + v.getVersion()).list().forEach(i -> ghIssues.put(i.getNumber(), i));
-                        gh.searchIssues().q(baseQuery + " label:release/" + v.getVersion()).list().forEach(i -> ghIssues.put(i.getNumber(), i));
-
-                        List<ChangeLogEntry> changes = new LinkedList<>();
-                        // precompute list of versions that have been published before this version
-                        Set<String> previousVersions = versions.stream()
-                                .filter(version -> version.compareTo(v) < 0 && version.getDate().compareTo(v.getDate()) < 0)
-                                .map(Versions.Version::getVersion)
-                                .collect(Collectors.toSet());
-                        for (GHIssue issue : ghIssues.values()) {
-                            ChangeLogEntry change = new ChangeLogEntry();
-                            change.setNumber(issue.getNumber());
-                            change.setRepository(getRepositoryName(issue));
-                            change.setTitle(issue.getTitle());
-                            change.setUrl(issue.getHtmlUrl().toString());
-
-                            issue.getLabels().stream()
-                                    .map(l -> l.getName())
-                                    .filter(s -> s.startsWith("kind/"))
-                                    .map(s -> s.substring(5))
-                                    .findFirst().ifPresent(s -> change.setKind(s));
-
-                            issue.getLabels().stream()
-                                    .map(l -> l.getName())
-                                    .filter(s -> s.startsWith("area/"))
-                                    .map(s -> s.substring(5))
-                                    .findFirst().ifPresent(s -> change.setArea(s));
-
-                            if (v.getVersion().endsWith(".0")) {
-                                // For a minor release, don't show items already backported to published patch releases in a previous version
-                                if (issue.getLabels().stream()
-                                    .filter(ghLabel -> ghLabel.getName().startsWith("release/"))
-                                    .anyMatch(ghLabel -> previousVersions.contains(ghLabel.getName().substring("release/".length())))) {
-                                    continue;
-                                }
-                            }
-
-                            if (change.getKind() != null) {
-                                changes.add(change);
-                            }
-                        }
-
-                        changes.sort(Comparator.comparingInt(ChangeLogEntry::getNumber));
-
-                        Versions.ChangeLog changeLog = new Versions.ChangeLog(changes);
-                        v.setChanges(changeLog);
-
-                        new ObjectMapper().writerWithDefaultPrettyPrinter().writeValue(changeLogFile, changes);
-
-                        printStep("loaded", source.getId() + " " + v.getVersion());
-                    }
                 }
             }
         }
