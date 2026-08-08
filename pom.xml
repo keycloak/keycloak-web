@@ -34,7 +34,7 @@
         <version.exec-maven-plugin>3.0.0</version.exec-maven-plugin>
         <version.dependency-plugin>3.1.2</version.dependency-plugin>
         <version.download-maven-plugin>2.0.0</version.download-maven-plugin>
-        <version.jsoup>1.18.3</version.jsoup>
+        <version.jsoup>1.23.1</version.jsoup>
     </properties>
 
     <repositories>
