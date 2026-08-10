@@ -89,4 +89,53 @@
   "kind" : "bug",
   "area" : "core",
   "url" : "https://github.com/keycloak/keycloak/issues/50928"
+}, {
+  "number" : 51467,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-15573 Authorization bypass via unnormalized uri matching in pathmatcher",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/51467"
+}, {
+  "number" : 51468,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-15572 DCR protocol mapper type-swap policy bypass allows privilege escalation",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/51468"
+}, {
+  "number" : 51469,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-16100 Unbounded metric cardinality in user event metrics via request-controlled error text",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/51469"
+}, {
+  "number" : 51470,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-16442 SAML idp-initiated broker login bypasses link-only restriction",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/51470"
+}, {
+  "number" : 51471,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-16443 SAML broker metadata import disables response signature validation",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/51471"
+}, {
+  "number" : 51472,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-16071 LDAP entry-dn user search bypasses configured users dn boundary",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/51472"
+}, {
+  "number" : 51473,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-16102 Default DCR policy allows role forgery via user property mappers",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/51473"
 } ]
