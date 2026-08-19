@@ -1,0 +1,52 @@
+<div>
+
+<h2>Upgrading</h2>
+<p>Before upgrading refer to <a href="https://www.keycloak.org/docs/latest/upgrading/#migration-changes">the migration guide</a> for a complete list of changes.</p>
+
+<h2>All resolved issues</h2>
+
+<h3>Security fixes</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/49570">#49570</a> CVE-2026-45292 OpenTelemetry Java SDK has Unbounded Memory Allocation in W3C Baggage Propagation <code>dependencies</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/50616">#50616</a> [CVE-2026-14613] Keycloak 26.6.3 Fine-Grained Admin Permissions Bypass via Role Groups Endpoint <code>admin/fine-grained-permissions</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/50955">#50955</a> [CVE-2026-59888 and CVE-2026-59889] Upgrade jackson-databind to 2.21.5 to fix  </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/50966">#50966</a> [CVE-2026-15945] Group hierarchy search discloses hidden parent groups under FGAP v2 <code>admin/fine-grained-permissions</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51145">#51145</a> [CVE-2026-17048] Keycloak Admin REST API Leaks Vault-Resolved Rotated Client Secrets <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51832">#51832</a> CVE-2026-15571 Predictable account-linking hash enables account takeover via malicious oidc client </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51833">#51833</a> CVE-2026-18963 Unauthenticated account takeover via reset-credentials flow bypass </li>
+</ul>
+
+<h3>Weaknesses</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/50844">#50844</a> show-config prints the vault keystore password in cleartext <code>dist/quarkus</code></li>
+</ul>
+
+
+
+
+<h3>Enhancements</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/51344">#51344</a> Upgrade to Quarkus 3.33.3.1 </li>
+</ul>
+
+<h3>Bugs</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/50751">#50751</a> Password denylist: false fpp warning on startup with large pre-computed .bloom file <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/50849">#50849</a> Correct SCIM name.formated <code>scim</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/50855">#50855</a> Rotated client secret remains valid when the feature is disabled <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51054">#51054</a> Invalid redirect URI on logout from pages with sub-tab hash fragments <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51061">#51061</a> Parameterized UserPropertyMapper exposes target user attributes without permission check <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51087">#51087</a> Passkey icons use wrong color variant when realm disables dark mode <code>authentication/webauthn</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51088">#51088</a> Verify email not working in incognito browser tab after Keycloak restart <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51131">#51131</a> Warning "Proactive closing of the session was missed - refinements are needed to TransactionSessionHandler related logic" appears <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51154">#51154</a> Upgrade to 26.7.0 fails with preview features as the stateless cluster provider captures a null NodeInfo before postInit <code>infinispan</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51164">#51164</a> WebAuthn tests are being skipped in Github workflows <code>workflows</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51182">#51182</a> Large HTTP/2 request headers are rejected with a bare 500 and no log; same request works over HTTP/1.1 <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51323">#51323</a> Custom realm-level role named admin cannot be updated in non-master realms after Keycloak 26.7.0 <code>admin/rbac</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51331">#51331</a> Adding org member fails with 500 with stateless:v1 feature enabled <code>organizations</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51407">#51407</a> The dist for Java API docs is empty <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51449">#51449</a> Incorrect query parameter name for "max" </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51476">#51476</a> Invalid link for https://www.ietf.org/rfc/rfc4559.txt <code>docs</code></li>
+</ul>
+
+</div>
