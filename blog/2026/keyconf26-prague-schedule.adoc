@@ -1,0 +1,62 @@
+:title: KeyConf26 speakers announced - save your spot today!
+:date: 2026-08-23
+:publish: true
+:author: Alina Rudyk
+:preview: keyconf-social-media.png
+:summary: Join us in Prague on October 8th, 2026 for a full day of technical insights, real-world experiences and conversations around identity and access management!
+
+The KEYCONF26 speaker line-up is taking shape, and this year's agenda is now live!
+
+*📍 KEYCONF26 is taking place in Prague on 8 October 2026.*
+
+This October, the Keycloak community will come together once again for a full day of technical insights, real-world experiences and conversations around identity and access management.
+
+This year's programme brings together speakers from across the Keycloak ecosystem – from organisations running Keycloak in complex production environments to experts exploring new standards, architectures and use cases.
+
+== Talk highlights
+
+The talks announced highlight the broad spectrum of the Keycloak ecosystem: how to run Keycloak securely and at scale, how to extend it, and how identity is evolving to support new technologies and use cases.
+
+Here are just a few highlights:
+
+* *What Role Can Keycloak Play for International Science?*
+
+* *An Introduction to the OpenID Shared Signals Framework*
+
+* *Keycloak becomes familiar with AI: the advancement of integrating Keycloak with AI*
+
+* *Wicked Keycloak challenges and how to resolve them*
+
+* *Token Hygiene – Why Your Keycloak Access Tokens Need a Diet*
+
+And that is only a glimpse of what is waiting for you in Prague
+
+👉 Explore the KEYCONF26 agenda announced: https://keyconf.dev/
+
+== A great place to network
+
+KeyConf is about more than the talks. It is also an opportunity to meet the people behind the technology, exchange experiences and connect with others working on similar identity challenges.
+
+Networking lunch::
+Our extended lunch break gives you plenty of time to meet fellow attendees, swap ideas and continue conversations from the sessions in a relaxed setting.
+
+Meet the community::
+KeyConf brings together Keycloak users, contributors, developers, architects, security specialists and IAM experts from different organisations and industries.
+Whether you want to discuss a challenge from your own Keycloak environment, exchange experiences or simply meet people from the community in person, there will be plenty of opportunities to connect throughout the day.
+
+Business drinks::
+Stick around after the last sessions for informal networking over drinks and snacks. It is the perfect opportunity to continue the conversations from the day and make new connections across the community.
+
+== Get your ticket and join us!
+
+Whether you are a developer, architect, security specialist, product owner or IAM professional, KEYCONF26 is your opportunity to gain new insights, exchange experiences and connect with the wider Keycloak community.
+
+📅 8 October 2026 +
+📍 Prague, Czech Republic +
+🎟️ Tickets are available now at https://keyconf.dev/ – secure your spot!
+
+== See you in Prague!
+
+KEYCONF26 is getting closer, bringing together the Keycloak community for a day of knowledge sharing, practical insights and meaningful connections.
+
+Secure your spot and join us in Prague – we can't wait to see you there!
