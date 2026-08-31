@@ -7,8 +7,8 @@
 
 <div class="container mt-5 kc-article">
     <div class="row">
-        <div class="col-md-9 col-xl-10 col-sm-12">
-            <div class="d-flex align-items-center mb-3">
+        <div class="col-md-9 col-xl-10 col-sm-12" data-pagefind-body data-pagefind-filter="category:${guide.metadata.title}">
+            <div class="d-flex align-items-center mb-3" data-pagefind-ignore>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb mb-0">
                         <li class="breadcrumb-item"><a href="${links.getGuides(guide.snapshot)}">Guides</a></li>
@@ -22,22 +22,23 @@
             </div>
 
             <#if guide.snapshot>
-                <div class="mb-4 alert alert-warning" role="alert">
+                <div class="mb-4 alert alert-warning" role="alert" data-pagefind-ignore>
                   <h4 class="no-top-margin">Nightly release</h4>
 
                   This guide is for the unstable nightly release, for the latest release go <a href="${links.get(guide, false)}">here</a>.
                 </div>
             </#if>
 
+            <span data-pagefind-filter="version" hidden><#if guide.snapshot>nightly<#else>release</#if></span>
             <div class="mb-4">
-                <div data-nosnippet class="me-3 float-end">
+                <div data-nosnippet data-pagefind-ignore class="me-3 float-end">
                     <select aria-label="Version" onchange="location = this.options[this.selectedIndex].value;" class="form-select">
                         <option value="${links.get(guide, true)}" <#if guide.snapshot>selected="selected"</#if>>Nightly</option>
                         <option value="${links.get(guide, false)}" <#if !guide.snapshot>selected="selected"</#if>>${version.version}</option>
                     </select>
                 </div>
 
-                <h1>${guide.title}</h1>
+                <h1 data-pagefind-meta="title">${guide.title}</h1>
                 <#if guide.summary??>
                     <span class="text-muted">${guide.summary}</span>
                 </#if>

@@ -2,7 +2,8 @@
   "dependencies": {
     "bootstrap": "5.3.x",
     "@fortawesome/fontawesome-free": "7.2.x",
-    "tocbot": "4.36.x"
+    "tocbot": "4.36.x",
+    "pagefind": "^1.5.2"
   },
   "scripts": {
     "serve": "serve target/web -p 5000 --cors"

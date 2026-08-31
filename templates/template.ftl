@@ -31,7 +31,7 @@
 
     <#if noindex?? && noindex><meta name="robots" content="noindex"></#if>
 
-    <#if !nocsp??><meta http-equiv='Content-Security-Policy' content="default-src 'none'; style-src 'self'; img-src 'self' https://www.google-analytics.com; font-src 'self'; script-src 'self' https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com; base-uri 'none'; form-action 'none';"></#if>
+    <#if !nocsp??><meta http-equiv='Content-Security-Policy' content="default-src 'none'; style-src 'self'; img-src 'self' https://www.google-analytics.com; font-src 'self'; script-src 'self' 'wasm-unsafe-eval' https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com; worker-src 'self'; base-uri 'none'; form-action 'none';"></#if>
 
     <link href="${links.getResource('bootstrap/dist/css/bootstrap.min.css')}" rel="stylesheet">
     <link href="${links.getResource('@fortawesome/fontawesome-free/css/all.min.css')}" rel="stylesheet">
