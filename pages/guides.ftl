@@ -24,14 +24,20 @@
             </ul>
             <div>
                 <form>
-                    <input id="guide-search" class="form-control" type="text" placeholder="Search" aria-label="Search">
+                    <div class="guide-search-wrapper">
+                        <input id="guide-search" class="form-control" type="text" placeholder="Search" aria-label="Search" data-pagefind="${links.getRoot()}/pagefind/pagefind.js" data-pagefind-version="release">
+                        <span id="guide-search-spinner" class="guide-search-spinner" hidden><i class="fa fa-spinner fa-spin"></i></span>
+                        <button type="button" id="guide-search-clear" class="guide-search-clear" aria-label="Clear search" hidden><i class="fa fa-times"></i></button>
+                    </div>
                 </form>
             </div>
         </div>
     </div>
 </nav>
 
-<div class="jumbotron jumbotron-fluid bg-light kc-bg-triangles kc-bg-fixed pt-4 pb-1">
+<div id="pagefind-results" class="container pt-4" style="display: none;" aria-live="polite"></div>
+
+<div id="guide-cards" class="jumbotron jumbotron-fluid bg-light kc-bg-triangles kc-bg-fixed pt-4 pb-1">
     <div class="container">
         <#list guides.getCategories(false) as c>
             <div class="row guide-category mb-4" id="${c.id}">
