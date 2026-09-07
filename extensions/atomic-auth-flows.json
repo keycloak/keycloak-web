@@ -1,0 +1,5 @@
+{
+    "name": "Atomic Authentication Flows",
+    "description": "Config-as-code solution that imports a complete set of authenticator configs, authentication flows and their bindings in a single atomic, transactional request.",
+    "website": "https://github.com/p2-inc/keycloak-atomic-auth-flows"
+}
