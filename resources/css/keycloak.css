@@ -206,9 +206,9 @@ header.navbar {
 /* Guide - Options */
 
 .guide-category {
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     background-color: #EDEDED99;
-    padding: 1.5rem 1.5rem 0.5rem;
+    padding: 1.5rem 1.0rem 0.5rem 1.0rem;
 }
 
 .alert {
@@ -258,17 +258,51 @@ header.navbar {
     .guides-navbar-content {
         flex-direction: row;
         align-items: center;
+        justify-content: space-between;
     }
 
-    .guides-navbar-menu {
-        margin-right: auto;
-    }
-    
-    /* Guides navbar font size can be lower as in the Bootstrap examples for secondary navbar */
-    .guides-navbar-menu .nav-link,#guide-search,#guide-version-select {
+    #guide-search,#guide-version-select {
         font-size: .9rem;
     }
 
+}
+
+/* Guides sidebar */
+.guides-sidebar {
+    border-radius: 0.5rem;
+    background-color: #EDEDED99;
+    padding: 0.75rem;
+    position: sticky;
+    margin-right: 0.5rem;
+    top: 1rem;
+}
+
+.guides-sidebar-heading {
+    padding: 0.75rem 0.75rem 0.5rem 0.75rem;
+    margin: 0 0 0.3rem 0;
+}
+
+.guides-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.guides-sidebar a {
+    display: block;
+    padding: 0.4rem 0.75rem;
+    border-radius: 0.5rem;
+    color: var(--bs-body-color);
+    text-decoration: none;
+}
+
+.guides-sidebar a:hover {
+    background-color: rgba(0, 0, 0, 0.06);
+    color: var(--bs-link-hover-color);
+}
+
+.guides-sidebar a.active {
+    background-color: #fff;
 }
 
 table.options {

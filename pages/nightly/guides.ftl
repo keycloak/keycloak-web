@@ -15,13 +15,6 @@
                     <option value="${links.getGuides(false)}">${version.version}</option>
                 </select>
             </div>
-            <ul class="nav navbar-nav guides-navbar-menu">
-                <#list guides.getCategories(true) as c>
-                <li>
-                    <a class="nav-link" href="#${c.id}">${c.title}</a>
-                </li>
-                </#list>
-            </ul>
             <div>
                 <form>
                     <div class="guide-search-wrapper">
@@ -46,6 +39,20 @@
           These guides are for the unstable <a href="${links.nightly}">nightly release</a>. For the latest release go <a href="${links.guides}">here</a>.
         </div>
 
+        <div class="row">
+            <div class="col-lg-3 mb-4">
+                <nav class="guides-sidebar" aria-label="Guide categories">
+                    <h3 class="guides-sidebar-heading">Categories</h3>
+                    <ul>
+                        <#list guides.getCategories(true) as c>
+                        <li>
+                            <a href="#${c.id}">${c.title}</a>
+                        </li>
+                        </#list>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-lg-9">
         <#list guides.getCategories(true) as c>
             <div class="row guide-category mb-4" id="${c.id}">
                 <h3>${c.title}</h3>
@@ -77,6 +84,8 @@
                 </#list>
             </div>
         </#list>
+            </div>
+        </div>
     </div>
     </div>
 </div>

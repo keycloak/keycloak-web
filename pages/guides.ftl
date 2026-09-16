@@ -15,13 +15,6 @@
                     <option value="${links.getGuides(false)}" selected="selected">${version.version}</option>
                 </select>
             </div>
-            <ul class="nav navbar-nav guides-navbar-menu">
-                <#list guides.getCategories(false) as c>
-                <li>
-                    <a class="nav-link" href="#${c.id}">${c.title}</a>
-                </li>
-                </#list>
-            </ul>
             <div>
                 <form>
                     <div class="guide-search-wrapper">
@@ -39,6 +32,20 @@
 
 <div id="guide-cards" class="jumbotron jumbotron-fluid bg-light kc-bg-triangles kc-bg-fixed pt-4 pb-1">
     <div class="container">
+        <div class="row">
+            <div class="col-lg-3 mb-4">
+                <nav class="guides-sidebar" aria-label="Guide categories">
+                    <h3 class="guides-sidebar-heading">Categories</h3>
+                    <ul>
+                        <#list guides.getCategories(false) as c>
+                        <li>
+                            <a href="#${c.id}">${c.title}</a>
+                        </li>
+                        </#list>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-lg-9">
         <#list guides.getCategories(false) as c>
             <div class="row guide-category mb-4" id="${c.id}">
                 <h3>${c.title}</h3>
@@ -70,6 +77,8 @@
                 </#list>
             </div>
         </#list>
+            </div>
+        </div>
     </div>
     </div>
 </div>
