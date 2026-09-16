@@ -1,0 +1,5 @@
+{
+  "name": "Unique Attribute Validator",
+  "description": "Keycloak User Profile validator that ensures an attribute value is unique within a realm.",
+  "website": "https://github.com/dawidgora/keycloak-unique-attribute-validator"
+}
