@@ -1,0 +1,113 @@
+[ {
+  "number" : 49635,
+  "repository" : "keycloak",
+  "title" : "Performance issue with 26.6.2",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/49635"
+}, {
+  "number" : 51102,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.oauth.AccessTokenTest#accessTokenRequest",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/51102"
+}, {
+  "number" : 52015,
+  "repository" : "keycloak",
+  "title" : "New links errors for https://quarkus.io/guides",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/52015"
+}, {
+  "number" : 52172,
+  "repository" : "keycloak",
+  "title" : "Cached `RealmAdapter.isUserManagedAccessAllowed()` returns `isEnabled()`",
+  "kind" : "bug",
+  "area" : "infinispan",
+  "url" : "https://github.com/keycloak/keycloak/issues/52172"
+}, {
+  "number" : 52173,
+  "repository" : "keycloak",
+  "title" : "`realm_client` is computed into a client's attributes and then persisted on save",
+  "kind" : "bug",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/52173"
+}, {
+  "number" : 52233,
+  "repository" : "keycloak",
+  "title" : "Oracle 19 full client OCI driver crashes on startup since 26.6.0 — SQLFeatureNotSupportedException on setNetworkTimeout",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/52233"
+}, {
+  "number" : 52241,
+  "repository" : "keycloak",
+  "title" : "Clicking on a sub group in the admin console throws an exception",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/52241"
+}, {
+  "number" : 52283,
+  "repository" : "keycloak",
+  "title" : "Flaky test SessionRestServiceTest.testGetDevicesSessions",
+  "kind" : "bug",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/52283"
+}, {
+  "number" : 52354,
+  "repository" : "keycloak",
+  "title" : "Upgrade to Quarkus 3.33.3.2",
+  "kind" : "enhancement",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/52354"
+}, {
+  "number" : 52430,
+  "repository" : "keycloak",
+  "title" : "Flaky test: userprofile.spec.ts fails with timeout on \"no-users-found-empty-action\" in serial suite",
+  "kind" : "bug",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/52430"
+}, {
+  "number" : 52834,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-90997] Default MySQL/MariaDB row counts make stateless replay gates accept reused artifacts",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/52834"
+}, {
+  "number" : 52835,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-79651] Keycloak Unauthenticated Denial of Service via Unbounded Locale Caching",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/52835"
+}, {
+  "number" : 52836,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-74909] Incomplete fix: percent-encoded semicolon bypasses matrix parameter stripping in PathMatcher",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/52836"
+}, {
+  "number" : 52837,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-19607] Username Takeover Leading to Account Lockout",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/52837"
+}, {
+  "number" : 52838,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-17526] Privilege escalation: the \"impersonation\" role can impersonate a realm administrator",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/52838"
+}, {
+  "number" : 52839,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-18212] SAML Redirect DEFLATE helpers leak native zlib state",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/52839"
+} ]

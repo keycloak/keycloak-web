@@ -1,0 +1,40 @@
+<div>
+
+<h2>Upgrading</h2>
+<p>Before upgrading refer to <a href="https://www.keycloak.org/docs/latest/upgrading/#migration-changes">the migration guide</a> for a complete list of changes.</p>
+
+<h2>All resolved issues</h2>
+
+<h3>Security fixes</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/52834">#52834</a> [CVE-2026-90997] Default MySQL/MariaDB row counts make stateless replay gates accept reused artifacts </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52835">#52835</a> [CVE-2026-79651] Keycloak Unauthenticated Denial of Service via Unbounded Locale Caching </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52836">#52836</a> [CVE-2026-74909] Incomplete fix: percent-encoded semicolon bypasses matrix parameter stripping in PathMatcher </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52837">#52837</a> [CVE-2026-19607] Username Takeover Leading to Account Lockout </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52838">#52838</a> [CVE-2026-17526] Privilege escalation: the "impersonation" role can impersonate a realm administrator </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52839">#52839</a> [CVE-2026-18212] SAML Redirect DEFLATE helpers leak native zlib state </li>
+</ul>
+
+
+
+
+
+<h3>Enhancements</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/52354">#52354</a> Upgrade to Quarkus 3.33.3.2 <code>dist/quarkus</code></li>
+</ul>
+
+<h3>Bugs</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/49635">#49635</a> Performance issue with 26.6.2 <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51102">#51102</a> Flaky test: org.keycloak.testsuite.oauth.AccessTokenTest#accessTokenRequest <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52015">#52015</a> New links errors for https://quarkus.io/guides <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52172">#52172</a> Cached `RealmAdapter.isUserManagedAccessAllowed()` returns `isEnabled()` <code>infinispan</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52173">#52173</a> `realm_client` is computed into a client's attributes and then persisted on save <code>admin/api</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52233">#52233</a> Oracle 19 full client OCI driver crashes on startup since 26.6.0 — SQLFeatureNotSupportedException on setNetworkTimeout <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52241">#52241</a> Clicking on a sub group in the admin console throws an exception <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52283">#52283</a> Flaky test SessionRestServiceTest.testGetDevicesSessions <code>testsuite</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52430">#52430</a> Flaky test: userprofile.spec.ts fails with timeout on "no-users-found-empty-action" in serial suite <code>testsuite</code></li>
+</ul>
+
+</div>
