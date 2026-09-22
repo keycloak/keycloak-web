@@ -1,0 +1,50 @@
+:title: Speak at KeycloakCon Europe 2027 in Barcelona!
+:date: 2026-09-22
+:publish: true
+:author: Alexander Schwartz
+:preview: keycloakcon-eu-2027.png
+:summary: The Call for Papers for KeycloakCon Europe 2027 is open! Submit your talk for KeycloakCon in Barcelona on March 15, co-located with KubeCon Europe.
+
+The Call for Papers for link:https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/co-located-events/keycloakcon/[KeycloakCon Europe 2027] is now open!
+
+KeycloakCon Europe 2027 is a half-day, single-track conference in Barcelona on March 15, 2027 — co-located with KubeCon + CloudNativeCon Europe.
+After successful events in Amsterdam and Yokohama, KeycloakCon is back with talks, discussions, and community connections.
+
+== Why submit a talk?
+
+* *Full-access KubeCon pass* — Accepted speakers receive a full-access pass to KubeCon + CloudNativeCon Europe and all co-located events.
+* *Reach the Keycloak community* — Present to a focused audience of Keycloak users, contributors, and maintainers who are there specifically for identity and access management.
+* *Barcelona in March* — A great city to combine with the broader KubeCon experience running March 15-18.
+
+== What we'd love to hear about
+
+We are looking for a range of topics. Here is what the community is curious about — but don't limit yourself to this list:
+
+* How you deployed or migrated to Keycloak and what you learned along the way
+* Keycloak and AI — securing agents, MCP servers, or delegating access for automated workflows
+* Authentication standards in practice — Passkeys, OpenID Connect, Verifiable Credentials, or EU Digital Identity Wallet
+* Operating Keycloak at scale — upgrades, high availability, multi-cluster setups, and automation
+* Integrations with other CNCF projects and cloud-native infrastructure
+* Automating identity lifecycle with Workflows, SCIM provisioning, or Shared Signals
+* Compliance, audit, and governance with Keycloak
+
+If you are unsure whether your idea fits, submit it! We would rather see a creative proposal than miss out on a great talk.
+
+== Session formats
+
+* *Presentation* (25 min, 1-2 speakers) — Deep dives, case studies, or feature walkthroughs.
+* *Panel Discussion* (35 min, 3-5 speakers from at least 3 organizations) — Moderated conversations on cross-cutting topics.
+* *Lightning Talk* (10 min, 1 speaker) — Short and focused. A great option if you are speaking at a conference for the first time!
+
+The deadline for submissions is *Sunday, October 18, 2026*.
+
+link:https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/co-located-events/cfp-colocated-events/[Submit your proposal now!]
+
+== Registration
+
+KeycloakCon is included in the link:https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/register/[All-Access In-Person KubeCon + CloudNativeCon pass].
+
+== See you in Barcelona!
+
+We are building something exciting with KeycloakCon and want to hear from you — whether you are a long-time contributor or just getting started with Keycloak.
+Submit your talk, and let's make this the best KeycloakCon yet.
