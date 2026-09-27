@@ -1,0 +1,5 @@
+{
+    "name": "MASH playbook",
+    "description": "Ansible playbook to install Keycloak (and 250+ other self-hosted services) as Docker containers",
+    "website": "https://github.com/mother-of-all-self-hosting/mash-playbook/blob/main/docs/services/keycloak.md"
+}
