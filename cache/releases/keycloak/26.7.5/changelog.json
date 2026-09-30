@@ -1,0 +1,351 @@
+[ {
+  "number" : 50739,
+  "repository" : "keycloak",
+  "title" : "keycloak 26.7.0 sha1 file is missing",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/50739"
+}, {
+  "number" : 50903,
+  "repository" : "keycloak",
+  "title" : "Missing input length validation on username field causes outsized log generation in  /login-actions/authenticate",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/50903"
+}, {
+  "number" : 50996,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-16103] Incomplete fix for CVE-2026-9798 (Keycloak CIBA brute-force lockout bypass at token redemption)",
+  "kind" : "cve",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/50996"
+}, {
+  "number" : 51065,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.oauth.ClientAuthPostMethodTest#testPostAuthenticationNotAllowedWhenBasicRequested",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/51065"
+}, {
+  "number" : 51067,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.oauth.ClientAuthPostMethodTest#testBasicAuthenticationNotAllowedWhenPostRequested",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/51067"
+}, {
+  "number" : 51278,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-18206] Client policy source-host wildcard domains match non-subdomain suffixes",
+  "kind" : "cve",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/51278"
+}, {
+  "number" : 51280,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-18203] Group policy child-extension matches sibling group path prefixes",
+  "kind" : "cve",
+  "area" : "authorization-services",
+  "url" : "https://github.com/keycloak/keycloak/issues/51280"
+}, {
+  "number" : 51281,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-18207] Source-group condition matches duplicate group names and can skip negative-logic enforcement",
+  "kind" : "cve",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/51281"
+}, {
+  "number" : 51284,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-18208] Inactive out-of-audience introspection responses can include a signed JWT claim",
+  "kind" : "cve",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/51284"
+}, {
+  "number" : 51285,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-18211] Secure-client-uris localhost exception accepts localhost-prefixed attacker domains",
+  "kind" : "cve",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/51285"
+}, {
+  "number" : 51304,
+  "repository" : "keycloak",
+  "title" : "Upgrade to 26.7.0 crashes under several tested scenarios. LazyInitializationException on non-deterministic getRealmsStream() order after DB dump/restore.",
+  "kind" : "bug",
+  "area" : "infinispan",
+  "url" : "https://github.com/keycloak/keycloak/issues/51304"
+}, {
+  "number" : 51340,
+  "repository" : "keycloak",
+  "title" : "DCR: Registration access token allows protocol switch from OIDC to SAML",
+  "kind" : "weakness",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/51340"
+}, {
+  "number" : 51444,
+  "repository" : "keycloak",
+  "title" : "Cache the maven wrapper when building on GHI",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/51444"
+}, {
+  "number" : 51761,
+  "repository" : "keycloak",
+  "title" : "PAR request URI lifespan is used as a hard cap on interactive login duration",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/51761"
+}, {
+  "number" : 51778,
+  "repository" : "keycloak",
+  "title" : "[quarkus-next] BouncyCastle 1.85 breaks SAML client creation when client ID exceeds 64 characters",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/51778"
+}, {
+  "number" : 51781,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-18217] SAML Redirect Binding Parameter Pollution",
+  "kind" : "cve",
+  "area" : "saml",
+  "url" : "https://github.com/keycloak/keycloak/issues/51781"
+}, {
+  "number" : 52033,
+  "repository" : "keycloak",
+  "title" : "Improve retrieval of large read-only resources via admin API",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/52033"
+}, {
+  "number" : 52088,
+  "repository" : "keycloak",
+  "title" : "New Infinispan node joining the cluster becomes a command target/coordinator before its cache components are ready - ISPN000136 failures during Keycloak rolling restarts",
+  "kind" : "bug",
+  "area" : "infinispan",
+  "url" : "https://github.com/keycloak/keycloak/issues/52088"
+}, {
+  "number" : 52153,
+  "repository" : "keycloak",
+  "title" : "DEBUG logging breaks persistent client session locking",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/52153"
+}, {
+  "number" : 52193,
+  "repository" : "keycloak",
+  "title" : "Identity Provider Mappers - organization group targets do not resolve",
+  "kind" : "bug",
+  "area" : "organizations",
+  "url" : "https://github.com/keycloak/keycloak/issues/52193"
+}, {
+  "number" : 52257,
+  "repository" : "keycloak",
+  "title" : "Event listeners receive the wrong event type when an EventBuilder is reused (e.g. FEDERATED_IDENTITY_LINK is logged and emailed as LOGIN)",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/52257"
+}, {
+  "number" : 52309,
+  "repository" : "keycloak",
+  "title" : "Admin Permissions filtering is applied to organization lookups during end-user authentication",
+  "kind" : "bug",
+  "area" : "organizations",
+  "url" : "https://github.com/keycloak/keycloak/issues/52309"
+}, {
+  "number" : 52327,
+  "repository" : "keycloak",
+  "title" : "surefire-junit-platform not cached, causing intermittent test failures in CI",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/52327"
+}, {
+  "number" : 52329,
+  "repository" : "keycloak",
+  "title" : "Flaky test: FlowTest.testRemoveExecutionSubflow fails with stale DELETE admin event",
+  "kind" : "bug",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/52329"
+}, {
+  "number" : 52331,
+  "repository" : "keycloak",
+  "title" : "Flaky SCIM FilterTest.testFilterGroupsByMetaTimestamps due to same-millisecond timing",
+  "kind" : "bug",
+  "area" : "saml",
+  "url" : "https://github.com/keycloak/keycloak/issues/52331"
+}, {
+  "number" : 52357,
+  "repository" : "keycloak",
+  "title" : "Upgrade to Quarkus 3.33.4",
+  "kind" : "enhancement",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/52357"
+}, {
+  "number" : 52415,
+  "repository" : "keycloak",
+  "title" : "Flaky test: WebAuthnTransportLocaleTest.localizationTransportInternal fails with \"Cannot logout user\"",
+  "kind" : "bug",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/52415"
+}, {
+  "number" : 52423,
+  "repository" : "keycloak",
+  "title" : "Flaky test: MySQLDistTest fails with \"process hasn't exited\" on slow CI runners",
+  "kind" : "bug",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/52423"
+}, {
+  "number" : 52428,
+  "repository" : "keycloak",
+  "title" : "Flaky test: AttackDetectionResourceTest due to DefaultBlockingBruteForceProtector concurrent login blocking",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/52428"
+}, {
+  "number" : 52433,
+  "repository" : "keycloak",
+  "title" : "Flaky test: registration-policies.spec.ts kebab menu \"Delete\" item not found after toggle click",
+  "kind" : "bug",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/52433"
+}, {
+  "number" : 52435,
+  "repository" : "keycloak",
+  "title" : "Flaky test: timeout.spec.ts fails with \"fetch failed\" due to server not ready and hardcoded port",
+  "kind" : "bug",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/52435"
+}, {
+  "number" : 52460,
+  "repository" : "keycloak",
+  "title" : "Remove azure-cli version pin after runner image update removes apt source",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/52460"
+}, {
+  "number" : 52487,
+  "repository" : "keycloak",
+  "title" : "Managing Identity Providers in the admin UI now requires client roles in the realm",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/52487"
+}, {
+  "number" : 52490,
+  "repository" : "keycloak",
+  "title" : "Flaky Admin UI E2E test: \"Should show items on next page\" in scope.spec.ts",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/52490"
+}, {
+  "number" : 52493,
+  "repository" : "keycloak",
+  "title" : "AuroraDB IT - Create EC2 runner instance fails: RHEL 9.4 AMI deregistered",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/52493"
+}, {
+  "number" : 52531,
+  "repository" : "keycloak",
+  "title" : "CVE-2025-66021 com.googlecode.owasp-java-html-sanitizer:owasp-java-html-sanitizer",
+  "kind" : "cve",
+  "area" : "dependencies",
+  "url" : "https://github.com/keycloak/keycloak/issues/52531"
+}, {
+  "number" : 52571,
+  "repository" : "keycloak",
+  "title" : "Improve exception handling for retrieval of large read-only resources via admin API",
+  "kind" : "task",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/52571"
+}, {
+  "number" : 52692,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-89298] Confidential client secret disclosed to view-clients role via Client Registration GET",
+  "kind" : "cve",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/52692"
+}, {
+  "number" : 52712,
+  "repository" : "keycloak",
+  "title" : "WebAuthnPolicyComplianceTest.replayedCredentialRegistration is flaky due to missing sync point",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/52712"
+}, {
+  "number" : 52716,
+  "repository" : "keycloak",
+  "title" : "Flaky CI: junit-jupiter-engine not in Maven cache causes transient test failures",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/52716"
+}, {
+  "number" : 52783,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-88770] Device Authorization Grant issues tokens to brute-force-locked accounts (sibling of CVE-2026-9798)",
+  "kind" : "cve",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/52783"
+}, {
+  "number" : 52868,
+  "repository" : "keycloak",
+  "title" : "Flaky test: RecoveryAuthnCodesAuthenticatorTest#test07SetupRecoveryAuthnCodes on Chrome",
+  "kind" : "bug",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/52868"
+}, {
+  "number" : 52888,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-84939 org.freemarker:freemarker",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/52888"
+}, {
+  "number" : 52972,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-8798 org.bouncycastle:bc-fips",
+  "kind" : "cve",
+  "area" : "dependencies",
+  "url" : "https://github.com/keycloak/keycloak/issues/52972"
+}, {
+  "number" : 52974,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-13505 org.bouncycastle:bc-fips",
+  "kind" : "cve",
+  "area" : "dependencies",
+  "url" : "https://github.com/keycloak/keycloak/issues/52974"
+}, {
+  "number" : 53024,
+  "repository" : "keycloak",
+  "title" : "check-licenses.sh: shell injection via source of dependency pom.properties",
+  "kind" : "weakness",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/53024"
+}, {
+  "number" : 53054,
+  "repository" : "keycloak",
+  "title" : "ServerConfigClassOrderer comparator violates Comparable contract causing flaky CI failures",
+  "kind" : "bug",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/53054"
+}, {
+  "number" : 53069,
+  "repository" : "keycloak",
+  "title" : "Format string mismatches in logging statements cause silent argument loss and potential MissingFormatArgumentException",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/53069"
+}, {
+  "number" : 53074,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-93999] Keycloak 26.7.2: token-exchange refresh continues issuing tokens for a disabled audience client",
+  "kind" : "cve",
+  "area" : "token-exchange",
+  "url" : "https://github.com/keycloak/keycloak/issues/53074"
+}, {
+  "number" : 53340,
+  "repository" : "keycloak",
+  "title" : "ClientRedirectTest loads example.org",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/53340"
+} ]
