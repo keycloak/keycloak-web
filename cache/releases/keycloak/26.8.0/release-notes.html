@@ -1,0 +1,355 @@
+<div class="paragraph">
+<p>This release features new capabilities for users and administrators of Keycloak.
+The highlights of this release are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Issue and verify digital wallet credentials with OID4VCI and OID4VP</p>
+</li>
+<li>
+<p>Automate user provisioning across identity systems with the SCIM API</p>
+</li>
+<li>
+<p>Run multi-cluster deployments without an external cache using stateless mode (now supported)</p>
+</li>
+<li>
+<p>Simpler administration with automatic index creation, reduced memory usage, and enhanced HTTP performance</p>
+</li>
+<li>
+<p>Token exchange delegation for AI agents and automation with consent and FGAP authorization</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Read on to learn more about each new feature.
+If you are upgrading from a previous release, <a href="https://www.keycloak.org/docs/latest/upgrading/index.html">also review the changes listed in the upgrading guide</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="_security_and_standards">Security and Standards</h3>
+<div class="sect3">
+<h4 id="_verifiable_credential_issuance_promoted_to_preview_with_credential_management_and_revocation">Verifiable Credential Issuance promoted to preview with credential management and revocation</h4>
+<div class="paragraph">
+<p>The <a href="https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html">OpenID for Verifiable Credential Issuance (OID4VCI)</a> feature has been promoted from experimental to preview.
+It can now be enabled with <code>--features=preview</code> or <code>--features=oid4vc-vci</code>.</p>
+</div>
+<div class="paragraph">
+<p>Credential lifecycle management now includes revocation when refresh tokens are revoked, and a new Application Initiated Action (AIA) lets users request credential issuance within an authenticated session.
+Key attestation is configurable in the admin console with hardened x5c certificate validation following the HAIP profile.
+This release also adds experimental support for the mdoc format, provided by the new experimental feature <code>oid4vc-mdoc</code>.
+Integration guides for the Lissi and Valera wallets are available, along with documentation for SD-JWT signing key setup, credential management, and revocation.</p>
+</div>
+<div class="paragraph">
+<p>Example applications are provided in this release (for illustration, not officially supported):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/keycloak/keycloak-oauth-sig/tree/main/oid4vci-deployment">Quickstart OID4VCI deployment</a> - a playground for rapid prototyping with mdoc and SD-JWT credentials</p>
+</li>
+<li>
+<p><a href="https://github.com/keycloak/keycloak-playground/tree/main/fapi-playground#oid4vci-demo">OID4VCI Demo in Keycloak FAPI playground</a> - available to show the details of the OID4VCI protocol messages exchanged between wallet and issuer, and to illustrate advanced concepts like proofs, attestation, credential refresh, and more.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The attestation-based client authentication (<code>client-auth-abca</code>), pre-authorized code grant (<code>oid4vc-vci-preauth-code</code>), REST credential offer endpoint (<code>oid4vc-vci-rest-credential-offer</code>), and OpenID4VP (<code>oid4vc-vp</code>) remain experimental features.</p>
+</div>
+<div class="paragraph">
+<p>Many community members were involved in the development.
+Many thanks to <a href="https://github.com/Awambeng">Awambeng</a>,
+<a href="https://github.com/babisRoutis">Babis Routis</a>, <a href="https://github.com/CAOShurong">ShurongCAO</a>,
+<a href="https://github.com/Captain-P-Goldfish">Pascal Knüppel</a>, <a href="https://github.com/thomasdarimont">Thomas Darimont</a>,
+<a href="https://github.com/dominikschlosser">Dominik Schlosser</a>, <a href="https://github.com/forkimenjeckayang">forkimenjeckayang</a>,
+<a href="https://github.com/francis-pouatcha">Francis Pouatcha</a>, <a href="https://github.com/hagerm98">Hager Khamis</a>,
+<a href="https://github.com/IngridPuppet">Ingrid Kamga</a>, <a href="https://github.com/namanONcode">Naman Jain</a>,
+<a href="https://github.com/officialasishkumar">Asish Kumar</a>, <a href="https://github.com/Ogenbertrand">Ogen Bertrand</a>,
+<a href="https://github.com/pulsastrix">Hugo Hakim Damer</a>, <a href="https://github.com/r0h1tb">Rohit Behera</a>,
+<a href="https://github.com/rameshkumarkoyya">rameshkumarkoyya</a>, <a href="https://github.com/shashankxrm">Shashank RM</a>,
+<a href="https://github.com/tdiesler">Thomas Diesler</a>, <a href="https://github.com/VinodAnandan">Vinod Anandan</a>,
+<a href="https://github.com/Vitalisn4">Palpable</a> and <a href="https://github.com/wistefan">Stefan Wiedemann</a> for the contributions!</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_verify_credentials_with_oid4vp_experimental">Verify credentials with OID4VP (experimental)</h4>
+<div class="paragraph">
+<p>Organizations adopting verifiable credentials need a way to accept credential presentations from digital wallets as part of login flows, without requiring a traditional password.</p>
+</div>
+<div class="paragraph">
+<p>Keycloak can now act as an OID4VP verifier, enabling authentication flows where users present verifiable credentials from their wallets.
+The verifier supports cross-device presentation flows and the <code>direct_post.jwt</code> encrypted response mode.
+Trust material for credential verification can be delegated to an external identity provider by alias, and SD-JWT User Attribute and Session mappers are available to extract claims from presented credentials.</p>
+</div>
+<div class="paragraph">
+<p>Thanks to <a href="https://github.com/dominikschlosser">Dominik Schlosser</a> for this contribution.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_react_to_account_status_changes_with_shared_signals_framework_experimental">React to account status changes with Shared Signals Framework (experimental)</h4>
+<div class="paragraph">
+<p>The experimental Shared Signals Framework (SSF) support now emits RISC <code>account-disabled</code> and <code>account-enabled</code> event types when a user is enabled or disabled, extending coverage beyond the CAEP session and credential events that shipped in 26.7. Additionally, the event structure has been revised for better alignment with the CAEP and RISC specifications, and the admin event store no longer receives unvalidated payloads to prevent PII leakage.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see the <a href="https://www.keycloak.org/securing-apps/ssf-support">Shared Signals Framework</a> guide.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_parameterized_formerly_dynamic_scopes_preview_support_preview">Parameterized (formerly dynamic) scopes preview support (preview)</h4>
+<div class="paragraph">
+<p>Parameterized scopes (formerly known as dynamic scopes) allow clients to pass a parameter value along with the scope name in an OAuth 2.0 authorization request. This is especially useful when a scope represents an entity with a large or dynamic set of values (for example a project name like <code>project:12345</code>), preventing the need to pre-define countless individual client scopes in Keycloak.</p>
+</div>
+<div class="paragraph">
+<p>Parameterized scopes have officially moved from experimental to preview status.</p>
+</div>
+<div class="paragraph">
+<p>For more details about the feature, see the <a href="https://www.keycloak.org/docs/26.8.0/server_admin/#_parameterized_client_scopes">Server Administration Guide</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_token_exchange_delegation_with_consent_fgap_authorization_and_audit_trail_preview">Token exchange delegation with consent, FGAP authorization, and audit trail (preview)</h4>
+<div class="paragraph">
+<p>Applications such as AI agents and automation tools need limited, consent-based access to act on behalf of a user without requiring administrator privileges or exposing sensitive credentials.</p>
+</div>
+<div class="paragraph">
+<p>Users can now delegate access to a client application through OAuth consent using the new <code>delegation:client:&lt;client-id&gt;</code> parameterized scope.
+The resulting token includes an <code>act</code> claim identifying the client as the actor.
+Unlike admin-user delegation, client delegation does not grant Admin API access even if the client holds service account credentials, ensuring that a leaked delegation token cannot escalate privileges.
+The <code>delegation:user</code> and <code>delegation:client</code> client scopes are now auto-created as Optional scopes in all realms, and delegation authorization is controlled exclusively through Fine-Grained Admin Permissions V2 using the <code>delegate</code> and <code>delegate-members</code> scopes.
+Delegation audit events now include the client identity, and standard token exchange rejects subject tokens carrying delegation claims to prevent bypass.
+A new client policy executor allows administrators to restrict the <code>may_act</code> claim in access tokens, giving per-client control over which clients can participate in delegation.</p>
+</div>
+<div class="paragraph">
+<p>Token exchange delegation support status is now preview.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see the <a href="https://www.keycloak.org/securing-apps/token-exchange#_token-exchange-delegation">Token exchange delegation</a> section.</p>
+</div>
+<div class="sect4">
+<h5 id="_track_impersonation_across_token_lifecycle_and_downstream_services">Track impersonation across token lifecycle and downstream services</h5>
+<div class="paragraph">
+<p>When an administrator impersonates a user, downstream resource servers and audit systems had no reliable way to identify that a token was issued under impersonation or who the impersonator was.</p>
+</div>
+<div class="paragraph">
+<p>Token lifecycle events (<code>CODE_TO_TOKEN</code>, <code>REFRESH_TOKEN</code>, and others) are now enriched with <code>impersonator</code> and <code>impersonator_id</code> details, providing a complete audit trail across all token operations performed under impersonation.
+Additionally, tokens issued from impersonation sessions now include the <code>act</code> (actor) claim (<a href="https://datatracker.ietf.org/doc/html/rfc8693#section-4.1">RFC 8693 Section 4.1</a>) in both access tokens and ID tokens, allowing downstream resource servers to identify the impersonator.
+The claim is always present and cannot be disabled.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_secure_client_cluster_node_registration">Secure client cluster node registration</h4>
+<div class="paragraph">
+<p>A new client policy executor, <code>secure-client-node-hostname</code>, is available to protect against server-side request forgery (SSRF) via the legacy adapter cluster node registration endpoint (<code>/clients-managements/register-node</code>).
+A confidential client could previously register an attacker-chosen hostname, which Keycloak would later use as the destination for management callbacks such as logout propagation and push-revocation.</p>
+</div>
+<div class="paragraph">
+<p>When the executor is attached to a client policy, node hostnames are validated against an administrator-configured list of regex patterns before being persisted. Registrations that do not match any pattern are rejected.</p>
+</div>
+<div class="paragraph">
+<p><strong>This protection is opt-in and must be explicitly configured to take effect.</strong></p>
+</div>
+<div class="paragraph">
+<p>Administrators managing deployments that use the legacy adapter node registration feature should add the <code>secure-client-node-hostname</code> executor to a client policy and configure the allowed hostname patterns.
+Hostname patterns match against DNS hostnames and IPv4 addresses. Port suffixes are always rejected. Patterns are matched against the bare hostname or IP address.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_administration">Administration</h3>
+<div class="sect3">
+<h4 id="_declarative_client_management_with_admin_api_v2_preview">Declarative client management with Admin API v2 (preview)</h4>
+<div class="paragraph">
+<p>The Client Admin API v2, introduced as an experimental feature in Keycloak 26.7, has been promoted to preview.
+It can now be enabled with <code>--features=preview</code> or <code>--features=client-admin-api:v2</code>.</p>
+</div>
+<div class="paragraph">
+<p>The API provides strict validation, declarative configuration, and an accurate OpenAPI specification for managing OIDC and SAML clients.
+It can be consumed through a Java client, an auto-generated JavaScript client, and a CLI, and the Keycloak Operator uses it to manage clients declaratively via the <code>KeycloakOIDCClient</code> and <code>KeycloakSAMLClient</code> custom resources.</p>
+</div>
+<div class="paragraph">
+<p>The Operator&#8217;s <code>KeycloakOIDCClient</code> and <code>KeycloakSAMLClient</code> custom resources were also promoted to Preview.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see the <a href="https://www.keycloak.org/admin-api/admin-api-v2">Admin API v2</a> guide and the <a href="https://www.keycloak.org/operator/managing-clients">Managing Keycloak Clients</a> operator guide. Feedback is welcome!</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_client_secret_rotation_supported">Client Secret Rotation (supported)</h4>
+<div class="paragraph">
+<p>Rotating client secrets in production without downtime required manual coordination and risked service interruptions if the old secret was invalidated before all consumers switched to the new one.</p>
+</div>
+<div class="paragraph">
+<p>Client Secret Rotation allows confidential clients to rotate their secrets through client policies, keeping up to two concurrently active secrets for seamless rotation without downtime.
+Administrators can plan the rotation schedule and anticipate when applications need to adopt the new secret, reducing the risk of secret leakage.</p>
+</div>
+<div class="paragraph">
+<p>In this release, Client Secret Rotation is promoted from preview to supported.
+For more details, see the <a href="https://www.keycloak.org/docs/26.8.0/server_admin/#_secret_rotation">Server Administration Guide</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_invite_users_automatically_with_workflows">Invite users automatically with workflows</h4>
+<div class="paragraph">
+<p>Sending invitation emails to newly created users previously required external automation or a call to the Admin REST API&#8217;s <code>execute-actions-email</code> endpoint.</p>
+</div>
+<div class="paragraph">
+<p>The new <code>invite-user</code> workflow step sends an action-token email automatically when a user is created, without requiring external tooling or a custom workflow step provider.
+Administrators can configure which required actions the user must complete (defaulting to password update and email verification), and optionally specify a client and redirect URI for the post-completion flow.</p>
+</div>
+<div class="paragraph">
+<p>For details, see the <a href="https://www.keycloak.org/docs/26.8.0/server_admin/#_workflow_steps_">Defining Steps</a> guide.</p>
+</div>
+<div class="paragraph">
+<p>Thanks to <a href="https://github.com/bilkoua">bilkoua</a> for this contribution.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_protocol_mapper_allow_list_for_admin_rest_api">Protocol mapper allow-list for Admin REST API</h4>
+<div class="paragraph">
+<p>Client Policies now provide the <code>allowed-protocol-mappers</code> executor to restrict protocol mapper types that can be created or updated through the dedicated Admin REST API protocol mapper endpoints.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_scim_api_supported">SCIM API (supported)</h4>
+<div class="paragraph">
+<p>The SCIM (System for Cross-domain Identity Management) API provides a standards-based interface for managing users and groups within a realm. It enables seamless integration with identity management systems and applications that support the SCIM protocol.</p>
+</div>
+<div class="paragraph">
+<p>In this release, the SCIM API is promoted from preview to supported. The SCIM API received extensive improvements including support for multivalued user attributes, User Profile permissions, Fine-Grained Admin Permissions in search filters, and improved performance for large user bases.
+For more details, see the <a href="https://www.keycloak.org/docs/26.8.0/server_admin/#_managing_scim">Managing users and groups through SCIM</a> documentation.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_configuring_and_running">Configuring and Running</h3>
+<div class="sect3">
+<h4 id="_multi_cluster_v2_supported">Multi-cluster v2 (supported)</h4>
+<div class="paragraph">
+<p>Multi-cluster v2 enables connecting two or more Keycloak clusters without an external Infinispan cluster by using the <code>stateless</code> feature.
+Session data is stored in the database, simplifying the deployment architecture compared to multi-cluster v1.</p>
+</div>
+<div class="paragraph">
+<p>In this release, multi-cluster v2 and the <code>stateless</code> feature are promoted from preview to supported.
+The feature is disabled by default and can be enabled with <code>--features=stateless</code>.
+A new deployment guide for bare-metal and VM environments is now available alongside the existing Kubernetes guide.
+For more details, see &lt;@links.ha id="multi-cluster-v2-introduction" /&gt;.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_multi_cluster_v1_deprecated">Multi-cluster v1 (deprecated)</h4>
+<div class="paragraph">
+<p>Multi-cluster v1 (the <code>multi-site</code> feature) is deprecated and will be removed in a future major release.
+Multi-cluster v2, which uses the <code>stateless</code> feature, is the recommended replacement.
+It simplifies the deployment architecture by eliminating the external Infinispan cluster and its cross-site replication.</p>
+</div>
+<div class="paragraph">
+<p>If you are using <code>--features=multi-site</code>, migrate to <code>--features=stateless</code>.
+For migration instructions, see <a href="https://www.keycloak.org/high-availability/multi-cluster-v2/migrate-from-v1-to-v2">Migrating from multi-cluster v1 to v2</a> in the High Availability Guide.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_support_for_encrypted_pem_files_for_tls_certificate_and_private_key">Support for encrypted PEM files for TLS certificate and private key</h4>
+<div class="paragraph">
+<p>Deploying Keycloak with encrypted private keys previously required converting them to an unencrypted format or using a keystore, adding operational complexity.</p>
+</div>
+<div class="paragraph">
+<p>Keycloak now supports encrypted PKCS#8 private keys in PEM format for HTTPS configuration.
+Use the new <code>--https-certificate-key-file-password</code> option to provide the decryption password.
+The management interface also supports this via <code>--https-management-certificate-key-file-password</code>.
+For details, see &lt;@links.server id="enabletls"/&gt;.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_login_failures_now_stored_in_the_database">Login failures now stored in the database</h4>
+<div class="paragraph">
+<p>Brute force detection data is now persisted in the database by default, so temporarily locked-out users remain locked out across cluster restarts.
+Deployments using the <code>multi-site</code> or <code>clusterless</code> features continue to store login failures in the external Infinispan cluster.
+The previous in-memory behavior is available as <code>login-failures:v1</code> but is deprecated.
+For details, see the <a href="https://www.keycloak.org/docs/26.8.0/upgrading/">Upgrading Guide</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_first_class_cli_options_for_cluster_and_node_name">First-class CLI options for cluster and node name</h4>
+<div class="paragraph">
+<p>The embedded cache cluster name and node name can now be configured with the new <code>--cache-embedded-cluster-name</code> and <code>--cache-embedded-node-name</code> CLI options, replacing the low-level SPI options that were previously required.</p>
+</div>
+<div class="paragraph">
+<p>By default, the node name is a random value generated on each start, making it difficult to correlate metrics, logs, and JGroups diagnostics across restarts.
+Setting a stable node name is especially useful for observability tools such as Grafana dashboards and log aggregation.</p>
+</div>
+<div class="paragraph">
+<p>When deploying with the Keycloak Operator, the node name is now automatically set to the Kubernetes pod name (for example, <code>keycloak-0</code>).
+For standalone deployments on Kubernetes, set <code>KC_CACHE_EMBEDDED_NODE_NAME</code> using the downward API to inject the pod name.
+For non-Kubernetes deployments, pass <code>--cache-embedded-node-name=&lt;name&gt;</code> with a value that uniquely identifies each node.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_automatic_non_blocking_index_creation_for_large_tables">Automatic non-blocking index creation for large tables</h4>
+<div class="paragraph">
+<p>When upgrading Keycloak with large database tables, index creation was previously skipped during schema migration to avoid blocking startup.
+Operators had to create the missing indexes manually.</p>
+</div>
+<div class="paragraph">
+<p>Keycloak now automatically creates skipped indexes in the background after startup using non-blocking index creation on PostgreSQL, Oracle, MySQL/MariaDB, and supported Microsoft SQL Server editions.
+Invalid PostgreSQL indexes left by failed previous attempts are detected and recreated automatically.
+On databases without non-blocking support, Keycloak continues to log the SQL for manual execution.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_vert_x_based_outbound_http_client_experimental">Vert.x-based outbound HTTP client (experimental)</h4>
+<div class="paragraph">
+<p>Keycloak uses the Apache HTTP Client for all outgoing connections to external services such as identity providers, OCSP responders, and backchannel logout endpoints.
+As Keycloak already runs on Vert.x/Netty for inbound traffic, using a separate HTTP stack for outbound connections adds unnecessary complexity and dependency overhead.</p>
+</div>
+<div class="paragraph">
+<p>Keycloak now provides an experimental Vert.x-based HTTP client that replaces the Apache HTTP Client with Vert.x/Netty for all outgoing connections.
+To enable it, start Keycloak with <code>--features=http-client:v2</code>.</p>
+</div>
+<div class="paragraph">
+<p>When enabled, all outgoing HTTP traffic uses the Vert.x HTTP client.
+Existing configuration options work the same way.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see the <a href="https://www.keycloak.org/server/outgoinghttp">Configuring outgoing HTTP requests</a> guide.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_helm_chart_operator_install_experimental">Helm Chart Operator install (experimental)</h4>
+<div class="paragraph">
+<p>Keycloak now releases an experimental Helm chart to install the Operator.</p>
+</div>
+<div class="paragraph">
+<p>For installation instructions, see the <a href="https://www.keycloak.org/guides#operator">Operator  Guide</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_organizations">Organizations</h3>
+<div class="sect3">
+<h4 id="_shared_identity_providers_across_organizations">Shared identity providers across organizations</h4>
+<div class="paragraph">
+<p>Identity providers can now be linked to multiple organizations, enabling scenarios such as a single corporate identity provider serving users across different business units or subsidiaries, each represented as a separate organization. Each identity provider link carries its own auto-membership and membership type configuration, allowing fine-grained control over how users are onboarded per organization.</p>
+</div>
+<div class="paragraph">
+<p>Domain routing has been moved from the identity provider to the domain entity. Each domain can independently specify which identity provider handles authentication and whether users are auto-redirected. The domain gate ensures cross-organization isolation&#8201;&#8212;&#8201;a user is only auto-added to an organization that claims their email domain, even when multiple organizations share the same identity provider.</p>
+</div>
+<div class="paragraph">
+<p>New identity provider links created after upgrading default to the Unmanaged membership type. Existing links are migrated with the Managed type to preserve previous behavior.</p>
+</div>
+<div class="paragraph">
+<p>For setup instructions and common configuration patterns, see <a href="https://www.keycloak.org/docs/26.8.0/server_admin/#common-organization-setup-recipes_server_administration_guide">Common setup recipes</a> in the Server Administration Guide. For migration details, see the <a href="https://www.keycloak.org/docs/26.8.0/upgrading/">Upgrading Guide</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_themes">Themes</h3>
+<div class="sect3">
+<h4 id="_redesigned_identity_provider_buttons_on_the_login_page">Redesigned identity provider buttons on the login page</h4>
+<div class="paragraph">
+<p>The social identity provider section on the login page has been refreshed with updated icons, a new divider layout, and improved button labels.</p>
+</div>
+<div class="paragraph">
+<p>If you have a custom login theme, see the <a href="https://www.keycloak.org/docs/26.8.0/upgrading/">Upgrading Guide</a> for details on what changed.</p>
+</div>
+</div>
+</div>
