@@ -15,8 +15,6 @@ guides:
     title: UI Customization
   - id: admin-api
     title: Admin API
-  - id: migration
-    title: Migration
 
 sources:
   - id: keycloak
