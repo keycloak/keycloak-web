@@ -15,7 +15,8 @@
 
         <version.github-api>1.330</version.github-api>
         <version.freemarker>2.3.35</version.freemarker>
-        <version.asciidoctorj>2.5.2</version.asciidoctorj>
+        <!-- Do not upgrade past 2.5.11 until deploy-aws-accelerator-loadbalancer.adoc and deploy-infinispan-kubernetes-crossdc.adoc have been fixed for the callout numbering regression in Asciidoctor 2.0.22+ -->
+        <version.asciidoctorj>2.5.11</version.asciidoctorj>
         <version.jackson-core>2.22.3</version.jackson-core>
         <version.commons-io>2.14.0</version.commons-io>
         <version.commons-compress>1.26.0</version.commons-compress>
