@@ -18,7 +18,7 @@ concurrency:
 jobs:
   build:
     concurrency: publish-to-website
-    if: github.repository == 'keycloak/keycloak-web'
+    if: github.repository == 'keycloak/keycloak-web' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
 
     steps:
