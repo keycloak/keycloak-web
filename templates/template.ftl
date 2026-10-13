@@ -44,11 +44,11 @@
     <link rel="icon" type="image/vnd.microsoft.icon" href="${links.getResource('favicon.ico')}">
     <link rel="icon" type="image/svg+xml" href="${links.getResource('favicon.svg')}">
 
-    <#if importMap?has_content><script type="importmap">${importMap}</script></#if>
+    <#if importMap?has_content><script type="importmap">${importMap?no_esc}</script></#if>
     <#if rss><link rel="alternate" type="application/rss+xml" title="Keycloak's Blog" href="${links.getRss()}"></#if>
     <#if jsonLd?has_content>
     <script type="application/ld+json">
-        ${jsonLd}
+        ${jsonLd?no_esc}
     </script>
     </#if>
 </#compress>

@@ -1,6 +1,7 @@
 package org.keycloak.webbuilder.utils;
 
 import freemarker.cache.NullCacheStorage;
+import freemarker.core.HTMLOutputFormat;
 import freemarker.template.Configuration;
 import freemarker.template.DefaultObjectWrapperBuilder;
 import freemarker.template.Template;
@@ -29,6 +30,7 @@ public class FreeMarker {
         cfg.setDefaultEncoding("UTF-8");
         cfg.setTemplateExceptionHandler(TemplateExceptionHandler.RETHROW_HANDLER);
         cfg.setLogTemplateExceptions(false);
+        cfg.setOutputFormat(HTMLOutputFormat.INSTANCE);
         cfg.setCacheStorage(new NullCacheStorage());
     }
 
