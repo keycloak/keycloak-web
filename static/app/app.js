@@ -8,6 +8,19 @@ function init() {
 
     var conf = loadConfig();
 
+    if (conf.url) {
+        try {
+            var parsedUrl = new URL(conf.url);
+            if (parsedUrl.protocol !== 'http:' && parsedUrl.protocol !== 'https:') {
+                console.warn('Rejected URL with non-HTTP(S) scheme');
+                delete conf.url;
+            }
+        } catch (e) {
+            console.warn('Invalid URL');
+            delete conf.url;
+        }
+    }
+
     if (conf.url && conf.realm && conf.client) {
         var keycloak = new Keycloak({
             url: conf.url,
