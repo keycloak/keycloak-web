@@ -89,7 +89,7 @@
       </ul>
       <a class="d-none d-lg-block" href="https://github.com/keycloak/keycloak"><img src="${links.getResource('images/stars-large.svg')}" style="height: 25px; aspect-ratio: ${projectStars.aspectRatioLarge}" alt="GitHub stars"/></a>
     </div>
-    <div class="d-block d-sm-none d-md-block d-lg-none text-center vw-100">
+    <div class="d-block d-lg-none text-center vw-100">
         <a class="nav-link d-inline p-0" href="https://github.com/keycloak/keycloak"><img src="${links.getResource('images/stars-large.svg')}" style="height: 25px; aspect-ratio: ${projectStars.aspectRatioLarge}" alt="GitHub stars"/></a>
     </div>
 </nav>
