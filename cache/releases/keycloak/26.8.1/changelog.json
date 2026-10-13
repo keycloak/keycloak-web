@@ -1,0 +1,456 @@
+[ {
+  "number" : 49009,
+  "repository" : "keycloak",
+  "title" : "DockerEndpoint does not validate invalidRequestMessage after parsing authorization request",
+  "kind" : "weakness",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/49009"
+}, {
+  "number" : 49786,
+  "repository" : "keycloak",
+  "title" : "Organizations: Invitation link can be used by multiple users due to missing single-use check",
+  "kind" : "weakness",
+  "area" : "organizations",
+  "url" : "https://github.com/keycloak/keycloak/issues/49786"
+}, {
+  "number" : 50945,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-15943] OIDC identity provider update reuses masked client secret after token URL changes",
+  "kind" : "cve",
+  "area" : "identity-brokering",
+  "url" : "https://github.com/keycloak/keycloak/issues/50945"
+}, {
+  "number" : 51268,
+  "repository" : "keycloak",
+  "title" : "Group members endpoint sometimes returns 200 and empty list instead of 500 when DB is down",
+  "kind" : "bug",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/51268"
+}, {
+  "number" : 51312,
+  "repository" : "keycloak",
+  "title" : "refresh-vs-revoke race in strict mode (revokeRefreshToken=true) defeats token revocation",
+  "kind" : "weakness",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/51312"
+}, {
+  "number" : 51381,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-18569] OIDC broker backchannel logout accepts unsigned forged logout tokens when signature validation is disabled",
+  "kind" : "cve",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/51381"
+}, {
+  "number" : 51887,
+  "repository" : "keycloak",
+  "title" : "Username enumeration via empty-password timing",
+  "kind" : "weakness",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/51887"
+}, {
+  "number" : 52063,
+  "repository" : "keycloak",
+  "title" : "Ensure max consumed respone  size is respected for OCSP and CRLs",
+  "kind" : "weakness",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/52063"
+}, {
+  "number" : 52139,
+  "repository" : "keycloak",
+  "title" : "Client sessions attached to offline user sessions via token exchange are created with OFFLINE_FLAG=0, causing orphaned OFFLINE_CLIENT_SESSION rows",
+  "kind" : "bug",
+  "area" : "token-exchange",
+  "url" : "https://github.com/keycloak/keycloak/issues/52139"
+}, {
+  "number" : 52321,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-82968] Persistent wrong-account linking through null / GitHub identity provider",
+  "kind" : "cve",
+  "area" : "identity-brokering",
+  "url" : "https://github.com/keycloak/keycloak/issues/52321"
+}, {
+  "number" : 52362,
+  "repository" : "keycloak",
+  "title" : "HttpServerUtil.sendResponse drops the headers it is given",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/52362"
+}, {
+  "number" : 52449,
+  "repository" : "keycloak",
+  "title" : "Organization invite: link in the plain-text part of the email is HTML-escaped and unusable",
+  "kind" : "bug",
+  "area" : "organizations",
+  "url" : "https://github.com/keycloak/keycloak/issues/52449"
+}, {
+  "number" : 52680,
+  "repository" : "keycloak",
+  "title" : "Kerberos TRACE logging records complete SPNEGO credentials",
+  "kind" : "weakness",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/52680"
+}, {
+  "number" : 52792,
+  "repository" : "keycloak",
+  "title" : "Authenticator Reference is incorrectly masked after CVE-2026-16104 fix",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/52792"
+}, {
+  "number" : 52927,
+  "repository" : "keycloak",
+  "title" : "Admin Console \"Sign out\" on one user session unexpectedly logs out a different, unrelated session for the same user",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/52927"
+}, {
+  "number" : 52982,
+  "repository" : "keycloak",
+  "title" : "Non-critical X.509 KeyUsage mismatch bypasses authentication policy",
+  "kind" : "weakness",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/52982"
+}, {
+  "number" : 52984,
+  "repository" : "keycloak",
+  "title" : "SimpleHttpResponse connection pool leak in identity brokering flows",
+  "kind" : "weakness",
+  "area" : "identity-brokering",
+  "url" : "https://github.com/keycloak/keycloak/issues/52984"
+}, {
+  "number" : 53029,
+  "repository" : "keycloak",
+  "title" : "Token introspection omits act claim for token-exchange delegation tokens",
+  "kind" : "bug",
+  "area" : "token-exchange",
+  "url" : "https://github.com/keycloak/keycloak/issues/53029"
+}, {
+  "number" : 53057,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-94001] Admin credential DELETE bypasses denied reset-password permission",
+  "kind" : "cve",
+  "area" : "admin/fine-grained-permissions",
+  "url" : "https://github.com/keycloak/keycloak/issues/53057"
+}, {
+  "number" : 53060,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-94000] A delegated admin with only `manage-users` can become `realm-admin` by joining (or being created into) a group that maps an admin role",
+  "kind" : "cve",
+  "area" : "admin/fine-grained-permissions",
+  "url" : "https://github.com/keycloak/keycloak/issues/53060"
+}, {
+  "number" : 53070,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-94218] 2FA setup enforcement bypass via /realms/{realm}/login-actions/restart — #YWH-PGM40475-254",
+  "kind" : "cve",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/53070"
+}, {
+  "number" : 53071,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-94215] Cross-realm realm resource read/write via per-request session-level cache in RealmCacheSession",
+  "kind" : "cve",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/53071"
+}, {
+  "number" : 53072,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-94213] Missing user view authorization in the Authorization Services policy evaluation endpoint, possible incomplete fix of CVE-2026-37978",
+  "kind" : "cve",
+  "area" : "authorization-services",
+  "url" : "https://github.com/keycloak/keycloak/issues/53072"
+}, {
+  "number" : 53073,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-94217] UMA scope merge across resource owners via name collision in resolveResourcePermission",
+  "kind" : "cve",
+  "area" : "authorization-services",
+  "url" : "https://github.com/keycloak/keycloak/issues/53073"
+}, {
+  "number" : 53079,
+  "repository" : "keycloak",
+  "title" : "Dynamic client registration self-enables privileged SSF event access",
+  "kind" : "weakness",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/53079"
+}, {
+  "number" : 53111,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-96446] Security vulnerability in Keycloak 26.7.3 — PAR single-use bypass via prompt=none",
+  "kind" : "cve",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/53111"
+}, {
+  "number" : 53112,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-96445] Conditional OTP trusts skip headers on untrusted proxy paths",
+  "kind" : "cve",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/53112"
+}, {
+  "number" : 53116,
+  "repository" : "keycloak",
+  "title" : "SAML SLO: unauthenticated arbitrary session termination via LogoutRequest (SessionIndex)",
+  "kind" : "weakness",
+  "area" : "saml",
+  "url" : "https://github.com/keycloak/keycloak/issues/53116"
+}, {
+  "number" : 53142,
+  "repository" : "keycloak",
+  "title" : "Realm settings - security defenses",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/53142"
+}, {
+  "number" : 53158,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-97177] Generic user update bypasses denied reset-password permission",
+  "kind" : "cve",
+  "area" : "admin/fine-grained-permissions",
+  "url" : "https://github.com/keycloak/keycloak/issues/53158"
+}, {
+  "number" : 53159,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-95503] Potential KDC spoofing attack when Kerberos password authentication is enabled",
+  "kind" : "cve",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/53159"
+}, {
+  "number" : 53160,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-97311] Broken access control in Admin REST API: roles/{role-name}/groups discloses groups the caller cannot view (incomplete fix of the 26.7.2 hardening)",
+  "kind" : "cve",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/53160"
+}, {
+  "number" : 53187,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-97846] Standard Token Exchange bypasses required mTLS certificate binding and issues an active bearer token when no client certificate is supplied",
+  "kind" : "cve",
+  "area" : "token-exchange/standard",
+  "url" : "https://github.com/keycloak/keycloak/issues/53187"
+}, {
+  "number" : 53338,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-101333] Unbounded metric series creation via idp tag on broker login endpoint",
+  "kind" : "cve",
+  "area" : "observability",
+  "url" : "https://github.com/keycloak/keycloak/issues/53338"
+}, {
+  "number" : 53354,
+  "repository" : "keycloak",
+  "title" : "SAML broker HTTP-Redirect binding: query-string signature is verified over a different SAMLResponse than the one processed (';' parameter separator) - unauthenticated login as an arbitrary user (ANT-2026-HQ54RPF9)",
+  "kind" : "weakness",
+  "area" : "identity-brokering",
+  "url" : "https://github.com/keycloak/keycloak/issues/53354"
+}, {
+  "number" : 53370,
+  "repository" : "keycloak",
+  "title" : "RoleSelect lost its undefined guard on form values, so Permissions → Evaluation crashes when Roles is selected",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/53370"
+}, {
+  "number" : 53388,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-91777 com.fasterxml.jackson.core:jackson-databind",
+  "kind" : "cve",
+  "area" : "dependencies",
+  "url" : "https://github.com/keycloak/keycloak/issues/53388"
+}, {
+  "number" : 53393,
+  "repository" : "keycloak",
+  "title" : "Multiple CVEs in tools.jackson.core:jackson-databind",
+  "kind" : "cve",
+  "area" : "dependencies",
+  "url" : "https://github.com/keycloak/keycloak/issues/53393"
+}, {
+  "number" : 53402,
+  "repository" : "keycloak",
+  "title" : "Protostream non-breaking changes",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/53402"
+}, {
+  "number" : 53417,
+  "repository" : "keycloak",
+  "title" : "FGAP v2 custom role injection via oidc-hardcoded-role-mapper bypasses removeTransientAdminRoles (incomplete fix for CVE-2026-4629) ",
+  "kind" : "weakness",
+  "area" : "admin/fine-grained-permissions",
+  "url" : "https://github.com/keycloak/keycloak/issues/53417"
+}, {
+  "number" : 53419,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-103884] Path traversal via X.509 CRL Distribution Point - client-supplied CRL path escapes $KC_HOME/conf",
+  "kind" : "cve",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/53419"
+}, {
+  "number" : 53422,
+  "repository" : "keycloak",
+  "title" : "Fixing docs references",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/53422"
+}, {
+  "number" : 53430,
+  "repository" : "keycloak",
+  "title" : "Rotated-out client JWKS key and CRL stays valid on all but one node (keys cache invalidation event has no listener)",
+  "kind" : "weakness",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/53430"
+}, {
+  "number" : 53467,
+  "repository" : "keycloak",
+  "title" : "Flaky Admin UI E2E: 'should add OIDC mapper of type Attribute Importer' times out waiting for navigation",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/53467"
+}, {
+  "number" : 53471,
+  "repository" : "keycloak",
+  "title" : "Regression with Trust Email when the userinfo endpoint is used",
+  "kind" : "bug",
+  "area" : "identity-brokering",
+  "url" : "https://github.com/keycloak/keycloak/issues/53471"
+}, {
+  "number" : 53494,
+  "repository" : "keycloak",
+  "title" : "SimpleHttpResponse: connection pool leak on invalid charset and case-sensitive Content-Encoding check",
+  "kind" : "weakness",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/53494"
+}, {
+  "number" : 53505,
+  "repository" : "keycloak",
+  "title" : "Broken link to FIPS documentation",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/53505"
+}, {
+  "number" : 53556,
+  "repository" : "keycloak",
+  "title" : "MC-V2 Doc refinement",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/53556"
+}, {
+  "number" : 53567,
+  "repository" : "keycloak",
+  "title" : "Broken link to vault documentation in downstream",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/53567"
+}, {
+  "number" : 53569,
+  "repository" : "keycloak",
+  "title" : "Fix broken link to migrating the database in downstream",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/53569"
+}, {
+  "number" : 53571,
+  "repository" : "keycloak",
+  "title" : "Broken link in Operator Guide",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/53571"
+}, {
+  "number" : 53582,
+  "repository" : "keycloak",
+  "title" : "Multiple CVEs in simple-git",
+  "kind" : "cve",
+  "area" : "dependencies",
+  "url" : "https://github.com/keycloak/keycloak/issues/53582"
+}, {
+  "number" : 53597,
+  "repository" : "keycloak",
+  "title" : "Add .cveignore.yaml file to all active branches",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/53597"
+}, {
+  "number" : 53624,
+  "repository" : "keycloak",
+  "title" : "Multiple link issues including incorrect names and upstream only coding",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/53624"
+}, {
+  "number" : 53643,
+  "repository" : "keycloak",
+  "title" : "GitHub Actions should not run on push to `tmp/**` branches",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/53643"
+}, {
+  "number" : 53653,
+  "repository" : "keycloak",
+  "title" : "Flaky test: Admin UI E2E flows.spec.ts 'sets as default in action menu' fails on Firefox with strict mode violation",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/53653"
+}, {
+  "number" : 53659,
+  "repository" : "keycloak",
+  "title" : "Flaky test: initial-access.spec.ts 'Initial access token' fails with TypeError on table data read",
+  "kind" : "cve",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/53659"
+}, {
+  "number" : 53660,
+  "repository" : "keycloak",
+  "title" : "Flaky test: main.spec.ts 'Enable/disable help mode in desktop mode' fails with help label still visible",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/53660"
+}, {
+  "number" : 53665,
+  "repository" : "keycloak",
+  "title" : "Flaky test: PauseTest.testPause times out on slow runners — no wait for operator readiness",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/53665"
+}, {
+  "number" : 53674,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-107121] SMTP starttls=true permits plaintext credential and message downgrade",
+  "kind" : "cve",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/53674"
+}, {
+  "number" : 53693,
+  "repository" : "keycloak",
+  "title" : "FGAP v2: non-imported LDAP users returned in search results for query-users-only delegated admins",
+  "kind" : "weakness",
+  "area" : "admin/fine-grained-permissions",
+  "url" : "https://github.com/keycloak/keycloak/issues/53693"
+}, {
+  "number" : 53757,
+  "repository" : "keycloak",
+  "title" : "Broken EntityManager API link fails ExternalLinksTest",
+  "kind" : "bug",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/53757"
+}, {
+  "number" : 53824,
+  "repository" : "keycloak",
+  "title" : "JGroups certificate reload blocks the view handling thread and hides task failures",
+  "kind" : "bug",
+  "area" : "infinispan",
+  "url" : "https://github.com/keycloak/keycloak/issues/53824"
+}, {
+  "number" : 53825,
+  "repository" : "keycloak",
+  "title" : "JGroups TCP sends to healthy nodes are blocked by an unreachable node when virtual threads are disabled",
+  "kind" : "bug",
+  "area" : "infinispan",
+  "url" : "https://github.com/keycloak/keycloak/issues/53825"
+}, {
+  "number" : 53856,
+  "repository" : "keycloak",
+  "title" : "JsonFileImport198MigrationTest fails: realm certificate expired on 2026-10-12",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/53856"
+} ]
