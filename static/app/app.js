@@ -40,7 +40,7 @@ function init() {
                 } else {
                     name = keycloak.tokenParsed.preferred_username;
                 }
-                document.getElementById('user-details').innerHTML = name;
+                document.getElementById('user-details').textContent = name;
                 hide('login');
                 show('logout')
                 show('display-user');
