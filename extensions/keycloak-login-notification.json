@@ -1,0 +1,5 @@
+{
+  "name": "Keycloak login notification",
+  "description": "This Keycloak Event Listener SPI sends a security email when a user creates a new Keycloak user session. The message includes the login time, IP address, client ID, and HTTP User-Agent (the browser/device description).",
+  "website": "https://github.com/sea-watch/keycloak-login-notification"
+}

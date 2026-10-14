@@ -9,6 +9,7 @@ import org.keycloak.webbuilder.npm.Version;
 import org.keycloak.webbuilder.utils.JsonParser;
 
 import java.io.File;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
@@ -31,7 +32,7 @@ public class AppBuilder extends AbstractBuilder {
 
     private void installPackage(String name, String version) throws Exception {
         // Resolve installation path and create directories.
-        Path installationPath = context.getTargetDir().toPath().resolve("vendor").resolve(name);
+        Path installationPath = context.getTargetDir().toPath().resolve("vendor").resolve(name).normalize();
         Files.createDirectories(installationPath);
 
         // Get package contents as tarball stream.
@@ -57,8 +58,16 @@ public class AppBuilder extends AbstractBuilder {
                     continue;
                 }
 
-                // Resolve target path and copy file.
-                Path targetPath = installationPath.resolve(entryPath);
+                // Resolve target path, normalize to eliminate traversal, and verify containment.
+                Path targetPath = installationPath.resolve(entryPath).normalize();
+                if (!targetPath.startsWith(installationPath)) {
+                    throw new IOException("Archive entry escapes installation directory: " + entry.getName());
+                }
+
+                if (entry.isDirectory()) {
+                    continue;
+                }
+
                 Files.createDirectories(targetPath.getParent());
                 Files.copy(tarball, targetPath, StandardCopyOption.REPLACE_EXISTING);
             }

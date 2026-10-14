@@ -64,23 +64,8 @@ public class ChangelogBuilder extends AbstractBuilder {
                         Map<Integer, GHIssue> ghIssues = new HashMap<>();
                         List<String> queries = new LinkedList<>();
 
-                        if (source.isMainProject()) {
-                            // Query all Keycloak projects only for the main project.
-                            queries.add("org:keycloak");
 
-                            // For the main project query all repositories except the ones explicitly listed as separately versioned.
-                            List<String> ignoredRepos = context.getReleasesMetadata().getSources()
-                                    .stream()
-                                    .filter(s -> !s.isMainProject())
-                                    .map(s -> "-repo:" + s.getRepo())
-                                    .collect(Collectors.toList());
-
-                            queries.addAll(ignoredRepos);
-                        } else {
-                            // Only query the currently active repo if we're not targeting the main project.
-                            // The main project is the only one that can pull in release notes from other repos.
-                            queries.add("repo:" + source.getRepo());
-                        }
+                        queries.add("repo:" + source.getRepo());
 
                         queries.add("is:issue");
 

@@ -1,0 +1,5 @@
+{
+    "name": "Keycloak Personal Access Tokens",
+    "description": "A Keycloak plugin that lets users create personal access tokens (PATs) — scoped, named tokens that can be used as passwords anywhere HTTP Basic Auth is accepted",
+    "website": "https://github.com/mrulex-repo/keycloak-personal-access-tokens"
+}

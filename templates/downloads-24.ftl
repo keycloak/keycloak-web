@@ -38,7 +38,7 @@
 
 <h2 class="mt-4">Server</h2>
 
-<table class="table table-bordered table-striped">
+<table class="table kc-table-docs">
     <tbody>
     <tr>
         <td>Keycloak</td>
@@ -84,7 +84,7 @@
 
 
 <h2 class="mt-4">Quickstarts</h2>
-<table class="table table-bordered table-striped">
+<table class="table kc-table-docs">
     <tbody>
 
     <tr>
@@ -119,7 +119,7 @@
 <div>
     <div class="tab-content">
         <div role="tabpanel" class="tab-pane active margin-top" id="oidc">
-            <table class="table table-bordered table-striped">
+            <table class="table kc-table-docs">
                 <#assign versionCompare=staticMethods['org.keycloak.webbuilder.Versions$Version']>
                 <#if versionCompare.compareToVersions(version.version, '26.2.0') lt 0 >
                     <tr>
@@ -194,7 +194,7 @@
 
 <h2 class="mt-4">Client Libraries</h2>
 <#assign keycloakClientGithub="https://github.com/keycloak/keycloak-client">
-<table class="table table-bordered table-striped">
+<table class="table kc-table-docs">
     <tbody>
     <tr>
         <td>Client libraries Source Code Repository</td>

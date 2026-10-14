@@ -1,0 +1,74 @@
+<div>
+
+<h2>Upgrading</h2>
+<p>Before upgrading refer to <a href="https://www.keycloak.org/docs/latest/upgrading/#migration-changes">the migration guide</a> for a complete list of changes.</p>
+
+<h2>All resolved issues</h2>
+
+<h3>Security fixes</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/50996">#50996</a> [CVE-2026-16103] Incomplete fix for CVE-2026-9798 (Keycloak CIBA brute-force lockout bypass at token redemption) <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51278">#51278</a> [CVE-2026-18206] Client policy source-host wildcard domains match non-subdomain suffixes <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51280">#51280</a> [CVE-2026-18203] Group policy child-extension matches sibling group path prefixes <code>authorization-services</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51281">#51281</a> [CVE-2026-18207] Source-group condition matches duplicate group names and can skip negative-logic enforcement <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51284">#51284</a> [CVE-2026-18208] Inactive out-of-audience introspection responses can include a signed JWT claim <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51285">#51285</a> [CVE-2026-18211] Secure-client-uris localhost exception accepts localhost-prefixed attacker domains <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51781">#51781</a> [CVE-2026-18217] SAML Redirect Binding Parameter Pollution <code>saml</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52531">#52531</a> CVE-2025-66021 com.googlecode.owasp-java-html-sanitizer:owasp-java-html-sanitizer <code>dependencies</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52692">#52692</a> [CVE-2026-89298] Confidential client secret disclosed to view-clients role via Client Registration GET <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52783">#52783</a> [CVE-2026-88770] Device Authorization Grant issues tokens to brute-force-locked accounts (sibling of CVE-2026-9798) <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52888">#52888</a> CVE-2026-84939 org.freemarker:freemarker </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52972">#52972</a> CVE-2026-8798 org.bouncycastle:bc-fips <code>dependencies</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52974">#52974</a> CVE-2026-13505 org.bouncycastle:bc-fips <code>dependencies</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53074">#53074</a> [CVE-2026-93999] Keycloak 26.7.2: token-exchange refresh continues issuing tokens for a disabled audience client <code>token-exchange</code></li>
+</ul>
+
+<h3>Weaknesses</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/51340">#51340</a> DCR: Registration access token allows protocol switch from OIDC to SAML <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53024">#53024</a> check-licenses.sh: shell injection via source of dependency pom.properties </li>
+</ul>
+
+
+
+
+<h3>Enhancements</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/52357">#52357</a> Upgrade to Quarkus 3.33.4 <code>dist/quarkus</code></li>
+</ul>
+
+<h3>Bugs</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/50739">#50739</a> keycloak 26.7.0 sha1 file is missing <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/50903">#50903</a> Missing input length validation on username field causes outsized log generation in  /login-actions/authenticate <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51065">#51065</a> Flaky test: org.keycloak.testsuite.oauth.ClientAuthPostMethodTest#testPostAuthenticationNotAllowedWhenBasicRequested <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51067">#51067</a> Flaky test: org.keycloak.testsuite.oauth.ClientAuthPostMethodTest#testBasicAuthenticationNotAllowedWhenPostRequested <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51304">#51304</a> Upgrade to 26.7.0 crashes under several tested scenarios. LazyInitializationException on non-deterministic getRealmsStream() order after DB dump/restore. <code>infinispan</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51761">#51761</a> PAR request URI lifespan is used as a hard cap on interactive login duration <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51778">#51778</a> [quarkus-next] BouncyCastle 1.85 breaks SAML client creation when client ID exceeds 64 characters <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52033">#52033</a> Improve retrieval of large read-only resources via admin API <code>storage</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52088">#52088</a> New Infinispan node joining the cluster becomes a command target/coordinator before its cache components are ready - ISPN000136 failures during Keycloak rolling restarts <code>infinispan</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52153">#52153</a> DEBUG logging breaks persistent client session locking <code>storage</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52193">#52193</a> Identity Provider Mappers - organization group targets do not resolve <code>organizations</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52257">#52257</a> Event listeners receive the wrong event type when an EventBuilder is reused (e.g. FEDERATED_IDENTITY_LINK is logged and emailed as LOGIN) <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52309">#52309</a> Admin Permissions filtering is applied to organization lookups during end-user authentication <code>organizations</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52327">#52327</a> surefire-junit-platform not cached, causing intermittent test failures in CI <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52329">#52329</a> Flaky test: FlowTest.testRemoveExecutionSubflow fails with stale DELETE admin event <code>testsuite</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52331">#52331</a> Flaky SCIM FilterTest.testFilterGroupsByMetaTimestamps due to same-millisecond timing <code>saml</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52415">#52415</a> Flaky test: WebAuthnTransportLocaleTest.localizationTransportInternal fails with "Cannot logout user" <code>testsuite</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52423">#52423</a> Flaky test: MySQLDistTest fails with "process hasn't exited" on slow CI runners <code>testsuite</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52428">#52428</a> Flaky test: AttackDetectionResourceTest due to DefaultBlockingBruteForceProtector concurrent login blocking <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52433">#52433</a> Flaky test: registration-policies.spec.ts kebab menu "Delete" item not found after toggle click <code>testsuite</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52435">#52435</a> Flaky test: timeout.spec.ts fails with "fetch failed" due to server not ready and hardcoded port <code>testsuite</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52460">#52460</a> Remove azure-cli version pin after runner image update removes apt source <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52487">#52487</a> Managing Identity Providers in the admin UI now requires client roles in the realm <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52490">#52490</a> Flaky Admin UI E2E test: "Should show items on next page" in scope.spec.ts <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52493">#52493</a> AuroraDB IT - Create EC2 runner instance fails: RHEL 9.4 AMI deregistered <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52712">#52712</a> WebAuthnPolicyComplianceTest.replayedCredentialRegistration is flaky due to missing sync point <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52716">#52716</a> Flaky CI: junit-jupiter-engine not in Maven cache causes transient test failures <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52868">#52868</a> Flaky test: RecoveryAuthnCodesAuthenticatorTest#test07SetupRecoveryAuthnCodes on Chrome <code>testsuite</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53054">#53054</a> ServerConfigClassOrderer comparator violates Comparable contract causing flaky CI failures <code>testsuite</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53069">#53069</a> Format string mismatches in logging statements cause silent argument loss and potential MissingFormatArgumentException <code>core</code></li>
+</ul>
+
+</div>

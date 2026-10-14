@@ -2,7 +2,7 @@
 
 <@tmpl.page current="docs" title="Documentation ${version.versionShorter}" noindex=true summary="Documentation for Keycloak ${version.versionShorter}">
 
-<div class="container mt-5">
+<div class="container mt-4">
     <h1>Documentation <span class="badge bg-primary">${version.versionShorter}</span></h1>
 
     <nav aria-label="breadcrumb">

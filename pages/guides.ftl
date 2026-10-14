@@ -15,31 +15,44 @@
                     <option value="${links.getGuides(false)}" selected="selected">${version.version}</option>
                 </select>
             </div>
-            <ul class="nav navbar-nav guides-navbar-menu">
-                <#list guides.getCategories(false) as c>
-                <li>
-                    <a class="nav-link" href="#${c.id}">${c.title}</a>
-                </li>
-                </#list>
-            </ul>
             <div>
                 <form>
-                    <input id="guide-search" class="form-control" type="text" placeholder="Search" aria-label="Search">
+                    <div class="guide-search-wrapper">
+                        <input id="guide-search" class="form-control" type="text" placeholder="Search" aria-label="Search" data-pagefind="${links.getRoot()}/pagefind/pagefind.js" data-pagefind-version="release">
+                        <span id="guide-search-spinner" class="guide-search-spinner" hidden><i class="fa fa-spinner fa-spin"></i></span>
+                        <button type="button" id="guide-search-clear" class="guide-search-clear" aria-label="Clear search" hidden><i class="fa fa-times"></i></button>
+                    </div>
                 </form>
             </div>
         </div>
     </div>
 </nav>
 
-<div class="jumbotron jumbotron-fluid bg-light kc-bg-triangles kc-bg-fixed pt-4 pb-1">
+<div id="pagefind-results" class="container pt-4" style="display: none;" aria-live="polite"></div>
+
+<div id="guide-cards" class="jumbotron jumbotron-fluid bg-light kc-bg-triangles kc-bg-fixed pt-4 pb-1">
     <div class="container">
+        <div class="row">
+            <div class="col-lg-3 mb-4">
+                <nav class="guides-sidebar" aria-label="Guide categories">
+                    <h3 class="guides-sidebar-heading">Categories</h3>
+                    <ul>
+                        <#list guides.getCategories(false) as c>
+                        <li>
+                            <a href="#${c.id}">${c.title}</a>
+                        </li>
+                        </#list>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-lg-9">
         <#list guides.getCategories(false) as c>
             <div class="row guide-category mb-4" id="${c.id}">
-                <h2>${c.title}</h2>
+                <h3>${c.title}</h3>
                 <#list guides.getGuides(c) as g>
                 <#if g.tileVisible && !g.snapshot>
-                    <div class="col-sm-4">
-                        <div class="card shadow-sm mb-4">
+                    <div class="col-sm-4 d-flex">
+                        <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">
                                     ${g.title}
@@ -49,21 +62,23 @@
                                 <#if g.summary??>
                                 <span class="card-text">${g.summary}</span>
                                 </#if>
-                                <div>
-                                    <#if g.tags??>
+                                <#if g.tags??>
+                                <div class="mt-2">
                                     <#list g.tags as tag>
-                                    <span class="badge bg-light text-muted fs-xsmall mt-3">${tag}</span>
+                                    <span class="badge bg-light text-body-secondary fs-xsmall">${tag}</span>
                                     </#list>
-                                    </#if>
                                 </div>
-                                <a href="${links.get(g)}" <#if g.external>target="_blank"</#if> class="stretched-link link-dark"></a>
+                                </#if>
                             </div>
+                            <a href="${links.get(g)}" <#if g.external>target="_blank"</#if> class="stretched-link"></a>
                         </div>
                     </div>
                 </#if>
                 </#list>
             </div>
         </#list>
+            </div>
+        </div>
     </div>
     </div>
 </div>

@@ -1,0 +1,106 @@
+[ {
+  "number" : 47999,
+  "repository" : "keycloak",
+  "title" : "[Keycloak JavaScript CI] - Build Keycloak",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/47999"
+}, {
+  "number" : 48663,
+  "repository" : "keycloak",
+  "title" : "Quarkus integration tests should only run in container when they verify container-specific behavior",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48663"
+}, {
+  "number" : 49639,
+  "repository" : "keycloak",
+  "title" : "Keycloak Admin Client tests fails in CI",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/49639"
+}, {
+  "number" : 49700,
+  "repository" : "keycloak",
+  "title" : "Incorrect migration guide reference",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/49700"
+}, {
+  "number" : 49707,
+  "repository" : "keycloak",
+  "title" : "Cannot build project due to ISPN protoschema and 26.2 branch",
+  "kind" : "bug",
+  "area" : "infinispan",
+  "url" : "https://github.com/keycloak/keycloak/issues/49707"
+}, {
+  "number" : 49733,
+  "repository" : "keycloak",
+  "title" : "keycloak-api-docs-dist is not deployable",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/49733"
+}, {
+  "number" : 50100,
+  "repository" : "keycloak",
+  "title" : "Upgrade to Quarkus 3.33.2.1",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50100"
+}, {
+  "number" : 50344,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-9099 Keycloak: group-admin escalation to realm-admin",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50344"
+}, {
+  "number" : 50345,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-9083 Keycloak: keycloak: information disclosure through arbitrary filesystem path probing",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50345"
+}, {
+  "number" : 50347,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-9086 Keycloak: keycloak: cross-site scripting (xss) via case-insensitive uri validation bypass",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50347"
+}, {
+  "number" : 50349,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-9705 Keycloak: keycloak: attacker can re-enable and take over disabled clients via registration access token",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50349"
+}, {
+  "number" : 50350,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-9795 Keycloak: keycloak: privilege escalation via improper scope mapping enforcement",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50350"
+}, {
+  "number" : 50351,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-9799 Keycloak: keycloak: unauthorized access to resources via uma permission ticket bypass",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50351"
+}, {
+  "number" : 50352,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-9800 Keycloak: keycloak policy enforcer: authorization bypass via incorrect uri comparison",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50352"
+}, {
+  "number" : 50357,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-11800 Keycloak: Authentication bypass via JWT algorithm confusion",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50357"
+} ]

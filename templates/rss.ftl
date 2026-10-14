@@ -1,4 +1,4 @@
-<#setting locale="en_US">
+<#outputformat "undefined"><#setting locale="en_US">
 <#setting time_zone="GMT">
 <#setting datetime_format="EEE, d MMM yyyy HH:mm:ss z">
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -31,3 +31,4 @@
 </channel>
 
 </rss>
+</#outputformat>

@@ -8,6 +8,19 @@ function init() {
 
     var conf = loadConfig();
 
+    if (conf.url) {
+        try {
+            var parsedUrl = new URL(conf.url);
+            if (parsedUrl.protocol !== 'http:' && parsedUrl.protocol !== 'https:') {
+                console.warn('Rejected URL with non-HTTP(S) scheme');
+                delete conf.url;
+            }
+        } catch (e) {
+            console.warn('Invalid URL');
+            delete conf.url;
+        }
+    }
+
     if (conf.url && conf.realm && conf.client) {
         var keycloak = new Keycloak({
             url: conf.url,
@@ -40,7 +53,7 @@ function init() {
                 } else {
                     name = keycloak.tokenParsed.preferred_username;
                 }
-                document.getElementById('user-details').innerHTML = name;
+                document.getElementById('user-details').textContent = name;
                 hide('login');
                 show('logout')
                 show('display-user');

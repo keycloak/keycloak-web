@@ -1,0 +1,5 @@
+{
+  "name": "Keycloak WS-Federation",
+  "description": "WS-Federation 1.2 passive-requestor protocol and identity broker extension for Keycloak 26.7.x.",
+  "website": "https://github.com/ChosoMeister/Keycloak-WS-Federation"
+}

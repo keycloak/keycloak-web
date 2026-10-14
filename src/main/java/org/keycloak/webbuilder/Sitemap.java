@@ -58,6 +58,9 @@ public class Sitemap {
     private void readExistingSitemap() {
         try {
             DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+            documentBuilderFactory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+            documentBuilderFactory.setFeature("http://xml.org/sax/features/external-general-entities", false);
+            documentBuilderFactory.setFeature("http://xml.org/sax/features/external-parameter-entities", false);
             documentBuilderFactory.setValidating(false);
             documentBuilderFactory.setNamespaceAware(true);
             DocumentBuilder builder = documentBuilderFactory.newDocumentBuilder();

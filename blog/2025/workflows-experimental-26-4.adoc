@@ -85,7 +85,7 @@ scenario, you would likely use longer periods (e.g., 60 days, 90 days, etc).
 
 The first step is to enable the feature when starting Keycloak:
 
-[source]
+[source,bash]
 ----
 ./kc.sh start-dev --features=workflows --spi-events-listener--workflow-event-listener--step-runner-task-interval=1000 --log-level="INFO,org.keycloak.models.workflow:DEBUG"
 ----
@@ -131,7 +131,7 @@ As this is an experimental feature, it is recommended that you test it using a n
 
 . Paste the following `JSON` into the editor to create the test workflow:
 +
-[source,JSON]
+[source,json]
 ----
 {
   "name": "disable inactive users",

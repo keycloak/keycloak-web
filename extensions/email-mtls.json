@@ -1,0 +1,5 @@
+{
+  "name": "Email-mTLS",
+  "description": "Drop-in replacement for the built-in Keycloak email provider that adds mutual TLS (mTLS) support for SMTP connections.",
+  "website": "https://github.com/nokia/keycloak-ext/tree/main/email-mtls"
+}

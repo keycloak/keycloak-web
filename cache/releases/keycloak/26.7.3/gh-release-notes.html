@@ -1,0 +1,69 @@
+<div>
+
+<h2>Upgrading</h2>
+<p>Before upgrading refer to <a href="https://www.keycloak.org/docs/latest/upgrading/#migration-changes">the migration guide</a> for a complete list of changes.</p>
+
+<h2>All resolved issues</h2>
+
+<h3>Security fixes</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/50785">#50785</a> CVE-2026-35563:  LDAP client implementation in version 2.1.7 does not verify if the server certificate matches the intended LDAP hostname <code>ldap</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/50997">#50997</a> [CVE-2026-16093] Required signed-JWT assertion policy can be bypassed with unsigned assertion headers <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/50998">#50998</a> [CVE-2026-16072] Organization managers can create managed members through stored registration links without manage-users <code>organizations</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51001">#51001</a> [CVE-2026-16108] Realm default-group reads disclose hidden groups under FGAP v2 <code>admin/fine-grained-permissions</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51002">#51002</a> [CVE-2026-16105] Missing per-role authorization on RoleContainerResource composite endpoints <code>admin/rbac</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51003">#51003</a> [CVE-2026-16089] Authorization codes can be retargeted to another client session <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51005">#51005</a> [CVE-2026-16104] Authenticator config surfaces expose raw reCAPTCHA secrets <code>admin/fine-grained-permissions</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51112">#51112</a> [CVE-2026-16106] Incorrect authorization in admin role-composite deletion allows delegated admin to remove privileged child roles <code>admin/fine-grained-permissions</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51142">#51142</a> [CVE-2026-17059] Information disclosure: GET /roles/{role}/users returns user PII without the per-user view filter <code>admin/fine-grained-permissions</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51279">#51279</a> [CVE-2026-18218] Client not-before revocation is ignored when realm not-before is older but nonzero <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51282">#51282</a> [CVE-2026-18215] Microsoft external access-token exchange bypasses configured tenant <code>token-exchange</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51283">#51283</a> [CVE-2026-18201] Generic identity-provider creation can bind brokers to organizations without manage-organizations <code>organizations</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51286">#51286</a> [CVE-2026-18209] Incomplete fix for redirect_uri OIDC response-parameter injection: forbidden-parameter check (commit 18832bca) inspects only the query string, not the URL fragment <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51287">#51287</a> [CVE-2026-18214] Google external access-token exchange bypasses hosted-domain restriction <code>token-exchange</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51378">#51378</a> [CVE-2026-18571] FGAP V2: Group assignment bypass during user creation (POST /users) allows adding unpermitted groups <code>admin/fine-grained-permissions</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51379">#51379</a> [CVE-2026-18572] UMA claim token can override the authorization time-policy clock <code>authorization-services</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51380">#51380</a> [CVE-2026-18573] Client access-type condition evaluates updates against the old client type <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51382">#51382</a> [CVE-2026-18570] Full-scope-disabled client policy validation can be bypassed by omitting fullScopeAllowed <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51745">#51745</a> [CVE-2026-19729] Incomplete fix for CVE-2026-9083 — relative path traversal still enables filesystem probing in 26.6.4 <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52028">#52028</a> [CVE-2026-79652] Keycloak jwt-bearer authorization grant does not enforce consentRequired <code>oidc</code></li>
+</ul>
+
+<h3>Weaknesses</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/50581">#50581</a> Admin API: User/group role-mapping endpoints disclose hidden client role metadata under FGAP v2 <code>admin/fine-grained-permissions</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/50583">#50583</a> Admin API: Composite role endpoints do not filter child roles by FGAP v2 view permission <code>admin/fine-grained-permissions</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/50990">#50990</a> Admin UI extension effective-role endpoints disclose hidden composite roles <code>admin/fine-grained-permissions</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51143">#51143</a> Aggregate policy partial evaluation diverges from runtime semantics under FGAP v2 <code>admin/fine-grained-permissions</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51144">#51144</a> Partial evaluation misses ancestor group policies with extendChildren <code>admin/fine-grained-permissions</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51202">#51202</a> Client-protocol condition can be bypassed on admin client creation by omitting protocol <code>oidc</code></li>
+</ul>
+
+
+
+
+
+<h3>Bugs</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/50825">#50825</a> Creating an organization without a domain leads to an error <code>organizations</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/50963">#50963</a> V1 token-exchange strips the DPoP sender-constraint from a bound access token <code>token-exchange</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51510">#51510</a> SQLGrammarException: The incoming request has too many parameters <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51523">#51523</a> Sustained high CPU on all nodes after upgrade <code>admin/api</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51554">#51554</a> Admin API per-request cost grows super-linearly with realm count since 26.7.1 <code>admin/api</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51589">#51589</a> NPE in RoleUtils.expandCompositeRoles when a cached client scope references a deleted role <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51602">#51602</a> Invalid redirect on https://access.redhat.com/products/red-hat-single-sign-on/ <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51707">#51707</a> Lightweight access token role resolution resolves all roles across all realms on every admin API request <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51712">#51712</a> Logout URL does not allow OIDC response parameters in its redirect_url <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51780">#51780</a> SSSD CI job fails: FreeIPA container crashes on ubuntu-24.04 runner image 20260810.271 <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51785">#51785</a> Multiple CVEs inherited from Apache DS used for testing </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51790">#51790</a> Java Distribution IT/UT (windows-latest, temurin, 21) times out regularly <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51792">#51792</a> AsyncCommitIntegrator Aurora detection logs "ERROR: function aurora_version() does not exist" in the PostgreSQL server log on every startup </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51807">#51807</a> Client scope boundary bypassed when resolving admin roles via KeycloakIdentity <code>admin/fine-grained-permissions</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51902">#51902</a> Index modifiers are not logged if an index is not created due to a threshold <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51920">#51920</a> Error: 1020-HY000: Record has changed since last read in table OFFLINE_CLIENT_SESSION </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51983">#51983</a> [26.7.2] Regression in UI in JS keycloak-admin-client </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52017">#52017</a> SAML ECP faultstring discloses client existence, incomplete fix of CVE-2026-9794 <code>saml</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52038">#52038</a> Client session note removals are not persisted with persistent user sessions <code>core</code></li>
+</ul>
+
+</div>

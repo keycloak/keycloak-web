@@ -13,15 +13,16 @@
 
         <version.java>17</version.java>
 
-        <version.github-api>1.300</version.github-api>
-        <version.freemarker>2.3.31</version.freemarker>
-        <version.asciidoctorj>2.5.2</version.asciidoctorj>
-        <version.jackson-core>2.18.6</version.jackson-core>
+        <version.github-api>1.330</version.github-api>
+        <version.freemarker>2.3.35</version.freemarker>
+        <!-- Do not upgrade past 2.5.11 until deploy-aws-accelerator-loadbalancer.adoc and deploy-infinispan-kubernetes-crossdc.adoc have been fixed for the callout numbering regression in Asciidoctor 2.0.22+ -->
+        <version.asciidoctorj>2.5.11</version.asciidoctorj>
+        <version.jackson-core>2.22.3</version.jackson-core>
         <version.commons-io>2.14.0</version.commons-io>
         <version.commons-compress>1.26.0</version.commons-compress>
 
-        <version.keycloak>26.6.1</version.keycloak>
-        <version.keycloak-client>26.0.9</version.keycloak-client>
+        <version.keycloak>26.8.1</version.keycloak>
+        <version.keycloak-client>26.0.12</version.keycloak-client>
         <version.keycloak-nodejs-connect>26.1.1</version.keycloak-nodejs-connect>
         <version.keycloak-js>26.2.4</version.keycloak-js>
 
@@ -34,7 +35,7 @@
         <version.exec-maven-plugin>3.0.0</version.exec-maven-plugin>
         <version.dependency-plugin>3.1.2</version.dependency-plugin>
         <version.download-maven-plugin>2.0.0</version.download-maven-plugin>
-        <version.jsoup>1.18.3</version.jsoup>
+        <version.jsoup>1.23.2</version.jsoup>
     </properties>
 
     <repositories>

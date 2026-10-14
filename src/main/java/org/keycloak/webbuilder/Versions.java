@@ -203,7 +203,8 @@ public class Versions extends LinkedList<Versions.Version> {
         }
 
         public List<ChangeLogEntry> getDeprecations() {
-            return entries.stream().filter(e -> e.getKind().equals("deprecated")).collect(Collectors.toList());
+            // Keep the old label from cached releases
+            return entries.stream().filter(e -> e.getKind().equals("deprecated") || e.getKind().equals("deprecation")).collect(Collectors.toList());
         }
 
         public List<ChangeLogEntry> getRemoved() {
@@ -212,6 +213,10 @@ public class Versions extends LinkedList<Versions.Version> {
 
         public List<ChangeLogEntry> getSecurity() {
             return entries.stream().filter(e -> e.getKind().equals("cve")).collect(Collectors.toList());
+        }
+
+        public List<ChangeLogEntry> getWeaknesses() {
+            return entries.stream().filter(e -> e.getKind().equals("weakness")).collect(Collectors.toList());
         }
     }
 

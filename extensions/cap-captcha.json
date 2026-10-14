@@ -1,0 +1,5 @@
+{
+  "name": "Cap Captcha",
+  "description": "Adds trycap.dev cap (proof-of-work + instrumentation) CAPTCHA validation to the Keycloak registration flow. Self-hostable, fail-closed server-side verification via cap's reCAPTCHA-compatible siteverify endpoint.",
+  "website": "https://github.com/schwebke/cap-captcha-keycloak"
+}

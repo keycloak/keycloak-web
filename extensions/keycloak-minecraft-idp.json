@@ -1,0 +1,5 @@
+{
+  "name": "Keycloak Minecraft Identity Provider",
+  "description": "A Keycloak Identity Provider plugin that enables authentication via Microsoft/Xbox OAuth2 and resolves the brokered login identity to the Minecraft Java player name when a Java profile exists, otherwise to the Xbox Gamertag for supported Bedrock logins.",
+  "website": "https://github.com/groundsgg/keycloak-minecraft-idp"
+}

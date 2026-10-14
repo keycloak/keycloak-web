@@ -32,9 +32,9 @@ Takashi Norimatsu, Hitachi & Marek Posolda, Red Hat
 Tuesday June 17, 2025 14:50 - 15:20 JST +
 Yoshiyuki Tabata, Hitachi, Ltd.
 
-== Project Pavillion
+== Project Pavilion
 
-The Keycloak project table in the Project Pavillion is the place to meet the Keycloak maintainers, contributors and the larger community.
+The Keycloak project table in the Project Pavilion is the place to meet the Keycloak maintainers, contributors and the larger community.
 
 We will be there in the afternoons, while other projects will be there during the mornings.
 See below for the location and the times.

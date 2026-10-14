@@ -41,7 +41,7 @@ Let’s give it up for Keycloak's top contributors (_more than 10 contributions_
 --
 ++++
 <div class="paragraph">
-<img src="https://contrib.nn.ci/api?no_bot=true&repo=keycloak/keycloak&cols=30&pages=25" alt="Keycloak top contributors" style="border: 0;">
+<img src="${blogImages}/30k-starts-celebration.svg" alt="Keycloak top contributors" style="border: 0;">
 </div>
 ++++
 --

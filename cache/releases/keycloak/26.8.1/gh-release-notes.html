@@ -1,0 +1,84 @@
+<div>
+
+<h2>Upgrading</h2>
+<p>Before upgrading refer to <a href="https://www.keycloak.org/docs/latest/upgrading/#migration-changes">the migration guide</a> for a complete list of changes.</p>
+
+<h2>All resolved issues</h2>
+
+<h3>Security fixes</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/50945">#50945</a> [CVE-2026-15943] OIDC identity provider update reuses masked client secret after token URL changes <code>identity-brokering</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51381">#51381</a> [CVE-2026-18569] OIDC broker backchannel logout accepts unsigned forged logout tokens when signature validation is disabled <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52321">#52321</a> [CVE-2026-82968] Persistent wrong-account linking through null / GitHub identity provider <code>identity-brokering</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53057">#53057</a> [CVE-2026-94001] Admin credential DELETE bypasses denied reset-password permission <code>admin/fine-grained-permissions</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53060">#53060</a> [CVE-2026-94000] A delegated admin with only `manage-users` can become `realm-admin` by joining (or being created into) a group that maps an admin role <code>admin/fine-grained-permissions</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53070">#53070</a> [CVE-2026-94218] 2FA setup enforcement bypass via /realms/{realm}/login-actions/restart — #YWH-PGM40475-254 <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53071">#53071</a> [CVE-2026-94215] Cross-realm realm resource read/write via per-request session-level cache in RealmCacheSession <code>admin/api</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53072">#53072</a> [CVE-2026-94213] Missing user view authorization in the Authorization Services policy evaluation endpoint, possible incomplete fix of CVE-2026-37978 <code>authorization-services</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53073">#53073</a> [CVE-2026-94217] UMA scope merge across resource owners via name collision in resolveResourcePermission <code>authorization-services</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53111">#53111</a> [CVE-2026-96446] Security vulnerability in Keycloak 26.7.3 — PAR single-use bypass via prompt=none <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53112">#53112</a> [CVE-2026-96445] Conditional OTP trusts skip headers on untrusted proxy paths <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53158">#53158</a> [CVE-2026-97177] Generic user update bypasses denied reset-password permission <code>admin/fine-grained-permissions</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53159">#53159</a> [CVE-2026-95503] Potential KDC spoofing attack when Kerberos password authentication is enabled <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53160">#53160</a> [CVE-2026-97311] Broken access control in Admin REST API: roles/{role-name}/groups discloses groups the caller cannot view (incomplete fix of the 26.7.2 hardening) <code>admin/api</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53187">#53187</a> [CVE-2026-97846] Standard Token Exchange bypasses required mTLS certificate binding and issues an active bearer token when no client certificate is supplied <code>token-exchange/standard</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53338">#53338</a> [CVE-2026-101333] Unbounded metric series creation via idp tag on broker login endpoint <code>observability</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53388">#53388</a> CVE-2026-91777 com.fasterxml.jackson.core:jackson-databind <code>dependencies</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53393">#53393</a> Multiple CVEs in tools.jackson.core:jackson-databind <code>dependencies</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53419">#53419</a> [CVE-2026-103884] Path traversal via X.509 CRL Distribution Point - client-supplied CRL path escapes $KC_HOME/conf <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53582">#53582</a> Multiple CVEs in simple-git <code>dependencies</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53659">#53659</a> Flaky test: initial-access.spec.ts 'Initial access token' fails with TypeError on table data read <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53674">#53674</a> [CVE-2026-107121] SMTP starttls=true permits plaintext credential and message downgrade <code>admin/api</code></li>
+</ul>
+
+<h3>Weaknesses</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/49009">#49009</a> DockerEndpoint does not validate invalidRequestMessage after parsing authorization request <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/49786">#49786</a> Organizations: Invitation link can be used by multiple users due to missing single-use check <code>organizations</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51312">#51312</a> refresh-vs-revoke race in strict mode (revokeRefreshToken=true) defeats token revocation <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51887">#51887</a> Username enumeration via empty-password timing <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52063">#52063</a> Ensure max consumed respone  size is respected for OCSP and CRLs <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52680">#52680</a> Kerberos TRACE logging records complete SPNEGO credentials <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52982">#52982</a> Non-critical X.509 KeyUsage mismatch bypasses authentication policy <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52984">#52984</a> SimpleHttpResponse connection pool leak in identity brokering flows <code>identity-brokering</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53079">#53079</a> Dynamic client registration self-enables privileged SSF event access <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53116">#53116</a> SAML SLO: unauthenticated arbitrary session termination via LogoutRequest (SessionIndex) <code>saml</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53354">#53354</a> SAML broker HTTP-Redirect binding: query-string signature is verified over a different SAMLResponse than the one processed (';' parameter separator) - unauthenticated login as an arbitrary user (ANT-2026-HQ54RPF9) <code>identity-brokering</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53417">#53417</a> FGAP v2 custom role injection via oidc-hardcoded-role-mapper bypasses removeTransientAdminRoles (incomplete fix for CVE-2026-4629)  <code>admin/fine-grained-permissions</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53430">#53430</a> Rotated-out client JWKS key and CRL stays valid on all but one node (keys cache invalidation event has no listener) <code>storage</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53494">#53494</a> SimpleHttpResponse: connection pool leak on invalid charset and case-sensitive Content-Encoding check <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53693">#53693</a> FGAP v2: non-imported LDAP users returned in search results for query-users-only delegated admins <code>admin/fine-grained-permissions</code></li>
+</ul>
+
+
+
+
+
+<h3>Bugs</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/51268">#51268</a> Group members endpoint sometimes returns 200 and empty list instead of 500 when DB is down <code>admin/api</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52139">#52139</a> Client sessions attached to offline user sessions via token exchange are created with OFFLINE_FLAG=0, causing orphaned OFFLINE_CLIENT_SESSION rows <code>token-exchange</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52362">#52362</a> HttpServerUtil.sendResponse drops the headers it is given <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52449">#52449</a> Organization invite: link in the plain-text part of the email is HTML-escaped and unusable <code>organizations</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52792">#52792</a> Authenticator Reference is incorrectly masked after CVE-2026-16104 fix <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52927">#52927</a> Admin Console "Sign out" on one user session unexpectedly logs out a different, unrelated session for the same user <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53029">#53029</a> Token introspection omits act claim for token-exchange delegation tokens <code>token-exchange</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53142">#53142</a> Realm settings - security defenses <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53370">#53370</a> RoleSelect lost its undefined guard on form values, so Permissions → Evaluation crashes when Roles is selected <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53467">#53467</a> Flaky Admin UI E2E: 'should add OIDC mapper of type Attribute Importer' times out waiting for navigation <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53471">#53471</a> Regression with Trust Email when the userinfo endpoint is used <code>identity-brokering</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53505">#53505</a> Broken link to FIPS documentation <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53567">#53567</a> Broken link to vault documentation in downstream <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53569">#53569</a> Fix broken link to migrating the database in downstream <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53571">#53571</a> Broken link in Operator Guide <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53624">#53624</a> Multiple link issues including incorrect names and upstream only coding <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53653">#53653</a> Flaky test: Admin UI E2E flows.spec.ts 'sets as default in action menu' fails on Firefox with strict mode violation <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53660">#53660</a> Flaky test: main.spec.ts 'Enable/disable help mode in desktop mode' fails with help label still visible <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53665">#53665</a> Flaky test: PauseTest.testPause times out on slow runners — no wait for operator readiness <code>ci</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53757">#53757</a> Broken EntityManager API link fails ExternalLinksTest <code>testsuite</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53824">#53824</a> JGroups certificate reload blocks the view handling thread and hides task failures <code>infinispan</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53825">#53825</a> JGroups TCP sends to healthy nodes are blocked by an unreachable node when virtual threads are disabled <code>infinispan</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53856">#53856</a> JsonFileImport198MigrationTest fails: realm certificate expired on 2026-10-12 <code>ci</code></li>
+</ul>
+
+</div>

@@ -1,0 +1,337 @@
+[ {
+  "number" : 48990,
+  "repository" : "keycloak",
+  "title" : "Remove version override for `org.postgresql:postgresql`",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48990"
+}, {
+  "number" : 50581,
+  "repository" : "keycloak",
+  "title" : "Admin API: User/group role-mapping endpoints disclose hidden client role metadata under FGAP v2",
+  "kind" : "weakness",
+  "area" : "admin/fine-grained-permissions",
+  "url" : "https://github.com/keycloak/keycloak/issues/50581"
+}, {
+  "number" : 50583,
+  "repository" : "keycloak",
+  "title" : "Admin API: Composite role endpoints do not filter child roles by FGAP v2 view permission",
+  "kind" : "weakness",
+  "area" : "admin/fine-grained-permissions",
+  "url" : "https://github.com/keycloak/keycloak/issues/50583"
+}, {
+  "number" : 50785,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-35563:  LDAP client implementation in version 2.1.7 does not verify if the server certificate matches the intended LDAP hostname",
+  "kind" : "cve",
+  "area" : "ldap",
+  "url" : "https://github.com/keycloak/keycloak/issues/50785"
+}, {
+  "number" : 50825,
+  "repository" : "keycloak",
+  "title" : "Creating an organization without a domain leads to an error",
+  "kind" : "bug",
+  "area" : "organizations",
+  "url" : "https://github.com/keycloak/keycloak/issues/50825"
+}, {
+  "number" : 50963,
+  "repository" : "keycloak",
+  "title" : "V1 token-exchange strips the DPoP sender-constraint from a bound access token",
+  "kind" : "bug",
+  "area" : "token-exchange",
+  "url" : "https://github.com/keycloak/keycloak/issues/50963"
+}, {
+  "number" : 50990,
+  "repository" : "keycloak",
+  "title" : "Admin UI extension effective-role endpoints disclose hidden composite roles",
+  "kind" : "weakness",
+  "area" : "admin/fine-grained-permissions",
+  "url" : "https://github.com/keycloak/keycloak/issues/50990"
+}, {
+  "number" : 50997,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-16093] Required signed-JWT assertion policy can be bypassed with unsigned assertion headers",
+  "kind" : "cve",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/50997"
+}, {
+  "number" : 50998,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-16072] Organization managers can create managed members through stored registration links without manage-users",
+  "kind" : "cve",
+  "area" : "organizations",
+  "url" : "https://github.com/keycloak/keycloak/issues/50998"
+}, {
+  "number" : 51001,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-16108] Realm default-group reads disclose hidden groups under FGAP v2",
+  "kind" : "cve",
+  "area" : "admin/fine-grained-permissions",
+  "url" : "https://github.com/keycloak/keycloak/issues/51001"
+}, {
+  "number" : 51002,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-16105] Missing per-role authorization on RoleContainerResource composite endpoints",
+  "kind" : "cve",
+  "area" : "admin/rbac",
+  "url" : "https://github.com/keycloak/keycloak/issues/51002"
+}, {
+  "number" : 51003,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-16089] Authorization codes can be retargeted to another client session",
+  "kind" : "cve",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/51003"
+}, {
+  "number" : 51005,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-16104] Authenticator config surfaces expose raw reCAPTCHA secrets",
+  "kind" : "cve",
+  "area" : "admin/fine-grained-permissions",
+  "url" : "https://github.com/keycloak/keycloak/issues/51005"
+}, {
+  "number" : 51112,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-16106] Incorrect authorization in admin role-composite deletion allows delegated admin to remove privileged child roles",
+  "kind" : "cve",
+  "area" : "admin/fine-grained-permissions",
+  "url" : "https://github.com/keycloak/keycloak/issues/51112"
+}, {
+  "number" : 51142,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-17059] Information disclosure: GET /roles/{role}/users returns user PII without the per-user view filter",
+  "kind" : "cve",
+  "area" : "admin/fine-grained-permissions",
+  "url" : "https://github.com/keycloak/keycloak/issues/51142"
+}, {
+  "number" : 51143,
+  "repository" : "keycloak",
+  "title" : "Aggregate policy partial evaluation diverges from runtime semantics under FGAP v2",
+  "kind" : "weakness",
+  "area" : "admin/fine-grained-permissions",
+  "url" : "https://github.com/keycloak/keycloak/issues/51143"
+}, {
+  "number" : 51144,
+  "repository" : "keycloak",
+  "title" : "Partial evaluation misses ancestor group policies with extendChildren",
+  "kind" : "weakness",
+  "area" : "admin/fine-grained-permissions",
+  "url" : "https://github.com/keycloak/keycloak/issues/51144"
+}, {
+  "number" : 51202,
+  "repository" : "keycloak",
+  "title" : "Client-protocol condition can be bypassed on admin client creation by omitting protocol",
+  "kind" : "weakness",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/51202"
+}, {
+  "number" : 51279,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-18218] Client not-before revocation is ignored when realm not-before is older but nonzero",
+  "kind" : "cve",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/51279"
+}, {
+  "number" : 51282,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-18215] Microsoft external access-token exchange bypasses configured tenant",
+  "kind" : "cve",
+  "area" : "token-exchange",
+  "url" : "https://github.com/keycloak/keycloak/issues/51282"
+}, {
+  "number" : 51283,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-18201] Generic identity-provider creation can bind brokers to organizations without manage-organizations",
+  "kind" : "cve",
+  "area" : "organizations",
+  "url" : "https://github.com/keycloak/keycloak/issues/51283"
+}, {
+  "number" : 51286,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-18209] Incomplete fix for redirect_uri OIDC response-parameter injection: forbidden-parameter check (commit 18832bca) inspects only the query string, not the URL fragment",
+  "kind" : "cve",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/51286"
+}, {
+  "number" : 51287,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-18214] Google external access-token exchange bypasses hosted-domain restriction",
+  "kind" : "cve",
+  "area" : "token-exchange",
+  "url" : "https://github.com/keycloak/keycloak/issues/51287"
+}, {
+  "number" : 51378,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-18571] FGAP V2: Group assignment bypass during user creation (POST /users) allows adding unpermitted groups",
+  "kind" : "cve",
+  "area" : "admin/fine-grained-permissions",
+  "url" : "https://github.com/keycloak/keycloak/issues/51378"
+}, {
+  "number" : 51379,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-18572] UMA claim token can override the authorization time-policy clock",
+  "kind" : "cve",
+  "area" : "authorization-services",
+  "url" : "https://github.com/keycloak/keycloak/issues/51379"
+}, {
+  "number" : 51380,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-18573] Client access-type condition evaluates updates against the old client type",
+  "kind" : "cve",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/51380"
+}, {
+  "number" : 51382,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-18570] Full-scope-disabled client policy validation can be bypassed by omitting fullScopeAllowed",
+  "kind" : "cve",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/51382"
+}, {
+  "number" : 51510,
+  "repository" : "keycloak",
+  "title" : "SQLGrammarException: The incoming request has too many parameters",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/51510"
+}, {
+  "number" : 51523,
+  "repository" : "keycloak",
+  "title" : "Sustained high CPU on all nodes after upgrade",
+  "kind" : "bug",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/51523"
+}, {
+  "number" : 51554,
+  "repository" : "keycloak",
+  "title" : "Admin API per-request cost grows super-linearly with realm count since 26.7.1",
+  "kind" : "bug",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/51554"
+}, {
+  "number" : 51589,
+  "repository" : "keycloak",
+  "title" : "NPE in RoleUtils.expandCompositeRoles when a cached client scope references a deleted role",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/51589"
+}, {
+  "number" : 51602,
+  "repository" : "keycloak",
+  "title" : "Invalid redirect on https://access.redhat.com/products/red-hat-single-sign-on/",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/51602"
+}, {
+  "number" : 51707,
+  "repository" : "keycloak",
+  "title" : "Lightweight access token role resolution resolves all roles across all realms on every admin API request",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/51707"
+}, {
+  "number" : 51712,
+  "repository" : "keycloak",
+  "title" : "Logout URL does not allow OIDC response parameters in its redirect_url",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/51712"
+}, {
+  "number" : 51745,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-19729] Incomplete fix for CVE-2026-9083 — relative path traversal still enables filesystem probing in 26.6.4",
+  "kind" : "cve",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/51745"
+}, {
+  "number" : 51780,
+  "repository" : "keycloak",
+  "title" : "SSSD CI job fails: FreeIPA container crashes on ubuntu-24.04 runner image 20260810.271",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/51780"
+}, {
+  "number" : 51785,
+  "repository" : "keycloak",
+  "title" : "Multiple CVEs inherited from Apache DS used for testing",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/51785"
+}, {
+  "number" : 51790,
+  "repository" : "keycloak",
+  "title" : "Java Distribution IT/UT (windows-latest, temurin, 21) times out regularly",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/51790"
+}, {
+  "number" : 51792,
+  "repository" : "keycloak",
+  "title" : "AsyncCommitIntegrator Aurora detection logs \"ERROR: function aurora_version() does not exist\" in the PostgreSQL server log on every startup",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/51792"
+}, {
+  "number" : 51807,
+  "repository" : "keycloak",
+  "title" : "Client scope boundary bypassed when resolving admin roles via KeycloakIdentity",
+  "kind" : "bug",
+  "area" : "admin/fine-grained-permissions",
+  "url" : "https://github.com/keycloak/keycloak/issues/51807"
+}, {
+  "number" : 51902,
+  "repository" : "keycloak",
+  "title" : "Index modifiers are not logged if an index is not created due to a threshold",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/51902"
+}, {
+  "number" : 51918,
+  "repository" : "keycloak",
+  "title" : "CVE-2025-46392 commons-configuration:commons-configuration",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/51918"
+}, {
+  "number" : 51920,
+  "repository" : "keycloak",
+  "title" : "Error: 1020-HY000: Record has changed since last read in table OFFLINE_CLIENT_SESSION",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/51920"
+}, {
+  "number" : 51983,
+  "repository" : "keycloak",
+  "title" : "[26.7.2] Regression in UI in JS keycloak-admin-client",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/51983"
+}, {
+  "number" : 51990,
+  "repository" : "keycloak",
+  "title" : "Only check links in documentation in main repository",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/51990"
+}, {
+  "number" : 52017,
+  "repository" : "keycloak",
+  "title" : "SAML ECP faultstring discloses client existence, incomplete fix of CVE-2026-9794",
+  "kind" : "bug",
+  "area" : "saml",
+  "url" : "https://github.com/keycloak/keycloak/issues/52017"
+}, {
+  "number" : 52028,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-79652] Keycloak jwt-bearer authorization grant does not enforce consentRequired",
+  "kind" : "cve",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/52028"
+}, {
+  "number" : 52038,
+  "repository" : "keycloak",
+  "title" : "Client session note removals are not persisted with persistent user sessions",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/52038"
+} ]

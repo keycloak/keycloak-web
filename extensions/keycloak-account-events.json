@@ -1,0 +1,5 @@
+{
+  "name": "Keycloak Account Events",
+  "description": "Self-service login history: users read their own authentication events with their own account access token, no admin credentials needed.",
+  "website": "https://github.com/AdrianIAna/keycloak-account-events"
+}

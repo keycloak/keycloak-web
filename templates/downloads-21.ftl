@@ -21,7 +21,7 @@
 
 <h2 class="mt-4">Server</h2>
 
-<table class="table table-bordered table-striped">
+<table class="table kc-table-docs">
     <tbody>
     <tr>
         <td>Keycloak</td>
@@ -64,7 +64,7 @@
 </table>
 
 <h2 class="mt-4">Quickstarts</h2>
-<table class="table table-bordered table-striped">
+<table class="table kc-table-docs">
     <tbody>
 
     <tr>
@@ -104,7 +104,7 @@
 
     <div class="tab-content">
         <div role="tabpanel" class="tab-pane active margin-top" id="oidc">
-            <table class="table table-bordered table-striped">
+            <table class="table kc-table-docs">
                 <tr>
                     <td>WildFly <b>[DEPRECATED]</b></td>
                     <td>
@@ -200,7 +200,7 @@
         </div>
 
         <div role="tabpanel" class="tab-pane margin-top" id="saml">
-            <table class="table table-bordered table-striped">
+            <table class="table kc-table-docs">
                 <tbody>
                 <tr>
                     <td>WildFly</td>

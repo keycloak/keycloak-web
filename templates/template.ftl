@@ -31,11 +31,12 @@
 
     <#if noindex?? && noindex><meta name="robots" content="noindex"></#if>
 
-    <#if !nocsp??><meta http-equiv='Content-Security-Policy' content="default-src 'none'; style-src 'self'; img-src 'self' https://www.google-analytics.com; font-src 'self'; script-src 'self' https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com; base-uri 'none'; form-action 'none';"></#if>
+    <#if !nocsp??><meta http-equiv='Content-Security-Policy' content="default-src 'none'; style-src 'self'; img-src 'self' https://www.google-analytics.com; font-src 'self'; script-src 'self' 'wasm-unsafe-eval' https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com; worker-src 'self'; base-uri 'none'; form-action 'none';"></#if>
 
     <link href="${links.getResource('bootstrap/dist/css/bootstrap.min.css')}" rel="stylesheet">
     <link href="${links.getResource('@fortawesome/fontawesome-free/css/all.min.css')}" rel="stylesheet">
     <link href="${links.getResource('css/keycloak.css')}" rel="stylesheet">
+    <link href="${links.getResource('css/rouge-github.css')}" rel="stylesheet">
     <link rel="canonical" href="${canonical}">
     <meta property="og:url" content="${canonical}">
 
@@ -43,28 +44,33 @@
     <link rel="icon" type="image/vnd.microsoft.icon" href="${links.getResource('favicon.ico')}">
     <link rel="icon" type="image/svg+xml" href="${links.getResource('favicon.svg')}">
 
-    <#if importMap?has_content><script type="importmap">${importMap}</script></#if>
+    <#if importMap?has_content><script type="importmap">${importMap?no_esc}</script></#if>
     <#if rss><link rel="alternate" type="application/rss+xml" title="Keycloak's Blog" href="${links.getRss()}"></#if>
     <#if jsonLd?has_content>
     <script type="application/ld+json">
-        ${jsonLd}
+        ${jsonLd?no_esc}
     </script>
     </#if>
 </#compress>
 </head>
 <body>
 
+<div class="bg-primary text-center py-2 px-3" data-nosnippet>
+    <a class="link-light text-decoration-none small" href="https://www.keycloak.org/2026/09/keycloakcon-27-eu-call-for-papers">
+        Speak at <b>KeycloakCon Europe 2027</b> in Barcelona! CfP closes October 18 &middot; Save the date: March 15, 2027 &middot; <span class="fw-semibold text-decoration-underline">Submit Today &rarr;</span>
+    </a>
+</div>
+
 <header class="navbar navbar-expand-md bg-light shadow-sm">
 <nav class="container-xxl flex-wrap flex-md-no-wrap navbar-light" data-nosnippet>
     <a class="navbar-brand me-3 me-md-4 me-lg-5" href="${links.home}">
         <img style="aspect-ratio: 730/151" class="img-fluid" src="${links.getResource('images/logo.svg')}" width="240" alt="Keycloak"/>
     </a>
-    <a class="nav-link d-none d-sm-block d-md-none d-lg-block" href="https://github.com/keycloak/keycloak"><img src="${links.getResource('images/stars-large.svg')}" style="height: 25px; aspect-ratio: ${projectStars.aspectRatioLarge}" alt="GitHub stars"/></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="fa fa-bars fa-lg px-1 py-2"></span>
+      <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav flex-row flex-wrap bd-navbar-nav pt-2 py-md-0">
+      <ul class="navbar-nav nav-underline mx-auto flex-row flex-wrap bd-navbar-nav pt-2 py-md-0 gap-md-3">
         <li class="nav-item col-6 col-md-auto">
           <a class="nav-link <#if current = 'guides'>active</#if>" href="${links.guides}">Guides</a>
         </li>
@@ -81,8 +87,9 @@
           <a class="nav-link <#if current = 'blog'>active</#if>" href="${links.blog}">Blog</a>
         </li>
       </ul>
+      <a class="d-none d-lg-block" href="https://github.com/keycloak/keycloak"><img src="${links.getResource('images/stars-large.svg')}" style="height: 25px; aspect-ratio: ${projectStars.aspectRatioLarge}" alt="GitHub stars"/></a>
     </div>
-    <div class="d-block d-sm-none d-md-block d-lg-none text-center vw-100">
+    <div class="d-block d-lg-none text-center vw-100">
         <a class="nav-link d-inline p-0" href="https://github.com/keycloak/keycloak"><img src="${links.getResource('images/stars-large.svg')}" style="height: 25px; aspect-ratio: ${projectStars.aspectRatioLarge}" alt="GitHub stars"/></a>
     </div>
 </nav>

@@ -1,0 +1,4943 @@
+[ {
+  "number" : 9686,
+  "repository" : "keycloak",
+  "title" : "Store the Dynamic Scope parameter to avoid showing the Consent Screen every time there's an authentication",
+  "kind" : "feature",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/9686"
+}, {
+  "number" : 9915,
+  "repository" : "keycloak",
+  "title" : "Make the consent screen text for dynamic scopes customizable with a reference to the dynamic scope parameter",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/9915"
+}, {
+  "number" : 10696,
+  "repository" : "keycloak",
+  "title" : "Improve WebAuthn tests documentation",
+  "kind" : "enhancement",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/10696"
+}, {
+  "number" : 12142,
+  "repository" : "keycloak",
+  "title" : "IdP backchannel logout does not work with session id in logout",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/12142"
+}, {
+  "number" : 12223,
+  "repository" : "keycloak",
+  "title" : "Dynamic scopes: requested scopes get mixed up between token requests",
+  "kind" : "enhancement",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/12223"
+}, {
+  "number" : 17758,
+  "repository" : "keycloak",
+  "title" : "[UX Review] Optimize the number box in the Time-policy creation page of client Authorization",
+  "kind" : "enhancement",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/17758"
+}, {
+  "number" : 17762,
+  "repository" : "keycloak",
+  "title" : "[UX Review] Optimize the initial page of Keys in OIDC client",
+  "kind" : "enhancement",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/17762"
+}, {
+  "number" : 17770,
+  "repository" : "keycloak",
+  "title" : "Remove unnecessary conditions from code",
+  "kind" : "enhancement",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/17770"
+}, {
+  "number" : 17771,
+  "repository" : "keycloak",
+  "title" : "Caught errors should have the correct type associated with them",
+  "kind" : "enhancement",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/17771"
+}, {
+  "number" : 19309,
+  "repository" : "keycloak",
+  "title" : "Replace `use-react-router-breadcrumbs` with React Router's implementation",
+  "kind" : "task",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/19309"
+}, {
+  "number" : 20128,
+  "repository" : "keycloak",
+  "title" : "Add support for `reencrypt` OpenShift Routes to the Operator",
+  "kind" : "feature",
+  "area" : "operator",
+  "url" : "https://github.com/keycloak/keycloak/issues/20128"
+}, {
+  "number" : 20649,
+  "repository" : "keycloak",
+  "title" : "\"Not username\" and \"Not email\" options when creating/changing a password, should ignore letter case when comparing password to email or to username",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/20649"
+}, {
+  "number" : 22042,
+  "repository" : "keycloak",
+  "title" : "More flexible imports in custom theme (i.e. CSS media queries)",
+  "kind" : "feature",
+  "area" : "account/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/22042"
+}, {
+  "number" : 22229,
+  "repository" : "keycloak",
+  "title" : "UI should prevent admins from defining a dynamic client scope with type Default",
+  "kind" : "enhancement",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/22229"
+}, {
+  "number" : 24436,
+  "repository" : "keycloak",
+  "title" : "Account API - \"/applications/{clientId}/consent\" : Provide option to get enhanced ConsentScopeRepresentation",
+  "kind" : "enhancement",
+  "area" : "account/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/24436"
+}, {
+  "number" : 24823,
+  "repository" : "keycloak",
+  "title" : "Adding client_id as prefix in client roles mapper",
+  "kind" : "enhancement",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/24823"
+}, {
+  "number" : 26602,
+  "repository" : "keycloak",
+  "title" : "Allow user search by direct lookup via username and email",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/26602"
+}, {
+  "number" : 26699,
+  "repository" : "keycloak",
+  "title" : "Nested group members from Active Directory are not showing in Keycloak groups",
+  "kind" : "enhancement",
+  "area" : "ldap",
+  "url" : "https://github.com/keycloak/keycloak/issues/26699"
+}, {
+  "number" : 27431,
+  "repository" : "keycloak",
+  "title" : "New clients have a JavaScript default policy configured which causes problems on export/import",
+  "kind" : "bug",
+  "area" : "authorization-services",
+  "url" : "https://github.com/keycloak/keycloak/issues/27431"
+}, {
+  "number" : 29558,
+  "repository" : "keycloak",
+  "title" : "Best practices for detecting support for Passkeys - support for isUserVerifyingPlatformAuthenticatorAvailable() ",
+  "kind" : "enhancement",
+  "area" : "authentication/webauthn",
+  "url" : "https://github.com/keycloak/keycloak/issues/29558"
+}, {
+  "number" : 30328,
+  "repository" : "keycloak",
+  "title" : "Add ability to inspect generated SAML response for SAML Clients with client scope mappings",
+  "kind" : "enhancement",
+  "area" : "saml",
+  "url" : "https://github.com/keycloak/keycloak/issues/30328"
+}, {
+  "number" : 31641,
+  "repository" : "keycloak",
+  "title" : "Implement organization-specific admin roles with limited permissions",
+  "kind" : "enhancement",
+  "area" : "organizations",
+  "url" : "https://github.com/keycloak/keycloak/issues/31641"
+}, {
+  "number" : 32124,
+  "repository" : "keycloak",
+  "title" : "Backchannel logout notification client for Update_Password AIA is not having all the session ids",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/32124"
+}, {
+  "number" : 32527,
+  "repository" : "keycloak",
+  "title" : "Provide default krb5.conf in Docker image or extend migration docs",
+  "kind" : "enhancement",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/32527"
+}, {
+  "number" : 33204,
+  "repository" : "keycloak",
+  "title" : "Identity Providers are missing from the login page if I request a reset password for an existing user",
+  "kind" : "bug",
+  "area" : "login/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/33204"
+}, {
+  "number" : 34104,
+  "repository" : "keycloak",
+  "title" : "Improve robustness of backchannel logout with client sessions",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/34104"
+}, {
+  "number" : 35104,
+  "repository" : "keycloak",
+  "title" : "Timestamp overflow in client secret rotation feature leads to next refresh time being set to the past",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/35104"
+}, {
+  "number" : 35650,
+  "repository" : "keycloak",
+  "title" : "Compatibility profiles",
+  "kind" : "feature",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/35650"
+}, {
+  "number" : 37355,
+  "repository" : "keycloak",
+  "title" : "Web Crypto API not available in `login-status-iframe.html` when using admin console from insecure context",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/37355"
+}, {
+  "number" : 38124,
+  "repository" : "keycloak",
+  "title" : "High values for client secret expiration result in expiration dates in the past",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/38124"
+}, {
+  "number" : 38632,
+  "repository" : "keycloak",
+  "title" : "README.md Other Keycloak Projects",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/38632"
+}, {
+  "number" : 40026,
+  "repository" : "keycloak",
+  "title" : "Support subdomain matching for Organizations in IdP redirect logic",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/40026"
+}, {
+  "number" : 40125,
+  "repository" : "keycloak",
+  "title" : "Stop using jboss-parent",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/40125"
+}, {
+  "number" : 40603,
+  "repository" : "keycloak",
+  "title" : "Account UI reports \"Something went wrong\" if user doesn't have permissions to view applications",
+  "kind" : "bug",
+  "area" : "account/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/40603"
+}, {
+  "number" : 40706,
+  "repository" : "keycloak",
+  "title" : "Mention SHA1 is deprecated in the documentation",
+  "kind" : "task",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/40706"
+}, {
+  "number" : 41164,
+  "repository" : "keycloak",
+  "title" : "Redirection Endpoint should be validated not to include a hash in the URL",
+  "kind" : "enhancement",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/41164"
+}, {
+  "number" : 42513,
+  "repository" : "keycloak",
+  "title" : "Set residentKey instead of requireResidentKey in Webauthn creation request",
+  "kind" : "enhancement",
+  "area" : "authentication/webauthn",
+  "url" : "https://github.com/keycloak/keycloak/issues/42513"
+}, {
+  "number" : 42883,
+  "repository" : "keycloak",
+  "title" : "FIX multiple LDAP failover & document the possibility of having multiple LDAP URLs in LDAP provider",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/42883"
+}, {
+  "number" : 43167,
+  "repository" : "keycloak",
+  "title" : "Client REST API v2 CRUD Operations",
+  "kind" : "milestone",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/43167"
+}, {
+  "number" : 43293,
+  "repository" : "keycloak",
+  "title" : "Docs for Client v2",
+  "kind" : "task",
+  "area" : "admin/api-v2",
+  "url" : "https://github.com/keycloak/keycloak/issues/43293"
+}, {
+  "number" : 43452,
+  "repository" : "keycloak",
+  "title" : "\"Learn more\" URL needs to be updated in workflow UI",
+  "kind" : "task",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/43452"
+}, {
+  "number" : 43953,
+  "repository" : "keycloak",
+  "title" : "Make sure our cloud native distribution is sufficient for majority of users",
+  "kind" : "spike",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/43953"
+}, {
+  "number" : 43955,
+  "repository" : "keycloak",
+  "title" : "Cluster-wide Operator MVP",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/43955"
+}, {
+  "number" : 44013,
+  "repository" : "keycloak",
+  "title" : "Deprecate the Twitter IDP implementation due to old twitter4j library",
+  "kind" : "eol",
+  "area" : "identity-brokering",
+  "url" : "https://github.com/keycloak/keycloak/issues/44013"
+}, {
+  "number" : 44154,
+  "repository" : "keycloak",
+  "title" : "Client API v2 Service Layer",
+  "kind" : "milestone",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/44154"
+}, {
+  "number" : 44317,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Add a client policy to require a credential offer",
+  "kind" : "feature",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/44317"
+}, {
+  "number" : 44591,
+  "repository" : "keycloak",
+  "title" : "Terms and Conditions Accepted Timestamp",
+  "kind" : "bug",
+  "area" : "user-profile",
+  "url" : "https://github.com/keycloak/keycloak/issues/44591"
+}, {
+  "number" : 44620,
+  "repository" : "keycloak",
+  "title" : "Possible data loss when scaling Keycloak StatefulSet down (on Kubernetes)",
+  "kind" : "bug",
+  "area" : "infinispan",
+  "url" : "https://github.com/keycloak/keycloak/issues/44620"
+}, {
+  "number" : 44741,
+  "repository" : "keycloak",
+  "title" : "Device activity does not recognize iOS 26 correct",
+  "kind" : "bug",
+  "area" : "account/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/44741"
+}, {
+  "number" : 45104,
+  "repository" : "keycloak",
+  "title" : "Add native \"Remember Me\" support to WebAuthn/Passkey Authentication Flows",
+  "kind" : "enhancement",
+  "area" : "login/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/45104"
+}, {
+  "number" : 45292,
+  "repository" : "keycloak",
+  "title" : "Search realms by \"Display name\" in the \"Manage realms\" view",
+  "kind" : "enhancement",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/45292"
+}, {
+  "number" : 45295,
+  "repository" : "keycloak",
+  "title" : "Improve client authentication flows",
+  "kind" : "enhancement",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/45295"
+}, {
+  "number" : 45362,
+  "repository" : "keycloak",
+  "title" : "REST Clients for Client v2 API MVP",
+  "kind" : "milestone",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/45362"
+}, {
+  "number" : 45366,
+  "repository" : "keycloak",
+  "title" : "Client API v2 CLI client",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/45366"
+}, {
+  "number" : 45367,
+  "repository" : "keycloak",
+  "title" : "Client API v2 Go client",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/45367"
+}, {
+  "number" : 45420,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Wrong typ value for SD-JWT VC",
+  "kind" : "bug",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/45420"
+}, {
+  "number" : 45494,
+  "repository" : "keycloak",
+  "title" : "ScrollForm navigation does not update active section on click or scroll",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/45494"
+}, {
+  "number" : 45497,
+  "repository" : "keycloak",
+  "title" : "Introduce granular roles for Organization management (manage-organizations, view-organizations)",
+  "kind" : "enhancement",
+  "area" : "organizations",
+  "url" : "https://github.com/keycloak/keycloak/issues/45497"
+}, {
+  "number" : 45568,
+  "repository" : "keycloak",
+  "title" : "Pending auth flow waiting for email verification succeeds even after password reset - providing room for pre-account takeover attacks",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/45568"
+}, {
+  "number" : 45716,
+  "repository" : "keycloak",
+  "title" : "Problem with Standard Token Exchange with Dynamic Scopes feature enabled (Wrong default scopes)",
+  "kind" : "bug",
+  "area" : "token-exchange",
+  "url" : "https://github.com/keycloak/keycloak/issues/45716"
+}, {
+  "number" : 45777,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Possibility some credentials to be user self-issued, but some only admin issued",
+  "kind" : "task",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/45777"
+}, {
+  "number" : 45822,
+  "repository" : "keycloak",
+  "title" : "Remove ignored links after Keycloak 26.6 release",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/45822"
+}, {
+  "number" : 45856,
+  "repository" : "keycloak",
+  "title" : "Add documentation for verifying  the keycloak  email for user",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/45856"
+}, {
+  "number" : 45866,
+  "repository" : "keycloak",
+  "title" : "Customize SAML service provider metadata",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/45866"
+}, {
+  "number" : 45900,
+  "repository" : "keycloak",
+  "title" : "Support multiple organization scopes in OIDC token requests",
+  "kind" : "enhancement",
+  "area" : "organizations",
+  "url" : "https://github.com/keycloak/keycloak/issues/45900"
+}, {
+  "number" : 45931,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Can we store offer-state entry only once in the CredentialOfferStorage?",
+  "kind" : "task",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/45931"
+}, {
+  "number" : 45937,
+  "repository" : "keycloak",
+  "title" : "Document admin api v2 client operator logic",
+  "kind" : "task",
+  "area" : "admin/api-v2",
+  "url" : "https://github.com/keycloak/keycloak/issues/45937"
+}, {
+  "number" : 46083,
+  "repository" : "keycloak",
+  "title" : "\"Full scope allowed\" toggle reverts to previous state when switching between Scope and Mappers tabs in Dedicated scopes",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/46083"
+}, {
+  "number" : 46088,
+  "repository" : "keycloak",
+  "title" : "Newly created resource appears on both current and next page in Authorization Resources tab",
+  "kind" : "bug",
+  "area" : "authorization-services",
+  "url" : "https://github.com/keycloak/keycloak/issues/46088"
+}, {
+  "number" : 46132,
+  "repository" : "keycloak",
+  "title" : "profile scope causes NumberFormatException",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/46132"
+}, {
+  "number" : 46172,
+  "repository" : "keycloak",
+  "title" : "Issues when deleting several realms at the same time",
+  "kind" : "bug",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/46172"
+}, {
+  "number" : 46195,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Doublecheck and test that \"Consent required\" works as expected when OID4VCI scope is requested",
+  "kind" : "task",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/46195"
+}, {
+  "number" : 46197,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] User self-issued credential: Account console support",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/46197"
+}, {
+  "number" : 46204,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Update DB schema and view of admin REST API",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/46204"
+}, {
+  "number" : 46206,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Update Account REST API",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/46206"
+}, {
+  "number" : 46207,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Revocation of credential in admin REST API",
+  "kind" : "task",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/46207"
+}, {
+  "number" : 46208,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Admin console UI for seeing VC of specific user and revoke them",
+  "kind" : "task",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/46208"
+}, {
+  "number" : 46210,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Account console UI for seeing VC of specific user and revoke them",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/46210"
+}, {
+  "number" : 46240,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Pre-authorized grant switch on the client, removing oid4vci client type",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/46240"
+}, {
+  "number" : 46242,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Admin-issued credential: permission for user for permanent credential offer",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/46242"
+}, {
+  "number" : 46246,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Ability for the user and admin to create, see and revoke credential permissions and offers",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/46246"
+}, {
+  "number" : 46248,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Update DB schema and view of admin REST API (Credential permissions)",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/46248"
+}, {
+  "number" : 46249,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Update Account REST API (Credential permissions)",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/46249"
+}, {
+  "number" : 46250,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Revocation of credential permissions in admin REST API and account REST API",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/46250"
+}, {
+  "number" : 46251,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Admin console UI for seeing credential permission of specific user and create and revoke them",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/46251"
+}, {
+  "number" : 46252,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Account console UI for seeing credential permissions of user and revoke them",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/46252"
+}, {
+  "number" : 46270,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Issuer state support",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/46270"
+}, {
+  "number" : 46275,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Migrate OID4VCI automated tests to the new testsuite",
+  "kind" : "milestone",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/46275"
+}, {
+  "number" : 46279,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Revisit credential offer created by REST endpoint",
+  "kind" : "task",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/46279"
+}, {
+  "number" : 46281,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Admin console view for user",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/46281"
+}, {
+  "number" : 46282,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Account console view for user",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/46282"
+}, {
+  "number" : 46435,
+  "repository" : "keycloak",
+  "title" : "Good database instructions for a production ready Keycloak setup",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/46435"
+}, {
+  "number" : 46463,
+  "repository" : "keycloak",
+  "title" : "Input field for device user code is badly formatted",
+  "kind" : "bug",
+  "area" : "login/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/46463"
+}, {
+  "number" : 46464,
+  "repository" : "keycloak",
+  "title" : "Basic internal to external token exchange using identity brokering APIs",
+  "kind" : "milestone",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/46464"
+}, {
+  "number" : 46524,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Review did attribute on user's profile",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/46524"
+}, {
+  "number" : 46543,
+  "repository" : "keycloak",
+  "title" : "Step-up authentication for SAML - supported",
+  "kind" : "feature",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/46543"
+}, {
+  "number" : 46587,
+  "repository" : "keycloak",
+  "title" : "Skip creation of `broker` client when `identity-broker-api:v1` is disabled",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/46587"
+}, {
+  "number" : 46634,
+  "repository" : "keycloak",
+  "title" : "Brute force detection counter does not work properly",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/46634"
+}, {
+  "number" : 46740,
+  "repository" : "keycloak",
+  "title" : "Prevent ASCII control characters in query parameters",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/46740"
+}, {
+  "number" : 46742,
+  "repository" : "keycloak",
+  "title" : "Keycloak makes network requests to addresses in login certificates before verifying them",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/46742"
+}, {
+  "number" : 46749,
+  "repository" : "keycloak",
+  "title" : "Add the client crds back to the operator bundle",
+  "kind" : "task",
+  "area" : "admin/api-v2",
+  "url" : "https://github.com/keycloak/keycloak/issues/46749"
+}, {
+  "number" : 46785,
+  "repository" : "keycloak",
+  "title" : "New client service - PUT/POST - update or create client",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/46785"
+}, {
+  "number" : 46853,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Removing oid4vci client type",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/46853"
+}, {
+  "number" : 46903,
+  "repository" : "keycloak",
+  "title" : "A User belonging to multiple organization should be allowed to change his organization choice during login",
+  "kind" : "enhancement",
+  "area" : "organizations",
+  "url" : "https://github.com/keycloak/keycloak/issues/46903"
+}, {
+  "number" : 46917,
+  "repository" : "keycloak",
+  "title" : "Remove application/sessionfactory logic that is no longer needed",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/46917"
+}, {
+  "number" : 46926,
+  "repository" : "keycloak",
+  "title" : "PAR endpoint enforces “Request Object Required” and expects request_uri",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/46926"
+}, {
+  "number" : 46954,
+  "repository" : "keycloak",
+  "title" : "ClearExpiredEvents job crashes app and locks DB when EVENT_ENTITY Table has large amount of records",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/46954"
+}, {
+  "number" : 46959,
+  "repository" : "keycloak",
+  "title" : "Enhance WebAuthn Conditional UI to auto-trigger passkey modal on page load",
+  "kind" : "enhancement",
+  "area" : "authentication/webauthn",
+  "url" : "https://github.com/keycloak/keycloak/issues/46959"
+}, {
+  "number" : 46978,
+  "repository" : "keycloak",
+  "title" : "Document / validate .conf extension is required for --config-file option",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/46978"
+}, {
+  "number" : 46981,
+  "repository" : "keycloak",
+  "title" : "Support experimental cluster-wide operator installation by using kubectl",
+  "kind" : "enhancement",
+  "area" : "operator",
+  "url" : "https://github.com/keycloak/keycloak/issues/46981"
+}, {
+  "number" : 47017,
+  "repository" : "keycloak",
+  "title" : "Remember me does not work when organization scope is enabled on login session.",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/47017"
+}, {
+  "number" : 47046,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Credential definition type should include VerifiableCredential",
+  "kind" : "bug",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/47046"
+}, {
+  "number" : 47061,
+  "repository" : "keycloak",
+  "title" : "Duplicated flows can have illegal characters in step name",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/47061"
+}, {
+  "number" : 47077,
+  "repository" : "keycloak",
+  "title" : "Improvements for quarkus dev mode",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47077"
+}, {
+  "number" : 47150,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI-HAIP] Pass oid4vci-1_0-issuer-metadata-test",
+  "kind" : "task",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/47150"
+}, {
+  "number" : 47171,
+  "repository" : "keycloak",
+  "title" : "Fetch OpenAPI document from server and adjut Client API v2 CLI client according to the server it communicates it",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47171"
+}, {
+  "number" : 47174,
+  "repository" : "keycloak",
+  "title" : "MySQL/TiDB: Configure DB socket timeouts on the fly during connection creation phase",
+  "kind" : "enhancement",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/47174"
+}, {
+  "number" : 47202,
+  "repository" : "keycloak",
+  "title" : "DefaultLocaleUpdaterProvider: KEYCLOAK_LOCALE cookie not set for READ_ONLY federated users",
+  "kind" : "bug",
+  "area" : "ldap",
+  "url" : "https://github.com/keycloak/keycloak/issues/47202"
+}, {
+  "number" : 47247,
+  "repository" : "keycloak",
+  "title" : "Relax URL validations in Client v2",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47247"
+}, {
+  "number" : 47274,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Option 'Pre-Authorized code lifespan' should be renamed",
+  "kind" : "bug",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/47274"
+}, {
+  "number" : 47284,
+  "repository" : "keycloak",
+  "title" : "Introduce ORGANIZATIONS resource type in Fine-Grained Admin Permissions",
+  "kind" : "enhancement",
+  "area" : "admin/fine-grained-permissions",
+  "url" : "https://github.com/keycloak/keycloak/issues/47284"
+}, {
+  "number" : 47294,
+  "repository" : "keycloak",
+  "title" : "Use SecureRandom instead of Random for D-Bus cookie generation in SSSD federation",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/47294"
+}, {
+  "number" : 47314,
+  "repository" : "keycloak",
+  "title" : "Token Exchange with sender constrained tokens missing cnf claim",
+  "kind" : "enhancement",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/47314"
+}, {
+  "number" : 47316,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI-HAIP] Pass oid4vci-1_0-issuer-happy-flow",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47316"
+}, {
+  "number" : 47327,
+  "repository" : "keycloak",
+  "title" : "Support mapping existing Realm and Client roles to Organization Groups",
+  "kind" : "enhancement",
+  "area" : "organizations",
+  "url" : "https://github.com/keycloak/keycloak/issues/47327"
+}, {
+  "number" : 47330,
+  "repository" : "keycloak",
+  "title" : "Document provided ProtocolMapper implementations",
+  "kind" : "enhancement",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/47330"
+}, {
+  "number" : 47339,
+  "repository" : "keycloak",
+  "title" : "Deprecate identity-broker-api:v1",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47339"
+}, {
+  "number" : 47341,
+  "repository" : "keycloak",
+  "title" : "Updating client scope fails if it was saved while the dynamic scopes feature was active in the past",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/47341"
+}, {
+  "number" : 47356,
+  "repository" : "keycloak",
+  "title" : "Enhancement: Improve the performance of loading large password blacklists",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47356"
+}, {
+  "number" : 47371,
+  "repository" : "keycloak",
+  "title" : "Expose validations in OpenAPI spec for Client v2",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47371"
+}, {
+  "number" : 47383,
+  "repository" : "keycloak",
+  "title" : "Add example for health check when using HTTPS",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47383"
+}, {
+  "number" : 47386,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] TokenResponse requires credential_identifiers in authorization_details",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47386"
+}, {
+  "number" : 47410,
+  "repository" : "keycloak",
+  "title" : "More flexibility for client policies in identity-broker-api:v2",
+  "kind" : "task",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/47410"
+}, {
+  "number" : 47421,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.model.session.OfflineSessionPersistenceTest#testPersistenceMultipleNodesClientSessionAtSameNode",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/47421"
+}, {
+  "number" : 47426,
+  "repository" : "keycloak",
+  "title" : "Remove default client v2 service",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47426"
+}, {
+  "number" : 47431,
+  "repository" : "keycloak",
+  "title" : "Organization feature will only show linked IDPs if the user has already one linked",
+  "kind" : "enhancement",
+  "area" : "organizations",
+  "url" : "https://github.com/keycloak/keycloak/issues/47431"
+}, {
+  "number" : 47432,
+  "repository" : "keycloak",
+  "title" : "The cancel button in the custom UiTabProvider encounters an issue where it redirects to an incorrect URL and triggers an error.",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/47432"
+}, {
+  "number" : 47463,
+  "repository" : "keycloak",
+  "title" : "Client API v2 CLI client: make discriminator subcommand optional",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47463"
+}, {
+  "number" : 47469,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI-HAIP] Pass oid4vci-1_0-issuer-fail-replay-nonce",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47469"
+}, {
+  "number" : 47472,
+  "repository" : "keycloak",
+  "title" : "Client API v2 CLI client: rename `update` sub-command to reflect the fact it either create or update client",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47472"
+}, {
+  "number" : 47477,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.forms.AuthenticatorSubflowsTest2#testSubflow2",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/47477"
+}, {
+  "number" : 47478,
+  "repository" : "keycloak",
+  "title" : "Promote identity-broker-api:v2 to supported",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47478"
+}, {
+  "number" : 47484,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI-HAIP] Pass oid4vci-1_0-issuer-fail-invalid-key-attestation-signature",
+  "kind" : "task",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/47484"
+}, {
+  "number" : 47491,
+  "repository" : "keycloak",
+  "title" : "Migrate Standard Token Exchange tests",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47491"
+}, {
+  "number" : 47492,
+  "repository" : "keycloak",
+  "title" : "Client API v2 CLI client: default command descriptor shouldn't be build with standalone app",
+  "kind" : "task",
+  "area" : "admin/cli",
+  "url" : "https://github.com/keycloak/keycloak/issues/47492"
+}, {
+  "number" : 47493,
+  "repository" : "keycloak",
+  "title" : "Client API v2 CLI client: leaf sub-command should not have connection options to avoid potential conflicts with other options",
+  "kind" : "task",
+  "area" : "admin/cli",
+  "url" : "https://github.com/keycloak/keycloak/issues/47493"
+}, {
+  "number" : 47496,
+  "repository" : "keycloak",
+  "title" : "Client API v2 CLI client: create command should support optional client id passed as argument",
+  "kind" : "task",
+  "area" : "admin/cli",
+  "url" : "https://github.com/keycloak/keycloak/issues/47496"
+}, {
+  "number" : 47497,
+  "repository" : "keycloak",
+  "title" : "Client API v2 CLI client: list should allow to filter output options to only return client ids and type",
+  "kind" : "task",
+  "area" : "admin/cli",
+  "url" : "https://github.com/keycloak/keycloak/issues/47497"
+}, {
+  "number" : 47498,
+  "repository" : "keycloak",
+  "title" : "Client API v2 CLI client: patch could optionally allow to `edit` leveraging the default editor",
+  "kind" : "task",
+  "area" : "admin/cli",
+  "url" : "https://github.com/keycloak/keycloak/issues/47498"
+}, {
+  "number" : 47499,
+  "repository" : "keycloak",
+  "title" : "Maven windows wrapper trips over whitespace in pathname for setup",
+  "kind" : "bug",
+  "area" : "dependencies",
+  "url" : "https://github.com/keycloak/keycloak/issues/47499"
+}, {
+  "number" : 47500,
+  "repository" : "keycloak",
+  "title" : "Build Quarkus snapshots in quarkus-next workflow",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/47500"
+}, {
+  "number" : 47513,
+  "repository" : "keycloak",
+  "title" : "Review JwtProofValidator",
+  "kind" : "bug",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/47513"
+}, {
+  "number" : 47517,
+  "repository" : "keycloak",
+  "title" : "Test migration util - Remove extends AbstractTestRealmKeycloakTest and AbstractKeycloakTest",
+  "kind" : "task",
+  "area" : "test-framework",
+  "url" : "https://github.com/keycloak/keycloak/issues/47517"
+}, {
+  "number" : 47520,
+  "repository" : "keycloak",
+  "title" : "Test migration util - Migrate event assertions",
+  "kind" : "task",
+  "area" : "test-framework",
+  "url" : "https://github.com/keycloak/keycloak/issues/47520"
+}, {
+  "number" : 47523,
+  "repository" : "keycloak",
+  "title" : "The name \"master\" seems to be hard-coded in places and thus breaks KC_SPI_ADMIN_REALM",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/47523"
+}, {
+  "number" : 47524,
+  "repository" : "keycloak",
+  "title" : "Require 'clientId' field in the payload",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47524"
+}, {
+  "number" : 47542,
+  "repository" : "keycloak",
+  "title" : "Use client-side Streaming for admin api v2 in the Java client",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47542"
+}, {
+  "number" : 47545,
+  "repository" : "keycloak",
+  "title" : "Keycloak ships source maps for Admin UI and Account UI",
+  "kind" : "bug",
+  "area" : "account/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/47545"
+}, {
+  "number" : 47547,
+  "repository" : "keycloak",
+  "title" : "Update the translation guidelines for humans and AI",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47547"
+}, {
+  "number" : 47560,
+  "repository" : "keycloak",
+  "title" : "Missing default value for max parameter in the Admin REST APIs docs",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/47560"
+}, {
+  "number" : 47574,
+  "repository" : "keycloak",
+  "title" : "Client API v2 CLI Client: Jakarta validation errors are not handled",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47574"
+}, {
+  "number" : 47579,
+  "repository" : "keycloak",
+  "title" : "Require 'protocol' field in the payload",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47579"
+}, {
+  "number" : 47585,
+  "repository" : "keycloak",
+  "title" : "Fine-Grained Admin Permissions for Organizations",
+  "kind" : "milestone",
+  "area" : "admin/fine-grained-permissions",
+  "url" : "https://github.com/keycloak/keycloak/issues/47585"
+}, {
+  "number" : 47590,
+  "repository" : "keycloak",
+  "title" : "SCIM Services as Technology Preview Feature",
+  "kind" : "milestone",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47590"
+}, {
+  "number" : 47604,
+  "repository" : "keycloak",
+  "title" : "Documentation",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47604"
+}, {
+  "number" : 47618,
+  "repository" : "keycloak",
+  "title" : "Migrate and consolidate OID4VC Protocol Mapper integration tests",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47618"
+}, {
+  "number" : 47629,
+  "repository" : "keycloak",
+  "title" : "Implement the AuthZen Evaluation API",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47629"
+}, {
+  "number" : 47649,
+  "repository" : "keycloak",
+  "title" : "OAuthClient cannot handle invalid authorization requests",
+  "kind" : "task",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/47649"
+}, {
+  "number" : 47659,
+  "repository" : "keycloak",
+  "title" : "SRCFG01008 warning in source Quarkus dev mode when kc.log-console-output=default (not reproducible via packaged kc.sh)",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/47659"
+}, {
+  "number" : 47662,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI-HAIP] Pass oid4vci-1_0-issuer-happy-flow (encrypted)",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47662"
+}, {
+  "number" : 47681,
+  "repository" : "keycloak",
+  "title" : "Log Injection and Audit Forgery in OIDC Authorization Endpoint (client_id parameter)",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/47681"
+}, {
+  "number" : 47695,
+  "repository" : "keycloak",
+  "title" : "Review logging messages",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47695"
+}, {
+  "number" : 47700,
+  "repository" : "keycloak",
+  "title" : "Duplicate entries created in Role Attributes during concurrent setSingleAttribute calls",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/47700"
+}, {
+  "number" : 47710,
+  "repository" : "keycloak",
+  "title" : "updated popover when there is no change",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/47710"
+}, {
+  "number" : 47733,
+  "repository" : "keycloak",
+  "title" : "Able to update Identity Provider alias via admin console and API",
+  "kind" : "bug",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/47733"
+}, {
+  "number" : 47750,
+  "repository" : "keycloak",
+  "title" : "cache-embedded-mtls-enabled maps to a build time property, but is a runtime option",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/47750"
+}, {
+  "number" : 47762,
+  "repository" : "keycloak",
+  "title" : "Enhance quick-theme .jar generation.",
+  "kind" : "enhancement",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/47762"
+}, {
+  "number" : 47807,
+  "repository" : "keycloak",
+  "title" : "Review and migrate tests for database matrix - Core AuthN",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47807"
+}, {
+  "number" : 47810,
+  "repository" : "keycloak",
+  "title" : "Migrate session package to new test framework",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47810"
+}, {
+  "number" : 47812,
+  "repository" : "keycloak",
+  "title" : "Migrate ssl package to new test framework",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47812"
+}, {
+  "number" : 47820,
+  "repository" : "keycloak",
+  "title" : "Review permission model for accessing the SCIM API",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47820"
+}, {
+  "number" : 47825,
+  "repository" : "keycloak",
+  "title" : "Implement the AuthZen Evaluations API",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47825"
+}, {
+  "number" : 47832,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.model.session.OfflineSessionPersistenceTest#testPersistenceClientSessionsMultipleNodes",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/47832"
+}, {
+  "number" : 47833,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.model.session.UserSessionPersisterProviderTest#testUserRemoved",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/47833"
+}, {
+  "number" : 47834,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.model.session.UserSessionPersisterProviderTest#testExpirationDistribution",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/47834"
+}, {
+  "number" : 47835,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.model.session.UserSessionProviderOfflineModelTest#testOfflineSessionLazyLoadingPropagationBetweenNodes",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/47835"
+}, {
+  "number" : 47851,
+  "repository" : "keycloak",
+  "title" : "OrganizationGroupMembershipMapper should support configurable token claim name",
+  "kind" : "enhancement",
+  "area" : "organizations",
+  "url" : "https://github.com/keycloak/keycloak/issues/47851"
+}, {
+  "number" : 47869,
+  "repository" : "keycloak",
+  "title" : "Configuration reset isn't always complete",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47869"
+}, {
+  "number" : 47883,
+  "repository" : "keycloak",
+  "title" : "Remove deprecate method `LoginPage#open()` in old testsuite",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47883"
+}, {
+  "number" : 47887,
+  "repository" : "keycloak",
+  "title" : "Update tests in `common` to use JUnit 6",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47887"
+}, {
+  "number" : 47898,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Default client scopes not configured correctly",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47898"
+}, {
+  "number" : 47900,
+  "repository" : "keycloak",
+  "title" : "[Old Arquillian testsuite] Migrating Assert JUnit4 to Assertions JUnit5",
+  "kind" : "task",
+  "area" : "test-framework",
+  "url" : "https://github.com/keycloak/keycloak/issues/47900"
+}, {
+  "number" : 47913,
+  "repository" : "keycloak",
+  "title" : "Replace usage of JsonNode with InputStream for patching",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47913"
+}, {
+  "number" : 47914,
+  "repository" : "keycloak",
+  "title" : "Declarative UI: Avoid silent failure to add path params",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/47914"
+}, {
+  "number" : 47918,
+  "repository" : "keycloak",
+  "title" : "Migrate Organization Groups tests into new testsuite",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47918"
+}, {
+  "number" : 47923,
+  "repository" : "keycloak",
+  "title" : "account-console client can be deleted despite being a built-in internal client",
+  "kind" : "bug",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/47923"
+}, {
+  "number" : 47925,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.model.session.AuthenticationSessionTest#testConcurrentAuthenticationSessionsRemoval",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/47925"
+}, {
+  "number" : 47927,
+  "repository" : "keycloak",
+  "title" : "Migrate Organization Authz tests into new testsuite",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47927"
+}, {
+  "number" : 47941,
+  "repository" : "keycloak",
+  "title" : "Split ApiUtil into ApiUtil and AdminApiUtil in old testsuite",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47941"
+}, {
+  "number" : 47946,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Add comprehensive testing for pre-installed vc configs",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47946"
+}, {
+  "number" : 47951,
+  "repository" : "keycloak",
+  "title" : "Add Vietnamese (vi) as a translation",
+  "kind" : "enhancement",
+  "area" : "translations",
+  "url" : "https://github.com/keycloak/keycloak/issues/47951"
+}, {
+  "number" : 47958,
+  "repository" : "keycloak",
+  "title" : "Admin UI Test is logging to the console",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/47958"
+}, {
+  "number" : 47960,
+  "repository" : "keycloak",
+  "title" : "Add CLI options for mTLS database connections",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47960"
+}, {
+  "number" : 47963,
+  "repository" : "keycloak",
+  "title" : "Update tested configurations for single- and multi-cluster to the recent OpenShift version",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/47963"
+}, {
+  "number" : 47966,
+  "repository" : "keycloak",
+  "title" : "Client admin v2 API: service account role management fails for client roles",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/47966"
+}, {
+  "number" : 47967,
+  "repository" : "keycloak",
+  "title" : "Generated openapi.yaml drifts on incremental builds",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/47967"
+}, {
+  "number" : 47970,
+  "repository" : "keycloak",
+  "title" : "JDBC_PING2 will stall when in a two-node-split-brain one node dies",
+  "kind" : "bug",
+  "area" : "infinispan",
+  "url" : "https://github.com/keycloak/keycloak/issues/47970"
+}, {
+  "number" : 47978,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.model.session.UserSessionInitializerTest#testUserSessionPropagationBetweenSites",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/47978"
+}, {
+  "number" : 47979,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.model.session.UserSessionProviderOfflineModelTest#testOfflineSessionLazyLoading",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/47979"
+}, {
+  "number" : 47983,
+  "repository" : "keycloak",
+  "title" : "Docs for Client v2: Generated docs from the OpenAPI spec",
+  "kind" : "task",
+  "area" : "admin/api-v2",
+  "url" : "https://github.com/keycloak/keycloak/issues/47983"
+}, {
+  "number" : 47984,
+  "repository" : "keycloak",
+  "title" : "Docs for Client v2: explain how to enable Client v2",
+  "kind" : "task",
+  "area" : "admin/api-v2",
+  "url" : "https://github.com/keycloak/keycloak/issues/47984"
+}, {
+  "number" : 47985,
+  "repository" : "keycloak",
+  "title" : "Docs for Client v2: Release notes",
+  "kind" : "task",
+  "area" : "admin/api-v2",
+  "url" : "https://github.com/keycloak/keycloak/issues/47985"
+}, {
+  "number" : 47990,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.model.session.AuthenticationSessionTest#testConcurrentAuthenticationSessionsCreation",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/47990"
+}, {
+  "number" : 47993,
+  "repository" : "keycloak",
+  "title" : "Docs: directory of keycloak-database-update.sql file",
+  "kind" : "bug",
+  "area" : "import-export",
+  "url" : "https://github.com/keycloak/keycloak/issues/47993"
+}, {
+  "number" : 48000,
+  "repository" : "keycloak",
+  "title" : "HAProxy tls-passthrough blueprint",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48000"
+}, {
+  "number" : 48002,
+  "repository" : "keycloak",
+  "title" : "TLS re-encrypt vs passthrough incl. security pros/cons and best practices",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48002"
+}, {
+  "number" : 48003,
+  "repository" : "keycloak",
+  "title" : "Follow-up to adding a synthetic option",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48003"
+}, {
+  "number" : 48010,
+  "repository" : "keycloak",
+  "title" : "Move the phishing check to the REST layer",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48010"
+}, {
+  "number" : 48014,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] credential_offer_uri can only be consumed once",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48014"
+}, {
+  "number" : 48024,
+  "repository" : "keycloak",
+  "title" : "Relax Client ID validation for the Signed JWT - Federated (Kubernetes Service Accounts)",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/48024"
+}, {
+  "number" : 48028,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Remove unwanted clientId=test-app from OID4VCIssuerTestBase",
+  "kind" : "task",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/48028"
+}, {
+  "number" : 48035,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Self-Signed x5c Bypasses Key Attestation Validation",
+  "kind" : "bug",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/48035"
+}, {
+  "number" : 48044,
+  "repository" : "keycloak",
+  "title" : "OID4VC QR Code Unbounded Dimensions DoS",
+  "kind" : "bug",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/48044"
+}, {
+  "number" : 48045,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI-FAPI2] Pass fapi2-security-profile-final-access-token-type-header-case-sensitivity",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48045"
+}, {
+  "number" : 48047,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI-FAPI2] Pass fapi2-security-profile-final-state-only-outside-request-object-not-used",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48047"
+}, {
+  "number" : 48053,
+  "repository" : "keycloak",
+  "title" : "Allow db-connect-timeout to be used for all datasources",
+  "kind" : "enhancement",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/48053"
+}, {
+  "number" : 48059,
+  "repository" : "keycloak",
+  "title" : "Safeguard against wrong PID in containers",
+  "kind" : "enhancement",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/48059"
+}, {
+  "number" : 48067,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI-FAPI2] Pass fapi2-security-profile-final-ensure-response-type-code-idtoken-fails",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48067"
+}, {
+  "number" : 48069,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI-FAPI2] Pass fapi2-security-profile-final-ensure-holder-of-key-required",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48069"
+}, {
+  "number" : 48070,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI-FAPI2] Pass fapi2-security-profile-final-dpop-negative-tests",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48070"
+}, {
+  "number" : 48071,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI-FAPI2] Pass fapi2-security-profile-final-refresh-token",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48071"
+}, {
+  "number" : 48072,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI-FAPI2] Pass fapi2-security-profile-final-par-ensure-reused-request-uri-prior-to-auth-completion-succeeds",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48072"
+}, {
+  "number" : 48084,
+  "repository" : "keycloak",
+  "title" : "Admin console localizate realm name",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/48084"
+}, {
+  "number" : 48088,
+  "repository" : "keycloak",
+  "title" : "When a group is granted a role, it should not read all existing role mappings from the database",
+  "kind" : "enhancement",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/48088"
+}, {
+  "number" : 48098,
+  "repository" : "keycloak",
+  "title" : "Expose hidden management options",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48098"
+}, {
+  "number" : 48104,
+  "repository" : "keycloak",
+  "title" : "Remove support for token-exchange-external-internal:v2",
+  "kind" : "eol",
+  "area" : "token-exchange/federated",
+  "url" : "https://github.com/keycloak/keycloak/issues/48104"
+}, {
+  "number" : 48114,
+  "repository" : "keycloak",
+  "title" : "Restructor the client admin api v2 logic",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48114"
+}, {
+  "number" : 48115,
+  "repository" : "keycloak",
+  "title" : "Refine KcUnmatchedArgumentException option filtering",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48115"
+}, {
+  "number" : 48119,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.broker.KcOidcBrokerTest#loginWithExistingUserWithBruteForceEnabled",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/48119"
+}, {
+  "number" : 48120,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.model.session.UserSessionProviderModelTest#testCreateUserSessionsParallel",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/48120"
+}, {
+  "number" : 48121,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.model.session.UserSessionProviderModelTest#testStreamsMarshalling",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/48121"
+}, {
+  "number" : 48124,
+  "repository" : "keycloak",
+  "title" : "HAProxy with tls-reencrypt",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48124"
+}, {
+  "number" : 48128,
+  "repository" : "keycloak",
+  "title" : "Traefik: Documentation for TLS passthrough in main Keycloak docs",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48128"
+}, {
+  "number" : 48129,
+  "repository" : "keycloak",
+  "title" : "Stabilize Operator CI in quarkus-next",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/48129"
+}, {
+  "number" : 48132,
+  "repository" : "keycloak",
+  "title" : "Migrate Organization Cache tests into new testsuite",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48132"
+}, {
+  "number" : 48137,
+  "repository" : "keycloak",
+  "title" : "Unhandled NullPointerException on Keycloak Server via GET parameter \"key\" with unsigned JWT",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/48137"
+}, {
+  "number" : 48145,
+  "repository" : "keycloak",
+  "title" : "New testsuite migration - Core Authn team",
+  "kind" : "milestone",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/48145"
+}, {
+  "number" : 48148,
+  "repository" : "keycloak",
+  "title" : "Migrate the `AccountRestServiceTest`",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48148"
+}, {
+  "number" : 48149,
+  "repository" : "keycloak",
+  "title" : "Migrate the `RequiredActionUpdateProfileTest`",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48149"
+}, {
+  "number" : 48150,
+  "repository" : "keycloak",
+  "title" : "Migrate the `PasswordPolicyTest`",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48150"
+}, {
+  "number" : 48152,
+  "repository" : "keycloak",
+  "title" : "Migrate the `ExportImportTest`",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48152"
+}, {
+  "number" : 48153,
+  "repository" : "keycloak",
+  "title" : "Migrate the `SSOTest`",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48153"
+}, {
+  "number" : 48154,
+  "repository" : "keycloak",
+  "title" : "Review the migrated `ComponentsTest`",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48154"
+}, {
+  "number" : 48155,
+  "repository" : "keycloak",
+  "title" : "Review the migrated `ConsentsTest`",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48155"
+}, {
+  "number" : 48159,
+  "repository" : "keycloak",
+  "title" : "Review migrated admin tests in the `concurrency` package",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48159"
+}, {
+  "number" : 48162,
+  "repository" : "keycloak",
+  "title" : "Review migrated admin tests in the `partialimport` package",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48162"
+}, {
+  "number" : 48169,
+  "repository" : "keycloak",
+  "title" : "More robust handling of the algorithm:none in TokenManager",
+  "kind" : "task",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/48169"
+}, {
+  "number" : 48170,
+  "repository" : "keycloak",
+  "title" : "Migrate tests for UserSessionLimitsTest",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48170"
+}, {
+  "number" : 48173,
+  "repository" : "keycloak",
+  "title" : "Maven cache is never extracted on Azure/Aurora VMs",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/48173"
+}, {
+  "number" : 48191,
+  "repository" : "keycloak",
+  "title" : "Review ClientTest",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48191"
+}, {
+  "number" : 48193,
+  "repository" : "keycloak",
+  "title" : "Review ImpersonationTest",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48193"
+}, {
+  "number" : 48195,
+  "repository" : "keycloak",
+  "title" : "Review RefreshTokenTimeoutsTest",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48195"
+}, {
+  "number" : 48199,
+  "repository" : "keycloak",
+  "title" : "Migrate ClientRegistrationTest",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48199"
+}, {
+  "number" : 48200,
+  "repository" : "keycloak",
+  "title" : "Migrate LoginTest",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48200"
+}, {
+  "number" : 48201,
+  "repository" : "keycloak",
+  "title" : "Migrate AuthorizationCodeTest",
+  "kind" : "task",
+  "area" : "test-framework",
+  "url" : "https://github.com/keycloak/keycloak/issues/48201"
+}, {
+  "number" : 48202,
+  "repository" : "keycloak",
+  "title" : "Migrate SamlClientTest",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48202"
+}, {
+  "number" : 48206,
+  "repository" : "keycloak",
+  "title" : "Registration with email verification - corner case scenario for pre-account takeover",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/48206"
+}, {
+  "number" : 48210,
+  "repository" : "keycloak",
+  "title" : "Update composite GitHub actions",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48210"
+}, {
+  "number" : 48214,
+  "repository" : "keycloak",
+  "title" : "Allow usage of from with synthetic wildcards",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48214"
+}, {
+  "number" : 48230,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.model.session.OfflineSessionPersistenceTest#testPersistenceMultipleNodesClientSessionsAtRandomNode",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/48230"
+}, {
+  "number" : 48239,
+  "repository" : "keycloak",
+  "title" : "Remove deprecated method OAuthClient#clientId(String clientId)",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48239"
+}, {
+  "number" : 48265,
+  "repository" : "keycloak",
+  "title" : "[ABCA] Introduce initial authenticator and building-blocks",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48265"
+}, {
+  "number" : 48267,
+  "repository" : "keycloak",
+  "title" : "[ABCA] Remove reference of ABCA from ClientAuthenticationFlow class",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48267"
+}, {
+  "number" : 48269,
+  "repository" : "keycloak",
+  "title" : "[ABCA] Doublecheck how to configure valid keys for client attestation authentication",
+  "kind" : "task",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/48269"
+}, {
+  "number" : 48284,
+  "repository" : "keycloak",
+  "title" : "UiPageProvider components not refreshed on page change",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/48284"
+}, {
+  "number" : 48286,
+  "repository" : "keycloak",
+  "title" : "Subsetting MVP in Client v2",
+  "kind" : "milestone",
+  "area" : "admin/api-v2",
+  "url" : "https://github.com/keycloak/keycloak/issues/48286"
+}, {
+  "number" : 48287,
+  "repository" : "keycloak",
+  "title" : "AuthZEN lookup subject.type=user based upon username not UUID",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48287"
+}, {
+  "number" : 48288,
+  "repository" : "keycloak",
+  "title" : "AuthZEN allow configurable subject lookup semantics",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48288"
+}, {
+  "number" : 48289,
+  "repository" : "keycloak",
+  "title" : "Client v2 Pagination MVP",
+  "kind" : "task",
+  "area" : "admin/api-v2",
+  "url" : "https://github.com/keycloak/keycloak/issues/48289"
+}, {
+  "number" : 48290,
+  "repository" : "keycloak",
+  "title" : "Propogate X-Request-ID headers in AuthZEN requests to responses",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48290"
+}, {
+  "number" : 48292,
+  "repository" : "keycloak",
+  "title" : "Client v2 Projection MVP",
+  "kind" : "task",
+  "area" : "admin/api-v2",
+  "url" : "https://github.com/keycloak/keycloak/issues/48292"
+}, {
+  "number" : 48294,
+  "repository" : "keycloak",
+  "title" : "Querying MVP in Client v2",
+  "kind" : "task",
+  "area" : "admin/api-v2",
+  "url" : "https://github.com/keycloak/keycloak/issues/48294"
+}, {
+  "number" : 48295,
+  "repository" : "keycloak",
+  "title" : "Sorting MVP in Client v2",
+  "kind" : "task",
+  "area" : "admin/api-v2",
+  "url" : "https://github.com/keycloak/keycloak/issues/48295"
+}, {
+  "number" : 48296,
+  "repository" : "keycloak",
+  "title" : "Fetching batch of resources in Client v2",
+  "kind" : "task",
+  "area" : "admin/api-v2",
+  "url" : "https://github.com/keycloak/keycloak/issues/48296"
+}, {
+  "number" : 48297,
+  "repository" : "keycloak",
+  "title" : "Pagination in Client v2 CLI",
+  "kind" : "task",
+  "area" : "admin/api-v2",
+  "url" : "https://github.com/keycloak/keycloak/issues/48297"
+}, {
+  "number" : 48298,
+  "repository" : "keycloak",
+  "title" : "Pagination in Client v2 JS client",
+  "kind" : "task",
+  "area" : "admin/api-v2",
+  "url" : "https://github.com/keycloak/keycloak/issues/48298"
+}, {
+  "number" : 48304,
+  "repository" : "keycloak",
+  "title" : "Introduce ManagedRealm into legacy testsuite",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48304"
+}, {
+  "number" : 48310,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Remove unwanted selenium exception handling",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48310"
+}, {
+  "number" : 48323,
+  "repository" : "keycloak",
+  "title" : "Refactor builders in testsuite part 1",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48323"
+}, {
+  "number" : 48338,
+  "repository" : "keycloak",
+  "title" : "Add details to AdminEvent in UserResource.removeCredential",
+  "kind" : "enhancement",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/48338"
+}, {
+  "number" : 48340,
+  "repository" : "keycloak",
+  "title" : "Release a version of the java admin client that supports client admin api v2",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48340"
+}, {
+  "number" : 48345,
+  "repository" : "keycloak",
+  "title" : "Fetching custom user profile attributes as extensions",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48345"
+}, {
+  "number" : 48346,
+  "repository" : "keycloak",
+  "title" : "Setting custom user profile attributes from SCIM representation",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48346"
+}, {
+  "number" : 48347,
+  "repository" : "keycloak",
+  "title" : "Update the User Profile Attribute UI to allow selecting the SCIM annotation",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48347"
+}, {
+  "number" : 48353,
+  "repository" : "keycloak",
+  "title" : "Refactor AssertEvents to match new patterns of EventAssertion in the new test-framework.",
+  "kind" : "task",
+  "area" : "test-framework",
+  "url" : "https://github.com/keycloak/keycloak/issues/48353"
+}, {
+  "number" : 48357,
+  "repository" : "keycloak",
+  "title" : "Restore Quarkus snapshot cache in unit-test-setup for quarkus-next",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/48357"
+}, {
+  "number" : 48362,
+  "repository" : "keycloak",
+  "title" : "Replace @BeforeEach guard with @TestSetup in ClientApiV2AuthorizationTest",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48362"
+}, {
+  "number" : 48366,
+  "repository" : "keycloak",
+  "title" : "OpenAPI spec key reordering on incremental builds",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/48366"
+}, {
+  "number" : 48392,
+  "repository" : "keycloak",
+  "title" : "Migration fails for organization admin roles with LazyInitializationException",
+  "kind" : "bug",
+  "area" : "organizations",
+  "url" : "https://github.com/keycloak/keycloak/issues/48392"
+}, {
+  "number" : 48393,
+  "repository" : "keycloak",
+  "title" : "[CIMD] Document the existing query-string defense on the MCP Authorization Server docs page",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48393"
+}, {
+  "number" : 48412,
+  "repository" : "keycloak",
+  "title" : "Add option to specify the CA Subject DN in the Client X.509 Authenticator",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/48412"
+}, {
+  "number" : 48414,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Replace realm options `Trusted Key IDs` and `Trusted Keys (JSON)` with the trusted-idp option on the client",
+  "kind" : "task",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/48414"
+}, {
+  "number" : 48415,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Review JwtProofValidator.JWK_PRIVATE_KEY_CLAIMS",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48415"
+}, {
+  "number" : 48416,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Review OID4VCJWTIssuerEndpointTest",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48416"
+}, {
+  "number" : 48420,
+  "repository" : "keycloak",
+  "title" : "Upgrade `webauthn4j` to 0.30.3",
+  "kind" : "enhancement",
+  "area" : "authentication/webauthn",
+  "url" : "https://github.com/keycloak/keycloak/issues/48420"
+}, {
+  "number" : 48424,
+  "repository" : "keycloak",
+  "title" : "Migrate OID4VCSdJwtPreInstalledNaturalPersonTest",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48424"
+}, {
+  "number" : 48428,
+  "repository" : "keycloak",
+  "title" : "Keycloak issues tokens via implicit and hybrid flow when DPoP is enforced for the client",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/48428"
+}, {
+  "number" : 48441,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.model.singleUseObject.SingleUseObjectModelTest#testCluster",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/48441"
+}, {
+  "number" : 48442,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.model.user.UserModelTest#testAddRemoveUserConcurrent",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/48442"
+}, {
+  "number" : 48443,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.model.session.AuthenticationSessionTest#testAuthSessions",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/48443"
+}, {
+  "number" : 48445,
+  "repository" : "keycloak",
+  "title" : "Enable passkeys configuration does not follow best UX",
+  "kind" : "enhancement",
+  "area" : "authentication/webauthn",
+  "url" : "https://github.com/keycloak/keycloak/issues/48445"
+}, {
+  "number" : 48446,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.authz.PolicyEvaluationTest#",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/48446"
+}, {
+  "number" : 48449,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Review OID4VCIssuerEndpointEncryptionTest",
+  "kind" : "task",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/48449"
+}, {
+  "number" : 48450,
+  "repository" : "keycloak",
+  "title" : "Adding missing event details on OIDC processing",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48450"
+}, {
+  "number" : 48452,
+  "repository" : "keycloak",
+  "title" : "Refactor builders in testsuite part 2",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48452"
+}, {
+  "number" : 48456,
+  "repository" : "keycloak",
+  "title" : "Account Console v3: Cannot revoke consent for clients with URL-based or special character clientIds (Regression of #19515)",
+  "kind" : "bug",
+  "area" : "account/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/48456"
+}, {
+  "number" : 48458,
+  "repository" : "keycloak",
+  "title" : "Read-only multivalued user profile attributes are not grayed out in the account console",
+  "kind" : "bug",
+  "area" : "user-profile",
+  "url" : "https://github.com/keycloak/keycloak/issues/48458"
+}, {
+  "number" : 48459,
+  "repository" : "keycloak",
+  "title" : "Role update failes when no name is set",
+  "kind" : "bug",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/48459"
+}, {
+  "number" : 48468,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] migrate credential builder tests to the new test framework",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48468"
+}, {
+  "number" : 48487,
+  "repository" : "keycloak",
+  "title" : "Improper Authentication for required actions allows front-channel token issuance for disabled user in implicit/hybrid flow",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/48487"
+}, {
+  "number" : 48488,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Fix OID4VCI resource Date headers for conformance",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48488"
+}, {
+  "number" : 48494,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Credentials management",
+  "kind" : "milestone",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/48494"
+}, {
+  "number" : 48504,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI-FAPI2] Improved error messages in ConfidentialClientAcceptExecutor",
+  "kind" : "task",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/48504"
+}, {
+  "number" : 48508,
+  "repository" : "keycloak",
+  "title" : "Add UserSessionLimitsTest to MultiSite suite",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48508"
+}, {
+  "number" : 48514,
+  "repository" : "keycloak",
+  "title" : "Permission issue prevents user with manage-identity-provider role to access \"realm roles\" list when adding hardcoded role mapper",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/48514"
+}, {
+  "number" : 48521,
+  "repository" : "keycloak",
+  "title" : "Compliance test with SCIM Verify",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48521"
+}, {
+  "number" : 48539,
+  "repository" : "keycloak",
+  "title" : "Update WebAuthn Metadata service data",
+  "kind" : "enhancement",
+  "area" : "authentication/webauthn",
+  "url" : "https://github.com/keycloak/keycloak/issues/48539"
+}, {
+  "number" : 48540,
+  "repository" : "keycloak",
+  "title" : "Support icons for Passkeys credentials",
+  "kind" : "enhancement",
+  "area" : "authentication/webauthn",
+  "url" : "https://github.com/keycloak/keycloak/issues/48540"
+}, {
+  "number" : 48543,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Migrate JwtCredentialSignerTest, SdJwtCredentialSignerTest",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48543"
+}, {
+  "number" : 48546,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Support for credentials CRUD (DB and admin REST endpoints)",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48546"
+}, {
+  "number" : 48547,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Integration with credentials-endpoint and credential-offers",
+  "kind" : "task",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/48547"
+}, {
+  "number" : 48557,
+  "repository" : "keycloak",
+  "title" : "Show Groups tab in the account console when user is part of any group",
+  "kind" : "enhancement",
+  "area" : "account/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/48557"
+}, {
+  "number" : 48559,
+  "repository" : "keycloak",
+  "title" : "[quarkus-next] Model tests fail due to ByteBuddy removal from Hibernate runtime classpath",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/48559"
+}, {
+  "number" : 48561,
+  "repository" : "keycloak",
+  "title" : "Quarkus UT (windows-latest) cancelled when ubuntu variant fails",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/48561"
+}, {
+  "number" : 48566,
+  "repository" : "keycloak",
+  "title" : "Admin console assets 404 in 26.6.x: quay.io/keycloak/keycloak:26.6 ships /opt/keycloak/data/tmp as root:root 0755, blocking gzip cache creation",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/48566"
+}, {
+  "number" : 48575,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Admin console support for user credentials",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48575"
+}, {
+  "number" : 48576,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Account console support for user credentials",
+  "kind" : "task",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/48576"
+}, {
+  "number" : 48578,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Support for user attributes and updating them",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48578"
+}, {
+  "number" : 48579,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI-FAPI2] Pass fapi2-security-profile-final-ensure-request-object-without-redirect-uri-fails",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48579"
+}, {
+  "number" : 48580,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Credential refresh support",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48580"
+}, {
+  "number" : 48588,
+  "repository" : "keycloak",
+  "title" : "Fine Grained Authorization v2 : does not work PUT https://i<keycloak>/admin/realms/<realm>/admin-permissions/groups/<group-id>",
+  "kind" : "enhancement",
+  "area" : "admin/fine-grained-permissions",
+  "url" : "https://github.com/keycloak/keycloak/issues/48588"
+}, {
+  "number" : 48589,
+  "repository" : "keycloak",
+  "title" : "Test framework startup timeout is ignored in DockerKeycloakDistribution",
+  "kind" : "bug",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/48589"
+}, {
+  "number" : 48592,
+  "repository" : "keycloak",
+  "title" : "Keycloak does an LDAP query with service account UUID when a token from a service account is used for obtaining a Requesting Party Token from a client with Authorization services",
+  "kind" : "bug",
+  "area" : "authorization-services",
+  "url" : "https://github.com/keycloak/keycloak/issues/48592"
+}, {
+  "number" : 48593,
+  "repository" : "keycloak",
+  "title" : "Management endpoint doesn't pick up HTTPS truststore",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/48593"
+}, {
+  "number" : 48594,
+  "repository" : "keycloak",
+  "title" : "[quarkus-next] Aurora CI fails with missing quarkus-bom:999-SNAPSHOT on remote EC2 VM",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/48594"
+}, {
+  "number" : 48598,
+  "repository" : "keycloak",
+  "title" : "HttpDistTest.maxQueuedRequestsTest fails on runners with limited vCPUs",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/48598"
+}, {
+  "number" : 48605,
+  "repository" : "keycloak",
+  "title" : "Allow protocol to be omitted via projection",
+  "kind" : "task",
+  "area" : "admin/api-v2",
+  "url" : "https://github.com/keycloak/keycloak/issues/48605"
+}, {
+  "number" : 48609,
+  "repository" : "keycloak",
+  "title" : "Support an optimization path to get only client ids",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48609"
+}, {
+  "number" : 48610,
+  "repository" : "keycloak",
+  "title" : "Neither `INVITE_ORG` nor `REGISTER` event is triggered when a new user is invited to an organization",
+  "kind" : "bug",
+  "area" : "organizations",
+  "url" : "https://github.com/keycloak/keycloak/issues/48610"
+}, {
+  "number" : 48611,
+  "repository" : "keycloak",
+  "title" : "Docs: server_admin/topics/overview/how.adoc SAML 2.0 link is broken",
+  "kind" : "bug",
+  "area" : "saml",
+  "url" : "https://github.com/keycloak/keycloak/issues/48611"
+}, {
+  "number" : 48618,
+  "repository" : "keycloak",
+  "title" : "Rewrite expectLogin to expectLoginSuccess and expectLoginError",
+  "kind" : "task",
+  "area" : "test-framework",
+  "url" : "https://github.com/keycloak/keycloak/issues/48618"
+}, {
+  "number" : 48620,
+  "repository" : "keycloak",
+  "title" : "Rewrite expectLogout and expectLogoutError to new methods in EventAssertion",
+  "kind" : "task",
+  "area" : "test-framework",
+  "url" : "https://github.com/keycloak/keycloak/issues/48620"
+}, {
+  "number" : 48621,
+  "repository" : "keycloak",
+  "title" : "Rewrite expect into assertSuccess or assertError",
+  "kind" : "task",
+  "area" : "test-framework",
+  "url" : "https://github.com/keycloak/keycloak/issues/48621"
+}, {
+  "number" : 48623,
+  "repository" : "keycloak",
+  "title" : "Make the admin client, from the admin-ui more easy to use",
+  "kind" : "feature",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48623"
+}, {
+  "number" : 48632,
+  "repository" : "keycloak",
+  "title" : "Align the format of the annotation `kc.scim.schema.attribute` to how SCIM defines custom schema attributes",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48632"
+}, {
+  "number" : 48634,
+  "repository" : "keycloak",
+  "title" : "Verify Email gets added to all the users in the realm and blocks getting a REST Token",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/48634"
+}, {
+  "number" : 48636,
+  "repository" : "keycloak",
+  "title" : "Review how realm admin accounts are returned from a realm",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48636"
+}, {
+  "number" : 48645,
+  "repository" : "keycloak",
+  "title" : "`ORGANIZATION_MEMBERSHIP` event with `ACTION` operation is missing `representation` and `detail` fields",
+  "kind" : "bug",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/48645"
+}, {
+  "number" : 48647,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.forms.RPInitiatedFrontChannelLogoutTest#testFrontChannelLogoutWithoutSessionRequired",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/48647"
+}, {
+  "number" : 48650,
+  "repository" : "keycloak",
+  "title" : "Use BeanParam instead of direct parameters",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48650"
+}, {
+  "number" : 48654,
+  "repository" : "keycloak",
+  "title" : "OrganizationProvider.count() used for existence checks causes severe database lag with large realms",
+  "kind" : "bug",
+  "area" : "organizations",
+  "url" : "https://github.com/keycloak/keycloak/issues/48654"
+}, {
+  "number" : 48661,
+  "repository" : "keycloak",
+  "title" : "Refactor UpdateCommandDistTest as it doesn't need to build or run Quarkus",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48661"
+}, {
+  "number" : 48666,
+  "repository" : "keycloak",
+  "title" : "User Storage Task sync event can lead to deadlocks and outdated information",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/48666"
+}, {
+  "number" : 48669,
+  "repository" : "keycloak",
+  "title" : "Refactor SSSD tests to use JUnit 5 Assertions class.",
+  "kind" : "task",
+  "area" : "test-framework",
+  "url" : "https://github.com/keycloak/keycloak/issues/48669"
+}, {
+  "number" : 48676,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Add caching support for verifiable credentials",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48676"
+}, {
+  "number" : 48677,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Add federated users support for verifiable credentials",
+  "kind" : "task",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/48677"
+}, {
+  "number" : 48679,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Export/import support for credentials",
+  "kind" : "task",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/48679"
+}, {
+  "number" : 48680,
+  "repository" : "keycloak",
+  "title" : "Realm display name localization placeholder is not expanded when resolving OTP issuer name",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/48680"
+}, {
+  "number" : 48683,
+  "repository" : "keycloak",
+  "title" : "Filtering out headers from external IP addresses for HAProxy reencrypt",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48683"
+}, {
+  "number" : 48707,
+  "repository" : "keycloak",
+  "title" : "Refactor and unify RunOnServer modules",
+  "kind" : "task",
+  "area" : "test-framework",
+  "url" : "https://github.com/keycloak/keycloak/issues/48707"
+}, {
+  "number" : 48708,
+  "repository" : "keycloak",
+  "title" : "Move the rest of TestingResource methods to a utils-shared helper class (1/2)",
+  "kind" : "task",
+  "area" : "test-framework",
+  "url" : "https://github.com/keycloak/keycloak/issues/48708"
+}, {
+  "number" : 48710,
+  "repository" : "keycloak",
+  "title" : "Remove unused TestingResource methods",
+  "kind" : "task",
+  "area" : "test-framework",
+  "url" : "https://github.com/keycloak/keycloak/issues/48710"
+}, {
+  "number" : 48717,
+  "repository" : "keycloak",
+  "title" : "SAML Identity Provider settings in the Admin UI are not asking for signatures by default",
+  "kind" : "weakness",
+  "area" : "identity-brokering",
+  "url" : "https://github.com/keycloak/keycloak/issues/48717"
+}, {
+  "number" : 48721,
+  "repository" : "keycloak",
+  "title" : "Introspect endpoint returns \"invalid_request\" instead of \"invalid_client\" on client authentication failure (RFC 7662)",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/48721"
+}, {
+  "number" : 48730,
+  "repository" : "keycloak",
+  "title" : "DB documentation doesn't state on how to check the transaction isolation for MSSQL",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48730"
+}, {
+  "number" : 48734,
+  "repository" : "keycloak",
+  "title" : "Initial projection implementation",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48734"
+}, {
+  "number" : 48739,
+  "repository" : "keycloak",
+  "title" : "Should have the admin UI and admin API on a separate hostname traefik & HA Proxy reencrypt",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48739"
+}, {
+  "number" : 48741,
+  "repository" : "keycloak",
+  "title" : "Come up with considerations for backchannel access",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48741"
+}, {
+  "number" : 48743,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Migrate OID4VCJWTIssuerEndpointDisabledTest and OID4VCSdJwtIssuingEndpointDisabledTest",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48743"
+}, {
+  "number" : 48749,
+  "repository" : "keycloak",
+  "title" : "Prevent setting different than default decisionStrategy for FGAP",
+  "kind" : "bug",
+  "area" : "admin/fine-grained-permissions",
+  "url" : "https://github.com/keycloak/keycloak/issues/48749"
+}, {
+  "number" : 48753,
+  "repository" : "keycloak",
+  "title" : "Refactor legacy test suite's TimeOffset",
+  "kind" : "task",
+  "area" : "test-framework",
+  "url" : "https://github.com/keycloak/keycloak/issues/48753"
+}, {
+  "number" : 48754,
+  "repository" : "keycloak",
+  "title" : "Improve ClusterConfigDistTest",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48754"
+}, {
+  "number" : 48755,
+  "repository" : "keycloak",
+  "title" : "User deletion latency grows with Infinispan session-cache fill level / size",
+  "kind" : "enhancement",
+  "area" : "infinispan",
+  "url" : "https://github.com/keycloak/keycloak/issues/48755"
+}, {
+  "number" : 48761,
+  "repository" : "keycloak",
+  "title" : "Slow start for HAProxy (tcp and http)",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48761"
+}, {
+  "number" : 48765,
+  "repository" : "keycloak",
+  "title" : "Initial implementation of Querying for Client v2",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48765"
+}, {
+  "number" : 48766,
+  "repository" : "keycloak",
+  "title" : "JPA optimized Querying for Client v2",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48766"
+}, {
+  "number" : 48768,
+  "repository" : "keycloak",
+  "title" : "Server-side Pagination for Client v2",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48768"
+}, {
+  "number" : 48771,
+  "repository" : "keycloak",
+  "title" : "Identity Provider detail settings allow saving without changes",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/48771"
+}, {
+  "number" : 48774,
+  "repository" : "keycloak",
+  "title" : "Sort by created and updated timestamp",
+  "kind" : "task",
+  "area" : "admin/api-v2",
+  "url" : "https://github.com/keycloak/keycloak/issues/48774"
+}, {
+  "number" : 48776,
+  "repository" : "keycloak",
+  "title" : "Need `area/ssf` on area selection dropdown when creating an issue.",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48776"
+}, {
+  "number" : 48784,
+  "repository" : "keycloak",
+  "title" : "Unify mail in old and new testsuites",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48784"
+}, {
+  "number" : 48786,
+  "repository" : "keycloak",
+  "title" : "Strict contract on Client v2",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48786"
+}, {
+  "number" : 48796,
+  "repository" : "keycloak",
+  "title" : "Review or remove the quarkus test Storage annotation",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48796"
+}, {
+  "number" : 48808,
+  "repository" : "keycloak",
+  "title" : "Improve Quarkus integration tests execution time by skipping realm bootstrap when not required",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48808"
+}, {
+  "number" : 48812,
+  "repository" : "keycloak",
+  "title" : "AutoUpdate force recreate",
+  "kind" : "bug",
+  "area" : "operator",
+  "url" : "https://github.com/keycloak/keycloak/issues/48812"
+}, {
+  "number" : 48825,
+  "repository" : "keycloak",
+  "title" : "Investigate and plan what is needed for SAML 2.0 to be PQC ready",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48825"
+}, {
+  "number" : 48826,
+  "repository" : "keycloak",
+  "title" : "Investigate what is required for WebAuthN/passkeys to be PQC ready",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48826"
+}, {
+  "number" : 48827,
+  "repository" : "keycloak",
+  "title" : "Investigate what is required for cookies to be PQC ready",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48827"
+}, {
+  "number" : 48828,
+  "repository" : "keycloak",
+  "title" : "Investigate and plan what is needed for password hashing to be PQC ready",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48828"
+}, {
+  "number" : 48834,
+  "repository" : "keycloak",
+  "title" : "NPE in `OrganizationGroupMembershipMapper` when no `organization` scope is requested",
+  "kind" : "bug",
+  "area" : "organizations",
+  "url" : "https://github.com/keycloak/keycloak/issues/48834"
+}, {
+  "number" : 48846,
+  "repository" : "keycloak",
+  "title" : "Use AOT compiliation to speed up quarkus tests",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48846"
+}, {
+  "number" : 48862,
+  "repository" : "keycloak",
+  "title" : "Flaky test: org.keycloak.testsuite.broker.OidcAdvancedClaimToGroupMapperTest#mapperStillWorksWhenTopLevelGroupIsConvertedToSubGroup",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/48862"
+}, {
+  "number" : 48863,
+  "repository" : "keycloak",
+  "title" : "Include kid in details of CLIENT_LOGIN event of Signed JWT Client Authentication",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48863"
+}, {
+  "number" : 48865,
+  "repository" : "keycloak",
+  "title" : "Phase 1 - Non-breaking changes to migrate password blacklist terminology to denylist",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48865"
+}, {
+  "number" : 48868,
+  "repository" : "keycloak",
+  "title" : "OIDC bearer-only legacy clients lose client secret after updating basic attributes (name/description) on Keycloak 23",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/48868"
+}, {
+  "number" : 48882,
+  "repository" : "keycloak",
+  "title" : "Save button on \"Create organization\" page is not enabled when name is pasted from clipboard",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/48882"
+}, {
+  "number" : 48886,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Test in OID4VCActionTest for the correct client scenarios",
+  "kind" : "task",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/48886"
+}, {
+  "number" : 48892,
+  "repository" : "keycloak",
+  "title" : "SSF: Track if stream was created by Keycloak or ssfReceiver",
+  "kind" : "enhancement",
+  "area" : "ssf",
+  "url" : "https://github.com/keycloak/keycloak/issues/48892"
+}, {
+  "number" : 48893,
+  "repository" : "keycloak",
+  "title" : "SSF: Remove \"audience\" field from create stream form",
+  "kind" : "enhancement",
+  "area" : "ssf",
+  "url" : "https://github.com/keycloak/keycloak/issues/48893"
+}, {
+  "number" : 48901,
+  "repository" : "keycloak",
+  "title" : "Deliver the baseline to enable Keycloak as an SSF Transmitter",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48901"
+}, {
+  "number" : 48903,
+  "repository" : "keycloak",
+  "title" : "Regression: forced organization validation in 26.6 even without taking Organizations feature into use",
+  "kind" : "bug",
+  "area" : "organizations",
+  "url" : "https://github.com/keycloak/keycloak/issues/48903"
+}, {
+  "number" : 48917,
+  "repository" : "keycloak",
+  "title" : "Missing locale keys in Organization Membership protocol mapper",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/48917"
+}, {
+  "number" : 48920,
+  "repository" : "keycloak",
+  "title" : "Test framework startup timeout is hardcoded to 5 minutes",
+  "kind" : "bug",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/48920"
+}, {
+  "number" : 48922,
+  "repository" : "keycloak",
+  "title" : "Migrate OrganizationTest into new testsuite",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48922"
+}, {
+  "number" : 48926,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Support for user attributes in UI",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48926"
+}, {
+  "number" : 48932,
+  "repository" : "keycloak",
+  "title" : "Add social button support to new test framework page objects",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48932"
+}, {
+  "number" : 48939,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Migrate JWTVCIssuerWellKnownProviderTest to the new test framework",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48939"
+}, {
+  "number" : 48942,
+  "repository" : "keycloak",
+  "title" : "Move the rest of TestingResource methods to a utils-shared helper class (2/2)",
+  "kind" : "task",
+  "area" : "test-framework",
+  "url" : "https://github.com/keycloak/keycloak/issues/48942"
+}, {
+  "number" : 48949,
+  "repository" : "keycloak",
+  "title" : "JS CI is failing in the Admin UI lint check",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/48949"
+}, {
+  "number" : 48958,
+  "repository" : "keycloak",
+  "title" : "Test Migration tool - fixing MailServerRewrite",
+  "kind" : "task",
+  "area" : "test-framework",
+  "url" : "https://github.com/keycloak/keycloak/issues/48958"
+}, {
+  "number" : 48962,
+  "repository" : "keycloak",
+  "title" : "Add suggestions when features are incorrectly specified",
+  "kind" : "enhancement",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/48962"
+}, {
+  "number" : 48966,
+  "repository" : "keycloak",
+  "title" : "Refactor legacy test suite's ExportImportResource",
+  "kind" : "task",
+  "area" : "test-framework",
+  "url" : "https://github.com/keycloak/keycloak/issues/48966"
+}, {
+  "number" : 48971,
+  "repository" : "keycloak",
+  "title" : "Test migration util - Migrate timeoffset",
+  "kind" : "task",
+  "area" : "test-framework",
+  "url" : "https://github.com/keycloak/keycloak/issues/48971"
+}, {
+  "number" : 48976,
+  "repository" : "keycloak",
+  "title" : "Remove approvaltest workaround",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48976"
+}, {
+  "number" : 48980,
+  "repository" : "keycloak",
+  "title" : "RAR scope parsing should explicitly accept client reference",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48980"
+}, {
+  "number" : 48982,
+  "repository" : "keycloak",
+  "title" : "Run Standard Token Exchange tests with dynamic client scopes enabled",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48982"
+}, {
+  "number" : 48997,
+  "repository" : "keycloak",
+  "title" : "OpenTelemetry Metrics experimental feature should only be visible in community build",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48997"
+}, {
+  "number" : 48999,
+  "repository" : "keycloak",
+  "title" : "Document AuthZEN experimental support",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48999"
+}, {
+  "number" : 49005,
+  "repository" : "keycloak",
+  "title" : "ID-JAG: initial support",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49005"
+}, {
+  "number" : 49014,
+  "repository" : "keycloak",
+  "title" : "Rename \"Dynamic scopes\" feature to \"Parameterized scopes\"",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49014"
+}, {
+  "number" : 49023,
+  "repository" : "keycloak",
+  "title" : "Remove Quarkus Reactive Routes as it is surplus to requirements",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49023"
+}, {
+  "number" : 49026,
+  "repository" : "keycloak",
+  "title" : "Admin UI: Enter key does not trigger search in Organization Members, Invitations, and User Organizations",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/49026"
+}, {
+  "number" : 49037,
+  "repository" : "keycloak",
+  "title" : "Expose multi-namespace install modes",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49037"
+}, {
+  "number" : 49040,
+  "repository" : "keycloak",
+  "title" : "Make `AbstractJWTClientValidator` / `FederatedJWTClientValidator` methods `protected` for extensibility",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49040"
+}, {
+  "number" : 49057,
+  "repository" : "keycloak",
+  "title" : "Migration-strategy=manual bypasses DBA workflow for custom providers (re-opening #36525)",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/49057"
+}, {
+  "number" : 49063,
+  "repository" : "keycloak",
+  "title" : "Authorization Evaluate results page hides the last resource behind the action bar",
+  "kind" : "bug",
+  "area" : "authorization-services",
+  "url" : "https://github.com/keycloak/keycloak/issues/49063"
+}, {
+  "number" : 49069,
+  "repository" : "keycloak",
+  "title" : "Missing and incorrect permission checks on organization invitation endpoints",
+  "kind" : "bug",
+  "area" : "organizations",
+  "url" : "https://github.com/keycloak/keycloak/issues/49069"
+}, {
+  "number" : 49078,
+  "repository" : "keycloak",
+  "title" : "Avoid `maven-install-plugin` warning due to unknown `createChecksum` parameter",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49078"
+}, {
+  "number" : 49083,
+  "repository" : "keycloak",
+  "title" : "Error while removing expired entries from database",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/49083"
+}, {
+  "number" : 49088,
+  "repository" : "keycloak",
+  "title" : "Migration support for WebDriver and Page",
+  "kind" : "task",
+  "area" : "test-framework",
+  "url" : "https://github.com/keycloak/keycloak/issues/49088"
+}, {
+  "number" : 49092,
+  "repository" : "keycloak",
+  "title" : "Filtering out headers from external IP addresses for Traefik reencrypt",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49092"
+}, {
+  "number" : 49123,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI-HAIP] Revisit ABCA in connection with fapi-2-dpop-security-profile",
+  "kind" : "task",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/49123"
+}, {
+  "number" : 49137,
+  "repository" : "keycloak",
+  "title" : "Welcome page admin bootstrap bypasses local-only check when behind a same-host proxy without forwarding headers",
+  "kind" : "weakness",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/49137"
+}, {
+  "number" : 49139,
+  "repository" : "keycloak",
+  "title" : "Starting FIPS mode in 26.6.1 fails with NoSuchAlgorithmException",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/49139"
+}, {
+  "number" : 49146,
+  "repository" : "keycloak",
+  "title" : "Quick theme login style broken",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/49146"
+}, {
+  "number" : 49153,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI-HAIP] Treat attestation-based clients as confidential",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49153"
+}, {
+  "number" : 49164,
+  "repository" : "keycloak",
+  "title" : "Upgrade to latest pnpm",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49164"
+}, {
+  "number" : 49169,
+  "repository" : "keycloak",
+  "title" : "Test migration util - Migrate runOnServer",
+  "kind" : "task",
+  "area" : "test-framework",
+  "url" : "https://github.com/keycloak/keycloak/issues/49169"
+}, {
+  "number" : 49171,
+  "repository" : "keycloak",
+  "title" : "Initial sorting implementation for Client v2",
+  "kind" : "task",
+  "area" : "admin/api-v2",
+  "url" : "https://github.com/keycloak/keycloak/issues/49171"
+}, {
+  "number" : 49176,
+  "repository" : "keycloak",
+  "title" : "SCIM: Incorrect location URL",
+  "kind" : "bug",
+  "area" : "scim",
+  "url" : "https://github.com/keycloak/keycloak/issues/49176"
+}, {
+  "number" : 49177,
+  "repository" : "keycloak",
+  "title" : "Remove explicit --shutdown-timeouts configuration from proxy example configurations",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49177"
+}, {
+  "number" : 49180,
+  "repository" : "keycloak",
+  "title" : "Unable to easily provide full certificate chain with HaProxySslClientCertificateLookup",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/49180"
+}, {
+  "number" : 49185,
+  "repository" : "keycloak",
+  "title" : "HttpResponse.setStatus is not generally usable",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49185"
+}, {
+  "number" : 49189,
+  "repository" : "keycloak",
+  "title" : "LDAP: objectGUID binary attribute not converting to Base64/String in version 26.6.1 and 26.6.2",
+  "kind" : "bug",
+  "area" : "ldap",
+  "url" : "https://github.com/keycloak/keycloak/issues/49189"
+}, {
+  "number" : 49192,
+  "repository" : "keycloak",
+  "title" : "Compilation error because of setSystemPropertyOnServer",
+  "kind" : "bug",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/49192"
+}, {
+  "number" : 49199,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Simplify JpaUserProvider.updateVerifiableCredential . Make sure OID4VCExportImportTest asserts equality of imported credentials",
+  "kind" : "task",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/49199"
+}, {
+  "number" : 49206,
+  "repository" : "keycloak",
+  "title" : "Upgrade to Infinispan 16.0.12",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49206"
+}, {
+  "number" : 49208,
+  "repository" : "keycloak",
+  "title" : "Missing tests for TokenIntrospectionTest",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49208"
+}, {
+  "number" : 49215,
+  "repository" : "keycloak",
+  "title" : "JWT Authorization Grant: namespace jti cache keys and reorder signature verification",
+  "kind" : "weakness",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/49215"
+}, {
+  "number" : 49235,
+  "repository" : "keycloak",
+  "title" : "SSF: Move Push timeout settings to SSF Receiver tab",
+  "kind" : "enhancement",
+  "area" : "ssf",
+  "url" : "https://github.com/keycloak/keycloak/issues/49235"
+}, {
+  "number" : 49248,
+  "repository" : "keycloak",
+  "title" : "Consider additional datasources in health checks",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49248"
+}, {
+  "number" : 49249,
+  "repository" : "keycloak",
+  "title" : "Deprecate KeycloakContext.getRequestHeaders",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49249"
+}, {
+  "number" : 49250,
+  "repository" : "keycloak",
+  "title" : "SSF: auto-notify-on-login fails with ReadOnlyException for users from a read-only LDAP federation",
+  "kind" : "bug",
+  "area" : "ssf",
+  "url" : "https://github.com/keycloak/keycloak/issues/49250"
+}, {
+  "number" : 49255,
+  "repository" : "keycloak",
+  "title" : "PAR authorization request with prompt=create does not open registration page",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/49255"
+}, {
+  "number" : 49256,
+  "repository" : "keycloak",
+  "title" : "Oracle database ignores db-url-properties",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/49256"
+}, {
+  "number" : 49257,
+  "repository" : "keycloak",
+  "title" : "Identity provider broker callback returns HTTP 502 for client-side input validation failures (missing state,    missing code)",
+  "kind" : "bug",
+  "area" : "identity-brokering",
+  "url" : "https://github.com/keycloak/keycloak/issues/49257"
+}, {
+  "number" : 49267,
+  "repository" : "keycloak",
+  "title" : "JPA exception mapper swallows some intermediate exceptions",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/49267"
+}, {
+  "number" : 49270,
+  "repository" : "keycloak",
+  "title" : "Remove the batching option for the persistent sessions",
+  "kind" : "eol",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49270"
+}, {
+  "number" : 49272,
+  "repository" : "keycloak",
+  "title" : "ReadOnlyAttributeUnchangedValidator.isUnchanged() does not handle omitted read-only attributes",
+  "kind" : "bug",
+  "area" : "user-profile",
+  "url" : "https://github.com/keycloak/keycloak/issues/49272"
+}, {
+  "number" : 49281,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] [ABCA] Polishing of DefaultTrustIdentityProvider configuration",
+  "kind" : "task",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/49281"
+}, {
+  "number" : 49289,
+  "repository" : "keycloak",
+  "title" : "Migrate OID4VCAuthorizationDetailsTypesSupportedTest to the new testsuite",
+  "kind" : "task",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/49289"
+}, {
+  "number" : 49306,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Admin-issued credential offer: server support",
+  "kind" : "task",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/49306"
+}, {
+  "number" : 49308,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Admin-issued credential: UI support",
+  "kind" : "task",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/49308"
+}, {
+  "number" : 49310,
+  "repository" : "keycloak",
+  "title" : "Backoff retry does not honor the timeout",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/49310"
+}, {
+  "number" : 49312,
+  "repository" : "keycloak",
+  "title" : "Organization group members endpoint does not check Users permission",
+  "kind" : "weakness",
+  "area" : "organizations",
+  "url" : "https://github.com/keycloak/keycloak/issues/49312"
+}, {
+  "number" : 49328,
+  "repository" : "keycloak",
+  "title" : "Review the permission model when managing group memberships",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49328"
+}, {
+  "number" : 49336,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Federated users support for verifiable credentials",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49336"
+}, {
+  "number" : 49337,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Export/import support for issued verifiable credentials",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49337"
+}, {
+  "number" : 49340,
+  "repository" : "keycloak",
+  "title" : "Add updateClientWithCleanup into ManagedRealm, remove attachTo from ManagedClient",
+  "kind" : "task",
+  "area" : "test-framework",
+  "url" : "https://github.com/keycloak/keycloak/issues/49340"
+}, {
+  "number" : 49342,
+  "repository" : "keycloak",
+  "title" : "Client secret rotation feature. Client Secret and Secret Rotated are always the same",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/49342"
+}, {
+  "number" : 49348,
+  "repository" : "keycloak",
+  "title" : "Ensure proper management of thread-bound resources.",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49348"
+}, {
+  "number" : 49366,
+  "repository" : "keycloak",
+  "title" : "Update commit-migration script",
+  "kind" : "task",
+  "area" : "test-framework",
+  "url" : "https://github.com/keycloak/keycloak/issues/49366"
+}, {
+  "number" : 49370,
+  "repository" : "keycloak",
+  "title" : "Prevent access to the Admin API from external IP addresses for Traefik reencrypt",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49370"
+}, {
+  "number" : 49372,
+  "repository" : "keycloak",
+  "title" : "Unify buttons in horizontal layout for Login UI",
+  "kind" : "enhancement",
+  "area" : "login/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/49372"
+}, {
+  "number" : 49378,
+  "repository" : "keycloak",
+  "title" : "Login page title should use full width when locale selector is hidden",
+  "kind" : "enhancement",
+  "area" : "login/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/49378"
+}, {
+  "number" : 49382,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Avoid stale entries of issued verifiable credentials in DB",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49382"
+}, {
+  "number" : 49388,
+  "repository" : "keycloak",
+  "title" : "Dynamic scopes do not work with CIBA",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/49388"
+}, {
+  "number" : 49405,
+  "repository" : "keycloak",
+  "title" : "Migrate OID4VCCredentialOfferCorsTest to the new testsuite",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49405"
+}, {
+  "number" : 49407,
+  "repository" : "keycloak",
+  "title" : "Migrate OID4VCAuthorizationCodeFlowWithPARTest to the new testsuite",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49407"
+}, {
+  "number" : 49408,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Make sure that \"expiresAt\" is set for the issued credentials",
+  "kind" : "task",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/49408"
+}, {
+  "number" : 49409,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Automatic purge of the expired issued verifiable credentials",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49409"
+}, {
+  "number" : 49411,
+  "repository" : "keycloak",
+  "title" : "Migrate OID4VCSdJwtIssuingEndpointTest to the new testsuite",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49411"
+}, {
+  "number" : 49424,
+  "repository" : "keycloak",
+  "title" : "Include subject to email template attributes",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49424"
+}, {
+  "number" : 49427,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-9796] Admin role rename TOCTOU bypasses checkAdminRoles — realm-wide escalation from manage-clients",
+  "kind" : "cve",
+  "area" : "admin/rbac",
+  "url" : "https://github.com/keycloak/keycloak/issues/49427"
+}, {
+  "number" : 49430,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-9689] HTTP Parameter Pollution in OIDC redirect URI allows response parameter duplication",
+  "kind" : "cve",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/49430"
+}, {
+  "number" : 49432,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-9798] CIBA authentication flow bypasses brute-force account lockout",
+  "kind" : "cve",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/49432"
+}, {
+  "number" : 49441,
+  "repository" : "keycloak",
+  "title" : "mutual-tls guide references wrong option",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/49441"
+}, {
+  "number" : 49442,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Default Credential offer lifespan is too short",
+  "kind" : "task",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/49442"
+}, {
+  "number" : 49445,
+  "repository" : "keycloak",
+  "title" : "KeycloakKubernetesJwtTest fails when running with openshift",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49445"
+}, {
+  "number" : 49449,
+  "repository" : "keycloak",
+  "title" : "Document WorkflowProviderEvent types available for ProviderEventListener implementations",
+  "kind" : "task",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/49449"
+}, {
+  "number" : 49450,
+  "repository" : "keycloak",
+  "title" : "Workflows: optimize JpaWorkflowStateProvider.hasScheduledSteps() to use existence check instead of count",
+  "kind" : "task",
+  "area" : "workflows",
+  "url" : "https://github.com/keycloak/keycloak/issues/49450"
+}, {
+  "number" : 49451,
+  "repository" : "keycloak",
+  "title" : "UI allows invalid role-ldap-mapper configuration when \"Use Realm Roles Mapping\" is enabled together with Client ID selection.",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/49451"
+}, {
+  "number" : 49452,
+  "repository" : "keycloak",
+  "title" : "Admin UI: Workflows menu link visible to users without sufficient permissions to use it",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/49452"
+}, {
+  "number" : 49453,
+  "repository" : "keycloak",
+  "title" : "Persistent sessions should be written as part of the original main transaction where possible",
+  "kind" : "enhancement",
+  "area" : "infinispan",
+  "url" : "https://github.com/keycloak/keycloak/issues/49453"
+}, {
+  "number" : 49456,
+  "repository" : "keycloak",
+  "title" : "[CIMD] secure-redirect-uris-enforcer is not enforced for CIMD public clients during authorization requests",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/49456"
+}, {
+  "number" : 49457,
+  "repository" : "keycloak",
+  "title" : "[CIMD] Client policy executor auto-configuration is not applied when a public client is created through CIMD",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/49457"
+}, {
+  "number" : 49461,
+  "repository" : "keycloak",
+  "title" : "ID-JAG: documentation",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49461"
+}, {
+  "number" : 49469,
+  "repository" : "keycloak",
+  "title" : "Stateless mode: store volatile session data in the database",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49469"
+}, {
+  "number" : 49470,
+  "repository" : "keycloak",
+  "title" : "Migrate LDCredentialSignerTest to the new testsuite",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49470"
+}, {
+  "number" : 49481,
+  "repository" : "keycloak",
+  "title" : "admin-client: TokenResponse.expiresIn typed as string but Keycloak returns a number",
+  "kind" : "bug",
+  "area" : "admin/client-js",
+  "url" : "https://github.com/keycloak/keycloak/issues/49481"
+}, {
+  "number" : 49482,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Review PreAuthorizedGrantTest",
+  "kind" : "task",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/49482"
+}, {
+  "number" : 49483,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Migrate ExportImportTest.testRealmImportWithOID4VCICredentialOfferCreateRole()",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49483"
+}, {
+  "number" : 49484,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Remove file oid4vc/test-credential-mappers.json",
+  "kind" : "task",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/49484"
+}, {
+  "number" : 49490,
+  "repository" : "keycloak",
+  "title" : "[SAST] Dead local stores (Batch 2)",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/49490"
+}, {
+  "number" : 49491,
+  "repository" : "keycloak",
+  "title" : "Full user representation when querying organization members",
+  "kind" : "enhancement",
+  "area" : "organizations",
+  "url" : "https://github.com/keycloak/keycloak/issues/49491"
+}, {
+  "number" : 49494,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Introduction documentation",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49494"
+}, {
+  "number" : 49495,
+  "repository" : "keycloak",
+  "title" : "[SAST] Unchecked negative value in `readInteger()`",
+  "kind" : "bug",
+  "area" : "authorization-services",
+  "url" : "https://github.com/keycloak/keycloak/issues/49495"
+}, {
+  "number" : 49497,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Documentation for realm configuration",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49497"
+}, {
+  "number" : 49499,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Documentation of the OID4VCI client scope configuration",
+  "kind" : "task",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/49499"
+}, {
+  "number" : 49501,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] documentation of OID4VCI mappers",
+  "kind" : "task",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/49501"
+}, {
+  "number" : 49502,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Documentation of client settings",
+  "kind" : "task",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/49502"
+}, {
+  "number" : 49504,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Documentation for credential request",
+  "kind" : "task",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/49504"
+}, {
+  "number" : 49505,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Documentation for proofs",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49505"
+}, {
+  "number" : 49508,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Initial prototype of refresh token",
+  "kind" : "task",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/49508"
+}, {
+  "number" : 49509,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Dedicated option for credential refresh interval",
+  "kind" : "task",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/49509"
+}, {
+  "number" : 49517,
+  "repository" : "keycloak",
+  "title" : "French translation for credentials related events are incorrect",
+  "kind" : "bug",
+  "area" : "translations",
+  "url" : "https://github.com/keycloak/keycloak/issues/49517"
+}, {
+  "number" : 49520,
+  "repository" : "keycloak",
+  "title" : "Store authentication session in the database",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49520"
+}, {
+  "number" : 49521,
+  "repository" : "keycloak",
+  "title" : "Create SPI to store revoked tokens",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49521"
+}, {
+  "number" : 49532,
+  "repository" : "keycloak",
+  "title" : "Ability to add parameterized scope type",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49532"
+}, {
+  "number" : 49536,
+  "repository" : "keycloak",
+  "title" : "Document Kubernetes limitations",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49536"
+}, {
+  "number" : 49550,
+  "repository" : "keycloak",
+  "title" : "MySQL migration fail due to group replication enforcing PK for `CREATE TABLE ... AS SELECT`",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/49550"
+}, {
+  "number" : 49571,
+  "repository" : "keycloak",
+  "title" : "FilterUtils.unescapeJsonString() incorrectly decodes escaped backslash sequences",
+  "kind" : "bug",
+  "area" : "scim",
+  "url" : "https://github.com/keycloak/keycloak/issues/49571"
+}, {
+  "number" : 49573,
+  "repository" : "keycloak",
+  "title" : "Attribute for clients scopes to always require consent",
+  "kind" : "enhancement",
+  "area" : "token-exchange/subject-impersonation",
+  "url" : "https://github.com/keycloak/keycloak/issues/49573"
+}, {
+  "number" : 49575,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Account console \"Issue to Wallet\" does not work when scope-name different than credential-config-id",
+  "kind" : "bug",
+  "area" : "account/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/49575"
+}, {
+  "number" : 49577,
+  "repository" : "keycloak",
+  "title" : "Azure/Aurora \"Upload flaky tests\" fails with 409 Conflict on duplicate artifact name",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/49577"
+}, {
+  "number" : 49580,
+  "repository" : "keycloak",
+  "title" : "Querying in Client v2 JS client",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49580"
+}, {
+  "number" : 49589,
+  "repository" : "keycloak",
+  "title" : "Initial server-side implementation for Client v2 pagination",
+  "kind" : "task",
+  "area" : "admin/api-v2",
+  "url" : "https://github.com/keycloak/keycloak/issues/49589"
+}, {
+  "number" : 49592,
+  "repository" : "keycloak",
+  "title" : "New tests cleanup - ExportImport tests use duplicated json objects.",
+  "kind" : "task",
+  "area" : "test-framework",
+  "url" : "https://github.com/keycloak/keycloak/issues/49592"
+}, {
+  "number" : 49593,
+  "repository" : "keycloak",
+  "title" : "New tests - fix: fgap AbstractPermissionTest inconsitency",
+  "kind" : "task",
+  "area" : "test-framework",
+  "url" : "https://github.com/keycloak/keycloak/issues/49593"
+}, {
+  "number" : 49597,
+  "repository" : "keycloak",
+  "title" : "Store single use objects in the database",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49597"
+}, {
+  "number" : 49605,
+  "repository" : "keycloak",
+  "title" : "Member's organizations endpoint missing per-org FGAP filtering",
+  "kind" : "weakness",
+  "area" : "organizations",
+  "url" : "https://github.com/keycloak/keycloak/issues/49605"
+}, {
+  "number" : 49607,
+  "repository" : "keycloak",
+  "title" : "Documentation for token scopes",
+  "kind" : "task",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/49607"
+}, {
+  "number" : 49608,
+  "repository" : "keycloak",
+  "title" : "Correct themes README",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49608"
+}, {
+  "number" : 49612,
+  "repository" : "keycloak",
+  "title" : "keycloak-admin-client logs errors to the console in fetchWithError",
+  "kind" : "bug",
+  "area" : "admin/client-js",
+  "url" : "https://github.com/keycloak/keycloak/issues/49612"
+}, {
+  "number" : 49631,
+  "repository" : "keycloak",
+  "title" : "Update to Maven 3.9.16",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49631"
+}, {
+  "number" : 49633,
+  "repository" : "keycloak",
+  "title" : "Update dependencies of embedded-ldap",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49633"
+}, {
+  "number" : 49644,
+  "repository" : "keycloak",
+  "title" : "ExportImportTest is unstable in the windows tests",
+  "kind" : "bug",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/49644"
+}, {
+  "number" : 49645,
+  "repository" : "keycloak",
+  "title" : "Organization member read endpoints should document parent-gated org-level authorization contract",
+  "kind" : "enhancement",
+  "area" : "organizations",
+  "url" : "https://github.com/keycloak/keycloak/issues/49645"
+}, {
+  "number" : 49652,
+  "repository" : "keycloak",
+  "title" : "Disable caches or reduce cache expiry",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49652"
+}, {
+  "number" : 49655,
+  "repository" : "keycloak",
+  "title" : "Make jdbc-ping cluster name configurable",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49655"
+}, {
+  "number" : 49656,
+  "repository" : "keycloak",
+  "title" : "Store login failures in the database",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49656"
+}, {
+  "number" : 49660,
+  "repository" : "keycloak",
+  "title" : "OID4VCI: Missing disabled-client check in PreAuthorizedCodeGrantType",
+  "kind" : "weakness",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/49660"
+}, {
+  "number" : 49662,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Review snapshot of attributes of the credential",
+  "kind" : "task",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/49662"
+}, {
+  "number" : 49673,
+  "repository" : "keycloak",
+  "title" : "Move the cluster aware task locks from the `work` cache to the database",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49673"
+}, {
+  "number" : 49674,
+  "repository" : "keycloak",
+  "title" : "Deleting admin-permissions client via v1 Admin API returns unknown_error instead of descriptive validation error",
+  "kind" : "bug",
+  "area" : "admin/fine-grained-permissions",
+  "url" : "https://github.com/keycloak/keycloak/issues/49674"
+}, {
+  "number" : 49697,
+  "repository" : "keycloak",
+  "title" : "Avoid separate transactions and extra SQL statements in cacheless mode",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49697"
+}, {
+  "number" : 49702,
+  "repository" : "keycloak",
+  "title" : "UserSelect component limits the search results during autocompletion lookup",
+  "kind" : "bug",
+  "area" : "authorization-services",
+  "url" : "https://github.com/keycloak/keycloak/issues/49702"
+}, {
+  "number" : 49703,
+  "repository" : "keycloak",
+  "title" : "Improve scanning for dependencies",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49703"
+}, {
+  "number" : 49704,
+  "repository" : "keycloak",
+  "title" : "Identity brokering \"Retrieving external IDP tokens\" docs is outdated",
+  "kind" : "task",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/49704"
+}, {
+  "number" : 49705,
+  "repository" : "keycloak",
+  "title" : "Documentation for identity-broker-api V2 and client policies update",
+  "kind" : "task",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/49705"
+}, {
+  "number" : 49711,
+  "repository" : "keycloak",
+  "title" : "[Login UI] Improve credential selector layout",
+  "kind" : "enhancement",
+  "area" : "login/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/49711"
+}, {
+  "number" : 49716,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Update proof documentation once using identity providers",
+  "kind" : "task",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/49716"
+}, {
+  "number" : 49718,
+  "repository" : "keycloak",
+  "title" : "FreeMarkerLoginFormsProvider: handleThemeResources called twice per request due to getMessage() in createCommonAttributes",
+  "kind" : "bug",
+  "area" : "login/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/49718"
+}, {
+  "number" : 49720,
+  "repository" : "keycloak",
+  "title" : "Organization managed users should not be allowed to link other idps from the account console",
+  "kind" : "bug",
+  "area" : "identity-brokering",
+  "url" : "https://github.com/keycloak/keycloak/issues/49720"
+}, {
+  "number" : 49723,
+  "repository" : "keycloak",
+  "title" : "FIPS tests are broken in CI",
+  "kind" : "bug",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/49723"
+}, {
+  "number" : 49724,
+  "repository" : "keycloak",
+  "title" : "Document querying syntax",
+  "kind" : "task",
+  "area" : "admin/api-v2",
+  "url" : "https://github.com/keycloak/keycloak/issues/49724"
+}, {
+  "number" : 49730,
+  "repository" : "keycloak",
+  "title" : "`--features=cimd` should add `none` to token_endpoint_auth_methods_supported",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/49730"
+}, {
+  "number" : 49732,
+  "repository" : "keycloak",
+  "title" : "26.6.2 upgrade: `Cannot invoke \"org.keycloak.authorization.model.Resource.getScopes()\" because \"resourceTypeResource\" is null`",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/49732"
+}, {
+  "number" : 49739,
+  "repository" : "keycloak",
+  "title" : "Optimize persistent sessions in the PostgreSQL database",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49739"
+}, {
+  "number" : 49742,
+  "repository" : "keycloak",
+  "title" : "Simplified/ Traditional Chinese is displayed twice in locale selector",
+  "kind" : "bug",
+  "area" : "translations",
+  "url" : "https://github.com/keycloak/keycloak/issues/49742"
+}, {
+  "number" : 49757,
+  "repository" : "keycloak",
+  "title" : "Reverse proxy docs: should not proxy master realm",
+  "kind" : "enhancement",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/49757"
+}, {
+  "number" : 49762,
+  "repository" : "keycloak",
+  "title" : "NPE in MgmtPermissions.isRealmAdmin() when using AdminPermissions.evaluator() with FGAP V2 enabled",
+  "kind" : "bug",
+  "area" : "admin/fine-grained-permissions",
+  "url" : "https://github.com/keycloak/keycloak/issues/49762"
+}, {
+  "number" : 49763,
+  "repository" : "keycloak",
+  "title" : "Can we deprecate bearer-only clients?",
+  "kind" : "task",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/49763"
+}, {
+  "number" : 49766,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-11986] FGAP v1 allows unassigning any role",
+  "kind" : "cve",
+  "area" : "admin/fine-grained-permissions",
+  "url" : "https://github.com/keycloak/keycloak/issues/49766"
+}, {
+  "number" : 49793,
+  "repository" : "keycloak",
+  "title" : "OIDC: Client secret generation should ensure sufficient entropy for all configured   HMAC signature algorithms",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/49793"
+}, {
+  "number" : 49797,
+  "repository" : "keycloak",
+  "title" : "Fix typo \"operatiorn\" in KeycloakClientBaseController error message",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49797"
+}, {
+  "number" : 49799,
+  "repository" : "keycloak",
+  "title" : "Propagate cluster events via a new database table",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49799"
+}, {
+  "number" : 49806,
+  "repository" : "keycloak",
+  "title" : "Remove sshd-core dependency",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49806"
+}, {
+  "number" : 49809,
+  "repository" : "keycloak",
+  "title" : "Update aws-advanced-jdbc-wrapper",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49809"
+}, {
+  "number" : 49811,
+  "repository" : "keycloak",
+  "title" : "Update React Router",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49811"
+}, {
+  "number" : 49830,
+  "repository" : "keycloak",
+  "title" : "26.6.x upgrade runs unbounded OFFLINE_CLIENT_SESSION REALM_ID backfill, blocking startup on large data sets",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/49830"
+}, {
+  "number" : 49838,
+  "repository" : "keycloak",
+  "title" : "SD-JWT: Array index shifting in SdJwtVerificationContext leaves undisclosed placeholders in verified payload",
+  "kind" : "weakness",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/49838"
+}, {
+  "number" : 49841,
+  "repository" : "keycloak",
+  "title" : "SCIM: ServiceProviderConfig endpoint returns filter.maxResults: 0 instead of 100",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49841"
+}, {
+  "number" : 49843,
+  "repository" : "keycloak",
+  "title" : "Add SCIM and its RFCs to the \"Specifications implemented\" page",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49843"
+}, {
+  "number" : 49847,
+  "repository" : "keycloak",
+  "title" : "SCIM endpoint returns 500 instead of 404 for unknown resource types",
+  "kind" : "bug",
+  "area" : "scim",
+  "url" : "https://github.com/keycloak/keycloak/issues/49847"
+}, {
+  "number" : 49852,
+  "repository" : "keycloak",
+  "title" : "Add idp admin role check for linking/unlinking IdP to/from an org",
+  "kind" : "task",
+  "area" : "organizations",
+  "url" : "https://github.com/keycloak/keycloak/issues/49852"
+}, {
+  "number" : 49857,
+  "repository" : "keycloak",
+  "title" : "Wrap-up Weblate translations for Keycloak 26.7 release",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49857"
+}, {
+  "number" : 49858,
+  "repository" : "keycloak",
+  "title" : "Increase AES default from 128 to 256 in KC_RESTART cookie",
+  "kind" : "task",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/49858"
+}, {
+  "number" : 49860,
+  "repository" : "keycloak",
+  "title" : "Use SHA384 or SHA512 for hashing for AUTH_SESSION_ID_HASH and SESSION cookies",
+  "kind" : "task",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/49860"
+}, {
+  "number" : 49861,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Move \"Verifiable credentials\" tab after \"Credentials\" in the admin console",
+  "kind" : "task",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/49861"
+}, {
+  "number" : 49862,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Adding \"Updated at\" column for the verifiable credential",
+  "kind" : "task",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/49862"
+}, {
+  "number" : 49864,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Account console polishing",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49864"
+}, {
+  "number" : 49869,
+  "repository" : "keycloak",
+  "title" : "Fix KcAdmV2EditCLITest.testEditNonExistentResource assertion when client is not found",
+  "kind" : "bug",
+  "area" : "admin/cli",
+  "url" : "https://github.com/keycloak/keycloak/issues/49869"
+}, {
+  "number" : 49873,
+  "repository" : "keycloak",
+  "title" : "How to thread dump with and without virtual threads",
+  "kind" : "enhancement",
+  "area" : "observability",
+  "url" : "https://github.com/keycloak/keycloak/issues/49873"
+}, {
+  "number" : 49883,
+  "repository" : "keycloak",
+  "title" : "Add license ignore policy for Trivy",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49883"
+}, {
+  "number" : 49908,
+  "repository" : "keycloak",
+  "title" : "Admin Console sessions page fails with unknown_error when federated user is deleted while an active session still exists",
+  "kind" : "bug",
+  "area" : "storage",
+  "url" : "https://github.com/keycloak/keycloak/issues/49908"
+}, {
+  "number" : 49909,
+  "repository" : "keycloak",
+  "title" : "Invalid token at openid connection client registration results in 500 instead of 401",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/49909"
+}, {
+  "number" : 49920,
+  "repository" : "keycloak",
+  "title" : "WebAuthn: sign counter updated to stored+1 instead of assertion value",
+  "kind" : "weakness",
+  "area" : "authentication/webauthn",
+  "url" : "https://github.com/keycloak/keycloak/issues/49920"
+}, {
+  "number" : 49921,
+  "repository" : "keycloak",
+  "title" : "WebAuthn: challenge not consumed after assertion validation",
+  "kind" : "weakness",
+  "area" : "authentication/webauthn",
+  "url" : "https://github.com/keycloak/keycloak/issues/49921"
+}, {
+  "number" : 49922,
+  "repository" : "keycloak",
+  "title" : "FreeMarker: deprecated no-arg Configuration constructor pins engine to legacy 2.3.0   defaults",
+  "kind" : "weakness",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/49922"
+}, {
+  "number" : 49927,
+  "repository" : "keycloak",
+  "title" : "Make propagation of cluster events synchronous",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49927"
+}, {
+  "number" : 49947,
+  "repository" : "keycloak",
+  "title" : "Add OIDF conformance tests to CI",
+  "kind" : "enhancement",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/49947"
+}, {
+  "number" : 49948,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Make sure single issued-credential persisted during user VC session",
+  "kind" : "task",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/49948"
+}, {
+  "number" : 49952,
+  "repository" : "keycloak",
+  "title" : "TokenManager.isValidScope overload ignores provided AuthorizationRequestContext (incomplete #49388 refactor)",
+  "kind" : "bug",
+  "area" : "token-exchange",
+  "url" : "https://github.com/keycloak/keycloak/issues/49952"
+}, {
+  "number" : 49954,
+  "repository" : "keycloak",
+  "title" : "Create the feature for Token Exchange Delegation",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49954"
+}, {
+  "number" : 49955,
+  "repository" : "keycloak",
+  "title" : "Create mapper for Token Exchange Delegation to create the may_act claim",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49955"
+}, {
+  "number" : 49960,
+  "repository" : "keycloak",
+  "title" : "Brute-force detection: Authenticated session token refresh resets lockout counter",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/49960"
+}, {
+  "number" : 49961,
+  "repository" : "keycloak",
+  "title" : "Themes: FolderTheme.getTemplate() missing path-containment check",
+  "kind" : "weakness",
+  "area" : "account/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/49961"
+}, {
+  "number" : 49969,
+  "repository" : "keycloak",
+  "title" : "UserInfoEndpoint throws NullPointerException (HTTP 500) for JWTs with null or missing alg header",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/49969"
+}, {
+  "number" : 49972,
+  "repository" : "keycloak",
+  "title" : "SSF Stream empty state shows extra text and refresh button",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/49972"
+}, {
+  "number" : 49973,
+  "repository" : "keycloak",
+  "title" : "SCIM endpoint returns 500 instead of 401 for unauthenticated requests",
+  "kind" : "bug",
+  "area" : "scim",
+  "url" : "https://github.com/keycloak/keycloak/issues/49973"
+}, {
+  "number" : 49977,
+  "repository" : "keycloak",
+  "title" : "Add ssf to admin UI development server",
+  "kind" : "task",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/49977"
+}, {
+  "number" : 49978,
+  "repository" : "keycloak",
+  "title" : "Kubernetes identity provider does not use documented default issuer",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/49978"
+}, {
+  "number" : 49988,
+  "repository" : "keycloak",
+  "title" : "Docs should describe on how to detect if a graceful shutdown was successful",
+  "kind" : "enhancement",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/49988"
+}, {
+  "number" : 50000,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Adding \"version\" column to the verifiable credentials table",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50000"
+}, {
+  "number" : 50005,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Wallet client name not showed in account console",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50005"
+}, {
+  "number" : 50012,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Align CredentialOfferAction config with other API representations",
+  "kind" : "task",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/50012"
+}, {
+  "number" : 50014,
+  "repository" : "keycloak",
+  "title" : "Binding authentication flow leads to \"flow.undefined\" showing in admin ui",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/50014"
+}, {
+  "number" : 50015,
+  "repository" : "keycloak",
+  "title" : "Use the official \"Discoverable Credential\" terminology for the new WebAuthn policy option",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50015"
+}, {
+  "number" : 50035,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] release notes for 26.7.0",
+  "kind" : "task",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/50035"
+}, {
+  "number" : 50039,
+  "repository" : "keycloak",
+  "title" : "Creating a client with empty `redirectUris` or `webOrigins` causes ORA-01400 (NULL insert) on Oracle database",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/50039"
+}, {
+  "number" : 50045,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] admin UI: group UI helpers for verifiable-credentials to the dedicated directory",
+  "kind" : "task",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/50045"
+}, {
+  "number" : 50050,
+  "repository" : "keycloak",
+  "title" : "SSF: Handle disabled SSF Receiver client",
+  "kind" : "enhancement",
+  "area" : "ssf",
+  "url" : "https://github.com/keycloak/keycloak/issues/50050"
+}, {
+  "number" : 50054,
+  "repository" : "keycloak",
+  "title" : "Warning of deprecated feature enabled",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/50054"
+}, {
+  "number" : 50058,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Users from the testsuite don't have default roles",
+  "kind" : "task",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/50058"
+}, {
+  "number" : 50063,
+  "repository" : "keycloak",
+  "title" : "Unable to invite user to organization when their email is a substring of an already-invited email",
+  "kind" : "bug",
+  "area" : "organizations",
+  "url" : "https://github.com/keycloak/keycloak/issues/50063"
+}, {
+  "number" : 50065,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Update UserVerifiableCredentialEntity and IssuedVerifiableCredentialEntity to reference credential scopes by ID",
+  "kind" : "task",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/50065"
+}, {
+  "number" : 50074,
+  "repository" : "keycloak",
+  "title" : "SSF admin endpoint: missing client-level authorization check exposes push delivery secret",
+  "kind" : "weakness",
+  "area" : "ssf",
+  "url" : "https://github.com/keycloak/keycloak/issues/50074"
+}, {
+  "number" : 50079,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Warning in conformance tests due custom field in authorization_Details",
+  "kind" : "task",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/50079"
+}, {
+  "number" : 50081,
+  "repository" : "keycloak",
+  "title" : "Reduce tightly coupling between ClientAccessTypeCondition and contexts",
+  "kind" : "task",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/50081"
+}, {
+  "number" : 50087,
+  "repository" : "keycloak",
+  "title" : "Generate queryable fields documentation from code",
+  "kind" : "enhancement",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/50087"
+}, {
+  "number" : 50092,
+  "repository" : "keycloak",
+  "title" : "Events search type filters don't filter while typing",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/50092"
+}, {
+  "number" : 50128,
+  "repository" : "keycloak",
+  "title" : "kcw: line 109: cd: /home/myuser/Downloads: No such file or directory",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50128"
+}, {
+  "number" : 50134,
+  "repository" : "keycloak",
+  "title" : "Refresh client data after invalidating rotated secret in Credentials tab",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50134"
+}, {
+  "number" : 50136,
+  "repository" : "keycloak",
+  "title" : "StackOverflowError when trying to reset Password of OrganizationUser with FGAP",
+  "kind" : "bug",
+  "area" : "authorization-services",
+  "url" : "https://github.com/keycloak/keycloak/issues/50136"
+}, {
+  "number" : 50139,
+  "repository" : "keycloak",
+  "title" : "Client Secret Rotation docs incorrectly mark feature as experimental instead of preview",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/50139"
+}, {
+  "number" : 50161,
+  "repository" : "keycloak",
+  "title" : "Introduce RefreshTokenProvider",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50161"
+}, {
+  "number" : 50172,
+  "repository" : "keycloak",
+  "title" : "Client API v2 CLI client: list connection options in sub-commands with reference to the root command",
+  "kind" : "task",
+  "area" : "admin/api-v2",
+  "url" : "https://github.com/keycloak/keycloak/issues/50172"
+}, {
+  "number" : 50175,
+  "repository" : "keycloak",
+  "title" : "`KcAdmV2ClientCLITest#testListClientsWithFieldsProjection` is failing as query param cannot be exploded anymore",
+  "kind" : "bug",
+  "area" : "admin/cli",
+  "url" : "https://github.com/keycloak/keycloak/issues/50175"
+}, {
+  "number" : 50177,
+  "repository" : "keycloak",
+  "title" : "SAML client creation fails with \"Error creating X509v1Certificate\" when Client ID contains URL query string characters",
+  "kind" : "bug",
+  "area" : "saml",
+  "url" : "https://github.com/keycloak/keycloak/issues/50177"
+}, {
+  "number" : 50191,
+  "repository" : "keycloak",
+  "title" : "Admin UI dynamic Group provider config crashes without GroupsResourceContext in 26.6.3",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/50191"
+}, {
+  "number" : 50195,
+  "repository" : "keycloak",
+  "title" : "Admin UI E2E realm-settings/general.spec.ts \"realm enable/disable switch\" failure",
+  "kind" : "bug",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak/issues/50195"
+}, {
+  "number" : 50201,
+  "repository" : "keycloak",
+  "title" : "LDAP user federation re-binds the service account on every operation since 26.6.0 (connection pool not reused)",
+  "kind" : "bug",
+  "area" : "ldap",
+  "url" : "https://github.com/keycloak/keycloak/issues/50201"
+}, {
+  "number" : 50216,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI-HAIP] Pass oid4vci-1_0-issuer-batch-issuance",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50216"
+}, {
+  "number" : 50222,
+  "repository" : "keycloak",
+  "title" : "Do not allow public clients to access the SCIM API",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50222"
+}, {
+  "number" : 50227,
+  "repository" : "keycloak",
+  "title" : "First set of documentation for 26.7",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50227"
+}, {
+  "number" : 50231,
+  "repository" : "keycloak",
+  "title" : "Create a cacheless integration test",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50231"
+}, {
+  "number" : 50236,
+  "repository" : "keycloak",
+  "title" : "Optimize retrieving groups of a user when logging in for disabled user cache",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50236"
+}, {
+  "number" : 50240,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] reject sd-jwt disclosure whose claim name already exists",
+  "kind" : "task",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/50240"
+}, {
+  "number" : 50248,
+  "repository" : "keycloak",
+  "title" : "Check standard token exchange behavior with lightweight access token",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50248"
+}, {
+  "number" : 50258,
+  "repository" : "keycloak",
+  "title" : "Isolating the `master` realm from the public internet to minimize the attack surface",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50258"
+}, {
+  "number" : 50261,
+  "repository" : "keycloak",
+  "title" : "MCP Documentation for 26.7",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50261"
+}, {
+  "number" : 50263,
+  "repository" : "keycloak",
+  "title" : "Docs: warn that installing 26.6 operator blocks older operator installs on the same cluster",
+  "kind" : "task",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/50263"
+}, {
+  "number" : 50268,
+  "repository" : "keycloak",
+  "title" : "`TokenManager#invokeTokenPostProcessors` doesn't respect `ProviderFactory#order`",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/50268"
+}, {
+  "number" : 50274,
+  "repository" : "keycloak",
+  "title" : "Enforcing query admin roles in the schema endpoint",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50274"
+}, {
+  "number" : 50277,
+  "repository" : "keycloak",
+  "title" : "Do not return service accounts when querying users by id",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50277"
+}, {
+  "number" : 50279,
+  "repository" : "keycloak",
+  "title" : "Cover scenario where organization group is not resolvable by id",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50279"
+}, {
+  "number" : 50283,
+  "repository" : "keycloak",
+  "title" : "Enforce audience check when authorizing using a bearer token",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50283"
+}, {
+  "number" : 50286,
+  "repository" : "keycloak",
+  "title" : "ConcurrentModificationException reading client-registration policy config under parallel client registration",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/50286"
+}, {
+  "number" : 50291,
+  "repository" : "keycloak",
+  "title" : "PathMatcher.buildUriFromTemplate throws StringIndexOutOfBoundsException for a template with an unclosed brace",
+  "kind" : "bug",
+  "area" : "authorization-services",
+  "url" : "https://github.com/keycloak/keycloak/issues/50291"
+}, {
+  "number" : 50300,
+  "repository" : "keycloak",
+  "title" : "TimeSelector clears input and switches units when value is 0 in Admin Console",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/50300"
+}, {
+  "number" : 50308,
+  "repository" : "keycloak",
+  "title" : "NumberFormatException for PAR request URI lifespan",
+  "kind" : "bug",
+  "area" : "admin/api",
+  "url" : "https://github.com/keycloak/keycloak/issues/50308"
+}, {
+  "number" : 50310,
+  "repository" : "keycloak",
+  "title" : "Enforce organization groups not accessible from SCIM API",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50310"
+}, {
+  "number" : 50316,
+  "repository" : "keycloak",
+  "title" : "Use constant-time comparison when validating OTP codes",
+  "kind" : "weakness",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/50316"
+}, {
+  "number" : 50327,
+  "repository" : "keycloak",
+  "title" : "Improve OAuth Identity and Authorization Chaining Across Domains guide",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50327"
+}, {
+  "number" : 50338,
+  "repository" : "keycloak",
+  "title" : "[OID4VCI] Limit the audience of access tokens",
+  "kind" : "task",
+  "area" : "oid4vc",
+  "url" : "https://github.com/keycloak/keycloak/issues/50338"
+}, {
+  "number" : 50353,
+  "repository" : "keycloak",
+  "title" : "Broken reference in rolling updates guide",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/50353"
+}, {
+  "number" : 50369,
+  "repository" : "keycloak",
+  "title" : "Composite-role expansion does an N+1 of `getChildRoles` queries (each with an auto-flush) that dominates Keycloak CPU on the cache-miss path",
+  "kind" : "enhancement",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/50369"
+}, {
+  "number" : 50380,
+  "repository" : "keycloak",
+  "title" : "Workflow state removeAll() deletes records across all realms on realm removal",
+  "kind" : "bug",
+  "area" : "workflows",
+  "url" : "https://github.com/keycloak/keycloak/issues/50380"
+}, {
+  "number" : 50413,
+  "repository" : "keycloak",
+  "title" : "Where to point the external Loadbalancer to for cacheless mode",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50413"
+}, {
+  "number" : 50414,
+  "repository" : "keycloak",
+  "title" : "Configuration and defaults should honor long values",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50414"
+}, {
+  "number" : 50431,
+  "repository" : "keycloak",
+  "title" : "Add `SECURITY.md` to the Keycloak repository root",
+  "kind" : "task",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/50431"
+}, {
+  "number" : 50432,
+  "repository" : "keycloak",
+  "title" : "Control repeatability of parameterized client scopes",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50432"
+}, {
+  "number" : 50437,
+  "repository" : "keycloak",
+  "title" : "Release notes for ID-JAG",
+  "kind" : "task",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/50437"
+}, {
+  "number" : 50439,
+  "repository" : "keycloak",
+  "title" : "Base2 testsuite (new) often fails with timeout",
+  "kind" : "bug",
+  "area" : "ci",
+  "url" : "https://github.com/keycloak/keycloak/issues/50439"
+}, {
+  "number" : 50455,
+  "repository" : "keycloak",
+  "title" : "Javadoc of keycloak-admin-client for prepare keycloak-client release",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50455"
+}, {
+  "number" : 50460,
+  "repository" : "keycloak",
+  "title" : "SSF push URL allow-list bypass via authority-attached wildcard",
+  "kind" : "weakness",
+  "area" : "ssf",
+  "url" : "https://github.com/keycloak/keycloak/issues/50460"
+}, {
+  "number" : 50464,
+  "repository" : "keycloak",
+  "title" : "SAML Step-Up: Over-achieved LoA collapses AuthnContextClassRef to AC_UNSPECIFIED on SSO re-entry",
+  "kind" : "weakness",
+  "area" : "saml",
+  "url" : "https://github.com/keycloak/keycloak/issues/50464"
+}, {
+  "number" : 50466,
+  "repository" : "keycloak",
+  "title" : "SAML Step-Up: Three robustness issues in LoA mapping and classRef selection",
+  "kind" : "weakness",
+  "area" : "saml",
+  "url" : "https://github.com/keycloak/keycloak/issues/50466"
+}, {
+  "number" : 50467,
+  "repository" : "keycloak",
+  "title" : "Prevent DoS when using complex filter conditions",
+  "kind" : "enhancement",
+  "area" : "workflows",
+  "url" : "https://github.com/keycloak/keycloak/issues/50467"
+}, {
+  "number" : 50476,
+  "repository" : "keycloak",
+  "title" : "Retarget quarkus-next to Quarkus 3.x branch after main switched to 4.0",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50476"
+}, {
+  "number" : 50478,
+  "repository" : "keycloak",
+  "title" : "Prepare migration guide for Keycloak 26.7",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50478"
+}, {
+  "number" : 50481,
+  "repository" : "keycloak",
+  "title" : "Cacheless: JpaSingleUseObjectProvider.putIfAbsent() missing lifespan validation present in put()",
+  "kind" : "weakness",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50481"
+}, {
+  "number" : 50482,
+  "repository" : "keycloak",
+  "title" : "Cacheless: Root authentication session lookup uses assert-only realm check — no-op in production",
+  "kind" : "weakness",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50482"
+}, {
+  "number" : 50483,
+  "repository" : "keycloak",
+  "title" : "Cacheless: LoginFailureExpirationAction compares milliseconds vs seconds — rows never reaped",
+  "kind" : "weakness",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50483"
+}, {
+  "number" : 50484,
+  "repository" : "keycloak",
+  "title" : "[quarkus-next] Config interceptors create SmallRyeConfig during test bootstrap causing ServiceConfigurationError",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/50484"
+}, {
+  "number" : 50488,
+  "repository" : "keycloak",
+  "title" : "HAProxy guide: Missing unconditional del-header for Client-Cert before conditional set-header",
+  "kind" : "weakness",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50488"
+}, {
+  "number" : 50491,
+  "repository" : "keycloak",
+  "title" : "Client API v2: Operator secretRef resolves arbitrary Secrets without ownership validation",
+  "kind" : "weakness",
+  "area" : "admin/api-v2",
+  "url" : "https://github.com/keycloak/keycloak/issues/50491"
+}, {
+  "number" : 50494,
+  "repository" : "keycloak",
+  "title" : "Client API v2: Operator prefers HTTP over HTTPS when both are enabled",
+  "kind" : "weakness",
+  "area" : "admin/api-v2",
+  "url" : "https://github.com/keycloak/keycloak/issues/50494"
+}, {
+  "number" : 50496,
+  "repository" : "keycloak",
+  "title" : "Deprecate the ClientModel.getDynamicClientScope() method",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50496"
+}, {
+  "number" : 50500,
+  "repository" : "keycloak",
+  "title" : "User Attribute mapper clears the value when custom attribute is selected",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/50500"
+}, {
+  "number" : 50515,
+  "repository" : "keycloak",
+  "title" : "Kotlin jars are included unnecessarily in the server assembly",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/50515"
+}, {
+  "number" : 50534,
+  "repository" : "keycloak",
+  "title" : "Identity Broker v2: Internal exception message reflected in /token error response",
+  "kind" : "weakness",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/50534"
+}, {
+  "number" : 50552,
+  "repository" : "keycloak",
+  "title" : "Create protocol mappers for parameterized scopes",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50552"
+}, {
+  "number" : 50553,
+  "repository" : "keycloak",
+  "title" : "Username/Delegation types should resolve users by email when configured",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50553"
+}, {
+  "number" : 50560,
+  "repository" : "keycloak",
+  "title" : "Admin v2: remove unused SortOrder.fromString()",
+  "kind" : "task",
+  "area" : "admin/api-v2",
+  "url" : "https://github.com/keycloak/keycloak/issues/50560"
+}, {
+  "number" : 50562,
+  "repository" : "keycloak",
+  "title" : "Admin v2: cache parsed sort options in ListOptions",
+  "kind" : "task",
+  "area" : "admin/api-v2",
+  "url" : "https://github.com/keycloak/keycloak/issues/50562"
+}, {
+  "number" : 50563,
+  "repository" : "keycloak",
+  "title" : "Admin v2 OpenAPI: endpoint-aware sort parameter descriptions in OASModelFilter",
+  "kind" : "task",
+  "area" : "admin/api-v2",
+  "url" : "https://github.com/keycloak/keycloak/issues/50563"
+}, {
+  "number" : 50579,
+  "repository" : "keycloak",
+  "title" : "Create Traefik client certificate setup in the main docs",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50579"
+}, {
+  "number" : 50582,
+  "repository" : "keycloak",
+  "title" : "Keycloak 26.x Operator Fails to import a realm if the maxSecondaryAuthFailures field is present",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50582"
+}, {
+  "number" : 50619,
+  "repository" : "keycloak",
+  "title" : "Rename and make `cacheless` feature Preview",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50619"
+}, {
+  "number" : 50627,
+  "repository" : "keycloak",
+  "title" : "Adding release highlights for 26.7",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50627"
+}, {
+  "number" : 50633,
+  "repository" : "keycloak",
+  "title" : "web-crypto-shim does not work after upgrade to uuid 14",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/50633"
+}, {
+  "number" : 50637,
+  "repository" : "keycloak",
+  "title" : "Harden removeRootAuthenticationSession() to check the realm ID",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50637"
+}, {
+  "number" : 50648,
+  "repository" : "keycloak",
+  "title" : "Add ID-JAG acronym to guide summary to improve searchability",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50648"
+}, {
+  "number" : 50712,
+  "repository" : "keycloak",
+  "title" : "Source and javadoc jars not generated",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/50712"
+} ]

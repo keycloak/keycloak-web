@@ -1,6 +1,6 @@
 <#import "/templates/template.ftl" as tmpl>
 
-<@tmpl.page current="nightly" title="Nightly Release" noindex=true summary="Keycloak's nightly release which contains the very latest developments. Use it for testing only.">
+<@tmpl.page current="nightly" title="Nightly Release" summary="Keycloak's nightly release which contains the very latest developments. Use it for testing only.">
 
 <div class="container mt-5">
     <h1>Nightly release</h1>
@@ -27,7 +27,7 @@
 
     <h2 class="mt-4">Server</h2>
 
-    <table class="table table-bordered table-striped">
+    <table class="table kc-table-docs">
         <tbody>
         <tr>
             <td>Keycloak</td>
@@ -67,7 +67,7 @@
 
     <h2 class="mt-4">Documentation</h2>
 
-    <table class="table table-bordered table-striped">
+    <table class="table kc-table-docs">
         <tbody>
         <tr>
             <td>

@@ -1,0 +1,15 @@
+[ {
+  "number" : 208,
+  "repository" : "keycloak-client",
+  "title" : "Clarification of supported keycloak server versions",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak-client/issues/208"
+}, {
+  "number" : 210,
+  "repository" : "keycloak-client",
+  "title" : "Latest changes break downstream docs build for 26.6",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak-client/issues/210"
+} ]

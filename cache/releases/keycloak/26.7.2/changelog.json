@@ -1,0 +1,190 @@
+[ {
+  "number" : 48527,
+  "repository" : "keycloak",
+  "title" : "MCP Authorization specification 2026-07-28",
+  "kind" : "milestone",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/48527"
+}, {
+  "number" : 49570,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-45292 OpenTelemetry Java SDK has Unbounded Memory Allocation in W3C Baggage Propagation",
+  "kind" : "cve",
+  "area" : "dependencies",
+  "url" : "https://github.com/keycloak/keycloak/issues/49570"
+}, {
+  "number" : 50616,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-14613] Keycloak 26.6.3 Fine-Grained Admin Permissions Bypass via Role Groups Endpoint",
+  "kind" : "cve",
+  "area" : "admin/fine-grained-permissions",
+  "url" : "https://github.com/keycloak/keycloak/issues/50616"
+}, {
+  "number" : 50751,
+  "repository" : "keycloak",
+  "title" : "Password denylist: false fpp warning on startup with large pre-computed .bloom file",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/50751"
+}, {
+  "number" : 50844,
+  "repository" : "keycloak",
+  "title" : "show-config prints the vault keystore password in cleartext",
+  "kind" : "weakness",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/50844"
+}, {
+  "number" : 50849,
+  "repository" : "keycloak",
+  "title" : "Correct SCIM name.formated",
+  "kind" : "bug",
+  "area" : "scim",
+  "url" : "https://github.com/keycloak/keycloak/issues/50849"
+}, {
+  "number" : 50855,
+  "repository" : "keycloak",
+  "title" : "Rotated client secret remains valid when the feature is disabled",
+  "kind" : "bug",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/50855"
+}, {
+  "number" : 50955,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-59888 and CVE-2026-59889] Upgrade jackson-databind to 2.21.5 to fix ",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/50955"
+}, {
+  "number" : 50966,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-15945] Group hierarchy search discloses hidden parent groups under FGAP v2",
+  "kind" : "cve",
+  "area" : "admin/fine-grained-permissions",
+  "url" : "https://github.com/keycloak/keycloak/issues/50966"
+}, {
+  "number" : 51054,
+  "repository" : "keycloak",
+  "title" : "Invalid redirect URI on logout from pages with sub-tab hash fragments",
+  "kind" : "bug",
+  "area" : "admin/ui",
+  "url" : "https://github.com/keycloak/keycloak/issues/51054"
+}, {
+  "number" : 51061,
+  "repository" : "keycloak",
+  "title" : "Parameterized UserPropertyMapper exposes target user attributes without permission check",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/51061"
+}, {
+  "number" : 51087,
+  "repository" : "keycloak",
+  "title" : "Passkey icons use wrong color variant when realm disables dark mode",
+  "kind" : "bug",
+  "area" : "authentication/webauthn",
+  "url" : "https://github.com/keycloak/keycloak/issues/51087"
+}, {
+  "number" : 51088,
+  "repository" : "keycloak",
+  "title" : "Verify email not working in incognito browser tab after Keycloak restart",
+  "kind" : "bug",
+  "area" : "authentication",
+  "url" : "https://github.com/keycloak/keycloak/issues/51088"
+}, {
+  "number" : 51131,
+  "repository" : "keycloak",
+  "title" : "Warning \"Proactive closing of the session was missed - refinements are needed to TransactionSessionHandler related logic\" appears",
+  "kind" : "bug",
+  "area" : "core",
+  "url" : "https://github.com/keycloak/keycloak/issues/51131"
+}, {
+  "number" : 51145,
+  "repository" : "keycloak",
+  "title" : "[CVE-2026-17048] Keycloak Admin REST API Leaks Vault-Resolved Rotated Client Secrets",
+  "kind" : "cve",
+  "area" : "oidc",
+  "url" : "https://github.com/keycloak/keycloak/issues/51145"
+}, {
+  "number" : 51154,
+  "repository" : "keycloak",
+  "title" : "Upgrade to 26.7.0 fails with preview features as the stateless cluster provider captures a null NodeInfo before postInit",
+  "kind" : "bug",
+  "area" : "infinispan",
+  "url" : "https://github.com/keycloak/keycloak/issues/51154"
+}, {
+  "number" : 51164,
+  "repository" : "keycloak",
+  "title" : "WebAuthn tests are being skipped in Github workflows",
+  "kind" : "bug",
+  "area" : "workflows",
+  "url" : "https://github.com/keycloak/keycloak/issues/51164"
+}, {
+  "number" : 51182,
+  "repository" : "keycloak",
+  "title" : "Large HTTP/2 request headers are rejected with a bare 500 and no log; same request works over HTTP/1.1",
+  "kind" : "bug",
+  "area" : "dist/quarkus",
+  "url" : "https://github.com/keycloak/keycloak/issues/51182"
+}, {
+  "number" : 51225,
+  "repository" : "keycloak",
+  "title" : "Document protocol mappers and \"Allow access to user data\" switch",
+  "kind" : "task",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/51225"
+}, {
+  "number" : 51323,
+  "repository" : "keycloak",
+  "title" : "Custom realm-level role named admin cannot be updated in non-master realms after Keycloak 26.7.0",
+  "kind" : "bug",
+  "area" : "admin/rbac",
+  "url" : "https://github.com/keycloak/keycloak/issues/51323"
+}, {
+  "number" : 51331,
+  "repository" : "keycloak",
+  "title" : "Adding org member fails with 500 with stateless:v1 feature enabled",
+  "kind" : "bug",
+  "area" : "organizations",
+  "url" : "https://github.com/keycloak/keycloak/issues/51331"
+}, {
+  "number" : 51344,
+  "repository" : "keycloak",
+  "title" : "Upgrade to Quarkus 3.33.3.1",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/51344"
+}, {
+  "number" : 51407,
+  "repository" : "keycloak",
+  "title" : "The dist for Java API docs is empty",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/51407"
+}, {
+  "number" : 51449,
+  "repository" : "keycloak",
+  "title" : "Incorrect query parameter name for \"max\"",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/51449"
+}, {
+  "number" : 51476,
+  "repository" : "keycloak",
+  "title" : "Invalid link for https://www.ietf.org/rfc/rfc4559.txt",
+  "kind" : "bug",
+  "area" : "docs",
+  "url" : "https://github.com/keycloak/keycloak/issues/51476"
+}, {
+  "number" : 51832,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-15571 Predictable account-linking hash enables account takeover via malicious oidc client",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/51832"
+}, {
+  "number" : 51833,
+  "repository" : "keycloak",
+  "title" : "CVE-2026-18963 Unauthenticated account takeover via reset-credentials flow bypass",
+  "kind" : "cve",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak/issues/51833"
+} ]

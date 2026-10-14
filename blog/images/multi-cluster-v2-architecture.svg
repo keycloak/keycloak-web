@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="14">
+  <defs>
+    <style>
+      .site { fill: #f1f5f9; stroke: #94a3b8; stroke-width: 1.5; stroke-dasharray: 6 3; rx: 12; }
+      .db { fill: #eff6ff; stroke: #3b82f6; stroke-width: 1.5; rx: 8; }
+      .lb { fill: #fef3c7; stroke: #f59e0b; stroke-width: 1.5; rx: 8; }
+      .label { font-size: 13px; fill: #334155; font-weight: 600; }
+      .sublabel { font-size: 11px; fill: #64748b; }
+      .title { font-size: 11px; fill: #64748b; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+      .arrow { stroke: #64748b; stroke-width: 1.5; fill: none; marker-end: url(#arrowhead); }
+      .arrow-db { stroke: #3b82f6; stroke-width: 1.5; fill: none; marker-end: url(#arrowhead-blue); }
+      .kc { fill: #e0f2fe; stroke: #0284c7; stroke-width: 1.5; rx: 6; }
+    </style>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="none" stroke="#64748b" stroke-width="1"/>
+    </marker>
+    <marker id="arrowhead-blue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="none" stroke="#3b82f6" stroke-width="1"/>
+    </marker>
+  </defs>
+
+  <!-- Users -->
+  <text x="450" y="16" text-anchor="middle" class="label" font-size="14">Users</text>
+
+  <!-- Arrow from users to LB -->
+  <line x1="450" y1="22" x2="450" y2="52" class="arrow"/>
+
+  <!-- Load Balancer -->
+  <rect x="325" y="54" width="250" height="36" class="lb"/>
+  <text x="450" y="78" text-anchor="middle" class="label">Load balancer</text>
+
+  <!-- Arrow from LB to Site 1 -->
+  <line x1="375" y1="90" x2="240" y2="130" class="arrow"/>
+
+  <!-- Arrow from LB to Site 2 -->
+  <line x1="525" y1="90" x2="660" y2="130" class="arrow"/>
+
+  <!-- Site 1 -->
+  <rect x="60" y="122" width="330" height="110" class="site"/>
+  <text x="225" y="146" text-anchor="middle" class="title">SITE 1 (CLUSTER1)</text>
+
+  <!-- KC nodes in Site 1 -->
+  <rect x="85" y="158" width="130" height="56" class="kc"/>
+  <text x="150" y="182" text-anchor="middle" class="label">Keycloak</text>
+  <text x="150" y="198" text-anchor="middle" class="sublabel">Node 1</text>
+
+  <rect x="235" y="158" width="130" height="56" class="kc"/>
+  <text x="300" y="182" text-anchor="middle" class="label">Keycloak</text>
+  <text x="300" y="198" text-anchor="middle" class="sublabel">Node 2</text>
+
+  <!-- Site 2 -->
+  <rect x="510" y="122" width="330" height="110" class="site"/>
+  <text x="675" y="146" text-anchor="middle" class="title">SITE 2 (CLUSTER2)</text>
+
+  <!-- KC nodes in Site 2 -->
+  <rect x="535" y="158" width="130" height="56" class="kc"/>
+  <text x="600" y="182" text-anchor="middle" class="label">Keycloak</text>
+  <text x="600" y="198" text-anchor="middle" class="sublabel">Node 3</text>
+
+  <rect x="685" y="158" width="130" height="56" class="kc"/>
+  <text x="750" y="182" text-anchor="middle" class="label">Keycloak</text>
+  <text x="750" y="198" text-anchor="middle" class="sublabel">Node 4</text>
+
+  <!-- Arrows from sites to DB -->
+  <line x1="225" y1="232" x2="350" y2="278" class="arrow-db"/>
+  <line x1="675" y1="232" x2="550" y2="278" class="arrow-db"/>
+
+  <!-- Database -->
+  <rect x="250" y="280" width="400" height="50" class="db"/>
+  <text x="450" y="311" text-anchor="middle" class="label">Synchronously replicated database</text>
+
+</svg>

@@ -154,16 +154,19 @@
 </div>
 
 <#macro featuresEntry icon title text>
-<div class="col d-flex align-items-start">
-    <div class="row m-3">
-        <span class="fw-bold"><i class="fa ${icon} pe-2" aria-hidden="true"></i> ${title}</span>
-        <span>${text}</span>
+<div class="col d-flex align-items-start mb-4 pt-2">
+    <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 3rem; height: 3rem;">
+        <i class="fa ${icon} text-primary" aria-hidden="true"></i>
+    </div>
+    <div class="ms-3">
+        <h6 class="fw-bold mb-1">${title}</h6>
+        <span class="text-body-secondary">${text}</span>
     </div>
 </div>
 </#macro>
 
-<div class="container bg-light mt-5 py-4">
-    <div class="row row-cols-1 row-cols-lg-4">
+<div class="container bg-light mt-5 py-4 px-4 rounded-4">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
         <@featuresEntry icon="fa-key" title="Single-Sign On" text="Login once to multiple applications"/>
         <@featuresEntry icon="fa-exchange-alt" title="Standard Protocols" text="OpenID Connect, OAuth 2.0 and SAML 2.0"/>
         <@featuresEntry icon="fa-cog" title="Centralized Management" text="For admins and users"/>
