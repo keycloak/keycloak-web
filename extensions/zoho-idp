@@ -1,0 +1,5 @@
+{
+  "name": "Keycloak Zoho Identity Provider",
+  "description": "Zoho as a first-class Social Identity Provider in Keycloak, matching the UX of the built-in GitHub, Google, and LinkedIn providers.",
+  "website": "https://github.com/swapnil-lang/keycloak-zoho-spi"
+}
