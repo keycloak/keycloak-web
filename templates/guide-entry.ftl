@@ -1,9 +1,10 @@
 <#import "/templates/template.ftl" as tmpl>
+<#import "/templates/guide-version.ftl" as gv>
 <#-- @ftlvariable name="links" type="org.keycloak.webbuilder.Links" -->
 <#-- @ftlvariable name="version" type="org.keycloak.webbuilder.Versions.Version" -->
 <#-- @ftlvariable name="guide" type="org.keycloak.webbuilder.Guides.Guide" -->
 
-<@tmpl.page current="search" title="${guide.title}" summary="${guide.summary}" noindex=guide.snapshot>
+<@tmpl.page current="search" title="${guide.title}" summary="${guide.summary}" noindex=guide.version.noindex>
 
 <div class="container mt-5 kc-article">
     <div class="row">
@@ -11,8 +12,8 @@
             <div class="d-flex align-items-center mb-3" data-pagefind-ignore>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb mb-0">
-                        <li class="breadcrumb-item"><a href="${links.getGuides(guide.snapshot)}">Guides</a></li>
-                        <li class="breadcrumb-item"><a href="${links.getGuides(guide.snapshot)}#${guide.metadata.id}">${guide.metadata.title}</a></li>
+                        <li class="breadcrumb-item"><a href="${links.getGuides(guide.version)}">Guides</a></li>
+                        <li class="breadcrumb-item"><a href="${links.getGuides(guide.version)}#${guide.metadata.id}">${guide.metadata.title}</a></li>
                         <#if guide.parent?has_content>
                           <li class="breadcrumb-item"><a href="${links.getParentLink(guide)}">${guide.parent?replace('-', ' ')?cap_first}</a></li>
                         </#if>
@@ -21,21 +22,12 @@
                 </nav>
             </div>
 
-            <#if guide.snapshot>
-                <div class="mb-4 alert alert-warning" role="alert" data-pagefind-ignore>
-                  <h4 class="no-top-margin">Nightly release</h4>
+            <@gv.disclaimer selected=guide.version guide=guide/>
 
-                  This guide is for the unstable nightly release, for the latest release go <a href="${links.get(guide, false)}">here</a>.
-                </div>
-            </#if>
-
-            <span data-pagefind-filter="version" hidden><#if guide.snapshot>nightly<#else>release</#if></span>
+            <span data-pagefind-filter="version" hidden>${guide.version.id}</span>
             <div class="mb-4">
                 <div data-nosnippet data-pagefind-ignore class="me-3 float-end">
-                    <select aria-label="Version" onchange="location = this.options[this.selectedIndex].value;" class="form-select">
-                        <option value="${links.get(guide, true)}" <#if guide.snapshot>selected="selected"</#if>>Nightly</option>
-                        <option value="${links.get(guide, false)}" <#if !guide.snapshot>selected="selected"</#if>>${version.version}</option>
-                    </select>
+                    <@gv.selector selected=guide.version guide=guide/>
                 </div>
 
                 <h1 data-pagefind-meta="title">${guide.title}</h1>

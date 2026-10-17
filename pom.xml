@@ -22,6 +22,8 @@
         <version.commons-compress>1.26.0</version.commons-compress>
 
         <version.keycloak>26.8.1</version.keycloak>
+        <version.keycloak-previous-1></version.keycloak-previous-1>
+        <version.keycloak-previous-2></version.keycloak-previous-2>
         <version.keycloak-client>26.0.12</version.keycloak-client>
         <version.keycloak-nodejs-connect>26.1.1</version.keycloak-nodejs-connect>
         <version.keycloak-js>26.2.4</version.keycloak-js>
@@ -36,6 +38,7 @@
         <version.dependency-plugin>3.1.2</version.dependency-plugin>
         <version.download-maven-plugin>2.0.0</version.download-maven-plugin>
         <version.jsoup>1.23.2</version.jsoup>
+        <version.junit>4.13.2</version.junit>
     </properties>
 
     <repositories>
@@ -51,6 +54,12 @@
     </repositories>
 
     <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${version.junit}</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>org.kohsuke</groupId>
             <artifactId>github-api</artifactId>
@@ -99,6 +108,12 @@
     </dependencies>
 
     <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>com.github.eirslett</groupId>
@@ -203,9 +218,89 @@
 
     <profiles>
         <profile>
+            <id>previous-guides</id>
+            <activation>
+                <property>
+                    <name>version.keycloak-previous-1</name>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-dependency-plugin</artifactId>
+                        <version>${version.dependency-plugin}</version>
+                        <executions>
+                            <execution>
+                                <id>unpack-previous-guides</id>
+                                <phase>generate-resources</phase>
+                                <goals>
+                                    <goal>unpack</goal>
+                                </goals>
+                                <configuration>
+                                    <artifactItems>
+                                        <artifactItem>
+                                            <groupId>org.keycloak</groupId>
+                                            <artifactId>keycloak-guides</artifactId>
+                                            <version>${version.keycloak-previous-1}</version>
+                                            <classifier>asciidoc</classifier>
+                                            <type>zip</type>
+                                            <overWrite>true</overWrite>
+                                            <outputDirectory>${project.build.directory}</outputDirectory>
+                                        </artifactItem>
+                                    </artifactItems>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>previous-2-guides</id>
+            <activation>
+                <property>
+                    <name>version.keycloak-previous-2</name>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-dependency-plugin</artifactId>
+                        <version>${version.dependency-plugin}</version>
+                        <executions>
+                            <execution>
+                                <id>unpack-previous-2-guides</id>
+                                <phase>generate-resources</phase>
+                                <goals>
+                                    <goal>unpack</goal>
+                                </goals>
+                                <configuration>
+                                    <artifactItems>
+                                        <artifactItem>
+                                            <groupId>org.keycloak</groupId>
+                                            <artifactId>keycloak-guides</artifactId>
+                                            <version>${version.keycloak-previous-2}</version>
+                                            <classifier>asciidoc</classifier>
+                                            <type>zip</type>
+                                            <overWrite>true</overWrite>
+                                            <outputDirectory>${project.build.directory}</outputDirectory>
+                                        </artifactItem>
+                                    </artifactItems>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
             <id>server-guides</id>
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <property>
+                    <name>!skipServerGuides</name>
+                </property>
             </activation>
             <dependencies>
                 <dependency>

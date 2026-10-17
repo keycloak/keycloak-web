@@ -32,7 +32,10 @@ jobs:
     - name: Build with Maven
       env:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      run: ./mvnw -U -B -s mvn-rel-settings.xml package -Dpublish
+      run: |
+        archive_options=$(bash get-archived-guide-versions.sh)
+        mapfile -t archive_options <<< "$archive_options"
+        ./mvnw -U -B -s mvn-rel-settings.xml package -Dpublish "${archive_options[@]}"
     - name: Publish website contents as a release
       # This way it can be consumed in a simple way in the keycloak.github.io repository
       env:

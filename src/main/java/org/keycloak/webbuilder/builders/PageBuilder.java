@@ -2,6 +2,7 @@ package org.keycloak.webbuilder.builders;
 
 import java.io.File;
 import java.util.Arrays;
+import java.util.Map;
 
 public class PageBuilder extends AbstractBuilder {
 
@@ -14,6 +15,13 @@ public class PageBuilder extends AbstractBuilder {
 
         for (File d : dirs) {
             buildDir(d, false);
+        }
+        for (var version : context.guideVersions().getAll()) {
+            File target = new File(context.getTargetDir(), version.getPrefix());
+            target.mkdirs();
+            context.freeMarker().writeFile(Map.of("guideVersion", version), "templates/guides.ftl", target, "guides.html");
+            context.sitemap().addFile(new File(target, "guides.html"));
+            printStep("created", version.getPrefix() + "guides.html");
         }
     }
 

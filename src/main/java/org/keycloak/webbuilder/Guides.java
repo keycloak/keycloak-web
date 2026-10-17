@@ -11,36 +11,39 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import org.keycloak.webbuilder.utils.AsciiDoctor;
+import org.keycloak.webbuilder.GuideVersions.GuideVersion;
 
 public class Guides {
 
     private final List<GuidesMetadata.GuideMetadata> categories = new ArrayList<>();
     private final List<Guide> guides = new ArrayList<>();
+    private final List<Source> sources = new ArrayList<>();
+    private final GuideVersions versions;
 
-    public Guides(GuidesMetadata guidesMetadata, Path webSrcDir, AsciiDoctor asciiDoctor) throws IOException {
+    public Guides(GuidesMetadata guidesMetadata, Path webSrcDir, AsciiDoctor asciiDoctor, GuideVersions versions) throws IOException {
+        this.versions = versions;
 
         for (GuidesMetadata.GuideSource guideSource : guidesMetadata.getSources()) {
-            Path srcPath = webSrcDir.resolve(guideSource.getDir());
-            String srcDirectoryName = srcPath.getFileName().toString();
-            List<Path> guidePaths;
-            if (srcDirectoryName.contains("$$VERSION$$")) {
-                try (Stream<Path> paths = Files.list(srcPath.getParent())) {
-                    guidePaths = paths
-                          .filter(p -> p.getFileName().toString().matches(srcDirectoryName.replace("$$VERSION$$", ".*")))
-                          .toList();
+            if (guideSource.getDir().contains("$$VERSION$$")) {
+                addSource(webSrcDir, guideSource, versions.getCurrent(), versions.getSourceVersion(guideSource.getId()));
+                addSource(webSrcDir, guideSource, versions.getNightly(), versions.getNightly().getVersion());
+                if (guideSource.getId().equals("keycloak")) {
+                    for (GuideVersion version : versions.getArchived()) {
+                        addSource(webSrcDir, guideSource, version, version.getVersion());
+                    }
                 }
             } else {
-                guidePaths = List.of(srcPath);
+                sources.add(new Source(guideSource, webSrcDir.resolve(guideSource.getDir()), versions.getCurrent()));
             }
+        }
 
+        for (Source source : sources) {
             for (GuidesMetadata.GuideMetadata guideMetadata : guidesMetadata.getGuides()) {
-                for (Path guide : guidePaths)
-                    loadGuides(asciiDoctor, guide, guideSource, guideMetadata);
+                loadGuides(asciiDoctor, source.directory(), source.metadata(), guideMetadata, source.version());
             }
         }
 
@@ -52,17 +55,57 @@ public class Guides {
         }
     }
 
+    private void addSource(Path root, GuidesMetadata.GuideSource source, GuideVersion version, String artifactVersion) throws IOException {
+        Path directory = root.resolve(source.getDir().replace("$$VERSION$$", artifactVersion));
+        if (!Files.isDirectory(directory)) {
+            throw new IOException("Missing guide source directory " + directory);
+        }
+        sources.add(new Source(source, directory, version));
+    }
+
+    public List<Source> getSources() {
+        return sources;
+    }
+
+    public GuideVersions getVersions() {
+        return versions;
+    }
+
+    public List<GuideVersion> getVersionsFor(Guide guide) {
+        return guide.getGuideSource().getId().equals("keycloak") ? versions.getAll()
+                : List.of(versions.getNightly(), versions.getCurrent());
+    }
+
     public Guide getGuide(String category, String name) {
-        Optional<Guide> o = guides.stream().filter(g -> g.getMetadata().getId().equals(category) && g.getName().equals(name)).findFirst();
+        Optional<Guide> o = guides.stream().filter(g -> g.getVersion() == versions.getCurrent()
+                && g.getMetadata().getId().equals(category) && g.getName().equals(name)).findFirst();
         return o.orElse(null);
     }
 
-    private void loadGuides(AsciiDoctor asciiDoctor, Path root, GuidesMetadata.GuideSource guideSource, GuidesMetadata.GuideMetadata guideMetadata) throws IOException {
+    public Guide getEquivalent(Guide guide, GuideVersion version) {
+        return guides.stream().filter(g -> g.getVersion() == version
+                && g.getGuideSource().getId().equals(guide.getGuideSource().getId())
+                && g.getPath().equals(guide.getPath())).findFirst().orElse(null);
+    }
+
+    public Guide getParent(Guide guide) {
+        for (String path : List.of(guide.getParent() + "/introduction", guide.getParent())) {
+            Guide parent = guides.stream().filter(g -> g.getVersion() == guide.getVersion()
+                    && g.getGuideSource().getId().equals(guide.getGuideSource().getId())
+                    && g.getMetadata().equals(guide.getMetadata()) && g.getFQName().equals(path))
+                    .findFirst().orElse(null);
+            if (parent != null) {
+                return parent;
+            }
+        }
+        throw new IllegalArgumentException("Missing parent guide for " + guide.getVersion().getPrefix() + guide.getPath());
+    }
+
+    private void loadGuides(AsciiDoctor asciiDoctor, Path root, GuidesMetadata.GuideSource guideSource, GuidesMetadata.GuideMetadata guideMetadata, GuideVersion version) throws IOException {
         if (!Files.isDirectory(root)) {
             return;
         }
 
-        boolean snapshot = root.getFileName().toString().endsWith("-SNAPSHOT");
         Path guideRoot = root;
         Path generatedGuides = root.resolve("generated-guides");
         if (Files.isDirectory(generatedGuides)) {
@@ -102,7 +145,7 @@ public class Guides {
             boolean isTileVisibile = isTileVisibileAttribute == null || "true".equals(isTileVisibileAttribute);
             Guide g = new Guide(guideSource, guideMetadata, path, (String) attributes.get("guide-parent"),
                   (String) attributes.get("guide-title"), (String) attributes.get("guide-summary"), (String) attributes.get("guide-tags"),
-                  (String) attributes.get("author"), community, (String) attributes.get("external-link"), isTileVisibile, snapshot);
+                  (String) attributes.get("author"), community, (String) attributes.get("external-link"), isTileVisibile, version);
 
             if (guidePriorities != null) {
                 Integer priority = guidePriorities.get(g.getFQName());
@@ -145,11 +188,18 @@ public class Guides {
     }
 
     public List<GuidesMetadata.GuideMetadata> getCategories(boolean wantSnapshots) {
-        return categories.stream().filter(filterEmptyCategories(wantSnapshots)).collect(Collectors.toList());
+        return getCategories(wantSnapshots ? versions.getNightly() : versions.getCurrent());
     }
 
-    private Predicate<GuidesMetadata.GuideMetadata> filterEmptyCategories(boolean wantSnapshots) {
-        return cat -> getGuides(cat).stream().anyMatch(guide-> guide.isSnapshot() == wantSnapshots);
+    public List<GuidesMetadata.GuideMetadata> getCategories(GuideVersion version) {
+        return categories.stream().filter(cat -> !getGuides(cat, version).isEmpty()).toList();
+    }
+
+    public List<Guide> getGuides(GuidesMetadata.GuideMetadata category, GuideVersion version) {
+        return guides.stream().filter(g -> g.getMetadata().equals(category) && g.getVersion() == version).toList();
+    }
+
+    public record Source(GuidesMetadata.GuideSource metadata, Path directory, GuideVersion version) {
     }
 
     public static class Guide implements Comparable<Guide> {
@@ -162,7 +212,7 @@ public class Guides {
         private final String author;
         private final boolean community;
         private final Path source;
-        private final boolean snapshot;
+        private final GuideVersion version;
         private final String template;
         private final String title;
         private final String summary;
@@ -172,7 +222,7 @@ public class Guides {
         private final String externalLink;
         private final boolean tileVisible;
 
-        public Guide(GuidesMetadata.GuideSource guideSource, GuidesMetadata.GuideMetadata metadata, Path source, String parent, String title, String summary, String tags, String author, boolean community, String externalLink, boolean tileVisible, boolean snapshot) {
+        public Guide(GuidesMetadata.GuideSource guideSource, GuidesMetadata.GuideMetadata metadata, Path source, String parent, String title, String summary, String tags, String author, boolean community, String externalLink, boolean tileVisible, GuideVersion version) {
             this.guideSource = guideSource;
             this.metadata = metadata;
             this.name = source.getFileName().toString().replace(".adoc", "");
@@ -181,7 +231,7 @@ public class Guides {
             this.author = author;
             this.community = community;
             this.source = source;
-            this.snapshot = snapshot;
+            this.version = version;
             this.template = "guide-" + name + ".html";
             this.title = title;
             this.summary = summary;
@@ -266,7 +316,11 @@ public class Guides {
         }
 
         public boolean isSnapshot() {
-            return snapshot;
+            return version.isSnapshot();
+        }
+
+        public GuideVersion getVersion() {
+            return version;
         }
 
         @Override

@@ -3,9 +3,14 @@ package org.keycloak.webbuilder;
 public class Links {
 
     private Config config;
+    private Guides guides;
 
     public Links(Config config) {
         this.config = config;
+    }
+
+    public void setGuides(Guides guides) {
+        this.guides = guides;
     }
 
     public String getRoot() {
@@ -44,6 +49,10 @@ public class Links {
         return snapshot ? getLink("nightly/guides") : getLink("guides");
     }
 
+    public String getGuides(GuideVersions.GuideVersion version) {
+        return getLink(version.getPrefix() + "guides");
+    }
+
     public String getDownloads() {
         return getLink("downloads");
     }
@@ -69,20 +78,25 @@ public class Links {
     }
 
     public String get(Guides.Guide guide) {
-        return get(guide, null);
+        return guide.isExternal() ? guide.getExternalLink() : getLink(guide.getVersion().getPrefix() + guide.getPath());
     }
 
     public String get(Guides.Guide guide, Boolean snapshot) {
-        if (guide.isExternal()) {
-            return guide.getExternalLink();
-        } else {
-            boolean nightly = (guide.isSnapshot() && snapshot == null) || (snapshot != null && snapshot);
-            return getLink((nightly ? "nightly/" : "") + guide.getPath());
-        }
+        return snapshot == null ? get(guide) : getGuideVersion(guide,
+                snapshot ? guides.getVersions().getNightly() : guides.getVersions().getCurrent());
+    }
+
+    public String getGuideVersion(Guides.Guide guide, GuideVersions.GuideVersion version) {
+        Guides.Guide equivalent = guides.getEquivalent(guide, version);
+        return equivalent == null ? getGuides(version) : get(equivalent);
     }
 
     public String getGuideEdit(Guides.Guide guide) {
-        return guide.getGuideSource().getGithub() + guide.getMetadata().getId() + "/" + guide.getFQName() + ".adoc";
+        String github = guide.getGuideSource().getGithub();
+        if (guide.getVersion().isArchived()) {
+            github = github.replace("/tree/main/", "/tree/" + guide.getVersion().getVersion() + "/");
+        }
+        return github + guide.getMetadata().getId() + "/" + guide.getFQName() + ".adoc";
     }
 
     public String get(Blogs.Blog blog) {
@@ -97,18 +111,6 @@ public class Links {
     }
 
     public String getParentLink(Guides.Guide guide) {
-        StringBuilder sb = new StringBuilder(getRoot()).append("/");
-        if (guide.isSnapshot()) {
-            sb.append("nightly/");
-        }
-        sb.append(guide.getMetadata().getId()).append("/");
-        if (guide.hasParent()) {
-            sb.append(guide.getParent()).append("/");
-        }
-        sb.append("introduction");
-        if (!config.isPublish()) {
-            sb.append(".html");
-        }
-        return sb.toString();
+        return get(guides.getParent(guide));
     }
 }

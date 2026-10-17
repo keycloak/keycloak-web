@@ -1,12 +1,12 @@
 # Sources for keycloak.org
 
-Can be built locally from IDE by running AutoBuilder main method or with Maven by running:
+Build the website locally with Maven:
 
     ./mvnw clean install
     
 After the build is completed open `target/web/index.html` in your favourite web browser.
     
-There's also an auto-builder utility that watches the filesystem and continuously rebuilds the website. This can be very useful when working on the website, especially making stylesheet changes, etc. This can be run from your IDE by running `AutoBuilder`, or from the command-line with:
+An auto-builder watches the filesystem and continuously rebuilds the website:
 
     ./mvnw -Pauto-run exec:java
 
@@ -27,3 +27,12 @@ Server and Operator guide sources are located at `https://github.com/keycloak/ke
     ./mvnw -pl docs clean install
 
 Then simply build the website locally with `./mvnw clean install`, and the locally built guides will be available in `target/web/nightly/guides.html`.
+
+### Archived Server and Operator guides
+
+The current guide version is explicitly configured by `version.keycloak` in `pom.xml`.
+Archived guides are optional and are only built when their exact patch versions are passed to Maven:
+
+```shell
+./mvnw clean install -Dversion.keycloak-previous-1=26.7.5 -Dversion.keycloak-previous-2=26.6.4
+```

@@ -103,6 +103,7 @@ public class FreeMarker {
         globalAttributes.put("news", context.news());
         globalAttributes.put("blogs", context.blogs());
         globalAttributes.put("guides", context.guides());
+        globalAttributes.put("guideVersions", context.guideVersions());
         globalAttributes.put("blogImages", context.config().getUrls().getHome() + "/resources/images/blog");
 
         globalAttributes.put("archive", false);

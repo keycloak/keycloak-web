@@ -37,6 +37,7 @@ public class Context {
     private ProjectStars projectStars;
     private Blogs blogs;
     private Guides guides;
+    private GuideVersions guideVersions;
     private News news;
     private Sitemap sitemap;
 
@@ -81,12 +82,14 @@ public class Context {
             versionsBySource.put(sourceId, versions);
         }
 
+        guideVersions = new GuideVersions();
         extensions = new Extensions(extensionsDir);
         casestudies = new Casestudies(casestudiesDir);
         translations = new Translations();
         projectStars = new ProjectStars();
         blogs = new Blogs(this);
-        guides = new Guides(guidesMetadata, getWebSrcDir().toPath(), asciiDoctor);
+        guides = new Guides(guidesMetadata, getWebSrcDir().toPath(), asciiDoctor, guideVersions);
+        links.setGuides(guides);
         news = new News(newsDir, blogs, config, links);
 
         freeMarker.init(this);
@@ -152,6 +155,10 @@ public class Context {
 
     public Guides guides() {
         return guides;
+    }
+
+    public GuideVersions guideVersions() {
+        return guideVersions;
     }
 
     public News news() {

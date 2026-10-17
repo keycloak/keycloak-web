@@ -3,9 +3,11 @@
 <#if archive>
     <#assign docRoot = "${root}docs/${version.version}">
     <#assign docApiRoot = "${root}docs-api/${version.version}">
+    <#assign documentationGuides=(guideVersions.forRelease(version.version))!>
 <#else>
     <#assign docRoot = "${root}docs/latest">
     <#assign docApiRoot = "${root}docs-api/latest">
+    <#assign documentationGuides=guideVersions.current>
 </#if>
 
 <table class="table kc-table-docs">
@@ -19,10 +21,10 @@
         <td>
         </td>
     </tr>
-<#if !archive>
+<#if documentationGuides?has_content>
     <tr>
         <td>
-            <a href="${links.guides}#getting-started">
+            <a href="${links.getGuides(documentationGuides)}#getting-started">
                 Getting Started
             </a>
         </td>
@@ -32,7 +34,7 @@
     </tr>
     <tr>
         <td>
-            <a href="${links.guides}#server">
+            <a href="${links.getGuides(documentationGuides)}#server">
                 Server Installation and Configuration
             </a>
         </td>
@@ -42,7 +44,7 @@
     </tr>
     <tr>
         <td>
-            <a href="${links.get(guides.getGuide('server', 'containers'))}">
+            <a href="${links.getGuideVersion(guides.getGuide('server', 'containers'), documentationGuides)}">
                 Server Container Image
             </a>
         </td>
@@ -52,7 +54,7 @@
     </tr>
     <tr>
         <td>
-            <a href="${links.guides}#securing-apps">
+            <a href="${links.getGuides(documentationGuides)}#securing-apps">
                 Securing Applications and Services
             </a>
         </td>
