@@ -1,0 +1,6 @@
+{
+    "name": "Keycloak Configurable Theme",
+    "description": "One theme for every realm, configured instead of coded: layouts (centered, split-screen, minimal), colours, fonts, logo, favicon, banner and footer per realm via a hot-reloaded JSON file, a Realm Settings tab or a REST API. Also brands the account console, admin console and emails.",
+    "website": "https://github.com/dockndevai/keycloak-configurable-theme",
+    "source": "https://github.com/dockndevai/keycloak-configurable-theme"
+}
