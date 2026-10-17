@@ -7,9 +7,9 @@
 <#if guideVersion.noindex>
     <#assign title="Guides / ${guideVersion.label}">
 </#if>
-<@tmpl.page current=guideVersion.snapshot?then("nightly-guides", "guides") title=title noindex=guideVersion.noindex summary="Find the guides to help you get started, install Keycloak, and configure it and your applications to match your needs.">
+<@tmpl.page current=guideVersion.snapshot?then("nightly-guides", "guides") title=title noindex=guideVersion.noindex preloadImage="images/banner.svg" summary="Find the guides to help you get started, install Keycloak, and configure it and your applications to match your needs.">
 
-<script src="${links.getResource('js/guides.js')}" type="text/javascript"></script>
+<script src="${links.getResource('js/guides.js')}" defer></script>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">

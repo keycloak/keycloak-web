@@ -1,7 +1,7 @@
 <#-- @ftlvariable name="links" type="org.keycloak.webbuilder.Links" -->
 <#import "/templates/template.ftl" as tmpl>
 
-<@tmpl.page current="home" title="" previewImage="index.png" rss=true>
+<@tmpl.page current="home" title="" previewImage="index.png" rss=true preloadImage="images/banner.svg">
 
 <div class="jumbotron jumbotron-fluid bg-light kc-bg-triangles">
   <div class="container pt-5 pb-5 text-center">

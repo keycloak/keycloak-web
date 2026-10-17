@@ -1,7 +1,7 @@
-<#macro page current title summary="" importMap="" previewImage="" author="" noindex=false nocsp=false rss=false jsonLd="">
+<#macro page current title summary="" importMap="" previewImage="" author="" noindex=false nocsp=false rss=false jsonLd="" preloadImage="" toc=false>
 <#-- @ftlvariable name="projectStars" type="org.keycloak.webbuilder.ProjectStars" -->
 <!doctype html>
-<html lang="en" prefix="og: https://ogp.me/ns#">
+<html lang="en" prefix="og: https://ogp.me/ns#" data-announcement-version="2026-10-17">
 <head>
 <#compress>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0J2P9316N6"></script>
@@ -13,6 +13,34 @@
         gtag('config', 'G-0J2P9316N6');
     </script>
     <meta charset="utf-8"/>
+    <script id="announcement-banner-script">
+        (function() {
+            var root = document.documentElement;
+            var version = root.dataset.announcementVersion;
+            var storageKey = "keycloak.announcement.dismissedVersion";
+
+            try {
+                if (window.localStorage.getItem(storageKey) === version) {
+                    root.classList.add("announcement-dismissed");
+                }
+            } catch (error) {
+                console.warn("Unable to read the announcement dismissal preference.", error);
+            }
+
+            document.addEventListener("click", function(event) {
+                if (!(event.target instanceof Element) || !event.target.closest("#announcement-banner-close")) {
+                    return;
+                }
+                root.classList.add("announcement-dismissed");
+                try {
+                    window.localStorage.setItem(storageKey, version);
+                } catch (error) {
+                    console.warn("Unable to save the announcement dismissal preference.", error);
+                }
+            });
+            root.classList.add("announcement-dismissible");
+        })();
+    </script>
     <title><#if (title)?has_content>${title} - </#if>Keycloak</title>
 
     <#if (previewImage)?has_content>
@@ -33,10 +61,12 @@
 
     <#if !nocsp??><meta http-equiv='Content-Security-Policy' content="default-src 'none'; style-src 'self'; img-src 'self' https://www.google-analytics.com; font-src 'self'; script-src 'self' 'wasm-unsafe-eval' https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com; worker-src 'self'; base-uri 'none'; form-action 'none';"></#if>
 
+    <#if preloadImage?has_content>
+        <link rel="preload" as="image" href="${links.getResource(preloadImage)}" fetchpriority="high">
+    </#if>
     <link href="${links.getResource('bootstrap/dist/css/bootstrap.min.css')}" rel="stylesheet">
     <link href="${links.getResource('@fortawesome/fontawesome-free/css/all.min.css')}" rel="stylesheet">
     <link href="${links.getResource('css/keycloak.css')}" rel="stylesheet">
-    <link href="${links.getResource('css/rouge-github.css')}" rel="stylesheet">
     <link rel="canonical" href="${canonical}">
     <meta property="og:url" content="${canonical}">
 
@@ -55,10 +85,13 @@
 </head>
 <body>
 
-<div class="bg-primary text-center py-2 px-3" data-nosnippet>
-    <a class="link-light text-decoration-none small" href="https://www.keycloak.org/2026/09/keycloakcon-27-eu-call-for-papers">
-        Speak at <b>KeycloakCon Europe 2027</b> in Barcelona! CfP closes October 18 &middot; Save the date: March 15, 2027 &middot; <span class="fw-semibold text-decoration-underline">Submit Today &rarr;</span>
-    </a>
+<div id="announcement-banner" class="bg-primary text-center py-2 px-3" data-nosnippet>
+    <div class="position-relative px-4">
+        <a class="link-light text-decoration-none small" href="https://www.keycloak.org/2026/09/keycloakcon-27-eu-call-for-papers">
+            Speak at <b>KeycloakCon Europe 2027</b> in Barcelona! CfP closes October 18 &middot; Save the date: March 15, 2027 &middot; <span class="fw-semibold text-decoration-underline">Submit Today &rarr;</span>
+        </a>
+        <button id="announcement-banner-close" type="button" class="btn-close btn-close-white position-absolute top-50 end-0 translate-middle-y" aria-label="Dismiss announcement"></button>
+    </div>
 </div>
 
 <header class="navbar navbar-expand-md bg-light shadow-sm">
@@ -107,8 +140,8 @@
     </footer>
 </div>
 
-<script src="${links.getResource('bootstrap/dist/js/bootstrap.min.js')}" type="text/javascript"></script>
-<script src="${links.getResource('tocbot/dist/tocbot.min.js')}" type="text/javascript"></script>
+<script src="${links.getResource('bootstrap/dist/js/bootstrap.min.js')}" defer></script>
+<#if toc><script src="${links.getResource('tocbot/dist/tocbot.min.js')}" defer></script></#if>
 </body>
 </html>
 </#macro>

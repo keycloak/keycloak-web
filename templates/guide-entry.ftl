@@ -4,7 +4,7 @@
 <#-- @ftlvariable name="version" type="org.keycloak.webbuilder.Versions.Version" -->
 <#-- @ftlvariable name="guide" type="org.keycloak.webbuilder.Guides.Guide" -->
 
-<@tmpl.page current="search" title="${guide.title}" summary="${guide.summary}" noindex=guide.version.noindex>
+<@tmpl.page current="search" title="${guide.title}" summary="${guide.summary}" noindex=guide.version.noindex toc=true>
 
 <div class="container mt-5 kc-article">
     <div class="row">
@@ -85,6 +85,6 @@
     </div>
 </div>
 
-<script src="${links.getResource('js/guide.js')}" type="text/javascript"></script>
+<script src="${links.getResource('js/guide.js')}" defer></script>
 
 </@tmpl.page>

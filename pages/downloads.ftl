@@ -22,6 +22,6 @@
 <script>
     window.kc_version = '${version.version}';
 </script>
-<script src="${root}resources/js/downloads.js" type="text/javascript"></script>
+<script src="${root}resources/js/downloads.js" defer></script>
 
 </@tmpl.page>
