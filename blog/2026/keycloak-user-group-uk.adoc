@@ -1,0 +1,16 @@
+:title: Keycloak User Group UK 🇬🇧
+:date: 2026-10-13
+:publish: true
+:author: Dmitry Telegin
+:preview: keycloak-user-group-uk.png
+:summary: We are excited to announce the Keycloak User Group in the United Kingdom. Join our first meeting in London on the 20th of November!
+
+We are excited to announce the Keycloak User Group in the United Kingdom! 🇬🇧
+
+Join the https://www.meetup.com/keycloak-user-group-uk/[Keycloak User Group UK] on *Friday, 20th of November, from 1–5pm* for our first meetup at https://www.londonbridgehive.org/[London Bridge Hive].
+
+We'll have a few short talks, workshops on Keycloak topics, and an open discussion to share experiences, ask questions, and compare notes with others in the community. Whether you're getting started with Keycloak or running it in production, come along and bring your questions.
+
+*From 5pm*, we'll head downstairs to https://www.ninelivesbar.com/[Nine Lives] for beers and more conversation 🍻
+
+Please https://forms.gle/drro831kqLUXA3Wo8[RSVP] and follow the https://www.meetup.com/keycloak-user-group-uk/[Meetup group] for event updates. We'd love to see you there!
