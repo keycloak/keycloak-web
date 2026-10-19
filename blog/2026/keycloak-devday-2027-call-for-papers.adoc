@@ -1,0 +1,49 @@
+:title: Keycloak DevDay 2027: The Call for Papers is open!
+:date: 2026-10-19
+:publish: true
+:author: Niko Köbler, Sebastian Rose
+:preview: keycloak-devday-2027.jpg
+:summary: Share your Keycloak experience at the world's largest Keycloak community event in Darmstadt on April 8th & 9th, 2027. The CfP closes October 24, 2026!
+
+
+📣 It's time to share what you've built, learned and fought with! The *Call for Papers for Keycloak DevDay 2027* is open until *October 24, 2026*.
+
+As announced in our link:https://www.keycloak.org/2026/06/keycloak-devday-2027-save-the-date[Save the Date post] back in June, the world's largest Keycloak community conference returns to *Darmstadt, Germany*, on *April 8–9, 2027*.
+And once again, we want the conference day to be shaped by the people who know Keycloak best: you, the community.
+
+== What we're looking for 📝
+
+Anything Keycloak-related is welcome! To give you some inspiration, we'd love to hear about:
+
+* Real-world implementations and case studies
+* Migration stories and lessons learned – including the things that went wrong
+* Keycloak core features and new developments
+* Extension development and customization (SPIs, themes, providers, ...)
+* Operating Keycloak in production: deployment, monitoring, upgrades
+* Performance optimization and scaling
+* Security best practices and patterns
+* Identity standards and protocols (OpenID Connect, OAuth 2.x, SAML, passkeys, ...)
+* Integration with cloud-native technologies
+
+One thing to keep in mind: everyone at DevDay already knows Keycloak.
+*Please don't submit an introduction talk.*
+Our audience wants to go deep, so bring the details, the code and the war stories.
+
+== How to submit
+
+👉 *Submit your proposal on Sessionize: https://sessionize.com/keycloak-devday-2027/[sessionize.com/keycloak-devday-2027]*
+
+⏰ *Deadline: October 24, 2026*
+
+As a speaker, you get *free access to the event* (main speaker only, not co-speakers).
+As a community conference, we keep costs as low as possible, so we can't cover travel or accommodation.
+Thanks for your understanding!
+
+Need some inspiration for your proposal? Check out the talks from previous editions on YouTube:
+
+* https://www.youtube.com/watch?v=TWiBDnq6vmU&list=PLNn3plN7Ziarp_NFKNUzA_XmXe2M3cEAi&pp=sAgC[Keycloak DevDay 2026 video playlist]
+* https://www.youtube.com/watch?v=aygf3cEY8wU&list=PLNn3plN7ZiaqzeFBBTRRC8sDWee3bmwcy&pp=sAgC[Keycloak DevDay 2025 video playlist]
+* https://www.youtube.com/watch?v=lQH-yNrF_As&list=PLNn3plN7ZiaqXjiDSB1KDaF3bCDuQmDgw&pp=sAgC[Keycloak DevDay 2024 video playlist]
+
+We're looking forward to your submissions – and to seeing you in Darmstadt next April! 🚀 +
+_Niko & Sebastian_
