@@ -9,15 +9,6 @@
     --bs-link-hover-color-rgb: 50, 109, 159;
 }
 
-.announcement-dismissed #announcement-banner,
-#announcement-banner-close {
-    display: none;
-}
-
-.announcement-dismissible #announcement-banner-close {
-    display: block;
-}
-
 .btn {
     border-radius: 0.75rem;
 }
