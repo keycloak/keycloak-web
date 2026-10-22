@@ -1,0 +1,6 @@
+{
+    "name": "keycloak-api-ts",
+    "description": "TypeScript client for the Admin REST API on Node.js. Covers the full Keycloak 26.8 OpenAPI spec with generated types, returns HTTP errors as values, renews tokens with any grant, takes the target realm per call, and is integration-tested against Keycloak 24, 25 and 26.",
+    "website": "https://github.com/Master-Mils/keycloak-api-ts",
+    "source": "https://github.com/Master-Mils/keycloak-api-ts"
+}
