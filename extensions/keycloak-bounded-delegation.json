@@ -1,0 +1,5 @@
+{
+    "name": "Keycloak Bounded Delegation",
+    "description": "Bounded delegation for software service accounts: intersect permissions, limit audience, lifetime and depth, prevent actor replay, and optionally require task approval and online cancellation checks.",
+    "website": "https://github.com/Alien6-Studio/keycloak-bounded-delegation"
+}
