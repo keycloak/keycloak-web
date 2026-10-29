@@ -1,5 +1,5 @@
 :title: Keycloak User Group UK 🇬🇧
-:date: 2026-10-13
+:date: 2026-10-28
 :publish: true
 :author: Dmitry Telegin
 :preview: keycloak-user-group-uk.png
