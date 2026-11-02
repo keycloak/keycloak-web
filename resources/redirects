@@ -75,7 +75,6 @@
 ^/server/?=/guides#server
 ^/observability/?=/guides#observability
 ^/ui-customization/?=/guides#ui-customization
-^/migration/?=/guides#migration
 
 # This is here just to test a redirect locally, and to prevent people opening the 404 page
 ^/404=/
