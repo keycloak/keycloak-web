@@ -1,0 +1,10 @@
+{
+  "name": "GSMA",
+  "title": "GSMA accelerates Open Gateway innovation with Keycloak and Microcks",
+  "description": "GSMA built an Open Gateway sandbox where developers can test CAMARA telecom APIs without accessing live operator networks. Keycloak provides identity, authentication and authorization, while Microcks simulates API responses. Together, they enable secure experimentation and save around five months of development time annually.",
+  "url": "https://www.cncf.io/case-studies/gsma/",
+  "logoUrl": "logos/gsma.svg",
+  "logoStyle": "padding: 0.75em",
+  "logoBackground": "#eeeeee",
+  "published": "2026-11-02"
+}
