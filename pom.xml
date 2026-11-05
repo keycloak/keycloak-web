@@ -21,7 +21,7 @@
         <version.commons-io>2.14.0</version.commons-io>
         <version.commons-compress>1.26.0</version.commons-compress>
 
-        <version.keycloak>26.8.1</version.keycloak>
+        <version.keycloak>26.8.2</version.keycloak>
         <version.keycloak-previous-1></version.keycloak-previous-1>
         <version.keycloak-previous-2></version.keycloak-previous-2>
         <version.keycloak-client>26.0.12</version.keycloak-client>

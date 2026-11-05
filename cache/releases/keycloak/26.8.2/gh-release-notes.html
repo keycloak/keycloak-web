@@ -1,0 +1,86 @@
+<div>
+
+<h2>Upgrading</h2>
+<p>Before upgrading refer to <a href="https://www.keycloak.org/docs/latest/upgrading/#migration-changes">the migration guide</a> for a complete list of changes.</p>
+
+<h2>All resolved issues</h2>
+
+<h3>Security fixes</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/53061">#53061</a> [CVE-2026-92358] Cross-browser fallback proof survives successful account linking and self-service unlink <code>organizations</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53618">#53618</a> [CVE-2026-105305] Device Authorization Grant bypasses per-client minimum.acr.value enforcement <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53749">#53749</a> CVE-2026-107623: OIDC DCR read-modify-write silently disables offline token revocation on backchannel logout <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53813">#53813</a> [CVE-2026-107889] Stored XSS on the login page via kcSanitize bypass <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/54333">#54333</a> [CVE-2026-111497] Out-of-bounds write in bundled Brotli decoder <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/54687">#54687</a> [CVE-2026-112201] Login-failure upsert trusts MySQL/MariaDB affected-row count </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/54688">#54688</a> [CVE-2026-112208] Account takeover via stale SSO_AUTH note in Organization identity-first login (reproduced on 26.8.1) </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/54689">#54689</a> [CVE-2026-110932] Keycloak &lt;= 26.8.0 : Unauthenticated persistent disk exhaustion (theme gzip cache) </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/54690">#54690</a> [CVE-2026-107123] Unauthenticated DoS in Keycloak SAML endpoint </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/54691">#54691</a> [CVE-2026-107124] Session takeover by victim logout with injected id_token_hint  </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/54692">#54692</a> [CVE-2026-107602] Unauthenticated CPU and worker-pool exhaustion (restart required) via SAML 1.1 KeyInfo parser loop on a legal ds:KeyName </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/54693">#54693</a> [CVE-2026-110931] Unauthenticated single-request JVM termination (OutOfMemoryError) via SAML 1.1 AuthorityBinding parser loop, incomplete fix of CVE-2026-7307 </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/54694">#54694</a> [CVE-2026-97367] DCR azp+sid claim substitution via User Property mappers allows Account REST victim session takeover — #YWH-PGM40475-313 </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/54695">#54695</a> [CVE-2026-97174] CIBA sub parameter injection causes attacker authentication to issue victim tokens — #YWH-PGM40475-289 </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/54696">#54696</a> [CVE-2026-114232] UMA user-managed permission resourceType field not validated — cross-owner resource access — #YWH-PGM40475-306 </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/54697">#54697</a> [CVE-2026-97847] Client manager can replace a sessionless token principal and take over the realm — #YWH-PGM40475-292 </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/54698">#54698</a> [CVE-2026-96547] DCR registration-time claim-path gap: attribute mappers forge realm_access.roles from user-editable fields </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/54699">#54699</a> [CVE-2026-96457] Group-admin DENY bypass via top-level move (GroupsResource, CVE-2026-9099 regression) </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/54700">#54700</a> [CVE-2026-96460] Token from token exchange can have unlimited expiration </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/54701">#54701</a> [CVE-2026-97848] [SECURITY] Protocol mapper with jsonType=JSON bypasses CVE-2026-16102 fix — duplicate resource_access claim in access token; forged resource_access in ID token, userinfo and introspection response </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/54702">#54702</a> [CVE-2026-109081] Principal with only create-client can inject a role into the realm default-roles — #YWH-PGM40475-290 </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/54703">#54703</a> [CVE-2026-93998] SAML adapter accepts assertions from the wrong configured issuer </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/54704">#54704</a> [CVE-2026-96453] kcadm custom truststores trust arbitrary self-signed certificates </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/54705">#54705</a> [CVE-2026-92857] Identity spoofing: a default-allowed DCR protocol mapper writes the reserved sub and aud claims </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/54706">#54706</a> [CVE-2026-103112] Account Takeover via Authentication Race </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/54707">#54707</a> [CVE-2026-97175] Unverified IdP email auto-linking enables account takeover </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/54708">#54708</a> [CVE-2026-96447] Stateless token preferred_username fallback enables identity rebinding after client recreation </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/54709">#54709</a> [CVE-2026-82965] SAML SOAP endpoint DoS via unbounded XML parsing on /realms/{realm}/protocol/saml/resolve </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/54710">#54710</a> [CVE-2026-96448] FGAP v2 composite-blind role mapping lets manage-users assign a wrapper containing realm-admin — #YWH-PGM40475-256 </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/54711">#54711</a> [CVE-2026-92855] Keycloak SAML Broker Accepts Holder-of-Key Assertions Without Proof of Key Possession </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/54712">#54712</a> [CVE-2026-92856] Keycloak SAML Identity Broker Ignores `ProxyRestriction`, Allowing Forbidden Downstream Assertion Issuance </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/54713">#54713</a> [CVE-2026-19688] Admin API missing audience check </li>
+<li><a href="https://github.com/keycloak/keycloak/issues/54714">#54714</a> [CVE-2026-117691] SAML redirect binding signature bypass via percent-encoded parameter name (%53AMLResponse) — broker login as any user </li>
+</ul>
+
+<h3>Weaknesses</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/50917">#50917</a> Realm client-session stats disclose hidden clients under FGAP v2 <code>admin/fine-grained-permissions</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52104">#52104</a> JWE key-management algorithm not validated against provisioned key algorithm on request object decryption <code>oidc</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53210">#53210</a> Harden PathMatcher URI normalization for leading dot segments and authority-less schemes <code>authorization-services</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53535">#53535</a> SAML SLO: unsigned client can impersonate victim SP via spoofed Issuer on back-channel SessionIndex logout <code>saml</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53815">#53815</a> Unverified broker email can satisfy an organization domain gate <code>identity-brokering</code></li>
+</ul>
+
+
+
+
+<h3>Enhancements</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/54184">#54184</a> Upgrade to Quarkus 3.40.1.1 <code>dist/quarkus</code></li>
+</ul>
+
+<h3>Bugs</h3>
+<ul>
+<li><a href="https://github.com/keycloak/keycloak/issues/44474">#44474</a> Keycloak Maximum Concurrent Session Limit is incorrectly registered as a login failure, triggering Keycloak&#39;s Brute Force protection <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/51630">#51630</a> FGAP V2: isInternal denylist missing admin-permissions client allows delegated admin to update it <code>admin/fine-grained-permissions</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52870">#52870</a> Realm import: JSON representation migration fails with LazyInitializationException when a users file is present (regression in 26.3) <code>import-export</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/52968">#52968</a> Much open UDP Sockets after some Time <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53238">#53238</a> Theme resources intermittently 404 on a cold gzip cache: `GzipResourceEncodingProvider` replaces the cached file non-atomically <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53507">#53507</a> Enhancement request suggestion in downstream documentation <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53510">#53510</a> Github discussion reference should only be upstream <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53612">#53612</a> BCFIPS imports only the first certificate from a multi-certificate PEM trust bundle <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53634">#53634</a> IdentityBrokerService fires duplicate error events and reflects user input in responses <code>identity-brokering</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53760">#53760</a> Concurreny issue in JAXPValidationUtil <code>saml</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53804">#53804</a> Operator Helm chart renders null version labels because Chart.yaml lacks appVersioN <code>operator</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53809">#53809</a> ISPN000427 timeout on distributed caches when entry lock is contended during topology change <code>infinispan</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53819">#53819</a> Links to keycloak.org in downstream <code>docs</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53834">#53834</a> Flaky test: Admin UI E2E &quot;should handle OID4VC section visibility based on feature flag&quot; <code>admin/ui</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53898">#53898</a> Original exception is swallowed by NullPointerException when acquiring the database lock fails <code>storage</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53901">#53901</a> NullPointerException in KeycloakLogFilter after failed startup as the Profile is no longer initialized <code>dist/quarkus</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53930">#53930</a> Periodic user storage sync runs at twice the configured period when a sync takes longer than ~1 second <code>core</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/53999">#53999</a> Validate keycloak locale before setting to KEYCLOAK_LOCALE Cookie <code>authentication</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/54173">#54173</a> Upgrade playwright for JS tests <code>testsuite</code></li>
+<li><a href="https://github.com/keycloak/keycloak/issues/54398">#54398</a> FIPS tests failing: Could not transfer artifact / Could not generate keypair for algorithm: X25519MLKEM768 <code>ci</code></li>
+</ul>
+
+</div>
