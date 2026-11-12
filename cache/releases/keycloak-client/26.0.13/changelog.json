@@ -1,0 +1,36 @@
+[ {
+  "number" : 235,
+  "repository" : "keycloak-client",
+  "title" : "Support for OpenJDK 25 and update automated tests to use it by default",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak-client/issues/235"
+}, {
+  "number" : 239,
+  "repository" : "keycloak-client",
+  "title" : "Include Jackson 3 modules in the workflow which synces and sends PR",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak-client/issues/239"
+}, {
+  "number" : 241,
+  "repository" : "keycloak-client",
+  "title" : "PolicyEvaluationCompositeRoleTest.testCreate is failing",
+  "kind" : "bug",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak-client/issues/241"
+}, {
+  "number" : 247,
+  "repository" : "keycloak-client",
+  "title" : "Keycloak client needs to be adapted to renamed upstream internal client",
+  "kind" : "enhancement",
+  "area" : null,
+  "url" : "https://github.com/keycloak/keycloak-client/issues/247"
+}, {
+  "number" : 260,
+  "repository" : "keycloak-client",
+  "title" : "AdminClientTest test error: NotAuthorized HTTP 401 Unauthorized",
+  "kind" : "bug",
+  "area" : "testsuite",
+  "url" : "https://github.com/keycloak/keycloak-client/issues/260"
+} ]
