@@ -1,0 +1,5 @@
+{
+    "name": "Realm Database Router",
+    "description": "Store each realm in its own database for hard tenant isolation, on a stock Keycloak 26.8 image. Opt-in at build time; uses Keycloak's named datasources and the stock JPA providers.",
+    "website": "https://github.com/dockndevai/keycloak-realm-database-router"
+}
