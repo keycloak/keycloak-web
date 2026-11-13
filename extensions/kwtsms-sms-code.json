@@ -1,0 +1,5 @@
+{
+    "name": "kwtSMS SMS Code",
+    "description": "Sends a one-time SMS code as a second login step through the kwtSMS gateway (Kuwait and 200+ countries), with English and Arabic pages and limits per user, IP address and realm.",
+    "website": "https://github.com/kwtsms/kwtsms-keycloak"
+}
