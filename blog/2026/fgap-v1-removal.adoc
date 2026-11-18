@@ -1,0 +1,46 @@
+:title: Planned Removal of Fine-Grained Admin Permissions V1 in Keycloak 27
+:date: 2026-11-19
+:publish: true
+:author: Vlasta Ramik
+:summary: Fine-Grained Admin Permissions V1 and Token Exchange V1 are planned for removal in Keycloak 27. We want your feedback before that happens.
+
+With the release of Keycloak 26.2, Fine-Grained Admin Permissions V2 became the default and officially supported version of FGAP,
+replacing the long-standing V1 that had been in preview for years. Since then, V2 has matured through several releases -- gaining
+support for Organizations, group hierarchy handling, and other improvements.
+
+We are now planning to **remove Fine-Grained Admin Permissions V1** in the next major release, **Keycloak 27**.
+
+Because Token Exchange V1 depends on FGAP V1, **Token Exchange V1 is also planned for removal** in Keycloak 27. Its successor,
+Standard Token Exchange V2, has been the default and supported version since Keycloak 26.2.
+
+== What This Means
+
+If you are still using FGAP V1, the feature will no longer be available after the upgrade to Keycloak 27.
+You will need to migrate to V2 before upgrading.
+
+== Closing the Gaps Before Removal
+
+Before the removal, we are working on closing some of the known gaps between V1 and V2:
+
+* Allowing delegated admins to access users who also belong to groups delegated to other admins (parity with V1)
+* Fixing delegated admin visibility of group members with LDAP group mappers
+* Adding "extend to children" capability for group permissions
+* Supporting subgroup evaluation when checking permissions for parent groups
+* Adding `map-roles-members` scope to the group resource type
+
+You can track the full list of planned improvements in the https://github.com/keycloak/keycloak/issues/44122[tracking issue].
+
+== We Need Your Feedback
+
+If you are currently using FGAP V1 and there is something preventing you from migrating to V2, **we want to hear from you**. Whether
+it is a missing capability or a use case that V2 does not yet cover -- your feedback will help us assess what
+could be addressed before Keycloak 27.
+
+Please share your feedback by commenting on https://github.com/keycloak/keycloak/issues/44122[GitHub issue #44122]. If we learn about
+blocking issues early enough, we may be able to include fixes before the removal happens.
+
+== Getting Ready
+
+If you haven't started migrating yet, now is the time. FGAP V2 has been the default since Keycloak 26.2 and automatic migration
+from V1 is not available, so a manual transition is required. For migration guidance, see the
+https://www.keycloak.org/docs/latest/upgrading/index.html#migrating-to-26-2-0[Upgrading Guide].
