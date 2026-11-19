@@ -18,7 +18,7 @@ public class Translations {
     Map<TranslationTuple, Translation> translations = new HashMap<>();
 
     List<String> componentOrder = List.of("theme-baselogin", "theme-baseemail", "account-ui", "theme-baseaccount", "admin-ui", "theme-baseadmin");
-    List<String> ignoredComponents = List.of("keycloak-e-mail-theme", "keycloak-welcome-theme", "keycloak-login-theme", "keycloak-v2-login-theme");
+    List<String> ignoredComponents = List.of("keycloak-e-mail-theme", "keycloak-login-theme", "keycloak-v3-login-theme");
 
     private ObjectMapper objectMapper = new ObjectMapper();
 
