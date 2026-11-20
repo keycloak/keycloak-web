@@ -1,0 +1,97 @@
+:title: Meet Keycloak at FOSDEM on Jan 30/31!
+:date: 2026-11-20
+:publish: true
+:author: Alexander Schwartz
+:summary: The Keycloak community and several speakers will be at FOSDEM 2027 in Brussels on Jan 30/31. Submit your talk now, and meet up at the Sovereign Identity Everywhere stand!
+:preview: fosdem-2025-booth.jpg
+
+https://fosdem.org/[FOSDEM] is a free event for software developers to meet, share ideas and collaborate.
+Every year, thousands of developers of free and open source software from all over the world gather at the event.
+
+FOSDEM takes place in Brussels on January 30th and 31st.
+<<talks,Submit your talk now>>, and <<meet,meet us and help out>> at the stand.
+To get the latest updates, https://github.com/keycloak/keycloak/discussions/55426[subscribe to our discussion on GitHub].
+
+[[meet]]
+== Meet the community at the Sovereign Identity stand
+
+// Add opening hours and location of the stand once FOSDEM publishes them.
+
+The Keycloak project will co-host the stand "`Sovereign Identity Everywhere: Keycloak, FreeIPA, privacyIDEA, & SSSD`" together with the FreeIPA, privacyIDEA and SSSD projects on both days, Saturday, January 30th and Sunday, January 31st 2027.
+True digital sovereignty starts with self-hosted, user-owned identity and access management.
+Visit this joint stand to meet the core teams and contributors behind four popular open-source security solutions:
+
+https://www.keycloak.org[Keycloak]:: Extensible, self-hosted Single Sign-On and Identity Provider supporting Passkeys, Digital Wallets, OIDC, OAuth 2.0, SAML, Kerberos, and SCIM.
+
+https://www.freeipa.org[FreeIPA]:: Centralized management for Linux users, hosts, and Kerberos realms, complete with cross-realm trusts and built-in certificate issuance.
+
+https://www.privacyidea.org/[privacyIDEA]:: On-premises central multi-factor authentication (MFA) management, integrating seamlessly with Keycloak, FreeIPA, Linux PAM, Windows logins, and RADIUS using everything from OTP apps to device-bound passkeys.
+
+https://sssd.io/[SSSD]:: The enterprise-grade Linux client enabling machines to securely connect with Active Directory, FreeIPA, or LDAP domains for unified identity, policy enforcement, and authentication.
+
+Whether you're securing a home lab or an enterprise infrastructure, come chat with us about how these tools work individually and how they integrate to form a complete open-source identity stack.
+
+[[talks]]
+== Submit your talk now
+
+FOSDEM is a big event divided into smaller, single-track conferences with their own call for papers and organizers.
+The call for papers is running now, and each devroom has its own deadline between November 27th and December 2nd.
+Submit your proposal via https://fosdem.org/submit[FOSDEM's Pretalx system], and select the track of the devroom you are targeting.
+
+// Add the accepted Keycloak-related talks here once the schedule is published.
+
+=== Identity and Access Management devroom
+
+The https://iam-devroom.github.io/fosdem-2027/[Identity and Access Management devroom] is the natural home for Keycloak talks.
+It takes place on Saturday afternoon, January 30th, and the deadline for submissions is *November 30th 2026*.
+The devroom is looking for talks on passwordless authentication with passkeys, decentralized identity and verifiable credentials, quantum-resistant cryptography, identity in the software supply chain, improving the user experience of multi-factor authentication, and IAM deployment reports and real-world case studies.
+If you have migrated to Keycloak, integrated it with other free software, or built an extension, this is the place to share it.
+Talks are 25 minutes, including questions.
+
+=== More devrooms where Keycloak talks fit
+
+Your Keycloak story might fit other devrooms, too.
+*Some of these devrooms close their submissions earlier than the IAM devroom, as early as November 27th, so don't wait.*
+Check each devroom's call for participation for its topics and its exact deadline.
+Deadlines are in parentheses where the devroom announced one.
+
+* How do you run, upgrade, scale and monitor Keycloak in production?
+Share your experience in the https://github.com/OperationsDevroom/2027/blob/main/CfP.md[Operations] (Nov 27), https://discuss.linuxcontainers.org/t/fosdem-2027-containers-devroom-call-for-papers/27476[Containers] (Nov 30) or https://docs.google.com/document/d/1bjIIUeA6gTdC0dRwdzGe0S6R1dSA3JwfwrUXV6BVHYg/edit?tab=t.0#heading=h.dm1sd8uel8zz[Monitoring and Observability] devrooms.
+* Did you build a Keycloak extension, tune its performance, or test your login flows in CI?
+Keycloak is built on Quarkus and runs on the JVM, so the https://lists.fosdem.org/hyperkitty/list/fosdem@lists.fosdem.org/message/YKSYJVQKGPPWPX4CFEVHV675DILCQ36H/[Free Java] (Nov 29) and https://lists.fosdem.org/hyperkitty/list/fosdem@lists.fosdem.org/thread/Q7ASYI2PMOXKYZEOOBABNYP7WS2CDYTG/[Testing and Continuous Delivery] (Dec 1) devrooms are a good match.
+* Do you harden your identity infrastructure or apply OAuth 2.0 security best practices?
+Bring it to the https://lists.fosdem.org/hyperkitty/list/fosdem@lists.fosdem.org/message/RU2KRJHGYVJLT6W6XLUR3S4OW35FQXOK/[Security] devroom (Dec 1).
+* Is your organization preparing for the Cyber Resilience Act, or building sovereign infrastructure for the public sector?
+Identity is a key part of both, and the https://openssf.org/event/fosdem-2027-beyond-the-cra-building-secure-and-resilient-open-source/[Beyond the CRA] (Nov 27) and https://lists.fosdem.org/hyperkitty/list/fosdem@lists.fosdem.org/message/T7UBYKX5CFGIXBDPVPKKIBHWF72ELF2Z/[Open Source & EU Policy] (Dec 1) devrooms are looking for practical experience.
+* Are you working with digital wallets, verifiable credentials or user-controlled identity?
+The https://lists.fosdem.org/hyperkitty/list/fosdem@lists.fosdem.org/message/EM6BYJXKWNQ3PAZWDIP5BT3VKF37HL2M/[Decentralized Internet and Privacy] devroom (Dec 2) is a natural fit.
+
+=== FOSDEM Fringe
+
+Around the FOSDEM weekend, independent events take place in Brussels and nearby.
+They will be listed on the FOSDEM Fringe page once FOSDEM publishes it.
+Some of them have their own calls for papers, and some fit Keycloak well:
+
+* https://2027.fosdempgday.org/[FOSDEM PGDay] on January 28th-29th: Keycloak stores its data in PostgreSQL, so talks about running Keycloak on it could fit.
+* https://blogs.oracle.com/mysql/mysql-belgian-days-2027[MySQL Belgian Days] for those running Keycloak on MySQL.
+* https://fossapalooza.eu/[FOSSapalooza] on January 29th, the day before FOSDEM.
+* https://cfgmgmtcamp.org/ghent2027/[CfgMgmtCamp] in Ghent from February 1st to 3rd, with a focus on configuration management and operations.
+* https://opentelemetry.io/blog/2026/otel-unplugged-fosdem-2027/[OTel Unplugged] on February 1st, an OpenTelemetry unconference and roadmapping session, relevant to anyone observing Keycloak with OpenTelemetry.
+* The https://workshop.aboutcode.org/[FOSS license and security compliance tools workshop] on February 1st, for software provenance, vulnerability management and regulatory compliance like the CRA.
+
+Not sure where your idea fits?
+Post your idea in our https://github.com/keycloak/keycloak/discussions/55426[FOSDEM discussion on GitHub], and we will help you find the right room.
+The full list is on the https://fosdem.org/2027/news/accepted-developer-rooms/[accepted developer rooms] page.
+
+++++
+<div class="paragraph">
+<a href="${blogImages}/keycloak-fosdem-2025.jpg"><img src="${blogImages}/keycloak-fosdem-2025.jpg" alt="CNCF stand at FOSDEM in 2025 with a Keycloak banner and people visiting." style="width: 100%; max-width: 1158px; object-fit: cover; height: 350px; object-fit: none; object-position: 87% 20%"></a>
+</div>
+++++
+
+== Stay in touch with our latest activities
+
+We hope to see a lot of you either online or on site in Brussels at FOSDEM!
+
+Share your talk ideas, tell us if you will be there, or offer to help at the stand: https://github.com/keycloak/keycloak/discussions/55426[post in our FOSDEM discussion on GitHub].
+Subscribe to the discussion to get the latest updates.
