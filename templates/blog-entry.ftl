@@ -1,7 +1,7 @@
 <#import "/templates/template.ftl" as tmpl>
 <#-- @ftlvariable name="blog" type="org.keycloak.webbuilder.Blogs.Blog" -->
 
-<@tmpl.page current="search" title="${blog.title}" summary="${(blog.summary)!''}" previewImage="${(blog.preview)!''}" author="${(blog.author)!''}" rss=true jsonLd="${blog.jsonLd}">
+<@tmpl.page current="search" title="${blog.title}" summary="${(blog.summary)!''}" previewImage="${(blog.preview)!''}" author="${(blog.author)!''}" ogType="article" rss=true jsonLd="${blog.jsonLd}">
 
 <div class="container mt-5 kc-article kc-asciidoc">
     <h1>${blog.title}</h1>

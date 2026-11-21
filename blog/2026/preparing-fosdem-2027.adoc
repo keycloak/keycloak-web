@@ -3,7 +3,7 @@
 :publish: true
 :author: Alexander Schwartz
 :summary: The Keycloak community and several speakers will be at FOSDEM 2027 in Brussels on Jan 30/31. Submit your talk now, and meet up at the Sovereign Identity Everywhere stand!
-:preview: fosdem-2025-booth.jpg
+:preview: fosdem-2025-booth.jpg?v2
 
 https://fosdem.org/[FOSDEM] is a free event for software developers to meet, share ideas and collaborate.
 Every year, thousands of developers of free and open source software from all over the world gather at the event.

@@ -1,4 +1,4 @@
-<#macro page current title summary="" importMap="" previewImage="" author="" noindex=false nocsp=false rss=false jsonLd="" preloadImage="" toc=false>
+<#macro page current title summary="" importMap="" previewImage="" author="" noindex=false nocsp=false rss=false jsonLd="" ogType="website" preloadImage="" toc=false>
 <#-- @ftlvariable name="projectStars" type="org.keycloak.webbuilder.ProjectStars" -->
 <!doctype html>
 <html lang="en" prefix="og: https://ogp.me/ns#">
@@ -22,6 +22,7 @@
         <meta name="twitter:card" content="summary_large">
     </#if>
     <meta name="twitter:site" content="@keycloak">
+    <meta property="og:type" content="${ogType}">
     <meta property="og:site_name" content="Keycloak">
     <meta property="og:title" content="<#if (title)?has_content>${title}<#else>Keycloak</#if>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
