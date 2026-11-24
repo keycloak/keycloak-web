@@ -1,0 +1,372 @@
+:title: Keycloak Workflows in Practice, Part 1: Automating Identity Lifecycle
+:date: 2026-11-26
+:publish: true
+:author: Stefan Guilhen
+:summary: Keycloak Workflows bring Identity Governance and Administration capabilities to your realm with a simple YAML-based engine. In the first article of this series, we explore the core concepts and build three practical workflows for onboarding, inactivity tracking, and temporary admin access.
+
+++++
+<#noparse>
+++++
+
+This is the first article in the *Keycloak Workflows in Practice* series. Over the next few weeks, we will explore
+Keycloak's Workflow engine from the basics to advanced customization and integration with other features. Whether you
+are new to workflows or looking to push them further, this series will walk you through real-world scenarios that
+demonstrate what this feature can do for your identity management infrastructure.
+
+In this article, we start with the fundamentals and build three practical workflows you can deploy today.
+
+== Why Workflows?
+
+Managing the lifecycle of users and clients in a realm often involves repetitive, error-prone administrative tasks:
+welcoming new users, tracking inactive accounts, revoking temporary access, enforcing password policies. When done
+manually, these tasks don't scale and are easy to forget.
+
+Keycloak Workflows automate these tasks by letting you define event-driven automation rules in a simple YAML format.
+When something happens in your realm - a user is created, a role is granted, a group membership changes - a workflow
+can react automatically, executing a chain of actions on your behalf.
+
+This brings key Identity Governance and Administration (IGA) capabilities natively into Keycloak:
+
+* Automated onboarding and offboarding processes
+* Just-In-Time and Least Privilege access enforcement
+* Proactive inactivity management
+* Recurring compliance checks
+
+Let's see how it works.
+
+== Meet Acme Corp
+
+Throughout this series, we will follow *Acme Corp*, a growing SaaS company that uses Keycloak for managing employees
+and partners. Like many organizations, Acme Corp started with manual identity management and quickly discovered it
+doesn't scale. Workflows are their path to automation.
+
+Today, Acme Corp's identity team faces three immediate challenges:
+
+1. New engineers join every week and need to be onboarded with the right roles, groups, and a welcome email.
+2. Users go inactive for months, leaving dormant accounts that pose a security risk.
+3. Temporary admin access is granted during incidents but rarely revoked after the fact.
+
+Let's solve all three.
+
+== Anatomy of a Workflow
+
+Before we dive into the examples, let's understand the structure of a workflow definition. Workflows are defined in
+YAML and consist of a few key sections:
+
+[source,yaml]
+----
+name: My workflow             # <1>
+on: user-created              # <2>
+if: has-user-attribute(department=engineering) # <3>
+steps:                        # <4>
+  - uses: notify-user
+    with:
+      message: Hello!
+  - uses: grant-role
+    after: 1d                 # <5>
+    with:
+      role: verified
+----
+<1> A unique name that identifies the workflow in the realm.
+<2> The *event* that triggers the workflow. Here, it fires when a new user is added to the realm.
+<3> An optional *condition* that the resource must satisfy for the workflow to activate. In this case, only users with the `department` attribute set to `engineering` trigger the workflow.
+<4> The *step chain* - one or more actions executed sequentially during the workflow's lifetime.
+<5> Steps can be *scheduled* to execute after a delay. This step runs one day after the previous step completes.
+
+That's it. The event triggers the workflow, the condition filters which resources qualify, and the steps define what happens.
+
+The diagram below shows this flow end to end:
+
+++++
+</#noparse>
+++++
+
+image::${blogImages}/workflows/workflow-activation-flow.png[alt="Sequence diagram showing a realm event being matched against a workflow's on expression, the if condition being evaluated, and a workflow execution being created and running its first step", align=center]
+
+++++
+<#noparse>
+++++
+
+Now let's put this to work.
+
+== Workflow 1: Onboarding New Engineers
+
+When a new engineer joins Acme Corp, the identity team needs to:
+
+* Send a welcome email with links to internal resources
+* Grant the `developer` role
+* Add the user to the `/Engineering` group
+
+Here's the workflow:
+
+[source,yaml]
+----
+name: Onboarding new engineers
+on: user-created
+if: has-user-attribute(department=engineering)
+steps:
+  - uses: notify-user
+    with:
+      subject: Welcome to Acme Corp Engineering!
+      message: |
+        <p>Hi ${user.firstName},</p>
+
+        <p>Welcome to the engineering team at ${realm.displayName}!
+        Your accounts and access are being set up automatically.</p>
+
+        <p>You can find our internal documentation at
+        <a href="https://docs.acme.example.com">docs.acme.example.com</a>.</p>
+
+        <p>Happy coding!<br/>
+        The ${realm.displayName} Team</p>
+  - uses: grant-role
+    with:
+      role: developer
+  - uses: join-group
+    with:
+      group: /Engineering
+----
+
+When a new user is created with the attribute `department` set to `engineering`, this workflow fires immediately. It
+sends a welcome email using the built-in `notify-user` step, grants the `developer` role, and adds the user to the
+`/Engineering` group - all in one go, with zero manual intervention.
+
+Notice the template expressions in the email: `${user.firstName}` and `${realm.displayName}` are resolved at execution
+time, allowing you to personalize messages without hardcoding names.
+
+[TIP]
+====
+You can create similar workflows for other departments - `has-user-attribute(department=sales)`,
+`has-user-attribute(department=support)` - each with their own role and group assignments.
+====
+
+== Workflow 2: Tracking Inactive Users
+
+Dormant accounts are a security risk. Acme Corp wants to:
+
+* Send a reminder after 90 days of inactivity
+* Send a final warning 60 days later
+* Disable the account after 7 more days
+* Notify the user that their account was disabled
+
+This one introduces two important concepts: *scheduled steps* and *concurrency control*.
+
+[source,yaml]
+----
+name: Track inactive users
+on: user-authenticated
+concurrency:
+  restart-in-progress: true
+steps:
+  - uses: notify-user
+    after: 90d
+    with:
+      subject: We miss you!
+      message: |
+        <p>Hi ${user.firstName},</p>
+        <p>It has been a while since your last login to ${realm.displayName}.
+        We'd love to see you back!</p>
+  - uses: notify-user
+    after: 60d
+    with:
+      subject: Your account will be disabled soon
+      message: |
+        <p>Hi ${user.firstName},</p>
+        <p>Your account will be disabled in ${workflow.daysUntilNextStep} days
+        due to inactivity. Log in now to keep your account active.</p>
+  - uses: disable-user
+    after: 7d
+  - uses: notify-user
+    with:
+      subject: Account disabled
+      message: |
+        <p>Hi ${user.firstName},</p>
+        <p>Your account at ${realm.displayName} has been disabled due to
+        extended inactivity. Contact your administrator if you need to
+        reactivate it.</p>
+----
+
+This workflow triggers every time a user authenticates. The first step doesn't execute immediately - it waits 90 days.
+If the user doesn't log in again during that window, the reminder email goes out. Then the clock starts on the 60-day
+warning, followed by a 7-day countdown to disabling the account.
+
+The key here is `restart-in-progress: true`. When a user logs in again while the workflow is already running (for
+example, on day 45), the workflow restarts from the beginning. The 90-day timer resets, and the user gets another full
+cycle before any action is taken. This effectively means: the inactivity clock resets with every login.
+
+[NOTE]
+====
+The expression `${workflow.daysUntilNextStep}` dynamically resolves to the number of days until the next scheduled step,
+keeping the message accurate without hardcoding values.
+====
+
+== Workflow 3: Temporary Admin Auto-Removal
+
+During incidents, Acme Corp sometimes grants the `admin` role to engineers for troubleshooting. But once the incident
+is resolved, that elevated access is rarely revoked. This violates the principle of least privilege and creates long-term
+risk.
+
+Here's a workflow that enforces a maximum duration for admin access:
+
+[source,yaml]
+----
+name: Temporary admin auto-removal
+on: user-role-granted(admin)
+if: not has-user-attribute(permanent-admin=true)
+steps:
+  - uses: notify-user
+    after: 7d
+    with:
+      subject: Admin access expiring soon
+      message: |
+        <p>Hi ${user.firstName},</p>
+        <p>Your temporary admin access to ${realm.displayName} will be
+        revoked in 24 hours. If you still need admin access, contact
+        your team lead to request an extension.</p>
+  - uses: revoke-role
+    after: 1d
+    with:
+      role: admin
+  - uses: notify-user
+    with:
+      subject: Admin access revoked
+      message: |
+        <p>Hi ${user.firstName},</p>
+        <p>Your temporary admin access to ${realm.displayName} has been
+        revoked as scheduled. Thank you for helping out!</p>
+----
+
+When the `admin` role is granted to a user, this workflow starts a 7-day countdown. After 7 days, it sends a warning.
+After one more day, it revokes the role and sends a confirmation email.
+
+The condition `not has-user-attribute(permanent-admin=true)` ensures that users who are meant to have permanent admin
+access (like the identity team itself) are excluded from the auto-removal workflow.
+
+Notice how the `on` setting uses a *parameterized event*: `user-role-granted(admin)` triggers only when the specific
+`admin` role is granted, not for any role grant. This is important - you don't want this workflow firing when someone
+gets a `viewer` role.
+
+== Creating Workflows
+
+You can create workflows through the Admin Console or the REST API.
+
+=== Admin Console
+
+Navigate to *Workflows* in the left sidebar menu. Click *Create workflow* to open the workflow editor. You can type or paste
+your YAML definition directly into the editor.
+
+++++
+</#noparse>
+++++
+
+image::${blogImages}/workflows/workflows-nav-list.png[alt="The Workflows section in the Admin Console, showing the list of existing workflows and the Create workflow button", align=center]
+
+image::${blogImages}/workflows/workflow-editor.png[alt="The workflow editor with the onboarding new engineers YAML definition", align=center]
+
+++++
+<#noparse>
+++++
+
+=== REST API
+
+You can also create workflows programmatically using the Admin REST API:
+
+[source,bash]
+----
+curl -X POST "http://localhost:8080/admin/realms/acme/workflows" \
+  -H "Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/yaml" \
+  -d '
+name: Onboarding new engineers
+on: user-created
+if: has-user-attribute(department=engineering)
+steps:
+  - uses: notify-user
+    with:
+      subject: Welcome to Acme Corp Engineering!
+      message: Welcome aboard!
+  - uses: grant-role
+    with:
+      role: developer
+  - uses: join-group
+    with:
+      group: /Engineering
+'
+----
+
+The API accepts both YAML (`Content-Type: application/yaml`) and JSON (`Content-Type: application/json`).
+
+== Built-in Steps at a Glance
+
+The three workflows above used only a handful of the built-in steps. Here's the full set available for user workflows:
+
+[cols="2,3", options="header"]
+|===
+| Step | What it does
+| `notify-user` | Sends an email to the user (supports HTML, template expressions)
+| `grant-role` | Grants one or more roles
+| `revoke-role` | Revokes one or more roles
+| `join-group` | Adds the user to one or more groups
+| `leave-group` | Removes the user from one or more groups
+| `set-user-attribute` | Sets one or more user attributes
+| `remove-user-attribute` | Removes one or more user attributes
+| `add-required-action` | Adds a required action (e.g., UPDATE_PASSWORD)
+| `remove-required-action` | Removes a required action
+| `disable-user` | Disables the user account
+| `logout-user` | Logs the user out of all sessions
+| `delete-user` | Deletes the user from the realm
+| `unlink-user` | Unlinks the user from one or more identity providers
+| `invite-user` | Sends an invitation email with an action token link
+| `restart` | Restarts the workflow from a given step position
+|===
+
+Workflows also support client resources with `delete-client` and `disable-client` steps, triggered by events like
+`client-created` and `client-authenticated`.
+
+== Try It Yourself
+
+To get started with workflows in your own Keycloak instance:
+
+1. Start Keycloak: `kc.sh start-dev`
+2. Create a realm, configure its email (SMTP) settings, and navigate to *Workflows* in the Admin Console - the
+   `notify-user` step needs a working mail setup to actually send anything
+3. While you're there, set the realm's *Display name* under *Realm Settings -> General* - it's what `${realm.displayName}`
+   resolves to in the examples above, and an unset display name renders as the literal, unresolved placeholder text
+4. Copy one of the YAML definitions from this article and paste it into the workflow editor
+5. Create a test user that matches the workflow's condition and watch the automation kick in
+
+[TIP]
+====
+Workflow 2 and Workflow 3 use multi-day delays, which make them hard to observe in a quick test. Temporarily shorten
+the `after` values (for example, `after: 30s` instead of `after: 90d`) while experimenting, then restore the real
+durations before using the workflow for real.
+
+Shortening `after` alone isn't enough, though: scheduled steps are picked up by a background task that only checks
+for due steps every 12 hours by default. Start Keycloak with a shorter interval so your shortened delays are actually
+observed promptly, for example:
+
+[source,bash]
+----
+./kc.sh start-dev --spi-events-listener--workflow-event-listener--step-runner-task-interval=5s
+----
+====
+
+For the full reference on workflow settings, events, conditions, and steps, see the
+https://www.keycloak.org/docs/latest/server_admin/#_understanding_workflows_[Keycloak Server Administration Guide].
+
+== What's Next
+
+In this article, we covered the basics: how workflows are structured, how events and conditions control when they
+fire, and how steps define what happens. We built three practical workflows that solve real problems for Acme Corp.
+
+But we have only scratched the surface. What about combining multiple conditions with boolean logic? How does the
+scheduling engine work under the hood? What happens when the same event fires while a workflow is already running?
+
+In *Part 2*, we will dive deep into the expression language, the scheduling engine, and concurrency control --
+unlocking the full power of the built-in workflow capabilities.
+
+Stay tuned!
+
+++++
+</#noparse>
+++++
