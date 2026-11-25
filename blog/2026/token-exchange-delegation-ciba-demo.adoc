@@ -1,0 +1,177 @@
+:title: Token Exchange Delegation: admin-initiated support flows with CIBA
+:date: 2026-07-31
+:publish: true
+:author: Yike Gao
+:summary: A support agent acts on a customer's behalf, with the customer's approval and a token that records who did what. This is a full walkthrough of an admin-initiated CIBA demo.
+
+Support agents often need to do something as a customer. They may need to reproduce a bug in the customer's account, complete a checkout that is stuck, or fix broken data. The common workarounds are all bad. You ask for the customer's password, you share an account, or you add a "become this user" button that leaves no record of who really did the work.
+
+Token Exchange Delegation is built on https://www.keycloak.org/securing-apps/token-exchange#_standard-token-exchange[Standard Token Exchange] (https://datatracker.ietf.org/doc/html/rfc8693[RFC 8693]). It gives you a safer option. The agent receives a token to act on the customer's behalf, but only after the customer approves. The token itself records who is acting for whom.
+
+We built a small demo that runs this flow from start to finish. The admin starts it, and the user approves it through CIBA. This post explains what happens at each step.
+
+== Delegation vs. impersonation
+
+Token exchange can return two very different tokens, so it helps to be clear about which one you want.
+
+With *impersonation*, you get a token that looks just like the user logged in themselves. Nothing on the token shows that an agent was involved. This is convenient, but the actor is invisible, and that is a problem when you need an audit trail.
+
+With *delegation*, the user is still the subject, but the token also gets an `act` claim. This claim is a small note, readable by other systems, that says "this agent is acting for this user." Your services can log it, and your security tools can treat delegated calls as their own kind of event.
+
+Two claims make this work, both from RFC 8693:
+
+* `may_act` on the *subject token*: who is allowed to act for this user.
+* `act` on the *delegated token*: who is actually acting.
+
+So `may_act` says it is allowed, and `act` says it happened.
+
+The https://www.keycloak.org/securing-apps/token-exchange#_token-exchange-delegation[delegation docs] cover the basics: the scope syntax, the consent step, and how `may_act` is added to the token. This post covers the part they do not. It shows how to drive the flow over CIBA, and how the exchange turns `may_act` into `act`.
+
+== The scenario: admin-initiated support via CIBA
+
+The demo has three roles:
+
+* *admin* is the support agent, who wants to act for someone.
+* *user* is the customer who owns the account.
+* a *backend* runs the exchange and calls APIs on the user's behalf.
+
+There is one problem. The admin and the user are not in the same browser session, so we cannot show a consent screen to the user directly. We need the user's approval through another channel. This is what https://openid.net/specs/openid-client-initiated-backchannel-authentication-core-1_0.html[CIBA] (Client-Initiated Backchannel Authentication) is for. The backend starts a request, the user approves it on their own device, and the backend then collects the result.
+
+Here is the full flow:
+
+. admin logs in with OIDC, and the backend gets an *actor token*.
+. The backend starts CIBA with scope `delegation:admin` and `login_hint=user`.
+. The user approves on their device.
+. The backend polls CIBA and gets a *subject token* that carries `may_act` for admin.
+. The backend exchanges the subject token and the actor token.
+. Keycloak returns a *delegated token* with `sub=user` and `act.sub=admin`.
+
+The backend can then use the delegated token to call services for the user, and the actor information stays attached.
+
+== Walking through the flow
+
+=== Starting CIBA
+
+The backend sends the backchannel request. The parameterized scope `delegation:admin` sets the actor, and `login_hint` sets the user who has to approve.
+
+[source,bash]
+----
+POST /realms/demo/protocol/openid-connect/ext/ciba/auth
+Content-Type: application/x-www-form-urlencoded
+
+scope=openid delegation:admin
+&login_hint=user
+----
+
+`demo-support-backend` is a confidential client, so every request to Keycloak is sent with its client secret using HTTP Basic authentication. The examples leave that header out to keep them short.
+
+In the demo, this is one click. The admin types the customer's username into the support console and submits the form.
+
+.admin, the actor, requests delegated access to a customer's account. Submitting the form sends a CIBA approval request to the customer's device.
+image::${blogImages}/token-exchange-delegation/ciba-admin-request.png[alt="Demo support console: the admin requests delegated access for customer 'user'; the customer's device shows no requests yet", align=center, width=800]
+
+Keycloak returns an `auth_req_id` and sends a prompt to the customer's device. The prompt shows who is asking and which scope they want. You can see `delegation:admin` in the scope line.
+
+.The customer sees who is asking (`admin`) and which scope, then approves on their own device.
+image::${blogImages}/token-exchange-delegation/ciba-user-approve.png[alt="Customer device showing a pending request from actor 'admin' with scope 'openid delegation:admin profile roles email' and Approve/Deny buttons", align=center, width=800]
+
+=== Polling for the subject token
+
+After the user clicks Approve, the backend exchanges the `auth_req_id` for a token.
+
+[source,bash]
+----
+POST /realms/demo/protocol/openid-connect/token
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=urn:openid:params:grant-type:ciba
+&auth_req_id=$AUTH_REQ_ID
+----
+
+The response is the *subject token*, and it carries the permission we need. The example below uses the username to keep it readable. In the real token, this value is admin's user id.
+
+[source,json]
+----
+{
+  "sub": "user",
+  "may_act": { "sub": "admin" }
+}
+----
+
+The demo decodes the real token, where `may_act.sub` is admin's user id. This is Keycloak's record of who is allowed to act for this user.
+
+.The subject token from CIBA carries `may_act`, which shows who is _allowed_ to act for the user.
+image::${blogImages}/token-exchange-delegation/ciba-subject-token.png[alt="Decoded subject token JSON with may_act.sub set to the admin's user id", align=center, width=800]
+
+=== Exchanging for a delegated token
+
+Now for the exchange. The backend sends both tokens: the subject token (the user, with `may_act`) and the actor token (the admin).
+
+[source,bash]
+----
+POST /realms/demo/protocol/openid-connect/token
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=urn:ietf:params:oauth:grant-type:token-exchange
+&subject_token=$SUBJECT_TOKEN
+&subject_token_type=urn:ietf:params:oauth:token-type:access_token
+&actor_token=$ACTOR_TOKEN
+&actor_token_type=urn:ietf:params:oauth:token-type:access_token
+----
+
+The result is the *delegated token*. The user is still the subject, but admin is now recorded as the actor.
+
+[source,json]
+----
+{
+  "sub": "user",
+  "act": { "sub": "admin" }
+}
+----
+
+That `act` claim is the whole point. Any service downstream can now see that admin acted for the user. It is the same id that was in `may_act`. The exchange checked the permission, and then wrote it back as an actor record. That is the whole feature.
+
+.The delegated token carries `act` with the same id as `may_act`. admin is now recorded as the actor.
+image::${blogImages}/token-exchange-delegation/ciba-delegated-token.png[alt="Decoded delegated token JSON with act.sub set to the admin's user id, matching the subject token's may_act", align=center, width=800]
+
+== Setting it up
+
+The demo's `setup-realm.sh` script creates all of this for you. Here is what it configures, because the configuration is where the important choices are.
+
+*Two clients.*
+
+* `demo-admin-app` is where the admin logs in. Its token becomes the actor token, so this token has to include the exchange client in its audience. An audience mapper on this client adds it.
+* `demo-support-backend` runs CIBA and the token exchange. It has standard token exchange enabled, the CIBA grant enabled, and consent required.
+
+*The delegation scope.* `delegation:admin` is a parameterized scope, so Keycloak needs the `parameterized-scopes` feature. It is set as an optional client scope on the backend client.
+
+*Who is allowed to act.* The admin needs permission to receive a delegated token for the user. The demo offers two ways to grant it:
+
+* The simple way gives the admin the `impersonation` role, so the admin can act for any user.
+* The stricter way uses Fine-Grained Admin Permissions (FGAP), so the admin can act only for a chosen group of users.
+
+NOTE: This permission model is the part that is still being discussed. Right now the demo reuses the `impersonation` role, but that role also allows full account takeover through the Admin API, which is more power than delegation needs. A separate `delegation` permission is being considered, so that delegation does not depend on impersonation. See https://github.com/keycloak/keycloak/issues/51305[#51305]. Expect this section to change before the feature becomes a preview feature.
+
+*Two things that can trip you up.*
+
+* The `delegation` scope always asks for consent. If the backend client does not have consent required, the request fails with a confusing `invalid_scope` error instead of showing a consent screen.
+* The actor token has to list the exchange client in its `aud` claim, or the exchange fails. The audience mapper on the login client takes care of this.
+
+== Try it out
+
+The feature is behind preview flags. Start Keycloak with:
+
+[source,bash]
+----
+bin/kc.sh start-dev \
+  --features=parameterized-scopes,token-exchange-delegation \
+  --spi-ciba-auth-channel--ciba-http-auth-channel--http-authentication-channel-uri=http://localhost:8081/ciba/request-authentication-channel
+----
+
+CIBA has no built-in approval screen, so the last flag points Keycloak at the demo app's own approval endpoint.
+
+The whole flow runs from a small Spring Boot app (Java 21):
+https://github.com/gaoyikeshuer/keycloak-token-exchange-delegation-ciba-demo[keycloak-token-exchange-delegation-ciba-demo].
+The README has the exact commands. You create the realm with the setup script, start the app, log in as `admin`, and start a delegation for `user`. The delegated token comes back with `act` on it.
+
+
