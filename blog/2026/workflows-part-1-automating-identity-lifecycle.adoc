@@ -1,5 +1,5 @@
 :title: Keycloak Workflows in Practice, Part 1: Automating Identity Lifecycle
-:date: 2026-11-26
+:date: 2026-11-27
 :publish: true
 :author: Stefan Guilhen
 :summary: Keycloak Workflows bring Identity Governance and Administration capabilities to your realm with a simple YAML-based engine. In the first article of this series, we explore the core concepts and build three practical workflows for onboarding, inactivity tracking, and temporary admin access.
